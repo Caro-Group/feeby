@@ -41,19 +41,19 @@
 		    {foreach from=$product.extraContent item=extra key=extraKey}
 			    <li class="nav-item">
 				  <a
-					class="nav-link active"
+					class="nav-link"
 					data-toggle="tab"
 					href="#extra-{$extraKey}"
 					role="tab"
 					aria-controls="extra-{$extraKey}">{$extra.title}</a>
 				</li>
 		    {/foreach}
+			{hook h='displayLeoProductTab' product=$product}
 	  	</ul>
 
 	  	<div class="tab-content" id="tab-content">
 		   	<div class="tab-pane fade in{if $product.description} active{/if}" id="description" role="tabpanel">
 		     	{block name='product_description'}
-				 	<h2 class="h2 product-title" itemprop="name">{$product.name}</h2>
 		       		<div class="product-description">{$product.description nofilter}</div>
 		     	{/block}
 		   	</div>
@@ -80,38 +80,12 @@
 		       	</div>
 		     	{/if}
 		   	{/block}
+		   	{hook h='displayLeoProductTabContent' product=$product}
 		   	{foreach from=$product.extraContent item=extra key=extraKey}
-			   	<div class="tab-pane fade in {$extra.attr.class} active" id="extra-{$extraKey}" role="tabpanel" {foreach $extra.attr as $key => $val} {$key}="{$val}"{/foreach}>
+			   	<div class="tab-pane fade in {$extra.attr.class}" id="extra-{$extraKey}" role="tabpanel" {foreach $extra.attr as $key => $val} {$key}="{$val}"{/foreach}>
 			       {$extra.content nofilter}
 			   	</div>
 		   {/foreach}
 		</div>
 	</div>
-
-	<div class="product-tabs tabs">
-	  	<ul class="nav nav-tabs" role="tablist">
-			{hook h='displayLeoProductTab' product=$product}
-	  	</ul>
-
-	  	<div class="tab-content" id="tab-content">
-		   	{hook h='displayLeoProductTabContent' product=$product}
-		</div>
-    </div>
-
-{literal}
-<style>
-.product-tabs.tabs{    
-   display: flex;
-    flex-direction: column;
-}
-
-.product-tabs.tabs .nav.nav-tabs{  
-    display: flex;
-    border-bottom: 1px solid #000;
-    margin-bottom: 10px;
-    width: 100%;
-}
-</style>
-{/literal}
-
 {/block}

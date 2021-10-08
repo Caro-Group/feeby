@@ -37,19 +37,13 @@
     {if $LISTING_PRODUCT_LARGEDEVICE=="5"}  {assign var="col_cat_product_lg" value="col-lg-2-4"}{else}{assign var="col_cat_product_lg" value="col-lg-{12/$LISTING_PRODUCT_LARGEDEVICE}"}{/if}
     
     {assign var="colValue" value="col-sp-{12/$LISTING_PRODUCT_MOBILE} col-xs-{12/$LISTING_PRODUCT_EXTRASMALLDEVICE} col-sm-{12/$LISTING_PRODUCT_SMALLDEVICE} col-md-{12/$LISTING_PRODUCT_TABLET} {$col_cat_product_lg} {$col_cat_product_xl}" scope="global"}
+
 {/if}
         
-
-
-
-
 {assign var='nbItemsPerLineTablet' value=$LISTING_PRODUCT_TABLET}
 {assign var='nbItemsPerLineMobile' value=$LISTING_PRODUCT_EXTRASMALLDEVICE}
 {*define numbers of product per line in other page for tablet*}
 {assign var='nbLi' value=$products|count}
-
-{assign var='thumbAffix' value="_thumb.jpg"}
-
 {math equation="nbLi/nbItemsPerLine" nbLi=$nbLi nbItemsPerLine=$nbItemsPerLine assign=nbLines}
 {math equation="nbLi/nbItemsPerLineTablet" nbLi=$nbLi nbItemsPerLineTablet=$nbItemsPerLineTablet assign=nbLinesTablet}
 <!-- Products list -->
@@ -66,13 +60,21 @@
             {if $totModulo == 0}{assign var='totModulo' value=$nbItemsPerLine}{/if}
             {if $totModuloTablet == 0}{assign var='totModuloTablet' value=$nbItemsPerLineTablet}{/if}
             {if $totModuloMobile == 0}{assign var='totModuloMobile' value=$nbItemsPerLineMobile}{/if}
-
-            {if !$smarty.server.REQUEST_URI|strstr:'?page=' && $product@index eq 9}
-                 <div class="col-xs-12">
-                   <img class="img-fluid" src="{$link->getMediaLink($smarty.const._THEME_CAT_DIR_)}{$smarty.get.id_category}_thumb.jpg" />
+            
+{literal}
+<!--
+			{if $smarty.get.id_category == 76 && !$smarty.server.REQUEST_URI|strstr:'?page=' && $product@index eq 5}
+                <div class="col-xs-6 col-md-4">
+                    <a href="https://feeby.herodotus.xyz"><img src="https://feeby.herodotus.xyz/img/cms/category-banners/category-banner-1.jpg"></a>
                 </div>
             {/if}
-
+            {if $smarty.get.id_category == 76 && !$smarty.server.REQUEST_URI|strstr:'?page=' && $product@index eq 11}
+                <div class="col-xs-6 col-md-12">
+                    <a href="https://feeby.herodotus.xyz"><img src="https://feeby.herodotus.xyz/img/cms/category-banners/category-banner.jpg"></a>
+                </div>
+            {/if}
+-->
+{/literal}
             <div class="ajax_block_product {$colValue}
                 {if $smarty.foreach.products.iteration%$nbItemsPerLine == 0} last-in-line
                 {elseif $smarty.foreach.products.iteration%$nbItemsPerLine == 1} first-in-line{/if}

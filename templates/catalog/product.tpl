@@ -260,28 +260,4 @@
 
     </section>
   {/if}
-
-{literal}
-<style>
-@media (min-width: 768px){
-.product-tabs.tabs .nav-tabs .nav-item .nav-link.active:after {
-    background: #000;
-    height: 6px;
-    width: auto;
-}
-
-.product-tabs.tabs .nav-tabs .nav-item .nav-link:after {
-    content: "";
-    position: absolute;
-    top: auto;
-    right: 0;
-    left: 0;
-    height: 0;
-    bottom: 0px;
-    transition: all .4s;
-    width: auto;
-}
-}
-</style>
-{/literal}
 {/block}
