@@ -421,7 +421,7 @@ $(document).ready(function() {
 		}
 
 		//if (value.type == "horizontal" && value.show_cavas == 1)
-		/*if (value.type == "horizontal" && value.show_cavas == 1)
+		if (value.type == "horizontal" && value.show_cavas == 1)
 		{
 			$(document.body).on('click', '[data-toggle="dropdown"]' ,function(){
 				if(!$(this).parent().hasClass('open') && this.href && this.href != '#'){
@@ -429,7 +429,6 @@ $(document).ready(function() {
 				}
 			});
 		}
-         */
 	})
 	$('.dropdown-menu.level1').parent().removeClass('aligned-fullwidth');
 	//js for widget image gallery product
@@ -460,6 +459,7 @@ function leoTopSearchMove(){
       $('#leo_search_block_top').insertBefore( $('.search-dekstop-move') );
 	}
 }
+
 
 //auto calculate height of off canvas menu off
 function auto_height_off(menu_object)

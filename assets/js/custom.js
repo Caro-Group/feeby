@@ -1094,7 +1094,6 @@ function customSticky() {
 	});
 }
 
-
 function onResize(){
     if ($(window).width() >= 769) {
      $('#search_filters_wrapper').collapse('show');
@@ -1126,14 +1125,41 @@ if($(".category-depth-level-2").length){
  var parent = $('#additionallCategoriesFilter');
 
  for(category of categoryItems){
-  category = $('[data-cat-id="' + category + '"]');
-  if(category.length){
+  category = $('[data-cat-id="' + category + '"]').hide();
+  /*if(category.length){
    category.clone();
    category.children().not(':first').remove();
    category.appendTo(parent);
-  }
+  }*/
  }
 }
 
 
+
+
+$(window).load(function () {
+
+    $(".category-top-menu a").each(function(t, el){ 
+      $(this).data('link', $(el).attr('href') );
+    });
+
+      jQuery(".category-top-menu a").each(function(t, el){ 
+        jQuery(el).attr('href', jQuery(el).data('link') + window.location.href.replace(prestashop.page.canonical,''));
+      });
+
+
+    prestashop.on('updateFacets', (param) => {
+      jQuery(".category-top-menu a").each(function(t, el){ 
+        jQuery(el).attr('href', jQuery(el).data('link') + '?' + param.substring(param.indexOf("?") + 1));
+      });
+    });
+});
+
 })(jQuery);
+
+
+
+
+
+
+

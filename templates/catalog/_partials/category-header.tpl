@@ -26,6 +26,7 @@
     {if $listing.pagination.items_shown_from == 1}
         <div class="block-category card card-block">
             {* previous header *}
+	
             <div class="block-category-inner">
                 {if $category.image.large.url && false}
                     <div class="category-cover">

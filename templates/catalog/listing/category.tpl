@@ -23,6 +23,12 @@
  *}
 {extends file='catalog/listing/product-list.tpl'}
 
+{block name='top_header'}
+	<div class="row">
+	  <h1>{$category.meta_keywords}</h1>
+	</div>
+{/block}
+
 {block name='product_list_header'}
   {include file='catalog/_partials/category-header.tpl' listing=$listing category=$category}
   {if isset($LEO_SUBCATEGORY) && $LEO_SUBCATEGORY && isset($subcategories) && count($subcategories) > 0}

@@ -54,7 +54,7 @@
       {/block}
       <section id="wrapper">
        {hook h="displayWrapperTop"}
-       {block name="top_header"}{/block}
+
       {if isset($fullwidth_hook.displayHome) AND $fullwidth_hook.displayHome == 0}
         <div class="container">
       {/if}

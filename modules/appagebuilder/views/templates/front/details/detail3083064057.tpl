@@ -286,7 +286,7 @@ font-size: 16px;
 </script>
 {block name='product_footer'}
 	{hook h='displayFooterProduct' product=$product category=$category}
-{/block}{hook h='displayApSC' sc_key=sc2039205557}
+{/block}
                             </div></div>
 {block name='page_footer_container'}
 	  <footer class="page-footer">
@@ -296,3 +296,4 @@ font-size: 16px;
 	  </footer>
 	{/block}
 </section>
+
