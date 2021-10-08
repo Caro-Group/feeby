@@ -35,6 +35,13 @@
 {/block}
 {block name='hook_footer'}
   <div class="footer-center">
+
+   <div class="container">
+    {if $page_name != 'index' && $page_name != 'cart' && $page_name != 'checkout'}
+     {hook h='ps_emailsubscription'}
+    {/if}
+   </div>
+
     {if isset($fullwidth_hook.displayFooter) AND $fullwidth_hook.displayFooter == 0}
       <div class="container">
     {/if}
