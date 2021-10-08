@@ -8,11 +8,11 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-18.04
+    environment: test
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v1
-        environment: test
         with:
           fetch-depth: 2
       
