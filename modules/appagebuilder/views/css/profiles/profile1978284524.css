@@ -1,0 +1,426 @@
+/*CSS home 8*/
+/***************************************************
+  Mixins Themes 
+/***************************************************/
+/* Mixin Normal*/
+/* Mixin Clear */
+/* Mixin Border */
+/*background RGBA
+============================================*/
+/***************************************************
+  Mixins RTL Themes 
+/***************************************************/
+/************************************ 
+	Override Bootstrap 
+*************************************/
+/**
+ * Web Application Prefix Apply For Making Owner Styles
+ */
+/**
+ *   Blocks Layout Selectors 
+ */
+/***********************************************************************/
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/playfairdisplay/v21/nuFiD-vYSZviVYUb_rj3ij__anPXDTjYgFE_.woff2) format("woff2");
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+/* vietnamese */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/playfairdisplay/v21/nuFiD-vYSZviVYUb_rj3ij__anPXDTPYgFE_.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB; }
+/* latin-ext */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/playfairdisplay/v21/nuFiD-vYSZviVYUb_rj3ij__anPXDTLYgFE_.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+/* latin */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/playfairdisplay/v21/nuFiD-vYSZviVYUb_rj3ij__anPXDTzYgA.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+/* cyrillic */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/playfairdisplay/v21/nuFiD-vYSZviVYUb_rj3ij__anPXDTjYgFE_.woff2) format("woff2");
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+/* vietnamese */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/playfairdisplay/v21/nuFiD-vYSZviVYUb_rj3ij__anPXDTPYgFE_.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB; }
+/* latin-ext */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/playfairdisplay/v21/nuFiD-vYSZviVYUb_rj3ij__anPXDTLYgFE_.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+/* latin */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/playfairdisplay/v21/nuFiD-vYSZviVYUb_rj3ij__anPXDTzYgA.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+/* cyrillic */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/playfairdisplay/v21/nuFiD-vYSZviVYUb_rj3ij__anPXDTjYgFE_.woff2) format("woff2");
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+/* vietnamese */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/playfairdisplay/v21/nuFiD-vYSZviVYUb_rj3ij__anPXDTPYgFE_.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB; }
+/* latin-ext */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/playfairdisplay/v21/nuFiD-vYSZviVYUb_rj3ij__anPXDTLYgFE_.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+/* latin */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/playfairdisplay/v21/nuFiD-vYSZviVYUb_rj3ij__anPXDTzYgA.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+/* cyrillic */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/playfairdisplay/v21/nuFiD-vYSZviVYUb_rj3ij__anPXDTjYgFE_.woff2) format("woff2");
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+/* vietnamese */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/playfairdisplay/v21/nuFiD-vYSZviVYUb_rj3ij__anPXDTPYgFE_.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB; }
+/* latin-ext */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/playfairdisplay/v21/nuFiD-vYSZviVYUb_rj3ij__anPXDTLYgFE_.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+/* latin */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/playfairdisplay/v21/nuFiD-vYSZviVYUb_rj3ij__anPXDTzYgA.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+.page-home .ApColumn .title_block {
+  position: relative;
+  text-align: center;
+  padding: 120px 0 30px;
+  margin: 0 0 50px;
+  font-size: 37px;
+  font-family: 'Playfair Display', serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #648683; }
+  @media (max-width: 1600px) {
+    .page-home .ApColumn .title_block {
+      font-size: 34px; } }
+  @media (max-width: 1199px) {
+    .page-home .ApColumn .title_block {
+      font-size: 30px;
+      padding: 80px 0 30px;
+      margin: 0 0 30px; } }
+  @media (max-width: 991px) {
+    .page-home .ApColumn .title_block {
+      font-size: 28px; } }
+  @media (max-width: 767px) {
+    .page-home .ApColumn .title_block {
+      font-size: 26px;
+      padding: 60px 0 20px;
+      margin: 0 0 30px; } }
+  @media (max-width: 480px) {
+    .page-home .ApColumn .title_block {
+      font-size: 24px; } }
+  .page-home .ApColumn .title_block:before {
+    content: "";
+    width: 117px;
+    height: 1px;
+    background: #000;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%); }
+  .page-home .ApColumn .title_block:after {
+    content: "///";
+    line-height: 20px;
+    background: #ffff;
+    padding: 0 2px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #000;
+    font-size: 12px;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0; }
+
+.contact-form h3,
+.contact-rich h4,
+#blockcart-modal .product-name {
+  font-size: 1.5em; }
+
+#blockcart-modal .modal-title {
+  font-size: 1.2em; }
+
+body#checkout #order-summary-content h4.black,
+body#checkout #order-summary-content h4.h4,
+body#checkout #order-summary-content .col-md-12 > h4.black,
+body#checkout section.checkout-step .address-item .address-alias,
+.leo-cart-item-info .product-name,
+.leoproductsearch-result .ac_results li .lps-result-title {
+  font-weight: 400; }
+
+.box-protabs .ApTabs .nav-tabs li a,
+.box-cateh2 .ApImage .image_description h4,
+.box-cateh2 .ApImage .image_description h3,
+.bannercontainer .tp-caption.f-head, .bannercontainer .tp-caption.fw-head, .bannercontainer .tp-caption.ff-head,
+.box-testimonial .block-carousel-image-container .title,
+.box-banner3 .ApRawHtml h3,
+.box-banner3 .ApRawHtml h4,
+.box-probanner .image_description,
+.box-probanner .image_description h4,
+.box-protabs .ApImage .image_description h4,
+.box-protabs .ApImage .image_description h3,
+.box-shipping3 .ApRawHtml h4,
+.box-shipping4 .ApRawHtml,
+.box-textbn .ApHtml h4,
+.ApCountdown ul li,
+.box-dealof .ApHtml h3,
+.box-dealof .ApHtml h4,
+.box-lookbook2 .ApHtml h3,
+.box-lookbook2 .ApHtml h4,
+.box-cateh8 .ApImage .image_description h3,
+.box-cateh8 .ApImage .image_description h4,
+.box-footerlink2 #block-newsletter-label,
+.box-tabproducts .ApTabs .nav-tabs li a,
+.box-lookbook .ApImage .image_description,
+.box-latestnews .latest-blogs .blog-title .blog-container,
+.box-freeshipping .ApRawHtml,
+.box-banner1 .ApImage .image_description h3,
+.box-banner1 .ApImage .image_description h4,
+.product-line-grid-body > .product-line-info:first-child a.label,
+.card-block .product-name,
+.box-shipping .ApRawHtml h4,
+.product_list.list .thumbnail-container .product-title a,
+#content-hook_order_confirmation .card-title,
+body#checkout #order-summary-content h4.black,
+body#checkout #order-summary-content h4.h4,
+body#checkout #order-summary-content .col-md-12 > h4.black,
+body#checkout section.checkout-step .address-item .address-alias,
+.plist-modez .thumbnail-container .product-title,
+.product-tabs.tabs .nav-tabs .nav-link,
+.contact-form h3,
+.contact-rich h4,
+.leoproductsearch-result .ac_results li .lps-result-title,
+.page-heading,
+.h3.card-title,
+#blog-listing > h1,
+.blog-detail .blog-title,
+.blog-item .title,
+.lql-social-login,
+#main .page-header h1,
+#main .page-header,
+.leo-quicklogin-form h2,
+.product-prices .current-price,
+.quickview h1.h1,
+.block-category.card h1,
+#search_filters > .h6,
+.sidebar .block .title_block,
+.products-section-title,
+#blockcart-modal .modal-title,
+#blockcart-modal .product-name,
+.leo-cart-item-info .product-name,
+.product-detail-name,
+.product-detail .product-prices .product-price {
+  font-family: 'Playfair Display', serif; }
+
+body#checkout #order-summary-content #order-items h3.h3.card-title {
+  font-family: "Poppins", sans-serif; }
+
+.box-shipping {
+  padding: 40px 0; }
+  .box-shipping .ApColumn .block {
+    margin-bottom: 10px; }
+  .box-shipping .ApRawHtml {
+    position: relative;
+    font-size: 13px;
+    font-family: 'Playfair Display', serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: center;
+    padding: 20px 0; }
+    .box-shipping .ApRawHtml i {
+      width: 60px;
+      height: 60px;
+      line-height: 60px;
+      text-align: center;
+      top: 10px;
+      left: 0;
+      font-size: 50px;
+      color: #648683;
+      transition: all .5s;
+      display: block;
+      margin: 0 auto 10px; }
+    .box-shipping .ApRawHtml:hover i {
+      transform: rotate(360deg); }
+    .box-shipping .ApRawHtml p {
+      margin: 0; }
+
+.latest-blogs .blog-image-container {
+  padding-bottom: 100%;
+  position: relative;
+  overflow: hidden; }
+  .latest-blogs .blog-image-container img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all .4s ease-in-out;
+    object-fit: cover; }
+.latest-blogs .blog-container {
+  position: relative; }
+  .latest-blogs .blog-container:hover .blog-image-container img {
+    transform: scale(1.1); }
+  .latest-blogs .blog-container .left-block {
+    width: 50%; }
+  .latest-blogs .blog-container .right-block {
+    position: absolute;
+    padding: 30px;
+    background-color: #fff;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 70px;
+    width: 50%; }
+    @media (min-width: 992px) and (max-width: 1199px) {
+      .latest-blogs .blog-container .right-block {
+        padding: 20px;
+        right: 0; } }
+  .latest-blogs .blog-container p.blog-desc {
+    margin-top: 10px; }
+  .latest-blogs .blog-container .blog-title {
+    font-size: 22px;
+    font-family: 'Playfair Display', serif;
+    font-weight: normal;
+    margin: 0 0 50px;
+    color: #000;
+    text-transform: uppercase;
+    line-height: 30px;
+    max-height: 90px;
+    overflow: hidden; }
+    .latest-blogs .blog-container .blog-title a {
+      color: inherit;
+      display: block;
+      transition: all .4s; }
+      .latest-blogs .blog-container .blog-title a:hover {
+        color: #000; }
+  .latest-blogs .blog-container .blog-meta {
+    color: #9d9d9d; }
+    .latest-blogs .blog-container .blog-meta a {
+      color: inherit;
+      transition: all .4s; }
+      .latest-blogs .blog-container .blog-meta a:hover {
+        color: #000; }
+    .latest-blogs .blog-container .blog-meta > span:after {
+      content: "/";
+      padding: 0 10px; }
+    .latest-blogs .blog-container .blog-meta > span:last-child:after {
+      display: none; }
+.latest-blogs .owl-theme .owl-controls .owl-pagination {
+  margin-top: 50px; }
+.latest-blogs .blog-viewall .btn {
+  background: none;
+  color: #666;
+  letter-spacing: 0.2em;
+  padding: 5px 0;
+  position: relative; }
+  .latest-blogs .blog-viewall .btn:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #eee;
+    transition: all 0.4s cubic-bezier(0.44, 0.13, 0.48, 0.87); }
+  .latest-blogs .blog-viewall .btn:hover {
+    color: #70908d; }
+    .latest-blogs .blog-viewall .btn:hover:before {
+      height: 5px;
+      background: #70908d; }
+@media (max-width: 600px) {
+  .latest-blogs .blog-container .left-block {
+    width: 100%; }
+  .latest-blogs .blog-container .right-block {
+    right: 20px; }
+  .latest-blogs .blog-container .blog-title {
+    font-size: 20px;
+    margin: 0 0 10px; } }
+@media (max-width: 480px) {
+  .latest-blogs .blog-container .right-block {
+    position: static;
+    transform: none;
+    width: 100%;
+    padding: 20px 0 0; } }
+
+div.box-coppy2 {
+  border-top: 1px solid #333; }
+
+.box-smallproducts .ApColumn .title_block {
+  text-align: left;
+  padding: 0;
+  font-size: 22px;
+  font-weight: normal; }
+
+.box-instagram3 .ApColumn .title_block {
+  padding-top: 0; }
+
+div.box-coppy2 {
+  border-top: 1px solid #333; }
+
+/*# sourceMappingURL=profile1978284524.css.map */

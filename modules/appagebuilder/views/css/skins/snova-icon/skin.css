@@ -1,0 +1,64 @@
+@font-face {
+  font-family: 'nova-icons';
+  src: url("../../../../../../assets/fonts/nova-icons.eot?j7twyn");
+  src: url("../../../../../../assets/fonts/nova-icons.eot?j7twyn#iefix") format("embedded-opentype"), url("../../../../../../assets/fonts/nova-icons.ttf?j7twyn") format("truetype"), url("../../../../../../assets/fonts/nova-icons.woff?j7twyn") format("woff"), url("../../../../../../assets/fonts/nova-icons.svg?j7twyn#nova-icons") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+.box-nav1 #leo_search_block_top .title_block:before,
+#leo_search_block_top .btn i:before,
+.box-top #leo_search_block_top .title_block:before {
+  content: "\e9c1";
+  font-family: "nova-icons"; }
+
+.ti-user:before {
+  content: "\e9f1";
+  font-family: "nova-icons"; }
+
+.leo-fly-cart-icon-wrapper a:after,
+.ti-bag:before {
+  content: "\e9ca";
+  font-family: "nova-icons"; }
+
+.ti-heart:before {
+  content: "\e977";
+  font-family: "nova-icons"; }
+
+.product-actions .add-to-cart i {
+  display: inline-block;
+  font-style: normal; }
+  .product-actions .add-to-cart i:before {
+    content: "\e9ca";
+    font-family: "nova-icons"; }
+
+.box-nav1 #leo_search_block_top.active .title_block:before,
+.box-top #leo_search_block_top.active .title_block:before {
+  content: "\ea02";
+  font-family: "nova-icons"; }
+
+.plist-dsimple .thumbnail-container .pro3-btn .quick-view i {
+  font-size: 0px;
+  width: 14px;
+  height: 14px; }
+  .plist-dsimple .thumbnail-container .pro3-btn .quick-view i:before {
+    content: "\e9c1";
+    font-family: "nova-icons";
+    font-size: 14px; }
+
+.plist-dsimple .thumbnail-container .pro3-btn .leo-wishlist-button i {
+  font-size: 0px;
+  width: 14px;
+  height: 14px; }
+  .plist-dsimple .thumbnail-container .pro3-btn .leo-wishlist-button i:before {
+    content: "\e977";
+    font-family: "nova-icons";
+    font-size: 14px; }
+
+.ti-settings:before {
+  content: "\e908";
+  font-family: "nova-icons"; }
+
+.ti-reload:before {
+  content: "\e9cb";
+  font-family: "nova-icons"; }
+
+/*# sourceMappingURL=skin.css.map */

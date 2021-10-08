@@ -1,0 +1,12 @@
+@import url("//fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&display=swap");
+/*
+font-family: 'Oswald', sans-serif;
+*/
+body {
+  font-family: 'Oswald', sans-serif; }
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600; }
+
+/*# sourceMappingURL=skin.css.map */
