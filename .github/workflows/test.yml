@@ -12,6 +12,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v1
+        environment: test
         with:
           fetch-depth: 2
       
