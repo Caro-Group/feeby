@@ -32,18 +32,18 @@
 					{/if}				
 					<form class="form-new-review" action="#" method="post">
 						<div class="form-group">
-						  <label class="form-control-label" for="new_review_title">{l s='Title' mod='leofeature'} <sup class="required">*</sup></label>
-						  <input type="text" class="form-control" id="new_review_title" required="required" name="new_review_title">					  
+						  <label class="form-control-label" for="new_review_title">{l s='Your title' mod='leofeature'}</label>
+						  <input type="text" class="form-control" id="new_review_title" required="required" name="new_review_title"  placeholder="{l s='Your title here' mod='leofeature'}">					  
 						</div>
 						{if $allow_guests == true && !$is_logged}
 							<div class="form-group">
-							  <label class="form-control-label" for="new_review_customer_name">{l s='Your name' mod='leofeature'} <sup class="required">*</sup></label>
-							  <input type="text" class="form-control" id="new_review_customer_name" required="required" name="new_review_customer_name">					  
+							  <label class="form-control-label" for="new_review_customer_name">{l s='Your pseudonim' mod='leofeature'}</label>
+							  <input type="text" class="form-control" id="new_review_customer_name" required="required" name="new_review_customer_name" placeholder="{l s='Your pseudonim here' mod='leofeature'}">					  
 							</div>
 						{/if}
 						<div class="form-group">
-						  <label class="form-control-label" for="new_review_content">{l s='Comment' mod='leofeature'} <sup class="required">*</sup></label>
-						  <textarea type="text" class="form-control" id="new_review_content" required="required" name="new_review_content"></textarea>				  
+						  <label class="form-control-label" for="new_review_content">{l s='Your comment' mod='leofeature'}</label>
+						  <textarea type="text" class="form-control" id="new_review_content" required="required" name="new_review_content">{l s='Your comment here' mod='leofeature'}</textarea>				  
 						</div>
 						<div class="form-group">
 							<input id="id_product_review" name="id_product_review" type="hidden" value='{$product_modal_review->id}' />
@@ -64,3 +64,17 @@
 					</form>
 				</div>
 			</div>
+
+{literal}
+	<style>
+		.form-new-review .form-control-label{ 
+			font-style: normal;
+			font-weight: bold;
+			font-size: 20px;
+			line-height: 27px;
+			display: flex;
+			align-items: center;
+			letter-spacing: -0.015em;
+		}
+	</style>
+{/literal}
