@@ -67,7 +67,7 @@
 
 {literal}
 	<style>
-		.form-new-review .form-control-label{ 
+		.review-form .form-control-label{ 
 			font-style: normal;
 			font-weight: bold;
 			font-size: 20px;
