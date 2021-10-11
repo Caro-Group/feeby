@@ -8,7 +8,7 @@
 
 
 			<div class="" style="display:flex;flex-direction:row;flex-wrap:wrap;">
-				<div style="display:flex;align-items: flex-start;justify-content: center;flex: 1 1 33.333333%;display: flex;flex-direction: column;padding-left: 30px;">
+				<div class="review-title" style="">
 					<span style="font-style: normal;font-weight: bold;font-size: 25px;line-height: 34px;display: flex;align-items: center;letter-spacing: -0.015em;color: #424242;">{l s='Do you have this product?' mod='leofeature'}</span>
 					<span style="font-style: normal;font-weight: bold;font-size: 20px;line-height: 27px;display: flex;align-items: center;letter-spacing: -0.015em;color: #424242;">{l s='Tell others how you rate it!' mod='leofeature'}</span>
 				</div>
@@ -75,6 +75,20 @@
 			display: flex;
 			align-items: center;
 			letter-spacing: -0.015em;
+		}
+
+		.review-title{
+			display:flex;
+			flex: 1 1 auto;
+			align-items: flex-start;justify-content: center;display: flex;flex-direction: column;margin-bottom: 30px;
+		}
+
+		@media(min-width: 992px){
+			.review-title{
+				flex: 1 1 33.333333%;
+				padding-left: 30px;
+				margin-bottom: 0;
+			}
 		}
 	</style>
 {/literal}
