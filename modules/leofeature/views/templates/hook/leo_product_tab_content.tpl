@@ -15,15 +15,15 @@
 {/if}
 
 		<div id="product_reviews_block_tab">
-			<span style="font-family: Open Sans;font-style: normal;font-weight: bold;font-size: 20px;line-height: 27px;display: flex;align-items: center;letter-spacing: -0.015em;text-transform: uppercase;color: #424242;margin-bottom:60px;">{l s='Yours opinion' mod='leofeature'}</span>
+			<span style="font-style: normal;font-weight: bold;font-size: 20px;line-height: 27px;display: flex;align-items: center;letter-spacing: -0.015em;text-transform: uppercase;color: #424242;margin-bottom:60px;">{l s='Yours opinion' mod='leofeature'}</span>
 			<div style="display: flex;flex-direction: row;flex-wrap: wrap;width: 100%;">
 				{if $reviews}
 					{foreach from=$reviews item=review}
 						{if $review.content}
 						<div class="review" style="max-width: 50%;flex: 1 1 auto;padding: 0 30px 60px;" itemprop="review" itemscope itemtype="https://schema.org/Review">
-							<div class="review-info row">
+							<div class="review-info">
 
-								<div class="review_details col-sm-9">
+								<div class="review_details">
 									<p itemprop="name" class="title_block">
 										<strong>{$review.title}</strong>
 									</p>
@@ -31,7 +31,7 @@
 									
 								</div><!-- .review_details -->
 								
-								<div class="review_author col-sm-3">
+								<div class="review_author">
 									<div class="review_author_infos" style="display: flex;justify-content: space-between;flex-wrap: wrap;">
 										<div>
 											<div class="star_content clearfix"  itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
@@ -104,6 +104,6 @@
 
 {literal}
 	<style>
-
+		#product_reviews_block_tab .review_author{border-right: 0px;}
 	</style>
 {/literal}
