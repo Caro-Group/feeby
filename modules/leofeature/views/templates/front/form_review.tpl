@@ -9,8 +9,8 @@
 
 			<div class="" style="display:flex;flex-direction:row;flex-wrap:wrap;">
 				<div style="display:flex;align-items: flex-start;justify-content: center;flex: 1 1 25%;display: flex;flex-direction: column;padding-left: 30px;">
-					<span>{l s='Do you have this product?' mod='leofeature'}</span>
-					<span>{l s='Tell others how you rate it!' mod='leofeature'}</span>
+					<span style="font-style: normal;font-weight: bold;font-size: 25px;line-height: 34px;display: flex;align-items: center;letter-spacing: -0.015em;color: #424242;">{l s='Do you have this product?' mod='leofeature'}</span>
+					<span style="font-style: normal;font-weight: bold;font-size: 20px;line-height: 27px;display: flex;align-items: center;letter-spacing: -0.015em;color: #424242;">{l s='Tell others how you rate it!' mod='leofeature'}</span>
 				</div>
 				<div class="new_review_form_content col-xs-12 col-sm-12" style="flex: 1 1 75%;">
 					{if $criterions|@count > 0}
