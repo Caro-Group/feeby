@@ -48,9 +48,9 @@
 						<div class="form-group">
 							<input id="id_product_review" name="id_product_review" type="hidden" value='{$product_modal_review->id}' />
 						</div>
-						<div style="display: flex;flex-direction: revert;flex-wrap: wrap;justify-content: space-between;">
+						<div style="display: flex;flex-direction: revert;justify-content: space-between; align-items: flex-start;padding-top: 10px;">
 							<div class="form-group">
-								<label class="form-control-label" for="new_review_customer_agreement" style="font-style: normal;font-weight: normal;font-size: 12px;line-height: 16px;">
+								<label class="form-control-label" for="new_review_customer_agreement" style="font-style: normal;font-weight: normal;font-size: 12px;line-height: 16px;    padding: 0;">
 									<input id="new_review_customer_agreement" type="checkbox" required="required" style="margin-right:10px">{l s='Content of consent to the processing of personal data.' mod='leofeature'}
 								</label>
 							</div>
