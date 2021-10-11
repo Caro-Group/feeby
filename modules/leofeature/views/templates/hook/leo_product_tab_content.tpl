@@ -14,8 +14,6 @@
 	<div class="tab-pane fade in active" id="leo-product-show-review-content">	
 {/if}
 
-        <div data-review-form data-id-product="{$id_product_tab_content}" data-is-logged="{$customer.is_logged}" data-product-link="{$link_product_tab_content}"></div>
-
 		<div id="product_reviews_block_tab">
 			{if $reviews}
 				{foreach from=$reviews item=review}
@@ -85,10 +83,8 @@
 					{/if}
 				{/foreach}
 			{/if}
-
-
-
 		</div> 
+		
 {if isset($USE_PTABS) && $USE_PTABS == 'default'}
 		
 {else if isset($USE_PTABS) && $USE_PTABS == 'accordion'}
@@ -98,4 +94,4 @@
 	</div>	
 {/if}
 
-
+<div data-review-form data-id-product="{$id_product_tab_content}" data-is-logged="{$customer.is_logged}" data-product-link="{$link_product_tab_content}"></div>
