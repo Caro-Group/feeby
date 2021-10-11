@@ -12,7 +12,7 @@
 					<span style="font-style: normal;font-weight: bold;font-size: 25px;line-height: 34px;display: flex;align-items: center;letter-spacing: -0.015em;color: #424242;">{l s='Do you have this product?' mod='leofeature'}</span>
 					<span style="font-style: normal;font-weight: bold;font-size: 20px;line-height: 27px;display: flex;align-items: center;letter-spacing: -0.015em;color: #424242;">{l s='Tell others how you rate it!' mod='leofeature'}</span>
 				</div>
-				<div class="new_review_form_content col-xs-12 col-sm-12" style="flex: 1 1 66.666667%">
+				<div class="new_review_form_content col-xs-12 col-sm-12" style="flex: 1 1 50%;padding:0;">
 					{if $criterions|@count > 0}
 						<ul id="criterions_list">
 						{foreach from=$criterions item='criterion'}
@@ -83,10 +83,11 @@
 			align-items: flex-start;justify-content: center;display: flex;flex-direction: column;margin-bottom: 30px;
 		}
 
-		@media(min-width: 992px){
+		@media(min-width: 1200px){
 			.review-title{
-				flex: 1 1 33.333333%;
+				flex: 1 1 auto;
 				padding-left: 30px;
+				padding-right: 30px;
 				margin-bottom: 0;
 			}
 		}
