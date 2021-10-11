@@ -68,6 +68,7 @@ jobs:
         with:
           username: ${{ secrets.REMOTE_USER }}
           server: ${{ secrets.REMOTE_HOST }}
+          port: ${{ secrets.REMOTE_PORT }}
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
           local_path: './*'
           remote_path: ${{ secrets.TARGET }}
