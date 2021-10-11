@@ -44,7 +44,7 @@
 										<meta itemprop="ratingValue" content = "{$review.grade|escape:'html':'UTF-8'}" />
 										<meta itemprop="bestRating" content = "5" />
 									</div>
-									<div class="review_author_infos">
+									<div class="review_author_infos" style="display: flex;justify-content: space-between;flex-wrap: wrap;">
 										<strong itemprop="author">{$review.customer_name|escape:'html':'UTF-8'}</strong>
 										<meta itemprop="datePublished" content="{$review.date_add|escape:'html':'UTF-8'|substr:0:10}" />
 										<em>{dateFormat date=$review.date_add|escape:'html':'UTF-8' full=0}</em>
@@ -54,7 +54,7 @@
 							</div>
 							
 							<div class="review_button">
-								<ul>
+								<ul style="display: flex;flex-direction: row;justify-content: space-between;align-items: baseline;">
 									{if $review.total_advice > 0}
 										<li>
 											{l s='%1$d out of %2$d people found this review useful.' sprintf=[$review.total_useful,$review.total_advice] mod='leofeature'}
