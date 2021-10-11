@@ -227,8 +227,8 @@ $(document).ready(function(){
 function activeStar()
 {
 	//DONGND:: add txt cancel rating to translate
-	$('input.star').rating({initialRating: 5,cancel: cancel_rating_txt});
-	$('.auto-submit-star').rating({initialRating: 5,cancel: cancel_rating_txt});
+	$('input.star').rating({cancel: cancel_rating_txt});
+	$('.auto-submit-star').rating({cancel: cancel_rating_txt});
 }
 
 function activeEventModalReview()
