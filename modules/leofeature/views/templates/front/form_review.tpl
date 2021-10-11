@@ -51,7 +51,7 @@
 						<div style="display: flex;flex-direction: revert;flex-wrap: wrap;justify-content: space-between;">
 							<div class="form-group">
 								<label class="form-control-label" for="new_review_customer_agreement" style="font-style: normal;font-weight: normal;font-size: 12px;line-height: 16px;">
-									<input id="new_review_customer_agreement" type="checkbox" required="required">{l s='Content of consent to the processing of personal data.' mod='leofeature'}
+									<input id="new_review_customer_agreement" type="checkbox" required="required" style="margin-right:10px">{l s='Content of consent to the processing of personal data.' mod='leofeature'}
 								</label>
 							</div>
 							<button class="btn btn-primary form-control-submit leo-fake-button pull-xs-right leo-modal-review-bt btn btn-primary" type="submit">
