@@ -23,7 +23,7 @@
 						<div class="review" style="max-width: 50%;flex: 1 1 auto;padding: 0 30px 60px;" itemprop="review" itemscope itemtype="https://schema.org/Review">
 							<div class="review-info">
 
-								<div class="review_details">
+								<div class="review_details" style="margin-bottom: 20px;">
 									<p itemprop="name" class="title_block">
 										<strong>{$review.title}</strong>
 									</p>
@@ -33,7 +33,7 @@
 								
 								<div class="review_author">
 									<div class="review_author_infos" style="display: flex;justify-content: space-between;flex-wrap: wrap;">
-										<div>
+										<div style="display: flex;align-items: center;justify-content: flex-start;flex-wrap: wrap;">
 											<div class="star_content clearfix"  itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
 												{section name="i" start=0 loop=5 step=1}
 													{if $review.grade le $smarty.section.i.index}
@@ -105,5 +105,7 @@
 {literal}
 	<style>
 		#product_reviews_block_tab .review_author{border-right: 0px;}
+
+		.product-tabs.tabs .tab-content{    width: auto;}
 	</style>
 {/literal}
