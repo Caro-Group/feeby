@@ -34,7 +34,7 @@
 								<div class="review_author">
 									<div class="review_author_infos" style="display: flex;justify-content: space-between;flex-wrap: wrap;">
 										<div style="display: flex;align-items: center;justify-content: flex-start;flex-wrap: wrap;">
-											<div class="star_content clearfix"  itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+											<div style="margin-right: 10px;" class="star_content clearfix"  itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
 												{section name="i" start=0 loop=5 step=1}
 													{if $review.grade le $smarty.section.i.index}
 														<div class="star"></div>
