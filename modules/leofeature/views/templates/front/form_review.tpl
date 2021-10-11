@@ -43,7 +43,7 @@
 						{/if}
 						<div class="form-group">
 						  <label class="form-control-label" for="new_review_content">{l s='Your comment' mod='leofeature'}</label>
-						  <textarea type="text" class="form-control" id="new_review_content" required="required" name="new_review_content">{l s='Your comment here' mod='leofeature'}</textarea>				  
+						  <textarea type="text" class="form-control" id="new_review_content" required="required" name="new_review_content" placeholder="{l s='Your comment here' mod='leofeature'}"></textarea>				  
 						</div>
 						<div class="form-group">
 							<input id="id_product_review" name="id_product_review" type="hidden" value='{$product_modal_review->id}' />
