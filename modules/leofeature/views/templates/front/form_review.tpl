@@ -33,17 +33,17 @@
 					<form class="form-new-review" action="#" method="post">
 						<div class="form-group">
 						  <label class="form-control-label" for="new_review_title">{l s='Title' mod='leofeature'} <sup class="required">*</sup></label>
-						  <input type="text" class="form-control" id="new_review_title" required="" name="new_review_title">					  
+						  <input type="text" class="form-control" id="new_review_title" required="required" name="new_review_title">					  
 						</div>
 						{if $allow_guests == true && !$is_logged}
 							<div class="form-group">
 							  <label class="form-control-label" for="new_review_customer_name">{l s='Your name' mod='leofeature'} <sup class="required">*</sup></label>
-							  <input type="text" class="form-control" id="new_review_customer_name" required="" name="new_review_customer_name">					  
+							  <input type="text" class="form-control" id="new_review_customer_name" required="required" name="new_review_customer_name">					  
 							</div>
 						{/if}
 						<div class="form-group">
 						  <label class="form-control-label" for="new_review_content">{l s='Comment' mod='leofeature'} <sup class="required">*</sup></label>
-						  <textarea type="text" class="form-control" id="new_review_content" required="" name="new_review_content"></textarea>				  
+						  <textarea type="text" class="form-control" id="new_review_content" required="required" name="new_review_content"></textarea>				  
 						</div>
 						<div class="form-group">
 							<input id="id_product_review" name="id_product_review" type="hidden" value='{$product_modal_review->id}' />
@@ -51,7 +51,7 @@
 						<div style="display: flex;flex-direction: revert;flex-wrap: wrap;justify-content: space-between;">
 							<div class="form-group">
 								<label class="form-control-label" for="new_review_customer_agreement">
-									<input id="new_review_customer_agreement" type="checkbox" required="">{l s='Content of consent to the processing of personal data.' mod='leofeature'}
+									<input id="new_review_customer_agreement" type="checkbox" required="required">{l s='Content of consent to the processing of personal data.' mod='leofeature'}
 								</label>
 							</div>
 							<button class="btn btn-primary form-control-submit leo-fake-button pull-xs-right leo-modal-review-bt btn btn-primary" type="submit">

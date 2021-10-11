@@ -239,7 +239,7 @@ function activeEventModalReview()
 			return false;
 		}
 	});
-	$('.leo-modal-review').on('show.bs.modal', function (e) {
+	//$('.leo-modal-review').on('show.bs.modal', function (e) {
 		$('.leo-modal-review-bt').click(function(){
 			if (!$(this).hasClass('active'))
 			{
@@ -321,8 +321,8 @@ function activeEventModalReview()
 				$('.leo-fake-button').trigger('click');
 			}
 			
-		})
-	})
+		});
+	//})
 	
 	$('.leo-modal-review').on('hide.bs.modal', function (e) {
 		// console.log($('.leo-modal-review-bt').length);
