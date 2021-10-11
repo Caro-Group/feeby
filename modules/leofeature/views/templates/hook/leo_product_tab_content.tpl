@@ -20,7 +20,7 @@
 				{if $reviews}
 					{foreach from=$reviews item=review}
 						{if $review.content}
-						<div class="review" style="max-width: 50%;flex: 1 1 auto;padding: 0 30px 60px;" itemprop="review" itemscope itemtype="https://schema.org/Review">
+						<div class="review" style="flex: 1 1 50%;padding: 0 30px 60px;margin-bottom: 40px;" itemprop="review" itemscope itemtype="https://schema.org/Review">
 							<div class="review-info">
 
 								<div class="review_details" style="margin-bottom: 20px;">
@@ -100,12 +100,17 @@
 	</div>	
 {/if}
 
-<div data-review-form data-id-product="{$id_product_tab_content}" data-is-logged="{$customer.is_logged}" data-product-link="{$link_product_tab_content}"></div>
+<div class="review-form" data-review-form data-id-product="{$id_product_tab_content}" data-is-logged="{$customer.is_logged}" data-product-link="{$link_product_tab_content}"></div>
 
 {literal}
 	<style>
 		#product_reviews_block_tab .review_author{border-right: 0px;}
 
 		.product-tabs.tabs .tab-content{    width: auto;}
+
+		.review-form{ 
+			padding: 80px;
+    	background: #F5F5F5;
+		}
 	</style>
 {/literal}

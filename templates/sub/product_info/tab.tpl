@@ -88,7 +88,7 @@
 		</div>
 	</div>
 
-	<div class="product-tabs tabs">
+	<div class="product-tabs tabs reviews">
 	  	<ul class="nav nav-tabs" role="tablist">
 			{hook h='displayLeoProductTab' product=$product}
 	  	</ul>
@@ -111,6 +111,11 @@
     margin-bottom: 10px;
     width: 100%;
 }
+
+.product-tabs.tabs.reviews{
+    border: 0;
+}
+
 </style>
 {/literal}
 
