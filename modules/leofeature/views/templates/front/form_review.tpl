@@ -91,5 +91,7 @@
 				margin-bottom: 0;
 			}
 		}
+
+		.star_content .cancel{display:none;}
 	</style>
 {/literal}
