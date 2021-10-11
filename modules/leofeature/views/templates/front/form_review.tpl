@@ -17,7 +17,7 @@
 						<ul id="criterions_list">
 						{foreach from=$criterions item='criterion'}
 							<li>
-								{if isset($criterion.name) && $criterion.name != ''}<label class="form-control-label">{$criterion.name|escape:'html':'UTF-8'}:</label>{/if}
+								{if isset($criterion.name) && $criterion.name != ''}<label class="form-control-label" style="margin: auto 20px 0 0;line-height: normal;float: none;display: block;padding: 0;">{$criterion.name|escape:'html':'UTF-8'}:</label>{/if}
 								<div class="star_content">
 									<input class="star not_uniform" type="radio" name="criterion[{$criterion.id_product_review_criterion|round}]" value="1" />
 									<input class="star not_uniform" type="radio" name="criterion[{$criterion.id_product_review_criterion|round}]" value="2" />
