@@ -110,6 +110,7 @@
 
 		.review-form{ 
     	background: #F5F5F5;
+			padding: 15px;
 		}
 
 		@media(min-width: 992px){			
