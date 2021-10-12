@@ -142,7 +142,9 @@ display:flex;
 }
 
 .product-icons-description{
-    flex: 0 0 500px;
+    flex: 0 0 auto;
+		max-width: 500px;
+    width: 100%;
 }
 
 .product-icons-description .ApImage{
