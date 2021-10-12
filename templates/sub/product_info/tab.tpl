@@ -117,7 +117,7 @@
 }
 
 .product-tabs.tabs .nav-tabs .nav-item{
-	margin: 0;
+	margin: 0 10px 0 0;
 }
 
 @media(max-width: 400px){
