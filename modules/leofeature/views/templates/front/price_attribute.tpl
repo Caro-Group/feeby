@@ -8,7 +8,7 @@
 {if $product_price_attribute.show_price}
 	{if $product_price_attribute.has_discount}
 		{hook h='displayProductPriceBlock' product=$product_price_attribute type="old_price"}
-		<span class="sr-only">{l s='Regular price' mod='leofeature'}</span>
+		<span class="sr-only">{l s='Regular price' d='Modules.Leofeature.Shop'}</span>
 		<span class="regular-price">{$product_price_attribute.regular_price}</span>
 		{if $product_price_attribute.discount_type === 'percentage'}
 			<span class="discount-percentage discount-product">{$product_price_attribute.discount_percentage}</span>
@@ -19,7 +19,7 @@
 
 	{hook h='displayProductPriceBlock' product=$product_price_attribute type="before_price"}
 
-	<span class="sr-only">{l s='Price' mod='leofeature'}</span>
+	<span class="sr-only">{l s='Price' d='Modules.Leofeature.Shop'}</span>
 	<span itemprop="price" class="price">{$product_price_attribute.price}</span>
 
 	{hook h='displayProductPriceBlock' product=$product_price_attribute type='unit_price'}

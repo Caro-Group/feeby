@@ -8,7 +8,7 @@
 
 <tr class="comparison_header">
     <td class="feature-name td_empty">
-    	<span>{l s='Reviews' mod='leofeature'}</span>
+    	<span>{l s='Reviews' d='Modules.Leofeature.Shop'}</span>
     </td>
     {foreach from=$list_ids_product item=id_product}
     	<td class="product-{$id_product}"></td>
@@ -41,7 +41,7 @@
 {cycle values='comparison_feature_odd,comparison_feature_even' assign='classname'}
 <tr>
     <td  class="{$classname} feature-name">
-    	<strong>{l s='Average' mod='leofeature'}</strong>
+    	<strong>{l s='Average' d='Modules.Leofeature.Shop'}</strong>
     </td>
 	{foreach from=$list_ids_product item=id_product}
 		<td class="{$classname} comparison_infos product-{$id_product}" align="center" >
@@ -65,7 +65,7 @@
     		{if isset($product_reviews[$id_product]) AND $product_reviews[$id_product]}		
 				<div class="dropup leo-compare-review-dropdown">
 					<button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">					
-							{l s='View reviews' mod='leofeature'}					
+							{l s='View reviews' d='Modules.Leofeature.Shop'}					
 					  </button>
 					<div class="dropdown-menu">						
 						{foreach from=$product_reviews[$id_product] item=review}	

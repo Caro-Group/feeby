@@ -15,7 +15,7 @@
 {/if}
 
 		<div id="product_reviews_block_tab">
-			<span class="product-opinion-title">{l s='Yours opinion' mod='leofeature'}</span>
+			<span class="product-opinion-title">{l s='Yours opinion' d='Modules.Leofeature.Shop'}</span>
 			<div style="display: flex;flex-direction: row;flex-wrap: wrap;width: 100%;">
 				{if $reviews}
 					{foreach from=$reviews item=review}
@@ -59,25 +59,25 @@
 								<ul style="display: flex;flex-direction: row;justify-content: space-between;align-items: baseline;">
 									{if $review.total_advice > 0}
 										<li>
-											{l s='%1$d out of %2$d people found this review useful.' sprintf=[$review.total_useful,$review.total_advice] mod='leofeature'}
+											{l s='%1$d out of %2$d people found this review useful.' sprintf=[$review.total_useful,$review.total_advice] d='Modules.Leofeature.Shop'}
 										</li>
 									{/if}
 									{if $customer.is_logged}
 										{if !$review.customer_advice && $allow_usefull_button}
 										<li>
-											<span>{l s='Was this review useful to you?' mod='leofeature'}</span>
+											<span>{l s='Was this review useful to you?' d='Modules.Leofeature.Shop'}</span>
 											<button class="usefulness_btn btn btn-default button button-small" data-is-usefull="1" data-id-product-review="{$review.id_product_review}">
-												<span>{l s='Yes' mod='leofeature'}</span>
+												<span>{l s='Yes' d='Modules.Leofeature.Shop'}</span>
 											</button>
 											<button class="usefulness_btn btn btn-default button button-small" data-is-usefull="0" data-id-product-review="{$review.id_product_review}">
-												<span>{l s='No' mod='leofeature'}</span>
+												<span>{l s='No' d='Modules.Leofeature.Shop'}</span>
 											</button>
 										</li>
 										{/if}
 										{if !$review.customer_report && $allow_report_button}
 										<li>
 											<a href="javascript:void(0)" class="btn report_btn" data-id-product-review="{$review.id_product_review}">
-												{l s='Report abuse' mod='leofeature'}
+												{l s='Report abuse' d='Modules.Leofeature.Shop'}
 											</a>
 										</li>
 										{/if}

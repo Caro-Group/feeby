@@ -11,10 +11,10 @@
 	<section id="main">
 		<div id="view_wishlist">
 			{if isset($current_wishlist)}
-				<h2>{l s='Wishlist' mod='leofeature'} "{$current_wishlist.name}"</h2>
+				<h2>{l s='Wishlist' d='Modules.Leofeature.Shop'} "{$current_wishlist.name}"</h2>
 				{if $wishlists}
 				<p>
-					{l s='Other wishlists of ' mod='leofeature'}{$current_wishlist.firstname} {$current_wishlist.lastname} :
+					{l s='Other wishlists of ' d='Modules.Leofeature.Shop'}{$current_wishlist.firstname} {$current_wishlist.lastname} :
 					{foreach from=$wishlists item=wishlist_item name=i}				
 						<a href="{$view_wishlist_url}{if $leo_is_rewrite_active}?{else}&{/if}token={$wishlist_item.token}" title="{$wishlist_item.name}" rel="nofollow">{$wishlist_item.name}</a>
 						{if !$smarty.foreach.i.last}
@@ -78,10 +78,10 @@
 												<input class="form-control wishlist-product-quantity wishlist-product-quantity-{$wishlist.id_wishlist_product}" type="{if $show_button_cart}hidden{else}number{/if}" data-min=1 value="{$wishlist.quantity}">					
 												<div class="form-group">
 													<label>
-														<strong>{l s='Priority' mod='leofeature'}: </strong>
-														{if $wishlist.priority == 0}{l s='High' mod='leofeature'}{/if}
-														{if $wishlist.priority == 1}{l s='Medium' mod='leofeature'}{/if}
-														{if $wishlist.priority == 2}{l s='Low' mod='leofeature'}{/if}
+														<strong>{l s='Priority' d='Modules.Leofeature.Shop'}: </strong>
+														{if $wishlist.priority == 0}{l s='High' d='Modules.Leofeature.Shop'}{/if}
+														{if $wishlist.priority == 1}{l s='Medium' d='Modules.Leofeature.Shop'}{/if}
+														{if $wishlist.priority == 2}{l s='Low' d='Modules.Leofeature.Shop'}{/if}
 													</label>									
 												</div>
 											</div>
@@ -90,12 +90,12 @@
 								</div>
 							{/foreach}
 						{else}
-							<div class="alert alert-warning col-xl-12">{l s='No products' mod='leofeature'}</div>
+							<div class="alert alert-warning col-xl-12">{l s='No products' d='Modules.Leofeature.Shop'}</div>
 						{/if}
 					</div>
 				</section>
 			{else}
-				<div class="alert alert-warning col-xl-12">{l s='Wishlist does not exist' mod='leofeature'}</div>
+				<div class="alert alert-warning col-xl-12">{l s='Wishlist does not exist' d='Modules.Leofeature.Shop'}</div>
 			{/if}
 		</div>
 	</section>

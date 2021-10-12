@@ -8,9 +8,9 @@
 {if $isLogged}
     <a class="logout" href="{$logout_url|escape:'html':'UTF-8'}" rel="nofollow">
         <i class="material-icons">&#xE879;</i>      
-        <span class="hidden-sm-down">{l s='Sign out' mod='leoquicklogin'}</span>
+        <span class="hidden-sm-down">{l s='Sign out' d='Modules.Leoquicklogin.Shop'}</span>
     </a>
-    <a class="account" href="{$my_account_url|escape:'html':'UTF-8'}" title="{l s='View My Account' mod='leoquicklogin'}" rel="nofollow">
+    <a class="account" href="{$my_account_url|escape:'html':'UTF-8'}" title="{l s='View My Account' d='Modules.Leoquicklogin.Shop'}" rel="nofollow">
         <i class="material-icons">&#xE7FD;</i>
         <span class="hidden-sm-down">{$customerName|escape:'html':'UTF-8'}</span>
     </a>
@@ -34,10 +34,10 @@
                aria-haspopup="true"
                aria-expanded="false"
                {/if}
-               title="{l s='Quick Login' mod='leoquicklogin'}"
+               title="{l s='Quick Login' d='Modules.Leoquicklogin.Shop'}"
                rel="nofollow">
                 <i class="material-icons">&#xE851;</i>
-                <span class="hidden-sm-down">{l s='Quick Login' mod='leoquicklogin'}</span>
+                <span class="hidden-sm-down">{l s='Quick Login' d='Modules.Leoquicklogin.Shop'}</span>
             </a>
         {if $leo_type == 'dropdown' || $leo_type == 'dropup'}
                 <div class="dropdown-menu leo-dropdown-wrapper">

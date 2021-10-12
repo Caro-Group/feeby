@@ -9,22 +9,22 @@
 
 {block name='content'}
 	<section id="main">
-		{capture name=path}{l s='Products Comparison' mod='leofeature'}{/capture}
-		<h1 class="page-heading">{l s='Products Comparison' mod='leofeature'}</h1>
+		{capture name=path}{l s='Products Comparison' d='Modules.Leofeature.Shop'}{/capture}
+		<h1 class="page-heading">{l s='Products Comparison' d='Modules.Leofeature.Shop'}</h1>
 		{if $hasProduct}
 			<div class="products_block">
 				<table id="product_comparison" class="table table-bordered table-responsive">
 					<tr>
 						<td class="td_empty compare_extra_information">
 							
-							<span>{l s='Features:' mod='leofeature'}</span>
+							<span>{l s='Features:' d='Modules.Leofeature.Shop'}</span>
 						</td>
 						
 						{foreach from=$products item=product name=for_products}
 							{assign var='replace_id' value=$product.id|cat:'|'}
 							<td class="product-miniature js-product-miniature leo-productscompare-item product-{$product.id_product}" data-id-product="{$product.id_product}" data-id-product-attribute="{$product.id_product_attribute}" itemscope itemtype="http://schema.org/Product">
 								<div class="delete-productcompare clearfix">
-									<a class="leo-compare-button btn delete" href="#" title="{l s='Remove from Compare' mod='leofeature'}" data-id-product="{$product.id_product}"><i class="material-icons">&#xE872;</i>
+									<a class="leo-compare-button btn delete" href="#" title="{l s='Remove from Compare' d='Modules.Leofeature.Shop'}" data-id-product="{$product.id_product}"><i class="material-icons">&#xE872;</i>
 									</a>
 								</div>
 							  <div class="thumbnail-container clearfix">
@@ -115,7 +115,7 @@
 					{else}
 						<tr>
 							<td></td>
-							<td colspan="{$products|@count}" class="text-center">{l s='No features to compare' mod='leofeature'}</td>
+							<td colspan="{$products|@count}" class="text-center">{l s='No features to compare' d='Modules.Leofeature.Shop'}</td>
 						</tr>
 					{/if}
 					
@@ -123,13 +123,13 @@
 				</table>
 			</div> <!-- end products_block -->
 		{else}
-			<p class="alert alert-warning">{l s='There are no products selected for comparison.' mod='leofeature'}</p>
+			<p class="alert alert-warning">{l s='There are no products selected for comparison.' d='Modules.Leofeature.Shop'}</p>
 		{/if}
 		<ul class="footer_link">
 			<li>
 				<a class="button lnk_view btn btn-outline btn-sm" href="{$urls.base_url}">
 					<i class="material-icons">&#xE317;</i>
-					<span>{l s='Continue Shopping' mod='leofeature'}</span>
+					<span>{l s='Continue Shopping' d='Modules.Leofeature.Shop'}</span>
 				</a>
 			</li>
 		</ul>

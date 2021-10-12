@@ -16,12 +16,12 @@
 	<td class="wishlist-numberproduct wishlist-numberproduct-{$wishlist->id}">0</td>
 	<td>0</td>
 	<td class="wishlist-datecreate">{$wishlist->date_add}</td>					
-	<td><a class="view-wishlist" data-token="{$wishlist->token}" target="_blank" href="{$url_view_wishlist}" title="{l s='View' mod='leofeature'}">{l s='View' mod='leofeature'}</a></td>
+	<td><a class="view-wishlist" data-token="{$wishlist->token}" target="_blank" href="{$url_view_wishlist}" title="{l s='View' d='Modules.Leofeature.Shop'}">{l s='View' d='Modules.Leofeature.Shop'}</a></td>
 	<td>
 		<label class="form-check-label">
 			<input class="default-wishlist form-check-input" data-id-wishlist="{$wishlist->id}" type="checkbox" {$checked}>
 		</label>
 	</td>
-	<td><a class="delete-wishlist" data-id-wishlist="{$wishlist->id}" href="javascript:void(0)" title="{l s='Delete' mod='leofeature'}"><i class="material-icons">&#xE872;</i></a></td>
+	<td><a class="delete-wishlist" data-id-wishlist="{$wishlist->id}" href="javascript:void(0)" title="{l s='Delete' d='Modules.Leofeature.Shop'}"><i class="material-icons">&#xE872;</i></a></td>
 </tr>
 

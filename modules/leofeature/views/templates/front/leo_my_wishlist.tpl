@@ -10,11 +10,11 @@
 {block name='content'}
 	<section id="main">
 		<div id="mywishlist">
-			<h2>{l s='New wishlist' mod='leofeature'}</h2>
+			<h2>{l s='New wishlist' d='Modules.Leofeature.Shop'}</h2>
 			<div class="new-wishlist">
 				<div class="form-group">
-					<label for="wishlist_name">{l s='Name' mod='leofeature'}</label>
-					<input type="text" class="form-control" id="wishlist_name" placeholder="{l s='Enter name of new wishlist' mod='leofeature'}">
+					<label for="wishlist_name">{l s='Name' d='Modules.Leofeature.Shop'}</label>
+					<input type="text" class="form-control" id="wishlist_name" placeholder="{l s='Enter name of new wishlist' d='Modules.Leofeature.Shop'}">
 				</div>
 				<div class="form-group has-success">
 					<div class="form-control-feedback"></div>			 
@@ -25,7 +25,7 @@
 				<button type="submit" class="btn btn-primary leo-save-wishlist-bt">
 					<span class="leo-save-wishlist-loading cssload-speeding-wheel"></span>
 					<span class="leo-save-wishlist-bt-text">
-						{l s='Save' mod='leofeature'}
+						{l s='Save' d='Modules.Leofeature.Shop'}
 					</span>
 				</button>
 			</div>
@@ -34,13 +34,13 @@
 					<table class="table table-striped">
 					  <thead class="wishlist-table-head">
 						<tr>
-						  <th>{l s='Name' mod='leofeature'}</th>
-						  <th>{l s='Quantity' mod='leofeature'}</th>
-						  <th>{l s='Viewed' mod='leofeature'}</th>
-						  <th class="wishlist-datecreate-head">{l s='Created' mod='leofeature'}</th>
-						  <th>{l s='Direct Link' mod='leofeature'}</th>
-						  <th>{l s='Default' mod='leofeature'}</th>
-						  <th>{l s='Delete' mod='leofeature'}</th>
+						  <th>{l s='Name' d='Modules.Leofeature.Shop'}</th>
+						  <th>{l s='Quantity' d='Modules.Leofeature.Shop'}</th>
+						  <th>{l s='Viewed' d='Modules.Leofeature.Shop'}</th>
+						  <th class="wishlist-datecreate-head">{l s='Created' d='Modules.Leofeature.Shop'}</th>
+						  <th>{l s='Direct Link' d='Modules.Leofeature.Shop'}</th>
+						  <th>{l s='Default' d='Modules.Leofeature.Shop'}</th>
+						  <th>{l s='Delete' d='Modules.Leofeature.Shop'}</th>
 						</tr>
 					  </thead>
 					  <tbody>
@@ -51,7 +51,7 @@
 									<td class="wishlist-numberproduct wishlist-numberproduct-{$wishlists_item.id_wishlist}">{$wishlists_item.number_product|intval}</td>
 									<td>{$wishlists_item.counter|intval}</td>
 									<td class="wishlist-datecreate">{$wishlists_item.date_add}</td>							
-									<td><a class="view-wishlist" data-token="{$wishlists_item.token}" target="_blank" href="{$view_wishlist_url}{if $leo_is_rewrite_active}?{else}&{/if}token={$wishlists_item.token}" title="{l s='View' mod='leofeature'}">{l s='View' mod='leofeature'}</a></td>
+									<td><a class="view-wishlist" data-token="{$wishlists_item.token}" target="_blank" href="{$view_wishlist_url}{if $leo_is_rewrite_active}?{else}&{/if}token={$wishlists_item.token}" title="{l s='View' d='Modules.Leofeature.Shop'}">{l s='View' d='Modules.Leofeature.Shop'}</a></td>
 									<td>
 										
 											<label class="form-check-label">
@@ -59,7 +59,7 @@
 											</label>
 									
 									</td>
-									<td><a class="delete-wishlist" data-id-wishlist="{$wishlists_item.id_wishlist}" href="javascript:void(0)" title="{l s='Delete' mod='leofeature'}"><i class="material-icons">&#xE872;</i></a></td>
+									<td><a class="delete-wishlist" data-id-wishlist="{$wishlists_item.id_wishlist}" href="javascript:void(0)" title="{l s='Delete' d='Modules.Leofeature.Shop'}"><i class="material-icons">&#xE872;</i></a></td>
 								</tr>
 							{/foreach}
 						{/if}
@@ -67,9 +67,9 @@
 					</table>
 				</div>
 			<div class="send-wishlist">
-				<a class="leo-send-wishlist-button btn btn-info" href="javascript:void(0)" title="{l s='Send this wishlist' mod='leofeature'}">
+				<a class="leo-send-wishlist-button btn btn-info" href="javascript:void(0)" title="{l s='Send this wishlist' d='Modules.Leofeature.Shop'}">
 					<i class="material-icons">&#xE163;</i>
-					{l s='Send this wishlist' mod='leofeature'}
+					{l s='Send this wishlist' d='Modules.Leofeature.Shop'}
 				</a>
 			</div>
 			<section id="products">
@@ -78,8 +78,8 @@
 				</div>
 			</section>
 			<ul class="footer_links">
-				<li class="pull-xs-left"><a class="btn btn-outline" href="{$link->getPageLink('my-account', true)|escape:'html'}"><i class="material-icons">&#xE317;</i>{l s='Back to Your Account' mod='leofeature'}</a></li>
-				<li class="pull-xs-right"><a class="btn btn-outline" href="{$urls.base_url}"><i class="material-icons">&#xE88A;</i>{l s='Home' mod='leofeature'}</a></li>
+				<li class="pull-xs-left"><a class="btn btn-outline" href="{$link->getPageLink('my-account', true)|escape:'html'}"><i class="material-icons">&#xE317;</i>{l s='Back to Your Account' d='Modules.Leofeature.Shop'}</a></li>
+				<li class="pull-xs-right"><a class="btn btn-outline" href="{$urls.base_url}"><i class="material-icons">&#xE88A;</i>{l s='Home' d='Modules.Leofeature.Shop'}</a></li>
 			</ul>
 		</div>
 	</section>

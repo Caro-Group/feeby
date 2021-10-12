@@ -66,12 +66,12 @@
 										{/if}
 									</div>
 								{else}
-									<div class="product-quantity"><span class="lablel">{l s='Quantity' mod='leofeature'}</span>: {$product.quantity}</div>
+									<div class="product-quantity"><span class="lablel">{l s='Quantity' d='Modules.Leofeature.Shop'}</span>: {$product.quantity}</div>
 								{/if}
 							</div>
 							<a class="leo-remove-from-cart"					
 								href="javascript:void(0)"					
-								title="{l s='Remove from cart' mod='leofeature'}" 
+								title="{l s='Remove from cart' d='Modules.Leofeature.Shop'}" 
 								data-link-url="{$product.remove_from_cart_url}"
 								data-id-product = "{$product.id_product|escape:'javascript'}"
 								data-id-product-attribute = "{$product.id_product_attribute|escape:'javascript'}"
@@ -163,7 +163,7 @@
 						{if $remaining_to_spend > 0}
 						  <div class="leo_free_price">
 						  {assign var=currency value=Context::getContext()->currency}
-						  <p>{l s='Spent' mod='leofeature'} {Tools::displayPrice($remaining_to_spend,$currency)} {l s='To get free ship!' mod='leofeature'}</p>
+						  <p>{l s='Spent' d='Modules.Leofeature.Shop'} {Tools::displayPrice($remaining_to_spend,$currency)} {l s='To get free ship!' d='Modules.Leofeature.Shop'}</p>
 						  </div>
 						{/if}
 					{/if}
@@ -171,8 +171,8 @@
 				</div>
 			{if $only_total != 1}
 				<div class="leo-cart-dropdown-action clearfix">
-					<a class="cart-dropdow-button cart-dropdow-viewcart btn btn-primary btn-outline" href="{$cart_url}">{l s='View Cart' mod='leofeature'}</a>
-					<a class="cart-dropdow-button cart-dropdow-checkout btn btn-primary btn-outline" href="{$order_url}">{l s='Check Out' mod='leofeature'}</a>
+					<a class="cart-dropdow-button cart-dropdow-viewcart btn btn-primary btn-outline" href="{$cart_url}">{l s='View Cart' d='Modules.Leofeature.Shop'}</a>
+					<a class="cart-dropdow-button cart-dropdow-checkout btn btn-primary btn-outline" href="{$order_url}">{l s='Check Out' d='Modules.Leofeature.Shop'}</a>
 				</div>
 			</div>
 		</div>

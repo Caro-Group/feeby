@@ -9,8 +9,8 @@
 
 			<div class="" style="display:flex;flex-direction:row;flex-wrap:wrap;">
 				<div class="review-title" style="">
-					<span style="font-style: normal;font-weight: bold;font-size: 25px;line-height: 34px;display: flex;align-items: center;letter-spacing: -0.015em;color: #424242;">{l s='Do you have this product?' mod='leofeature'}</span>
-					<span style="font-style: normal;font-weight: bold;font-size: 20px;line-height: 27px;display: flex;align-items: center;letter-spacing: -0.015em;color: #424242;">{l s='Tell others how you rate it!' mod='leofeature'}</span>
+					<span style="font-style: normal;font-weight: bold;font-size: 25px;line-height: 34px;display: flex;align-items: center;letter-spacing: -0.015em;color: #424242;">{l s='Do you have this product?' d='Modules.Leofeature.Shop'}</span>
+					<span style="font-style: normal;font-weight: bold;font-size: 20px;line-height: 27px;display: flex;align-items: center;letter-spacing: -0.015em;color: #424242;">{l s='Tell others how you rate it!' d='Modules.Leofeature.Shop'}</span>
 				</div>
 				<div class="new_review_form_content col-xs-12 col-sm-12" style="flex: 1 1 50%;padding:0;">
 					{if $criterions|@count > 0}
@@ -32,18 +32,18 @@
 					{/if}				
 					<form class="form-new-review" action="#" method="post">
 						<div class="form-group">
-						  <label class="form-control-label" for="new_review_title">{l s='Your title' mod='leofeature'}</label>
-						  <input type="text" class="form-control" id="new_review_title" required="required" name="new_review_title"  placeholder="{l s='Your title here' mod='leofeature'}">					  
+						  <label class="form-control-label" for="new_review_title">{l s='Your title' d='Modules.Leofeature.Shop'}</label>
+						  <input type="text" class="form-control" id="new_review_title" required="required" name="new_review_title"  placeholder="{l s='Your title here' d='Modules.Leofeature.Shop'}">					  
 						</div>
 						{if $allow_guests == true && !$is_logged}
 							<div class="form-group">
-							  <label class="form-control-label" for="new_review_customer_name">{l s='Your pseudonim' mod='leofeature'}</label>
-							  <input type="text" class="form-control" id="new_review_customer_name" required="required" name="new_review_customer_name" placeholder="{l s='Your pseudonim here' mod='leofeature'}">					  
+							  <label class="form-control-label" for="new_review_customer_name">{l s='Your pseudonim' d='Modules.Leofeature.Shop'}</label>
+							  <input type="text" class="form-control" id="new_review_customer_name" required="required" name="new_review_customer_name" placeholder="{l s='Your pseudonim here' d='Modules.Leofeature.Shop'}">					  
 							</div>
 						{/if}
 						<div class="form-group">
-						  <label class="form-control-label" for="new_review_content">{l s='Your comment' mod='leofeature'}</label>
-						  <textarea type="text" class="form-control" id="new_review_content" required="required" name="new_review_content" placeholder="{l s='Your comment here' mod='leofeature'}"></textarea>				  
+						  <label class="form-control-label" for="new_review_content">{l s='Your comment' d='Modules.Leofeature.Shop'}</label>
+						  <textarea type="text" class="form-control" id="new_review_content" required="required" name="new_review_content" placeholder="{l s='Your comment here' d='Modules.Leofeature.Shop'}"></textarea>				  
 						</div>
 						<div class="form-group">
 							<input id="id_product_review" name="id_product_review" type="hidden" value='{$product_modal_review->id}' />
@@ -52,7 +52,7 @@
 							<button class="btn btn-primary form-control-submit leo-fake-button pull-xs-right leo-modal-review-bt btn btn-primary" type="submit">
 								<span class="leo-modal-review-loading cssload-speeding-wheel"></span>
 								<span class="leo-modal-review-bt-text">
-									{l s='Submit' mod='leofeature'}
+									{l s='Submit' d='Modules.Leofeature.Shop'}
 								</span>
 							</button>
 						</div>
