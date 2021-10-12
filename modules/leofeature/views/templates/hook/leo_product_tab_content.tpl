@@ -109,8 +109,19 @@
 		.product-tabs.tabs .tab-content{    width: auto;}
 
 		.review-form{ 
-			padding: 80px;
     	background: #F5F5F5;
+		}
+
+		@media(min-width: 992px){			
+			.review-form{ 
+				padding: 40px;
+			}
+		}
+		@media(min-width: 1200px){
+			.review-form{ 
+				padding: 80px;
+				background: #F5F5F5;
+			}
 		}
 	</style>
 {/literal}

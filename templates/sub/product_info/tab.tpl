@@ -54,7 +54,10 @@
 		   	<div class="tab-pane fade in{if $product.description} active{/if}" id="description" role="tabpanel">
 		     	{block name='product_description'}
 				 	<h2 class="h2 product-title" itemprop="name">{$product.name}</h2>
-		       		<div class="product-description">{$product.description nofilter}</div>
+					<div class="product-desc-wrapper">
+		       			<div class="product-description">{$product.description nofilter}</div>
+						<div class="product-icons-description">{hook h='displayApSC' sc_key=sc3645178611}</div>
+					</div>
 		     	{/block}
 		   	</div>
 
@@ -116,6 +119,42 @@
     border: 0;
 }
 
+.product-description{
+	margin-bottom: 20px;
+}
+
+@media(min-width: 1200px){
+.product-description{
+    padding-right: 100px;
+	margin-bottom: 0;
+}
+}
+
+.product-desc-wrapper{
+display:flex;
+    flex-wrap: wrap;
+}
+
+@media(min-width: 1200px){
+.product-desc-wrapper{
+    flex-wrap: nowrap;
+}
+}
+
+.product-icons-description{
+    flex: 0 0 500px;
+}
+
+.product-icons-description .ApImage{
+display: flex;
+    flex-direction: column;
+}
+
+.product-icons-description .ApImage img{
+	    max-width: 50px;
+    margin-bottom: 10px;
+    order: -1;
+}
 </style>
 {/literal}
 
