@@ -109,10 +109,15 @@
 }
 
 .product-tabs.tabs .nav.nav-tabs{  
-    display: flex;
-    border-bottom: 1px solid #000;
-    margin-bottom: 10px;
-    width: 100%;
+	display: flex;
+	border-bottom: 1px solid #000;
+	margin-bottom: 10px;
+	width: 100%;
+	text-align: left;
+}
+
+.product-tabs.tabs .nav-tabs .nav-item{
+	margin: 0;
 }
 
 .product-tabs.tabs.reviews{
