@@ -15,7 +15,7 @@
 {/if}
 
 		<div id="product_reviews_block_tab">
-			<span style="font-style: normal;font-weight: bold;font-size: 20px;line-height: 27px;display: flex;align-items: center;letter-spacing: -0.015em;text-transform: uppercase;color: #424242;margin-bottom:60px;">{l s='Yours opinion' mod='leofeature'}</span>
+			<span class="product-opinion-title">{l s='Yours opinion' mod='leofeature'}</span>
 			<div style="display: flex;flex-direction: row;flex-wrap: wrap;width: 100%;">
 				{if $reviews}
 					{foreach from=$reviews item=review}
@@ -111,6 +111,25 @@
 		.review-form{ 
     	background: #F5F5F5;
 			padding: 15px;
+		}
+
+		.product-opinion-title{
+			font-style: normal;
+			font-weight: bold;
+			font-size: 20px;
+			line-height: 27px;
+			display: flex;
+			align-items: center;
+			letter-spacing: -0.015em;
+			text-transform: uppercase;
+			color: #424242;
+			margin-bottom:20px;
+		}
+
+		@media(min-width: 992px){	
+			.product-opinion-title{
+				margin-bottom:60px;
+			}
 		}
 
 		@media(min-width: 992px){			

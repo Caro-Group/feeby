@@ -129,10 +129,10 @@
 }
 
 @media(min-width: 1200px){
-.product-description{
-    padding-right: 100px;
-	margin-bottom: 0;
-}
+	.product-description{
+		padding-right: 100px;
+		margin-bottom: 0;
+	}
 }
 
 .product-desc-wrapper{
