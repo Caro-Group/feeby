@@ -120,11 +120,9 @@
 	margin: 0 10px 0 0;
 }
 
-@media(max-width: 400px){
-	.product-tabs.tabs .nav-tabs .nav-link{
-		background: transparent;
-		margin: 0;
-	}
+.product-tabs.tabs .nav-tabs .nav-link{
+	background: transparent;
+	margin: 0;
 }
 
 .product-tabs.tabs.reviews{
