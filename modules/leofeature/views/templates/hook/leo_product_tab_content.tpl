@@ -20,7 +20,7 @@
 				{if $reviews}
 					{foreach from=$reviews item=review}
 						{if $review.content}
-						<div class="review" style="flex: 1 1 50%;padding: 0 30px 60px;margin-bottom: 40px;" itemprop="review" itemscope itemtype="https://schema.org/Review">
+						<div class="review" style="" itemprop="review" itemscope itemtype="https://schema.org/Review">
 							<div class="review-info">
 
 								<div class="review_details" style="margin-bottom: 20px;">
@@ -106,7 +106,16 @@
 	<style>
 		#product_reviews_block_tab .review_author{border-right: 0px;}
 
-		.product-tabs.tabs .tab-content{    width: auto;}
+		.product-tabs.tabs .tab-content{
+			width: auto;
+			padding: 0;
+		}
+
+		@media(min-width: 768px){
+			.product-tabs.tabs .tab-content{
+			    padding: 10px 30px;
+			}
+		}
 
 		.review-form{ 
     	background: #F5F5F5;
@@ -142,6 +151,19 @@
 				padding: 80px;
 				background: #F5F5F5;
 			}
+		}
+
+		
+		#product_reviews_block_tab .review{
+			flex: 1 1 50%;
+			padding: 0 0 30px;
+			margin-bottom: 40px;
+		}
+
+		@media(min-width: 1200px){
+		#product_reviews_block_tab .review{
+			padding: 0 30px 60px;
+		}
 		}
 	</style>
 {/literal}
