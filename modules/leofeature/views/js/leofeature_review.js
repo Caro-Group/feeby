@@ -41,7 +41,7 @@ $(document).ready(function(){
 				}
 				else
 				{
-					alert(review_error);
+					console.log(review_error);
 				}
 							
 			},
