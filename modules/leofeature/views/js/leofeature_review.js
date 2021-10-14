@@ -73,7 +73,7 @@ $(document).ready(function(){
 				}
 				else
 				{
-					alert(review_error);
+					console.log(review_error);
 				}
 							
 			},
@@ -168,7 +168,7 @@ $(document).ready(function(){
 					}
 					else
 					{
-						alert(review_error);
+						console.log(review_error);
 					}
 					
 				},
@@ -207,7 +207,7 @@ $(document).ready(function(){
 					}
 					else
 					{
-						alert(review_error);
+						console.log(review_error);
 					}
 					
 				},
@@ -308,7 +308,7 @@ function activeEventModalReview()
 							}
 							else
 							{
-								alert(review_error);
+								console.log(review_error);
 							}
 							
 						},
@@ -419,7 +419,7 @@ function activeEventFormReview()
 							}
 							else
 							{
-								alert(review_error);
+								console.log(review_error);
 							}
 							
 						},
