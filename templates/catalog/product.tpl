@@ -157,6 +157,14 @@
         {/if}  
       {/block}
 
+
+
+
+<aside class="products-aside">
+{hook h='displayApSC' sc_key=sc2585205791}
+</aside>
+
+
 {block name='product_accessories'}
   {if $accessories}
     <section class="product-accessories clearfix">
@@ -182,6 +190,8 @@
     </section>
   {/if}
 {/block}
+
+
 
 <script type="text/javascript">
   products_list_functions.push(
