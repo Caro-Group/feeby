@@ -8,21 +8,21 @@
 	{if isset($leo_navigation_style) && $leo_navigation_style}
 		<ul class="lql-action{if $leo_form_layout != 'both'} lql-active{else} lql-inactive{/if}">
 			<li class="lql-action-bt">
-				<p class="lql-bt lql-bt-login{if $leo_form_layout == 'login'} lql-active{/if}">{l s='Login' mod='leoquicklogin'}</p>
+				<p class="lql-bt lql-bt-login{if $leo_form_layout == 'login'} lql-active{/if}">{l s='Login' d='Modules.Leoquicklogin.Shop'}</p>
 			</li>
 			<li class="lql-action-bt">
-				<p class="lql-bt lql-bt-register{if $leo_form_layout == 'register'} lql-active{/if}">{l s='Register' mod='leoquicklogin'}</p>
+				<p class="lql-bt lql-bt-register{if $leo_form_layout == 'register'} lql-active{/if}">{l s='Register' d='Modules.Leoquicklogin.Shop'}</p>
 			</li>
 		</ul>
 	{/if}
 	<div class="leo-form leo-login-form col-sm-{if $leo_form_layout == 'both'}6{else}12{/if}{if $leo_form_layout == 'login' || $leo_form_layout == 'both'} leo-form-active{else} leo-form-inactive{/if}{if $leo_form_layout != 'both'} full-width{/if}">
 		<h3 class="leo-login-title">			
 			<span class="title-both">
-				{l s='Existing Account Login' mod='leoquicklogin'}
+				{l s='Existing Account Login' d='Modules.Leoquicklogin.Shop'}
 			</span>
 		
 			<span class="title-only">
-				{l s='Login to your account' mod='leoquicklogin'}
+				{l s='Login to your account' d='Modules.Leoquicklogin.Shop'}
 			</span>		
 		</h3>
 		<form class="lql-form-content leo-login-form-content" action="#" method="post">
@@ -31,20 +31,20 @@
 			<div class="form-group lql-form-mesg has-danger">					
 			</div>
 			<div class="form-group lql-form-content-element">
-				<input type="email" class="form-control lql-email-login" name="lql-email-login" required="" placeholder="{l s='Email Address' mod='leoquicklogin'}">
+				<input type="email" class="form-control lql-email-login" name="lql-email-login" required="" placeholder="{l s='Email Address' d='Modules.Leoquicklogin.Shop'}">
 			</div>
 			<div class="form-group lql-form-content-element">
-				<input type="password" class="form-control lql-pass-login" name="lql-pass-login" required="" placeholder="{l s='Password' mod='leoquicklogin'}">
+				<input type="password" class="form-control lql-pass-login" name="lql-pass-login" required="" placeholder="{l s='Password' d='Modules.Leoquicklogin.Shop'}">
 			</div>
 			<div class="form-group row lql-form-content-element">				
 				<div class="col-xs-6">
 					{if $leo_check_cookie}
 						<input type="checkbox" class="lql-rememberme" name="lql-rememberme">
-						<label class="form-control-label"><span>{l s='Remember Me' mod='leoquicklogin'}</span></label>
+						<label class="form-control-label"><span>{l s='Remember Me' d='Modules.Leoquicklogin.Shop'}</span></label>
 					{/if}
 				</div>				
 				<div class="col-xs-6 text-sm-right">
-					<a role="button" href="#" class="leoquicklogin-forgotpass">{l s='Forgot Password' mod='leoquicklogin'}</a>
+					<a role="button" href="#" class="leoquicklogin-forgotpass">{l s='Forgot Password' d='Modules.Leoquicklogin.Shop'}</a>
 				</div>
 			</div>
 			<div class="form-group text-right">
@@ -53,23 +53,23 @@
 					<i class="leoquicklogin-icon leoquicklogin-success-icon material-icons">&#xE876;</i>
 					<i class="leoquicklogin-icon leoquicklogin-fail-icon material-icons">&#xE033;</i>
 					<span class="lql-bt-txt">					
-						{l s='Login' mod='leoquicklogin'}
+						{l s='Login' d='Modules.Leoquicklogin.Shop'}
 					</span>
 				</button>
 			</div>
 			<div class="form-group lql-callregister">
-				<a role="button" href="#" class="lql-callregister-action">{l s='No account? Create one here' mod='leoquicklogin'}</a>
+				<a role="button" href="#" class="lql-callregister-action">{l s='No account? Create one here' d='Modules.Leoquicklogin.Shop'}</a>
 			</div>
 		</form>
 		<div class="leo-resetpass-form">
-			<h3>{l s='Reset Password' mod='leoquicklogin'}</h3>
+			<h3>{l s='Reset Password' d='Modules.Leoquicklogin.Shop'}</h3>
 			<form class="lql-form-content leo-resetpass-form-content" action="#" method="post">
 				<div class="form-group lql-form-mesg has-success">					
 				</div>			
 				<div class="form-group lql-form-mesg has-danger">					
 				</div>
 				<div class="form-group lql-form-content-element">
-					<input type="email" class="form-control lql-email-reset" name="lql-email-reset" required="" placeholder="{l s='Email Address' mod='leoquicklogin'}">
+					<input type="email" class="form-control lql-email-reset" name="lql-email-reset" required="" placeholder="{l s='Email Address' d='Modules.Leoquicklogin.Shop'}">
 				</div>
 				<div class="form-group">					
 					<button type="submit" class="form-control-submit lql-form-bt leoquicklogin-reset-pass-bt btn btn-primary">			
@@ -77,7 +77,7 @@
 						<i class="leoquicklogin-icon leoquicklogin-success-icon material-icons">&#xE876;</i>
 						<i class="leoquicklogin-icon leoquicklogin-fail-icon material-icons">&#xE033;</i>
 						<span class="lql-bt-txt">					
-							{l s='Reset Password' mod='leoquicklogin'}
+							{l s='Reset Password' d='Modules.Leoquicklogin.Shop'}
 						</span>
 					</button>
 				</div>
@@ -88,7 +88,7 @@
 	
 	<div class="leo-form leo-register-form col-sm-{if $leo_form_layout == 'both'}6{else}12{/if}{if $leo_form_layout == 'register' || $leo_form_layout == 'both'} leo-form-active{else} leo-form-inactive{/if}{if $leo_form_layout != 'both'} full-width{/if}">
 		<h3 class="leo-register-title">
-			{l s='New Account Register' mod='leoquicklogin'}
+			{l s='New Account Register' d='Modules.Leoquicklogin.Shop'}
 		</h3>
 		<form class="lql-form-content leo-register-form-content" action="#" method="post">
 			<div class="form-group lql-form-mesg has-success">					
@@ -96,22 +96,22 @@
 			<div class="form-group lql-form-mesg has-danger">					
 			</div>
 			<div class="form-group lql-form-content-element">
-				<input type="text" class="form-control lql-register-firstname" name="lql-register-firstname"  placeholder="{l s='First Name' mod='leoquicklogin'}">
+				<input type="text" class="form-control lql-register-firstname" name="lql-register-firstname"  placeholder="{l s='First Name' d='Modules.Leoquicklogin.Shop'}">
 			</div>
 			<div class="form-group lql-form-content-element">
-				<input type="text" class="form-control lql-register-lastname" name="lql-register-lastname" required="" placeholder="{l s='Last Name' mod='leoquicklogin'}">
+				<input type="text" class="form-control lql-register-lastname" name="lql-register-lastname" required="" placeholder="{l s='Last Name' d='Modules.Leoquicklogin.Shop'}">
 			</div>
 			<div class="form-group lql-form-content-element">
-				<input type="email" class="form-control lql-register-email" name="lql-register-email" required="" placeholder="{l s='Email Address' mod='leoquicklogin'}">
+				<input type="email" class="form-control lql-register-email" name="lql-register-email" required="" placeholder="{l s='Email Address' d='Modules.Leoquicklogin.Shop'}">
 			</div>
 			<div class="form-group lql-form-content-element">
-				<input type="password" class="form-control lql-register-pass" name="lql-register-pass" required="" placeholder="{l s='Password' mod='leoquicklogin'}">
+				<input type="password" class="form-control lql-register-pass" name="lql-register-pass" required="" placeholder="{l s='Password' d='Modules.Leoquicklogin.Shop'}">
 			</div>
 			{if $leo_check_terms }
 			<div class="form-group lql-form-content-element leo-form-chk">
 				<label class="form-control-label">
 		            <input type="checkbox" class="lql-register-check" name="lql-register-check">
-		            <a href="{Configuration::get('LEOQUICKLOGIN_ENABLE_URL_GDPR')}">{l s='I agree to the terms.' mod='leoquicklogin'}</a> <span style="color:red">*</span>
+		            <a href="{Configuration::get('LEOQUICKLOGIN_ENABLE_URL_GDPR')}">{l s='I agree to the terms.' d='Modules.Leoquicklogin.Shop'}</a> <span style="color:red">*</span>
 		        </label>
 			</div>
 			{/if}
@@ -121,15 +121,15 @@
 					<i class="leoquicklogin-icon leoquicklogin-success-icon material-icons">&#xE876;</i>
 					<i class="leoquicklogin-icon leoquicklogin-fail-icon material-icons">&#xE033;</i>
 					<span class="lql-bt-txt">					
-						{l s='Create an Account' mod='leoquicklogin'}
+						{l s='Create an Account' d='Modules.Leoquicklogin.Shop'}
 					</span>
 				</button>
 			</div>
 			<div class="form-group lql-calllogin">
-				<div>{l s='Already have an account?' mod='leoquicklogin'}</div>
-				<a role="button" href="#" class="lql-calllogin-action">{l s='Log in instead' mod='leoquicklogin'}</a>
-				{l s='Or' mod='leoquicklogin'}
-				<a role="button" href="#" class="lql-calllogin-action lql-callreset-action">{l s='Reset password' mod='leoquicklogin'}</a>
+				<div>{l s='Already have an account?' d='Modules.Leoquicklogin.Shop'}</div>
+				<a role="button" href="#" class="lql-calllogin-action">{l s='Log in instead' d='Modules.Leoquicklogin.Shop'}</a>
+				{l s='Or' d='Modules.Leoquicklogin.Shop'}
+				<a role="button" href="#" class="lql-calllogin-action lql-callreset-action">{l s='Reset password' d='Modules.Leoquicklogin.Shop'}</a>
 			</div>
 		</form>
 	</div>

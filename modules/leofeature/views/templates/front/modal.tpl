@@ -17,17 +17,17 @@
 			</button>
 			<h4 class="modal-title h6 text-xs-center leo-warning leo-alert">
 				<i class="material-icons">info_outline</i>				
-				{l s='You must enter a quantity' mod='leofeature'}		
+				{l s='You must enter a quantity' d='Modules.Leofeature.Shop'}		
 			</h4>
 			
 			<h4 class="modal-title h6 text-xs-center leo-info leo-alert">
 				<i class="material-icons">info_outline</i>				
-				{l s='The minimum purchase order quantity for the product is ' mod='leofeature'}<strong class="alert-min-qty"></strong>		
+				{l s='The minimum purchase order quantity for the product is ' d='Modules.Leofeature.Shop'}<strong class="alert-min-qty"></strong>		
 			</h4>	
 			
 			<h4 class="modal-title h6 text-xs-center leo-block leo-alert">				
 				<i class="material-icons">block</i>				
-				{l s='There are not enough products in stock' mod='leofeature'}
+				{l s='There are not enough products in stock' d='Modules.Leofeature.Shop'}
 			</h4>
 		  </div>
 		  <!--

@@ -51,6 +51,7 @@ jobs:
       - name: Remove node
         run: sudo rm -rf node_modules  
 
+# TODO: Implement SSH for speed of deployment
 #      - name: Deploy to Server
 #        uses: easingthemes/ssh-deploy@v2.1.5
 #        env:
@@ -63,11 +64,12 @@ jobs:
 #          REMOTE_USER: ${{ secrets.REMOTE_USER }}
 #          EXCLUDE: "/dist/, /node_modules/, /cache/, /.git/, /.github/"
 
-      - name: deploy file to server
+      - name: Deploy to Server SFTP
         uses: wlixcc/SFTP-Deploy-Action@v1.0
         with:
           username: ${{ secrets.REMOTE_USER }}
           server: ${{ secrets.REMOTE_HOST }}
+          port: ${{ secrets.REMOTE_PORT }}
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
           local_path: './*'
           remote_path: ${{ secrets.TARGET }}

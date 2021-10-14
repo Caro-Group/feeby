@@ -63,7 +63,7 @@
                 data-button-action="add-to-cart"
                 class="btn btn-primary add-to-cart"
             >
-                <i class="material-icons shopping-cart">&#xE547;</i>{l s='Add to cart' d='Shop.Theme.Actions' mod='leofeature'}
+                <i class="material-icons shopping-cart">&#xE547;</i>{l s='Add to cart' d='Shop.Theme.Actions' d='Modules.Leofeature.Shop'}
             </button>
             <input id="addToCartToken_{$productID|escape:'htmlall':'UTF-8'}" class="addToCartButtonToken" name="token" value="{$staticToken|escape:'htmlall':'UTF-8'}" placeholder="" type="hidden" />
             <input id="addToCartIdProduct_{$productID|escape:'htmlall':'UTF-8'}" class="addToCartButtonIdProduct" name="id_product" value="{$productID|escape:'htmlall':'UTF-8'}" placeholder="" type="hidden" />

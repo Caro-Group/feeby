@@ -25,7 +25,7 @@
 			</div>
 			{if isset($nbReviews) && $nbReviews > 0}
 				{if $show_number_product_review}
-					<span class="nb-revews"><span itemprop="reviewCount">{$nbReviews}</span> {l s='Review(s)' mod='leofeature'}</span>
+					<span class="nb-revews"><span itemprop="reviewCount">{$nbReviews}</span> {l s='Review(s)' d='Modules.Leofeature.Shop'}</span>
 				{else}
 					<meta itemprop="reviewCount" content = "{$nbReviews}" />
 				{/if}

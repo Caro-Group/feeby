@@ -41,20 +41,23 @@
 		    {foreach from=$product.extraContent item=extra key=extraKey}
 			    <li class="nav-item">
 				  <a
-					class="nav-link"
+					class="nav-link active"
 					data-toggle="tab"
 					href="#extra-{$extraKey}"
 					role="tab"
 					aria-controls="extra-{$extraKey}">{$extra.title}</a>
 				</li>
 		    {/foreach}
-			{hook h='displayLeoProductTab' product=$product}
 	  	</ul>
 
 	  	<div class="tab-content" id="tab-content">
 		   	<div class="tab-pane fade in{if $product.description} active{/if}" id="description" role="tabpanel">
 		     	{block name='product_description'}
-		       		<div class="product-description">{$product.description nofilter}</div>
+				 	<h2 class="h2 product-title" itemprop="name">{$product.name}</h2>
+					<div class="product-desc-wrapper">
+		       			<div class="product-description">{$product.description nofilter}</div>
+						<div class="product-icons-description">{hook h='displayApSC' sc_key=sc3645178611}</div>
+					</div>
 		     	{/block}
 		   	</div>
 
@@ -80,12 +83,91 @@
 		       	</div>
 		     	{/if}
 		   	{/block}
-		   	{hook h='displayLeoProductTabContent' product=$product}
 		   	{foreach from=$product.extraContent item=extra key=extraKey}
-			   	<div class="tab-pane fade in {$extra.attr.class}" id="extra-{$extraKey}" role="tabpanel" {foreach $extra.attr as $key => $val} {$key}="{$val}"{/foreach}>
+			   	<div class="tab-pane fade in {$extra.attr.class} active" id="extra-{$extraKey}" role="tabpanel" {foreach $extra.attr as $key => $val} {$key}="{$val}"{/foreach}>
 			       {$extra.content nofilter}
 			   	</div>
 		   {/foreach}
 		</div>
 	</div>
+
+	<div class="product-tabs tabs reviews">
+	  	<ul class="nav nav-tabs" role="tablist">
+			{hook h='displayLeoProductTab' product=$product}
+	  	</ul>
+
+	  	<div class="tab-content" id="tab-content">
+		   	{hook h='displayLeoProductTabContent' product=$product}
+		</div>
+    </div>
+
+{literal}
+<style>
+.product-tabs.tabs{    
+   display: flex;
+    flex-direction: column;
+}
+
+.product-tabs.tabs .nav.nav-tabs{  
+	display: flex;
+	border-bottom: 1px solid #000;
+	margin-bottom: 10px;
+	width: 100%;
+	text-align: left;
+}
+
+.product-tabs.tabs .nav-tabs .nav-item{
+	margin: 0 10px 0 0;
+}
+
+.product-tabs.tabs .nav-tabs .nav-link{
+	background: transparent;
+	margin: 0;
+}
+
+.product-tabs.tabs.reviews{
+    border: 0;
+}
+
+.product-description{
+	margin-bottom: 20px;
+}
+
+@media(min-width: 1200px){
+	.product-description{
+		padding-right: 100px;
+		margin-bottom: 0;
+	}
+}
+
+.product-desc-wrapper{
+display:flex;
+    flex-wrap: wrap;
+}
+
+@media(min-width: 1200px){
+.product-desc-wrapper{
+    flex-wrap: nowrap;
+}
+}
+
+.product-icons-description{
+    flex: 0 0 auto;
+		max-width: 500px;
+    width: 100%;
+}
+
+.product-icons-description .ApImage{
+display: flex;
+    flex-direction: column;
+}
+
+.product-icons-description .ApImage img{
+	    max-width: 50px;
+    margin-bottom: 10px;
+    order: -1;
+}
+</style>
+{/literal}
+
 {/block}

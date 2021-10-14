@@ -11,7 +11,7 @@
 		{if $nbReviews_product_extra != 0}
 			<div class="reviews_note clearfix">
 				
-				<span>{l s='Rating' mod='leofeature'}&nbsp;</span>
+				<span>{l s='Rating' d='Modules.Leofeature.Shop'}&nbsp;</span>
 				<div class="star_content clearfix">
 					{section name="i" start=0 loop=5 step=1}
 						{if $averageTotal_extra le $smarty.section.i.index}
@@ -32,7 +32,7 @@
 				<li>
 					<a href="javascript:void(0)" class="read-review">					
 						<i class="material-icons">&#xE0B9;</i>
-						{l s='Read reviews' mod='leofeature'} (<span itemprop="reviewCount">{$nbReviews_product_extra}</span>)
+						{l s='Read reviews' d='Modules.Leofeature.Shop'} (<span itemprop="reviewCount">{$nbReviews_product_extra}</span>)
 					</a>
 				</li>
 			{/if}
@@ -40,7 +40,7 @@
 				<li class="{if $nbReviews_product_extra != 0}last{/if}">
 					<a class="open-review-form" href="javascript:void(0)" data-id-product="{$id_product_review_extra}" data-is-logged="{$customer.is_logged}" data-product-link="{$link_product_review_extra}">
 						<i class="material-icons">&#xE150;</i>
-						{l s='Write a review' mod='leofeature'}
+						{l s='Write a review' d='Modules.Leofeature.Shop'}
 					</a>
 				</li>
 			{/if}
