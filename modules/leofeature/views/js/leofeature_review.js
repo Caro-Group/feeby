@@ -298,8 +298,8 @@ function activeEventFormReview()
 			if (!$(this).hasClass('active'))
 			{
 				$(this).addClass('active');
-				$('[data-review-form] .leo-modal-review-bt-text').hide();
-				$('[data-review-form] .leo-modal-review-loading').css({'display':'block'});
+				// $('[data-review-form] .leo-modal-review-bt-text').hide();
+				// $('[data-review-form] .leo-modal-review-loading').css({'display':'block'});
 				
 				// $('[data-review-form] .new_review_form_content input, [data-review-form] .new_review_form_content textarea').each(function(){
 					
@@ -340,25 +340,16 @@ function activeEventFormReview()
 							{
 								var object_result = $.parseJSON(result);
 								// console.log(object_result);
-								$('.leo-modal-review-bt').fadeOut('slow', function(){
-									$(this).remove();
-									
-								});
-								
-								$('.leo-modal-review .modal-body>.row').fadeOut('slow', function(){
-									$(this).remove();
-									if (object_result.result)
-									{
+								if(object_result.result){
+									$('.leo-modal-review .modal-body>.row').fadeOut('slow', function(){
+										$(this).remove();
 										$('[data-review-form] .leo-modal-review').append('<div class="form-group has-success"><label class="form-control-label">'+object_result.sucess_mess+'</label></div>');
-									}
-									else
-									{
-										// $('.leo-modal-review .modal-body').append('<div class="form-group has-danger text-center"></div>');
-										$.each(object_result.errors, function(key, val){
-											$('[data-review-form] .leo-modal-review ').append('<div class="form-group has-danger text-center"><label class="form-control-label">'+val+'</label></div>');
-										});
-									}
-								});
+									});
+								} else {
+									$.each(object_result.errors, function(key, val){
+										$('[data-review-form] .leo-modal-review ').append('<div class="form-group has-danger text-center"><label class="form-control-label">'+val+'</label></div>');
+									});
+								}
 							}
 							else
 							{
