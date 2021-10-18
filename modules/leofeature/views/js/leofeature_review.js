@@ -349,6 +349,7 @@ function activeEventFormReview()
 									$.each(object_result.errors, function(key, val){
 										$('.new_review_form_content').append('<div class="form-group has-danger text-center"><label class="form-control-label">'+val+'</label></div>');
 									});
+									$('[data-review-form] .leo-modal-review-bt').removeClass('active');
 								}
 							}
 							else
