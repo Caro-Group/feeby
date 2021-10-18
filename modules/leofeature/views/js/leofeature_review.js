@@ -302,19 +302,19 @@ function activeEventFormReview()
 				$('[data-review-form] .leo-modal-review-bt-text').hide();
 				$('[data-review-form] .leo-modal-review-loading').css({'display':'block'});
 				
-				$('[data-review-form] .new_review_form_content input, [data-review-form] .new_review_form_content textarea').each(function(){
+				// $('[data-review-form] .new_review_form_content input, [data-review-form] .new_review_form_content textarea').each(function(){
 					
-					if ($(this).val() == '')
-					{
-						$(this).parent('.form-group').addClass('leo-has-error');
-						$(this).attr("required", "");
-					}
-					else
-					{
-						$(this).parent('.form-group').removeClass('leo-has-error');
-						$(this).removeAttr('required');
-					}
-				})
+				// 	if ($(this).val() == '')
+				// 	{
+				// 		$(this).parent('.form-group').addClass('leo-has-error');
+				// 		$(this).attr("required", "");
+				// 	}
+				// 	else
+				// 	{
+				// 		$(this).parent('.form-group').removeClass('leo-has-error');
+				// 		$(this).removeAttr('required');
+				// 	}
+				// })
 				
 				if ($('[data-review-form] .new_review_form_content .form-group.leo-has-error').length)
 				{
