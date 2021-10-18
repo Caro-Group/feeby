@@ -81,30 +81,6 @@ $(document).ready(function(){
 				// alert("TECHNICAL ERROR: \n\nDetails:\nError thrown: " + XMLHttpRequest + "\n" + 'Text status: ' + textStatus);
 			}
 		});
-		
-		$('.open-review-form').click(function(){
-			if ($('#criterions_list').length)
-			{	
-				$('.leo-modal-review').modal('show');
-			}
-			else
-			{
-				if ($('.leo-modal-review .modal-body .disable-form-review').length)
-				{
-					$('.leo-modal-review').modal('show');
-				}
-				else
-				{
-					$('.leo-modal-review-bt').remove();
-					$('.leo-modal-review .modal-header').remove();
-					$('.leo-modal-review .modal-body').empty();
-					$('.leo-modal-review .modal-body').append('<div class="form-group disable-form-review has-danger text-center"><label class="form-control-label">'+disable_review_form_txt+'</label></div>');
-					$('.leo-modal-review').modal('show');
-				}
-				
-			}
-			return false;
-		});
 	}
 	
 	$('.read-review').click(function(){
