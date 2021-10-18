@@ -343,9 +343,8 @@ function activeEventFormReview()
 								if(object_result.result){
 									$('.new_review_form_content > *').fadeOut('slow', function(){
 										$(this).remove();
-										$('.new_review_form_content').first().append('<div class="form-group has-success"><label class="form-control-label">'+object_result.sucess_mess+'</label></div>');
-										return;
 									});
+									$('.new_review_form_content').first().append('<div class="form-group has-success"><label class="form-control-label">'+object_result.sucess_mess+'</label></div>');
 								} else {
 									$.each(object_result.errors, function(key, val){
 										$('.new_review_form_content').append('<div class="form-group has-danger text-center"><label class="form-control-label">'+val+'</label></div>');
