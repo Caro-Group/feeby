@@ -49,38 +49,6 @@ $(document).ready(function(){
 				// alert("TECHNICAL ERROR: \n\nDetails:\nError thrown: " + XMLHttpRequest + "\n" + 'Text status: ' + textStatus);
 			}
 		});
-
-		$.ajax({
-			type: 'POST',
-			headers: {"cache-control": "no-cache"},
-			url: prestashop.urls.base_url + 'modules/leofeature/psajax_review.php?rand=' + new Date().getTime(),
-			async: true,
-			cache: false,
-			data: {
-				"action": "render-modal-review",
-				"id_product": id_product,				
-				"is_logged": is_logged,
-				"token": leo_token
-			},
-			success: function (result)
-			{
-				if(result != '')
-				{						
-					$('body').append(result);
-					activeEventModalReview();
-					activeStar();
-					$('.open-review-form').fadeIn('fast');
-				}
-				else
-				{
-					console.log(review_error);
-				}
-							
-			},
-			error: function (XMLHttpRequest, textStatus, errorThrown) {
-				// alert("TECHNICAL ERROR: \n\nDetails:\nError thrown: " + XMLHttpRequest + "\n" + 'Text status: ' + textStatus);
-			}
-		});
 	}
 	
 	$('.read-review').click(function(){
