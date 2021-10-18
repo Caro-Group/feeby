@@ -344,6 +344,7 @@ function activeEventFormReview()
 									$('.new_review_form_content > *').fadeOut('slow', function(){
 										$(this).remove();
 										$('.new_review_form_content').first().append('<div class="form-group has-success"><label class="form-control-label">'+object_result.sucess_mess+'</label></div>');
+										return;
 									});
 								} else {
 									$.each(object_result.errors, function(key, val){
