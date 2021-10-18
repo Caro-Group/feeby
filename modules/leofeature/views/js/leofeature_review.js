@@ -232,20 +232,19 @@ function activeEventModalReview()
 								// console.log(object_result);
 								$('.leo-modal-review-bt').fadeOut('slow', function(){
 									$(this).remove();
-									
 								});
 								
-								$('.leo-modal-review .modal-body>.row').fadeOut('slow', function(){
+								$('.new_review_form_content > *').fadeOut('slow', function(){
 									$(this).remove();
 									if (object_result.result)
 									{
-										$('.leo-modal-review .modal-body').append('<div class="form-group has-success"><label class="form-control-label">'+object_result.sucess_mess+'</label></div>');
+										$('.new_review_form_content').append('<div class="form-group has-success"><label class="form-control-label">'+object_result.sucess_mess+'</label></div>');
 									}
 									else
 									{
 										// $('.leo-modal-review .modal-body').append('<div class="form-group has-danger text-center"></div>');
 										$.each(object_result.errors, function(key, val){
-											$('.leo-modal-review .modal-body').append('<div class="form-group has-danger text-center"><label class="form-control-label">'+val+'</label></div>');
+											$('.new_review_form_content').append('<div class="form-group has-danger text-center"><label class="form-control-label">'+val+'</label></div>');
 										});
 									}
 								});
