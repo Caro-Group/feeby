@@ -38,7 +38,7 @@
 			{/if}
 			{if ($too_early_extra == false AND ($customer.is_logged OR $allow_guests_extra))}
 				<li class="{if $nbReviews_product_extra != 0}last{/if}">
-					<a class="open-review-form" href="javascript:void(0)" data-id-product="{$id_product_review_extra}" data-is-logged="{$customer.is_logged}" data-product-link="{$link_product_review_extra}">
+					<a class="open-review-form" href="#reviewForm">
 						<i class="material-icons">&#xE150;</i>
 						{l s='Write a review' d='Modules.Leofeature.Shop'}
 					</a>
