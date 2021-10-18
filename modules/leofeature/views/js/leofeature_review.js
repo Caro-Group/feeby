@@ -341,13 +341,13 @@ function activeEventFormReview()
 								var object_result = $.parseJSON(result);
 								// console.log(object_result);
 								if(object_result.result){
-									$('.leo-modal-review .modal-body>.row').fadeOut('slow', function(){
+									$('.new_review_form_content > *').fadeOut('slow', function(){
 										$(this).remove();
 										$('[data-review-form] .leo-modal-review').append('<div class="form-group has-success"><label class="form-control-label">'+object_result.sucess_mess+'</label></div>');
 									});
 								} else {
 									$.each(object_result.errors, function(key, val){
-										$('[data-review-form] .leo-modal-review ').append('<div class="form-group has-danger text-center"><label class="form-control-label">'+val+'</label></div>');
+										$('.new_review_form_content').append('<div class="form-group has-danger text-center"><label class="form-control-label">'+val+'</label></div>');
 									});
 								}
 							}
