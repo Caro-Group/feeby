@@ -822,7 +822,7 @@ max-height: 100%;
 }
 
 
-@media(max-width: 992px){
+@media(max-width: 991px){
 .leoproductsearch-result .ac_results{
 width: 100%!important;
 }

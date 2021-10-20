@@ -30,6 +30,21 @@
   border-bottom-color: #fff;
 }
 
+.off-canvas-button-megamenu .off-canvas-nav{
+  margin: 0 0 0 auto;
+}
+
 .off-canvas-nav-megamenu .dropdown-menu{
   position: fixed;
+  margin-top: 42px;
+}
+
+.off-canvas-nav-megamenu .leo-widget{
+  display: none;
+}
+
+@media(min-width: 992px){
+  .off-canvas-nav-megamenu .leo-widget{
+    display: none;
+  }
 }
