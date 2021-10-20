@@ -28,3 +28,8 @@ upload/
 
 # Custom
 old_*
+
+# Cache folder isn't removed in deploy and secured
+!cache/
+cache/*
+!cache/index.php

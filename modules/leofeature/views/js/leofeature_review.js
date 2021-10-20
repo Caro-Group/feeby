@@ -41,69 +41,13 @@ $(document).ready(function(){
 				}
 				else
 				{
-					alert(review_error);
+					console.log(review_error);
 				}
 							
 			},
 			error: function (XMLHttpRequest, textStatus, errorThrown) {
 				// alert("TECHNICAL ERROR: \n\nDetails:\nError thrown: " + XMLHttpRequest + "\n" + 'Text status: ' + textStatus);
 			}
-		});
-
-		$.ajax({
-			type: 'POST',
-			headers: {"cache-control": "no-cache"},
-			url: prestashop.urls.base_url + 'modules/leofeature/psajax_review.php?rand=' + new Date().getTime(),
-			async: true,
-			cache: false,
-			data: {
-				"action": "render-modal-review",
-				"id_product": id_product,				
-				"is_logged": is_logged,
-				"token": leo_token
-			},
-			success: function (result)
-			{
-				if(result != '')
-				{						
-					$('body').append(result);
-					activeEventModalReview();
-					activeStar();
-					$('.open-review-form').fadeIn('fast');
-				}
-				else
-				{
-					alert(review_error);
-				}
-							
-			},
-			error: function (XMLHttpRequest, textStatus, errorThrown) {
-				// alert("TECHNICAL ERROR: \n\nDetails:\nError thrown: " + XMLHttpRequest + "\n" + 'Text status: ' + textStatus);
-			}
-		});
-		
-		$('.open-review-form').click(function(){
-			if ($('#criterions_list').length)
-			{	
-				$('.leo-modal-review').modal('show');
-			}
-			else
-			{
-				if ($('.leo-modal-review .modal-body .disable-form-review').length)
-				{
-					$('.leo-modal-review').modal('show');
-				}
-				else
-				{
-					$('.leo-modal-review-bt').remove();
-					$('.leo-modal-review .modal-header').remove();
-					$('.leo-modal-review .modal-body').empty();
-					$('.leo-modal-review .modal-body').append('<div class="form-group disable-form-review has-danger text-center"><label class="form-control-label">'+disable_review_form_txt+'</label></div>');
-					$('.leo-modal-review').modal('show');
-				}
-				
-			}
-			return false;
 		});
 	}
 	
@@ -168,7 +112,7 @@ $(document).ready(function(){
 					}
 					else
 					{
-						alert(review_error);
+						console.log(review_error);
 					}
 					
 				},
@@ -207,7 +151,7 @@ $(document).ready(function(){
 					}
 					else
 					{
-						alert(review_error);
+						console.log(review_error);
 					}
 					
 				},
@@ -288,27 +232,26 @@ function activeEventModalReview()
 								// console.log(object_result);
 								$('.leo-modal-review-bt').fadeOut('slow', function(){
 									$(this).remove();
-									
 								});
 								
-								$('.leo-modal-review .modal-body>.row').fadeOut('slow', function(){
+								$('.new_review_form_content > *').fadeOut('slow', function(){
 									$(this).remove();
 									if (object_result.result)
 									{
-										$('.leo-modal-review .modal-body').append('<div class="form-group has-success"><label class="form-control-label">'+object_result.sucess_mess+'</label></div>');
+										$('.new_review_form_content').append('<div class="form-group has-success"><label class="form-control-label">'+object_result.sucess_mess+'</label></div>');
 									}
 									else
 									{
 										// $('.leo-modal-review .modal-body').append('<div class="form-group has-danger text-center"></div>');
 										$.each(object_result.errors, function(key, val){
-											$('.leo-modal-review .modal-body').append('<div class="form-group has-danger text-center"><label class="form-control-label">'+val+'</label></div>');
+											$('.new_review_form_content').append('<div class="form-group has-danger text-center"><label class="form-control-label">'+val+'</label></div>');
 										});
 									}
 								});
 							}
 							else
 							{
-								alert(review_error);
+								console.log(review_error);
 							}
 							
 						},
@@ -355,22 +298,22 @@ function activeEventFormReview()
 			if (!$(this).hasClass('active'))
 			{
 				$(this).addClass('active');
-				$('[data-review-form] .leo-modal-review-bt-text').hide();
-				$('[data-review-form] .leo-modal-review-loading').css({'display':'block'});
+				// $('[data-review-form] .leo-modal-review-bt-text').hide();
+				// $('[data-review-form] .leo-modal-review-loading').css({'display':'block'});
 				
-				$('[data-review-form] .new_review_form_content input, [data-review-form] .new_review_form_content textarea').each(function(){
+				// $('[data-review-form] .new_review_form_content input, [data-review-form] .new_review_form_content textarea').each(function(){
 					
-					if ($(this).val() == '')
-					{
-						$(this).parent('.form-group').addClass('leo-has-error');
-						$(this).attr("required", "");
-					}
-					else
-					{
-						$(this).parent('.form-group').removeClass('leo-has-error');
-						$(this).removeAttr('required');
-					}
-				})
+				// 	if ($(this).val() == '')
+				// 	{
+				// 		$(this).parent('.form-group').addClass('leo-has-error');
+				// 		$(this).attr("required", "");
+				// 	}
+				// 	else
+				// 	{
+				// 		$(this).parent('.form-group').removeClass('leo-has-error');
+				// 		$(this).removeAttr('required');
+				// 	}
+				// })
 				
 				if ($('[data-review-form] .new_review_form_content .form-group.leo-has-error').length)
 				{
@@ -397,29 +340,21 @@ function activeEventFormReview()
 							{
 								var object_result = $.parseJSON(result);
 								// console.log(object_result);
-								$('.leo-modal-review-bt').fadeOut('slow', function(){
-									$(this).remove();
-									
-								});
-								
-								$('.leo-modal-review .modal-body>.row').fadeOut('slow', function(){
-									$(this).remove();
-									if (object_result.result)
-									{
-										$('[data-review-form] .leo-modal-review').append('<div class="form-group has-success"><label class="form-control-label">'+object_result.sucess_mess+'</label></div>');
-									}
-									else
-									{
-										// $('.leo-modal-review .modal-body').append('<div class="form-group has-danger text-center"></div>');
-										$.each(object_result.errors, function(key, val){
-											$('[data-review-form] .leo-modal-review ').append('<div class="form-group has-danger text-center"><label class="form-control-label">'+val+'</label></div>');
-										});
-									}
-								});
+								if(object_result.result){
+									$('.new_review_form_content > *').fadeOut('slow', function(){
+										$(this).remove();
+									});
+									$('.new_review_form_content').first().append('<div class="form-group has-success"><label class="form-control-label">'+object_result.sucess_mess+'</label></div>');
+								} else {
+									$.each(object_result.errors, function(key, val){
+										$('.new_review_form_content').append('<div class="form-group has-danger text-center"><label class="form-control-label">'+val+'</label></div>');
+									});
+									$('[data-review-form] .leo-modal-review-bt').removeClass('active');
+								}
 							}
 							else
 							{
-								alert(review_error);
+								console.log(review_error);
 							}
 							
 						},
