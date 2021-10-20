@@ -57,7 +57,7 @@
             {if isset($listing.rendered_facets) && $listing.rendered_facets}
              <div class="horizontal_filters">
               <div class="sidebar top-facet">
-               <div id="search_filters_wrapper" class="collapse in" aria-expanded="true" style="">
+               <div id="search_filters_wrapper" class="collapse" aria-expanded="false" style="">
                 {$listing.rendered_facets nofilter}
                </div>
               </div>
