@@ -427,7 +427,7 @@ $(document).ready(function() {
 		//if (value.type == "horizontal" && value.show_cavas == 1)
 		if (value.type == "horizontal" && value.show_cavas == 1)
 		{
-			$(document.body).on('click', '[data-toggle="dropdown"]' ,function(){
+			$(document.body).on('click', '#header [data-toggle="dropdown"]' ,function(){
 				if(!$(this).parent().hasClass('open') && this.href && this.href != '#'){
 					window.location.href = this.href;
 				}
