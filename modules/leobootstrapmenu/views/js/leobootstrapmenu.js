@@ -114,6 +114,10 @@ $(document).ready(function() {
 					}, 0);
 					return false;
 				});
+
+				megamenu_element.find('.dropdown-sub .dropdown-menu-inner').prepend(function(){
+					return $(this).parent().parent().find('.dropdown-toggle').clone().text(menu_category_see_all);
+				 });
 				
 				$(".off-canvas-nav-megamenu[data-megamenu-id="+value.id+"]").find('.offcanvas-mainnav .caret').click(function(){
 					
