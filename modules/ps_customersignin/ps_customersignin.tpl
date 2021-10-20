@@ -65,7 +65,7 @@
 }
 
 
-@media(max-width: 992px){
+@media(max-width: 991px){
 .bottomnav .userinfo-selector a{
 	    color: #000;
     display: block;

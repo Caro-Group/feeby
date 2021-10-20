@@ -1,0 +1,125 @@
+/* Fix header visibility */
+.megamenu-overlay{
+  top: 35px;
+}
+
+.off-canvas .off-canvas-active{
+  background: #FFFFFF;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-bottom: 35px;
+}
+
+/* Menu overlay style */
+
+.off-canvas-button-megamenu{
+  margin: 15px 20px 10px;
+}
+
+.off-canvas-nav-megamenu .offcanvas-mainnav{
+  position: fixed;
+  bottom: 0;
+  overflow-y: auto;
+  top: 35px;
+  padding-bottom: 35px;
+}
+
+.off-canvas-button-megamenu{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 18px;
+  color: #000;
+  font-weight: 500;
+}
+
+.off-canvas-button-megamenu .hidden-visually{
+  font-size: 0;
+  color: transparent;
+}
+
+.off-canvas-nav-megamenu .navbar-nav>li[data-menu-type="url"]>a {
+  color: #aaa;
+  text-transform: none;
+}
+
+.off-canvas-nav-megamenu .navbar-nav>li[data-menu-type="category"]{
+  background: #ebebeb;
+  border-bottom-color: #fff;
+}
+
+.off-canvas-button-megamenu .off-canvas-nav{
+  margin: 0 0 0 auto;
+}
+
+.off-canvas-nav-megamenu .dropdown-menu .more{
+  color: #000;
+  margin-left: -20px;
+  margin-right: -20px;
+  background: #ebebeb;
+  border: 1px solid #fff;
+  border-width: 1px 0;
+  padding-right: 20px;
+  padding-left: 20px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 19px;
+}
+
+.off-canvas-nav-megamenu .nav-item.dropdown .dropdown-toggle{
+  line-height: 14px;
+  padding: 20px 20px 16px;
+}
+
+.off-canvas-nav-megamenu .nav-item.sibling-opened {
+  display: none;
+}
+
+.off-canvas-nav-megamenu .nav-item.open-sub{
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  top: 50px;
+  padding-bottom: 50px;
+}
+
+.off-canvas-nav-megamenu .nav-item.open-sub:after{
+  background: #FFFFFF;
+  content: '';
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+  top: 100px;
+  left: 0;
+  right: 0;
+}
+
+.off-canvas-nav-megamenu .nav li.dropdown.open-sub .dropdown-toggle{
+  left: 30px;
+}
+
+.off-canvas-nav-megamenu .nav li.dropdown.open-sub .caret{
+  transform: rotate(270deg);
+  left: 0;
+}
+
+
+.off-canvas-nav-megamenu .leo-widget .widget-html img,
+.off-canvas-nav-megamenu .leo-widget .widget-html .mobile-hidden{
+  display: none;
+}
+
+@media(min-width: 992px){
+  .off-canvas-nav-megamenu .leo-widget .widget-html img{
+    display: block;
+  }
+
+  .off-canvas-nav-megamenu .leo-widget .widget-html .mobile-hidden{
+    display: inline;
+  }
+}

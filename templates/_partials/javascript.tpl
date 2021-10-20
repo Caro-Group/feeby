@@ -61,4 +61,7 @@
 	
 	var size_item_popup = 160;
 	var style_scroll_popup = 'vertical';
+
+  var menu_category = "{l s='Category' d='Shop.Theme.Global'}";
+  var menu_category_see_all = "{l s='See all' d='Shop.Theme.Global'}";
 </script>
