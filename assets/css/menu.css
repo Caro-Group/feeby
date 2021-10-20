@@ -27,10 +27,6 @@
   overflow-y: auto;
 }
 
-.off-canvas-nav-megamenu .nav-item.open-sub ~ li {
-  visibility: hidden;
-}
-
 .off-canvas-button-megamenu{
   display: flex;
   align-items: center;
@@ -80,7 +76,7 @@
 
 .off-canvas-nav-megamenu .nav-item.open-sub{
   position: absolute;
-  bottom: auto;
+  bottom: 0;
   left: 0;
   right: 0;
   z-index: 1;
@@ -88,8 +84,15 @@
   padding-bottom: 50px;
 }
 
-.off-canvas-nav-megamenu .nav-item.open-sub.open{
+.off-canvas-nav-megamenu .nav-item.open-sub:after{
   background: #FFFFFF;
+  content: '';
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  top: 85px;
+  left: 0;
+  right: 0;
 }
 
 .off-canvas-nav-megamenu .nav li.dropdown.open-sub .dropdown-toggle{
