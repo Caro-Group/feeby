@@ -1,6 +1,5 @@
 /* Fix header visibility */
-.megamenu-overlay,
-.off-canvas-nav-megamenu .offcanvas-mainnav .megamenu{
+.megamenu-overlay{
   top: 35px;
 }
 
@@ -25,6 +24,8 @@
   position: fixed;
   bottom: 0;
   overflow-y: auto;
+  top: 35px;
+  padding-bottom: 35px;
 }
 
 .off-canvas-button-megamenu{
@@ -74,6 +75,10 @@
   padding: 20px 20px 16px;
 }
 
+.off-canvas-nav-megamenu .nav-item.sibling-opened {
+  display: none;
+}
+
 .off-canvas-nav-megamenu .nav-item.open-sub{
   position: absolute;
   left: 0;
@@ -87,9 +92,9 @@
   background: #FFFFFF;
   content: '';
   position: absolute;
-  z-index: -1;
+  z-index: 0;
   bottom: 0;
-  top: 85px;
+  top: 100px;
   left: 0;
   right: 0;
 }
