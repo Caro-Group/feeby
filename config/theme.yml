@@ -4,10 +4,10 @@ version: 1.0.0
 parent: at_movic
 assets:
   use_parent_assets: false
-#  css:
-#    all:
-#      - id: custom-lib-style
-#        path: assets/css/custom-lib.css
+  css:
+    all:
+      - id: menu-style
+        path: assets/css/menu.css
 #    product:
 #      - id: product-style
 #        path: assets/css/product.css
