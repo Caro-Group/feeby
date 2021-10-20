@@ -6,6 +6,11 @@
 }
 
 /* Menu overlay style */
+
+.off-canvas-button-megamenu{
+  margin: 15px 20px 10px;
+}
+
 .off-canvas-nav-megamenu .offcanvas-mainnav{
   position: fixed;
   bottom: 0;
