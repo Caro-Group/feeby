@@ -14,6 +14,7 @@
 .off-canvas-nav-megamenu .offcanvas-mainnav{
   position: fixed;
   bottom: 0;
+  overflow-y: auto;
 }
 
 .off-canvas-nav-megamenu .nav-item.open-sub ~ li {
