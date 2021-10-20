@@ -52,6 +52,11 @@
 
 }
 
+.off-canvas-nav-megamenu .nav-item.dropdown .dropdown-toggle{
+  line-height: 14px;
+  padding: 20px 20px 16px;
+}
+
 .off-canvas-nav-megamenu .nav-item.open-sub{
   position: fixed;
   margin-top: 50px;
