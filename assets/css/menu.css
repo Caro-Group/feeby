@@ -1,8 +1,18 @@
 /* Fix header visibility */
 .megamenu-overlay,
-.off-canvas-nav-megamenu .offcanvas-mainnav,
-.off-canvas-nav-megamenu .nav-item.open-sub{
+.off-canvas-nav-megamenu .offcanvas-mainnav .megamenu{
   top: 35px;
+}
+
+.off-canvas .off-canvas-active{
+  background: #FFFFFF;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-bottom: 35px;
 }
 
 /* Menu overlay style */
@@ -69,12 +79,17 @@
 }
 
 .off-canvas-nav-megamenu .nav-item.open-sub{
-  position: fixed;
-  margin-top: 50px;
+  position: absolute;
   bottom: auto;
   left: 0;
   right: 0;
   z-index: 1;
+  top: 50px;
+  padding-bottom: 50px;
+}
+
+.off-canvas-nav-megamenu .nav-item.open-sub.open{
+  background: #FFFFFF;
 }
 
 .off-canvas-nav-megamenu .nav li.dropdown.open-sub .dropdown-toggle{
@@ -87,12 +102,17 @@
 }
 
 
-.off-canvas-nav-megamenu .leo-widget .widget-html img{
+.off-canvas-nav-megamenu .leo-widget .widget-html img,
+.off-canvas-nav-megamenu .leo-widget .widget-html .mobile-hidden{
   display: none;
 }
 
 @media(min-width: 992px){
   .off-canvas-nav-megamenu .leo-widget .widget-html img{
     display: block;
+  }
+
+  .off-canvas-nav-megamenu .leo-widget .widget-html .mobile-hidden{
+    display: inline;
   }
 }
