@@ -1,11 +1,20 @@
 /* Fix header visibility */
 .megamenu-overlay,
 .off-canvas-nav-megamenu .offcanvas-mainnav,
-.off-canvas-nav-megamenu .dropdown-menu{
+.off-canvas-nav-megamenu .nav-item.open-sub{
   top: 35px;
 }
 
 /* Menu overlay style */
+.off-canvas-nav-megamenu .offcanvas-mainnav{
+  position: fixed;
+  bottom: 0;
+}
+
+.off-canvas-nav-megamenu .nav-item.open-sub ~ li {
+  visibility: hidden;
+}
+
 .off-canvas-button-megamenu{
   display: flex;
   align-items: center;
@@ -35,16 +44,34 @@
 }
 
 .off-canvas-nav-megamenu .dropdown-menu{
-  position: fixed;
-  margin-top: 42px;
+
 }
 
-.off-canvas-nav-megamenu .leo-widget{
+.off-canvas-nav-megamenu .nav-item.open-sub{
+  position: fixed;
+  margin-top: 57px;
+  bottom: auto;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.off-canvas-nav-megamenu .nav li.dropdown.open-sub .dropdown-toggle{
+  left: 30px;
+}
+
+.off-canvas-nav-megamenu .nav li.dropdown.open-sub .caret{
+  transform: rotate(270deg);
+  left: 0;
+}
+
+
+.off-canvas-nav-megamenu .leo-widget .widget-html img{
   display: none;
 }
 
 @media(min-width: 992px){
-  .off-canvas-nav-megamenu .leo-widget{
-    display: none;
+  .off-canvas-nav-megamenu .leo-widget .widget-html img{
+    display: block;
   }
 }
