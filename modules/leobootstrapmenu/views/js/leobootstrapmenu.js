@@ -115,12 +115,12 @@ $(document).ready(function() {
 					return false;
 				});
 
-				megamenu_element.find('.dropdown-sub .dropdown-menu-inner').prepend(function(){
-					return $(this).parent().parent().find('.dropdown-toggle').clone().text(menu_category_see_all);
+				$('.off-canvas-nav-megamenu').find('.dropdown-sub .dropdown-menu-inner').prepend(function(){
+					return $(this).parent().parent().find('.dropdown-toggle').clone().text(menu_category_see_all).addClass('more');
 				 });
 				
-				$(".off-canvas-nav-megamenu[data-megamenu-id="+value.id+"]").find('.offcanvas-mainnav .caret').click(function(){
-					
+				$(".off-canvas-nav-megamenu[data-megamenu-id="+value.id+"]").find('.offcanvas-mainnav .caret, .offcanvas-mainnav .dropdown-toggle').click(function(e){
+					e.preventDefault();
 					if($(this).parent('li').hasClass('open-sub'))
 					{
 						$(this).parent('li').find('.dropdown-menu').first().slideUp('fast',function (){
