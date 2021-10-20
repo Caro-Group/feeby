@@ -133,7 +133,7 @@ $(document).ready(function() {
 							// }
 							auto_height(value.id);
 						});
-						$(this).parent('li').removeClass('open-sub');
+						$(this).parent('li').removeClass('open-sub').siblings().removeClass('sibling-opened');
 					}
 					else
 					{
@@ -150,7 +150,7 @@ $(document).ready(function() {
 							// }
 							auto_height(value.id);
 						});
-						$(this).parent('li').addClass('open-sub');
+						$(this).parent('li').addClass('open-sub').siblings().addClass('sibling-opened');
 					}
 					
 					
