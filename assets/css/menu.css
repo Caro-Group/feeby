@@ -1,3 +1,35 @@
+/* Fix header visibility */
+.megamenu-overlay,
+.off-canvas-nav-megamenu .offcanvas-mainnav,
+.off-canvas-nav-megamenu .dropdown-menu{
+  top: 35px;
+}
+
+/* Menu overlay style */
+.off-canvas-button-megamenu{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 18px;
+  color: #000;
+  font-weight: 500;
+}
+
+.off-canvas-button-megamenu .hidden-visually{
+  font-size: 0;
+  color: transparent;
+}
+
 .off-canvas-nav-megamenu .navbar-nav>li[data-menu-type="url"]>a {
-  color: #ccc;
+  color: #aaa;
+  text-transform: none;
+}
+
+.off-canvas-nav-megamenu .navbar-nav>li[data-menu-type="category"]{
+  background: #ebebeb;
+  border-bottom-color: #fff;
+}
+
+.off-canvas-nav-megamenu .dropdown-menu{
+  position: fixed;
 }
