@@ -116,7 +116,7 @@ $(document).ready(function() {
 				});
 
 				$('.off-canvas-nav-megamenu').find('.dropdown-sub .dropdown-menu-inner').prepend(function(){
-					return $(this).parent().parent().removeClass('open').find('.dropdown-toggle').clone().text(menu_category_see_all).addClass('more');
+					return $(this).parent().parent().removeClass('open').find('.dropdown-toggle').clone().text(menu_category_see_all).addClass('more').removeAttr('data-toggle').removeClass('dropdown-toggle');
 				 });
 				
 				$(".off-canvas-nav-megamenu[data-megamenu-id="+value.id+"]").find('.offcanvas-mainnav .caret, .offcanvas-mainnav .dropdown-toggle').click(function(e){
