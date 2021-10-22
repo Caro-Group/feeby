@@ -54,10 +54,11 @@
       <script>
         function openMenuWithCategory(id)
         {
-         console.log(id);
-         var menu_el = $('.off-canvas-nav-megamenu').find('[data-category-id=' + id + ']');
-         menu_el.parents('.dropdown').dropdown('toggle');
-         off_canvas_active();
+         var menu_el = $('.off-canvas-nav-megamenu').find('[data-category-id=' + id + ']').first();
+         var menu_id = menu_el.parents('.off-canvas-nav-megamenu').data('megamenu-id');
+
+         menu_el.parents('.dropdown').children('.dropdown-toggle').click();
+         $('.cavas_menu[data-megamenu-id='+menu_id+']').find('.navbar-toggler').click();
         } 
       </script>
     {/literal}
