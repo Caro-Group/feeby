@@ -47,6 +47,10 @@
       </div>
     {/block}
 
+    <div style="flex: 1 1 auto;background: #000;display: flex;align-items: center;justify-content: center;color: #fff;border-radius: 20px;padding: 5px 35px 5px 15px;margin-bottom: 10px;" class="hidden-md-up" data-category-id="{$smarty.get.id_category}">
+      {l s='Categories' d='Shop.Theme.Global'}
+    </div>
+
     <div style="flex: 1 1 auto;
     {if !empty($activeFilters)}background: #f9f9f9;{/if}
     display: flex;
