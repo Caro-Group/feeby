@@ -79,6 +79,10 @@
   display: none;
 }
 
+.off-canvas-nav-megamenu .active.sub-menu .dropdown-sub.dropdown-menu{
+  display: block;
+}
+
 .off-canvas-nav-megamenu .nav-item.open-sub{
   position: absolute;
   left: 0;
