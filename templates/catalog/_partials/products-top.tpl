@@ -29,6 +29,10 @@
 {/if}
 
 <div id="js-product-list-top" class="products-selection">
+  <div style="flex: 1 1 auto;background: #000;display: flex;align-items: center;justify-content: center;color: #fff;border-radius: 20px;padding: 5px 35px 5px 15px;margin-bottom: 10px;" class="hidden-md-up" onclick="openMenuWithCategory({$smarty.get.id_category})">
+    {l s='Categories' d='Shop.Theme.Global'}
+  </div>
+
   <div style="display: flex;flex-wrap: wrap;">
     <div style="flex:0 0 auto;" class="hidden-md-up">
         {if !empty($listing.rendered_facets)}
@@ -47,9 +51,6 @@
       </div>
     {/block}
 
-    <div style="flex: 1 1 auto;background: #000;display: flex;align-items: center;justify-content: center;color: #fff;border-radius: 20px;padding: 5px 35px 5px 15px;margin-bottom: 10px;" class="hidden-md-up" onclick="openMenuWithCategory({$smarty.get.id_category})">
-      {l s='Categories' d='Shop.Theme.Global'}
-    </div>
     {literal}
       <script>
         function openMenuWithCategory(id)
@@ -58,7 +59,7 @@
          var menu_id = menu_el.parents('.off-canvas-nav-megamenu').data('megamenu-id');
 
          menu_el.parents('.dropdown').children('.dropdown-toggle').click();
-         $('.cavas_menu[data-megamenu-id='+menu_id+']').find('.navbar-toggler').click();
+         $('[data-target="\.megamenu-off-canvas-' + menu_id + '"]').first().click();
         } 
       </script>
     {/literal}
