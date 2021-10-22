@@ -47,9 +47,18 @@
       </div>
     {/block}
 
-    <div style="flex: 1 1 auto;background: #000;display: flex;align-items: center;justify-content: center;color: #fff;border-radius: 20px;padding: 5px 35px 5px 15px;margin-bottom: 10px;" class="hidden-md-up" >
+    <div style="flex: 1 1 auto;background: #000;display: flex;align-items: center;justify-content: center;color: #fff;border-radius: 20px;padding: 5px 35px 5px 15px;margin-bottom: 10px;" class="hidden-md-up" onclick="openMenuWithCategory({$smarty.get.id_category})">
       {l s='Categories' d='Shop.Theme.Global'}
     </div>
+    {literal}
+      <script>
+        function openMenuWithCategory(id)
+        {
+         console.log(id);
+         //validation code to see State field is mandatory.  
+        } 
+      </script>
+    {/literal}
 
     <div style="flex: 1 1 auto;
     {if !empty($activeFilters)}background: #f9f9f9;{/if}

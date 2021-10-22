@@ -17,7 +17,7 @@
 		<div id="tabs{$id}" class="panel-group">
 			<ul class="nav-links">
 				{foreach $links as $key => $ac}  
-					<li ><a href="{$ac.link}" >{$ac.text}</a></li>
+					<li ><a href="{$ac.link}" {if isset($ac.cat_id)}data-category-id="{$ac.cat_id}"{/if}>{$ac.text}</a></li>
 				{/foreach}
 			</ul>
 		</div>
