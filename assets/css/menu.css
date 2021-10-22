@@ -79,7 +79,7 @@
   display: none;
 }
 
-.off-canvas-nav-megamenu .active.sub-menu .dropdown-sub.dropdown-menu{
+.off-canvas-nav-megamenu .active.open-sub .dropdown-sub.dropdown-menu{
   display: block;
 }
 
