@@ -58,6 +58,7 @@
          var menu_el = $('.off-canvas-nav-megamenu').find('[data-category-id=' + id + ']').first();
          if(!menu_el.length){
            menu_el = $('[data-menu-type="category"].active').first();
+            menu_el.children('.dropdown-toggle').click();
          }
          var menu_id = menu_el.parents('[data-megamenu-id]').data('megamenu-id');
 
