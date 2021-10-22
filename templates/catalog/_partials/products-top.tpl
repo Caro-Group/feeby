@@ -55,7 +55,9 @@
         function openMenuWithCategory(id)
         {
          console.log(id);
-         //validation code to see State field is mandatory.  
+         var menu_el = $('.off-canvas-nav-megamenu').find('[data-category-id=' + id + ']');
+         menu_el.parents('.dropdown').dropdown('toggle');
+         off_canvas_active();
         } 
       </script>
     {/literal}
