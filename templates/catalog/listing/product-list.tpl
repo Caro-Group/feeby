@@ -27,9 +27,11 @@
 
  <img class="img-fluid" src="{$link->getMediaLink($smarty.const._THEME_CAT_DIR_)}{$smarty.get.id_category}.jpg" width="{$category.image.large.width}" height="{$category.image.large.height}" alt="{$category.image.legend}" style="margin-bottom: 30px;width: 100%;"/>
 
+{if count($breadcrumb) > 1}
  <a style="display: block;margin-bottom: 20px;" class="hidden-xl-up" href="{$breadcrumb.links[count($breadcrumb)-1]['url']}" title="{$breadcrumb.links[count($breadcrumb)-1]['title']}">
   <i style="font-size: 25px;" class="material-icons">&#xE408;</i>
  </a>
+{/if}
 
  <h1 class="h1">{$page.meta.keywords}</h1>
 
