@@ -24,6 +24,8 @@
  *}
 {extends file=$layout}
 
+{block name='breadcrumb'}{/block}
+
 {block name='content'}
 
   <section id="main">
@@ -36,6 +38,7 @@
         <div class="card cart-container">
           <div class="card-block">
             <h1 class="h1">{l s='Shopping Cart' d='Shop.Theme.Checkout'}</h1>
+            <p class="p">{l s='Do not hesitate and order the product - adding it to the cart does not mean a reservation.' d='Shop.Theme.Checkout'}</p>
           </div>
           <hr class="separator">
           {block name='cart_overview'}
@@ -43,12 +46,16 @@
           {/block}
         </div>
 
+        {block name='cart_voucher'}
+          {include file='checkout/_partials/cart-voucher.tpl'}
+        {/block}
+
         {block name='continue_shopping'}
           <a class="label" href="{$urls.pages.index}">
             <i class="material-icons">chevron_left</i>{l s='Continue shopping' d='Shop.Theme.Actions'}
           </a>
         {/block}
-
+        
         <!-- shipping informations -->
         {block name='hook_shopping_cart_footer'}
           {hook h='displayShoppingCartFooter'}
