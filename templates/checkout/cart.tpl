@@ -40,11 +40,9 @@
       <div class="flex-auto tablet:pr-16">
 
         <!-- cart products detailed -->
-        <div class="card cart-container">
-          {block name='cart_overview'}
-            {include file='checkout/_partials/cart-detailed.tpl' cart=$cart}
-          {/block}
-        </div>
+        {block name='cart_overview'}
+          {include file='checkout/_partials/cart-detailed.tpl' cart=$cart}
+        {/block}
 
         {block name='cart_voucher'}
           {include file='checkout/_partials/cart-voucher.tpl'}

@@ -30,7 +30,11 @@ module.exports = {
     },
     extend: {
       width: {
-        "side": "467px"
+        "side": "467px",
+        "miniature": "102px"
+      },
+      margin: {
+        'miniature': '102px',
       }
     },
   },
