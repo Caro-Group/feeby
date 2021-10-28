@@ -6,6 +6,8 @@ assets:
   use_parent_assets: false
   css:
     all:
+      - id: main-style
+        path: assets/css/styles.css
       - id: menu-style
         path: assets/css/menu.css
 #    product:
