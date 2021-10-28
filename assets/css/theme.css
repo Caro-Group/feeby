@@ -19879,7 +19879,9 @@ body #search_filters .clear-all-wrapper {
 .product-price {
   color: #000;
   display: inline-block;
-  font-family: 'Poppins'; }
+  font-family: 'Poppins'; 
+  line-height: normal;
+}
 
 .product-information div[itemprop="description"] {
   line-height: 2;
