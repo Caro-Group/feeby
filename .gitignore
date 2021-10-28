@@ -37,3 +37,6 @@ cache/*
 
 # Generated styles
 *.min.css
+
+# ENV variables
+.env

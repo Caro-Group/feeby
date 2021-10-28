@@ -12,6 +12,9 @@
  |
  |
  */
+
+require('dotenv').config();
+
 module.exports = {
     "ui": {
         "port": 3001
@@ -28,10 +31,10 @@ module.exports = {
     },
     "server": false,
     "proxy": {
-        target: "https://test.feeby.pl",
+        target: process.env.TEST_URL,
         proxyReq: [
             function(proxyReq){
-                proxyReq.setHeader("cf-access-token", "");
+                proxyReq.setHeader("cf-access-token", process.env.CF_TOKEN);
             }
         ]
     },
