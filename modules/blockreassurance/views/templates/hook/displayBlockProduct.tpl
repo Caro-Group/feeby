@@ -24,7 +24,7 @@
 *}
 
 {if $smarty.get.controller == 'cart'}
-    {include file='../displayCart.tpl' blocks=$blocks}
+    {include file='./displayCart.tpl' blocks=$blocks}
 {else}
-    {include file='../displayProductCart.tpl' blocks=$blocks}
+    {include file='./displayProductCart.tpl' blocks=$blocks}
 {/if}
