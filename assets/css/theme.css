@@ -3351,7 +3351,7 @@ a.bg-inverse:focus, a.bg-inverse:hover {
   margin: 0;
   overflow: visible;
   clip: auto; }
-
+/* 
 .w-100 {
   width: 100% !important; }
 
@@ -3544,7 +3544,7 @@ a.bg-inverse:focus, a.bg-inverse:hover {
 
 .py-3 {
   padding-top: 3rem !important;
-  padding-bottom: 3rem !important; }
+  padding-bottom: 3rem !important; } */
 
 .pos-f-t {
   position: fixed;
