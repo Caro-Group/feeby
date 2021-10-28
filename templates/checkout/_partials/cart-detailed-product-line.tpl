@@ -26,25 +26,21 @@
   <!--  product line left content: image-->
   <div class="w-miniature flex-none">
     {if $product.cover}
-      <img src="{$product.cover.bySize.cart_default.url}" alt="{$product.name|escape:'quotes'}" width="102px" height="102px">
+      <img class="rounded-sm" src="{$product.cover.bySize.cart_default.url}" alt="{$product.name|escape:'quotes'}" width="102px" height="102px">
     {else}
-      <img src="{$urls.no_picture_image.bySize.cart_default.url}" alt="{l s='Placeholder' d='Shop.Theme.Checkout'}" width="102px" height="102px"/>
+      <img class="rounded-sm" src="{$urls.no_picture_image.bySize.cart_default.url}" alt="{l s='Placeholder' d='Shop.Theme.Checkout'}" width="102px" height="102px"/>
     {/if}
   </div>
 
   <!--  product line body: label, attributes, customizations -->
   <div class="flex-auto px-5">
-    <div class="product-line-info">
-      <a class="label" href="{$product.url}" data-id_customization="{$product.id_customization|intval}">{$product.name}</a>
-    </div>
-
     
-    <br/>
+    <a class="block mb-2 text-black font-bold text-sm" href="{$product.url}" data-id_customization="{$product.id_customization|intval}">{$product.name}</a>
 
     {foreach from=$product.attributes key="attribute" item="value"}
-      <div class="product-line-info">
-        <span class="label">{$attribute}:</span>
-        <span class="value">{$value}</span>
+      <div class="flex flex-row">
+        <span class="text-gray-500 mr-1">{$attribute}:</span>
+        <span class="text-gray-500">{$value}</span>
       </div>
     {/foreach}
 
