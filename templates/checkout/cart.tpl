@@ -27,17 +27,20 @@
 {block name='breadcrumb'}{/block}
 
 {block name='content'}
-
   <section id="main">
-    <div class="flex flex-wrap mt-12">
-
-      <div class="flex flex-col items-start flex-auto w-full mb-6">
+    <div class="flex flex-wrap mt-12 mb-6">
+      <div class="flex flex-col items-start flex-auto w-full ">
+        <a class="block tablet-wide:hidden mb-4" href="{$urls.pages.index}" title="{l s='Continue shopping' d='Shop.Theme.Actions'}">
+          <i class="material-icons text-3xl leading-none -ml-2">chevron_left</i>
+        </a>
         <h1 class="h1 mb-2">{l s='Shopping Cart' d='Shop.Theme.Checkout'}</h1>
-        <p class="m-0 bg-gray text-black p-1.5 font-bold">{l s='Do not hesitate and order the product - adding it to the cart does not mean a reservation.' d='Shop.Theme.Checkout'}</p>
+        <p class="m-0 bg-gray-200 text-black p-1.5 font-bold rounded">{l s='Do not hesitate and order the product - adding it to the cart does not mean a reservation.' d='Shop.Theme.Checkout'}</p>
       </div>
+    </div>
 
+    <div class="flex flex-wrap tablet-wide:flex-nowrap">
       <!-- Left Block: cart product informations & shpping -->
-      <div class="flex flex-col items-start justify-between flex-auto tablet:pr-16">
+      <div class="flex flex-col items-start justify-between flex-auto tablet-wide:pr-16">
 
         <!-- cart products detailed -->
         {block name='cart_overview'}
@@ -47,12 +50,6 @@
         {block name='cart_voucher'}
           {include file='checkout/_partials/cart-voucher.tpl'}
         {/block}
-
-        {block name='continue_shopping'}
-          <a class="label" href="{$urls.pages.index}">
-            <i class="material-icons">chevron_left</i>{l s='Continue shopping' d='Shop.Theme.Actions'}
-          </a>
-        {/block}
         
         <!-- shipping informations -->
         {block name='hook_shopping_cart_footer'}
@@ -60,6 +57,12 @@
         {/block}
       </div>
 
+      {block name='continue_shopping'}
+        <a class="label" href="{$urls.pages.index}">
+          <i class="material-icons">chevron_left</i>{l s='Continue shopping' d='Shop.Theme.Actions'}
+        </a>
+      {/block}
+      
       <!-- Right Block: cart subtotal & cart total -->
       <div class="flex-initial w-side">
 

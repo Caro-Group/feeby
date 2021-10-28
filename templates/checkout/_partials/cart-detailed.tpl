@@ -26,7 +26,7 @@
   <div class="js-cart" data-refresh-url="{url entity='cart' params=['ajax' => true, 'action' => 'refresh']}">
     {if $cart.products}
 
-    <div class="flex border-b pb-1">
+    <div class="hidden tablet-wide:flex border-b pb-1">
       <div class="ml-miniature px-5 flex-auto">
         {l s='Product' d='Shop.Theme.Checkout'}
       </div>

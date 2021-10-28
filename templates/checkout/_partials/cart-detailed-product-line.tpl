@@ -24,7 +24,7 @@
  *}
 <div class="flex flex-row w-full">
   <!--  product line left content: image-->
-  <div class="w-miniature flex-none">
+  <div class="w-miniature flex-none mr-5">
     {if $product.cover}
       <img class="rounded-sm" src="{$product.cover.bySize.cart_default.url}" alt="{$product.name|escape:'quotes'}" width="102px" height="102px">
     {else}
@@ -150,7 +150,7 @@
     </span>
   </div>
 
-  <div class="flex-none">
+  <div class="w-4 flex-none">
     <div class="cart-line-product-actions">
       <a
           class                       = "remove-from-cart"
