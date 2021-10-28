@@ -37,7 +37,7 @@
       </div>
 
       <!-- Left Block: cart product informations & shpping -->
-      <div class="flex-auto tablet:pr-16">
+      <div class="flex flex-col items-start justify-between flex-auto tablet:pr-16">
 
         <!-- cart products detailed -->
         {block name='cart_overview'}
@@ -64,7 +64,7 @@
       <div class="flex-initial w-side">
 
         {block name='cart_summary'}
-          <div class="card cart-summary">
+          <div class="block bg-gray-200 rounded mb-6">
 
             {block name='hook_shopping_cart'}
               {hook h='displayShoppingCart'}

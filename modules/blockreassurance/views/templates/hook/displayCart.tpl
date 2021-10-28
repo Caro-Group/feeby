@@ -1,6 +1,6 @@
 <div class="flex flex-col">
     {foreach from=$blocks item=$block key=$key}
-        <div class="flex flex-row items-center mb-4" {if $block['type_link'] !== $LINK_TYPE_NONE && !empty($block['link'])} style="cursor:pointer;" onclick="window.open('{$block['link']}')"{/if}>
+        <div class="flex flex-row items-center mt-3 ml-4" {if $block['type_link'] !== $LINK_TYPE_NONE && !empty($block['link'])} style="cursor:pointer;" onclick="window.open('{$block['link']}')"{/if}>
             <span class="flex w-10 h-10 mr-4">
                 {if $block['icon'] != 'undefined'}
                     {if $block['icon']}
@@ -16,9 +16,8 @@
                 {else}
                 <span class="font-bold uppercase" style="color:{$textColor};">{$block['title']}</span>
                 <p class="text-xs" style="color:{$textColor};">{$block['description'] nofilter}</p>
+                {/if}
             </div>
-            {/if}
         </div>
     {/foreach}
-    <div class="clearfix"></div>
 </div>
