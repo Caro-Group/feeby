@@ -43,7 +43,6 @@
     "cross-env": "^7.0.3",
     "cssnano": "^5.0.8",
     "dotenv": "^10.0.0",
-    "live-server": "git://github.com/tapio/live-server.git#5c4539d0816eb6f30a4020444c093415dceeb5eb",
     "postcss-cli": "^9.0.1",
     "tailwindcss": "^1.7.2"
   }
