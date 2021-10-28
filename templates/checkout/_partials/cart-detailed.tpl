@@ -25,6 +25,22 @@
 {block name='cart_detailed_product'}
   <div class="cart-overview js-cart" data-refresh-url="{url entity='cart' params=['ajax' => true, 'action' => 'refresh']}">
     {if $cart.products}
+
+    <div class="flex">
+      <div>
+        {l s='Product' d='Shop.Theme.Checkout'}
+      </div>
+      <div>
+        {l s='Price' d='Shop.Theme.Checkout'}
+      </div>
+      <div>
+        {l s='Quantity' d='Shop.Theme.Checkout'}
+      </div>
+      <div>
+        {l s='Summary' d='Shop.Theme.Checkout'}
+      </div>
+    </div>
+
     <ul class="cart-items">
       {foreach from=$cart.products item=product}
         <li class="cart-item">

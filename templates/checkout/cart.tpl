@@ -29,18 +29,18 @@
 {block name='content'}
 
   <section id="main">
-    <div class="cart-grid row">
+    <div class="flex flex-wrap mt-12">
+
+      <div class="flex flex-col items-start flex-auto w-full mb-6">
+        <h1 class="h1 mb-2">{l s='Shopping Cart' d='Shop.Theme.Checkout'}</h1>
+        <p class="m-0 bg-gray text-black p-1.5 font-bold">{l s='Do not hesitate and order the product - adding it to the cart does not mean a reservation.' d='Shop.Theme.Checkout'}</p>
+      </div>
 
       <!-- Left Block: cart product informations & shpping -->
-      <div class="cart-grid-body col-xs-12 col-lg-8">
+      <div class="flex-auto tablet:pr-16">
 
         <!-- cart products detailed -->
         <div class="card cart-container">
-          <div class="card-block">
-            <h1 class="h1">{l s='Shopping Cart' d='Shop.Theme.Checkout'}</h1>
-            <p class="p">{l s='Do not hesitate and order the product - adding it to the cart does not mean a reservation.' d='Shop.Theme.Checkout'}</p>
-          </div>
-          <hr class="separator">
           {block name='cart_overview'}
             {include file='checkout/_partials/cart-detailed.tpl' cart=$cart}
           {/block}
@@ -63,7 +63,7 @@
       </div>
 
       <!-- Right Block: cart subtotal & cart total -->
-      <div class="cart-grid-right col-xs-12 col-lg-4">
+      <div class="flex-initial w-side">
 
         {block name='cart_summary'}
           <div class="card cart-summary">
