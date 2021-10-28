@@ -162,7 +162,7 @@
           data-id-customization   	  = "{$product.id_customization|escape:'javascript'}"
       >
         {if !isset($product.is_gift) || !$product.is_gift}
-        <i class="material-icons float-xs-left">delete</i>
+          <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#EAEEEC" d="M0 0h12v12H0z"/><g clip-path="url(#a)"><path fill="#fff" d="M-1130-465H790V993h-1920z"/><path d="m10.391.492 1.117 1.116c.099.1.112.186.038.26l-9.68 9.679c-.072.073-.159.06-.258-.039L.492 10.392c-.1-.1-.113-.186-.04-.26l9.68-9.679c.074-.073.16-.06.26.039Z" fill="#C4C4C4"/><path d="m1.873.458 9.67 9.67c.076.076.065.164-.035.264l-1.116 1.116c-.1.1-.187.11-.264.034l-9.67-9.67c-.076-.076-.065-.164.034-.264L1.61.492c.1-.1.187-.11.264-.034Z" fill="#C4C4C4"/></g><defs><clipPath id="a"><path fill="#fff" transform="translate(-1130 -465)" d="M0 0h1920v1458H0z"/></clipPath></defs></svg>
         {/if}
       </a>
 
