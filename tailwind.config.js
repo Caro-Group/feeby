@@ -17,10 +17,28 @@ module.exports = {
   },
   darkMode: false,
   theme: {
-    extend: {},
+    screens: {
+      'phone': '320px',
+      'phone-wide': '480px',
+      'phablet': '560px',
+      'tablet-small': '640px',
+      'tablet': '768px',
+      'tablet-wide': '1024px',
+      'desktop': '1248px',
+      'desktop-wide': '1440px',
+      'full-hd': '1680px',
+    },
+    extend: {
+      width: {
+        "side": "467px"
+      }
+    },
   },
   variants: {
     extend: {},
   },
   plugins: [],
+  corePlugins: {
+   container: false,
+  }
 };
