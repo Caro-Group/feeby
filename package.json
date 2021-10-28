@@ -1,17 +1,48 @@
 {
-  "name": "feeby",
+  "name": "feeby-theme",
   "version": "1.0.0",
-  "description": "",
-  "scripts": {
-    "deploy": "exit 0"
-  },
+  "description": "Theme",
+  "main": "webpack --mode production",
+  "license": "GPLv3",
+  "private": true,
+  "homepage": "https://feeby.pl/",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/webo-agency/feeby.git"
   },
-  "author": "",
   "bugs": {
     "url": "https://github.com/webo-agency/feeby/issues"
   },
-  "homepage": "https://github.com/webo-agency/feeby#readme"
+  "contributors": [
+    {
+      "name": "Patryk Padus",
+      "email": "patryk.padus@webo.agency",
+      "url": "https://www.webo.agency"
+    },
+    {
+      "name": "Maciej Zawadzki",
+      "email": "maciej.zawadzki@webo.agency",
+      "url": "https://www.webo.agency"
+    }
+  ],
+  "engines": {
+    "node": ">=v16.11.1",
+    "npm": ">=8.0.0"
+  },
+  "scripts": {
+    "serve": "cross-env NODE_ENV=development concurrently \"postcss assets/css/styles.css -o assets/css/styles.min.css --watch\"  \"npx browser-sync start --config bs-config.js\"",
+    "development": "cross-env NODE_ENV=development postcss assets/css/styles.css -o assets/css/styles.min.css",
+    "production": "cross-env NODE_ENV=production postcss assets/css/styles.css -o assets/css/styles.min.css",
+    "deploy": "npm run production"
+  },
+  "dependencies": {
+    "autoprefixer": "^9.8.6",
+    "browser-sync": "2.24.6",
+    "tailwindcss": "^1.7.2",
+    "concurrently": "^6.3.0",
+    "cross-env": "^7.0.3",
+    "cssnano": "^5.0.8",
+    "live-server": "git://github.com/tapio/live-server.git#5c4539d0816eb6f30a4020444c093415dceeb5eb",
+    "postcss-cli": "^9.0.1"
+  }
 }
