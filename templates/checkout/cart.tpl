@@ -40,7 +40,7 @@
 
     <div class="flex flex-row flex-wrap tablet:flex-nowrap">
       <!-- Left Block: cart product informations & shpping -->
-      <div class="flex flex-col items-start flex-auto tablet:pr-16">
+      <div class="flex flex-col items-start flex-auto tablet:pr-8">
 
         <!-- cart products detailed -->
         {block name='cart_overview'}
