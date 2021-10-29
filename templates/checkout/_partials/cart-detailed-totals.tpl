@@ -25,21 +25,31 @@
 {block name='cart_detailed_totals'}
 <div class="cart-detailed-totals">
   <h2 class="card-block text-xl font-bold">
-    {l s='Summary' d='Shop.Theme.Checkout'}">
+    {l s='Summary' d='Shop.Theme.Checkout'}
   </h2>
   <div class="card-block">
     {foreach from=$cart.subtotals item="subtotal"}
       {if $subtotal && $subtotal.value|count_characters > 0 && $subtotal.type !== 'tax'}
-        <div class="cart-summary-line" id="cart-subtotal-{$subtotal.type}">
+        <div class="cart-summary-line flex items-center justify-between" id="cart-subtotal-{$subtotal.type}">
           <span class="label{if 'products' === $subtotal.type} js-subtotal{/if}">
             {if 'products' == $subtotal.type}
               {$cart.summary_string}
+            {else if 'shipping' == $subtotal.type}
+              {$subtotal.label}
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none">
+                <path d="M10 0a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16Z" fill="#C4C4C4"/>
+                <path d="M10 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2ZM10 8a1 1 0 0 0-1 1v5a1 1 0 1 0 2 0V9a1 1 0 0 0-1-1Z" fill="#C4C4C4"/>
+              </svg>
             {else}
               {$subtotal.label}
             {/if}
           </span>
-          <span class="value">
-            {if 'discount' == $subtotal.type}-&nbsp;{/if}{$subtotal.value}
+          <span class="ml-auto value">
+            {if $subtotal.amount == 0}
+              <span class="bg-gray-600 p-1 rounded text-white text-xl font-sans">{l s='Free of charge' d='Shop.Theme.Checkout'}</span>
+            {else}
+              {if 'discount' == $subtotal.type}-&nbsp;{/if}{$subtotal.value}
+            {/if}
           </span>
           {if $subtotal.type === 'shipping'}
               <div><small class="value">{hook h='displayCheckoutSubtotalDetails' subtotal=$subtotal}</small></div>
