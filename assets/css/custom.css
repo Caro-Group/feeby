@@ -1037,3 +1037,9 @@ border: none;
         pointer-events: all;
     }
 }
+
+@media (max-width: 991px){
+    .bottomnav .box-top .h-logo img {
+        margin-left: 65px;
+    }
+}

@@ -1153,6 +1153,12 @@ $(window).load(function () {
         jQuery(el).attr('href', jQuery(el).data('link') + '?' + param.substring(param.indexOf("?") + 1));
       });
     });
+
+		if($('#cart').length){
+			$('#cart [data-toggle="popover"]').popover();
+
+			$('[data-sticky-height-target').attr('style', 'top: '+ $('[data-sticky-height-source]').outerHeight(true) + 'px');
+		}
 });
 
 })(jQuery);

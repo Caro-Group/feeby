@@ -38,7 +38,7 @@
       </div>
     </div>
 
-    <div class="flex flex-row flex-wrap phone-wide:flex-nowrap">
+    <div class="flex flex-row flex-wrap tablet:flex-nowrap">
       <!-- Left Block: cart product informations & shpping -->
       <div class="flex flex-col items-start flex-auto tablet:pr-16">
 
@@ -68,7 +68,7 @@
       <div class="w-full tablet:w-auto flex-initial tablet-wide:w-side">
 
         {block name='cart_summary'}
-          <div class="block bg-gray-200 rounded mb-6 tablet-wide:sticky top-0">
+          <div data-sticky-height-source class="block bg-gray-200 rounded mb-6 tablet-wide:sticky top-0 z-10">
 
             {block name='hook_shopping_cart'}
               {hook h='displayShoppingCart'}
@@ -82,12 +82,18 @@
               {include file='checkout/_partials/cart-detailed-actions.tpl' cart=$cart}
             {/block}
 
+            <p class="card-block text-center">
+              {l s='Your order will be available in 2 work day' d='Shop.Theme.Checkout'}
+            </p>
+
           </div>
         {/block}
 
-        {block name='hook_reassurance'}
-          {hook h='displayReassurance'}
-        {/block}
+        <div data-sticky-height-source>
+          {block name='hook_reassurance'}
+            {hook h='displayReassurance'}
+          {/block}
+        </div>
 
       </div>
 
