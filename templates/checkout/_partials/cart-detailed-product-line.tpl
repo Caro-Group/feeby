@@ -34,7 +34,7 @@
 
   <div class="flex flex-col tablet-wide:flex-row w-full flex-auto">
     <!--  product line body: label, attributes, customizations -->
-    <div class="flex-1 tablet-wide:pr-5">
+    <div class="flex-1 tablet-wide:pr-5 mb-6">
       
       <a class="block mb-2 text-black font-bold text-sm" href="{$product.url}" data-id_customization="{$product.id_customization|intval}">{$product.name}</a>
 
@@ -46,7 +46,6 @@
       {/foreach}
 
       {if is_array($product.customizations) && $product.customizations|count}
-        <br>
         {block name='cart_detailed_product_line_customization'}
           {foreach from=$product.customizations item="customization"}
             <a href="#" data-toggle="modal" data-target="#product-customizations-modal-{$customization.id_customization}">{l s='Product customization' d='Shop.Theme.Catalog'}</a>
@@ -88,7 +87,7 @@
     </div>
     
     <!--  product line body: discounts, price  -->
-    <div class="flex flex-row tablet-wide:w-32 tablet-wide:pr-5 {if $product.has_discount}has-discount{/if}">
+    <div class="flex flex-row tablet-wide:w-32 tablet-wide:pr-5 mb-6 {if $product.has_discount}has-discount{/if}">
       <div class="block tablet-wide:hidden flex-auto">
         {l s='Price' d='Shop.Theme.Checkout'}
       </div>
@@ -118,11 +117,11 @@
 
 
     <!--  product line right content: actions (quantity, delete), price -->
-    <div class="flex flex-row tablet-wide:w-32 items-start tablet-wide:pr-5 qty">
+    <div class="flex flex-row tablet-wide:w-32 items-start tablet-wide:pr-5 qty mb-6">
       <div class="block tablet-wide:hidden flex-auto">
         {l s='Quantity' d='Shop.Theme.Checkout'}
       </div>
-      <div class="flex-auto flex justify-center tablet-wide:justify-start">
+      <div class="flex-auto flex justify-center tablet-wide:justify-start w-4">
         {if isset($product.is_gift) && $product.is_gift}
           <span class="gift-quantity">{$product.quantity}</span>
         {else}
@@ -144,7 +143,7 @@
       <div class="block tablet-wide:hidden flex-auto">
         {l s='Total cost' d='Shop.Theme.Checkout'}
       </div>
-      <span class="product-price">
+      <span class="product-price flex-auto flex justify-center tablet-wide:justify-start">
         <strong>
           {if isset($product.is_gift) && $product.is_gift}
             <span class="gift">{l s='Gift' d='Shop.Theme.Checkout'}</span>

@@ -38,9 +38,9 @@
       </div>
     </div>
 
-    <div class="flex flex-row flex-wrap tablet:flex-nowrap">
+    <div class="flex flex-row flex-wrap phone-wide:flex-nowrap">
       <!-- Left Block: cart product informations & shpping -->
-      <div class="flex flex-col items-start justify-between flex-auto tablet-wide:pr-16">
+      <div class="flex flex-col items-start flex-auto tablet:pr-16">
 
         <!-- cart products detailed -->
         {block name='cart_overview'}
@@ -65,10 +65,10 @@
       </div>
       
       <!-- Right Block: cart subtotal & cart total -->
-      <div class="flex-initial w-side">
+      <div class="w-full tablet:w-auto flex-initial tablet-wide:w-side">
 
         {block name='cart_summary'}
-          <div class="block bg-gray-200 rounded mb-6">
+          <div class="block bg-gray-200 rounded mb-6 tablet-wide:sticky top-0">
 
             {block name='hook_shopping_cart'}
               {hook h='displayShoppingCart'}
