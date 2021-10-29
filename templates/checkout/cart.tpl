@@ -38,7 +38,7 @@
       </div>
     </div>
 
-    <div class="flex flex-wrap tablet-wide:flex-nowrap">
+    <div class="flex flex-row flex-nowrap">
       <!-- Left Block: cart product informations & shpping -->
       <div class="flex flex-col items-start justify-between flex-auto tablet-wide:pr-16">
 
@@ -55,13 +55,14 @@
         {block name='hook_shopping_cart_footer'}
           {hook h='displayShoppingCartFooter'}
         {/block}
-      </div>
 
-      {block name='continue_shopping'}
-        <a class="label" href="{$urls.pages.index}">
-          <i class="material-icons">chevron_left</i>{l s='Continue shopping' d='Shop.Theme.Actions'}
-        </a>
-      {/block}
+        {block name='continue_shopping'}
+          <a class="hidden tablet-wide:flex items-center label font-bold" href="{$urls.pages.index}">
+            <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" width="9" height="14" fill="none"><path d="M8 13 2 7l6-6" stroke="#000" stroke-opacity=".7" stroke-width="2"/></svg>
+            {l s='Continue shopping' d='Shop.Theme.Actions'}
+          </a>
+        {/block}
+      </div>
       
       <!-- Right Block: cart subtotal & cart total -->
       <div class="flex-initial w-side">
