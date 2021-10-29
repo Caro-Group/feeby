@@ -24,7 +24,10 @@
  *}
 {if $cart.vouchers.allowed}
   {block name='cart_voucher'}
-    <div class="block-promo mb-4">
+    <div class="block-promo my-8">
+      <h2 class="font-bold mb-2 text-xl">
+        {l s='Add coupon' d='Shop.Theme.Checkout'}
+      </h2>
       <div class="cart-voucher">
         {if $cart.vouchers.added}
           {block name='cart_voucher_list'}

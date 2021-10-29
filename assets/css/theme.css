@@ -21612,7 +21612,7 @@ body #search_filters .clear-all-wrapper {
   border-bottom: 1px solid #ddd; }
 
 .block-promo .promo-code {
-  padding: 1.60rem;
+  /* padding: 1.60rem; */
   background: #f2f2f4; }
   .block-promo .promo-code form {
     display: flex; }
