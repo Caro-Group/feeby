@@ -22,7 +22,7 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
-<div class="flex flex-row flex-wrap tablet:flex-nowrap w-full relative">
+<div class="flex flex-row flex-wrap phone:flex-nowrap w-full relative">
   <!--  product line left content: image-->
   <div class="w-miniature flex-none mr-5">
     {if $product.cover}

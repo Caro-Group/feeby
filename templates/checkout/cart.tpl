@@ -38,7 +38,7 @@
       </div>
     </div>
 
-    <div class="flex flex-row flex-wrap phone-wide:flex-nowrap">
+    <div class="flex flex-row flex-wrap tablet:flex-nowrap">
       <!-- Left Block: cart product informations & shpping -->
       <div class="flex flex-col items-start flex-auto tablet:pr-16">
 
