@@ -22,7 +22,7 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
-<div class="flex flex-row flex-wrap tablet-wide:flex-nowrap w-full">
+<div class="flex flex-row flex-wrap tablet:flex-nowrap w-full relative">
   <!--  product line left content: image-->
   <div class="w-miniature flex-none mr-5">
     {if $product.cover}
@@ -32,9 +32,9 @@
     {/if}
   </div>
 
-  <div class="flex flex-col tablet-wide:flex-row w-full flex-auto pr-6 tablet-wide:pr-0 relative">
+  <div class="flex flex-col tablet-wide:flex-row w-full flex-auto">
     <!--  product line body: label, attributes, customizations -->
-    <div class="flex-auto tablet-wide:px-5">
+    <div class="flex-1 tablet-wide:pr-5">
       
       <a class="block mb-2 text-black font-bold text-sm" href="{$product.url}" data-id_customization="{$product.id_customization|intval}">{$product.name}</a>
 
@@ -118,7 +118,7 @@
 
 
     <!--  product line right content: actions (quantity, delete), price -->
-    <div class="flex flex-row tablet-wide:w-32 qty">
+    <div class="flex flex-row tablet-wide:w-32 items-start tablet-wide:pr-5 qty">
       <div class="block tablet-wide:hidden flex-auto">
         {l s='Quantity' d='Shop.Theme.Checkout'}
       </div>
@@ -155,7 +155,7 @@
       </span>
     </div>
 
-    <div class="w-4 flex-none absolute tablet-wide:relative">
+    <div class="w-4 flex-none absolute tablet-wide:relative top-0 right-0">
       <div class="cart-line-product-actions">
         <a
             class                       = "remove-from-cart"
