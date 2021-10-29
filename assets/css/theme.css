@@ -23767,7 +23767,7 @@ body .box-latestnews .owl-item.loading a.blog_img_link {
 .block-promo .promo-code {
   padding: 20px;
   background: none;
-  border-bottom: 1px solid #ddd; }
+}
 
 .block-promo .promo-input {
   border: 1px solid #ddd;

@@ -24,7 +24,7 @@
  *}
 {if $cart.vouchers.allowed}
   {block name='cart_voucher'}
-    <div class="block-promo">
+    <div class="block-promo mb-4">
       <div class="cart-voucher">
         {if $cart.vouchers.added}
           {block name='cart_voucher_list'}
@@ -44,13 +44,7 @@
           {/block}
         {/if}
 
-        <p class="promo-code-button display-promo{if $cart.discounts|count > 0} with-discounts{/if}">
-          <a class="collapse-button" href="#promo-code">
-            {l s='Have a promo code?' d='Shop.Theme.Checkout'}
-          </a>
-        </p>
-
-        <div id="promo-code" class="collapse{if $cart.discounts|count > 0} in{/if}">
+        <div class="{if $cart.discounts|count > 0} with-discounts{/if}">
           <div class="promo-code">
             {block name='cart_voucher_form'}
               <form action="{$urls.pages.cart}" data-link-action="add-voucher" method="post">
@@ -66,10 +60,6 @@
                 <i class="material-icons">&#xE001;</i><span class="ml-1 js-error-text"></span>
               </div>
             {/block}
-
-            <a class="collapse-button promo-code-button cancel-promo" role="button" data-toggle="collapse" data-target="#promo-code" aria-expanded="true" aria-controls="promo-code">
-              {l s='Close' d='Shop.Theme.Checkout'}
-            </a>
           </div>
         </div>
 
