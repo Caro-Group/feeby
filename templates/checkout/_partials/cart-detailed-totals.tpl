@@ -24,7 +24,9 @@
  *}
 {block name='cart_detailed_totals'}
 <div class="cart-detailed-totals">
-
+  <h2 class="card-block text-xl font-bold">
+    {l s='Summary' d='Shop.Theme.Checkout'}">
+  </h2>
   <div class="card-block">
     {foreach from=$cart.subtotals item="subtotal"}
       {if $subtotal && $subtotal.value|count_characters > 0 && $subtotal.type !== 'tax'}
