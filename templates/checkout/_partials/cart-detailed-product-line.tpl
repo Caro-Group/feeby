@@ -89,10 +89,10 @@
     
     <!--  product line body: discounts, price  -->
     <div class="flex flex-row tablet-wide:w-32 tablet-wide:pr-5 {if $product.has_discount}has-discount{/if}">
-      <div class="flex-auto">
+      <div class="block tablet-wide:hidden flex-auto">
         {l s='Price' d='Shop.Theme.Checkout'}
       </div>
-      <div class="flex-auto flex justify-center">
+      <div class="flex-auto flex justify-center tablet-wide:justify-start">
         {if $product.has_discount}
           <div class="product-discount">
             <span class="regular-price">{$product.regular_price}</span>
@@ -119,10 +119,10 @@
 
     <!--  product line right content: actions (quantity, delete), price -->
     <div class="flex flex-row tablet-wide:w-32 qty">
-      <div class="flex-auto">
+      <div class="block tablet-wide:hidden flex-auto">
         {l s='Quantity' d='Shop.Theme.Checkout'}
       </div>
-      <div class="flex-auto flex justify-center">
+      <div class="flex-auto flex justify-center tablet-wide:justify-start">
         {if isset($product.is_gift) && $product.is_gift}
           <span class="gift-quantity">{$product.quantity}</span>
         {else}
@@ -141,7 +141,7 @@
     </div>
 
     <div class="flex w-full tablet-wide:w-32">
-      <div class="">
+      <div class="block tablet-wide:hidden flex-auto">
         {l s='Total cost' d='Shop.Theme.Checkout'}
       </div>
       <span class="product-price">
