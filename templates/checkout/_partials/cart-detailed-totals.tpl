@@ -36,10 +36,12 @@
               {$cart.summary_string}
             {else if 'shipping' == $subtotal.type}
               {$subtotal.label}
-              <svg class="ml-1" data-toggle="popover" data-selector="#cart-subtotal-send-popover" data-trigger="hover" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none">
-                <path d="M10 0a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16Z" fill="#C4C4C4"/>
-                <path d="M10 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2ZM10 8a1 1 0 0 0-1 1v5a1 1 0 1 0 2 0V9a1 1 0 0 0-1-1Z" fill="#C4C4C4"/>
-              </svg>
+              <div data-toggle="popover" data-title="Tytuł" data-content="TREŚĆ </br> " data-html="true" data-trigger="hover">
+                <svg class="ml-1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none">
+                  <path d="M10 0a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16Z" fill="#C4C4C4"/>
+                  <path d="M10 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2ZM10 8a1 1 0 0 0-1 1v5a1 1 0 1 0 2 0V9a1 1 0 0 0-1-1Z" fill="#C4C4C4"/>
+                </svg>
+              </div>
             {else}
               {$subtotal.label}
             {/if}
@@ -62,9 +64,5 @@
   {block name='cart_summary_totals'}
     {include file='checkout/_partials/cart-summary-totals.tpl' cart=$cart}
   {/block}
-</div>
-
-<div id="cart-subtotal-send-popover">
-  TEST
 </div>
 {/block}
