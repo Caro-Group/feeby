@@ -62,8 +62,4 @@
     {include file='checkout/_partials/cart-summary-totals.tpl' cart=$cart}
   {/block}
 
-  {block name='cart_summary_voucher'}
-    {include file='checkout/_partials/cart-voucher.tpl'}
-  {/block}
-
 </section>

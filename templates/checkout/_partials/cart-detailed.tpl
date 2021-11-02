@@ -23,11 +23,27 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 {block name='cart_detailed_product'}
-  <div class="cart-overview js-cart" data-refresh-url="{url entity='cart' params=['ajax' => true, 'action' => 'refresh']}">
+  <div class="w-full js-cart" data-refresh-url="{url entity='cart' params=['ajax' => true, 'action' => 'refresh']}">
     {if $cart.products}
-    <ul class="cart-items">
+
+    <div class="hidden tablet-wide:flex border-b pb-1">
+      <div class="ml-miniature px-5 flex-auto">
+        {l s='Product' d='Shop.Theme.Checkout'}
+      </div>
+      <div class="w-32 pr-5">
+        {l s='Price' d='Shop.Theme.Checkout'}
+      </div>
+      <div class="w-32 pr-5">
+        {l s='Quantity' d='Shop.Theme.Checkout'}
+      </div>
+      <div class="w-32 pr-5 mr-4">
+        {l s='Total cost' d='Shop.Theme.Checkout'}
+      </div>
+    </div>
+
+    <ul class="flex flex-col">
       {foreach from=$cart.products item=product}
-        <li class="cart-item">
+        <li class="flex-auto py-8 border-b">
           {block name='cart_detailed_product_line'}
             {include file='checkout/_partials/cart-detailed-product-line.tpl' product=$product}
           {/block}

@@ -33,3 +33,10 @@ old_*
 !cache/
 cache/*
 !cache/index.php
+
+
+# Generated styles
+*.min.css
+
+# ENV variables
+.env
