@@ -54,7 +54,14 @@
     </div>
 
   {else}
-    <ul class="nav nav-inline my-2" role="tablist">
+    <ul class="" role="tablist" style="
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        bottom: 0;
+        top: 0;
+        background: #F8F8F8;">
       <li class="nav-item">
         <a
           class="nav-link {if !$show_login_form}active{/if}"
