@@ -6,9 +6,6 @@
 *}
 
 <div class="lql-social-login clearfix {if $show_button_text}show-bt-txt{/if}">
-	<h3 class="lql-social-login-title">
-		{l s='Connect with Social Networks' d='Modules.Leoquicklogin.Shop'}
-	</h3>
 	{if $fb_enable && $fb_app_id != ''}
 		<!--
 		<div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false" scope="public_profile,email" onlogin="checkLoginState();"></div>
