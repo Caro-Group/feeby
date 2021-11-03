@@ -796,12 +796,12 @@ div[id^="gmap-stores-list"] > ul {
       color: #fff; }
 
 /*update CART*/
-/* #checkout #wrapper {
-  padding: 60px 0; } */
-/* #checkout #content > .row > div {
+#checkout #wrapper {
+  padding: 60px 0; }
+#checkout #content > .row > div {
   position: relative; }
   #checkout #content > .row > div.col-lg-8, #checkout #content > .row > div.col-md-8 {
-    padding-top: 100px; } */
+    padding-top: 100px; }
 
 body#checkout section.checkout-step {
   box-shadow: none;
