@@ -1164,7 +1164,6 @@ $(window).load(function () {
 $('body').on('click', "[href=\"#checkout-guest-form\"]", function(e){ 
 	e.preventDefault();
 	$('[data-login-panel]').hide();
-	debugger;
 });
 
 })(jQuery);
