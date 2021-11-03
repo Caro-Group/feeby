@@ -61,9 +61,6 @@
           <p>
             {l s='You do not have an account? You can place an order as a guest, or create an account to save your details and shipping preferences for your next purchase.' d='Shop.Theme.Checkout'}
           </p>
-          <div class="{if $show_login_form}active{/if}" id="checkout-login-form">
-            {render file='checkout/_partials/login-form.tpl' ui=$login_form}
-          </div>
           <a
             class="nav-link {if !$show_login_form}active{/if}"
             data-toggle="tab"
@@ -89,6 +86,9 @@
         </div>
         <div>
           <h2>{l s='I have an account' d='Shop.Theme.Checkout'}</h2>
+          <div class="{if $show_login_form}active{/if}" id="checkout-login-form">
+            {render file='checkout/_partials/login-form.tpl' ui=$login_form}
+          </div>
           <a
             class="nav-link {if $show_login_form}active{/if}"
             data-link-action="show-login-form"
@@ -102,11 +102,10 @@
           </a>
         </div>
       </div>
-
-      <div class="tab-pane {if !$show_login_form}active{/if}" id="checkout-guest-form" role="tabpanel" {if $show_login_form}aria-hidden="true"{/if}>
-        {render file='checkout/_partials/customer-form.tpl' ui=$register_form guest_allowed=$guest_allowed}
-      </div>
-      
     </div>
   {/if}
+
+  <div class="tab-pane {if !$show_login_form}active{/if}" id="checkout-guest-form" role="tabpanel" {if $show_login_form}aria-hidden="true"{/if}>
+    {render file='checkout/_partials/customer-form.tpl' ui=$register_form guest_allowed=$guest_allowed}
+  </div>
 {/block}
