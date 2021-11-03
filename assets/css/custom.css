@@ -1026,17 +1026,6 @@ border: none;
 }
 
 
-@media (min-width: 992px){
-    .leo-megamenu .dropdown-menu {
-        pointer-events: none;
-    }
-}
-
-@media (min-width: 992px){
-    .leo-megamenu .dropdown:hover>.dropdown-menu {
-        pointer-events: all;
-    }
-}
 
 @media (max-width: 991px){
     .bottomnav .box-top .h-logo img {
