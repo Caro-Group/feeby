@@ -33,7 +33,7 @@
         <div class="cart-summary-line flex items-center justify-between" id="cart-subtotal-{$subtotal.type}">
           <span class="flex label{if 'products' === $subtotal.type} js-subtotal{/if}">
             {if 'products' == $subtotal.type}
-              {$cart.summary_string}
+              {l s='Order value' d='Shop.Theme.Checkout'}
             {else if 'shipping' == $subtotal.type}
               {$subtotal.label}
               <div data-toggle="popover" data-title="" data-content="" data-html="true" data-trigger="hover">

@@ -68,7 +68,7 @@
       <div class="w-full tablet:w-auto flex-initial tablet-wide:w-side">
 
         {block name='cart_summary'}
-          <div data-sticky-height-source class="block bg-gray-200 rounded mb-6 tablet-wide:sticky top-0 z-10">
+          <div class="block bg-gray-200 rounded mb-6">
 
             {block name='hook_shopping_cart'}
               {hook h='displayShoppingCart'}
@@ -89,7 +89,7 @@
           </div>
         {/block}
 
-        <div data-sticky-height-source>
+        <div>
           {block name='hook_reassurance'}
             {hook h='displayReassurance'}
           {/block}
