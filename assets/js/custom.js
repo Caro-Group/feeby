@@ -1159,6 +1159,11 @@ $(window).load(function () {
 
 			$('[data-sticky-height-target').attr('style', 'top: '+ $('[data-sticky-height-source]').outerHeight(true) + 'px');
 		}
+
+		$("[href=\"#checkout-guest-form\"]").on('click', function(e){ 
+			e.preventDefault();
+      $('[data-login-panel]').hide();
+    });
 });
 
 })(jQuery);
