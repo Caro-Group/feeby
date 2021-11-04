@@ -1043,7 +1043,7 @@ body#checkout section#checkout-addresses-step.checkout-step.-reachable.-shipping
     display: block;
 }
 
-body#checkout section#checkout-addresses-step.checkout-step.-reachable.-shipping-adress-enable.-complete + section#checkout-delivery-step.checkout-step.-reachable.-payment-enable.-complete  {
+body#checkout section#checkout-addresses-step.checkout-step.-reachable.-shipping-adress-enable.-complete + section#checkout-delivery-step.checkout-step.-reachable.-payment-enable.-complete .content  {
     display: none;
 }
 
