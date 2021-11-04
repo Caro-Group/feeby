@@ -1042,3 +1042,7 @@ body#checkout section#checkout-addresses-step.checkout-step.-reachable.-shipping
 body#checkout section#checkout-addresses-step.checkout-step.-reachable.-shipping-adress-enable.-complete +  section.checkout-step.-reachable .content {
     display: block;
 }
+
+body#checkout section#checkout-addresses-step.checkout-step.-reachable.-shipping-adress-enable.-complete + section#checkout-delivery-step.checkout-step.-reachable.-payment-enable.-complete  {
+    display: none;
+}

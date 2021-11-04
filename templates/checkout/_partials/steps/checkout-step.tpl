@@ -26,9 +26,11 @@
   <section  id    = "{$identifier}"
             class = "{[
                         'checkout-step'   => true,
-                        '-current'        => $step_is_current || $identifier == 'checkout-addresses-step',
+                        '-current'        => $step_is_current,
                         '-reachable'      => $step_is_reachable,
                         '-complete'       => $step_is_complete,
+                        '-shipping-adress-enable' => $step_is_reachable && $identifier == 'checkout-addresses-step',
+                        '-payment-enable' => $step_is_reachable && $identifier == 'checkout-delivery-step',
                         'js-current-step' => $step_is_current
                     ]|classnames}"
   >
