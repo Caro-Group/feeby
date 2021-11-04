@@ -1170,7 +1170,19 @@ $('body').on('click', "[data-checkout-payment]", function(e){
 	e.preventDefault();
 	$('[data-checkout-payment-panel]').hide();
 	$('[data-checkout-summary]').show();
+	$('#checkout-payment-step .step-title').addClass("completed");
+	
 });
+
+
+$('body').on('click', "#checkout-payment-step .step-title", function(e){ 
+	e.preventDefault();
+	$('[data-checkout-summary]').hide();
+	$('[data-checkout-payment-panel]').show();
+	$('#checkout-payment-step .step-title').removeClass("completed");
+});
+
+
 
 
 
