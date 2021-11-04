@@ -818,13 +818,6 @@ body#checkout section.checkout-step {
       body#checkout section.checkout-step#checkout-personal-information-step .content > p:last-child {
         padding-bottom: 20px; }
   body#checkout section.checkout-step .content {
-    box-shadow: 1px 3px 1px rgba(50, 50, 50, 0.04);
-    border-radius: 0;
-    border: 1px solid #e1e1e1;
-    border-top-width: 3px;
-    padding: 20px;
-    max-width: 600px;
-    margin: 0 auto;
     position: static; }
   body#checkout section.checkout-step .step-title {
     text-transform: uppercase;
