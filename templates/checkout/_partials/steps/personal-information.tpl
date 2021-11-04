@@ -61,25 +61,21 @@
           <p>
             {l s='You do not have an account? You can place an order as a guest, or create an account to save your details and shipping preferences for your next purchase.' d='Shop.Theme.Checkout'}
           </p>
+          {if $guest_allowed}
+            <a
+              class="nav-link {if !$show_login_form}active{/if}"
+              href="#checkout-guest-form"
+              role="tab"
+              aria-controls="checkout-guest-form"
+              >
+                {l s='Order as a guest' d='Shop.Theme.Checkout'}
+            </a>
+          {/if}
           <a
             class="nav-link {if !$show_login_form}active{/if}"
-            data-toggle="tab"
             href="#checkout-guest-form"
             role="tab"
             aria-controls="checkout-guest-form"
-            {if !$show_login_form} aria-selected="true"{/if}
-            >
-            {if $guest_allowed}
-              {l s='Order as a guest' d='Shop.Theme.Checkout'}
-            {/if}
-          </a>
-          <a
-            class="nav-link {if !$show_login_form}active{/if}"
-            data-toggle="tab"
-            href="#checkout-guest-form"
-            role="tab"
-            aria-controls="checkout-guest-form"
-            {if !$show_login_form} aria-selected="true"{/if}
             >
              {l s='Create an account' d='Shop.Theme.Customeraccount'}
           </a>
