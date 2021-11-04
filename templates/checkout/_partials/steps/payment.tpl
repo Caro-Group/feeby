@@ -96,14 +96,17 @@
     </div>
   </div>
 
-  <div data-checkout-summary class="hide">
+  <div>
     <h1 class="step-title h3">
-      <i class="material-icons rtl-no-flip done">&#xE876;</i>
       <span class="step-number">{$position}</span>
-      {$title}
+      {l s='Order summary' d='Shop.Theme.Checkout'}
     </h1>
 
-    <div class="content">
+    <div data-checkout-summary class="content" style="display: none;">
+
+    {if $show_final_summary}
+      {include file='checkout/_partials/order-final-summary.tpl'}
+    {/if}
 
     {if $conditions_to_approve|count}
       <p class="ps-hidden-by-js">
@@ -141,11 +144,6 @@
       </form>
     {/if}
 
-
-
-    {if $show_final_summary}
-      {include file='checkout/_partials/order-final-summary.tpl'}
-    {/if}
 
     <div id="payment-confirmation">
       <div class="ps-shown-by-js">
