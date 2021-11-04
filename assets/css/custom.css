@@ -1035,6 +1035,6 @@ border: none;
 
 
 /* CHECKOUT */
-body#checkout section#checkout-addresses-step.checkout-step.-reachable.-complete .content{
+body#checkout section#checkout-addresses-step.checkout-step.-reachable.-shipping-adress-enable:not(.-complete) .content{
     display: block;
 }
