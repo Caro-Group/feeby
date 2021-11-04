@@ -1161,10 +1161,18 @@ $(window).load(function () {
 		}
 });
 
-$('body').on('click', "[href=\"#checkout-guest-form\"]", function(e){ 
+$('body').on('click', "[href=\"#checkout-guest-form\"], [href=\"#checkout-register-form\"]", function(e){ 
 	e.preventDefault();
 	$('[data-login-panel]').hide();
 });
+
+
+$('body').on('click', "[href=\"#checkout-guest-form\"]", function(e){ 
+	e.preventDefault();
+	$('[data-checkout-account-pass]').hide();
+});
+
+
 
 $('body').on('click', "[data-checkout-payment]", function(e){ 
 	e.preventDefault();

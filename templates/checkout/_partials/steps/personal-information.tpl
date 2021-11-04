@@ -56,14 +56,14 @@
   {else}
     <div class="absolute inset-0 z-10 bg-gray-100 mt-24" data-login-panel>
       <div class="flex flex-wrap tablet-wide:flex-nowrap">
-        <div class="border-r my-20 px-24 w-1/2">
+        <div class="flex flex-col border-r my-20 px-24 w-1/2">
           <h2>{l s='I do not have an account' d='Shop.Theme.Checkout'}</h2>
           <p>
             {l s='You do not have an account? You can place an order as a guest, or create an account to save your details and shipping preferences for your next purchase.' d='Shop.Theme.Checkout'}
           </p>
           {if $guest_allowed}
             <a
-              class="nav-link {if !$show_login_form}active{/if}"
+              class="nav-link mb-2 {if !$show_login_form}active{/if}"
               href="#checkout-guest-form"
               role="tab"
               aria-controls="checkout-guest-form"
@@ -73,7 +73,7 @@
           {/if}
           <a
             class="nav-link {if !$show_login_form}active{/if}"
-            href="#checkout-guest-form"
+            href="#checkout-register-form"
             role="tab"
             aria-controls="checkout-guest-form"
             >
