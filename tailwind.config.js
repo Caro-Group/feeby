@@ -45,8 +45,8 @@ module.exports = {
         },
       },
       backgroundImage: {
-        'newsletter': "url('assets/img/newsletter1.svg')",
-        'header-brush': "url('assets/img/headers_under.svg')",
+        'newsletter': "url('../img/newsletter1.svg')",
+        'header-brush': "url('../img/headers_under.svg')",
        }
     },
   },
