@@ -1230,7 +1230,6 @@ body#checkout section.checkout-step .add-address a {
   text-align: center; }
 
 .btn-outline,
-.btn,
 .btn-primary {
   border-radius: 0;
   background: #292929;
@@ -1243,12 +1242,28 @@ body#checkout section.checkout-step .add-address a {
   color: #fff;
   font-weight: 500; }
   .btn-outline:hover, .btn-outline:focus,
-  .btn:hover,
-  .btn:focus,
   .btn-primary:hover,
   .btn-primary:focus {
     background: #666;
     color: #fff; }
+
+  .input-text{
+    @apply border-gray-300 border-solid border flex rounded-full pl-4;
+  }
+
+  .input-text input{
+    @apply w-full bg-transparent border-0 py-3 focus:border-0;
+  }
+
+  .input-text .btn{
+    @apply bg-pink-650 hover:bg-pink-800 duration-150 rounded-full color-white uppercase ;
+  }
+  
+  .input-text .btn i{
+    @apply color-white;
+  }
+
+
 
 .btn-primary:active:hover, .btn-primary:active:focus, .btn-primary:active.focus,
 .btn-primary.active:hover, .btn-primary.active:focus, .btn-primary.active.focus,

@@ -23,27 +23,29 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 
-<div class="block_newsletter block bg-gray-default">
-  <h3 class="title_block" id="block-newsletter-label">{l s='Newsletter signup' d='Shop.Theme.Global'}</h3>
-  <div class="block_content">
+ {* .block is used in js *}
+<div class="block bg-newsletter bg-contain bg-left bg-gray-default desktop:rounded-md flex flex-col items-center justify-center max-w-screen-desktop-wide mx-auto px-8 py-20"> 
+  <h3 class="title_block">{l s='Newsletter signup' d='Shop.Theme.Global'}</h3>
+   {* .block_content is used in js *}
+  <div class="block_content w-3/5">
     <form action="{$urls.pages.index}#footer" method="post">
-      <div class="row">
-        <div class="col-xs-12 col-conditions">
-            {if $conditions}
-              <p>{$conditions}</p>
-            {/if}
-        </div>
-        <div class="col-xs-12 col-form">
-          <div class="input-wrapper">
+      <div>
+          {if $conditions}
+            <p class="text-center text-lg">{$conditions}</p>
+          {/if}
+        {* .col_form is used in js *}
+        <div class="col-form">
+          <div class="input-text bg-white">
             <input
               name="email"
               type="text"
               value="{$value}"
               placeholder="{l s='Your email...' d='Shop.Forms.Labels'}"
-              aria-labelledby="block-newsletter-label"
             >
+
+            {* .btn is used in js *}
             <button
-              class="btn btn-outline float-xs-right"
+              class="btn"
               name="submitNewsletter"
               type="submit"
               value="{l s='Subscribe' d='Shop.Theme.Actions'}"
@@ -52,20 +54,8 @@
             </button>
           </div>
           <input type="hidden" name="action" value="0">
-          <div class="clearfix"></div>
-        </div>
-        <div class="col-xs-12 col-mesg">
-          {if $msg}
-            <p class="alert {if $nw_error}alert-danger{else}alert-success{/if}">
-              {$msg}
-            </p>
-          {/if}
-              {if isset($id_module)}
-                {hook h='displayGDPRConsent' id_module=$id_module}
-              {/if}
         </div>
       </div>
-    {hook h='displayNewsletterRegistration'}
     </form>
   </div>
 </div>
