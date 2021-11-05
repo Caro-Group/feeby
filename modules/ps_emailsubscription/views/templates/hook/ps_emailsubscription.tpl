@@ -23,7 +23,7 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 
-<div class="block_newsletter block">
+<div class="block_newsletter block bg-gray-default">
   <h3 class="title_block" id="block-newsletter-label">{l s='Newsletter signup' d='Shop.Theme.Global'}</h3>
   <div class="block_content">
     <form action="{$urls.pages.index}#footer" method="post">
