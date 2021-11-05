@@ -36,11 +36,18 @@ module.exports = {
       margin: {
         'miniature': '102px',
       },
-      color: {
+      colors: {
+        pink: {
+          650: '#DF1A5B',
+        },
         gray: {
-          'default': '#F8F8F8'
-        }
-      }
+          default: '#F8F8F8',
+        },
+      },
+      backgroundImage: {
+        'newsletter': "url('assets/img/newsletter1.svg')",
+        'header-brush': "url('assets/img/headers_under.svg')",
+       }
     },
   },
   variants: {
