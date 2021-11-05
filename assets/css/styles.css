@@ -3,3 +3,21 @@
 @tailwind components;
 
 @tailwind utilities;
+
+@layer components {
+    .input-text{
+        @apply border-gray-300 border-solid border flex rounded-full pl-4;
+      }
+    
+      .input-text input{
+        @apply w-full bg-transparent border-0 py-3 outline-none;
+      }
+    
+      .input-text .btn{
+        @apply bg-pink-650 hover:bg-pink-800 duration-150 rounded-full text-white uppercase ;
+      }
+      
+      .input-text .btn i{
+        @apply text-white;
+      }
+}

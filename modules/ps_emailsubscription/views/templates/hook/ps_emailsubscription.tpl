@@ -24,7 +24,7 @@
  *}
 
  {* .block is used in js *}
-<div class="block bg-newsletter bg-contain bg-left bg-gray-default desktop:rounded-md flex flex-col items-center justify-center max-w-screen-desktop-wide mx-auto px-8 py-20"> 
+<div class="block bg-newsletter bg-contain bg-left bg-no-repeat bg-gray-default desktop:rounded-md flex flex-col items-center justify-center max-w-screen-desktop-wide mx-auto px-8 py-20"> 
   <h3 class="title_block">{l s='Newsletter signup' d='Shop.Theme.Global'}</h3>
    {* .block_content is used in js *}
   <div class="block_content w-3/5">
@@ -50,6 +50,7 @@
               type="submit"
               value="{l s='Subscribe' d='Shop.Theme.Actions'}"
             >
+            Zapisz się
               <i class="ti-arrow-right"></i></span>
             </button>
           </div>

@@ -1254,21 +1254,6 @@ body#checkout section.checkout-step .add-address a {
     background: #666;
     color: #fff; }
 
-  .input-text{
-    @apply border-gray-300 border-solid border flex rounded-full pl-4;
-  }
-
-  .input-text input{
-    @apply w-full bg-transparent border-0 py-3 focus:border-0;
-  }
-
-  .input-text .btn{
-    @apply bg-pink-650 hover:bg-pink-800 duration-150 rounded-full color-white uppercase ;
-  }
-  
-  .input-text .btn i{
-    @apply color-white;
-  }
 
 
 
