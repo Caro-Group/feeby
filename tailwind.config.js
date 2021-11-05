@@ -36,6 +36,11 @@ module.exports = {
       margin: {
         'miniature': '102px',
       }
+      color: {
+        gray: {
+          'default': '#F8F8F8'
+        }
+      }
     },
   },
   variants: {
