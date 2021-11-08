@@ -1199,7 +1199,8 @@ $('body').on('click', "[data-checkout-back]",function(e){
 });
 
 
-
+$('#checkout-delivery-step.-current').prev('.-shipping-adress-enable').addClass('-current-show');
+$('#checkout-addresses-step.-current').next('.-clickable').addClass('-current-show');
 
 })(jQuery);
 
