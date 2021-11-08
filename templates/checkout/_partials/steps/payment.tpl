@@ -10,6 +10,10 @@
 {block name='step_content'}
 
   <div data-checkout-payment-panel>
+    <h2>
+      {l s='Payment method' d='Shop.Theme.Checkout'}
+    </h2>
+
     {hook h='displayPaymentTop'}
 
     {* used by javascript to correctly handle cart updates when we are on payment step (eg vouchers added) *}
@@ -91,7 +95,10 @@
       {foreachelse}
         <p class="alert alert-danger">{l s='Unfortunately, there are no payment method available.' d='Shop.Theme.Checkout'}</p>
       {/foreach}
+    </div>
 
+    <div class="flex flex-wrap justify-between">
+      <button data-checkout-back="#checkout-delivery-step">{l s='Go back' d='Shop.Theme.Checkout'}</button>  
       <button data-checkout-payment>{l s='Go to the summary' d='Shop.Theme.Checkout'}</button>
     </div>
   </div>
