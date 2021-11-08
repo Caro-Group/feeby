@@ -164,7 +164,7 @@
                 {l
                   s='Please make sure you\'ve chosen a [1]payment method[/1] and accepted the [2]terms and conditions[/2].'
                   sprintf=[
-                    '[1]' => '<a href="#checkout-payment-step">',
+                    '[1]' => '<a data-checkout-payment-reset href="#checkout-payment-step">',
                     '[/1]' => '</a>',
                     '[2]' => '<a href="#conditions-to-approve">',
                     '[/2]' => '</a>'
@@ -182,15 +182,15 @@
         </div>
 
         {hook h='displayPaymentByBinaries'}
+      </div>
 
-        <div class="modal fade" id="modal">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <button type="button" class="close" data-dismiss="modal" aria-label="{l s='Close' d='Shop.Theme.Global'}">
-                <span aria-hidden="true">&times;</span>
-              </button>
-              <div class="js-modal-content"></div>
-            </div>
+      <div class="modal fade" id="modal">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="{l s='Close' d='Shop.Theme.Global'}">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="js-modal-content"></div>
           </div>
         </div>
       </div>
