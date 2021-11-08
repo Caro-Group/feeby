@@ -1130,3 +1130,9 @@ body#checkout section#checkout-payment-step.checkout-step > .completed .done {
 body#checkout section#checkout-payment-step.checkout-step > .completed.step-title{
     color: #999;
 }
+
+
+section#checkout-delivery-step.-unreachable {
+    opacity: 0.3;
+    pointer-events: none;
+}
