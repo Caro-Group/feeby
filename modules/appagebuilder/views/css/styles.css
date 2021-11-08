@@ -864,9 +864,9 @@ body#checkout section.checkout-step {
       top: 2px;
       left: 50%;
       margin-left: -14px; }
-  body#checkout section.checkout-step.js-current-step .step-title {
+  body#checkout section.checkout-step.js-current-step .step-title:first-child {
     color: #000; }
-    body#checkout section.checkout-step.js-current-step .step-title .step-number {
+    body#checkout section.checkout-step.js-current-step .step-title:first-child .step-number {
       background: #000; }
   body#checkout section.checkout-step:last-child .step-title:before {
     display: none; }
