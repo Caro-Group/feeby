@@ -1034,10 +1034,17 @@ border: none;
 }
 
 
+
 /* CHECKOUT */
-body#checkout section#checkout-addresses-step.checkout-step.-reachable.-shipping-adress-enable:not(.-complete) .content {
+body#checkout section#checkout-personal-information-step.checkout-step.-current.-reachable + section.checkout-step.-shipping-adress-enable .content {
+    display: none;
+}
+
+/*
+body#checkout section#checkout-addresses-step.checkout-step.-reachable.-shipping-adress-enable .content {
     display: block;
 }
+*/
 
 body#checkout section#checkout-addresses-step.checkout-step.-reachable.-shipping-adress-enable.-complete +  section.checkout-step.-reachable .content {
     display: block;
@@ -1098,5 +1105,5 @@ body#checkout section#checkout-payment-step.checkout-step > .completed .done {
     border-radius: 50%;
 }
 body#checkout section#checkout-payment-step.checkout-step > .completed.step-title{
-color: #999;
+    color: #999;
 }

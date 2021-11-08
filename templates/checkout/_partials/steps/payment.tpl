@@ -97,11 +97,6 @@
   </div>
 
   <div>
-    <h1 class="step-title h3">
-      <span class="step-number">{$position}</span>
-      {l s='Order summary' d='Shop.Theme.Checkout'}
-    </h1>
-
     <div data-checkout-summary class="content" style="display: none;">
 
     {if $show_final_summary}
