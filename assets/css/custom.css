@@ -1083,6 +1083,10 @@ body#checkout section#checkout-payment-step.checkout-step > .completed .step-num
     display: none;
 }
 
+body#checkout section#checkout-personal-information-step.checkout-step.-current ~ section#checkout-payment-step.checkout-step > .completed .step-number{
+    display: block;
+}
+
 body#checkout section#checkout-payment-step.checkout-step > .completed .step-number:last-child{
     display: block;
 }
@@ -1090,6 +1094,18 @@ body#checkout section#checkout-payment-step.checkout-step > .completed .step-num
 body#checkout section#checkout-payment-step.checkout-step > .completed .step-title:before{
     background: #4caf50;
 }
+
+body#checkout section.checkout-step.js-current-step .step-title:first-child,
+body#checkout section.checkout-step.js-current-step.-payment-completed .step-title:last-child,
+body#checkout section.checkout-step.js-current-step :first-child {
+    color: #000; }
+
+body#checkout section.checkout-step.js-current-step .step-title:first-child .step-number,
+body#checkout section.checkout-step.js-current-step.-payment-completed .step-title:last-child .step-number {
+background: #000; }
+
+
+
 
 body#checkout section#checkout-payment-step.checkout-step > .completed .done {
     display: inline-block;

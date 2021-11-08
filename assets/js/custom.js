@@ -1179,7 +1179,7 @@ $('body').on('click', "[data-checkout-payment]", function(e){
 	$('[data-checkout-payment-panel]').hide();
 	$('[data-checkout-summary]').show();
 	$('#checkout-payment-step .step-title').addClass("completed");
-	
+	$('#checkout-payment-step').addClass("-payment-completed");
 });
 
 
@@ -1188,6 +1188,7 @@ $('body').on('click', "#checkout-payment-step .step-title.completed,[data-checko
 	$('[data-checkout-summary]').hide();
 	$('[data-checkout-payment-panel]').show();
 	$('#checkout-payment-step .step-title').removeClass("completed");
+	$('#checkout-payment-step').removeClass("-payment-completed");
 });
 
 $('body').on('click', "[data-checkout-back]",function(e){ 
