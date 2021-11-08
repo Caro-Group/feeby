@@ -1096,8 +1096,7 @@ body#checkout section#checkout-payment-step.checkout-step > .completed .step-tit
 }
 
 body#checkout section.checkout-step.js-current-step .step-title:first-child,
-body#checkout section.checkout-step.js-current-step.-payment-completed .step-title:last-child,
-body#checkout section.checkout-step.js-current-step :first-child {
+body#checkout section.checkout-step.js-current-step.-payment-completed .step-title:last-child {
     color: #000; }
 
 body#checkout section.checkout-step.js-current-step .step-title:first-child .step-number,
