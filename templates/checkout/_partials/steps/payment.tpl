@@ -151,7 +151,7 @@
 
 
     <div class="flex flex-wrap justify-between">
-      <button data-checkout-back="#checkout-payment-step">{l s='Go back' d='Shop.Theme.Checkout'}</button>  
+      <button data-checkout-payment-reset>{l s='Go back' d='Shop.Theme.Checkout'}</button>  
   
       <div>
         <div id="payment-confirmation">
