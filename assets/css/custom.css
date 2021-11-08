@@ -1070,12 +1070,12 @@ body#checkout section#checkout-payment-step.checkout-step:nth-child(4) .step-tit
     z-index: 4;
 }
  
-body#checkout section#checkout-payment-step.checkout-step:nth-child(4) + .step-title  {
+body#checkout section#checkout-payment-step.checkout-step:nth-child(4) .step-title:nth-child(2)  {
     left: 75%;
     z-index: 4;
 }
 
-body#checkout section#checkout-payment-step.checkout-step:nth-child(4) + .step-title:before  {
+body#checkout section#checkout-payment-step.checkout-step:nth-child(4) .step-title:nth-child(2):before  {
     display: none;
 }
 
