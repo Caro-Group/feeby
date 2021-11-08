@@ -107,9 +107,14 @@
 
           </div>
         </div>
-        <button type="submit" class="continue btn btn-primary float-xs-right" name="confirmDeliveryOption" value="1">
-          {l s='Continue' d='Shop.Theme.Actions'}
-        </button>
+
+        <div class="flex flex-wrap justify-between">
+          <button data-checkout-back="#checkout-personal-information-step">{l s='Go back' d='Shop.Theme.Checkout'}</button>  
+          <button type="submit" class="continue btn btn-primary float-xs-right" name="confirmDeliveryOption" value="1">
+           {l s='Continue' d='Shop.Theme.Actions'}
+          </button>
+        </div>
+
       </form>
     {else}
       <p class="alert alert-danger">{l s='Unfortunately, there are no carriers available for your delivery address.' d='Shop.Theme.Checkout'}</p>

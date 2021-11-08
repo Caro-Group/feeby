@@ -1183,7 +1183,7 @@ $('body').on('click', "[data-checkout-payment]", function(e){
 });
 
 
-$('body').on('click', "#checkout-payment-step .step-title.completed", function(e){ 
+$('body').on('click', "#checkout-payment-step .step-title.completed,[data-checkout-payment-reset]", function(e){ 
 	e.preventDefault();
 	$('[data-checkout-summary]').hide();
 	$('[data-checkout-payment-panel]').show();
