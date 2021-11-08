@@ -1189,11 +1189,13 @@ $('body').on('click', "#checkout-payment-step .step-title.completed,[data-checko
 	$('[data-checkout-payment-panel]').show();
 	$('#checkout-payment-step .step-title').removeClass("completed");
 	$('#checkout-payment-step').removeClass("-payment-completed");
+	window.scrollTo(0, 0);
 });
 
 $('body').on('click', "[data-checkout-back]",function(e){ 
 	e.preventDefault();
 	$($(this).data('checkoutBack')).click();
+	window.scrollTo(0, 0);
 });
 
 
