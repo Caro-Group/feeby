@@ -1083,6 +1083,10 @@ body#checkout section#checkout-payment-step.checkout-step > .completed .step-num
     display: none;
 }
 
+body#checkout section#checkout-payment-step.checkout-step > .completed .step-number:last-child{
+    display: block;
+}
+
 body#checkout section#checkout-payment-step.checkout-step > .completed .step-title:before{
     background: #4caf50;
 }
