@@ -41,6 +41,13 @@
       <span class="step-edit text-muted"><i class="material-icons edit">&#xE254;</i> {l s='Edit' d='Shop.Theme.Actions'}</span>
     </h1>
 
+    {if $position == 4}
+    <h1 class="step-title h3">
+      <span class="step-number">{$position}</span>
+      {l s='Order summary' d='Shop.Theme.Checkout'}
+    </h1>
+    {/if}
+
     <div class="content">
       {block name='step_content'}DUMMY STEP CONTENT{/block}
     </div>

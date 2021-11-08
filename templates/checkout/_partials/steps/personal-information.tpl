@@ -91,6 +91,8 @@
   {/if}
 
   <div class="tab-pane {if !$show_login_form}active{/if}" id="checkout-guest-form" role="tabpanel" {if $show_login_form}aria-hidden="true"{/if}>
+    {if !$customer.is_logged}
     {render file='checkout/_partials/customer-form.tpl' ui=$register_form guest_allowed=$guest_allowed}
+    {/if}
   </div>
 {/block}
