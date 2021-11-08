@@ -1190,6 +1190,10 @@ $('body').on('click', "#checkout-payment-step .step-title.completed", function(e
 	$('#checkout-payment-step .step-title').removeClass("completed");
 });
 
+$('body').on('click', "[data-checkout-back]",function(e){ 
+	e.preventDefault();
+	$($(this).data('checkoutBack')).click();
+});
 
 
 

@@ -1070,13 +1070,13 @@ body#checkout section#checkout-payment-step.checkout-step:nth-child(4) .step-tit
     z-index: 4;
 }
  
-body#checkout section#checkout-payment-step.checkout-step:nth-child(4) div .step-title  {
+body#checkout section#checkout-payment-step.checkout-step:nth-child(4) + .step-title  {
     left: 75%;
     z-index: 4;
 }
 
-body#checkout section#checkout-payment-step.checkout-step div .step-title:before{
-	display:none;
+body#checkout section#checkout-payment-step.checkout-step:nth-child(4) + .step-title:before  {
+    display: none;
 }
 
 body#checkout section#checkout-payment-step.checkout-step > .completed .step-number{
