@@ -1096,11 +1096,11 @@ body#checkout section#checkout-payment-step.checkout-step > .completed .step-tit
 }
 
 body#checkout section.checkout-step.js-current-step .step-title:first-child,
-body#checkout section#checkout-payment-step.checkout-step.-current.-payment-completed .step-title {
+body#checkout section#checkout-payment-step.checkout-step.-current.-payment-completed .step-title:not(:first-child) {
     color: #000; }
 
 body#checkout section.checkout-step.js-current-step .step-title:first-child .step-number,
-body#checkout section#checkout-payment-step.checkout-step.-current.-payment-completed .step-title .step-number {
+body#checkout section#checkout-payment-step.checkout-step.-current.-payment-completed .step-title:not(:first-child) .step-number {
 background: #000; }
 
 
