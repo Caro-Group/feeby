@@ -34,7 +34,7 @@
           {if $conditions}
             <p class="text-center text-lg">{$conditions}</p>
           {/if}
-            <p class="alert {if $nw_error}alert-danger{else}alert-success{/if}" data-newsletter-alert>
+            <p class="alert" data-newsletter-alert>
               {if $msg}
                   {$msg}
               {/if}
