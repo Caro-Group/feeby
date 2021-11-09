@@ -40,3 +40,4 @@ cache/*
 
 # ENV variables
 .env
+node_modules
