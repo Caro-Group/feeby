@@ -48,7 +48,11 @@ module.exports = {
         'newsletter-plane': "url('../img/newsletter1.svg')",
         'newsletter-dashed': "url('../img/newsletter2.svg')",
         'header-brush': "url('../img/headers_under.svg')",
-       }
+       },
+      backgroundSize: {
+       'smaller': '70px',
+       'small': '100px',
+      }
     },
   },
   variants: {
