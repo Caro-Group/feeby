@@ -28,7 +28,7 @@ $(document).ready(function () {
         if (typeof psemailsubscription_subscription === 'undefined') {
             return true;
         }
-        $('[data-newsletter-alert]').empty();
+        $('[data-newsletter-alert]').empty().removeClass();
         $.ajax({
             type: 'POST',
             dataType: 'JSON',
