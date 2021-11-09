@@ -47,6 +47,7 @@
               type="text"
               value="{$value}"
               placeholder="{l s='Your email...' d='Shop.Forms.Labels'}"
+              aria-labelledby="block-newsletter-label"
             >
 
             <button
@@ -60,6 +61,9 @@
             </button>
           </div>
           <input type="hidden" name="action" value="0">
+              {if isset($id_module)}
+                {hook h='displayGDPRConsent' id_module=$id_module}
+              {/if}
         </div>
       </div>
       {hook h='displayNewsletterRegistration'}
