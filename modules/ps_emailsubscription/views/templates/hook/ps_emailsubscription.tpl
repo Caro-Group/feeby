@@ -24,14 +24,20 @@
  *}
 
  {* .block is used in js *}
-<div class="block bg-newsletter bg-contain bg-left bg-no-repeat bg-gray-default desktop:rounded-md flex flex-col items-center justify-center max-w-screen-desktop-wide mx-auto px-8 py-20"> 
+<div class="block relative bg-newsletter-dashed bg-contain bg-right-bottom bg-no-repeat bg-gray-default desktop:rounded-md flex flex-col items-center justify-center max-w-screen-desktop-wide mx-auto px-2 tablet:px-8 py-20"> 
+  <div class="absolute -left-20 bottom-0 bg-newsletter-plane h-3/4 w-full bg-no-repeat bg-contain"></div>
   <h3 class="title_block">{l s='Newsletter signup' d='Shop.Theme.Global'}</h3>
    {* .block_content is used in js *}
-  <div class="block_content w-3/5">
+  <div class="block_content w-full tablet:w-3/5">
     <form action="{$urls.pages.index}#footer" method="post">
       <div>
           {if $conditions}
             <p class="text-center text-lg">{$conditions}</p>
+          {/if}
+          {if $msg}
+            <p class="alert {if $nw_error}alert-danger{else}alert-success{/if}">
+              {$msg}
+            </p>
           {/if}
         {* .col_form is used in js *}
         <div class="col-form">
