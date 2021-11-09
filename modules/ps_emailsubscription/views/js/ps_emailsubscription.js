@@ -23,12 +23,12 @@
  * International Registered Trademark & Property of PrestaShop SA
  */
 $(document).ready(function () {
-    $('.block_newsletter form').on('submit', function () {
+    $('[data-newsletter-form]').on('submit', function () {
         var psemailsubscriptionForm = $(this);
         if (typeof psemailsubscription_subscription === 'undefined') {
             return true;
         }
-        $('.block_newsletter_alert').remove();
+        $('[data-newsletter-alert]').empty();
         $.ajax({
             type: 'POST',
             dataType: 'JSON',
@@ -37,9 +37,9 @@ $(document).ready(function () {
             data: $(this).serialize(),
             success: function (data) {
                 if (data.nw_error) {
-                    psemailsubscriptionForm.prepend('<p class="alert alert-danger block_newsletter_alert">' + data.msg + '</p>');
+                    psemailsubscriptionForm.find("[data-newsletter-alert]").prepend(data.msg);
                 } else {
-                    psemailsubscriptionForm.prepend('<p class="alert alert-success block_newsletter_alert">' + data.msg + '</p>');
+                    psemailsubscriptionForm.find("[data-newsletter-alert]").prepend(data.msg);
                 }
             },
             error: function (err) {
