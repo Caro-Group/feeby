@@ -1032,3 +1032,7 @@ border: none;
         margin-left: 65px;
     }
 }
+
+[disabled="disabled"]{
+    cursor: not-allowed;
+}
