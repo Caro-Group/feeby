@@ -51,7 +51,7 @@
             >
 
             <button
-            class="bg-pink-650 hover:bg-pink-800 duration-150 border-0 rounded-full text-white uppercase whitespace-nowrap"
+            class="bg-pink-650 hover:bg-pink-800 duration-150 border-0 rounded-full text-white px-2 uppercase whitespace-nowrap"
               name="submitNewsletter"
               type="submit"
               value="{l s='Subscribe' d='Shop.Theme.Actions'}"
