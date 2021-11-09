@@ -40,27 +40,29 @@
             </p>
           {/if}
         <div>
-          <div class="input-text bg-white">
+          <div class="border-gray-300 border-solid border flex rounded-full pl-4 bg-white ">
             <input
+            class="w-full bg-transparent border-0 py-3 outline-none"
               name="email"
               type="text"
               value="{$value}"
               placeholder="{l s='Your email...' d='Shop.Forms.Labels'}"
             >
 
-            {* .btn is used in js *}
             <button
+            class="bg-pink-650 hover:bg-pink-800 duration-150 rounded-full text-white uppercase"
               name="submitNewsletter"
               type="submit"
               value="{l s='Subscribe' d='Shop.Theme.Actions'}"
             >
-            Zapisz się
-              <i class="ti-arrow-right"></i></span>
+            {l s='Subscribe' d='Shop.Theme.Actions'}
+              <i class="ti-arrow-right text-white"></i></span>
             </button>
           </div>
           <input type="hidden" name="action" value="0">
         </div>
       </div>
+      {hook h='displayNewsletterRegistration'}
     </form>
   </div>
 </div>

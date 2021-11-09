@@ -37,9 +37,7 @@
   <div class="footer-center">
 
    <div class="container">
-    {if $page.page_name != 'index' && $page.page_name != 'cart' && $page.page_name != 'checkout'}
      {hook h='ps_emailsubscription'}
-    {/if}
    </div>
 
     {if isset($fullwidth_hook.displayFooter) AND $fullwidth_hook.displayFooter == 0}
