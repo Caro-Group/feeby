@@ -29,16 +29,16 @@
   <h3 class="title_block text-center z-20">{l s='Newsletter signup' d='Shop.Theme.Global'}</h3>
    {* .block_content is used in js *}
   <div class="block_content w-full tablet:w-3/5 z-20">
-    <form action="{$urls.pages.index}#footer" method="post">
+    <form action="{$urls.pages.index}#footer" method="post" data-newsletter-form>
       <div>
           {if $conditions}
             <p class="text-center text-lg">{$conditions}</p>
           {/if}
-          {if $msg}
-            <p class="alert {if $nw_error}alert-danger{else}alert-success{/if}">
-              {$msg}
+            <p class="alert {if $nw_error}alert-danger{else}alert-success{/if}" data-newsletter-alert>
+              {if $msg}
+                  {$msg}
+              {/if}
             </p>
-          {/if}
         <div>
           <div class="border-gray-300 border-solid border flex rounded-full pl-4 bg-white ">
             <input
@@ -60,6 +60,9 @@
             </button>
           </div>
           <input type="hidden" name="action" value="0">
+              {if isset($id_module)}
+                {hook h='displayGDPRConsent' id_module=$id_module}
+              {/if}
         </div>
       </div>
       {hook h='displayNewsletterRegistration'}
