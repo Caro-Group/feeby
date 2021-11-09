@@ -26,7 +26,7 @@
  {* .block is used in js *}
 <div class="block relative bg-newsletter-dashed bg-smaller tablet:bg-small bg-right-bottom bg-no-repeat bg-gray-default desktop:rounded-md flex flex-col items-center justify-center max-w-screen-desktop-wide mx-auto px-2 tablet:px-8 py-20 overflow-hidden"> 
   <div class="absolute -left-20 bottom-0 bg-newsletter-plane h-3/4 tablet:h-full tablet:left-0 w-full bg-no-repeat bg-contain z-0"></div>
-  <h3 class="title_block z-20">{l s='Newsletter signup' d='Shop.Theme.Global'}</h3>
+  <h3 class="title_block text-center z-20">{l s='Newsletter signup' d='Shop.Theme.Global'}</h3>
    {* .block_content is used in js *}
   <div class="block_content w-full tablet:w-3/5 z-20">
     <form action="{$urls.pages.index}#footer" method="post">
@@ -39,8 +39,7 @@
               {$msg}
             </p>
           {/if}
-        {* .col_form is used in js *}
-        <div class="col-form">
+        <div>
           <div class="input-text bg-white">
             <input
               name="email"
@@ -51,7 +50,6 @@
 
             {* .btn is used in js *}
             <button
-              class="btn"
               name="submitNewsletter"
               type="submit"
               value="{l s='Subscribe' d='Shop.Theme.Actions'}"

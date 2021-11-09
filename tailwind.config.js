@@ -5,7 +5,7 @@ module.exports = {
   purge: {
     enabled: process.env.NODE_ENV === 'production',
     content: [
-      'assets/**/*.{vue,js,ts,jsx,tsx,tpl,yml}',
+      'assets/**/*.{vue,js,ts,jsx,tsx,tpl,yml,css,scss}',
       'config/**/*.{vue,js,ts,jsx,tsx,tpl,yml}',
       'modules/**/*.{vue,js,ts,jsx,tsx,tpl,yml}',
       'templates/**/*.{vue,js,ts,jsx,tsx,tpl,yml}',

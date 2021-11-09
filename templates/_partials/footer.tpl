@@ -37,7 +37,7 @@
   <div class="footer-center">
 
    <div class="container">
-    {if $page_name != 'index' || $page_name != 'cart' || $page_name != 'checkout'}
+    {if $page.page_name != 'index' && $page.page_name != 'cart' && $page.page_name != 'checkout'}
      {hook h='ps_emailsubscription'}
     {/if}
    </div>
