@@ -29,24 +29,14 @@
                         '-current'        => $step_is_current,
                         '-reachable'      => $step_is_reachable,
                         '-complete'       => $step_is_complete,
-                        '-shipping-adress-enable' => $step_is_reachable && $identifier == 'checkout-addresses-step',
-                        '-payment-enable' => $step_is_reachable && $identifier == 'checkout-delivery-step',
                         'js-current-step' => $step_is_current
                     ]|classnames}"
   >
     <h1 class="step-title h3">
       <i class="material-icons rtl-no-flip done">&#xE876;</i>
       <span class="step-number">{if $position == 4}3{else}{$position}{/if}</span>
-      {$title}
-      <span class="step-edit text-muted"><i class="material-icons edit">&#xE254;</i> {l s='Edit' d='Shop.Theme.Actions'}</span>
+      <span>{$title}</span>
     </h1>
-
-    {if $position == 4}
-    <h1 class="step-title h3">
-      <span class="step-number">{$position}</span>
-      {l s='Order summary' d='Shop.Theme.Checkout'}
-    </h1>
-    {/if}
 
     <div class="content">
       {block name='step_content'}DUMMY STEP CONTENT{/block}

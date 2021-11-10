@@ -27,12 +27,5 @@
     <h1 class="step-title h3">
       <span class="step-number">{$position}</span> {$title}
     </h1>
-    
-    {if $position == 4}
-      <h1 class="step-title h3">
-        <span class="step-number">{$position}</span>
-        {l s='Order summary' d='Shop.Theme.Checkout'}
-      </h1>
-    {/if}
   </section>
 {/block}

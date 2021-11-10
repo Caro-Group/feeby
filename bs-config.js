@@ -43,8 +43,7 @@ module.exports = {
     "serveStatic": [{
         route: '/themes/feeby/assets/css',
         dir: 'assets/css'
-    },
-    {
+    },{
         route: '/themes/feeby/assets/js',
         dir: 'assets/js'
     }],
