@@ -1206,6 +1206,21 @@ $('#checkout-addresses-step.-current').next('.-clickable').addClass('-current-sh
 
 
 
+// $(document).ready(function () {
+// 	$(window).resize(function () {
+// 		if($(window).width() > 990){
+// 			$(".owl-customized .owl-carousel").trigger('destroy.owl.carousel').removeClass('owl-carousel owl-loaded');
+// 			$(".owl-customized").find('.owl-wrapper-outer').children().unwrap();
+// 		}
+// 		else{
+// 			$(".owl-customized .owl-wrapper").owlCarousel({})
+// 		}
+
+// 	});
+// });
+
+
+
 
 
 

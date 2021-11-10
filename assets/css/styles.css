@@ -3,3 +3,39 @@
 @tailwind components;
 
 @tailwind utilities;
+
+
+@layer components{
+
+    .owl-customized .block-carousel-image-container{
+        @apply relative;
+    }
+
+    .owl-customized .block-carousel-image-container.image:before {
+        content: "";
+        aspect-ratio: 1;
+
+        @apply rounded-2xl bg-gray-default absolute top-0 left-0 w-2/5 z-0;
+    }
+
+    .owl-customized .block-carousel-image-container img{
+
+        filter: invert(17%) sepia(49%) saturate(5868%) hue-rotate(328deg) brightness(101%) contrast(93%);
+
+        @apply w-2/5 z-10 relative mb-6 duration-150;
+    }
+
+    .owl-customized .title{
+        @apply font-semibold mb-6 text-base text-black;
+    }
+
+    
+    .owl-customized .owl-item{
+        @apply opacity-50 phone-wide:opacity-100 duration-150; 
+    }
+
+    .owl-customized .owl-item.active{
+        @apply opacity-100;
+    }
+
+}
