@@ -33,6 +33,10 @@
         filter: invert(17%) sepia(49%) saturate(5868%) hue-rotate(328deg) brightness(101%) contrast(93%);
     }
 
+    .owl-customized .owl-disabled .block-carousel-image-container img:hover{
+        filter: invert(17%) sepia(49%) saturate(5868%) hue-rotate(328deg) brightness(101%) contrast(93%);
+    }
+
     .owl-customized .title{
         @apply font-semibold mb-6 text-base text-black;
     }
@@ -44,7 +48,6 @@
     .owl-customized .owl-loaded .owl-item.active{
         @apply opacity-100;
     }
-
 
     .owl-customized .owl-disabled{
         @apply flex flex-wrap justify-between;
