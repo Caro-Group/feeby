@@ -56,7 +56,9 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      grayscale: ['hover', 'focus'],
+    },
   },
   plugins: [],
   corePlugins: {
