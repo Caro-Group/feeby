@@ -24,17 +24,6 @@
  *}
 {extends "customer/_partials/customer-form.tpl"}
 
-{block "form_field"}
-  {if $field.name === 'password' and $guest_allowed}
-      <p data-checkout-account-pass>
-        <span class="text-muted">{l s='And save time on your next order!' d='Shop.Theme.Checkout'}</span>
-      </p>
-      {$smarty.block.parent}
-  {else}
-    {$smarty.block.parent}
-  {/if}
-{/block}
-
 {block "form_buttons"}
     <button
       class="continue btn btn-primary float-xs-right"
