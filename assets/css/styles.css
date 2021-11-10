@@ -7,6 +7,11 @@
 
 @layer components{
 
+    .center-inside{
+        float: none !important;
+        @apply mx-auto;
+    }
+
     .owl-customized .owl-carousel .owl-wrapper-outer{
         overflow: visible;
     }
@@ -20,14 +25,13 @@
         aspect-ratio: 1;
         max-width: 70px;
 
-        @apply rounded-2xl bg-gray-default absolute top-0 left-0 w-3/12 z-0;
+        @apply rounded-xl bg-gray-default absolute top-0 left-0 w-3/12 z-0;
     }
 
     .owl-customized .owl-item .block-carousel-image-container img{
         max-width: 70px;
         @apply w-3/12 z-10 relative mb-6 duration-150;
     }
-
     
     .owl-customized .owl-loaded .owl-item.active .block-carousel-image-container img{
         filter: invert(17%) sepia(49%) saturate(5868%) hue-rotate(328deg) brightness(101%) contrast(93%);
@@ -56,7 +60,7 @@
     .owl-customized .owl-disabled .owl-item{
         min-width: 150px;
         flex-basis: 30%;
-        @apply flex-grow mb-10 mx-2 tablet-wide:px-10 ;
+        @apply flex-grow mb-10 mx-2 tablet-wide:px-10  ;
     }
 
 }
