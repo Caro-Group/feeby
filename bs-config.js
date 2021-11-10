@@ -41,8 +41,8 @@ module.exports = {
     "port": 3000,
     "middleware": false,
     "serveStatic": [{
-        route: '/themes/feeby/assets/css',
-        dir: 'assets/css'
+        route: '/themes/feeby/assets',
+        dir: 'assets'
     }],
     "ghostMode": {
         "clicks": true,
