@@ -3,3 +3,67 @@
 @tailwind components;
 
 @tailwind utilities;
+
+
+@layer components{
+
+    .center-inside{
+        float: none !important;
+        @apply mx-auto;
+    }
+
+    .owl-customized .owl-carousel .owl-wrapper-outer{
+        overflow: visible;
+    }
+
+    .owl-customized .owl-item .block-carousel-image-container{
+        @apply relative;
+    }
+
+    .owl-customized .owl-item .block-carousel-image-container.image:before {
+        content: "";
+        aspect-ratio: 1;
+        max-width: 70px;
+
+        @apply rounded-xl bg-gray-default absolute top-0 left-0 w-3/12 z-0;
+    }
+
+    .owl-customized .owl-item .block-carousel-image-container img{
+        max-width: 70px;
+        @apply w-3/12 z-10 relative mb-6 p-2;
+    }
+    
+    .owl-customized .owl-item .block-carousel-image-container img{
+        filter: invert(17%) sepia(49%) saturate(5868%) hue-rotate(328deg) brightness(101%) contrast(93%);
+    }
+
+    .owl-customized .title{
+        @apply font-semibold mb-6 text-base text-black;
+    }
+
+    .owl-customized .owl-item{
+        @apply filter grayscale duration-150 hover:grayscale-0;
+    }
+    .owl-customized .owl-item.active{
+        @apply filter grayscale-0 ;
+    }
+
+    .owl-customized .owl-loaded .owl-item{
+        @apply opacity-50; 
+    }
+
+    .owl-customized .owl-loaded .owl-item.active{
+        @apply opacity-100;
+    }
+
+    .owl-customized .owl-disabled{
+        @apply flex flex-wrap justify-between;
+    }
+
+    .owl-customized .owl-disabled .owl-item{
+        min-width: 150px;
+        flex-basis: 30%;
+        @apply flex-grow mb-10 mx-2 tablet-wide:px-10 grayscale hover:grayscale-0  ;
+    }
+
+}

@@ -5,7 +5,7 @@ module.exports = {
   purge: {
     enabled: process.env.NODE_ENV === 'production',
     content: [
-      'assets/**/*.{vue,js,ts,jsx,tsx,tpl,yml}',
+      'assets/**/*.{vue,js,ts,jsx,tsx,tpl,yml,css,scss}',
       'config/**/*.{vue,js,ts,jsx,tsx,tpl,yml}',
       'modules/**/*.{vue,js,ts,jsx,tsx,tpl,yml}',
       'templates/**/*.{vue,js,ts,jsx,tsx,tpl,yml}',
@@ -30,7 +30,11 @@ module.exports = {
     },
     extend: {
       colors: {
-        "main" : "#DF1A5B"
+        "main" : "#DF1A5B",
+        "require": "#f00",
+        gray: {
+          default: '#F8F8F8',
+        },
       },
       width: {
         "side": "467px",
@@ -39,13 +43,24 @@ module.exports = {
       margin: {
         'miniature': '102px',
       },
+      backgroundImage: {
+        'newsletter-plane': "url('../img/newsletter1.svg')",
+        'newsletter-dashed': "url('../img/newsletter2.svg')",
+        'header-brush': "url('../img/headers_under.svg')",
+       },
+      backgroundSize: {
+       'smaller': '70px',
+       'small': '100px',
+      },
       minWidth: {
         'label': '173px'
       }
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      grayscale: ['hover', 'focus'],
+    },
   },
   plugins: [
     require("@tailwindcss/forms")({
