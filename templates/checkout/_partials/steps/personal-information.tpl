@@ -63,21 +63,21 @@
           </p>
           {if $guest_allowed}
             <a
-              class="nav-link mb-2 {if !$show_login_form}active{/if}"
+              class="bg-main hover:opacity-80 duration-150 border-0 rounded-full text-white p-2 px-4 uppercase whitespace-nowrap mb-2 flex items-center justify-between cursor-pointer"
               href="#checkout-guest-form"
-              role="tab"
               aria-controls="checkout-guest-form"
               >
                 {l s='Order as a guest' d='Shop.Theme.Checkout'}
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" fill="none" class="ml-2 flex-0"><path fill-rule="evenodd" clip-rule="evenodd" d="m9.25 14.359 6.25-6.25v-.884L9.25.975l-.884.884 5.183 5.184H.5v1.25h13.05l-5.185 5.182.884.884h.001Z" fill="#fff"/></svg>
             </a>
           {/if}
           <a
-            class="nav-link {if !$show_login_form}active{/if}"
+            class="bg-black hover:opcaity-80 duration-150 border-0 rounded-full text-white p-2 px-4 uppercase whitespace-nowrap mb-2 flex items-center justify-between cursor-pointer
             href="#checkout-register-form"
-            role="tab"
             aria-controls="checkout-guest-form"
             >
              {l s='Create an account' d='Shop.Theme.Customeraccount'}
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" fill="none" class="ml-2 flex-0"><path fill-rule="evenodd" clip-rule="evenodd" d="m9.25 14.359 6.25-6.25v-.884L9.25.975l-.884.884 5.183 5.184H.5v1.25h13.05l-5.185 5.182.884.884h.001Z" fill="#fff"/></svg>
           </a>
         </div>
         <div class="my-20 px-24 w-1/2">
@@ -90,9 +90,9 @@
     </div>
   {/if}
 
-  <div class="tab-pane {if !$show_login_form}active{/if}" id="checkout-guest-form" role="tabpanel" {if $show_login_form}aria-hidden="true"{/if}>
-    {if !$customer.is_logged}
-    {render file='checkout/_partials/customer-form.tpl' ui=$register_form guest_allowed=$guest_allowed}
+  <div id="checkout-guest-form">
+    {if !$customer.is_logged || $customer.is_guest}
+      {render file='checkout/_partials/customer-form.tpl' ui=$register_form guest_allowed=$guest_allowed}
     {/if}
   </div>
 {/block}

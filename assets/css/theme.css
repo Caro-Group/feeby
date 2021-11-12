@@ -23783,7 +23783,7 @@ body .box-latestnews .owl-item.loading a.blog_img_link {
 
 /*end update Product image detail*/
 .lql-social-login {
-  margin: 30px 0 0;
+  /* margin: 30px 0 0; */
   display: flex;
   flex-wrap: wrap; }
 

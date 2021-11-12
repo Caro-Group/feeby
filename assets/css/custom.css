@@ -1036,16 +1036,16 @@ border: none;
 
 
 /* CHECKOUT */
-body#checkout section#checkout-personal-information-step.checkout-step.-current.-reachable + section.checkout-step.-shipping-adress-enable .content {
+/* body#checkout section#checkout-personal-information-step.checkout-step.-current.-reachable + section.checkout-step.-shipping-adress-enable .content {
     display: none;
-}
+} */
 
 /*
 body#checkout section#checkout-addresses-step.checkout-step.-reachable.-shipping-adress-enable .content {
     display: block;
 }
 */
-
+/* 
 body#checkout section#checkout-addresses-step.checkout-step.-reachable.-shipping-adress-enable.-complete +  section.checkout-step.-reachable .content {
     display: block;
 }
@@ -1135,4 +1135,4 @@ body#checkout section#checkout-payment-step.checkout-step > .completed.step-titl
 section#checkout-delivery-step.-unreachable {
     opacity: 0.3;
     pointer-events: none;
-}
+} */
