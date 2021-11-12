@@ -31,6 +31,7 @@ module.exports = {
     extend: {
       colors: {
         "main" : "#DF1A5B",
+        "require": "#f00",
         gray: {
           default: '#F8F8F8',
         },
@@ -50,6 +51,7 @@ module.exports = {
       backgroundSize: {
        'smaller': '70px',
        'small': '100px',
+      },
       minWidth: {
         'label': '173px'
       }

@@ -31,7 +31,7 @@
 {else if $field.name == "id_gender"}{else}
 
   <div class="flex flex-auto {if isset($theme)} flex-col {else} flex-row {/if} {if !empty($field.errors)}has-error{/if}" data-field="{$field.type}">
-    <label class="min-w-label form-control-label{if $field.required} required{/if}">
+    <label class="min-w-label form-control-label{if $field.required && $field.type !== 'checkbox'} required{/if}">
       {if $field.type !== 'checkbox'}
         {$field.label}
       {/if}
@@ -41,7 +41,7 @@
       {if $field.type === 'select'}
 
         {block name='form_field_item_select'}
-          <select class="form-select rounded-md border-0 form-control-select" name="{$field.name}" {if $field.required}required{/if}>
+          <select class="form-select rounded-md border w-full form-control-select" name="{$field.name}" {if $field.required}required{/if}>
             <option value disabled selected>{l s='-- please choose --' d='Shop.Forms.Labels'}</option>
             {foreach from=$field.availableValues item="label" key="value"}
               <option value="{$value}" {if $value eq $field.value} selected {/if}>{$label}</option>
@@ -53,7 +53,7 @@
 
         {block name='form_field_item_country'}
           <select
-          class="form-select rounded-md border-0 form-control-select js-country"
+          class="form-select rounded-md border w-full form-control-select js-country"
           name="{$field.name}"
           {if $field.required}required{/if}
           >
@@ -92,7 +92,9 @@
             <label>
               <input name="{$field.name}" type="checkbox" class="form-checkbox" value="1" {if $field.value}checked="checked"{/if} {if $field.required}required{/if}>
               <span><i class="material-icons rtl-no-flip checkbox-checked">&#xE5CA;</i></span>
-              {$field.label nofilter}
+              <span>{$field.label nofilter}
+                {if $field.required}<span class="text-require">*</span>{/if}
+              </span>
             </label>
           </span>
         {/block}
@@ -135,7 +137,7 @@
         {block name='form_field_item_password'}
           <div class="input-group js-parent-focus">
             <input
-              class="form-input rounded-md border-0 js-child-focus js-visible-password"
+              class="form-input rounded-md border border w-full js-child-focus js-visible-password"
               name="{$field.name}"
               title="{l s='At least 5 characters long' d='Shop.Forms.Help'}"
               type="password"
