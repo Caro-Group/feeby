@@ -18472,7 +18472,7 @@ body#checkout .custom-checkbox {
     margin-top: 2px; }
   body#checkout .custom-checkbox em {
     width: 500px;
-    display: block; }
+     }
     @media (max-width: 1199px) {
       body#checkout .custom-checkbox em {
         width: 300px; } }
