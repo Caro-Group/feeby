@@ -61,7 +61,11 @@ module.exports = {
       grayscale: ['hover', 'focus'],
     },
   },
-  plugins: [],
+  plugins: [
+    require("@tailwindcss/forms")({
+      strategy: 'class',
+    }),
+  ],
   corePlugins: {
    container: false,
    preflight: false,
