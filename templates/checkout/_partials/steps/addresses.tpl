@@ -132,6 +132,3 @@
 
   </form>
 </div>
-
-    </form>
-  </div>
