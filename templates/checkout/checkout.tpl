@@ -55,7 +55,7 @@
       {block name='content'}
         <section id="content" class="relative pt-24">
           <div class="flex flex-wrap">
-            <div class="cart-grid-body flex-auto w-full tablet-wide:w-2/3">
+            <div class="cart-grid-body flex-auto w-full tablet-wide:w-2/3 tablet-wide:pr-40">
               {block name='checkout_process'}
                 {render file='checkout/checkout-process.tpl' ui=$checkout_process}
               {/block}

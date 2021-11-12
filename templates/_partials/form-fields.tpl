@@ -28,9 +28,7 @@
     <input type="hidden" name="{$field.name}" value="{$field.value}">
   {/block}
   
-{else if $field.name == "id_gender"}
-  {continue}
-{else}
+{else if $field.name == "id_gender"}{else}
 
   <div class="form-group row {if !empty($field.errors)}has-error{/if}" data-field="{$field.type}">
     <label class="col-md-3 form-control-label{if $field.required} required{/if}">

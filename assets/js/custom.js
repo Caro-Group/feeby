@@ -1176,20 +1176,7 @@ $('body').on('click', "[href=\"#checkout-guest-form\"]", function(e){
 
 $('body').on('click', "[data-checkout-payment]", function(e){ 
 	e.preventDefault();
-	$('[data-checkout-payment-panel]').hide();
-	$('[data-checkout-summary]').show();
-	$('#checkout-payment-step .step-title').addClass("completed");
-	$('#checkout-payment-step').addClass("-payment-completed");
-});
-
-
-$('body').on('click', "#checkout-payment-step .step-title.completed,[data-checkout-payment-reset]", function(e){ 
-	e.preventDefault();
-	$('[data-checkout-summary]').hide();
-	$('[data-checkout-payment-panel]').show();
-	$('#checkout-payment-step .step-title').removeClass("completed");
-	$('#checkout-payment-step').removeClass("-payment-completed");
-	window.scrollTo(0, 0);
+	$("#checkout-payment-step").find("input[name='payment-option']").parent().parent().find('form button').trigger('click');
 });
 
 $('body').on('click', "[data-checkout-back]",function(e){ 
@@ -1197,10 +1184,6 @@ $('body').on('click', "[data-checkout-back]",function(e){
 	$($(this).data('checkoutBack')).click();
 	window.scrollTo(0, 0);
 });
-
-
-$('#checkout-delivery-step.-current').prev('.-shipping-adress-enable').addClass('-current-show');
-$('#checkout-addresses-step.-current').next('.-clickable').addClass('-current-show');
 
 })(jQuery);
 

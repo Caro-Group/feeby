@@ -29,6 +29,9 @@ module.exports = {
       'full-hd': '1680px',
     },
     extend: {
+      colors: {
+        "main" : "#DF1A5B"
+      },
       width: {
         "side": "467px",
         "miniature": "102px"

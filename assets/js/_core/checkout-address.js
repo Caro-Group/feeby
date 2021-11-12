@@ -32,7 +32,7 @@ let useSameAddress = psGetRequestParameter('use_same_address');
 export default function () {
   $('.js-edit-addresses').on('click', (event) => {
     event.stopPropagation();
-    $('#checkout-addresses-step').trigger('click');
+    $('#checkout-delivery-step').trigger('click');
     prestashop.emit('editAddress');
   });
 
