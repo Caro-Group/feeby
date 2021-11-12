@@ -7172,10 +7172,9 @@ div.box-coppy2.box-3 {
 .page-home .box-instagram3 .ApColumn .title_block:after {
   background: none; }
 
-.box-coppyright9 {
-  border-top: 1px solid #e5e5e5;
-  margin: 0;
-  padding: 30px 0; }
+  .box-coppyright9 {
+    border-top: 1px solid #ffffff;
+    padding: 30px 0; }
   .box-coppyright9 .ApColumn {
     padding: 0; }
   @media (max-width: 767px) {
