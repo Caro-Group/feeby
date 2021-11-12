@@ -37,6 +37,7 @@
     "deploy": "npm run production"
   },
   "dependencies": {
+    "@tailwindcss/forms": "^0.3.4",
     "autoprefixer": "^10.0.2",
     "browser-sync": "2.24.6",
     "concurrently": "^6.3.0",

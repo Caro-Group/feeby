@@ -30,18 +30,18 @@
   
 {else if $field.name == "id_gender"}{else}
 
-  <div class="form-group row {if !empty($field.errors)}has-error{/if}" data-field="{$field.type}">
-    <label class="col-md-3 form-control-label{if $field.required} required{/if}">
+  <div class="flex flex-auto {if isset($theme)} flex-col {else} flex-row {/if} {if !empty($field.errors)}has-error{/if}" data-field="{$field.type}">
+    <label class="min-w-label form-control-label{if $field.required} required{/if}">
       {if $field.type !== 'checkbox'}
         {$field.label}
       {/if}
     </label>
-    <div class="col-md-6{if ($field.type === 'radio-buttons')} form-control-valign{/if}">
+    <div class="{if ($field.type === 'radio-buttons')} form-control-valign{/if}">
 
       {if $field.type === 'select'}
 
         {block name='form_field_item_select'}
-          <select class="form-control form-control-select" name="{$field.name}" {if $field.required}required{/if}>
+          <select class="form-select rounded-md border-0 form-control-select" name="{$field.name}" {if $field.required}required{/if}>
             <option value disabled selected>{l s='-- please choose --' d='Shop.Forms.Labels'}</option>
             {foreach from=$field.availableValues item="label" key="value"}
               <option value="{$value}" {if $value eq $field.value} selected {/if}>{$label}</option>
@@ -53,7 +53,7 @@
 
         {block name='form_field_item_country'}
           <select
-          class="form-control form-control-select js-country"
+          class="form-select rounded-md border-0 form-control-select js-country"
           name="{$field.name}"
           {if $field.required}required{/if}
           >
@@ -74,6 +74,7 @@
                   name="{$field.name}"
                   type="radio"
                   value="{$value}"
+                  class="form-radio"
                   {if $field.required}required{/if}
                   {if $value eq $field.value} checked {/if}
                 >
@@ -89,7 +90,7 @@
         {block name='form_field_item_checkbox'}
           <span class="custom-checkbox">
             <label>
-              <input name="{$field.name}" type="checkbox" value="1" {if $field.value}checked="checked"{/if} {if $field.required}required{/if}>
+              <input name="{$field.name}" type="checkbox" class="form-checkbox" value="1" {if $field.value}checked="checked"{/if} {if $field.required}required{/if}>
               <span><i class="material-icons rtl-no-flip checkbox-checked">&#xE5CA;</i></span>
               {$field.label nofilter}
             </label>
@@ -99,7 +100,7 @@
       {elseif $field.type === 'date'}
 
         {block name='form_field_item_date'}
-          <input name="{$field.name}" class="form-control" type="date" value="{$field.value}" placeholder="{if isset($field.availableValues.placeholder)}{$field.availableValues.placeholder}{/if}">
+          <input name="{$field.name}" class="form-input" type="date" value="{$field.value}" placeholder="{if isset($field.availableValues.placeholder)}{$field.availableValues.placeholder}{/if}">
           {if isset($field.availableValues.comment)}
             <span class="form-control-comment">
               {$field.availableValues.comment}
@@ -134,7 +135,7 @@
         {block name='form_field_item_password'}
           <div class="input-group js-parent-focus">
             <input
-              class="form-control js-child-focus js-visible-password"
+              class="form-input rounded-md border-0 js-child-focus js-visible-password"
               name="{$field.name}"
               title="{l s='At least 5 characters long' d='Shop.Forms.Help'}"
               type="password"
@@ -160,7 +161,7 @@
 
         {block name='form_field_item_other'}
           <input
-            class="form-control"
+            class="form-input rounded-md border-0"
             name="{$field.name}"
             type="{$field.type}"
             value="{$field.value}"
@@ -181,14 +182,6 @@
         {include file='_partials/form-errors.tpl' errors=$field.errors}
       {/block}
 
-    </div>
-
-    <div class="col-md-3 form-control-comment">
-      {block name='form_field_comment'}
-        {if (!$field.required && !in_array($field.type, ['radio-buttons', 'checkbox']))}
-         {l s='Optional' d='Shop.Forms.Labels'}
-        {/if}
-      {/block}
     </div>
   </div>
 
