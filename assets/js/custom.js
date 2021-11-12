@@ -1177,6 +1177,12 @@ $('body').on('click', "[href=\"#checkout-guest-form\"]", function(e){
 	$('[data-field=\"password\"]').hide();
 });
 
+$('body').on('click', ".js-edit-addresses", (event) => {
+	event.stopPropagation();
+	$('#checkout-delivery-step').trigger('click');
+	prestashop.emit('editAddress');
+});
+
 
 
 $('body').on('click', "[data-checkout-payment]", function(e){ 
