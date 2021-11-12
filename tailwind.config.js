@@ -35,6 +35,21 @@ module.exports = {
       },
       margin: {
         'miniature': '102px',
+      },
+      colors: {
+        'main': '#DF1A5B',
+        gray: {
+          default: '#F8F8F8',
+        },
+      },
+      backgroundImage: {
+        'newsletter-plane': "url('../img/newsletter1.svg')",
+        'newsletter-dashed': "url('../img/newsletter2.svg')",
+        'header-brush': "url('../img/headers_under.svg')",
+       },
+      backgroundSize: {
+       'smaller': '70px',
+       'small': '100px',
       }
     },
   },

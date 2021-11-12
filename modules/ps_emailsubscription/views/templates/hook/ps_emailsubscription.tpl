@@ -43,12 +43,13 @@
               aria-labelledby="block-newsletter-label"
             >
             <button
-              class="btn btn-outline float-xs-right"
+            class="bg-main hover:bg-pink-800 duration-150 border-0 rounded-full text-white px-4 uppercase whitespace-nowrap"
               name="submitNewsletter"
               type="submit"
               value="{l s='Subscribe' d='Shop.Theme.Actions'}"
             >
-              <i class="ti-arrow-right"></i></span>
+            {l s='Subscribe' d='Shop.Theme.Actions'}
+              <i class="ti-arrow-right text-white ml-2"></i></span>
             </button>
           </div>
           <input type="hidden" name="action" value="0">
