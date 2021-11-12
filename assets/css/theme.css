@@ -23333,48 +23333,7 @@ ul.ps-alert-success li.item p {
 
   .list-brands li.brand > div {
     width: 100%; } }
-.blockreassurance_product {
-  border-top-width: 3px;
-  margin: 0 0 20px;
-  padding: 0; }
-
-.blockreassurance_product > div {
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  margin: 0 0 10px; }
-
-.blockreassurance_product > div:last-child {
-  border: 0;
-  padding: 0; }
-
-.blockreassurance_product > div {
-  padding: 15px 25px 15px 45px;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  position: relative; }
-
-.blockreassurance_product > div span.item-product {
-  width: 25px;
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  top: 15px;
-  left: 10px;
-  height: 30px;
-  line-height: 30px; }
-
-div.blockreassurance_product .block-title,
-div.blockreassurance_product p.block-title {
-  font-size: 12px;
-  line-height: 30px;
-  font-weight: 600;
-  display: block;
-  width: 100%; }
-
-div.blockreassurance_product .item-product img, div.blockreassurance_product .item-product svg {
-  width: 25px;
-  height: auto; }
-
+    
 img[title="cms-img"] {
   margin: 0 0 30px; }
 

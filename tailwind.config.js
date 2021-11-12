@@ -30,7 +30,10 @@ module.exports = {
     },
     extend: {
       colors: {
-        "main" : "#DF1A5B"
+        "main" : "#DF1A5B",
+        gray: {
+          default: '#F8F8F8',
+        },
       },
       width: {
         "side": "467px",
@@ -38,12 +41,6 @@ module.exports = {
       },
       margin: {
         'miniature': '102px',
-      },
-      colors: {
-        'main': '#DF1A5B',
-        gray: {
-          default: '#F8F8F8',
-        },
       },
       backgroundImage: {
         'newsletter-plane': "url('../img/newsletter1.svg')",
@@ -53,6 +50,8 @@ module.exports = {
       backgroundSize: {
        'smaller': '70px',
        'small': '100px',
+      minWidth: {
+        'label': '173px'
       }
     },
   },
