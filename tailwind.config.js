@@ -53,6 +53,7 @@ module.exports = {
       minWidth: {
         'label': '173px'
       }
+    }
     },
   },
   variants: {
