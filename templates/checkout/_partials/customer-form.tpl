@@ -25,6 +25,9 @@
 {extends "customer/_partials/customer-form.tpl"}
 
 {block "form_buttons"}
+    <a href="#checkout-login-panel">
+      {l s='Back to Login' d='Shop.Theme.Actions'}
+    </a>
     <button
       class="bg-main hover:opcaity-80 duration-150 border-0 rounded-full text-white p-2 px-4 uppercase whitespace-nowrap mb-2 flex items-center justify-between"
       name="continue"

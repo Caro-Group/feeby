@@ -25,6 +25,9 @@
 {extends file='checkout/_partials/steps/checkout-step.tpl'}
 
 {block name='step_content'}
+
+  {include file='checkout/_partials/steps/addresses.tpl'}
+  
   <div id="hook-display-before-carrier">
     {$hookDisplayBeforeCarrier nofilter}
   </div>

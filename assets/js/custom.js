@@ -1166,6 +1166,11 @@ $('body').on('click', "[href=\"#checkout-guest-form\"], [href=\"#checkout-regist
 	$('[data-login-panel]').hide();
 });
 
+$('body').on('click', "[href=\"#checkout-login-panel\"]", function(e){ 
+	e.preventDefault();
+	$('[data-login-panel]').show();
+});
+
 
 $('body').on('click', "[href=\"#checkout-guest-form\"]", function(e){ 
 	e.preventDefault();
