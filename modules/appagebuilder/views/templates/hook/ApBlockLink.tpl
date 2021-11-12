@@ -7,7 +7,7 @@
 *}
 <!-- @file modules\appagebuilder\views\templates\hook\ApBlockLink -->
 
-{* mt-10 py-6 phone-wide:py-20 *}
+{* mt-10 py-6 w-3/5 justify-start phone-wide:flex-col phone-wide:px-6 phone-wide:py-20 *}
 
 {if $hookName = 'displayFooter'}
 
