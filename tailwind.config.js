@@ -37,9 +37,7 @@ module.exports = {
         'miniature': '102px',
       },
       colors: {
-        pink: {
-          650: '#DF1A5B',
-        },
+        'main': '#DF1A5B',
         gray: {
           default: '#F8F8F8',
         },

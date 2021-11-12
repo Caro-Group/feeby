@@ -50,13 +50,13 @@
             >
 
             <button
-            class="bg-pink-650 hover:bg-pink-800 duration-150 border-0 rounded-full text-white px-2 uppercase whitespace-nowrap"
+            class="bg-main hover:bg-pink-800 duration-150 border-0 rounded-full text-white px-4 uppercase whitespace-nowrap"
               name="submitNewsletter"
               type="submit"
               value="{l s='Subscribe' d='Shop.Theme.Actions'}"
             >
             {l s='Subscribe' d='Shop.Theme.Actions'}
-              <i class="ti-arrow-right text-white"></i></span>
+              <i class="ti-arrow-right text-white ml-2"></i></span>
             </button>
           </div>
           <input type="hidden" name="action" value="0">
