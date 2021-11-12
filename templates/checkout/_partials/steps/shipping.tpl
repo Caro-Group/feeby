@@ -39,6 +39,7 @@
          id="js-delivery"
          data-url-update="{url entity='order' params=['ajax' => 1, 'action' => 'selectDeliveryOption']}"
          method="post"
+         aria-label="{l s='Shipping Address and Method' d='Shop.Theme.Checkout'}"
        >
          <div class="form-fields">
            {block name='delivery_options'}
