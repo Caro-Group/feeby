@@ -1169,7 +1169,7 @@ $('body').on('click', "[href=\"#checkout-guest-form\"], [href=\"#checkout-regist
 
 $('body').on('click', "[href=\"#checkout-guest-form\"]", function(e){ 
 	e.preventDefault();
-	$('[data-checkout-account-pass]').hide();
+	$('[data-field=\"password\"]').hide();
 });
 
 
