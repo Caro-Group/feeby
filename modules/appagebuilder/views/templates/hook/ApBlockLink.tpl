@@ -7,7 +7,7 @@
 *}
 <!-- @file modules\appagebuilder\views\templates\hook\ApBlockLink -->
 
-{* mt-10 py-6 w-3/5 items-end tablet:w-full justify-start tablet:flex-col tablet:px-6 tablet:py-20 *}
+{* mt-10 py-6 w-3/5 items-end justify-start tablet:flex-col tablet:w-full px-6 tablet:px-6 tablet:py-20 *}
 
 {if $hookName = 'displayFooter'}
 
@@ -46,8 +46,8 @@
                         </h4>
                         <span class="float-xs-right">
                         <span class="navbar-toggler collapse-icons">
-                            <i class="material-icons text-4xl add">&#xE313;</i>
-                            <i class="material-icons text-4xl remove">&#xE316;</i>
+                            <i class="material-icons add">&#xE313;</i>
+                            <i class="material-icons remove">&#xE316;</i>
                         </span>
                         </span>
                     </div>
