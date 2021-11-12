@@ -1161,28 +1161,28 @@ $(window).load(function () {
 		}
 });
 
-$('body').on('click', "#checkout [href=\"#checkout-guest-form\"], [href=\"#checkout-register-form\"]", function(e){ 
+$('body').on('click', "[href=\"#checkout-guest-form\"], [href=\"#checkout-register-form\"]", function(e){ 
 	e.preventDefault();
 	$('[data-login-panel]').hide();
 });
 
-$('body').on('click', "#checkout [href=\"#checkout-register-form\"]", function(e){ 
+$('body').on('click', "[href=\"#checkout-register-form\"]", function(e){ 
 	e.preventDefault();
 	$('#checkout-guest-form [data-field=\"password\"]').show();
 });
 
-$('body').on('click', "#checkout [href=\"#checkout-login-panel\"]", function(e){ 
+$('body').on('click', "[href=\"#checkout-login-panel\"]", function(e){ 
 	e.preventDefault();
 	$('[data-login-panel]').show();
 });
 
 
-$('body').on('click', "#checkout [href=\"#checkout-guest-form\"]", function(e){ 
+$('body').on('click', "[href=\"#checkout-guest-form\"]", function(e){ 
 	e.preventDefault();
 	$('#checkout-guest-form [data-field=\"password\"]').hide();
 });
 
-$('body').on('click', "#checkout .js-edit-addresses", (event) => {
+$('body').on('click', ".js-edit-addresses", (event) => {
 	event.stopPropagation();
 	$('#checkout-delivery-step').trigger('click');
 	prestashop.emit('editAddress');
@@ -1190,12 +1190,12 @@ $('body').on('click', "#checkout .js-edit-addresses", (event) => {
 
 
 
-$('body').on('click', "#checkout [data-checkout-payment]", function(e){ 
+$('body').on('click', "[data-checkout-payment]", function(e){ 
 	e.preventDefault();
 	$("#checkout-payment-step").find("input[name='payment-option']").parent().parent().find('form button').trigger('click');
 });
 
-$('body').on('click', "#checkout [data-checkout-back]",function(e){ 
+$('body').on('click', "[data-checkout-back]",function(e){ 
 	e.preventDefault();
 	$($(this).data('checkoutBack')).click();
 	window.scrollTo(0, 0);
