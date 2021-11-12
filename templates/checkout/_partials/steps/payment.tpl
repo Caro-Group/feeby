@@ -96,7 +96,7 @@
   </div>
 
   <div class="flex flex-wrap justify-between">
-    <button data-checkout-back="#checkout-addresses-step">{l s='Go back' d='Shop.Theme.Checkout'}</button>  
+    <button data-checkout-back="#checkout-shipping-step">{l s='Go back' d='Shop.Theme.Checkout'}</button>  
     <button data-checkout-payment>{l s='Go to the summary' d='Shop.Theme.Checkout'}</button>
   </div>
 {/block}
