@@ -22,9 +22,7 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
-{extends file='checkout/_partials/steps/checkout-step.tpl'}
 
-{block name='step_content'}
   <div class="js-address-form">
     <form
       method="POST"
@@ -134,4 +132,3 @@
 
     </form>
   </div>
-{/block}
