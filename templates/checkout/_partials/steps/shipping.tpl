@@ -39,6 +39,7 @@
          id="js-delivery"
          data-url-update="{url entity='order' params=['ajax' => 1, 'action' => 'selectDeliveryOption']}"
          method="post"
+         aria-label="{l s='Shipping Address and Method' d='Shop.Theme.Checkout'}"
        >
          <div class="form-fields">
            {block name='delivery_options'}
@@ -82,10 +83,6 @@
              </div>
            {/block}
            <div class="order-options">
-             <div id="delivery">
-               <label for="delivery_message">{l s='If you would like to add a comment about your order, please write it in the field below.' d='Shop.Theme.Checkout'}</label>
-               <textarea rows="2" cols="120" id="delivery_message" name="delivery_message">{$delivery_message}</textarea>
-             </div>
  
              {if $recyclablePackAllowed}
                <span class="custom-checkbox">
