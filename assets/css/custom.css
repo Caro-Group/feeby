@@ -1136,3 +1136,7 @@ section#checkout-delivery-step.-unreachable {
     opacity: 0.3;
     pointer-events: none;
 } */
+
+#checkout-guest-form .lql-social-login {
+    display: none!important;
+}
