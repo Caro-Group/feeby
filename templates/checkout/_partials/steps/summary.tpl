@@ -55,7 +55,7 @@
         {l
           s='Please make sure you\'ve chosen a [1]payment method[/1] and accepted the [2]terms and conditions[/2].'
           sprintf=[
-            '[1]' => '<a data-checkout-payment-reset href="#checkout-payment-step">',
+            '[1]' => '<a data-checkout-back="#checkout-payment-step" href="#checkout-payment-step">',
             '[/1]' => '</a>',
             '[2]' => '<a href="#conditions-to-approve">',
             '[/2]' => '</a>'
@@ -67,7 +67,7 @@
   </div>
 
   <div class="flex flex-wrap justify-between items-start">
-    <button data-checkout-payment-reset>{l s='Go back' d='Shop.Theme.Checkout'}</button>  
+    <button data-checkout-back="#checkout-payment-step" >{l s='Go back' d='Shop.Theme.Checkout'}</button>  
 
     <div>
       <div id="payment-confirmation">
@@ -77,7 +77,7 @@
           </button>
         </div>
         <div class="ps-hidden-by-js">
-          {if $selected_payment_option and $all_conditions_approved}
+          {if $selected_payment_option}
             <label for="pay-with-{$selected_payment_option}">{l s='Order with an obligation to pay' d='Shop.Theme.Checkout'}</label>
           {/if}
         </div>
