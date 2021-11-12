@@ -7,7 +7,7 @@
 *}
 <!-- @file modules\appagebuilder\views\templates\hook\ApBlockLink -->
 
-{* mt-10 py-6 w-3/5 items-end flex-col-reverse tablet:flex justify-start tablet:text-left tablet:items-center tablet:justify-start tablet:flex-col tablet:w-full px-6 tablet:px-6 tablet:py-20 *}
+{* mt-10 py-6 w-3/5 items-end flex-col-reverse tablet:hidden tablet:flex-row justify-start tablet:text-left tablet:items-center tablet:justify-start tablet:flex-col tablet:w-full px-6 tablet:px-6 tablet:py-20 *}
 
 {if $hookName = 'displayFooter'}
 
