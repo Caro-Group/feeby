@@ -30,8 +30,8 @@
   
 {else if $field.name == "id_gender"}{else}
 
-  <div class="flex flex-auto flex-col {if !empty($field.errors)}has-error{/if}" data-field="{$field.type}">
-    <label class="form-control-label{if $field.required} required{/if}">
+  <div class="flex flex-auto {if isset($theme)} flex-col {else} flex-row {/if} {if !empty($field.errors)}has-error{/if}" data-field="{$field.type}">
+    <label class="min-w-label form-control-label{if $field.required} required{/if}">
       {if $field.type !== 'checkbox'}
         {$field.label}
       {/if}

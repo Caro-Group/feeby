@@ -34,7 +34,7 @@
       {block name='login_form_fields'}
         {foreach from=$formFields item="field"}
           {block name='form_field'}
-            {form_field field=$field}
+            {form_field field=$field theme='col'}
           {/block}
         {/foreach}
       {/block}

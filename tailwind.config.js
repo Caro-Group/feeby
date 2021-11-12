@@ -38,6 +38,9 @@ module.exports = {
       },
       margin: {
         'miniature': '102px',
+      },
+      minWidth: {
+        'label': '173px'
       }
     },
   },
