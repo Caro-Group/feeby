@@ -7,7 +7,7 @@
 *}
 <!-- @file modules\appagebuilder\views\templates\hook\ApBlockLink -->
 
-{* mt-10 py-6 w-3/5 justify-start phone-wide:flex-col phone-wide:px-6 phone-wide:py-20 *}
+{* mt-10 py-6 w-3/5 justify-start tablet:flex-col tablet:px-6 tablet:py-20 *}
 
 {if $hookName = 'displayFooter'}
 
@@ -40,7 +40,7 @@
         {elseif isset($formAtts.accordion_type) && ($formAtts.accordion_type == 'accordion' || $formAtts.accordion_type == 'accordion_small_screen')}{* Case : full or accordion*}
             <div class="block-toggler ApLink {(isset($formAtts.class)) ? $formAtts.class : ''|escape:'html':'UTF-8'}{if $formAtts.accordion_type == 'accordion_small_screen'} accordion_small_screen{/if}">
                 {if isset($formAtts.title) && !empty($formAtts.title)}
-                    <div class="title clearfix bg-white phone-wide:bg-transparent clearfix flex h-14 items-center px-6 phone-wide:px-0 border-0 border-b-2 border-solid border-gray-default phone-wide:border-b-0" data-target="#footer-link-{$formAtts.form_id|escape:'html':'UTF-8'}" data-toggle="collapse">
+                    <div class="title clearfix bg-white tablet:bg-transparent clearfix flex h-14 items-center px-6 tablet:px-0 border-0 border-b-2 border-solid border-gray-default tablet:border-b-0" data-target="#footer-link-{$formAtts.form_id|escape:'html':'UTF-8'}" data-toggle="collapse">
                         <h4 class="mb-0 text-lg uppercase">
                         {$formAtts.title|escape:'html':'UTF-8'}
                         </h4>
@@ -59,7 +59,7 @@
                     <ul class="collapse" id="footer-link-{$formAtts.form_id|escape:'html':'UTF-8'}">
                         {foreach from=$formAtts.links item=item}
                             {if $item.title && $item.link}
-                                <li class="border-0 border-b-2 border-solid border-white phone-wide:border-b-0 flex h-14 phone-wide:h-10 items-center px-6"><a href="{$item.link}" target="{$item.target_type}">{$item.title|escape:'html':'UTF-8'}</a></li>
+                                <li class="border-0 border-b-2 border-solid border-white tablet:border-b-0 flex h-14 tablet:h-10 items-center px-6"><a href="{$item.link}" target="{$item.target_type}">{$item.title|escape:'html':'UTF-8'}</a></li>
                             {/if}
                         {/foreach}
                     </ul>
@@ -90,7 +90,7 @@
                     <ul>
                     {foreach from=$formAtts.links item=item}
                         {if $item.title && $item.link}
-                                <li class="border-0 border-b-2 border-solid border-white phone-wide:border-b-0 flex h-14 phone-wide:h-10 items-center px-6"><a href="{$item.link}" target="{$item.target_type}">{$item.title|escape:'html':'UTF-8'}</a></li>
+                                <li class="border-0 border-b-2 border-solid border-white tablet:border-b-0 flex h-14 tablet:h-10 items-center px-6"><a href="{$item.link}" target="{$item.target_type}">{$item.title|escape:'html':'UTF-8'}</a></li>
                         {/if}
                     {/foreach}
                     </ul>
