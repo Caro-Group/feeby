@@ -1193,7 +1193,12 @@ $('body').on('click', ".js-edit-addresses", (event) => {
 
 $('body').on('click', "[data-checkout-payment]", function(e){ 
 	e.preventDefault();
-	$("#checkout-payment-step").find("input[name='payment-option']").parent().parent().find('form button').trigger('click');
+	var formButton = $("#checkout-payment-step").find("input[name='payment-option']").parent().parent().find('form button');
+	if(formButton.length){
+		$("#checkout-payment-step").find("input[name='payment-option']").parent().parent().find('form button').trigger('click');
+	} else {
+		$("#checkout-summary-step").click();
+	}
 });
 
 $('body').on('click', "[data-checkout-back]",function(e){ 
