@@ -46,8 +46,8 @@
                         </h4>
                         <span class="float-xs-right">
                         <span class="navbar-toggler collapse-icons">
-                            <i class="material-icons add">&#xE313;</i>
-                            <i class="material-icons remove">&#xE316;</i>
+                            <i class="material-icons text-4xl add">&#xE313;</i>
+                            <i class="material-icons text-4xl remove">&#xE316;</i>
                         </span>
                         </span>
                     </div>
@@ -76,9 +76,9 @@
         {/if}
     {else}
         {if !isset($formAtts.accordion_type) || $formAtts.accordion_type == 'full'}{* Default : always full *}
-            <div class=" ApLink {(isset($formAtts.class)) ? $formAtts.class : ''|escape:'html':'UTF-8'}">
+            <div class="block ApLink {(isset($formAtts.class)) ? $formAtts.class : ''|escape:'html':'UTF-8'}">
                 {if isset($formAtts.title) && !empty($formAtts.title)}
-                    <h4 class="mb-0 text-lg uppercase">
+                    <h4 class="title_block">
                         {$formAtts.title|escape:'html':'UTF-8'}
                     </h4>
                 {/if}
@@ -90,7 +90,7 @@
                     <ul>
                     {foreach from=$formAtts.links item=item}
                         {if $item.title && $item.link}
-                                <li class="border-0 border-b-2 border-solid border-white tablet:border-b-0 flex h-14 tablet:h-10 items-center px-6"><a href="{$item.link}" target="{$item.target_type}">{$item.title|escape:'html':'UTF-8'}</a></li>
+                                <li><a href="{$item.link}" target="{$item.target_type}">{$item.title|escape:'html':'UTF-8'}</a></li>
                         {/if}
                     {/foreach}
                     </ul>
