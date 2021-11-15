@@ -46,13 +46,9 @@
             </span>
             {* This is the way an option should be selected when Javascript is disabled *}
             <form method="GET" class="ps-hidden-by-js">
-              {if $option.id === $selected_payment_option}
-                {l s='Selected' d='Shop.Theme.Checkout'}
-              {else}
                 <button class="ps-hidden-by-js" type="submit" name="select_payment_option" value="{$option.id}">
                   {l s='Choose' d='Shop.Theme.Actions'}
                 </button>
-              {/if}
             </form>
 
             <label for="{$option.id}">
