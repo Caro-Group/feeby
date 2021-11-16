@@ -93,6 +93,6 @@
 
   <div class="flex flex-wrap justify-between">
     <button data-checkout-back="#checkout-delivery-step">{l s='Go back' d='Shop.Theme.Checkout'}</button>  
-    <button data-checkout-payment>{l s='Go to the summary' d='Shop.Theme.Checkout'}</button>
+    <button data-checkout-payment disabled>{l s='Go to the summary' d='Shop.Theme.Checkout'}</button>
   </div>
 {/block}

@@ -1190,6 +1190,25 @@ $('body').on('click', ".js-edit-addresses", (event) => {
 });
 
 
+if($('#checkout-payment-step').find('[name=\"payment-option\"]:checked').length){
+	$('[data-checkout-payment]').attr('disabled',false);
+}
+
+$('body').on('change', "[name=\"payment-option\"]", function(e){ 
+	if($('#checkout-payment-step').find('[name=\"payment-option\"]:checked').length){
+		$('[data-checkout-payment]').attr('disabled',false);
+	}	
+});
+
+$('body').on('click', "[data-checkout-payment]", function(e){ 
+	e.preventDefault();
+	var formButton = $("#checkout-payment-step").find("input[name='payment-option']").parent().parent().find('form button');
+	if(formButton.length){
+		$("#checkout-payment-step").find("input[name='payment-option']").parent().parent().find('form button').trigger('click');
+	} else {
+		$("#checkout-summary-step").click();
+	}
+});
 
 $('body').on('click', "[data-checkout-payment]", function(e){ 
 	e.preventDefault();
