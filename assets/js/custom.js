@@ -1221,15 +1221,6 @@ $('body').on('click', "[data-checkout-payment]", function(e){
 	}
 });
 
-$('body').on('click', "[data-checkout-payment]", function(e){ 
-	e.preventDefault();
-	var formButton = $("#checkout-payment-step").find("input[name='payment-option']").parent().parent().find('form button');
-	if(formButton.length){
-		$("#checkout-payment-step").find("input[name='payment-option']").parent().parent().find('form button').trigger('click');
-	} else {
-		$("#checkout-summary-step").trigger('click');
-	}
-});
 
 $('body').on('click', "[data-checkout-back]",function(e){ 
 	e.preventDefault();
