@@ -23,6 +23,9 @@
 *  International Registered Trademark & Property of PrestaShop SA
 *}
 
+{if $hookName = 'displayFooter' && $page.page_name != 'module-psgdpr-gdpr' && $page.page_name != 'my-account' && $page.page_name != 'order-follow' && $page.page_name != 'order-slip' && $page.page_name != 'module-leofeature-mywishlist' && $page.page_name != 'address' &&$page.page_name != 'addresses' && $page.page_name != 'cart' && $page.page_name != 'discount' && $page.page_name != 'history' && $page.page_name != 'identity' && $page.page_name != 'myaccount' && $page.page_name != 'order' && $page.page_name != 'orderconfirmation' && $page.page_name != 'orderdetail' && $page.page_name != 'orderfollow' && $page.page_name != 'orderreturn' && $page.page_name != 'orderslip' }
+
+
 <div class="blockreassurance max-w-screen-desktop-wide mx-auto px-2 tablet:px-8">
     {assign var=numCols value=$blocks|@count}
     {assign var=numColsRemaining_md value=($numCols % 4)}
@@ -64,9 +67,11 @@
             <div class="flex flex-col justify-center tablet:justify-start">
                 <div class="block-title" style="color:{$textColor}">{$block['title']}</div>
                 <p class="text-center tablet:text-left" style="color:{$textColor};">{$block['description'] nofilter}</p>
-            <div>
+            </div>
         </div>
       {if $idxCol % 4 == 0}</div><div class="row">{/if}
     {/foreach}
     </div>
 </div>
+
+{/if}
