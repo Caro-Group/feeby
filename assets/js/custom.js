@@ -1171,7 +1171,7 @@ $('body').on('change', "#checkout-guest-form [data-field=\"password\"]", functio
 });
 
 
-$('body').on('input propertychange', '#delivery_message', function() {
+$('body').on('change', '#delivery_message', function() {
 	$.post($('#js-summary').attr('[data-url-update]'), $('#js-summary').serialize(), null, 'json');
 });
 
