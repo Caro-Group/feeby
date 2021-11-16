@@ -27,40 +27,16 @@
 
 
 <div class="blockreassurance max-w-screen-desktop-wide mx-auto px-2 tablet:px-8">
-    {assign var=numCols value=$blocks|@count}
-    {assign var=numColsRemaining_md value=($numCols % 4)}
-    {assign var=numColsRemaining_sm value=($numCols % 2)}
     <div class="row flex flex-wrap">
     {foreach from=$blocks item=$block key=$key name=blocks}
-        {assign var=idxCol value=($smarty.foreach.blocks.index + 1)}
-        {assign var=sizeCol_md value=3}
-        {assign var=offsetCol_md value="offset-md-0"}
-        {assign var=sizeCol_sm value=6}
-        {assign var=offsetCol_sm value="offset-sm-0"}
-        {if $idxCol > ($numCols - $numColsRemaining_md)}
-            {if $numColsRemaining_md == 2}
-                {if !$smarty.foreach.blocks.last}
-                    {assign var=offsetCol_md value="offset-md-3"}
-                {/if}
-            {else}
-                {assign var=sizeCol_md value=(12 / $numColsRemaining_md)}
-            {/if}
-        {/if}
-        {if $idxCol > ($numCols - $numColsRemaining_sm)}
-            {if $numColsRemaining_md == 1}
-                {assign var=offsetCol_sm value="offset-sm-3"}
-            {else}
-                {assign var=sizeCol_sm value=(12 / $numColsRemaining_md)}
-            {/if}
-        {/if}
-        <div class="flex flex-col w-1/2 tablet:w-1/4 px-8 "
+        <div class="flex flex-col items-center w-1/2 tablet:w-1/4 px-8 mt-7 text-base"
             {if $block['type_link'] !== $LINK_TYPE_NONE && !empty($block['link'])} style="cursor:pointer;" onclick="window.open('{$block['link']}')"{/if}>
             <div class="h-16 w-16">
                 {if $block['icon'] != 'undefined'}
                     {if $block['icon']}
-                        <img class="svg" src="{$block['icon']}">
+                        <img src="{$block['icon']}">
                     {elseif $block['custom_icon']}
-                        <img {if $block['is_svg']}class="svg" {/if}src="{$block['custom_icon']}">
+                        <img {if $block['is_svg']} {/if}src="{$block['custom_icon']}">
                     {/if}
                 {/if}
             </div>
@@ -69,7 +45,6 @@
                 <p style="color:{$textColor};">{$block['description'] nofilter}</p>
             </div>
         </div>
-      {if $idxCol % 4 == 0}</div><div class="row">{/if}
     {/foreach}
     </div>
 </div>
