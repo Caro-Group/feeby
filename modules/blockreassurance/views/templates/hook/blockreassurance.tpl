@@ -24,8 +24,8 @@
 *}
 
 {if $elements}
-<div class="blockreassurance max-w-screen-desktop-wide mx-auto px-2 tablet:px-8">
-    <div class="row flex flex-wrap">
+<div class="max-w-screen-desktop-wide mx-auto px-2 tablet:px-8">
+    <div class="flex flex-wrap">
     {foreach from=$elements item=$block key=$key name=blocks}
         <div class="flex flex-col items-center w-1/2 tablet:w-1/4 px-8 mt-7 text-base ">
             <div class="h-16 w-16">
