@@ -1161,6 +1161,16 @@ $(window).load(function () {
 		}
 });
 
+if( $('#checkout-guest-form [data-field=\"password\"]').value !== '' && prestashop.customer.is_logged) {
+	prestashop.customer.is_guest_logged = true;
+}
+$('body').on('change', "#checkout-guest-form [data-field=\"password\"]", function(e){ 	
+	if( this.value !== '' && prestashop.customer.is_logged) {
+    prestashop.customer.is_guest_logged = true;
+  }
+});
+
+
 $('body').on('click', "[href=\"#checkout-guest-form\"], [href=\"#checkout-register-form\"]", function(e){ 
 	e.preventDefault();
 	$('[data-login-panel]').hide();
@@ -1168,7 +1178,9 @@ $('body').on('click', "[href=\"#checkout-guest-form\"], [href=\"#checkout-regist
 
 $('body').on('click', "[href=\"#checkout-register-form\"]", function(e){ 
 	e.preventDefault();
-	$('#checkout-guest-form [data-field=\"password\"]').show();
+	if(!prestashop.customer.is_guest_logged){
+		$('#checkout-guest-form [data-field=\"password\"]').show();
+	}
 });
 
 $('body').on('click', "[href=\"#checkout-login-panel\"]", function(e){ 
@@ -1176,10 +1188,9 @@ $('body').on('click', "[href=\"#checkout-login-panel\"]", function(e){
 	$('[data-login-panel]').show();
 });
 
-
 $('body').on('click', "[href=\"#checkout-guest-form\"]", function(e){ 
 	e.preventDefault();
-	$('#checkout-guest-form [data-field=\"password\"]').hide();
+	$('#checkout-guest-form [data-field=\"password\"]').empty().hide();
 });
 
 $('body').on('click', ".js-edit-addresses", (event) => {
