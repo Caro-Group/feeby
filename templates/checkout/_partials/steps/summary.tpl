@@ -13,6 +13,18 @@
     {include file='checkout/_partials/order-final-summary.tpl'}
   {/if}
 
+  <form
+  class="clearfix"
+  id="js-summary"
+  data-url-update="{url entity='order' params=['ajax' => 1, 'action' => 'saveMessage']}"
+  method="post"
+>
+    <div id="delivery">
+      <label for="delivery_message">{l s='If you would like to add a comment about your order, please write it in the field below.' d='Shop.Theme.Checkout'}</label>
+      <textarea rows="2" cols="120" id="delivery_message" name="delivery_message">{$delivery_message}</textarea>
+    </div>
+ </form>
+
   {if $conditions_to_approve|count}
     <p class="ps-hidden-by-js">
       {* At the moment, we're not showing the checkboxes when JS is disabled

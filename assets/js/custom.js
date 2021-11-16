@@ -1171,6 +1171,16 @@ $('body').on('change', "#checkout-guest-form [data-field=\"password\"]", functio
 });
 
 
+$('body').on('input propertychange', '#delivery_message', function() {
+	$.post($('#js-summary').attr('[data-url-update]'), $('#js-summary').serialize(), null, 'json');
+});
+
+$('body').on('click', '#payment-confirmation button', function(){
+	$.post($('#js-summary').attr('[data-url-update]'), $('#js-summary').serialize(), null, 'json');
+});
+
+
+
 $('body').on('click', "[href=\"#checkout-guest-form\"], [href=\"#checkout-register-form\"]", function(e){ 
 	e.preventDefault();
 	$('[data-login-panel]').hide();
