@@ -49,23 +49,6 @@
     </form>
   {/if}
 
-  <div class="w-full">
-    {if $show_final_summary}
-      <article class="alert alert-danger mt-2 js-alert-payment-conditions" role="alert" data-alert="danger">
-        {l
-          s='Please make sure you\'ve chosen a [1]payment method[/1] and accepted the [2]terms and conditions[/2].'
-          sprintf=[
-            '[1]' => '<a data-checkout-back="#checkout-payment-step" href="#checkout-payment-step">',
-            '[/1]' => '</a>',
-            '[2]' => '<a href="#conditions-to-approve">',
-            '[/2]' => '</a>'
-          ]
-          d='Shop.Theme.Checkout'
-        }
-      </article>
-    {/if}
-  </div>
-
   <div class="flex flex-wrap justify-between items-start">
     <button data-checkout-back="#checkout-payment-step" >{l s='Go back' d='Shop.Theme.Checkout'}</button>  
 

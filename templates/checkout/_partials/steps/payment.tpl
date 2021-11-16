@@ -14,9 +14,6 @@
 
   {hook h='displayPaymentTop'}
 
-  {* used by javascript to correctly handle cart updates when we are on payment step (eg vouchers added) *}
-  <div style="display:none" class="js-cart-payment-step-refresh"></div>
-
   {if !empty($display_transaction_updated_info)}
   <p class="cart-payment-step-refreshed-info">
     {l s='Transaction amount has been correctly updated' d='Shop.Theme.Checkout'}
