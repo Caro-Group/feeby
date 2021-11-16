@@ -570,20 +570,12 @@ a[title="Strona główna"] + ul.nested li {
 
 
 /* Header */
-.header-top-links ul{}
 
-.header-top-links ul{
-display: flex;
-    justify-content: flex-end;
-}
 
-.header-top-links ul li:before{
-    content: '|';
+.header-top-links ul li{
     margin: 0 10px;
-    color: #666;
 }
 
-.header-top-links ul li:first-child:before{display:none}
 
 
 .header-top-txt{color:#2f2f2f;font-size:10px;}
