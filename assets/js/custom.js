@@ -1213,11 +1213,11 @@ $('body').on('change', "[name=\"payment-option\"]", function(e){
 
 $('body').on('click', "[data-checkout-payment]", function(e){ 
 	e.preventDefault();
-	var formButton = $("#checkout-payment-step").find("input[name='payment-option']").parent().parent().find('form button');
+	var formButton = $("#checkout-payment-step").find("input[name='payment-option']:checked").parent().parent().find('form button');
 	if(formButton.length){
-		$("#checkout-payment-step").find("input[name='payment-option']").parent().parent().find('form button').trigger('click');
+		$("#checkout-payment-step").find("input[name='payment-option']:checked").parent().parent().find('form button').trigger('click');
 	} else {
-		$("#checkout-summary-step").click();
+		$("#checkout-summary-step").trigger('click');
 	}
 });
 
@@ -1227,13 +1227,13 @@ $('body').on('click', "[data-checkout-payment]", function(e){
 	if(formButton.length){
 		$("#checkout-payment-step").find("input[name='payment-option']").parent().parent().find('form button').trigger('click');
 	} else {
-		$("#checkout-summary-step").click();
+		$("#checkout-summary-step").trigger('click');
 	}
 });
 
 $('body').on('click', "[data-checkout-back]",function(e){ 
 	e.preventDefault();
-	$($(this).data('checkoutBack')).click();
+	$($(this).data('checkoutBack')).trigger('click');
 	window.scrollTo(0, 0);
 });
 
