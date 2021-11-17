@@ -47,7 +47,7 @@ module.exports = {
         'main': '#DF1A5B',
         gray: {
           default: '#F8F8F8',
-          main: '#181828',
+          main: '#232322',
         },
       },
       backgroundImage: {
