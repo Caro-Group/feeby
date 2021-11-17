@@ -83,7 +83,7 @@
                 <ul class="flex">
                 {foreach from=$formAtts.links item=item}
                     {if $item.title && $item.link}
-                        <li class="ml-8"><a class="text-black-main" href="{$item.link}" target="{$item.target_type}">{$item.title|escape:'html':'UTF-8'}</a></li>
+                        <li class="ml-8"><a class="text-gray-main" href="{$item.link}" target="{$item.target_type}">{$item.title|escape:'html':'UTF-8'}</a></li>
                     {/if}
                 {/foreach}
                 </ul>
