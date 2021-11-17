@@ -1176,8 +1176,8 @@ body#checkout section.checkout-step .address-item .address {
   line-height: 1.5;
   font-size: 12px; }
 
-#checkout-personal-information-step.-complete .content .clearfix {
-  padding: 20px; }
+/* #checkout-personal-information-step.-complete .content .clearfix {
+  padding: 20px; } */
 
 body#checkout section.checkout-step .address-footer {
   text-align: right; }

@@ -1161,6 +1161,26 @@ $(window).load(function () {
 		}
 });
 
+if( $('#checkout-guest-form [data-field=\"password\"]').value !== '' && prestashop.customer.is_logged) {
+	prestashop.customer.is_guest_logged = true;
+}
+$('body').on('change', "#checkout-guest-form [data-field=\"password\"]", function(e){ 	
+	if( this.value !== '' && prestashop.customer.is_logged) {
+    prestashop.customer.is_guest_logged = true;
+  }
+});
+
+
+$('body').on('change', '#delivery_message', function() {
+	$.post($('#js-summary').attr('[data-url-update]'), $('#js-summary').serialize(), null, 'json');
+});
+
+$('body').on('click', '#payment-confirmation button', function(){
+	$.post($('#js-summary').attr('[data-url-update]'), $('#js-summary').serialize(), null, 'json');
+});
+
+
+
 $('body').on('click', "[href=\"#checkout-guest-form\"], [href=\"#checkout-register-form\"]", function(e){ 
 	e.preventDefault();
 	$('[data-login-panel]').hide();
@@ -1169,7 +1189,9 @@ $('body').on('click', "[href=\"#checkout-guest-form\"], [href=\"#checkout-regist
 
 $('body').on('click', "[href=\"#checkout-register-form\"]", function(e){ 
 	e.preventDefault();
-	$('#checkout-guest-form [data-field=\"password\"]').show();
+	if(!prestashop.customer.is_guest_logged){
+		$('#checkout-guest-form [data-field=\"password\"]').show();
+	}
 });
 
 $('body').on('click', "[href=\"#checkout-login-panel\"]", function(e){ 
@@ -1177,10 +1199,9 @@ $('body').on('click', "[href=\"#checkout-login-panel\"]", function(e){
 	$('[data-login-panel]').show();
 });
 
-
 $('body').on('click', "[href=\"#checkout-guest-form\"]", function(e){ 
 	e.preventDefault();
-	$('#checkout-guest-form [data-field=\"password\"]').hide();
+	$('#checkout-guest-form [data-field=\"password\"]').empty().hide();
 });
 
 $('body').on('click', ".js-edit-addresses", (event) => {
@@ -1190,20 +1211,30 @@ $('body').on('click', ".js-edit-addresses", (event) => {
 });
 
 
+if($('#checkout-payment-step').find('[name=\"payment-option\"]:checked').length){
+	$('[data-checkout-payment]').attr('disabled',false);
+}
+
+$('body').on('change', "[name=\"payment-option\"]", function(e){ 
+	if($('#checkout-payment-step').find('[name=\"payment-option\"]:checked').length){
+		$('[data-checkout-payment]').attr('disabled',false);
+	}	
+});
 
 $('body').on('click', "[data-checkout-payment]", function(e){ 
 	e.preventDefault();
-	var formButton = $("#checkout-payment-step").find("input[name='payment-option']").parent().parent().find('form button');
+	var formButton = $("#checkout-payment-step").find("input[name='payment-option']:checked").parent().parent().find('form button');
 	if(formButton.length){
-		$("#checkout-payment-step").find("input[name='payment-option']").parent().parent().find('form button').trigger('click');
+		$("#checkout-payment-step").find("input[name='payment-option']:checked").parent().parent().find('form button').trigger('click');
 	} else {
-		$("#checkout-summary-step").click();
+		$("#checkout-summary-step").trigger('click');
 	}
 });
 
+
 $('body').on('click', "[data-checkout-back]",function(e){ 
 	e.preventDefault();
-	$($(this).data('checkoutBack')).click();
+	$($(this).data('checkoutBack')).trigger('click');
 	window.scrollTo(0, 0);
 });
 

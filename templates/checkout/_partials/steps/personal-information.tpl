@@ -54,7 +54,7 @@
     </div>
 
   {else}
-    <div class="absolute inset-0 z-10 bg-gray-100 mt-24" data-login-panel {if $customer.is_logged || $customer.is_guest}style="display:none;"{/if}>
+    <div class="absolute inset-0 z-10 bg-gray-100 mt-24" data-login-panel>
       <div class="flex flex-wrap tablet-wide:flex-nowrap">
         <div class="flex flex-col border-r my-20 px-24 w-1/2 items-start">
           <h2>{l s='I do not have an account' d='Shop.Theme.Checkout'}</h2>

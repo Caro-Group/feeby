@@ -14,9 +14,6 @@
 
   {hook h='displayPaymentTop'}
 
-  {* used by javascript to correctly handle cart updates when we are on payment step (eg vouchers added) *}
-  <div style="display:none" class="js-cart-payment-step-refresh"></div>
-
   {if !empty($display_transaction_updated_info)}
   <p class="cart-payment-step-refreshed-info">
     {l s='Transaction amount has been correctly updated' d='Shop.Theme.Checkout'}
@@ -92,7 +89,7 @@
   </div>
 
   <div class="flex flex-wrap justify-between">
-    <button data-checkout-back="#checkout-shipping-step">{l s='Go back' d='Shop.Theme.Checkout'}</button>  
-    <button data-checkout-payment>{l s='Go to the summary' d='Shop.Theme.Checkout'}</button>
+    <button data-checkout-back="#checkout-delivery-step">{l s='Go back' d='Shop.Theme.Checkout'}</button>  
+    <button data-checkout-payment disabled>{l s='Go to the summary' d='Shop.Theme.Checkout'}</button>
   </div>
 {/block}
