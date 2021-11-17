@@ -43,6 +43,15 @@ module.exports = {
       margin: {
         'miniature': '102px',
       },
+      colors: {
+        'main': '#DF1A5B',
+        gray: {
+          default: '#F8F8F8',
+        },
+        black: {
+          main: '#181828'
+        }
+      },
       backgroundImage: {
         'newsletter-plane': "url('../img/newsletter1.svg')",
         'newsletter-dashed': "url('../img/newsletter2.svg')",

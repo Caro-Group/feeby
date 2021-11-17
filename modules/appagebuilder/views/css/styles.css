@@ -2302,18 +2302,6 @@ textarea.form-control {
     .box-navlogo .h-logo {
       padding: 30px 0 10px; } }
 
-.box-navads {
-  line-height: 33px;
-  text-align: center;
-  font-weight: 400;
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 11px;
-  letter-spacing: 1px; }
-  .box-navads .ApColumn .block {
-    margin-bottom: 0; }
-  .box-navads p {
-    margin: 0; }
 
 .box-cateh2 {
   margin-bottom: 60px; }
@@ -5371,20 +5359,6 @@ div.box-banner2h6 {
 
 div.leo-form.leo-form-inactive {
   top: 50px; }
-
-.box-navads {
-  line-height: 1.5;
-  text-align: center;
-  font-weight: 400;
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 11px;
-  letter-spacing: 1px;
-  padding: 2px 0; }
-  .box-navads .ApColumn .block {
-    margin-bottom: 0; }
-  .box-navads p {
-    margin: 0; }
 
 .box-navlogo .h-logo {
   text-align: center;
