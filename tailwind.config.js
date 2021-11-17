@@ -40,10 +40,8 @@ module.exports = {
         'main': '#DF1A5B',
         gray: {
           default: '#F8F8F8',
+          main: '#181828',
         },
-        black: {
-          main: '#181828'
-        }
       },
       backgroundImage: {
         'newsletter-plane': "url('../img/newsletter1.svg')",
