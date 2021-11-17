@@ -7,7 +7,7 @@
 *}
 <!-- @file modules\appagebuilder\views\templates\hook\ApGeneral -->
 
-{* phone-wide:px-4 phone wide:justify-center  phablet:mx-5 *}
+{* phone-wide:px-4 phone wide:justify-center  phablet:mx-5 desktop:mx-16 mx-0*}
 
 {if $hookName = 'DISPLAYNAV1'}
 <div {if isset($formAtts.id) && $formAtts.id} id="{$formAtts.id|escape:'html':'UTF-8' nofilter}"{/if}
