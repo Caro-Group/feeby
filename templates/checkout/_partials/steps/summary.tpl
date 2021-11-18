@@ -62,7 +62,7 @@
   {/if}
 
   <div class="flex flex-wrap justify-between items-start">
-    <button data-checkout-back="#checkout-payment-step" >{l s='Go back' d='Shop.Theme.Checkout'}</button>  
+    <button data-checkout-back="#checkout-payment-step" class="text-black bg-transparent border-0 uppercase whitespace-nowrap mb-2 flex items-center justify-between cursor-pointer">{l s='Go back' d='Shop.Theme.Checkout'}</button>  
 
     <div>
       <div id="payment-confirmation">
