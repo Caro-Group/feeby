@@ -137,7 +137,7 @@
         {block name='form_field_item_password'}
           <div class="input-group js-parent-focus">
             <input
-              class="form-input rounded-md border border w-full js-child-focus js-visible-password"
+              class="form-input rounded-md border w-full js-child-focus js-visible-password"
               name="{$field.name}"
               title="{l s='At least 5 characters long' d='Shop.Forms.Help'}"
               type="password"
@@ -163,7 +163,7 @@
 
         {block name='form_field_item_other'}
           <input
-            class="form-input rounded-md border-0"
+            class="form-input rounded-md border"
             name="{$field.name}"
             type="{$field.type}"
             value="{$field.value}"

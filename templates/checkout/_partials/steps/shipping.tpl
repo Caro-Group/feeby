@@ -110,7 +110,7 @@
           </div>
   
           <div class="flex flex-wrap justify-between">
-            <button data-checkout-back="#checkout-personal-information-step">{l s='Go back' d='Shop.Theme.Checkout'}</button>  
+            <button data-checkout-back="#checkout-personal-information-step" class="text-black bg-transparent border-0 uppercase whitespace-nowrap mb-2 flex items-center justify-between cursor-pointer">{l s='Go back' d='Shop.Theme.Checkout'}</button>  
             <button type="submit" class="continue btn btn-primary float-xs-right" name="confirmDeliveryOption" value="1">
               {l s='Continue' d='Shop.Theme.Actions'}
             </button>

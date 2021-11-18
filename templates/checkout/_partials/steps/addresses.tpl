@@ -70,18 +70,11 @@
        <p class="alert alert-danger js-address-error" name="alert-delivery" style="display: none">{l s="Your address is incomplete, please update it." d="Shop.Notifications.Error"}</p>
      {/if}
 
+     {if $customer.addresses|count < 2}
      <p class="add-address">
-       <a href="{$new_address_delivery_url}"><i class="material-icons">&#xE145;</i>{l s='add new address' d='Shop.Theme.Actions'}</a>
+       <a href="{$new_address_delivery_url}"><i class="material-icons">&#xE145;</i>{l s='Different shipping delivery address' d='Shop.Theme.Actions'}</a>
      </p>
-
-     {if $use_same_address && !$cart.is_virtual}
-       <p>
-         <a data-link-action="different-invoice-address" href="{$use_different_address_url}">
-           {l s='Billing address differs from shipping address' d='Shop.Theme.Checkout'}
-         </a>
-       </p>
      {/if}
-
    {/if}
 
    {if !$use_same_address}
@@ -113,10 +106,6 @@
        {else}
          <p class="alert alert-danger js-address-error" name="alert-invoice" style="display: none">{l s="Your address is incomplete, please update it." d="Shop.Notifications.Error"}</p>
        {/if}
-
-       <p class="add-address">
-         <a href="{$new_address_invoice_url}"><i class="material-icons">&#xE145;</i>{l s='add new address' d='Shop.Theme.Actions'}</a>
-       </p>
      {/if}
 
    {/if}

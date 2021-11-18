@@ -60,6 +60,5 @@
       {hook h='displayCustomerLoginFormAfter'}
     {/block}
     
-
   </form>
 {/block}
