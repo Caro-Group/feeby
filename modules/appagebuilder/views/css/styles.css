@@ -809,14 +809,7 @@ body#checkout section.checkout-step {
   padding: 0;
   outline: none;
   background: none; }
-  body#checkout section.checkout-step#checkout-personal-information-step .content {
-    padding: 0; }
-    body#checkout section.checkout-step#checkout-personal-information-step .content > p {
-      padding: 0 30px; }
-      body#checkout section.checkout-step#checkout-personal-information-step .content > p:first-child {
-        padding-top: 30px; }
-      body#checkout section.checkout-step#checkout-personal-information-step .content > p:last-child {
-        padding-bottom: 20px; }
+
   body#checkout section.checkout-step .content {
     position: static; }
   body#checkout section.checkout-step .step-title {

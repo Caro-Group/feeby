@@ -26,7 +26,7 @@
 
 {block name='form_buttons'}
   <button
-    class="bg-black hover:opcaity-80 duration-150 border-0 rounded-full text-white p-2 px-4 uppercase whitespace-nowrap mb-2 flex items-center justify-between"
+    class="bg-black hover:opcaity-80 duration-150 border-0 rounded-full text-white p-2 px-4 uppercase whitespace-nowrap mb-2 flex items-center justify-between cursor-pointer"
     name="continue"
     data-link-action="sign-in"
     type="submit"

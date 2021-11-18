@@ -12,37 +12,30 @@
 
   {if $customer.is_logged && !$customer.is_guest}
 
-    <p class="identity">
-      {* [1][/1] is for a HTML tag. *}
-      {l s='Connected as [1]%firstname% %lastname%[/1].'
+    <h2 class="mb-4">
+      {l s='%firstname% %lastname%'
         d='Shop.Theme.Customeraccount'
         sprintf=[
-          '[1]' => "<a href='{$urls.pages.identity}'>",
-          '[/1]' => "</a>",
           '%firstname%' => $customer.firstname,
           '%lastname%' => $customer.lastname
         ]
       }
+    </h2>
+    <p class="mb-2">
+      {l s='Do you give up shopping?' d='Shop.Theme.Checkout'}
+      <a href="{$urls.actions.logout}">
+        {l s='Log out' d='Shop.Theme.Checkout'}
+      </a>
     </p>
-    <p>
-      {* [1][/1] is for a HTML tag. *}
-      {l
-        s='Not you? [1]Log out[/1]'
-        d='Shop.Theme.Customeraccount'
-        sprintf=[
-        '[1]' => "<a href='{$urls.actions.logout}'>",
-        '[/1]' => "</a>"
-        ]
-      }
-    </p>
+    
     {if !isset($empty_cart_on_logout) || $empty_cart_on_logout}
-      <p><small>{l s='If you sign out now, your cart will be emptied.' d='Shop.Theme.Checkout'}</small></p>
+      <p class="mb-2"><small>{l s='If you sign out now, your cart will be emptied.' d='Shop.Theme.Checkout'}</small></p>
     {/if}
 
-    <div class="clearfix">
+    
       <form method="GET" action="{$urls.pages.order}">
         <button
-          class="continue btn btn-primary float-xs-right"
+          class="bg-main hover:opacity-80 duration-150 border-0 rounded-full text-white p-2 px-4 uppercase whitespace-nowrap mb-2 flex items-center justify-between cursor-pointer ml-auto"
           name="controller"
           type="submit"
           value="order"
@@ -50,8 +43,6 @@
           {l s='Continue' d='Shop.Theme.Actions'}
         </button>
       </form>
-
-    </div>
 
   {else}
     <div class="absolute inset-0 z-10 bg-gray-100 mt-24" data-login-panel>

@@ -26,7 +26,7 @@
 
  {block name='step_content'}
  
-  <div class="mb-2 border-b border-gray-100">
+  <div class="border-0 border-b border-solid border-gray-200 mb-8">
     <h2>
       {l s='Data of the ordering person' d='Shop.Theme.Checkout'}
     </h2>
@@ -34,9 +34,9 @@
     {include file='checkout/_partials/steps/addresses.tpl'}
   </div>
 
-  <div style="{if !($customer.addresses|count) || $show_delivery_address_form || $show_invoice_address_form }opacity:0.5;pointer-events:none;{/if}">
+  <div class="{if !($customer.addresses|count) || $show_delivery_address_form || $show_invoice_address_form } pointer-events-none opacity-5 {/if}">
 
-    <h2>
+    <h2 class="mb-2">
       {l s='Delivery method' d='Shop.Theme.Checkout'}
     </h2>
 
@@ -55,42 +55,32 @@
         >
           <div class="form-fields">
             {block name='delivery_options'}
-              <div class="delivery-options">
+              <div class="delivery-options flex flex-row flex-wrap">
                 {foreach from=$delivery_options item=carrier key=carrier_id name=delivery_options_loop}
-                    <div class="row delivery-option" {if $carrier.id === 31 || $carrier.id === 32}onclick="gmParcelLockerChoose(this);return false;"{/if}>
-                      <div class="col-sm-1">
-                        <span class="custom-radio float-xs-left">
-                          <input type="radio" name="delivery_option[{$id_address_delivery}]" id="delivery_option_{$carrier.id}" value="{$carrier_id}"{if ($smarty.foreach.delivery_options_loop.index == 0 && $delivery_option != $carrier_id) || $delivery_option == $carrier_id} checked{/if} />
-                          <span></span>
-                        </span>
-                      </div>
+                    <div class="delivery-option mb-2 flex flex-row flex-wrap" {if $carrier.id === 31 || $carrier.id === 32}onclick="gmParcelLockerChoose(this);return false;"{/if}>
+                      <span class="custom-radio float-xs-left">
+                        <input type="radio" name="delivery_option[{$id_address_delivery}]" id="delivery_option_{$carrier.id}" value="{$carrier_id}"{if ($smarty.foreach.delivery_options_loop.index == 0 && $delivery_option != $carrier_id) || $delivery_option == $carrier_id} checked{/if} />
+                        <span></span>
+                      </span>
                       <label for="delivery_option_{$carrier.id}" class="col-sm-11 delivery-option-2">
-                        <div class="row">
-                          <div class="col-sm-5 col-xs-12">
-                            <div class="row">
-                              {if $carrier.logo}
-                              <div class="col-xs-3">
-                                  <img class="lazy" data-src="{$carrier.logo}" alt="{$carrier.name}" />
-                              </div>
-                              {/if}
-                              <div class="{if $carrier.logo}col-xs-9{else}col-xs-12{/if}">
-                                <span class="h6 carrier-name">{$carrier.name}</span>
-                              </div>
+                        <div class="flex flex-row flex-wrap">
+                          <div class="flex-initial w-24">
+                            {$carrier.price}
+                          </div>
+                          <div class="flex-auto">
+                              {$carrier.name} {if isset($carrier.delay)}{$carrier.delay}{/if}
+                          </div>
+                          {if $carrier.logo}
+                            <div class="flex-none ml-auto">
+                                <img src="{$carrier.logo}" alt="{$carrier.name}" class="h-10 w-auto max-w-none"/>
                             </div>
-                          </div>
-                          <div class="col-sm-4 col-xs-12">
-                            <span class="carrier-delay">{$carrier.delay}</span>
-                          </div>
-                          <div class="col-sm-3 col-xs-12">
-                            <span class="carrier-price">{$carrier.price}</span>
-                          </div>
+                          {/if}
                         </div>
                       </label>
                     </div>
-                    <div class="row carrier-extra-content"{if $delivery_option != $carrier_id} style="display:none;"{/if}>
+                    <div class="carrier-extra-content"{if $delivery_option != $carrier_id} style="display:none;"{/if}>
                       {$carrier.extraContent nofilter}
                     </div>
-                    <div class="clearfix"></div>
                 {/foreach}
               </div>
             {/block}
@@ -122,8 +112,9 @@
   
           <div class="flex flex-wrap justify-between">
             <button data-checkout-back="#checkout-personal-information-step" class="text-black bg-transparent border-0 uppercase whitespace-nowrap mb-2 flex items-center justify-between cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" fill="none" class="mr-2"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.25 13.384 0 7.134V6.25L6.25 0l.884.884L1.95 6.067H15v1.25H1.95L7.135 12.5l-.884.884H6.25Z" fill="#181828"/></svg>{l s='Go back' d='Shop.Theme.Checkout'}</button>  
-            <button type="submit" class="continue continue bg-main hover:opacity-80 duration-150 border-0 rounded-full text-white p-2 px-4 uppercase whitespace-nowrap mb-2 flex items-center justify-between cursor-pointer" name="confirmDeliveryOption" value="1">
+            <button type="submit" class="continue continue bg-main hover:opacity-80 duration-150 border-0 rounded-full text-white p-2 px-4 uppercase whitespace-nowrap mb-2 flex items-center justify-between ml-auto cursor-pointer" name="confirmDeliveryOption" value="1">
               {l s='Continue' d='Shop.Theme.Actions'}
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" fill="none" class="ml-2 flex-0"><path fill-rule="evenodd" clip-rule="evenodd" d="m9.25 14.359 6.25-6.25v-.884L9.25.975l-.884.884 5.183 5.184H.5v1.25h13.05l-5.185 5.182.884.884h.001Z" fill="#fff"/></svg>
             </button>
           </div>
   
