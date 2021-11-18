@@ -36,20 +36,20 @@
 
     {block name='order_confirmation_table'}
       {foreach from=$products item=product}
-        <div class="order-line row">
-          <div class="col-sm-2 col-xs-3">
-            <span class="image">
-              {if !empty($product.cover)}
-                <img src="{$product.cover.medium.url}" />
-              {else}
-                <img src="{$urls.no_picture_image.bySize.medium_default.url}" />
-              {/if}
-            </span>
-          </div>
+        <div class="flex flex-wrap">
+          <span class="image">
+            {if !empty($product.cover)}
+              <img src="{$product.cover.medium.url}" />
+            {else}
+              <img src="{$urls.no_picture_image.bySize.medium_default.url}" />
+            {/if}
+          </span>
+          
           <div class="col-sm-4 col-xs-9 details">
             {if $add_product_link}<a href="{$product.url}" target="_blank">{/if}
               <span>{$product.name}</span>
             {if $add_product_link}</a>{/if}
+
             {if is_array($product.customizations) && $product.customizations|count}
               {foreach from=$product.customizations item="customization"}
                 <div class="customizations">
@@ -89,51 +89,20 @@
                 </div>
               {/foreach}
             {/if}
+
+            <div class="">{$product.price}</div>
+            <div class="">{$product.quantity}</div>
+
             {hook h='displayProductPriceBlock' product=$product type="unit_price"}
           </div>
           <div class="col-sm-6 col-xs-12 qty">
             <div class="row">
-              <div class="col-xs-4 text-sm-center text-xs-left">{$product.price}</div>
-              <div class="col-xs-4 text-sm-center">{$product.quantity}</div>
+
               <div class="col-xs-4 text-sm-center text-xs-right bold">{$product.total}</div>
             </div>
           </div>
         </div>
       {/foreach}
-
-      <hr>
-
-      <table>
-        {foreach $subtotals as $subtotal}
-          {if $subtotal.type !== 'tax' && $subtotal.label !== null}
-            <tr>
-              <td>{$subtotal.label}</td>
-              <td>{if 'discount' == $subtotal.type}-&nbsp;{/if}{$subtotal.value}</td>
-            </tr>
-          {/if}
-        {/foreach}
-
-        {if !$configuration.display_prices_tax_incl && $configuration.taxes_enabled}
-          <tr>
-            <td><span class="text-uppercase">{$totals.total.label}&nbsp;{$labels.tax_short}</span></td>
-            <td>{$totals.total.value}</td>
-          </tr>
-          <tr class="total-value font-weight-bold">
-            <td><span class="text-uppercase">{$totals.total_including_tax.label}</span></td>
-            <td>{$totals.total_including_tax.value}</td>
-          </tr>
-        {else}
-          <tr class="total-value font-weight-bold">
-            <td><span class="text-uppercase">{$totals.total.label}&nbsp;{if $configuration.taxes_enabled}{$labels.tax_short}{/if}</span></td>
-            <td>{$totals.total.value}</td>
-          </tr>
-        {/if}
-        {if $subtotals.tax.label !== null}
-          <tr class="sub taxes">
-            <td colspan="2"><span class="label">{l s='%label%:' sprintf=['%label%' => $subtotals.tax.label] d='Shop.Theme.Global'}</span>&nbsp;<span class="value">{$subtotals.tax.value}</span></td>
-          </tr>
-        {/if}
-      </table>
     {/block}
 
   </div>

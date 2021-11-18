@@ -25,7 +25,7 @@
 {extends "customer/_partials/customer-form.tpl"}
 
 {block "form_buttons"}
-    <a href="#checkout-login-panel">
+    <a href="#checkout-login-panel" class="text-black bg-transparent border-0 uppercase whitespace-nowrap mb-2 flex items-center justify-between cursor-pointer">
       {l s='Back to Login' d='Shop.Theme.Actions'}
     </a>
     <button

@@ -59,56 +59,56 @@
   </div>
 {/if} 
 
-  <div class="row">
-    <div class="col-md-12">
-      <h4 class="h4">
-      {l s='Shipping Method' d='Shop.Theme.Checkout'}
-        <span class="step-edit step-to-delivery js-edit-delivery"><i class="material-icons edit">&#xE254;</i> {l s='edit' d='Shop.Theme.Actions'}</span>
-      </h4>
+  <div class="flex flex-wrap">
+    <div class="w-full tablet-wide:w-1/2">
+      
+        <h4 class="h4">
+          {l s='Shipping Method' d='Shop.Theme.Checkout'} 
+        </h4>
 
-      <div class="col-md-12 summary-selected-carrier">
-        <div class="row">
-          <div class="col-md-2">
-            <div class="logo-container">
-              {if $selected_delivery_option.logo}
-                <img class="lazy" data-src="{$selected_delivery_option.logo}" alt="{$selected_delivery_option.name}">
-              {else}
-                &nbsp;
-              {/if}
+        <div class="col-md-12 summary-selected-carrier">
+          <div class="row">
+            <div class="col-md-2">
+              <div class="logo-container">
+                {if $selected_delivery_option.logo}
+                  <img class="lazy" data-src="{$selected_delivery_option.logo}" alt="{$selected_delivery_option.name}">
+                {else}
+                  &nbsp;
+                {/if}
+              </div>
+            </div>
+            <div class="col-md-3">
+              <span class="carrier-name">{$selected_delivery_option.name}</span>
+            </div>
+            <div class="col-md-3">
+              <span class="carrier-delay">{$selected_delivery_option.delay}</span>
+            </div>
+            <div class="col-md-4">
+              <span class="carrier-price">{$selected_delivery_option.price}</span>
             </div>
           </div>
-          <div class="col-md-3">
-            <span class="carrier-name">{$selected_delivery_option.name}</span>
-          </div>
-          <div class="col-md-3">
-            <span class="carrier-delay">{$selected_delivery_option.delay}</span>
-          </div>
-          <div class="col-md-4">
-            <span class="carrier-price">{$selected_delivery_option.price}</span>
-          </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="row">
-    <div class="col-md-12">
+        <span class="step-edit step-to-delivery js-edit-delivery">{l s='edit' d='Shop.Theme.Actions'} <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" fill="none" class="ml-2"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.75 13.384 15 7.134V6.25L8.75 0l-.884.884 5.183 5.183H0v1.25h13.05L7.865 12.5l.884.884h.001Z" fill="#BABABA"/></svg></span>
+    </div>
+
+    <div class="w-full tablet-wide:w-1/2">
+    
       <h4 class="h4">
         {l s='Payment Method' d='Shop.Theme.Checkout'}
-        <button data-checkout-back="#checkout-payment-step" class="step-edit "><i class="material-icons edit">&#xE254;</i> {l s='edit' d='Shop.Theme.Actions'}</button>
       </h4>
 
       {if $is_free}
         <p>{l s='No payment needed for this order' d='Shop.Theme.Checkout'}</p>
       {else}
-        <div class="payment-options">
+        <div class="payment-options pointer-events-none">
           {foreach from=$payment_options item="module_options"}
             {foreach from=$module_options item="option"}
               {if $option.id === $selected_payment_option}
               <div>
                 <div id="{$option.id}-container" class="payment-option clearfix">
                   {* This is the way an option should be selected when Javascript is enabled *}
-                  <span class="custom-radio float-xs-left">
+                  <span class="custom-radio hidden">
                     <input
                       class="ps-shown-by-js {if $option.binary} binary {/if}"
                       id="{$option.id}"
@@ -172,17 +172,10 @@
           {/foreach}
         </div>
       {/if}
-    
 
-
-
-
-
-
-
+      <button data-checkout-back="#checkout-payment-step" class="step-edit ">{l s='edit' d='Shop.Theme.Actions'} <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" fill="none" class="ml-2"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.75 13.384 15 7.134V6.25L8.75 0l-.884.884 5.183 5.183H0v1.25h13.05L7.865 12.5l.884.884h.001Z" fill="#BABABA"/></svg></button>
     </div>
   </div>
-
   <div class="row">
     {block name='order_confirmation_table'}
       {include file='checkout/_partials/order-final-summary-table.tpl'
