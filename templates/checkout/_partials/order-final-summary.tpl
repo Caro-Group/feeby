@@ -34,47 +34,48 @@
     {if $cart.id_address_delivery}
       <div class="w-full tablet-wide:w-1/2">
         <h4 class="h5 black addresshead">{l s='Your Delivery Address' d='Shop.Theme.Checkout'}</h4>
-        {$customer.addresses[$cart.id_address_delivery]['formatted'] nofilter}
-
-        <span class="step-edit step-to-delivery js-edit-delivery">{l s='edit' d='Shop.Theme.Actions'} <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" fill="none" class="ml-2"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.75 13.384 15 7.134V6.25L8.75 0l-.884.884 5.183 5.183H0v1.25h13.05L7.865 12.5l.884.884h.001Z" fill="#BABABA"/></svg></span>
+        <div class="mb-4">
+          {$customer.addresses[$cart.id_address_delivery]['formatted'] nofilter}
+        </div>
+        <span class="js-edit-delivery flex flex-row items-center">{l s='edit' d='Shop.Theme.Actions'} <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" fill="none" class="ml-2"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.75 13.384 15 7.134V6.25L8.75 0l-.884.884 5.183 5.183H0v1.25h13.05L7.865 12.5l.884.884h.001Z" fill="#BABABA"/></svg></span>
       </div>
     {/if}
     {if $cart.id_address_invoice}
       <div class="w-full tablet-wide:w-1/2">
         <h4 class="h5 black addresshead">{l s='Your Invoice Address' d='Shop.Theme.Checkout'}</h4>
-        {$customer.addresses[$cart.id_address_invoice]['formatted'] nofilter}
-
-        <span class="step-edit step-to-delivery js-edit-delivery">{l s='edit' d='Shop.Theme.Actions'} <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" fill="none" class="ml-2"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.75 13.384 15 7.134V6.25L8.75 0l-.884.884 5.183 5.183H0v1.25h13.05L7.865 12.5l.884.884h.001Z" fill="#BABABA"/></svg></span>
+        <div class="mb-4">
+          {$customer.addresses[$cart.id_address_invoice]['formatted'] nofilter}
+        </div>
+        <span class="js-edit-delivery flex flex-row items-center">{l s='edit' d='Shop.Theme.Actions'} <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" fill="none" class="ml-2"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.75 13.384 15 7.134V6.25L8.75 0l-.884.884 5.183 5.183H0v1.25h13.05L7.865 12.5l.884.884h.001Z" fill="#BABABA"/></svg></span>
       </div>
     {/if}
   </div>
 {/if} 
 
-  <div class="flex flex-row flex-wrap">
+  <div class="flex flex-row flex-wrap phablet:flex-nowrap">
+    
     <div class="w-full tablet-wide:w-1/2">
-      
-        <h4 class="h4">
-          {l s='Shipping Method' d='Shop.Theme.Checkout'} 
-        </h4>
+      <h4 class="h4">
+        {l s='Shipping Method' d='Shop.Theme.Checkout'} 
+      </h4>
 
-        <div class="flex flex-col flex-wrap">
-          <div class="flex flex-col flex-auto">
-            <span class="carrier-name">{$selected_delivery_option.name}</span>
-            <span class="carrier-delay">{$selected_delivery_option.delay}</span>
-            <span class="carrier-price">{$selected_delivery_option.price}</span>
-          </div>
-          {if $selected_delivery_option.logo}
-            <div class="flex-none ml-auto">
-              <img src="{$selected_delivery_option.logo}" alt="{$selected_delivery_option.name}">      
-            </div>
-          {/if}
+      <div class="flex flex-col flex-wrap">
+        <div class="flex flex-col flex-auto">
+          <span class="carrier-name">{$selected_delivery_option.name}</span>
+          <span class="carrier-delay">{$selected_delivery_option.delay}</span>
+          <span class="carrier-price">{$selected_delivery_option.price}</span>
         </div>
+        {if $selected_delivery_option.logo}
+          <div class="flex-none ml-auto">
+            <img src="{$selected_delivery_option.logo}" alt="{$selected_delivery_option.name}" class="h-10 w-auto">      
+          </div>
+        {/if}
+      </div>
 
-        <span class="step-edit step-to-delivery js-edit-delivery">{l s='edit' d='Shop.Theme.Actions'} <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" fill="none" class="ml-2"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.75 13.384 15 7.134V6.25L8.75 0l-.884.884 5.183 5.183H0v1.25h13.05L7.865 12.5l.884.884h.001Z" fill="#BABABA"/></svg></span>
+      <span class="step-edit step-to-delivery js-edit-delivery">{l s='edit' d='Shop.Theme.Actions'} <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" fill="none" class="ml-2"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.75 13.384 15 7.134V6.25L8.75 0l-.884.884 5.183 5.183H0v1.25h13.05L7.865 12.5l.884.884h.001Z" fill="#BABABA"/></svg></span>
     </div>
 
     <div class="w-full tablet-wide:w-1/2">
-    
       <h4 class="h4">
         {l s='Payment Method' d='Shop.Theme.Checkout'}
       </h4>
@@ -87,7 +88,7 @@
             {foreach from=$module_options item="option"}
               {if $option.id === $selected_payment_option}
 
-                <div class="flex flex-col flex-wrap">
+                <div class="flex flex-row flex-wrap phablet:flex-nowrap">
                   <div class="flex flex-col flex-auto">
                     {if $option.additionalInformation}
                       <div
@@ -99,7 +100,7 @@
                     {/if}
 
                     <div>
-                      <div id="{$option.id}-container" class="payment-option clearfix">
+                      <div id="{$option.id}-container">
                         {* This is the way an option should be selected when Javascript is enabled *}
                         <span class="custom-radio hidden">
                           <input
@@ -126,14 +127,14 @@
       
                       </div>
                     </div>
+                    <span>{$option.call_to_action_text}</span>
                   </div>
       
-                  <label for="{$option.id}" class="flex-none ml-auto">
-                    <span>{$option.call_to_action_text}</span>
-                    {if $option.logo}
-                      <img src="{$option.logo}">
-                    {/if}
-                  </label>
+                  {if $option.logo}
+                    <div class="flex-none ml-auto">
+                      <img src="{$option.logo}" class="h-10 w-auto">
+                    </label>
+                  {/if}
 
                   <div
                     id="pay-with-{$option.id}-form"
@@ -150,6 +151,7 @@
                       </form>
                     {/if}
                   </div>
+                </div>
               {/if}
             {/foreach}
           {foreachelse}
@@ -160,7 +162,9 @@
 
       <button data-checkout-back="#checkout-payment-step" class="step-edit ">{l s='edit' d='Shop.Theme.Actions'} <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" fill="none" class="ml-2"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.75 13.384 15 7.134V6.25L8.75 0l-.884.884 5.183 5.183H0v1.25h13.05L7.865 12.5l.884.884h.001Z" fill="#BABABA"/></svg></button>
     </div>
+
   </div>
+
   <div class="row">
     {block name='order_confirmation_table'}
       {include file='checkout/_partials/order-final-summary-table.tpl'
