@@ -110,8 +110,8 @@
           </div>
   
           <div class="flex flex-wrap justify-between">
-            <button data-checkout-back="#checkout-personal-information-step" class="text-black bg-transparent border-0 uppercase whitespace-nowrap mb-2 flex items-center justify-between cursor-pointer">{l s='Go back' d='Shop.Theme.Checkout'}</button>  
-            <button type="submit" class="continue btn btn-primary float-xs-right" name="confirmDeliveryOption" value="1">
+            <button data-checkout-back="#checkout-personal-information-step" class="text-black bg-transparent border-0 uppercase whitespace-nowrap mb-2 flex items-center justify-between cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" fill="none" class="mr-2"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.25 13.384 0 7.134V6.25L6.25 0l.884.884L1.95 6.067H15v1.25H1.95L7.135 12.5l-.884.884H6.25Z" fill="#181828"/></svg>{l s='Go back' d='Shop.Theme.Checkout'}</button>  
+            <button type="submit" class="continue continue bg-main hover:opacity-80 duration-150 border-0 rounded-full text-white p-2 px-4 uppercase whitespace-nowrap mb-2 flex items-center justify-between cursor-pointer" name="confirmDeliveryOption" value="1">
               {l s='Continue' d='Shop.Theme.Actions'}
             </button>
           </div>
