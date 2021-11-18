@@ -42,6 +42,7 @@ module.exports = {
       },
       margin: {
         'miniature': '102px',
+        'form': '20px',
       },
       colors: {
         'main': '#DF1A5B',
