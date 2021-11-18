@@ -70,7 +70,7 @@
        <p class="alert alert-danger js-address-error" name="alert-delivery" style="display: none">{l s="Your address is incomplete, please update it." d="Shop.Notifications.Error"}</p>
      {/if}
 
-     {if $customer.addresses|count < 2}
+     {if $use_same_address}
      <p class="add-address">
        <a href="{$new_address_delivery_url}"><i class="material-icons">&#xE145;</i>{l s='Different shipping delivery address' d='Shop.Theme.Actions'}</a>
      </p>

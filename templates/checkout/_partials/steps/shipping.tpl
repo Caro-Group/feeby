@@ -26,9 +26,20 @@
 
  {block name='step_content'}
  
-   {include file='checkout/_partials/steps/addresses.tpl'}
-   
+  <div class="mb-2 border-b border-gray-100">
+    <h2>
+      {l s='Data of the ordering person' d='Shop.Theme.Checkout'}
+    </h2>
+
+    {include file='checkout/_partials/steps/addresses.tpl'}
+  </div>
+
   <div style="{if !($customer.addresses|count) || $show_delivery_address_form || $show_invoice_address_form }opacity:0.5;pointer-events:none;{/if}">
+
+    <h2>
+      {l s='Delivery method' d='Shop.Theme.Checkout'}
+    </h2>
+
     <div id="hook-display-before-carrier">
       {$hookDisplayBeforeCarrier nofilter}
     </div>
