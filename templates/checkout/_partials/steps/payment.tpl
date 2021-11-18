@@ -8,22 +8,24 @@
 {extends file='checkout/_partials/steps/checkout-step.tpl'}
 
 {block name='step_content'}
-  <h2>
+  <h2 class="mb-2">
     {l s='Payment method' d='Shop.Theme.Checkout'}
   </h2>
 
   {hook h='displayPaymentTop'}
 
   {if !empty($display_transaction_updated_info)}
-  <p class="cart-payment-step-refreshed-info">
+  <p class="cart-payment-step-refreshed-info mb-2">
     {l s='Transaction amount has been correctly updated' d='Shop.Theme.Checkout'}
   </p>
   {/if}
 
   {if $is_free}
-    <p>{l s='No payment needed for this order' d='Shop.Theme.Checkout'}</p>
+    <p class=" mb-2">
+      {l s='No payment needed for this order' d='Shop.Theme.Checkout'}
+    </p>
   {/if}
-  <div class="payment-options {if $is_free}hidden-xs-up{/if}">
+  <div class="payment-options {if $is_free}hidden{/if} mb-14 pb-1">
     {foreach from=$payment_options item="module_options"}
       {foreach from=$module_options item="option"}
         <div>

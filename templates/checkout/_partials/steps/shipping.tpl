@@ -53,7 +53,7 @@
           method="post"
           aria-label="{l s='Shipping Address and Method' d='Shop.Theme.Checkout'}"
         >
-          <div class="form-fields">
+          <div class="form-fields mb-14 pb-1">
             {block name='delivery_options'}
               <div class="delivery-options flex flex-row flex-wrap">
                 {foreach from=$delivery_options item=carrier key=carrier_id name=delivery_options_loop}
