@@ -54,7 +54,7 @@
        }
      </div>
    {elseif $customer.addresses|count > 0}
-     <div id="delivery-addresses" class="address-selector js-address-selector">
+     <div id="delivery-addresses" class="address-selector js-address-selector mb-4">
        {include  file        = 'checkout/_partials/address-selector-block.tpl'
          addresses   = $customer.addresses
          name        = "id_address_delivery"
@@ -71,9 +71,10 @@
      {/if}
 
      {if $use_same_address}
-     <p class="add-address">
-       <a href="{$new_address_delivery_url}"><i class="material-icons">&#xE145;</i>{l s='Different shipping delivery address' d='Shop.Theme.Actions'}</a>
-     </p>
+      <a href="{$new_address_delivery_url}" class="mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" fill="none"><path fill="#181828" d="M0 3h7v1H0z"/><path fill="#181828" d="M4 0v7H3V0z"/></svg>
+        {l s='Different shipping delivery address' d='Shop.Theme.Actions'}
+      </a>
      {/if}
    {/if}
 

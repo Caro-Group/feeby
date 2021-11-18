@@ -24,13 +24,21 @@
  *}
 {block name='address_selector_blocks'}
   {foreach $addresses as $address}
-    {if $address.id == $selected} 
     <article
-      class="address-item"
+      lass="address-item {if $address.id == $selected} selected {/if}"
       id="{$name|classname}-address-{$address.id}"
     >
       <header class="h4">
         <label class="radio-block">
+          <span class="custom-radio">
+            <input
+              type="radio"
+              name="{$name}"
+              value="{$address.id}"
+              {if $address.id == $selected}checked{/if}
+            >
+            <span></span>
+          </span>
           <span class="address-alias h4">{$address.alias}</span>
           <div class="address">{$address.formatted nofilter}</div>
         </label>
@@ -55,7 +63,6 @@
         {/if}
       </footer>
     </article>
-    {/if}
   {/foreach}
   {if $interactive}
     <p>
