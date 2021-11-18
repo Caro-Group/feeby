@@ -1201,7 +1201,7 @@ $('body').on('click', "[href=\"#checkout-login-panel\"]", function(e){
 
 $('body').on('click', "[href=\"#checkout-guest-form\"]", function(e){ 
 	e.preventDefault();
-	$('#checkout-guest-form [data-field=\"password\"]').empty().hide();
+	$('#checkout-guest-form [data-field=\"password\"]').hide();
 });
 
 $('body').on('click', ".js-edit-addresses", (event) => {
