@@ -30,7 +30,7 @@
   
 {else if $field.name == "id_gender"}{else}
 
-  <div class="flex flex-auto {if isset($theme)} flex-col {else} flex-row {/if} {if !empty($field.errors)}has-error{/if}" data-field="{$field.type}">
+  <div class="flex flex-auto {if isset($theme)} flex-col {else} flex-row {/if} mb-form {if !empty($field.errors)}has-error{/if}" data-field="{$field.type}">
     <label class="min-w-label form-control-label{if $field.required && $field.type !== 'checkbox'} required{/if}">
       {if $field.type !== 'checkbox'}
         {$field.label}
@@ -171,11 +171,6 @@
             {if $field.maxLength}maxlength="{$field.maxLength}"{/if}
             {if $field.required}required{/if}
           >
-          {if isset($field.availableValues.comment)}
-            <span class="form-control-comment">
-              {$field.availableValues.comment}
-            </span>
-          {/if}
         {/block}
 
       {/if}
