@@ -39,9 +39,9 @@
         <div class="flex flex-wrap">
           <span class="image">
             {if !empty($product.cover)}
-              <img src="{$product.cover.medium.url}" />
+              <img src="{$product.cover.medium.url}" class="max-w-full w-16"/>
             {else}
-              <img src="{$urls.no_picture_image.bySize.medium_default.url}" />
+              <img src="{$urls.no_picture_image.bySize.medium_default.url}" class="max-w-full w-16"/>
             {/if}
           </span>
           

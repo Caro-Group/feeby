@@ -23,16 +23,16 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 <section id="order-summary-content" class="page-content page-order-confirmation">
-  <div class="row">
-    <div class="col-md-12">
-      <h1 class="h1 black">{l s='Order summary' d='Shop.Theme.Checkout'}</h4>
-    </div>
+  <div class="flex flex-row mb-14">
+    <h2 class="border-0 border-b border-main border-solid mb-0 pb-3">
+      {l s='Order summary' d='Shop.Theme.Checkout'}
+    </h2>
   </div>
 
 {if count($customer.addresses) > 0}
   <div class="flex flex-row flex-wrap">
     {if $cart.id_address_delivery}
-      <div class="w-full tablet-wide:w-1/2 mb-form tablet-wide:mb-0">
+      <div class="w-full tablet-wide:w-1/2 mb-form tablet-wide:mb-0 border-0 border-b border-solid pb-8 pr-8">
         <h4 class="h5 black addresshead">{l s='Your Delivery Address' d='Shop.Theme.Checkout'}</h4>
         <div class="mb-4">
           {$customer.addresses[$cart.id_address_delivery]['formatted'] nofilter}
@@ -44,7 +44,7 @@
       </div>
     {/if}
     {if $cart.id_address_invoice}
-      <div class="w-full tablet-wide:w-1/2 mb-form tablet-wide:mb-0">
+      <div class="w-full tablet-wide:w-1/2 mb-form tablet-wide:mb-0 border-0 border-b border-solid pb-8 pr-8">
         <h4 class="h5 black addresshead">{l s='Your Invoice Address' d='Shop.Theme.Checkout'}</h4>
         <div class="mb-4">
           {$customer.addresses[$cart.id_address_invoice]['formatted'] nofilter}
@@ -60,12 +60,12 @@
 
   <div class="flex flex-row flex-wrap">
     
-    <div class="w-full tablet-wide:w-1/2 mb-form tablet-wide:mb-0">
+    <div class="w-full tablet-wide:w-1/2 mb-form tablet-wide:mb-0 border-0 border-b border-solid pb-8 pr-8">
       <h4 class="h4">
         {l s='Shipping Method' d='Shop.Theme.Checkout'} 
       </h4>
 
-      <div class="flex flex-col flex-wrap mb-4">
+      <div class="flex flex-row flex-wrap mb-4">
         <div class="flex flex-col flex-auto">
           <span class="carrier-name">{$selected_delivery_option.name}</span>
           <span class="carrier-delay">{$selected_delivery_option.delay}</span>
@@ -84,7 +84,7 @@
       </span>
     </div>
 
-    <div class="w-full tablet-wide:w-1/2 mb-form tablet-wide:mb-0">
+    <div class="w-full tablet-wide:w-1/2 mb-form tablet-wide:mb-0 border-0 border-b border-solid pb-8 pr-8">
       <h4 class="h4">
         {l s='Payment Method' d='Shop.Theme.Checkout'}
       </h4>

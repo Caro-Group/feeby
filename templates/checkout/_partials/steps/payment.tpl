@@ -8,9 +8,11 @@
 {extends file='checkout/_partials/steps/checkout-step.tpl'}
 
 {block name='step_content'}
-  <h2 class="mb-2">
-    {l s='Payment method' d='Shop.Theme.Checkout'}
-  </h2>
+  <div class="flex flex-row mb-14">
+    <h2 class="border-0 border-b border-main border-solid mb-0 pb-3">
+      {l s='Payment method' d='Shop.Theme.Checkout'}
+    </h2>
+  </div>
 
   {hook h='displayPaymentTop'}
 
@@ -29,7 +31,7 @@
     {foreach from=$payment_options item="module_options"}
       {foreach from=$module_options item="option"}
         <div>
-          <div id="{$option.id}-container" class="payment-option clearfix">
+          <div id="{$option.id}-container" class="bg-gray-100 flex flex-row flex-wrap mb-4 p-4 payment-option">
             {* This is the way an option should be selected when Javascript is enabled *}
             <span class="custom-radio float-xs-left">
               <input
@@ -50,10 +52,10 @@
                 </button>
             </form>
 
-            <label for="{$option.id}">
+            <label for="{$option.id}" class="flex flex-auto justify-between mb-0">
               <span>{$option.call_to_action_text}</span>
               {if $option.logo}
-                <img class="lazy" data-src="{$option.logo}">
+                <img src="{$option.logo}">
               {/if}
             </label>
 
