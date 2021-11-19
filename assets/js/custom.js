@@ -1242,17 +1242,20 @@ $('body').on('click', "[data-checkout-back]",function(e){
 
 
 //Top bar swiper 
+$(document).ready(function () {
 
-const swiper = new Swiper('.swiper', {
-	speed: 9000,
-	spaceBetween: 100,
-	loop: true,
-	freeMode: true,
-	autoplay: {
-		delay: 0,
-		pauseOnMouseEnter: true,
-	},
-  });
+	const swiper = new Swiper('.swiper', {
+		speed: 15000,
+		spaceBetween: 50,
+		loop: true,
+		autoplay: {
+			delay: 0,
+		},
+		allowTouchMove: false,
+	  });
+
+});
+
 
 
 
