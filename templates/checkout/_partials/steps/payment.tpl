@@ -52,7 +52,7 @@
                 </button>
             </form>
 
-            <label for="{$option.id}" class="flex flex-auto justify-between mb-0">
+            <label for="{$option.id}" class="flex flex-auto flex-wrap justify-between mb-0">
               <span>{$option.call_to_action_text}</span>
               {if $option.logo}
                 <img src="{$option.logo}">
