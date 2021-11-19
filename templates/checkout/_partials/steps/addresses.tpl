@@ -23,7 +23,7 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 
-<div class="js-address-form">
+<div class="js-address-form mb-8">
   <form
     method="POST"
     action="{url entity='order' params=['id_address' => $id_address]}"
@@ -31,7 +31,7 @@
   >
     <div class="mb-14 pb-1">
       {if !$use_same_address}
-        <h2 class="h4">{l s='Shipping Address' d='Shop.Theme.Checkout'}</h2>
+        <h2 class="h4 mb-4">{l s='Shipping Address' d='Shop.Theme.Checkout'}</h2>
       {/if}
 
       {if $use_same_address && !$cart.is_virtual}

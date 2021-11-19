@@ -30,7 +30,7 @@
     </form>
   </div>
 
-  <div class="mb-4">
+  <div class="mb-14 pb-1">
     {if $conditions_to_approve|count}
       <p class="ps-hidden-by-js">
         {* At the moment, we're not showing the checkboxes when JS is disabled
