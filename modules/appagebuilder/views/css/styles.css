@@ -898,16 +898,6 @@ body#checkout section.checkout-step {
   margin: 0 0 20px;
   padding: 0; }
 
-#js-checkout-summary,
-section.js-current-step {
-  background-color: #fff;
-  padding: 20px;
-  box-shadow: 1px 3px 1px rgba(50, 50, 50, 0.04);
-  border-radius: 0;
-  border: 1px solid #e1e1e1;
-  border-top-width: 3px;
-  margin: 0 0 20px;
-  padding: 0; }
 
 #block-reassurance {
   background-color: #fff;
@@ -1379,8 +1369,7 @@ h5.aeuc_scart {
   font-size: 14px; }
 
 .cart-grid-body .card-block.cart-summary-subtotals-container {
-  padding: 15px 0;
-  border-top: 1px solid #ddd;
+  padding: 0 0 15px;
   border-bottom: 1px solid #ddd; }
 
 .cart-summary-line:last-child {

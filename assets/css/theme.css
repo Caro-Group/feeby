@@ -21577,12 +21577,7 @@ body #search_filters .clear-all-wrapper {
   margin-bottom: 12px; }
   .cart-grid-body a.label:hover {
     color: #f44d51; }
-  .cart-grid-body .card-block {
-    padding: 20px; }
-    .cart-grid-body .card-block.cart-summary-totals {
-      padding: 0 20px; }
-    .cart-grid-body .card-block h1 {
-      margin-bottom: 0; }
+
   .cart-grid-body hr {
     margin: 0; }
   .cart-grid-body .cart-overview {
