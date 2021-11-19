@@ -1174,7 +1174,6 @@ $(document).ready(function () {
 		autoplay: {
 			delay: 0,
 			disableOnInteraction: true,
-			waitForTransition: false,
 		},
 		allowTouchMove: false,
 	  });
