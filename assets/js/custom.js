@@ -1164,6 +1164,22 @@ $(window).load(function () {
 })(jQuery);
 
 
+//Top bar swiper 
+
+const swiper = new Swiper('.swiper', {
+	speed: 9000,
+	spaceBetween: 100,
+	loop: true,
+	freeMode: true,
+	autoplay: {
+		delay: 0,
+		pauseOnMouseEnter: true,
+	},
+  });
+
+
+
+
 
 
 
