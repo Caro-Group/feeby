@@ -1173,6 +1173,8 @@ $(document).ready(function () {
 		loop: true,
 		autoplay: {
 			delay: 0,
+			disableOnInteraction: true,
+			waitForTransition: false,
 		},
 		allowTouchMove: false,
 	  });
