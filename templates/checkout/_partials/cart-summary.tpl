@@ -23,7 +23,14 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 <section id="js-checkout-summary" class="card js-cart" data-refresh-url="{$urls.pages.cart}?ajax=1&action=refresh">
+  <div class="flex flex-row mb-14">
+    <h2 class="border-0 border-b border-main border-solid mb-0 pb-3">
+      {l s='Your order' d='Shop.Theme.Checkout'}
+    </h2>
+  </div>
+
   <div class="card-block">
+
     {block name='hook_checkout_summary_top'}
       {hook h='displayCheckoutSummaryTop'}
     {/block}

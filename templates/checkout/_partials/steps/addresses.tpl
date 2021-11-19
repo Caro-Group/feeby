@@ -44,6 +44,39 @@
         </p>
       {/if}
 
+      {if !$use_same_address}
+
+        <h2 class="h4">{l s='Your Invoice Address' d='Shop.Theme.Checkout'}</h2>
+
+        {if $show_invoice_address_form}
+          <div id="invoice-address">
+            {render file                      = 'checkout/_partials/address-form.tpl'
+              ui                        = $address_form
+              use_same_address          = $use_same_address
+              type                      = "invoice"
+              form_has_continue_button  = $form_has_continue_button
+            }
+          </div>
+        {else}
+          <div id="invoice-addresses" class="address-selector js-address-selector">
+            {include  file        = 'checkout/_partials/address-selector-block.tpl'
+              addresses   = $customer.addresses
+              name        = "id_address_invoice"
+              selected    = $id_address_invoice
+              type        = "invoice"
+              interactive = !$show_delivery_address_form and !$show_invoice_address_form
+            }
+          </div>
+
+          {if isset($invoice_address_error)}
+            <p class="alert alert-danger js-address-error" name="alert-invoice" id="id-failure-address-{$invoice_address_error.id_address}">{$invoice_address_error.exception}</p>
+          {else}
+            <p class="alert alert-danger js-address-error" name="alert-invoice" style="display: none">{l s="Your address is incomplete, please update it." d="Shop.Notifications.Error"}</p>
+          {/if}
+        {/if}
+
+      {/if}
+      
       {if $show_delivery_address_form}
         <div id="delivery-address">
           {render file                      = 'checkout/_partials/address-form.tpl'
@@ -76,39 +109,6 @@
             {l s='Different shipping delivery address' d='Shop.Theme.Actions'}
           </a>
         {/if}
-      {/if}
-
-      {if !$use_same_address}
-
-        <h2 class="h4">{l s='Your Invoice Address' d='Shop.Theme.Checkout'}</h2>
-
-        {if $show_invoice_address_form}
-          <div id="invoice-address">
-            {render file                      = 'checkout/_partials/address-form.tpl'
-              ui                        = $address_form
-              use_same_address          = $use_same_address
-              type                      = "invoice"
-              form_has_continue_button  = $form_has_continue_button
-            }
-          </div>
-        {else}
-          <div id="invoice-addresses" class="address-selector js-address-selector">
-            {include  file        = 'checkout/_partials/address-selector-block.tpl'
-              addresses   = $customer.addresses
-              name        = "id_address_invoice"
-              selected    = $id_address_invoice
-              type        = "invoice"
-              interactive = !$show_delivery_address_form and !$show_invoice_address_form
-            }
-          </div>
-
-          {if isset($invoice_address_error)}
-            <p class="alert alert-danger js-address-error" name="alert-invoice" id="id-failure-address-{$invoice_address_error.id_address}">{$invoice_address_error.exception}</p>
-          {else}
-            <p class="alert alert-danger js-address-error" name="alert-invoice" style="display: none">{l s="Your address is incomplete, please update it." d="Shop.Notifications.Error"}</p>
-          {/if}
-        {/if}
-
       {/if}
     </div>
     
