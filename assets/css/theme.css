@@ -18556,15 +18556,13 @@ body#checkout section.checkout-step {
     text-align: center; }
   body#checkout section.checkout-step #conditions-to-approve {
     padding-top: 16px; }
-  body#checkout section.checkout-step .payment-options label {
-    display: table-cell; }
+
   body#checkout section.checkout-step .payment-options .custom-radio {
     margin-right: 20px; }
     .rtl body#checkout section.checkout-step .payment-options .custom-radio {
       margin-left: 20px;
       margin-right: inherit; }
-  body#checkout section.checkout-step .payment-options .payment-option {
-    margin-bottom: 8px; }
+
   body#checkout section.checkout-step .step-number {
     display: inline-block;
     padding: 10px; }
@@ -18611,9 +18609,6 @@ body#checkout section.checkout-step {
     -ms-flex: 0 0 49%;
     flex: 0 0 49%;
     margin-bottom: 10px; }
-    body#checkout section.checkout-step .address-item.selected {
-      background: white;
-      border: #f44d51 3px solid; }
   body#checkout section.checkout-step .address-alias {
     display: inline-block;
     font-weight: 400;
@@ -18797,10 +18792,6 @@ body#checkout #gift_message {
           text-align: left; }
   #order-items .order-line {
     margin-top: 16px; }
-  #order-items .image img {
-    width: 100%;
-    border: 1px solid gray-lighter;
-    margin-bottom: 16px; }
   #order-items .details {
     margin-bottom: 16px; }
     #order-items .details .customizations {

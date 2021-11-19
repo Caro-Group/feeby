@@ -30,8 +30,8 @@
   
 {else if $field.name == "id_gender"}{else}
 
-  <div class="flex flex-auto {if isset($theme)} flex-col {else} flex-row {/if} {if !empty($field.errors)}has-error{/if}" data-field="{$field.type}">
-    <label class="min-w-label form-control-label{if $field.required && $field.type !== 'checkbox'} required{/if}">
+  <div class="flex flex-auto {if isset($theme)} flex-col {else} flex-row {/if} mb-form {if !empty($field.errors)}has-error{/if}" data-field="{$field.type}">
+    <label class="min-w-label text-left {if $field.required && $field.type !== 'checkbox'} required{/if}">
       {if $field.type !== 'checkbox'}
         {$field.label}
       {/if}
@@ -137,7 +137,7 @@
         {block name='form_field_item_password'}
           <div class="input-group js-parent-focus">
             <input
-              class="form-input rounded-md border border w-full js-child-focus js-visible-password"
+              class="form-input rounded-md border w-full js-child-focus js-visible-password"
               name="{$field.name}"
               title="{l s='At least 5 characters long' d='Shop.Forms.Help'}"
               type="password"
@@ -163,7 +163,7 @@
 
         {block name='form_field_item_other'}
           <input
-            class="form-input rounded-md border-0"
+            class="form-input rounded-md border"
             name="{$field.name}"
             type="{$field.type}"
             value="{$field.value}"
@@ -171,11 +171,6 @@
             {if $field.maxLength}maxlength="{$field.maxLength}"{/if}
             {if $field.required}required{/if}
           >
-          {if isset($field.availableValues.comment)}
-            <span class="form-control-comment">
-              {$field.availableValues.comment}
-            </span>
-          {/if}
         {/block}
 
       {/if}

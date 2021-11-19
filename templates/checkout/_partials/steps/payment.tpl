@@ -8,26 +8,30 @@
 {extends file='checkout/_partials/steps/checkout-step.tpl'}
 
 {block name='step_content'}
-  <h2>
-    {l s='Payment method' d='Shop.Theme.Checkout'}
-  </h2>
+  <div class="flex flex-row mb-14">
+    <h2 class="border-0 border-b border-main border-solid mb-0 pb-3">
+      {l s='Payment method' d='Shop.Theme.Checkout'}
+    </h2>
+  </div>
 
   {hook h='displayPaymentTop'}
 
   {if !empty($display_transaction_updated_info)}
-  <p class="cart-payment-step-refreshed-info">
+  <p class="cart-payment-step-refreshed-info mb-2">
     {l s='Transaction amount has been correctly updated' d='Shop.Theme.Checkout'}
   </p>
   {/if}
 
   {if $is_free}
-    <p>{l s='No payment needed for this order' d='Shop.Theme.Checkout'}</p>
+    <p class=" mb-2">
+      {l s='No payment needed for this order' d='Shop.Theme.Checkout'}
+    </p>
   {/if}
-  <div class="payment-options {if $is_free}hidden-xs-up{/if}">
+  <div class="payment-options {if $is_free}hidden{/if} mb-14 pb-1">
     {foreach from=$payment_options item="module_options"}
       {foreach from=$module_options item="option"}
         <div>
-          <div id="{$option.id}-container" class="payment-option clearfix">
+          <div id="{$option.id}-container" class="bg-gray-100 flex flex-row flex-wrap mb-4 p-4 payment-option">
             {* This is the way an option should be selected when Javascript is enabled *}
             <span class="custom-radio float-xs-left">
               <input
@@ -48,10 +52,10 @@
                 </button>
             </form>
 
-            <label for="{$option.id}">
+            <label for="{$option.id}" class="flex flex-auto justify-between mb-0">
               <span>{$option.call_to_action_text}</span>
               {if $option.logo}
-                <img class="lazy" data-src="{$option.logo}">
+                <img src="{$option.logo}">
               {/if}
             </label>
 
@@ -89,7 +93,12 @@
   </div>
 
   <div class="flex flex-wrap justify-between">
-    <button data-checkout-back="#checkout-delivery-step">{l s='Go back' d='Shop.Theme.Checkout'}</button>  
-    <button data-checkout-payment disabled>{l s='Go to the summary' d='Shop.Theme.Checkout'}</button>
+    <button data-checkout-back="#checkout-delivery-step" class="text-black bg-transparent border-0 uppercase whitespace-nowrap mb-2 flex items-center justify-between cursor-pointer">
+      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" fill="none" class="mr-2"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.25 13.384 0 7.134V6.25L6.25 0l.884.884L1.95 6.067H15v1.25H1.95L7.135 12.5l-.884.884H6.25Z" fill="#181828"/></svg>
+      {l s='Go back' d='Shop.Theme.Checkout'}
+    </button>  
+    <button data-checkout-payment disabled class="bg-main hover:opacity-80 duration-150 border-0 rounded-full text-white p-2 px-4 uppercase whitespace-nowrap mb-2 flex items-center justify-between cursor-pointer">
+      {l s='Go to the summary' d='Shop.Theme.Checkout'}
+    </button>
   </div>
 {/block}

@@ -48,7 +48,7 @@
       {/block}
 
       {block name="address_form_footer"}
-      <footer class="form-footer clearfix">
+      <footer class="flex flex-wrap justify-between">
         <input type="hidden" name="submitAddress" value="1">
         {block name='form_buttons'}
           <button class="bg-main hover:opacity-80 duration-150 border-0 rounded-full text-white p-2 px-4 uppercase whitespace-nowrap mb-2 flex items-center justify-between cursor-pointer form-control-submit" type="submit">

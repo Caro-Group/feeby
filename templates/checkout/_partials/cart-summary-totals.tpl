@@ -41,19 +41,7 @@
       </div>
     {/if}
   {/block}
-  <!-- add Spent X to get free ship in checkout page Leotheme -->
-  {assign var='freeshipping_price' value=Configuration::get('PS_SHIPPING_FREE_PRICE')}
-  {if $freeshipping_price}
-    {math equation='a-b' a=$cart.totals.total.amount b=$cart.subtotals.shipping.amount assign='total_without_shipping'}
-    {math equation='a-b' a=$freeshipping_price b=$total_without_shipping assign='remaining_to_spend'}
-    {if $remaining_to_spend > 0}
-      <div class="leo_free_price">
-      {assign var=currency value=Context::getContext()->currency}
-      <p>{l s='Spent' d='Shop.Theme.Global'} {Tools::displayPrice($remaining_to_spend,$currency)} {l s='To get free ship!' d='Shop.Theme.Global'}</p>
-      </div>
-    {/if}
-  {/if}
-  <!-- end -->
+
   {block name='cart_summary_tax'}
     {if $cart.subtotals.tax}
       <div class="cart-summary-line">

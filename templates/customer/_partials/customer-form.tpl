@@ -28,7 +28,7 @@
   {/block}
 
 <form action="{block name='customer_form_actionurl'}{$action}{/block}" id="customer-form" class="js-customer-form" method="post">
-  <section>
+  <section class="mb-14 pb-1">
     {block "form_fields"}
       {foreach from=$formFields item="field"}
         {block "form_field"}
@@ -40,7 +40,7 @@
   </section>
 
   {block name='customer_form_footer'}
-    <footer class="form-footer clearfix">
+    <footer class="form-footer clearfix flex items-center justify-between">
       <input type="hidden" name="submitCreate" value="1">
       {block "form_buttons"}
         <button class="btn btn-primary form-control-submit float-xs-right" data-link-action="save-customer" type="submit">
