@@ -30,7 +30,11 @@
       <div class="cart-summary-line cart-summary-subtotals" id="cart-subtotal-{$subtotal.type}">
 
         <span class="label">
+          {if $subtotal.type == 'products'}
+            {l s='Order value' d='Shop.Theme.Checkout'}
+          {else}
             {$subtotal.label}
+          {/if}
         </span>
 
         <span class="value">

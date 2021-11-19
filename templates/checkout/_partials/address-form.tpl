@@ -26,8 +26,8 @@
 
 {block name='form_fields' append}
   <input type="hidden" name="saveAddress" value="{$type}">
-  {if $type === "delivery"}
-    <div class="form-group row">
+  {if $type === "delivery" || $customer.addresses|count === 1}
+    <div class="form-group row hide">
       <div class="col-md-9 col-md-offset-3">
         <input name = "use_same_address" id="use_same_address" type = "checkbox" value = "1" {if $use_same_address} checked {/if}>
         <label for="use_same_address">{l s='Use this address for invoice too' d='Shop.Theme.Checkout'}</label>
@@ -38,16 +38,18 @@
 
 {block name='form_buttons'}
   {if !$form_has_continue_button}
-    <button type="submit" class="btn btn-primary float-xs-right">{l s='Save' d='Shop.Theme.Actions'}</button>
-    <a class="js-cancel-address cancel-address float-xs-right" href="{url entity='order' params=['cancelAddress' => {$type}]}">{l s='Cancel' d='Shop.Theme.Actions'}</a>
+    <div class="flex flex-wrap justify-between">
+      <a class="js-cancel-address cancel-address float-xs-right" href="{url entity='order' params=['cancelAddress' => {$type}]}">{l s='Cancel' d='Shop.Theme.Actions'}</a>
+      <button type="submit" class="bg-main hover:opacity-80 duration-150 border-0 rounded-full text-white p-2 px-4 uppercase whitespace-nowrap mb-2 flex items-center justify-between cursor-pointer">{l s='Save' d='Shop.Theme.Actions'}</button>
+    </div>
   {else}
     <form>
-      <button type="submit" class="continue btn btn-primary float-xs-right" name="confirm-addresses" value="1">
-          {l s='Continue' d='Shop.Theme.Actions'}
-      </button>
       {if $customer.addresses|count > 0}
         <a class="js-cancel-address cancel-address float-xs-right" href="{url entity='order' params=['cancelAddress' => {$type}]}">{l s='Cancel' d='Shop.Theme.Actions'}</a>
       {/if}
+      <button type="submit" class="continue bg-main hover:opacity-80 duration-150 border-0 rounded-full text-white p-2 px-4 uppercase whitespace-nowrap mb-2 flex items-center justify-between cursor-pointer" name="confirm-addresses" value="1">
+          {l s='Continue' d='Shop.Theme.Actions'}
+      </button>
     </form>
   {/if}
 {/block}

@@ -796,12 +796,12 @@ div[id^="gmap-stores-list"] > ul {
       color: #fff; }
 
 /*update CART*/
-#checkout #wrapper {
-  padding: 60px 0; }
-#checkout #content > .row > div {
+/* #checkout #wrapper {
+  padding: 60px 0; } */
+/* #checkout #content > .row > div {
   position: relative; }
   #checkout #content > .row > div.col-lg-8, #checkout #content > .row > div.col-md-8 {
-    padding-top: 100px; }
+    padding-top: 100px; } */
 
 body#checkout section.checkout-step {
   box-shadow: none;
@@ -809,22 +809,8 @@ body#checkout section.checkout-step {
   padding: 0;
   outline: none;
   background: none; }
-  body#checkout section.checkout-step#checkout-personal-information-step .content {
-    padding: 0; }
-    body#checkout section.checkout-step#checkout-personal-information-step .content > p {
-      padding: 0 30px; }
-      body#checkout section.checkout-step#checkout-personal-information-step .content > p:first-child {
-        padding-top: 30px; }
-      body#checkout section.checkout-step#checkout-personal-information-step .content > p:last-child {
-        padding-bottom: 20px; }
+
   body#checkout section.checkout-step .content {
-    box-shadow: 1px 3px 1px rgba(50, 50, 50, 0.04);
-    border-radius: 0;
-    border: 1px solid #e1e1e1;
-    border-top-width: 3px;
-    padding: 20px;
-    max-width: 600px;
-    margin: 0 auto;
     position: static; }
   body#checkout section.checkout-step .step-title {
     text-transform: uppercase;
@@ -871,9 +857,9 @@ body#checkout section.checkout-step {
       top: 2px;
       left: 50%;
       margin-left: -14px; }
-  body#checkout section.checkout-step.js-current-step .step-title {
+  body#checkout section.checkout-step.js-current-step .step-title:first-child {
     color: #000; }
-    body#checkout section.checkout-step.js-current-step .step-title .step-number {
+    body#checkout section.checkout-step.js-current-step .step-title:first-child .step-number {
       background: #000; }
   body#checkout section.checkout-step:last-child .step-title:before {
     display: none; }
@@ -912,16 +898,6 @@ body#checkout section.checkout-step {
   margin: 0 0 20px;
   padding: 0; }
 
-#js-checkout-summary,
-section.js-current-step {
-  background-color: #fff;
-  padding: 20px;
-  box-shadow: 1px 3px 1px rgba(50, 50, 50, 0.04);
-  border-radius: 0;
-  border: 1px solid #e1e1e1;
-  border-top-width: 3px;
-  margin: 0 0 20px;
-  padding: 0; }
 
 #block-reassurance {
   background-color: #fff;
@@ -1162,9 +1138,9 @@ body#checkout section.checkout-step .address-selector {
   display: block; }
   body#checkout section.checkout-step .address-selector hr {
     border: 0; }
-
+/* 
 body#checkout section.checkout-step .address-item.selected {
-  border: #282828 1px solid; }
+  border: #282828 1px solid; } */
 body#checkout section.checkout-step .address-item .radio-block {
   display: block; }
 body#checkout section.checkout-step .address-item .custom-radio {
@@ -1183,8 +1159,8 @@ body#checkout section.checkout-step .address-item .address {
   line-height: 1.5;
   font-size: 12px; }
 
-#checkout-personal-information-step.-complete .content .clearfix {
-  padding: 20px; }
+/* #checkout-personal-information-step.-complete .content .clearfix {
+  padding: 20px; } */
 
 body#checkout section.checkout-step .address-footer {
   text-align: right; }
@@ -1393,8 +1369,7 @@ h5.aeuc_scart {
   font-size: 14px; }
 
 .cart-grid-body .card-block.cart-summary-subtotals-container {
-  padding: 15px 0;
-  border-top: 1px solid #ddd;
+  padding: 0 0 15px;
   border-bottom: 1px solid #ddd; }
 
 .cart-summary-line:last-child {
@@ -3120,9 +3095,6 @@ button.btn.btn-primary.center-block,
 .thumbnail-container .leo_cart_quantity {
   margin: 5px 0; }
 
-.delivery-options img {
-  max-width: 40px;
-  height: auto; }
 
 /*fix leo-more-cdown in product detail*/
 .category-products .owl-item.active + .active + .active + .active .leo-more-info,

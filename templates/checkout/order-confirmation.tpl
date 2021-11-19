@@ -8,7 +8,6 @@
 {extends file='page.tpl'}
 
 {block name='page_content_container' prepend}
-{$HOOKORDERCONFIRMATION} 
 
     <section id="content-hook_order_confirmation" class="card">
       <div class="card-block">

@@ -1,0 +1,12 @@
+.gmparcellocker-button {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.gmparcellocker-button .chosen-parcel {
+    font-weight: bold;
+}
+
+.gmparcellocker-button #parcel-search-address {
+    display: none;
+}

@@ -30,16 +30,16 @@
 
   <form id="login-form" action="{block name='login_form_actionurl'}{$action}{/block}" method="post">
 
-    <section>
+    <section class="flex flex-col">
       {block name='login_form_fields'}
         {foreach from=$formFields item="field"}
           {block name='form_field'}
-            {form_field field=$field}
+            {form_field field=$field theme='col'}
           {/block}
         {/foreach}
       {/block}
-      <div class="forgot-password">
-        <a href="{$urls.pages.password}" rel="nofollow">
+      <div class="flex flex-auto flex-col">
+        <a class="underline text-sm" href="{$urls.pages.password}" rel="nofollow">
           {l s='Forgot your password?' d='Shop.Theme.Customeraccount'}
         </a>
       </div>
@@ -60,6 +60,5 @@
       {hook h='displayCustomerLoginFormAfter'}
     {/block}
     
-
   </form>
 {/block}
