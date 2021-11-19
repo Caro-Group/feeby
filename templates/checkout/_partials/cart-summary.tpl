@@ -39,14 +39,13 @@
       {include file='checkout/_partials/cart-summary-subtotals.tpl' cart=$cart}
     {/block}
 
-    <p class="card-block text-center">
-      {l s='Your order will be available in 2 work day' d='Shop.Theme.Checkout'}
-    </p>
-
   </div>
 
   {block name='cart_summary_totals'}
     {include file='checkout/_partials/cart-summary-totals.tpl' cart=$cart}
   {/block}
 
+  <p class="card-block text-center">
+    {l s='Your order will be available in 2 work day' d='Shop.Theme.Checkout'}
+  </p>
 </section>
