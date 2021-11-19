@@ -7,9 +7,9 @@
 *}
 <!-- @file modules\appagebuilder\views\templates\hook\ApGeneral -->
 
-{* phone-wide:px-4 phone wide:justify-center  phablet:mx-5 desktop:mx-16 mx-0*}
+{* phone-wide:px-4 phone wide:justify-center  phablet:mx-5 desktop:mx-16 mx-0 h-1/2 h-5 tablet:h-10 select-none*}
 
-{if $hookName = 'DISPLAYNAV1'}
+{if $hookName = 'displayNav1'}
 <div {if isset($formAtts.id) && $formAtts.id} id="{$formAtts.id|escape:'html':'UTF-8' nofilter}"{/if}
     {if isset($formAtts.class)} class="{$formAtts.class|escape:'html':'UTF-8'}"{/if}>
 	{($apLiveEdit)?$apLiveEdit:'' nofilter}{* HTML form , no escape necessary *}
