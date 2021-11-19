@@ -72,7 +72,7 @@
           <span class="carrier-price">{$selected_delivery_option.price}</span>
         </div>
         {if $selected_delivery_option.logo}
-          <div class="flex-none ml-auto">
+          <div class="flex-none tablet-wide:ml-auto">
             <img src="{$selected_delivery_option.logo}" alt="{$selected_delivery_option.name}" class="h-10 w-auto">      
           </div>
         {/if}
@@ -141,7 +141,7 @@
                     </div>
         
                     {if $option.logo}
-                      <div class="flex-none ml-auto">
+                      <div class="flex-none tablet-wide:ml-auto">
                         <img src="{$option.logo}" class="h-10 w-auto">
                       </label>
                     {/if}
