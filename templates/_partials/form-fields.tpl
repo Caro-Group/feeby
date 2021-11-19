@@ -41,7 +41,7 @@
        
   {/if}
 
-  <div class="flex flex-auto {if isset($theme)} flex-col {else} flex-row {/if} mb-form {if !empty($field.errors)}has-error{/if}" data-field="{$field.type}">
+  <div class="flex flex-auto {if isset($theme)} flex-col {else} flex-col phablet:flex-row {/if} mb-form {if !empty($field.errors)}has-error{/if}" data-field="{$field.type}">
     <label class="min-w-label text-left {if $field.required && $field.type !== 'checkbox'} required{/if}">
       {if $field.type !== 'checkbox'}
         {$field.label}
