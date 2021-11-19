@@ -27,19 +27,23 @@
  {block name='step_content'}
  
   <div class="border-0 border-b border-solid border-gray-200 mb-8">
-    <h2>
-      {l s='Data of the ordering person' d='Shop.Theme.Checkout'}
-    </h2>
+    <div class="flex flex-row mb-14">
+      <h2 class="border-0 border-b border-main border-solid mb-0 pb-3">
+        {l s='Data of the ordering person' d='Shop.Theme.Checkout'}
+      </h2>
+    </div>
 
     {include file='checkout/_partials/steps/addresses.tpl'}
   </div>
 
   <div class="{if !($customer.addresses|count) || $show_delivery_address_form || $show_invoice_address_form } pointer-events-none opacity-5 {/if}">
 
-    <h2 class="mb-2">
-      {l s='Delivery method' d='Shop.Theme.Checkout'}
-    </h2>
-
+    <div class="flex flex-row mb-14">
+      <h2 class="border-0 border-b border-main border-solid mb-0 pb-3">
+        {l s='Delivery method' d='Shop.Theme.Checkout'}
+      </h2>
+    </div>
+    
     <div id="hook-display-before-carrier">
       {$hookDisplayBeforeCarrier nofilter}
     </div>
