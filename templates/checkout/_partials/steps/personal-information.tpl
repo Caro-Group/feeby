@@ -47,7 +47,7 @@
   {else}
     <div class="absolute inset-0 z-10 bg-gray-100 mt-24" data-login-panel>
       <div class="flex flex-wrap tablet-wide:flex-nowrap">
-        <div class="flex flex-col border-r my-20 px-24 w-full tablet-wide:w-1/2 items-start">
+        <div class="flex flex-col border-r my-2 tablet-wide:my-20 px-2 tablet-wide:px-24 w-full tablet-wide:w-1/2 items-start">
           <h2>{l s='I do not have an account' d='Shop.Theme.Checkout'}</h2>
           <p>
             {l s='You do not have an account? You can place an order as a guest, or create an account to save your details and shipping preferences for your next purchase.' d='Shop.Theme.Checkout'}
