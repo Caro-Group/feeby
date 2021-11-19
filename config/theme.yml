@@ -12,10 +12,10 @@ assets:
         path: assets/css/menu.css
       - id: swiper-styles
         path: assets/css/swiper.css
-    js:
-      all:
-       - id: swiper-js
-         path: assets/js/swiper.js
+  js:
+    all:
+     - id: swiper-js
+       path: assets/js/swiper.js
 
 #    product:
 #      - id: product-style
