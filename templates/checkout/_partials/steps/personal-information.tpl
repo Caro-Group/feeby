@@ -83,6 +83,12 @@
 
   <div id="checkout-guest-form">
     {if !$customer.is_logged || $customer.is_guest}
+      <div class="flex flex-row mb-14">
+        <h2 class="border-0 border-b border-main border-solid mb-0 pb-3">
+          {l s='Personal information' d='Shop.Theme.Checkout'}
+        </h2>
+      </div>
+      
       {render file='checkout/_partials/customer-form.tpl' ui=$register_form guest_allowed=$guest_allowed}
     {/if}
   </div>
