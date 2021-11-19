@@ -22,9 +22,9 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
-<section id="js-checkout-summary" class="card js-cart" data-refresh-url="{$urls.pages.cart}?ajax=1&action=refresh">
-  <div class="flex flex-row mb-14">
-    <h2 class="border-0 border-b border-main border-solid mb-0 pb-3">
+<section id="js-checkout-summary" class="bg-gray-100 js-cart mb-8 js-cart" data-refresh-url="{$urls.pages.cart}?ajax=1&action=refresh">
+  <div class="card-block flex flex-row pb-0">
+    <h2 class="mb-0">
       {l s='Your order' d='Shop.Theme.Checkout'}
     </h2>
   </div>
@@ -38,6 +38,10 @@
     {block name='cart_summary_subtotals'}
       {include file='checkout/_partials/cart-summary-subtotals.tpl' cart=$cart}
     {/block}
+
+    <p class="card-block text-center">
+      {l s='Your order will be available in 2 work day' d='Shop.Theme.Checkout'}
+    </p>
 
   </div>
 
