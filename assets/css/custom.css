@@ -1027,6 +1027,14 @@ border: none;
 
 
 
+@media (min-width: 320px) and (max-width: 991px){
+    .bottomnav .box-top .h-logo img {
+        margin-left: -70px;
+    }
+}
+
+
+
 /* CHECKOUT */
 /* body#checkout section#checkout-personal-information-step.checkout-step.-current.-reachable + section.checkout-step.-shipping-adress-enable .content {
     display: none;

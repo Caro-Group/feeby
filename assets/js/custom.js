@@ -1184,7 +1184,6 @@ $('body').on('click', '#payment-confirmation button', function(){
 $('body').on('click', "[href=\"#checkout-guest-form\"], [href=\"#checkout-register-form\"]", function(e){ 
 	e.preventDefault();
 	$('[data-login-panel]').hide();
-	$('[data-field=\"password\"]').show();
 });
 
 $('body').on('click', "[href=\"#checkout-register-form\"]", function(e){ 
