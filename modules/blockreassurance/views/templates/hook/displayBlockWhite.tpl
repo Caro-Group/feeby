@@ -22,7 +22,6 @@
 *  @license   http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 *}
-{* tablet:mt-12 tablet:mb-8 *}
 
 {if $page.page_name != 'index' && $page.page_name != 'module-psgdpr-gdpr' && $page.page_name != 'my-account' && $page.page_name != 'order-follow' && $page.page_name != 'order-slip' && $page.page_name != 'module-leofeature-mywishlist' && $page.page_name != 'address' &&$page.page_name != 'addresses' && $page.page_name != 'cart' && $page.page_name != 'discount' && $page.page_name != 'history' && $page.page_name != 'identity' && $page.page_name != 'myaccount' && $page.page_name != 'order' && $page.page_name != 'orderconfirmation' && $page.page_name != 'orderdetail' && $page.page_name != 'orderfollow' && $page.page_name != 'orderreturn' && $page.page_name != 'orderslip' && $page.page_name != 'checkout' }
 
