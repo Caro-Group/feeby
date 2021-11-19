@@ -1168,12 +1168,11 @@ $(window).load(function () {
 $(document).ready(function () {
 
 	const swiper = new Swiper('.swiper', {
-		speed: 15000,
+		speed: 25000,
 		spaceBetween: 50,
 		loop: true,
 		autoplay: {
 			delay: 0,
-			disableOnInteraction: true,
 		},
 		allowTouchMove: false,
 	  });
