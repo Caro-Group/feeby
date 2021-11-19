@@ -30,6 +30,17 @@
   
 {else if $field.name == "id_gender"}{else}
 
+  {if $field.name == 'company'}
+
+    <div id="company" class="mb-8">
+      <a class="block mb-8 border-b text-black w-full collapsed" data-toggle="collapse" href="#collapseCompany" role="button" aria-expanded="false" aria-controls="collapseCompany">
+        <svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" fill="none"><path fill="#181828" d="M0 3h7v1H0z"/><path fill="#181828" d="M4 0v7H3V0z"/></svg>
+        {l s='Add tax identification number and company name' d='Shop.Theme.Checkout'}
+      </a>
+      <div class="collapse" id="collapseCompany">
+       
+  {/if}
+
   <div class="flex flex-auto {if isset($theme)} flex-col {else} flex-row {/if} mb-form {if !empty($field.errors)}has-error{/if}" data-field="{$field.type}">
     <label class="min-w-label text-left {if $field.required && $field.type !== 'checkbox'} required{/if}">
       {if $field.type !== 'checkbox'}
@@ -181,5 +192,11 @@
 
     </div>
   </div>
+
+{/if}
+
+{if $field.name == 'vat_number' }
+  </div>
+</div>
 
 {/if}
