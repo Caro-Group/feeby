@@ -77,7 +77,7 @@
 
 
 
-{elseif $hookName = 'DISPLAYNAV1'}
+{elseif $hookName == 'displayNav1'}
 
 
 
