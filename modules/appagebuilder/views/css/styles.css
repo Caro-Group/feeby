@@ -1148,9 +1148,9 @@ body#checkout section.checkout-step .address-selector {
   display: block; }
   body#checkout section.checkout-step .address-selector hr {
     border: 0; }
-
+/* 
 body#checkout section.checkout-step .address-item.selected {
-  border: #282828 1px solid; }
+  border: #282828 1px solid; } */
 body#checkout section.checkout-step .address-item .radio-block {
   display: block; }
 body#checkout section.checkout-step .address-item .custom-radio {
@@ -3106,9 +3106,6 @@ button.btn.btn-primary.center-block,
 .thumbnail-container .leo_cart_quantity {
   margin: 5px 0; }
 
-.delivery-options img {
-  max-width: 40px;
-  height: auto; }
 
 /*fix leo-more-cdown in product detail*/
 .category-products .owl-item.active + .active + .active + .active .leo-more-info,

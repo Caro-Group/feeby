@@ -55,23 +55,25 @@
         >
           <div class="form-fields mb-14 pb-1">
             {block name='delivery_options'}
-              <div class="delivery-options flex flex-row flex-wrap">
+              <div class="delivery-options flex flex-col flex-wrap">
                 {foreach from=$delivery_options item=carrier key=carrier_id name=delivery_options_loop}
                     <div class="delivery-option mb-2 flex flex-row flex-wrap" {if $carrier.id === 31 || $carrier.id === 32}onclick="gmParcelLockerChoose(this);return false;"{/if}>
-                      <span class="custom-radio float-xs-left">
-                        <input type="radio" name="delivery_option[{$id_address_delivery}]" id="delivery_option_{$carrier.id}" value="{$carrier_id}"{if ($smarty.foreach.delivery_options_loop.index == 0 && $delivery_option != $carrier_id) || $delivery_option == $carrier_id} checked{/if} />
-                        <span></span>
-                      </span>
-                      <label for="delivery_option_{$carrier.id}" class="col-sm-11 delivery-option-2">
-                        <div class="flex flex-row flex-wrap">
+                      <div class="flex items-center justify-center w-16">
+                        <span class="custom-radio float-xs-left">
+                          <input type="radio" name="delivery_option[{$id_address_delivery}]" id="delivery_option_{$carrier.id}" value="{$carrier_id}"{if ($smarty.foreach.delivery_options_loop.index == 0 && $delivery_option != $carrier_id) || $delivery_option == $carrier_id} checked{/if} />
+                          <span></span>
+                        </span>
+                      </div>
+                      <label for="delivery_option_{$carrier.id}" class="flex-auto delivery-option-2">
+                        <div class="flex flex-row flex-wrap items-center">
                           <div class="flex-initial w-24">
                             {$carrier.price}
                           </div>
                           <div class="flex-auto">
-                              {$carrier.name} {if isset($carrier.delay)}{$carrier.delay}{/if}
+                              {$carrier.name} {if isset($carrier.delay)} - {$carrier.delay}{/if}
                           </div>
                           {if $carrier.logo}
-                            <div class="flex-none ml-auto">
+                            <div class="flex-none ml-auto mr-6">
                                 <img src="{$carrier.logo}" alt="{$carrier.name}" class="h-10 w-auto max-w-none"/>
                             </div>
                           {/if}
