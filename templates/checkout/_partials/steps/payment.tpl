@@ -31,7 +31,7 @@
     {foreach from=$payment_options item="module_options"}
       {foreach from=$module_options item="option"}
         <div>
-          <div id="{$option.id}-container" class="bg-gray-100 flex flex-row flex-wrap mb-4 p-4 payment-option">
+          <div id="{$option.id}-container" class="bg-gray-100 flex flex-row mb-4 p-4 payment-option">
             {* This is the way an option should be selected when Javascript is enabled *}
             <span class="custom-radio float-xs-left">
               <input
@@ -52,7 +52,7 @@
                 </button>
             </form>
 
-            <label for="{$option.id}" class="flex flex-auto justify-between mb-0">
+            <label for="{$option.id}" class="flex flex-auto flex-wrap justify-between mb-0">
               <span>{$option.call_to_action_text}</span>
               {if $option.logo}
                 <img src="{$option.logo}">

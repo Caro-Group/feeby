@@ -1069,6 +1069,7 @@ body#checkout .custom-checkbox input[type="radio"] {
     height: 16px; }
     body#checkout .custom-checkbox input[type="checkbox"] + span .checkbox-checked,
     body#checkout .custom-checkbox input[type="radio"] + span .checkbox-checked {
+      position: absolute;
       font-size: 13px; }
 
 body#checkout section.checkout-step.-reachable.-complete h1 .done {
