@@ -35,6 +35,9 @@ module.exports = {
         gray: {
           default: '#F8F8F8',
         },
+        pink: {
+          650: '#DF1A5B',
+        },
       },
       width: {
         "side": "467px",
@@ -43,12 +46,6 @@ module.exports = {
       margin: {
         'miniature': '102px',
         'form': '20px',
-      },
-      colors: {
-        'main': '#DF1A5B',
-        gray: {
-          default: '#F8F8F8',
-        },
       },
       backgroundImage: {
         'newsletter-plane': "url('../img/newsletter1.svg')",

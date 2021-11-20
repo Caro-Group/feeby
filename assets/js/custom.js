@@ -1241,6 +1241,21 @@ $('body').on('click', "[data-checkout-back]",function(e){
 
 
 
+$(document).ready(function () {
+
+	$('.owl-customized .owl-theme').on('resize.owl.carousel', checkWidth)
+	
+	function checkWidth() {
+		if($(window).width() > 768){
+			$(".owl-customized").find('.owl-wrapper-outer').addClass("owl-disabled");
+			$(".owl-customized .owl-carousel").removeClass('owl-carousel owl-loaded');
+			$(".owl-customized").find('.owl-wrapper').children().unwrap();
+		}
+	}
+});
+
+
+
 
 
 
