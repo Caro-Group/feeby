@@ -1147,4 +1147,6 @@ section#checkout-delivery-step.-unreachable {
 
 #checkout-guest-form .lql-social-login {
     display: none!important;
+[disabled="disabled"]{
+    cursor: not-allowed;
 }

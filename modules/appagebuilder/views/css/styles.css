@@ -1214,7 +1214,6 @@ body#checkout section.checkout-step .add-address a {
   text-align: center; }
 
 .btn-outline,
-.btn,
 .btn-primary {
   border-radius: 0;
   background: #292929;
@@ -1227,12 +1226,13 @@ body#checkout section.checkout-step .add-address a {
   color: #fff;
   font-weight: 500; }
   .btn-outline:hover, .btn-outline:focus,
-  .btn:hover,
-  .btn:focus,
   .btn-primary:hover,
   .btn-primary:focus {
     background: #666;
     color: #fff; }
+
+
+
 
 .btn-primary:active:hover, .btn-primary:active:focus, .btn-primary:active.focus,
 .btn-primary.active:hover, .btn-primary.active:focus, .btn-primary.active.focus,
