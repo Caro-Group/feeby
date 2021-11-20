@@ -20,7 +20,7 @@
             <dd class="value">
               {if $feature.id_feature === '3' && $category->id_parent === '582'}
                 <a href="{$link->getCategoryLink($category->id_category, $category->link_rewrite)|escape:'html':'UTF-8'}">
-                  {$feature.value|escape:'htmlall'|nl2br nofilter}
+                  {$feature.value|escape:'htmlall'|nl2br nofilter} - {$category->name} ({l s='See more of this artist\'s works' d='Shop.Theme.Catalog'})
                 </a>
               {else}
                 {$feature.value|escape:'htmlall'|nl2br nofilter}
