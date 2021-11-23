@@ -34,6 +34,7 @@ module.exports = {
         "require": "#f00",
         gray: {
           default: '#F8F8F8',
+          main: '#232322',
         },
       },
       width: {
