@@ -1163,21 +1163,52 @@ $(window).load(function () {
 
 })(jQuery);
 
+//Swipers
+$(document).ready(function () {
+	
+	//Top bar swiper 
+	const swiper = new Swiper('.swiper', {
+		speed: 15000,
+		spaceBetween: 50,
+		loop: true,
+		autoplay: {
+			delay: 0,
+			disableOnInteraction: true,
+		},
+		allowTouchMove: false,
+	  });
 
-//Top bar swiper 
+	  
+	//Blog section
 
-const swiper = new Swiper('.swiper', {
-	speed: 9000,
-	spaceBetween: 100,
-	loop: true,
-	freeMode: true,
-	autoplay: {
-		delay: 0,
-		pauseOnMouseEnter: true,
-	},
-  });
+	const blogSection = document.querySelector('[data-js="wrapper-blog"]')
+	var postNum = 3; // Number of posts to appear   
+
+	fetch('https://feeby.pl/blog/wp-json/wp/v2/posts').then(response => response.json())
+	.then(function (data) {
+		for (let i = 0; i < postNum; i++) {
+			let imgurl = undefined;
+			imgurl = data[i].yoast_head_json.schema["@graph"][1].url;
+			
+			blogSection.insertAdjacentHTML('beforeend',`
+				<div class=swiper-slide>
+					<img class="" src="${imgurl}">
+				</div>
+			`)
+			
+		}
+		const swiper = new Swiper('.swiper-blog', {
+			speed: 300,
+			slidesPerView: 2,
+			spaceBetween: 50,
+			loop: true,
+		  });
+	});
 
 
+	  
+  
+});
 
 
 
