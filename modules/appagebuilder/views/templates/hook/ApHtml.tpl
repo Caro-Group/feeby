@@ -6,7 +6,7 @@
 * @description: ApPageBuilder is module help you can build content for your shop
 *}
 <!-- @file modules\appagebuilder\views\templates\hook\ApHtml -->
-{* w-max -mx-8 tablet:-mx-0 flex-shrink-0  tablet:my-2 *}
+{* w-max -mx-8 tablet:-mx-0 flex-shrink-0  tablet:my-2 p-20 pb-16 -bottom-12 tablet-wide:w-3/5 desktop:w-1/2 tablet-wide:absolute *}
 
 {if $hookName == 'displayNav1'}
 
