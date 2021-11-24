@@ -55,7 +55,8 @@ module.exports = {
        'small': '100px',
       },
       minWidth: {
-        'label': '173px'
+        'label': '173px',
+        'swiper-mobile':'500px',
       }
     },
   },

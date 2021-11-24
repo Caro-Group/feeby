@@ -6,7 +6,7 @@
 * @description: ApPageBuilder is module help you can build content for your shop
 *}
 <!-- @file modules\appagebuilder\views\templates\hook\ApBlockCarouselItem -->
-{* tablet:block border-1 border-2 border-gray-main border-main tablet:flex hover:border-main pb-10 *}
+{* tablet:block border-1 border-2 border-gray-main border-main tablet:flex hover:border-main pb-10 py-8 classes used in blog swiper section*}
 
 {if $page.page_name == 'index'}
 
@@ -20,7 +20,7 @@
 		<div>{$formAtts.descript|escape:'html':'UTF-8'}</div>
 	{/if}
 
-	<div class="swiper-blog overflow-hidden">
+	<div class="swiper-blog overflow-hidden min-w-swiper-mobile">
 		<div class="swiper-wrapper ml-4">
 		{$Num=array_chunk($formAtts.slides, $itemsperpage)}
 		{foreach from=$Num item=sliders name=val}
