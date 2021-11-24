@@ -21,6 +21,7 @@
 
 	<div class="swiper-blog">
 		<div class="swiper-wrapper">
+		{$Num=array_chunk($formAtts.slides, $itemsperpage)}
 		{foreach from=$Num item=sliders name=val}
 
 			<div class="swiper-slide">
