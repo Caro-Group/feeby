@@ -1239,51 +1239,44 @@ $('body').on('click', "[data-checkout-back]",function(e){
 
 })(jQuery);
 
-//Swipers
+
+
+//Top bar swiper 
 $(document).ready(function () {
-	
-	//Top bar swiper 
+
 	const swiper = new Swiper('.swiper', {
-		speed: 15000,
+		speed: 25000,
 		spaceBetween: 50,
 		loop: true,
 		autoplay: {
 			delay: 0,
-			disableOnInteraction: true,
 		},
 		allowTouchMove: false,
 	  });
-
 	  
-	//Blog section
-
-	const blogSection = document.querySelector('[data-js="wrapper-blog"]')
-	var postNum = 3; // Number of posts to appear   
-
-	fetch('https://feeby.pl/blog/wp-json/wp/v2/posts').then(response => response.json())
-	.then(function (data) {
-		for (let i = 0; i < postNum; i++) {
-			let imgurl = undefined;
-			imgurl = data[i].yoast_head_json.schema["@graph"][1].url;
-			
-			blogSection.insertAdjacentHTML('beforeend',`
-				<div class=swiper-slide>
-					<img class="" src="${imgurl}">
-				</div>
-			`)
-			
-		}
-		const swiper = new Swiper('.swiper-blog', {
-			speed: 300,
-			slidesPerView: 2,
-			spaceBetween: 50,
-			loop: true,
-		  });
+	const swiperBlog = new Swiper('.swiper-blog', {
+		speed: 300,
+		slidesPerView: 2,
+		spaceBetween: 50,
+		loop: true,
 	});
 
+});
 
-	  
-  
+
+
+
+$(document).ready(function () {
+
+	$('.owl-customized .owl-theme').on('resize.owl.carousel', checkWidth)
+	
+	function checkWidth() {
+		if($(window).width() > 768){
+			$(".owl-customized").find('.owl-wrapper-outer').addClass("owl-disabled");
+			$(".owl-customized .owl-carousel").removeClass('owl-carousel owl-loaded');
+			$(".owl-customized").find('.owl-wrapper').children().unwrap();
+		}
+	}
 });
 
 
