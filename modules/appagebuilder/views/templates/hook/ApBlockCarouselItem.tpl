@@ -6,6 +6,7 @@
 * @description: ApPageBuilder is module help you can build content for your shop
 *}
 <!-- @file modules\appagebuilder\views\templates\hook\ApBlockCarouselItem -->
+{* tablet:block border-1 border-2 border-gray-main border-main tablet:flex hover:border-main pb-10 *}
 
 {if $page.page_name == 'index'}
 
@@ -19,8 +20,8 @@
 		<div>{$formAtts.descript|escape:'html':'UTF-8'}</div>
 	{/if}
 
-	<div class="swiper-blog">
-		<div class="swiper-wrapper overflow-hidden">
+	<div class="swiper-blog overflow-hidden">
+		<div class="swiper-wrapper ml-4">
 		{$Num=array_chunk($formAtts.slides, $itemsperpage)}
 		{foreach from=$Num item=sliders name=val}
 
@@ -29,18 +30,19 @@
 
 				{if $slider.link}
 					<a title="{l s='%s' sprintf=[$slider.title] mod='appagebuilder'}" {if $formAtts.is_open}target="_blank"{/if} href="{$slider.link}{*full link can not escape*}">
+					<div class="slide-content">
 				{/if}
 				{if isset($slider.image) && !empty($slider.image)}
-					<img class="" src="{$slider.image|escape:'html':'UTF-8'}" alt="{if isset($slider.title)}{$slider.title|escape:'html':'UTF-8'}{/if}"/>
+					<img class="object-fit w-full h-4/5 phablet:h-3/4" src="{$slider.image|escape:'html':'UTF-8'}" alt="{if isset($slider.title)}{$slider.title|escape:'html':'UTF-8'}{/if}"/>
 				{else}
 					{if isset($slider.image_link) && !empty($slider.image_link)}
-						<img class="" src="{$slider.image_link|escape:'html':'UTF-8'}" alt="{if isset($slider.title)}{$slider.title|escape:'html':'UTF-8'}{/if}"/>
+						<img class="object-fit w-full h-4/5 phablet:h-3/4" src="{$slider.image_link|escape:'html':'UTF-8'}" alt="{if isset($slider.title)}{$slider.title|escape:'html':'UTF-8'}{/if}"/>
 					{/if}
 				{/if}
-				<div class="p-5 bg-white flex flex-col justify-between">
+				<div class="p-5 bg-white flex flex-col justify-between h-2/6 phablet:h-1/5">
 				
 					{if isset($slider.title) && !empty($slider.title)}
-						<h2 class="font-light">{$slider.title|escape:'html':'UTF-8' nofilter}</h2>
+						<h4 class="font-light">{$slider.title|escape:'html':'UTF-8' nofilter}</h4>
 					{/if}
 					{if isset($slider.sub_title) && !empty($slider.sub_title)}
 						<p class="uppercase hover:text-main transition">{$slider.sub_title|escape:'html':'UTF-8' nofilter}<i class="ti-arrow-right ml-2"></i></p>
@@ -50,6 +52,7 @@
 					<div class="descript">{$slider.descript nofilter}{* HTML form , no escape necessary *}</div>
 				{/if}
 				{if $slider.link}
+					</div>
 					</a>
 				{/if}
 
@@ -59,6 +62,12 @@
 		{/foreach}
 		</div>
 	</div>
+
+	<style>
+		.slide-content{
+			aspect-ratio: 1;
+		}
+	</style>
 
 
 

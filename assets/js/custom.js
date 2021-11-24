@@ -1258,7 +1258,11 @@ $(document).ready(function () {
 		speed: 300,
 		slidesPerView: 2,
 		spaceBetween: 20,
-		loop: false, //set to false only for testing purposes 
+		loop: true,
+		navigation: {
+			nextEl: '.swiper_blog-button-next',
+			prevEl: '.swiper_blog-button-prev',
+		  },
 	});
 
 });
