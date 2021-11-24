@@ -1161,53 +1161,122 @@ $(window).load(function () {
 		}
 });
 
+if( $('#checkout-guest-form [data-field=\"password\"]').value !== '' && prestashop.customer.is_logged) {
+	prestashop.customer.is_guest_logged = true;
+}
+$('body').on('change', "#checkout-guest-form [data-field=\"password\"]", function(e){ 	
+	if( this.value !== '' && prestashop.customer.is_logged) {
+    prestashop.customer.is_guest_logged = true;
+  }
+});
+
+
+$('body').on('change', '#delivery_message', function() {
+	$.post($('#js-summary').attr('[data-url-update]'), $('#js-summary').serialize(), null, 'json');
+});
+
+$('body').on('click', '#payment-confirmation button', function(){
+	$.post($('#js-summary').attr('[data-url-update]'), $('#js-summary').serialize(), null, 'json');
+});
+
+
+
+$('body').on('click', "[href=\"#checkout-guest-form\"], [href=\"#checkout-register-form\"]", function(e){ 
+	e.preventDefault();
+	$('[data-login-panel]').hide();
+});
+
+$('body').on('click', "[href=\"#checkout-register-form\"]", function(e){ 
+	e.preventDefault();
+	if(!prestashop.customer.is_guest_logged){
+		$('#checkout-guest-form [data-field=\"password\"]').show();
+	}
+});
+
+$('body').on('click', "[href=\"#checkout-login-panel\"]", function(e){ 
+	e.preventDefault();
+	$('[data-login-panel]').show();
+});
+
+$('body').on('click', "[href=\"#checkout-guest-form\"]", function(e){ 
+	e.preventDefault();
+	$('#checkout-guest-form [data-field=\"password\"]').hide();
+});
+
+$('body').on('click', ".js-edit-addresses", (event) => {
+	event.stopPropagation();
+	$('#checkout-delivery-step').trigger('click');
+	prestashop.emit('editAddress');
+});
+
+
+if($('#checkout-payment-step').find('[name=\"payment-option\"]:checked').length){
+	$('[data-checkout-payment]').attr('disabled',false);
+}
+
+$('body').on('change', "[name=\"payment-option\"]", function(e){ 
+	if($('#checkout-payment-step').find('[name=\"payment-option\"]:checked').length){
+		$('[data-checkout-payment]').attr('disabled',false);
+	}	
+});
+
+$('body').on('click', "[data-checkout-payment]", function(e){ 
+	e.preventDefault();
+	var formButton = $("#checkout-payment-step").find("input[name='payment-option']:checked").parent().parent().find('form button');
+	if(formButton.length){
+		$("#checkout-payment-step").find("input[name='payment-option']:checked").parent().parent().find('form button').trigger('click');
+	} else {
+		$("#checkout-summary-step").trigger('click');
+	}
+});
+
+
+$('body').on('click', "[data-checkout-back]",function(e){ 
+	e.preventDefault();
+	$($(this).data('checkoutBack')).trigger('click');
+	window.scrollTo(0, 0);
+});
+
 })(jQuery);
 
-//Swipers
+
+
+//Top bar swiper 
 $(document).ready(function () {
-	
-	//Top bar swiper 
+
 	const swiper = new Swiper('.swiper', {
-		speed: 15000,
+		speed: 25000,
 		spaceBetween: 50,
 		loop: true,
 		autoplay: {
 			delay: 0,
-			disableOnInteraction: true,
 		},
 		allowTouchMove: false,
 	  });
-
 	  
-	//Blog section
-
-	const blogSection = document.querySelector('[data-js="wrapper-blog"]')
-	var postNum = 3; // Number of posts to appear   
-
-	fetch('https://feeby.pl/blog/wp-json/wp/v2/posts').then(response => response.json())
-	.then(function (data) {
-		for (let i = 0; i < postNum; i++) {
-			let imgurl = undefined;
-			imgurl = data[i].yoast_head_json.schema["@graph"][1].url;
-			
-			blogSection.insertAdjacentHTML('beforeend',`
-				<div class=swiper-slide>
-					<img class="" src="${imgurl}">
-				</div>
-			`)
-			
-		}
-		const swiper = new Swiper('.swiper-blog', {
-			speed: 300,
-			slidesPerView: 2,
-			spaceBetween: 50,
-			loop: true,
-		  });
+	const swiperBlog = new Swiper('.swiper-blog', {
+		speed: 300,
+		slidesPerView: 2,
+		spaceBetween: 50,
+		loop: true,
 	});
 
+});
 
-	  
-  
+
+
+
+$(document).ready(function () {
+
+	$('.owl-customized .owl-theme').on('resize.owl.carousel', checkWidth)
+	
+	function checkWidth() {
+		if($(window).width() > 768){
+			$(".owl-customized").find('.owl-wrapper-outer').addClass("owl-disabled");
+			$(".owl-customized .owl-carousel").removeClass('owl-carousel owl-loaded');
+			$(".owl-customized").find('.owl-wrapper').children().unwrap();
+		}
+	}
 });
 
 
