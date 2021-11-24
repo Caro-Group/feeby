@@ -1257,8 +1257,8 @@ $(document).ready(function () {
 	const swiperBlog = new Swiper('.swiper-blog', {
 		speed: 300,
 		slidesPerView: 2,
-		spaceBetween: 50,
-		loop: true,
+		spaceBetween: 20,
+		loop: false, //set to false only for testing purposes 
 	});
 
 });

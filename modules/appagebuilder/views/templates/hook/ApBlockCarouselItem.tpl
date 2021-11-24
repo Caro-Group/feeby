@@ -20,7 +20,7 @@
 	{/if}
 
 	<div class="swiper-blog">
-		<div class="swiper-wrapper">
+		<div class="swiper-wrapper overflow-hidden">
 		{$Num=array_chunk($formAtts.slides, $itemsperpage)}
 		{foreach from=$Num item=sliders name=val}
 
@@ -37,12 +37,15 @@
 						<img class="" src="{$slider.image_link|escape:'html':'UTF-8'}" alt="{if isset($slider.title)}{$slider.title|escape:'html':'UTF-8'}{/if}"/>
 					{/if}
 				{/if}
-				{if isset($slider.title) && !empty($slider.title)}
-					<div>{$slider.title|escape:'html':'UTF-8' nofilter}</div>
-				{/if}
-				{if isset($slider.sub_title) && !empty($slider.sub_title)}
-					<p class="sub-title">{$slider.sub_title|escape:'html':'UTF-8' nofilter}</p>
-				{/if}
+				<div class="p-5 bg-white flex flex-col justify-between">
+				
+					{if isset($slider.title) && !empty($slider.title)}
+						<h2 class="font-light">{$slider.title|escape:'html':'UTF-8' nofilter}</h2>
+					{/if}
+					{if isset($slider.sub_title) && !empty($slider.sub_title)}
+						<p class="uppercase hover:text-main transition">{$slider.sub_title|escape:'html':'UTF-8' nofilter}<i class="ti-arrow-right ml-2"></i></p>
+					{/if}
+				</div>
 				{if isset($slider.descript) && !empty($slider.descript)}
 					<div class="descript">{$slider.descript nofilter}{* HTML form , no escape necessary *}</div>
 				{/if}
