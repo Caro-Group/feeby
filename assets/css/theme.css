@@ -16937,8 +16937,7 @@ body#category .product_list.grid .ajax_block_product {
 
 .plist-dsimple .thumbnail-container .quick-view i {
   display: none; }
-.plist-dsimple .thumbnail-container .btn-product {
-  position: relative; }
+
   .plist-dsimple .thumbnail-container .btn-product .cssload-speeding-wheel {
     position: absolute;
     top: 0;
@@ -17294,29 +17293,6 @@ body#category .product_list.grid .ajax_block_product {
   max-width: 100%; }
   .plist-dsimple .thumbnail-container .product-image > .wishlist .dropdown-menu .dropdown-item {
     white-space: normal; }
-.plist-dsimple .thumbnail-container .product-image > .wishlist .leo-wishlist-button {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  width: 44px;
-  height: 44px;
-  line-height: 44px;
-  padding: 0;
-  z-index: 9;
-  background: rgba(255, 255, 255, 0.5);
-  color: #333;
-  border-radius: 50%;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
-  @media (max-width: 991px) {
-    .plist-dsimple .thumbnail-container .product-image > .wishlist .leo-wishlist-button {
-      top: 10px;
-      right: 10px;
-      width: 34px;
-      height: 34px;
-      line-height: 34px; } }
   .plist-dsimple .thumbnail-container .product-image > .wishlist .leo-wishlist-button i {
     display: block;
     margin: auto;
