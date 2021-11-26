@@ -1165,7 +1165,26 @@ $(window).load(function () {
 
 
 
-
-
-
+$(document).ready(function () {
+	
+  
+	const swiperPopular = new Swiper('.swiper-popular', {
+		speed: 300,
+	  	slidesPerView: 2,
+	  	spaceBetween: 20,
+	  	loop: true,
+		pagination: {
+			el: '.swiper-pagination',
+		},
+	  	breakpoints: {
+			576: {
+				slidesPerView: 3,
+			},
+			922: {
+				slidesPerView: 4,
+			},
+	  	}
+	});
+	
+});
 
