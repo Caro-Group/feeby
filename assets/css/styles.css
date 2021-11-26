@@ -3,3 +3,44 @@
 @tailwind components;
 
 @tailwind utilities;
+
+.plist-dsimple .leo-wishlist-button.btn-primary{
+    @apply absolute right-0 z-10 top-3 rounded-l-md bg-white shadow-md p-2
+}
+
+.plist-dsimple .leo-wishlist-bt-content{
+    @apply flex
+}
+
+.plist-dsimple .leo-wishlist-bt-content{
+    @apply flex
+}
+
+.wishlist-svg{
+    @apply w-6 fill-current text-gray-main hover:text-main transition
+}
+
+.added .wishlist-svg{
+    @apply opacity-0 
+}
+
+.wishlist-svg-full{
+    @apply w-6 opacity-0 transition
+}
+
+.added .wishlist-svg-full{
+    @apply opacity-100 
+}
+
+
+.swiper-pagination{
+    @apply hidden tablet:block
+}
+
+.swiper-initialized .swiper-pagination-bullet{
+    @apply bg-transparent border border-solid border-gray-500 transition w-3 h-3
+}
+
+.swiper-initialized .swiper-pagination-bullet-active{
+    @apply bg-black border-black transform scale-125
+}

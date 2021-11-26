@@ -6,7 +6,7 @@
 * @description: ApPageBuilder is module help you can build content for your shop
 *}
 <!-- @file modules\appagebuilder\views\templates\hook\ProductCarousel -->
-
+{* min-w-swiper-mobile *}
 
 {if $page.page_name=='index'}
 
@@ -15,7 +15,7 @@
     <div class="swiper-wrapper plist-dsimple">
         {$mproducts=array_chunk($products,$itemsperpage)}
         {foreach from=$products item="product" name=products key="position"}
-            <div class="swiper-slide">
+            <div class="swiper-slide overflow-hidden">
                 {if isset($product_item_path)}
                     {include file="$product_item_path" position=$position}
                 {/if}
