@@ -6,7 +6,7 @@
 * @description: ApPageBuilder is module help you can build content for your shop
 *}
 <!-- @file modules\appagebuilder\views\templates\hook\ApBlockCarouselItem -->
-{* tablet:block border-1 border-2 border-gray-main tablet:flex hover:bg-black hover:text-white pb-10 py-8  classes used in blog swiper section*}
+{* tablet:block border-1 border-2 border-gray-main tablet:flex hover:bg-gray-main hover:text-white pb-10 py-8  classes used in blog swiper section*}
 
 {if $page.page_name == 'index'}
 
