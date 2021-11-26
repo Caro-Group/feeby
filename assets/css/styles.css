@@ -111,4 +111,8 @@
     @apply bg-black border-black transform scale-125
 }
 
+.plist-dsimple .btn-primary:active:hover{
+    @apply bg-gray-default
+}
+
 }
