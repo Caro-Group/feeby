@@ -1284,42 +1284,29 @@ $(document).ready(function () {
 });
 
 
-//Top bar swiper 
-$(document).ready(function () {
-
-	const swiper = new Swiper('.swiper', {
-		speed: 25000,
-		spaceBetween: 50,
-		loop: true,
-		autoplay: {
-			delay: 0,
-		},
-		allowTouchMove: false,
-	  });
-
-});
-
-
-
 
 
 
 $(document).ready(function () {
-
-	$('.owl-customized .owl-theme').on('resize.owl.carousel', checkWidth)
 	
-	function checkWidth() {
-		if($(window).width() > 768){
-			$(".owl-customized").find('.owl-wrapper-outer').addClass("owl-disabled");
-			$(".owl-customized .owl-carousel").removeClass('owl-carousel owl-loaded');
-			$(".owl-customized").find('.owl-wrapper').children().unwrap();
-		}
-	}
+  
+	const swiperPopular = new Swiper('.swiper-popular', {
+		speed: 300,
+	  	slidesPerView: 2,
+	  	spaceBetween: 20,
+	  	loop: true,
+		pagination: {
+			el: '.swiper-pagination',
+		},
+	  	breakpoints: {
+			576: {
+				slidesPerView: 3,
+			},
+			922: {
+				slidesPerView: 4,
+			},
+	  	}
+	});
+	
 });
-
-
-
-
-
-
 
