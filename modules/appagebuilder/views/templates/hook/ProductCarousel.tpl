@@ -12,7 +12,7 @@
 
 <div class="swiper-popular overflow-hidden min-w-swiper-mobile">
 	{($apLiveEdit)?$apLiveEdit:'' nofilter}{* HTML form , no escape necessary *}
-    <div class="swiper-wrapper">
+    <div class="swiper-wrapper plist-dsimple">
         {$mproducts=array_chunk($products,$itemsperpage)}
         {foreach from=$products item="product" name=products key="position"}
             <div class="swiper-slide">
