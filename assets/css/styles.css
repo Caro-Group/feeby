@@ -106,3 +106,5 @@
 .swiper-initialized .swiper-pagination-bullet-active{
     @apply bg-black border-black transform scale-125
 }
+
+}
