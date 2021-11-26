@@ -1297,6 +1297,7 @@ $(document).ready(function () {
 	  	loop: true,
 		pagination: {
 			el: '.swiper-pagination',
+			clickable: true,
 		},
 	  	breakpoints: {
 			576: {

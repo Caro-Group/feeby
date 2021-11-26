@@ -12,15 +12,13 @@
 
 <div class="swiper-popular overflow-hidden min-w-swiper-mobile">
 	{($apLiveEdit)?$apLiveEdit:'' nofilter}{* HTML form , no escape necessary *}
-    <div class="swiper-wrapper">
+    <div class="swiper-wrapper plist-dsimple">
         {$mproducts=array_chunk($products,$itemsperpage)}
-        {foreach from=$mproducts item=products name=mypLoop}
-            <div class="swiper-slide {if $smarty.foreach.mypLoop.first}active{/if}">
-                {foreach from=$products item="product" name=products key="position"}
-                        {if isset($product_item_path)}
-                            {include file="$product_item_path" position=$position}
-                        {/if}
-                {/foreach}
+        {foreach from=$products item="product" name=products key="position"}
+            <div class="swiper-slide">
+                {if isset($product_item_path)}
+                    {include file="$product_item_path" position=$position}
+                {/if}
             </div>		
         {/foreach}
     </div>
