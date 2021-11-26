@@ -6,7 +6,7 @@
 * @description: ApPageBuilder is module help you can build content for your shop
 *}
 <!-- @file modules\appagebuilder\views\templates\hook\ProductCarousel -->
-{* min-w-swiper-mobile *}
+{* min-w-swiper-mobile w-full mb-30 h-8 tablet:h-12 *}
 
 {if $page.page_name=='index'}
 
