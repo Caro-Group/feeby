@@ -33,7 +33,7 @@
 				{if $product.cover}
 					<a href="{$product.canonical_url}">
 						<img
-							class="img-fluid object-cover"
+							class="img-fluid object-cover w-full"
 							width="235" height="303"
 							src = "{$product.cover.bySize.home_default.url}"
 							alt = "{if !empty($product.cover.legend)}{$product.cover.legend}{else}{$product.name|truncate:30:'...'}{/if}"
@@ -44,7 +44,7 @@
 				{else}
 					<a href="{$product.canonical_url}">
 				            <img
-							class="object-cover"
+							class="object-cover w-full"
 							width="235" height="303"  
 							src="{$urls.no_picture_image.bySize.home_default.url}" 
 							alt="No image available"
@@ -56,9 +56,9 @@
 			
 			<!-- @todo: use include file='catalog/_partials/product-flags.tpl'} -->
 			{block name='product_flags'}
-				<ul class="product-flags flex flex-wrap text-white mr-12">
+				<ul class="product-flags flex flex-wrap text-white mt-1 mr-12">
 					{foreach from=$product.flags item=flag}
-						<li class="bg-main leading-5 mr-1 px-2 mb-1 rounded-full text-center 
+						<li class="leading-5 mr-1 px-2 mb-1 rounded-full text-center 
 							{if $flag.type == 'discount' }
 								bg-main 
 							{elseif $flag.type == 'new'}
