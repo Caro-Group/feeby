@@ -67,7 +67,7 @@
     }
 
 .leo-wishlist-button.btn-primary{
-    @apply absolute right-0 z-10 top-3 w-6 h-6 tablet:w-8 tablet:h-8 rounded-l-md bg-white shadow-md p-2
+    @apply absolute right-0 z-10 top-3 w-6 h-6 tablet:w-8 tablet:h-8 rounded-l-md bg-white shadow-md p-2 group
 }
 
 .leo-wishlist-button.btn-primary.active{
@@ -83,19 +83,7 @@
 }
 
 .wishlist-svg{
-    @apply w-6 tablet:w-7 z-20 fill-current text-gray-main hover:text-main transition
-}
-
-.added .wishlist-svg{
-    @apply opacity-0 
-}
-
-.wishlist-svg-full{
-    @apply w-6 tablet:w-7 z-10 opacity-0 transition absolute
-}
-
-.added .wishlist-svg-full{
-    @apply opacity-100 
+    @apply z-20 fill-current text-gray-main group-hover:text-main transition hidden
 }
 
 
@@ -111,7 +99,7 @@
     @apply bg-black border-black transform scale-125
 }
 
-.swiper-populat .btn-primary:active:hover{
+.swiper-popular .btn-primary:active:hover{
     @apply bg-gray-default
 }
 
