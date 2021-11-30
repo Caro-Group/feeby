@@ -40,9 +40,6 @@
 							data-full-size-image-url = "{$product.cover.large.url}"
 							loading="lazy"
 						/> 
-						{if isset($cfg_product_one_img) && $cfg_product_one_img}
-							<span class="product-additional" data-idproduct="{$product.id_product}"></span>
-						{/if}
 					</a>
 				{else}
 					<a href="{$product.canonical_url}">
@@ -53,18 +50,29 @@
 							alt="No image available"
 							loading="lazy" 
 							/>
-					    {if isset($cfg_product_one_img) && $cfg_product_one_img}
-					    	<span class="product-additional" data-idproduct="{$product.id_product}"></span>
-					    {/if}
 				        </a>
 				{/if}	
 			{/block}
 			
 			<!-- @todo: use include file='catalog/_partials/product-flags.tpl'} -->
 			{block name='product_flags'}
-				<ul class="product-flags flex text-white">
+				<ul class="product-flags flex text-white m-12">
 					{foreach from=$product.flags item=flag}
-						<li class="bg-main leading-5 mr-1 px-2 rounded-full text-center {$flag.type}">{$flag.label}</li>
+						<li class="bg-main leading-5 mr-1 px-2 mb-1 rounded-full text-center 
+							{if $flag.type = 'discount' }
+								bg-main 
+							{elseif $flag.type = 'new'}
+								bg-gray-main
+							{else}
+								bg-gray-400	
+							{/if}">
+
+							{if $flag.type = 'discount'}
+								PROMOCJA
+							{else}	
+								{$flag.label}
+							{/if}
+							</li>
 					{/foreach}
 				</ul>
 			{/block}
@@ -79,7 +87,7 @@
 			{hook h='displayLeoCartQuantity' product=$product}
 			
 			{block name='product_name'}
-		         <h3 class="text-sm text-gray-main font-weight-normal" itemprop="name"><a href="{$product.canonical_url}">{$product.name|truncate:30:'...'}</a></h3>
+		         <h3 class="text-sm text-gray-main font-weight-normal" itemprop="name"><a href="{$product.canonical_url}">{$product.name}</a></h3>
 			{/block}
  
 				{block name='product_price_and_shipping'}
@@ -98,7 +106,7 @@
 							{if $product.has_discount}
 								{hook h='displayProductPriceBlock' product=$product type="old_price"}
 								<span class="sr-only">{l s='Regular price' d='Shop.Theme.Catalog'}</span>
-								<span class="ml-2 line-through text-gray-200 text-sm">{$product.regular_price}</span>
+								<span class="ml-2 line-through text-gray-300 text-sm">{$product.regular_price}</span>
 								{* {if $product.discount_type === 'percentage'} dać jako alt w flag
 									<span class="discount-percentage discount-product">{$product.discount_percentage}</span>
 								{elseif $product.discount_type === 'amount'}	
