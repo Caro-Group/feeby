@@ -36,6 +36,9 @@ module.exports = {
           default: '#F8F8F8',
           main: '#232322',
         },
+        pink: {
+          650: '#DF1A5B',
+        },
       },
       width: {
         "side": "467px",
