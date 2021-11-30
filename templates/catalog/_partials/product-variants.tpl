@@ -133,7 +133,7 @@ margn-bottom: 10px;
 	{if $group.group_name == "Rozmiar"}
 		<span style="font-size: 16px;line-height: 22px;">{l s='See' d='Shop.Theme.Actions'} <a style="text-decoration: underline;font-weight: 500;" href="/tabela-rozmiarow" target="_blank">{l s='table size' d='Shop.Theme.Actions'}</a></span>
 	{elseif $group.group_name == "Typ"}
-    {if $group_attribute.name|strstr:"Parawan"}
+    {if $breadcrumb["count"] > 0 && $breadcrumb["links"][1]["title"]|strstr:"Parawany"}
       <span style="font-size: 16px;line-height: 22px;">{l s='Learn more about the' d='Shop.Theme.Actions'} <a style="text-decoration: underline;font-weight: 500;" href="/nasze-parawany" target="_blank">{l s='manufacturing technology' d='Shop.Theme.Actions'}</a></span>
     {else}
 		  <span style="font-size: 16px;line-height: 22px;">{l s='Learn more about the' d='Shop.Theme.Actions'} <a style="text-decoration: underline;font-weight: 500;" href="/technologia-wykonania" target="_blank">{l s='manufacturing technology' d='Shop.Theme.Actions'}</a></span>
