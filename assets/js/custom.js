@@ -967,14 +967,7 @@ function initSlickProductModal() {
 
 
 //DONGND: fix base prestashop
-$(document).ready(function () {
-	//DONGND: remove css inline of label
-	$('.product-flag').removeAttr('style');
-	prestashop.on('updateProductList', function () {
-		//DONGND: remove css inline of label
-		$('.product-flag').removeAttr('style');
-	});
-})
+
 //Fix translate button choose file to upload: change "Choose file" to choosefile_text
 //Fix filter (category page) does not work on IE change dataset.searchUrl to getAttribute('data-search-url')
 
@@ -1176,6 +1169,8 @@ $(document).ready(function () {
 		pagination: {
 			el: '.swiper-pagination',
 			clickable: true,
+			dynamicBullets: true,
+			dynamicMainBullets: 5,
 		},
 	  	breakpoints: {
 			576: {

@@ -23,28 +23,35 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 {block name='product_miniature_item'}
-<article class="plist-dsimple product-miniature js-product-miniature" data-id-product="{$product.id_product}" data-id-product-attribute="{$product.id_product_attribute}" itemscope itemtype="http://schema.org/Product">
-	<div class="thumbnail-container">
-		<div class="product-image">
+<article class="product-miniature js-product-miniature" data-id-product="{$product.id_product}" data-id-product-attribute="{$product.id_product_attribute}" itemscope itemtype="http://schema.org/Product">
+	<div>
+		<div>
 			{block name='product_thumbnail'}
 				{if isset($cfg_product_list_image) && $cfg_product_list_image}
 					<div class="leo-more-info" data-idproduct="{$product.id_product}"></div>
 				{/if}
 				{if $product.cover}
-					<a href="{$product.canonical_url}" class="thumbnail product-thumbnail">
+					<a href="{$product.canonical_url}">
 						<img
-							class="lazy img-fluid"
+							class="img-fluid"
+							width="235" height="303"
 							data-src = "{$product.cover.bySize.home_default.url}"
 							alt = "{if !empty($product.cover.legend)}{$product.cover.legend}{else}{$product.name|truncate:30:'...'}{/if}"
 							data-full-size-image-url = "{$product.cover.large.url}"
+							loading="lazy"
 						/> 
 						{if isset($cfg_product_one_img) && $cfg_product_one_img}
 							<span class="product-additional" data-idproduct="{$product.id_product}"></span>
 						{/if}
 					</a>
 				{else}
-					<a href="{$product.canonical_url}" class="thumbnail product-thumbnail">
-				            <img class="lazy" data-src = "{$urls.no_picture_image.bySize.home_default.url}" />
+					<a href="{$product.canonical_url}">
+				            <img
+							width="235" height="303"  
+							data-src="{$urls.no_picture_image.bySize.home_default.url}" 
+							alt="No image available"
+							loading="lazy" 
+							/>
 					    {if isset($cfg_product_one_img) && $cfg_product_one_img}
 					    	<span class="product-additional" data-idproduct="{$product.id_product}"></span>
 					    {/if}
@@ -54,9 +61,9 @@
 			
 			<!-- @todo: use include file='catalog/_partials/product-flags.tpl'} -->
 			{block name='product_flags'}
-				<ul class="product-flags">
+				<ul class="product-flags flex text-white">
 					{foreach from=$product.flags item=flag}
-						<li class="product-flag {$flag.type}">{$flag.label}</li>
+						<li class="bg-main leading-8 mr-1 px-1 rounded-full w-16 text-center {$flag.type}">{$flag.label}</li>
 					{/foreach}
 				</ul>
 			{/block}
@@ -78,41 +85,42 @@
 					</div>
 				{/block}
 				{hook h='displayLeoCartButton' product=$product}
-				{hook h='displayLeoCompareButton' product=$product}
 				{hook h='displayLeoWishlistButton' product=$product}
 			</div>
 		</div>
-		<div class="product-meta"> 
+		<div class="product-meta px-6 pt-0"> 
 
 			{hook h='displayLeoCartAttribute' product=$product}
 			{hook h='displayLeoCartQuantity' product=$product}
 			
 			{block name='product_name'}
-		         <h3 class="h3 product-title" itemprop="name"><a href="{$product.canonical_url}">{$product.name|truncate:30:'...'}</a></h3>
+		         <h3 class="text-base" itemprop="name"><a href="{$product.canonical_url}">{$product.name|truncate:30:'...'}</a></h3>
 			{/block}
  
 				{block name='product_price_and_shipping'}
 					{if $product.show_price}
-            			<div class="product-price-and-shipping">
-							{if $product.has_discount}
-								{hook h='displayProductPriceBlock' product=$product type="old_price"}
-								<span class="sr-only">{l s='Regular price' d='Shop.Theme.Catalog'}</span>
-								<span class="regular-price">{$product.regular_price}</span>
-								{if $product.discount_type === 'percentage'}
-									<span class="discount-percentage discount-product">{$product.discount_percentage}</span>
-								{elseif $product.discount_type === 'amount'}
-									<span class="discount-amount discount-product">{$product.discount_amount_to_display}</span>
-								{/if}
-							{/if}
+            			<div>
 
 							{hook h='displayProductPriceBlock' product=$product type="before_price"}
 
 							<span class="sr-only">{l s='Price' d='Shop.Theme.Catalog'}</span>
-							<span itemprop="price" class="price">{$product.price}</span>
+							<span itemprop="price" class=" {if $product.has_discount} text-main {else} text-gray-main {/if} text-xl font-bold">{$product.price}</span>
 
 							{hook h='displayProductPriceBlock' product=$product type='unit_price'}
 
 							{hook h='displayProductPriceBlock' product=$product type='weight'}
+
+							{if $product.has_discount}
+								{hook h='displayProductPriceBlock' product=$product type="old_price"}
+								<span class="sr-only">{l s='Regular price' d='Shop.Theme.Catalog'}</span>
+								<span class="line-through text-gray-default text-base">{$product.regular_price}</span>
+								{* {if $product.discount_type === 'percentage'} dać jako alt w flag
+									<span class="discount-percentage discount-product">{$product.discount_percentage}</span>
+								{elseif $product.discount_type === 'amount'}	
+									<span class="discount-amount discount-product">{$product.discount_amount_to_display}</span>
+								{/if} *}
+							{/if}
+
 						</div>
 					{/if}
 				{/block}
