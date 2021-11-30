@@ -22,21 +22,27 @@ var wishlist_product_state_class = {
 };
 
 function WishlistIconState(id,state) {
+	var wishlist_product_icon_empty = $($(wishlist_product_btn)[id]).children()[0];
+	var wishlist_product_icon_full = $($(wishlist_product_btn)[id]).children()[1];
+
+	$(wishlist_product_icon_empty).removeClass();
+	$(wishlist_product_icon_full).removeClass();
+
 	switch (state) {
 		case 1:
-			$($(wishlist_product_btn)[id]).children()[0].addClass(wishlist_product_state_class.default[0]);
-			$($(wishlist_product_btn)[id]).children()[1].addClass(wishlist_product_state_class.default[1]);
+			$(wishlist_product_icon_empty).addClass(wishlist_product_state_class.default[0]);
+			$(wishlist_product_icon_full).addClass(wishlist_product_state_class.default[1]);
 			
 			break;
 	
 		case 2:
-			$($(wishlist_product_btn)[id]).children()[0].addClass(wishlist_product_state_class.loading[0]);
-			$($(wishlist_product_btn)[id]).children()[1].addClass(wishlist_product_state_class.loading[1]);
+			$(wishlist_product_icon_empty).addClass(wishlist_product_state_class.loading[0]);
+			$(wishlist_product_icon_full).addClass(wishlist_product_state_class.loading[1]);
 			
 			break;
 		case 2:
-			$($(wishlist_product_btn)[id]).children()[0].addClass(wishlist_product_state_class.active[0]);
-			$($(wishlist_product_btn)[id]).children()[1].addClass(wishlist_product_state_class.active[1]);
+			$(wishlist_product_icon_empty).addClass(wishlist_product_state_class.active[0]);
+			$(wishlist_product_icon_full).addClass(wishlist_product_state_class.active[1]);
 			
 			break;
 	}

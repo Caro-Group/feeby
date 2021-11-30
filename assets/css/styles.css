@@ -83,7 +83,7 @@
 }
 
 .wishlist-svg{
-    @apply z-20 fill-current text-gray-main group-hover:text-main transition hidden
+    @apply z-20 fill-current text-gray-main group-hover:text-main transition
 }
 
 
