@@ -146,7 +146,7 @@ function LeoWishlistButtonAction()
 {
 	if (!$('.leo-wishlist-button').hasClass('show-list'))
 	{
-		$('.leo-wishlist-button').click(function(){
+		$('body').on('click','.leo-wishlist-button',function(){
 			if (!$('.leo-wishlist-button.active').length)
 			{			
 				var id_product = $(this).data('id-product');

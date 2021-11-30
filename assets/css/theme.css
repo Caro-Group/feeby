@@ -17306,7 +17306,7 @@ body#category .product_list.grid .ajax_block_product {
       font-family: "FontAwesome";
       font-size: 14px;
       color: #000; }
-  .plist-dsimple .thumbnail-container .product-image > .wishlist .leo-wishlist-button .name-btn-product {
+  .wishlist .leo-wishlist-button .name-btn-product {
     position: absolute;
     top: 50%;
     right: 100%;
@@ -17326,12 +17326,12 @@ body#category .product_list.grid .ajax_block_product {
     font-weight: 300;
     border-radius: 11px;
     pointer-events: none; }
-  .plist-dsimple .thumbnail-container .product-image > .wishlist .leo-wishlist-button:hover i:before {
+  .wishlist .leo-wishlist-button:hover i:before {
     color: #e0525c; }
-  .plist-dsimple .thumbnail-container .product-image > .wishlist .leo-wishlist-button:hover .name-btn-product {
+  .wishlist .leo-wishlist-button:hover .name-btn-product {
     opacity: 1;
     visibility: visible; }
-  .plist-dsimple .thumbnail-container .product-image > .wishlist .leo-wishlist-button.added i:before {
+  .wishlist .leo-wishlist-button.added i:before {
     content: "\f004";
     color: #e0525c; }
 .plist-dsimple .thumbnail-container .product-flags li.product-flag span {

@@ -33,9 +33,9 @@
 				{if $product.cover}
 					<a href="{$product.canonical_url}">
 						<img
-							class="img-fluid"
+							class="img-fluid object-cover"
 							width="235" height="303"
-							data-src = "{$product.cover.bySize.home_default.url}"
+							src = "{$product.cover.bySize.home_default.url}"
 							alt = "{if !empty($product.cover.legend)}{$product.cover.legend}{else}{$product.name|truncate:30:'...'}{/if}"
 							data-full-size-image-url = "{$product.cover.large.url}"
 							loading="lazy"
@@ -47,8 +47,9 @@
 				{else}
 					<a href="{$product.canonical_url}">
 				            <img
+							class="object-cover"
 							width="235" height="303"  
-							data-src="{$urls.no_picture_image.bySize.home_default.url}" 
+							src="{$urls.no_picture_image.bySize.home_default.url}" 
 							alt="No image available"
 							loading="lazy" 
 							/>
@@ -63,27 +64,11 @@
 			{block name='product_flags'}
 				<ul class="product-flags flex text-white">
 					{foreach from=$product.flags item=flag}
-						<li class="bg-main leading-8 mr-1 px-1 rounded-full w-16 text-center {$flag.type}">{$flag.label}</li>
+						<li class="bg-main leading-5 mr-1 px-2 rounded-full text-center {$flag.type}">{$flag.label}</li>
 					{/foreach}
 				</ul>
 			{/block}
-			<div class="pro3-btn">
-				{block name='quick_view'}
-					<div class="quickview hidden-sm-down">
-						<a
-						  href="#"
-						  class="quick-view"
-						  data-link-action="quickview"
-						  title=""
-						>
-							<span class="leo-quickview-bt-loading cssload-speeding-wheel"></span>
-							<span class="leo-quickview-bt-content">
-								<i class="material-icons search">search</i>
-								<span class="name-btn-product">{l s='Quick view' d='Shop.Theme.Actions'}</span>
-							</span>
-						</a>
-					</div>
-				{/block}
+			<div>
 				{hook h='displayLeoCartButton' product=$product}
 				{hook h='displayLeoWishlistButton' product=$product}
 			</div>
@@ -94,7 +79,7 @@
 			{hook h='displayLeoCartQuantity' product=$product}
 			
 			{block name='product_name'}
-		         <h3 class="text-base" itemprop="name"><a href="{$product.canonical_url}">{$product.name|truncate:30:'...'}</a></h3>
+		         <h3 class="text-sm text-gray-main font-weight-normal" itemprop="name"><a href="{$product.canonical_url}">{$product.name|truncate:30:'...'}</a></h3>
 			{/block}
  
 				{block name='product_price_and_shipping'}
@@ -104,7 +89,7 @@
 							{hook h='displayProductPriceBlock' product=$product type="before_price"}
 
 							<span class="sr-only">{l s='Price' d='Shop.Theme.Catalog'}</span>
-							<span itemprop="price" class=" {if $product.has_discount} text-main {else} text-gray-main {/if} text-xl font-bold">{$product.price}</span>
+							<span itemprop="price" class=" {if $product.has_discount} text-main {else} text-gray-main {/if} text-base font-bold">{$product.price}</span>
 
 							{hook h='displayProductPriceBlock' product=$product type='unit_price'}
 
@@ -113,7 +98,7 @@
 							{if $product.has_discount}
 								{hook h='displayProductPriceBlock' product=$product type="old_price"}
 								<span class="sr-only">{l s='Regular price' d='Shop.Theme.Catalog'}</span>
-								<span class="line-through text-gray-default text-base">{$product.regular_price}</span>
+								<span class="ml-2 line-through text-gray-200 text-sm">{$product.regular_price}</span>
 								{* {if $product.discount_type === 'percentage'} dać jako alt w flag
 									<span class="discount-percentage discount-product">{$product.discount_percentage}</span>
 								{elseif $product.discount_type === 'amount'}	
