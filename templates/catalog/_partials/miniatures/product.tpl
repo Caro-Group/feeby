@@ -33,7 +33,7 @@
 				{if $product.cover}
 					<a href="{$product.canonical_url}">
 						<img
-							class="img-fluid object-cover w-full"
+							class="img-fluid object-cover w-full max-w-sm"
 							width="235" height="303"
 							src = "{$product.cover.bySize.home_default.url}"
 							alt = "{if !empty($product.cover.legend)}{$product.cover.legend}{else}{$product.name|truncate:30:'...'}{/if}"
@@ -44,7 +44,7 @@
 				{else}
 					<a href="{$product.canonical_url}">
 				            <img
-							class="object-cover w-full"
+							class="object-cover w-full max-w-sm"
 							width="235" height="303"  
 							src="{$urls.no_picture_image.bySize.home_default.url}" 
 							alt="No image available"
