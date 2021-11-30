@@ -66,19 +66,19 @@
         @apply flex-grow mb-10 mx-2 tablet-wide:px-10 grayscale hover:grayscale-0  ;
     }
 
-.plist-dsimple .leo-wishlist-button.btn-primary{
+.leo-wishlist-button.btn-primary{
     @apply absolute right-0 z-10 top-3 w-6 h-6 tablet:w-8 tablet:h-8 rounded-l-md bg-white shadow-md p-2
 }
 
-.plist-dsimple .leo-wishlist-button.btn-primary.active{
+.leo-wishlist-button.btn-primary.active{
     @apply bg-white
 }
 
-.plist-dsimple .leo-wishlist-bt-content{
+.leo-wishlist-bt-content{
     @apply flex
 }
 
-.plist-dsimple .leo-wishlist-bt-content{
+.leo-wishlist-bt-content{
     @apply flex
 }
 
@@ -111,7 +111,7 @@
     @apply bg-black border-black transform scale-125
 }
 
-.plist-dsimple .btn-primary:active:hover{
+.swiper-populat .btn-primary:active:hover{
     @apply bg-gray-default
 }
 
