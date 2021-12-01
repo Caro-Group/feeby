@@ -22,7 +22,6 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
-{block name='product_flags'}
     <ul class="product-flags flex flex-wrap text-white mt-1 mr-12">
 		foreach from=$product.flags item=flag}
 			<li class="leading-5 mr-1 px-2 mb-1 rounded-full text-center 
@@ -42,4 +41,3 @@
 			</li>
 		{/foreach}
 	</ul>
-{/block}
