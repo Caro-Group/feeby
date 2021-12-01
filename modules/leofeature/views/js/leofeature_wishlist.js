@@ -18,7 +18,7 @@
 var wishlist_product_state_class = {
 	default: ['opacity-100','opacity-0'],
 	loading: ['opacity-100 animate-pulse ','opacity-0'],
-	active: ['opacity-0 text-main','opacity-100 text-main'],
+	active: ['opacity-0 text-main fill-current','opacity-100 text-main'],
 };
 
 function WishlistIconState(id,state) {
@@ -38,7 +38,7 @@ function WishlistIconState(id,state) {
 					$($(this).children()[i]).addClass(wishlist_product_state_class.loading[i]);
 					
 					break;
-				case 2:
+				case 3:
 					$($(this).children()[i]).addClass(wishlist_product_state_class.active[i]);
 					
 					break;
@@ -224,7 +224,6 @@ function LeoWishlistButtonAction()
 				
 				var object_e = $(this);
 				object_e.find('.leo-wishlist-bt-loading').css({'display':'block'});
-				object_e.find('.leo-wishlist-bt-content').hide();
 				if ($(this).hasClass('added') || $(this).hasClass('delete'))
 				{
 					//DONGND:: remove product form wishlist				
@@ -278,7 +277,6 @@ function LeoWishlistButtonAction()
 									$('.leo-wishlist-button[data-id-product='+id_product+']').removeClass('added');
 									$('.leo-wishlist-button[data-id-product='+id_product+']').attr('title',buttonwishlist_title_add);
 									object_e.find('.leo-wishlist-bt-loading').hide();
-									object_e.find('.leo-wishlist-bt-content').show();
 									WishlistIconState(id_product,1);
 								}
 							}
