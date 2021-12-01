@@ -54,28 +54,10 @@
 				{/if}	
 			{/block}
 			
-			<!-- @todo: use include file='catalog/_partials/product-flags.tpl'} -->
 			{block name='product_flags'}
-				<ul class="product-flags flex flex-wrap text-white mt-1 mr-12">
-					{foreach from=$product.flags item=flag}
-						<li class="leading-5 mr-1 px-2 mb-1 rounded-full text-center 
-							{if $flag.type == 'discount' }
-								bg-main 
-							{elseif $flag.type == 'new'}
-								bg-gray-main
-							{else}
-								bg-gray-400	
-							{/if}">
-
-							{if $flag.type == 'discount'}
-								PROMOCJA
-							{else}	
-								{$flag.label}
-							{/if}
-							</li>
-					{/foreach}
-				</ul>
+				{include file='catalog/_partials/product-flags.tpl'}
 			{/block}
+			
 			<div>
 				{hook h='displayLeoCartButton' product=$product}
 				{hook h='displayLeoWishlistButton' product=$product}

@@ -23,9 +23,23 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 {block name='product_flags'}
-    <ul class="product-flags">
-        {foreach from=$product.flags item=flag}
-            <li class="product-flag {$flag.type}">{$flag.label}</li>
-        {/foreach}
-    </ul>
+    <ul class="product-flags flex flex-wrap text-white mt-1 mr-12">
+		foreach from=$product.flags item=flag}
+			<li class="leading-5 mr-1 px-2 mb-1 rounded-full text-center 
+				{if $flag.type == 'discount' }
+					bg-main 
+				{elseif $flag.type == 'new'}
+					bg-gray-main
+				{else}
+					bg-gray-400	
+				{/if}">
+
+				{if $flag.type == 'discount'}
+					PROMOCJA
+				{else}	
+					{$flag.label}
+				{/if}
+			</li>
+		{/foreach}
+	</ul>
 {/block}
