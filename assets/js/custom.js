@@ -1170,7 +1170,7 @@ $(document).ready(function () {
 			el: '.swiper-pagination',
 			clickable: true,
 			dynamicBullets: true,
-			dynamicMainBullets: 5,
+			dynamicMainBullets: 3,
 		},
 	  	breakpoints: {
 			576: {
