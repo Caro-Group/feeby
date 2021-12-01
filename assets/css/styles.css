@@ -108,12 +108,4 @@
     @apply bg-black border-black transform scale-125
 }
 
-.swiper-popular .btn-primary:active:hover{
-    @apply bg-gray-default
-}
-
-.swiper-popular .btn-primary:hover{
-    @apply bg-gray-default
-}
-
 }
