@@ -23,7 +23,7 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
     <ul class="product-flags flex flex-wrap text-white mt-1 mr-12">
-		foreach from=$product.flags item=flag}
+		{foreach from=$product.flags item=flag}
 			<li class="leading-5 mr-1 px-2 mb-1 rounded-full text-center 
 				{if $flag.type == 'discount' }
 					bg-main 
