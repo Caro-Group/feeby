@@ -23797,10 +23797,10 @@ body#category #content.page-not-found {
 .dropdown {
   color: #666; }
 
-.thumbnail-container .leo-wishlist-button.added .text-add {
+.leo-wishlist-button.added .text-add {
   display: none; }
 
-.thumbnail-container .leo-wishlist-button.added .text-remove {
+.leo-wishlist-button.added .text-remove {
   display: block; }
 
 .thumbnail-container .product-price-and-shipping .discount-percentage,
