@@ -48,6 +48,7 @@
               {else}
                 <img id="zoom_product" data-type-zoom="" class="js-qv-product-cover img-fluid" src="{$urls.no_picture_image.bySize.large_default.url}" alt="{$product.name}" title="{$product.name}" itemprop="image">
               {/if}
+              {hook h='displayProductCoverPlacement'}
             </div>
           {/block}
 
