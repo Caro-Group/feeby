@@ -10,12 +10,13 @@ assets:
         path: assets/css/styles.min.css
       - id: menu-style
         path: assets/css/menu.css
-#    product:
-#      - id: product-style
-#        path: assets/css/product.css
-#        media: all
-#        priority: 200
-#   js:
-#     all:
-#       - id: core.js
-#         path: assets/js/core.js
+
+global_settings:
+  hooks:
+    custom_hooks:
+      - name: displayProductCoverPlacement
+        title: Product Cover Additionall Placement Element
+        description: Add custom element on cover
+      - name: displayProductThumbEndCustom
+        title: Product Custom Thubnail on End
+        description: Add custom image on end
