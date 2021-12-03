@@ -54,6 +54,13 @@ module.exports = {
         'miniature': '102px',
         'form': '20px',
       },
+      colors: {
+        'main': '#DF1A5B',
+        'main-hover' : '#B7164B',
+        gray: {
+          default: '#F8F8F8',
+        },
+      },
       backgroundImage: {
         'newsletter-plane': "url('../img/newsletter1.svg')",
         'newsletter-dashed': "url('../img/newsletter2.svg')",
