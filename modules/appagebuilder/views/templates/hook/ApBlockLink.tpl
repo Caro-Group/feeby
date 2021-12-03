@@ -102,7 +102,7 @@
             <div
                 class="block-toggler ApLink {(isset($formAtts.class)) ? $formAtts.class : ''|escape:'html':'UTF-8'}{if $formAtts.accordion_type == 'accordion_small_screen'} accordion_small_screen{/if}">
                 {if isset($formAtts.title) && !empty($formAtts.title)}
-                    <div class="title clearfix bg-white tablet:bg-transparent clearfix flex h-14 items-center px-6 tablet:px-0 border-0 border-b-2 border-solid border-gray-2000 tablet:border-b-0"
+                    <div class="title clearfix bg-white tablet:bg-transparent clearfix flex h-14 items-center px-6 tablet:px-0 border-0 border-b-2 border-solid border-gray-1000 tablet:border-b-0"
                         data-target="#footer-link-{$formAtts.form_id|escape:'html':'UTF-8'}" data-toggle="collapse">
                         <h4 class="mb-0 text-lg uppercase">
                             {$formAtts.title|escape:'html':'UTF-8'}
