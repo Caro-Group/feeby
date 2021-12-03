@@ -6,7 +6,7 @@
 *}
 
 <div class="swiper-banner">
-	<div class="swiper-wrapper">
+	<div class="swiper-wrapper max-h-tablet">
 	{if $sliders}
 		{foreach from=$sliders item=slider}
 		<div class="swiper-slide"

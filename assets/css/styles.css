@@ -109,3 +109,11 @@
 }
 
 }
+
+.swiper-banner .swiper-pagination .swiper-pagination-bullet{
+    @apply bg-transparent border border-solid border-white opacity-75 transition w-3 h-3
+}
+
+.swiper-banner .swiper-pagination .swiper-pagination-bullet-active{
+    @apply bg-white border-white transform scale-125
+}

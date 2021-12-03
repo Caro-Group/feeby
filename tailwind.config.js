@@ -66,7 +66,10 @@ module.exports = {
       minWidth: {
         'label': '173px',
         'swiper-mobile':'500px',
-      }
+      },
+      maxHeight: {
+        'tablet': '768px',
+      },
     },
   },
   variants: {
