@@ -77,6 +77,9 @@
             </a>
           </div>
         {/foreach}
+        <div class="thumb-container">
+          {hook h='displayProductThumbEndCustom'}
+        </div>
       </div>
     {/block}
     {if $product.images|@count > 1}

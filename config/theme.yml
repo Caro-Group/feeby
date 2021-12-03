@@ -17,12 +17,9 @@ assets:
      - id: swiper-js
        path: assets/js/swiper.js
 
-#    product:
-#      - id: product-style
-#        path: assets/css/product.css
-#        media: all
-#        priority: 200
-#   js:
-#     all:
-#       - id: core.js
-#         path: assets/js/core.js
+global_settings:
+  hooks:
+    custom_hooks:
+      - name: displayProductThumbEndCustom
+        title: Product Custom Thubnail on End
+        description: Add custom image on end
