@@ -33,7 +33,7 @@
 					>		
 
 					<img
-						class="min-h-banner desktop-wide:h-banner-final object-middle tablet:object-left object-cover"
+						class="min-h-banner max-h-tablet min-w-full desktop-wide:h-banner-final object-left object-cover"
 						src="{$slider.main_image|escape:'html':'UTF-8'}">
 				</a>
 
