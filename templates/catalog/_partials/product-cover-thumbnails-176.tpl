@@ -62,6 +62,7 @@
     {/block}
     {block name='product_images'}
       <div id="thumb-gallery" class="product-thumb-images">
+        {hook h='displayProductThumbStartCustom'}
         {foreach from=$product.images item=image}
           <div class="thumb-container {if $image.id_image == $product.cover.id_image} active {/if}">
             <a  href="javascript:void(0)" data-image="{$image.bySize.large_default.url}" data-zoom-image="{$image.bySize.large_default.url}"> 
@@ -77,6 +78,7 @@
             </a>
           </div>
         {/foreach}
+        {hook h='displayProductThumbEndCustom'}
       </div>
     {/block}
     {if $product.images|@count > 1}
