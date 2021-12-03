@@ -71,6 +71,12 @@ module.exports = {
       maxHeight: {
         'tablet': '768px',
       },
+      minHeight: {
+        'banner' : '450px',
+      },
+      Height: {
+        'banner-final' :'750px',
+      },
     },
   },
   variants: {

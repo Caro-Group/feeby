@@ -32,7 +32,9 @@
 					{if $slider.background_color != ''} style="background-color:{$slider.background_color|escape:'html':'UTF-8'};"{/if}			
 					>		
 
-					<img src="{$slider.main_image|escape:'html':'UTF-8'}">
+					<img
+						class="min-h-banner desktop-wide:h-banner-final object-middle tablet:object-left object-cover"
+						src="{$slider.main_image|escape:'html':'UTF-8'}">
 				</a>
 
 				<div>
@@ -80,7 +82,7 @@
 	{/if}
 	</div>
 	<div class="tablet:hidden swiper-pagination"></div>
-	<div class="hidden tablet:block absolute bottom-28 w-full z-10">
+	<div class="hidden tablet:block absolute bottom-16 w-full z-10">
 		<div class="max-w-screen-desktop-wide mx-auto px-16">
 			<i class="ti-arrow-left swiper_banner-button-prev p-3 ml-6 border-2 border-white text-white hover:bg-white hover:text-main-dark rounded-full border-solid transition cursor-pointer"></i>
 			<i class="ti-arrow-right swiper_banner-button-next p-3 ml-6 border-2 border-white text-white hover:bg-white hover:text-main-dark rounded-full border-solid transition cursor-pointer"></i>
