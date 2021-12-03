@@ -38,6 +38,7 @@ module.exports = {
       },
       colors: {
         'main': '#DF1A5B',
+        'main-hover' : '#B7164B',
         gray: {
           default: '#F8F8F8',
         },
