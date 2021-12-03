@@ -1255,6 +1255,26 @@ $(document).ready(function () {
 });
 
 
+$(document).ready(function () {
+	const swiperBanner = new Swiper('.swiper-banner', {
+		speed: 300,
+		slidesPerView: 1,
+		spaceBetween: 0,
+		loop: true,
+		pagination: {
+			el: '.swiper-pagination',
+			clickable: true,
+			dynamicBullets: true,
+			dynamicMainBullets: 3,
+		},
+		navigation: {
+			prevEl: '.swiper_banner-button-prev',
+			nextEl: '.swiper_banner-button-next',
+		},
+	});
+})
+
+
 
 
 
