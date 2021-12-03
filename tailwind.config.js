@@ -68,7 +68,7 @@ module.exports = {
       minHeight: {
         'banner' : '450px',
       },
-      Height: {
+      height: {
         'banner-final' :'750px',
       },
     },
