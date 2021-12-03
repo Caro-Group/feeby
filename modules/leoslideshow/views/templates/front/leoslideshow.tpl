@@ -5,12 +5,12 @@
 * @copyright  Leotheme
 *}
 
-<div class="swiper-banner"
-data-pausetime="{$slider.data_delay|escape:'html':'UTF-8'}">
+<div class="swiper-banner">
 	<div class="swiper-wrapper">
 	{if $sliders}
 		{foreach from=$sliders item=slider}
-		<div class="swiper-slide">
+		<div class="swiper-slide"
+		data-pausetime="{$slider.data_delay|escape:'html':'UTF-8'}">
 		
 			{if $slider.video.active}
 				<!-- SLIDE VIDEO BEGIN -->
