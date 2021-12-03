@@ -27,7 +27,7 @@
     {if $logged}
         <a href="{$my_account_url}" data-toggle="dropdown" class="popup-title"
             title="{l s='Account' d='Shop.Theme.Global'}">
-            <svg class="fill-current text-gray-main hover:text-main transition" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg class="fill-current text-main-dark hover:text-main transition" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                     d="M7 6.49992V6.49997C7 9.53762 9.68646 12 13 12C16.3138 12 19 9.53762 19 6.49997C19 3.46238 16.3138 1 13 1H12.9999C9.68796 1.00354 7.00387 3.46375 7 6.49992ZM18.0769 6.50003C18.0769 9.07019 15.804 11.1538 13 11.1538C10.1961 11.1538 7.92309 9.07019 7.92309 6.49997C7.92309 3.92981 10.1961 1.84616 12.9999 1.84616C15.8027 1.84902 18.0737 3.93102 18.0769 6.50003Z"
                      />
@@ -45,7 +45,7 @@
         {else}
             <a href="javascript:void(0)" data-toggle="dropdown" class="popup-title"
                 title="{l s='Account' d='Shop.Theme.Global'}">
-                <svg class="fill-current text-gray-main hover:text-main transition" width="25" height="25" viewBox="0 0 25 25"  xmlns="http://www.w3.org/2000/svg">
+                <svg class="fill-current text-main-dark hover:text-main transition" width="25" height="25" viewBox="0 0 25 25"  xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M7 6.49992V6.49997C7 9.53762 9.68646 12 13 12C16.3138 12 19 9.53762 19 6.49997C19 3.46238 16.3138 1 13 1H12.9999C9.68796 1.00354 7.00387 3.46375 7 6.49992ZM18.0769 6.50003C18.0769 9.07019 15.804 11.1538 13 11.1538C10.1961 11.1538 7.92309 9.07019 7.92309 6.49997C7.92309 3.92981 10.1961 1.84616 12.9999 1.84616C15.8027 1.84902 18.0737 3.93102 18.0769 6.50003Z"
                          />
