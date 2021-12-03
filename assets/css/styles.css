@@ -41,6 +41,10 @@
         @apply font-semibold mb-6 text-base text-main-dark;
     }
 
+    .owl-customized .descript{
+        @apply text-main-dark;
+    }
+
     .owl-customized .owl-item{
         @apply filter grayscale duration-150 hover:grayscale-0;
     }
