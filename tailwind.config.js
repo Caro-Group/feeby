@@ -31,6 +31,7 @@ module.exports = {
     extend: {
       colors: {
         "main" : "#DF1A5B",
+        'main-hover' : '#B7164B',
         "main-dark" : "#232322",
         "require": "#f00",
         gray: {
@@ -53,13 +54,6 @@ module.exports = {
       margin: {
         'miniature': '102px',
         'form': '20px',
-      },
-      colors: {
-        'main': '#DF1A5B',
-        'main-hover' : '#B7164B',
-        gray: {
-          default: '#F8F8F8',
-        },
       },
       backgroundImage: {
         'newsletter-plane': "url('../img/newsletter1.svg')",
