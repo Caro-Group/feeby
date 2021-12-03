@@ -1279,9 +1279,9 @@ $(document).ready(function () {
 
 $(document).ready(function () {
 
-	var delayValue = $('.swiper-banner').attr('data-pausetime');
-	if(delayValue==undefined){
-		delayValue = 2000; 
+	var delayValue = $('.swiper-banner .swiper-slide').attr('data-pausetime');
+	if(delayValue==(undefined||'')){
+		delayValue = 3000; 
 	}
 
 	const swiperBanner = new Swiper('.swiper-banner', {
