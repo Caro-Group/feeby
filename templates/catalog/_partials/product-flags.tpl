@@ -28,9 +28,9 @@
 				{if $flag.type == 'discount' }
 					bg-main 
 				{elseif $flag.type == 'new'}
-					bg-gray-main
+					bg-main-dark
 				{else}
-					bg-gray-400	
+					bg-gray-3000	
 				{/if}">
 
 				{if $flag.type == 'discount'}
