@@ -5,7 +5,8 @@
 * @copyright  Leotheme
 *}
 
-<div class="swiper-banner">
+<div class="swiper-banner"
+data-pausetime="{$slider.data_delay|escape:'html':'UTF-8'}">
 	<div class="swiper-wrapper">
 	{if $sliders}
 		{foreach from=$sliders item=slider}
@@ -28,7 +29,8 @@
 				<a 
 					{if $slider.data_link != ''} href="{$slider.data_link|escape:'html':'UTF-8'}"{/if}
 					{if $slider.data_target != ''} target="{$slider.data_target|escape:'html':'UTF-8'}"{/if}
-					{if $slider.background_color != ''} style="background-color:{$slider.background_color|escape:'html':'UTF-8'};"{/if}					
+					{if $slider.background_color != ''} style="background-color:{$slider.background_color|escape:'html':'UTF-8'};"{/if}			
+					>		
 
 					<img src="{$slider.main_image|escape:'html':'UTF-8'}">
 				</a>
@@ -78,9 +80,10 @@
 	{/if}
 	</div>
 	<div class="swiper-pagination"></div>
-	<div class="hidden tablet:block absolute bottom-10 w-full max-w-screen-desktop-wide mx-auto px-24">
-		<i class="ti-arrow-left swiper_banner-button-prev p-3 ml-6 border-2 border-white text-white hover:bg-white hover:text-gray-main rounded-full border-solid   transition cursor-pointer"></i>
-
-		<i class="ti-arrow-right swiper_banner-button-next p-3 ml-6 border-2 border-white text-white hover:bg-white hover:text-gray-main rounded-full border-solid   transition cursor-pointer"></i>
+	<div class="hidden tablet:block absolute bottom-28 w-full z-10">
+		<div class="max-w-screen-desktop-wide mx-auto px-16">
+			<i class="ti-arrow-left swiper_banner-button-prev p-3 ml-6 border-2 border-white text-white hover:bg-white hover:text-gray-main rounded-full border-solid   transition cursor-pointer"></i>
+			<i class="ti-arrow-right swiper_banner-button-next p-3 ml-6 border-2 border-white text-white hover:bg-white hover:text-gray-main rounded-full border-solid   transition cursor-pointer"></i>
+		</div>
 	</div>
 </div>
