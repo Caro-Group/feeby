@@ -1278,11 +1278,20 @@ $(document).ready(function () {
 
 
 $(document).ready(function () {
+
+	var delayValue = $('.swiper-banner').attr('data-pausetime');
+	if(delayValue==undefined){
+		delayValue = 2000; 
+	}
+
 	const swiperBanner = new Swiper('.swiper-banner', {
-		speed: 300,
+		speed: 500,
 		slidesPerView: 1,
 		spaceBetween: 0,
 		loop: true,
+		autoplay: {
+			delay: delayValue,
+		},
 		pagination: {
 			el: '.swiper-pagination',
 			clickable: true,
