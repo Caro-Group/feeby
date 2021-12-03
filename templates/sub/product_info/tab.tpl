@@ -41,7 +41,7 @@
 		    {foreach from=$product.extraContent item=extra key=extraKey}
 			    <li class="nav-item">
 				  <a
-					class="nav-link active"
+					class="nav-link"
 					data-toggle="tab"
 					href="#extra-{$extraKey}"
 					role="tab"
@@ -84,7 +84,7 @@
 		     	{/if}
 		   	{/block}
 		   	{foreach from=$product.extraContent item=extra key=extraKey}
-			   	<div class="tab-pane fade in {$extra.attr.class} active" id="extra-{$extraKey}" role="tabpanel" {foreach $extra.attr as $key => $val} {$key}="{$val}"{/foreach}>
+			   	<div class="tab-pane fade in {$extra.attr.class}" id="extra-{$extraKey}" role="tabpanel" {foreach $extra.attr as $key => $val} {$key}="{$val}"{/foreach}>
 			       {$extra.content nofilter}
 			   	</div>
 		   {/foreach}
@@ -99,7 +99,7 @@
 	  	<div class="tab-content" id="tab-content">
 		   	{hook h='displayLeoProductTabContent' product=$product}
 		</div>
-    </div>
+  </div>
 
 {literal}
 <style>
