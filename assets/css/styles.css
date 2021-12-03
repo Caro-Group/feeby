@@ -25,7 +25,7 @@
         aspect-ratio: 1;
         max-width: 70px;
 
-        @apply rounded-xl bg-gray-default absolute top-0 left-0 w-3/12 z-0;
+        @apply rounded-xl bg-gray-1000 absolute top-0 left-0 w-3/12 z-0;
     }
 
     .owl-customized .owl-item .block-carousel-image-container img{
