@@ -31,12 +31,15 @@ module.exports = {
     extend: {
       colors: {
         "main" : "#DF1A5B",
+        "main-dark" : "#232322",
         "require": "#f00",
         gray: {
           default: '#F8F8F8',
         },
-        pink: {
-          650: '#DF1A5B',
+        gray: {
+          1000: '#F8F8F8',
+          2000: '#ECECEC',
+          3000: '#ADAFBA',
         },
       },
       width: {
