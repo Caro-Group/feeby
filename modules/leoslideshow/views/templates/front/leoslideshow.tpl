@@ -25,19 +25,15 @@
 			{else}
 				
 				<!-- SLIDE IMAGE BEGIN -->
-				<div class="slide_config {if isset($slider.data_link)&& $slider.data_link}data-link{/if}"
-					{if $slider.main_image != ''} data-leo_image="{$slider.main_image|escape:'html':'UTF-8'}"{/if}
-					{if $slider.background_color != ''} data-leo_background_color="{$slider.background_color|escape:'html':'UTF-8'}"{/if}					
-					{if $slider.data_link != ''} data-link="{$slider.data_link|escape:'html':'UTF-8'}"{/if}
-					{if $slider.data_target != ''} data-target="{$slider.data_target|escape:'html':'UTF-8'}"{/if}
-					data-leo_pausetime="{$slider.data_delay|escape:'html':'UTF-8'}"
-					data-leo_thumbnail="{$slider.thumbnail|escape:'html':'UTF-8'}"
-					data-leo_background="{$slider.background_type|escape:'html':'UTF-8'}"					
-					{if $slider.enable_custom_html_bullet}
-					data-leo_bullet_description="{$slider.bullet_description}"{* HTML form , no escape necessary *}
-					data-leo_bullet_class="{$slider.bullet_class|escape:'html':'UTF-8'}"
-					{/if}												
-					>
+				<a 
+					{if $slider.data_link != ''} href="{$slider.data_link|escape:'html':'UTF-8'}"{/if}
+					{if $slider.data_target != ''} target="{$slider.data_target|escape:'html':'UTF-8'}"{/if}
+					{if $slider.background_color != ''} style="background-color:{$slider.background_color|escape:'html':'UTF-8'};"{/if}					
+
+					<img src="{$slider.main_image|escape:'html':'UTF-8'}">
+				</a>
+
+				<div>
 					
 					
 					{if isset($slider.layersparams)}
@@ -82,9 +78,9 @@
 	{/if}
 	</div>
 	<div class="swiper-pagination"></div>
-	<div>
-		<i class="ti-arrow-left swiper_banner-button-prev p-3 ml-6 border-2 border-gray-main text-gray-main hover:bg-gray-main hover:text-white rounded-full border-solid   transition cursor-pointer"></i>
+	<div class="hidden tablet:block absolute bottom-10 w-full max-w-screen-desktop-wide mx-auto px-24">
+		<i class="ti-arrow-left swiper_banner-button-prev p-3 ml-6 border-2 border-white text-white hover:bg-white hover:text-gray-main rounded-full border-solid   transition cursor-pointer"></i>
 
-		<i class="ti-arrow-right swiper_banner-button-next p-3 ml-6 border-2 border-gray-main text-gray-main hover:bg-gray-main hover:text-white rounded-full border-solid   transition cursor-pointer"></i>
+		<i class="ti-arrow-right swiper_banner-button-next p-3 ml-6 border-2 border-white text-white hover:bg-white hover:text-gray-main rounded-full border-solid   transition cursor-pointer"></i>
 	</div>
 </div>
