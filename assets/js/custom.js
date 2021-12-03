@@ -1280,12 +1280,12 @@ $(document).ready(function () {
 $(document).ready(function () {
 
 	var delayValue = $('.swiper-banner .swiper-slide').attr('data-pausetime');
-	if(delayValue==(undefined||'')){
-		delayValue = 3000; 
+	if(delayValue==undefined||delayValue==''){
+		delayValue = 2000; 
 	}
 
 	const swiperBanner = new Swiper('.swiper-banner', {
-		speed: 500,
+		speed: 800,
 		slidesPerView: 1,
 		spaceBetween: 0,
 		loop: true,
@@ -1295,8 +1295,6 @@ $(document).ready(function () {
 		pagination: {
 			el: '.swiper-pagination',
 			clickable: true,
-			dynamicBullets: true,
-			dynamicMainBullets: 3,
 		},
 		navigation: {
 			prevEl: '.swiper_banner-button-prev',
