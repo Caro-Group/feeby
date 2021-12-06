@@ -112,6 +112,17 @@
   left: 0;
 }
 
+.off-canvas-nav-megamenu .nav li.dropdown.open-sub .dropdown-menu-inner .caret{
+  transform: none;
+    position: relative;
+    display: inline-block;
+    float: left;
+    line-height: 28px;
+    height: auto;
+    width: auto;
+    padding-right: 15px;
+}
+
 
 .off-canvas-nav-megamenu .leo-widget .widget-html img,
 .off-canvas-nav-megamenu .leo-widget .widget-html .mobile-hidden{
