@@ -51,25 +51,6 @@
       </div>
     {/block}
 
-    {literal}
-      <script>
-        function openMenuWithCategory(id)
-        {
-         var menu_el = $('.off-canvas-nav-megamenu').find('[data-category-id=' + id + ']').first();
-         if(!menu_el.length){
-           menu_el = $('.off-canvas-nav-megamenu [data-menu-type="category"].active').first().addClass('open');
-           if(!menu_el.hasClass('open-sub')){
-            menu_el.children('.dropdown-toggle').click();
-           }
-         }
-         var menu_id = menu_el.parents('[data-megamenu-id]').data('megamenu-id');
-
-         menu_el.parents('.dropdown').children('.dropdown-toggle').click();
-         $('[data-target="\.megamenu-off-canvas-' + menu_id + '"]').first().click();
-        } 
-      </script>
-    {/literal}
-
     <div style="flex: 1 1 auto;
     {if !empty($activeFilters)}background: #f9f9f9;{/if}
     display: flex;
