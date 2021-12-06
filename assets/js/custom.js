@@ -1275,8 +1275,12 @@ function openMenuWithCategory(id)
 		$(menu_el).parent().parent().find('.caret').click();
 	}
  }
-
- menu_el.parents('.dropdown').children('.dropdown-toggle').click();
+	if(menu_el.parents('.dropdown').each(function(i,item){
+		if(!$(item).hasClass('open-sub')){
+			$(item).children('.dropdown-toggle').click();
+		}
+	}));
+	
  $('[data-target="\.megamenu-off-canvas-' + menu_id + '"]').first().click();
 } 
 
