@@ -1263,6 +1263,10 @@ function openMenuWithCategory(id)
 	 if(!menu_el.hasClass('open-sub')){
 		menu_el.children('.dropdown-toggle').click();
 	 }
+
+	 if($(menu_el).parent().hasClass('level2')){
+		$(menu_el).next('.caret').click();
+	 }
  }
  var menu_id = menu_el.parents('[data-megamenu-id]').data('megamenu-id');
 
