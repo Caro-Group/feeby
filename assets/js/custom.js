@@ -1267,8 +1267,12 @@ function openMenuWithCategory(id)
  var menu_id = menu_el.parents('[data-megamenu-id]').data('megamenu-id');
 
  if(menu_el.length){
-	if($(menu_el).parent().hasClass('level2')){
+	if($(menu_el).parent().hasClass('level2') && !$(menu_el).parent().hasClass('open-sub')){
 		$(menu_el).next('.caret').click();
+	}
+
+	if($(menu_el).parent().hasClass('level3') && !$(menu_el).parent().hasClass('open-sub')){
+		$(menu_el).parent().parent().find('.caret').click();
 	}
  }
 
