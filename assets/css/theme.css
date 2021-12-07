@@ -22059,8 +22059,7 @@ p.promo-code-button {
         color: #000; }
     .block-social li:before {
       content: "";
-      font-family: "FontAwesome";
-      font-size: 14px; }
+      font-family: "FontAwesome"; }
     .block-social li.facebook:before {
       content: "\f09a"; }
     .block-social li.twitter:before {
