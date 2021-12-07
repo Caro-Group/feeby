@@ -25,9 +25,9 @@
 
 {block name='block_social'}
   <div class="block-social">
-    <ul>
+    <ul class="flex justify-center text-xl">
       {foreach from=$social_links item='social_link'}
-        <li class="{$social_link.class}"><a href="{$social_link.url}" title="{$social_link.label}" target="_blank" rel="nofollow"><span>{$social_link.label}</span></a></li>
+        <li class="{$social_link.class} hover:text-main text-main-dark transition"><a href="{$social_link.url}" title="{$social_link.label}" target="_blank" rel="nofollow"><span>{$social_link.label}</span></a></li>
       {/foreach}
     </ul>
   </div>
