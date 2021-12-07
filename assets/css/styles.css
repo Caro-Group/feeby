@@ -81,7 +81,7 @@
     }
     
     .owl-item:hover img::selection{
-        filter:none !important; 
+        background: blue; 
      }
 
 
