@@ -25,7 +25,7 @@
         aspect-ratio: 1;
         max-width: 70px;
 
-        @apply rounded-xl bg-gray-2000 absolute top-0 left-0 w-3/12 z-0;
+        @apply rounded-xl bg-gray-1000 absolute top-0 left-0 w-3/12 z-0;
     }
 
     .owl-customized .owl-item .block-carousel-image-container img{
@@ -46,18 +46,10 @@
     }
 
     .owl-customized .owl-item{
-        @apply filter duration-150 group;
+        @apply group filter grayscale duration-150;
     }
     .owl-customized .owl-item.active{
         @apply filter grayscale-0 ;
-    }
-
-    .owl-customized .owl-item img::selection:hover{
-        filter:none;
-    }
-
-    .owl-customized .owl-item img{
-        @apply grayscale group-hover:grayscale-0
     }
 
     .owl-customized .owl-loaded .owl-item{
@@ -75,7 +67,20 @@
     .owl-customized .owl-disabled .owl-item{
         min-width: 150px;
         flex-basis: 30%;
-        @apply flex-grow mb-10 mx-2 tablet-wide:px-10;
+        @apply flex-grow mb-10 mx-2 tablet-wide:px-10 ;
     }
 
+    .owl-customized .owl-disabled .owl-item img{
+        filter: invert(17%) sepia(49%) saturate(5868%) hue-rotate(
+            328deg) brightness(101%) contrast(93%) grayscale(100%);
+        transition: 150;
+    }
+    .owl-customized .owl-disabled .owl-item:hover img{
+        filter: invert(17%) sepia(49%) saturate(5868%) hue-rotate(
+            328deg) brightness(101%) contrast(93%) grayscale(0);
+    }
+
+    .owl-item:hover img::selection{
+        filter:none !important; 
+     }
 }
