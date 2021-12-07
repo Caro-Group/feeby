@@ -9,18 +9,13 @@
 {if isset($subcategories)}
     <div class="widget-subcategories">
         {if isset($widget_heading)&&!empty($widget_heading)}
-        <div class="widget-heading">
+        <div class="widget-heading show-desktop hide-mobile mb-2">
                 {$widget_heading}
         </div>
         {/if}
         <div class="widget-inner">
             {if $cat->id_category != ''}
-                <div class="menu-title">
-                    <a href="{$link->getCategoryLink($cat->id_category, $cat->link_rewrite)|escape:'htmlall':'UTF-8'}" title="{$cat->name|escape:'htmlall':'UTF-8'}" class="img" {if isset($cat->id_category)}data-category-id="{$cat->id_category}"{/if}>
-                            {$cat->name|escape:'htmlall':'UTF-8'} 
-                    </a>
-                </div>
-                <ul>
+                <ul class="col-count-mob-one" style="{if $id_widget == '1638828508'}column-count:3;{/if}{if $id_widget == '1638828714'}column-count:3;{/if}{if $id_widget == '1638836284'}column-count:3;{/if}{if $id_widget == '1638836384'}column-count:2;{/if}">
                 {foreach from=$subcategories item=subcategory}
                     <li class="clearfix {if isset($subcategory.subsubcategories)}level2 dropdown{/if}">
                         <a href="{$link->getCategoryLink($subcategory.id_category, $subcategory.link_rewrite)|escape:'htmlall':'UTF-8'}" title="{$subcategory.name|escape:'htmlall':'UTF-8'}" class="img" {if isset($subcategory.id_category)}data-category-id="{$subcategory.id_category}"{/if}>
@@ -49,6 +44,9 @@
             {/if}
         </div>
     </div>
+	{literal}
+		<style>@media(max-width:992px){.col-count-mob-one{column-count:1!important;}}</style>
+	{/literal}
 {/if} 
 {if $show_widget_bo == 'admin'}
     <div class="w-name">
