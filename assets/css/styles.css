@@ -4,6 +4,8 @@
 
 @tailwind utilities;
 
+/* Classes used in builder: tablet-medium:mr-20 tablet-wide:mr-8 desktop:mr-0 tablet-medium:absolute  tablet-medium:-bottom-12*/
+
 
 @layer components{
 
