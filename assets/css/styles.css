@@ -46,18 +46,10 @@
     }
 
     .owl-customized .owl-item{
-        @apply filter duration-150 group;
+        @apply group filter grayscale duration-150;
     }
     .owl-customized .owl-item.active{
         @apply filter grayscale-0 ;
-    }
-
-    .owl-customized .owl-item img::selection:hover{
-        filter:none;
-    }
-
-    .owl-customized .owl-item img{
-        @apply grayscale group-hover:grayscale-0
     }
 
     .owl-customized .owl-loaded .owl-item{
@@ -75,8 +67,22 @@
     .owl-customized .owl-disabled .owl-item{
         min-width: 150px;
         flex-basis: 30%;
-        @apply flex-grow mb-10 mx-2 tablet-wide:px-10;
+        @apply flex-grow mb-10 mx-2 tablet-wide:px-10 ;
     }
+
+    .owl-customized .owl-disabled .owl-item img{
+        filter: invert(17%) sepia(49%) saturate(5868%) hue-rotate(
+            328deg) brightness(101%) contrast(93%) grayscale(100%);
+        transition: 150;
+    }
+    .owl-customized .owl-disabled .owl-item:hover img{
+        filter: invert(17%) sepia(49%) saturate(5868%) hue-rotate(
+            328deg) brightness(101%) contrast(93%) grayscale(0);
+    }
+    
+    .owl-item:hover img::selection{
+        filter:none !important; 
+     }
 
 
 .leo-wishlist-button.btn-primary{
@@ -120,12 +126,12 @@
     @apply bg-black border-black transform scale-125
 }
 
-}
-
 .swiper-banner .swiper-pagination .swiper-pagination-bullet{
     @apply bg-transparent border border-solid border-white opacity-75 transition w-3 h-3
 }
 
 .swiper-banner .swiper-pagination .swiper-pagination-bullet-active{
     @apply bg-white border-white transform scale-125
+}
+
 }
