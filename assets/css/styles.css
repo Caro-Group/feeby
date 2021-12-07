@@ -52,6 +52,10 @@
         @apply filter grayscale-0 ;
     }
 
+    .owl-customized .owl-item img::selection:hover{
+        filter:none;
+    }
+
     .owl-customized .owl-item img{
         @apply grayscale group-hover:grayscale-0
     }
@@ -71,7 +75,7 @@
     .owl-customized .owl-disabled .owl-item{
         min-width: 150px;
         flex-basis: 30%;
-        @apply flex-grow mb-10 mx-2 tablet-wide:px-10 grayscale hover:grayscale-0  ;
+        @apply flex-grow mb-10 mx-2 tablet-wide:px-10;
     }
 
 
