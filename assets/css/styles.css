@@ -46,10 +46,14 @@
     }
 
     .owl-customized .owl-item{
-        @apply filter grayscale duration-150 hover:grayscale-0;
+        @apply filter duration-150 group;
     }
     .owl-customized .owl-item.active{
         @apply filter grayscale-0 ;
+    }
+
+    .owl-customized .owl-item img{
+        @apply grayscale group-hover:grayscale-0
     }
 
     .owl-customized .owl-loaded .owl-item{
