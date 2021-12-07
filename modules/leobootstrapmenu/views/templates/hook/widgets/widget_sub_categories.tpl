@@ -9,7 +9,7 @@
 {if isset($subcategories)}
     <div class="widget-subcategories">
         {if isset($widget_heading)&&!empty($widget_heading)}
-        <div class="widget-heading show-desktop hide-mobile mb-2">
+        <div class="widget-heading show-desktop hide-mobile mb-2 menu-title">
                 {$widget_heading}
         </div>
         {/if}
