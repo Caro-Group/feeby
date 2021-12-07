@@ -22079,8 +22079,6 @@ p.promo-code-button {
       text-indent: 100%;
       overflow: hidden;
       display: none; }
-      .block-social li a:hover {
-        color: #000; }
     .block-social li:before {
       content: "";
       font-family: "FontAwesome"; }
