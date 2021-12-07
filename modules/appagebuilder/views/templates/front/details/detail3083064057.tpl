@@ -85,9 +85,12 @@
                   </a>
                 </div>
               {/if}
-              <div class="thumb-container">
-                {hook h='displayProductThumbEndCustom'}
-              </div>
+              {assign var='displayProductThumbEndCustom' value={hook h='displayProductThumbEndCustom'} }
+              {if $displayProductThumbEndCustom}
+                <div class="thumb-container">
+                  {hook h='displayProductThumbEndCustom'}
+                </div>
+              {/if}
             </div>
             
             {if $product.images|@count > 1}

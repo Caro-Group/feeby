@@ -1144,3 +1144,16 @@ section#checkout-delivery-step.-unreachable {
 [disabled="disabled"]{
     cursor: not-allowed;
 }
+
+@media(min-width: 992px){
+    .leo-megamenu .navbar-nav>li:first-child.parent>a span.menu-title:after,
+    .leo-megamenu .navbar-nav>li.parent:first-child>a span.menu-title:before,
+    .leo-megamenu .navbar-nav>li:first-child>a.dropdown-toggle:after{
+        display: none;
+    }
+
+    .leo-megamenu .nav.navbar-nav.megamenu>li:first-child.aligned-fullwidth>.dropdown-menu{
+        display: none;
+    }
+
+}
