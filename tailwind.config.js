@@ -53,6 +53,9 @@ module.exports = {
         "side": "467px",
         "miniature": "102px"
       },
+      height: {
+        "100":"28rem", 
+      },
       margin: {
         'miniature': '102px',
         'form': '20px',
