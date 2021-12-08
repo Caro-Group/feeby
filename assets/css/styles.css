@@ -27,14 +27,11 @@
 
         @apply rounded-xl bg-gray-1000 absolute top-0 left-0 w-3/12 z-0;
     }
-
-    .owl-customized .owl-item .block-carousel-image-container img{
-        max-width: 70px;
-        @apply w-3/12 z-10 relative mb-6 p-2;
-    }
     
     .owl-customized .owl-item .block-carousel-image-container img{
+        max-width: 70px;
         filter: invert(17%) sepia(49%) saturate(5868%) hue-rotate(328deg) brightness(101%) contrast(93%);
+        @apply w-3/12 z-10 relative mb-6 p-2 select-none;
     }
 
     .owl-customized .title{
@@ -46,7 +43,7 @@
     }
 
     .owl-customized .owl-item{
-        @apply group filter grayscale duration-150;
+        @apply filter group grayscale transition duration-150;
     }
     .owl-customized .owl-item.active{
         @apply filter grayscale-0 ;
@@ -71,16 +68,12 @@
     }
 
     .owl-customized .owl-disabled .owl-item img{
-        filter: invert(17%) sepia(49%) saturate(5868%) hue-rotate(
-            328deg) brightness(101%) contrast(93%) grayscale(100%);
-        transition: 150;
-    }
-    .owl-customized .owl-disabled .owl-item:hover img{
-        filter: invert(17%) sepia(49%) saturate(5868%) hue-rotate(
-            328deg) brightness(101%) contrast(93%) grayscale(0);
+        filter: invert(17%) sepia(49%) saturate(5868%) hue-rotate(328deg) brightness(101%) contrast(93%) grayscale(100%);
+        transition: 150ms;
     }
 
-    .owl-item:hover img::selection{
-        background: blue; 
-     }
+    .owl-customized .owl-disabled .owl-item:hover img{
+        filter: invert(17%) sepia(49%) saturate(5868%) hue-rotate(328deg) brightness(101%) contrast(93%);
+    }
+}
 
