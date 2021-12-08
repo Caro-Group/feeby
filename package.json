@@ -31,7 +31,7 @@
   },
   "scripts": {
     "cf_token": "bash ./cf_token.sh 'https://test.feeby.pl' true",
-    "serve": " cross-env NODE_ENV=development TEST_URL=https://test.feeby.pl concurrently \"postcss assets/css/styles.css -o assets/css/styles.min.css --watch\"  \"npx browser-sync start --config bs-config.js\"",
+    "serve": "bash ./cf_token.sh 'https://test.feeby.pl' && cross-env NODE_ENV=development TEST_URL=https://test.feeby.pl concurrently \"postcss assets/css/styles.css -o assets/css/styles.min.css --watch\"  \"npx browser-sync start --config bs-config.js\"",
     "development": "cross-env NODE_ENV=development postcss assets/css/styles.css -o assets/css/styles.min.css",
     "production": "cross-env NODE_ENV=production postcss assets/css/styles.css -o assets/css/styles.min.css",
     "deploy": "npm run production"
