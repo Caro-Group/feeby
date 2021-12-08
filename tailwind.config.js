@@ -68,6 +68,7 @@ module.exports = {
   variants: {
     extend: {
       grayscale: ['hover', 'focus'],
+      translate: ['group-hover'],
     },
   },
   plugins: [
