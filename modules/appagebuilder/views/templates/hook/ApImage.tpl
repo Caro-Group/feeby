@@ -24,7 +24,7 @@
     {if (isset($formAtts.image) && $formAtts.image) || (isset($formAtts.image_link) && $formAtts.image_link)}
     
         {if isset($formAtts.url) && $formAtts.url}
-        <a href="{$formAtts.url}{*full url can not escape*}" class="flex flex-col h-full" {(isset($formAtts.is_open) && $formAtts.is_open) ? 'target="_blank"' : ''|escape:'html':'UTF-8'}>
+        <a href="{$formAtts.url}{*full url can not escape*}" class="flex flex-col h-full group" {(isset($formAtts.is_open) && $formAtts.is_open) ? 'target="_blank"' : ''|escape:'html':'UTF-8'}>
         {/if}
         <div class="overflow-hidden rounded-md h-100%">
         <img class="object-cover {if $aplazyload}lazy{/if}" {if $aplazyload}data-src{else}src{/if}="{if isset($formAtts.image) && $formAtts.image}{$path|escape:'html':'UTF-8'}{$formAtts.image|escape:'html':'UTF-8'}{else}{if isset($formAtts.image_link)}{$formAtts.image_link|escape:'html':'UTF-8'}{/if}{/if}" class="{(isset($formAtts.animation) && $formAtts.animation != 'none') ? 'has-animation' : ''|escape:'html':'UTF-8'}"
@@ -37,7 +37,8 @@
         </div>
         {if isset($formAtts.description) && $formAtts.description}
             <div class='image_description h-8 mt-6 ml-8'>
-								{($formAtts.description) ? $formAtts.description:'' nofilter}{* HTML form , no escape necessary *}
+					{($formAtts.description) ? $formAtts.description:'' nofilter}{* HTML form , no escape necessary *} 
+                    <i class="duration-150 group-hover:opacity-1 group-hover:text-main group-hover:translate-x-4 inline-block relative text-lg text-main-dark ti-arrow-right transform transition"></i>
             </div>
         {/if}
         {if isset($formAtts.url) && $formAtts.url}

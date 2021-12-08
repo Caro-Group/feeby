@@ -2305,36 +2305,10 @@ textarea.form-control {
   @media (max-width: 991px) {
     .box-cateh2 {
       margin-bottom: 30px; } }
-  .box-cateh2 .ApImage {
-    position: relative;
-    overflow: hidden; }
-    .box-cateh2 .ApImage:before {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 360px;
-      height: 360px;
-      background: rgba(0, 0, 0, 0.1);
-      border-radius: 50%;
-      transition: all .4s;
-      opacity: 0;
-      transform: translate(-100%, 100%);
-      z-index: 1;
-      pointer-events: none; }
+  
     .box-cateh2 .ApImage img {
       transition: all 2s; }
-    .box-cateh2 .ApImage > a:before {
-      content: "";
-      z-index: 3;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0; }
-    .box-cateh2 .ApImage:hover:before {
-      transform: translate(-50%, 50%);
-      opacity: 1; }
+  
     .box-cateh2 .ApImage:hover img {
       transform: scale(1.1); }
 
