@@ -29,14 +29,11 @@
 
         @apply rounded-xl bg-gray-1000 absolute top-0 left-0 w-3/12 z-0;
     }
-
-    .owl-customized .owl-item .block-carousel-image-container img{
-        max-width: 70px;
-        @apply w-3/12 z-10 relative mb-6 p-2;
-    }
     
     .owl-customized .owl-item .block-carousel-image-container img{
+        max-width: 70px;
         filter: invert(17%) sepia(49%) saturate(5868%) hue-rotate(328deg) brightness(101%) contrast(93%);
+        @apply w-3/12 z-10 relative mb-6 p-2 select-none;
     }
 
     .owl-customized .title{
@@ -48,7 +45,7 @@
     }
 
     .owl-customized .owl-item{
-        @apply group filter grayscale duration-150;
+        @apply filter group grayscale transition duration-150;
     }
     .owl-customized .owl-item.active{
         @apply filter grayscale-0 ;
@@ -73,18 +70,14 @@
     }
 
     .owl-customized .owl-disabled .owl-item img{
-        filter: invert(17%) sepia(49%) saturate(5868%) hue-rotate(
-            328deg) brightness(101%) contrast(93%) grayscale(100%);
-        transition: 150;
+        filter: invert(17%) sepia(49%) saturate(5868%) hue-rotate(328deg) brightness(101%) contrast(93%) grayscale(100%);
+        transition: 150ms;
     }
+
     .owl-customized .owl-disabled .owl-item:hover img{
-        filter: invert(17%) sepia(49%) saturate(5868%) hue-rotate(
-            328deg) brightness(101%) contrast(93%) grayscale(0);
+        filter: invert(17%) sepia(49%) saturate(5868%) hue-rotate(328deg) brightness(101%) contrast(93%);
     }
-    
-    .owl-item:hover img::selection{
-        background: blue; 
-     }
+}
 
 
 .leo-wishlist-button.btn-primary{
@@ -115,7 +108,6 @@
     @apply z-20 fill-current text-main-dark group-hover:text-main transition
 }
 
-
 .swiper-popular .swiper-pagination{
     @apply hidden tablet:block
 }
@@ -134,6 +126,4 @@
 
 .swiper-banner .swiper-pagination .swiper-pagination-bullet-active{
     @apply bg-white border-white transform scale-125
-}
-
 }
