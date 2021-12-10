@@ -1,3 +1,5 @@
+const { fontFamily } = require("tailwindcss/defaultTheme");
+
 module.exports = {
   future: {
     purgeLayersByDefault: true,
@@ -58,7 +60,11 @@ module.exports = {
       },
       minWidth: {
         'label': '173px'
-      }
+      },
+      fontFamily: {
+        'header': ['Nomada Didone','serif'],
+        'main': ['Roboto','sans-serif'],
+      },
     },
   },
   variants: {
