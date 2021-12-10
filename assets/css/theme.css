@@ -5785,7 +5785,6 @@ html {
   -webkit-tap-highlight-color: transparent; }
 
 body {
-  font-family: "Poppins", sans-serif;
   font-size: 1rem;
   line-height: 1.5;
   color: #666;
@@ -9365,7 +9364,6 @@ output {
 
 body {
   direction: ltr;
-  font-family: "Poppins", sans-serif;
   font-size: 13px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

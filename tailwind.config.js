@@ -17,6 +17,9 @@ module.exports = {
   },
   darkMode: false,
   theme: {
+    fontFamily: {
+      'body': ['"Nomada Didone"', '"Open Sans"'],
+    },
     screens: {
       'phone': '320px',
       'phone-wide': '480px',
