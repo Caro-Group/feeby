@@ -94,7 +94,7 @@
     }
 
     .owl-customized .title{
-        @apply font-header font-semibold mb-6 text-2xl text-main-dark italic;
+        @apply font-semibold mb-6 text-2xl;
     }
 
     .owl-customized .descript{
