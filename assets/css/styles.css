@@ -78,11 +78,11 @@
     }
 
     .owl-customized .title{
-        @apply font-semibold mb-6 text-base text-main-dark;
+        @apply font-header font-semibold mb-6 text-2xl text-main-dark italic;
     }
 
     .owl-customized .descript{
-        @apply text-main-dark;
+        @apply font-main font-light text-base text-main-dark;
     }
 
     .owl-customized .owl-item{
