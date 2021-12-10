@@ -42,7 +42,7 @@
         <div>
           <div class="border-gray-300 border-solid border flex rounded-full pl-4 bg-white ">
             <input
-            class="w-full bg-transparent border-0 py-3 outline-none"
+            class="w-full bg-transparent border-0 py-3 outline-none font-main italic"
               name="email"
               type="text"
               value="{$value}"
@@ -50,7 +50,7 @@
             >
 
             <button
-            class="bg-main hover:bg-pink-800 duration-150 border-0 rounded-full text-white px-4 uppercase whitespace-nowrap"
+            class="bg-main hover:bg-pink-800 duration-150 border-0 rounded-full text-white px-4 uppercase whitespace-nowrap font-main"
               name="submitNewsletter"
               type="submit"
               value="{l s='Subscribe' d='Shop.Theme.Actions'}"
