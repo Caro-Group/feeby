@@ -81,6 +81,10 @@ module.exports = {
       },
       height: {
         'banner-final' :'750px',
+        'label': '173px'
+      },
+      transitionDuration: {
+        '2000': '2000ms',
       },
     },
   },
@@ -88,7 +92,7 @@ module.exports = {
     extend: {
       grayscale: ['group-hover','hover', 'focus'],
       translate: ['group-hover'],
-      opacity:['group-hover'],
+      scale: ['group-hover'],
     },
   },
   plugins: [
