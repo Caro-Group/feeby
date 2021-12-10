@@ -38,7 +38,7 @@
         {if isset($formAtts.description) && $formAtts.description}
             <div class='image_description h-8 mt-6 ml-8 flex'>
 					{($formAtts.description) ? $formAtts.description:'' nofilter}{* HTML form , no escape necessary *} 
-                    <i class="duration-150 opacity-0 group-hover:opacity-1 group-hover:text-main group-hover:translate-x-4 inline-block relative text-lg text-main-dark ti-arrow-right transform transition"></i>
+                    <i class="duration-150 opacity-0 group-hover:opacity-100 group-hover:text-main group-hover:translate-x-4 inline-block relative text-lg text-main-dark ti-arrow-right transform transition"></i>
             </div>
         {/if}
         {if isset($formAtts.url) && $formAtts.url}
