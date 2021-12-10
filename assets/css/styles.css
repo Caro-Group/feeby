@@ -1,5 +1,46 @@
 @tailwind base;
 
+@font-face {
+    font-family: 'Nomada Didone';
+    src: url('../fonts/NomadaDidone-Medium.eot');
+    src: url('../fonts/NomadaDidone-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/NomadaDidone-Medium.woff2') format('woff2'),
+        url('../fonts/NomadaDidone-Medium.woff') format('woff'),
+        url('../fonts/NomadaDidone-Medium.ttf') format('truetype'),
+        url('../fonts/NomadaDidone-Medium.svg#NomadaDidone-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Nomada Didone';
+    src: url('../fonts/NomadaDidone-LightItalic.eot');
+    src: url('../fonts/NomadaDidone-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/NomadaDidone-LightItalic.woff2') format('woff2'),
+        url('../fonts/NomadaDidone-LightItalic.woff') format('woff'),
+        url('../fonts/NomadaDidone-LightItalic.ttf') format('truetype'),
+        url('../fonts/NomadaDidone-LightItalic.svg#NomadaDidone-LightItalic') format('svg');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Nomada Didone';
+    src: url('../fonts/NomadaDidone-ThinItalic.eot');
+    src: url('../fonts/NomadaDidone-ThinItalic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/NomadaDidone-ThinItalic.woff2') format('woff2'),
+        url('../fonts/NomadaDidone-ThinItalic.woff') format('woff'),
+        url('../fonts/NomadaDidone-ThinItalic.ttf') format('truetype'),
+        url('../fonts/NomadaDidone-ThinItalic.svg#NomadaDidone-ThinItalic') format('svg');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+
 @tailwind components;
 
 @tailwind utilities;
