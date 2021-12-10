@@ -38,7 +38,11 @@
     }
 
     .owl-customized .title{
-        @apply font-semibold mb-6 text-base text-black;
+        @apply font-header font-semibold mb-6 text-2xl text-black italic;
+    }
+
+    .owl-customized .descript{
+        @apply font-main font-light text-base;
     }
 
     .owl-customized .owl-item{
