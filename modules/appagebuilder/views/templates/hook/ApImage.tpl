@@ -7,7 +7,7 @@
 *}
 <!-- @file modules\appagebuilder\views\templates\hook\ApImage -->
 
-{* desktop-presta:h-96 desktop-wide:h-100 *}
+{* desktop-presta:h-96 desktop-wide:h-100  *}
 {if $page.page_name = 'index'}
 
 

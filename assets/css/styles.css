@@ -72,10 +72,10 @@
     @apply flex-row desktop-presta:flex-col;
 }
 
-.block.last a div::first-child{
-    @apply bg-gray-1000 w-1/3;
+.block.last a div:first-child{
+    @apply bg-gray-1000 w-1/3 ;
 }
 
-.image_description {
+.block.last.image_description {
     @apply flex justify-center items-center rounded-t-md w-2/3 bg-gray-1000; 
 }

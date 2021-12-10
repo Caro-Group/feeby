@@ -45,7 +45,7 @@ module.exports = {
         "miniature": "102px"
       },
       height: {
-        "100":"28rem", 
+        100:"28rem", 
       },
       margin: {
         'miniature': '102px',
@@ -69,6 +69,7 @@ module.exports = {
     extend: {
       grayscale: ['hover', 'focus'],
       translate: ['group-hover'],
+      opacity:['group-hover'],
     },
   },
   plugins: [
