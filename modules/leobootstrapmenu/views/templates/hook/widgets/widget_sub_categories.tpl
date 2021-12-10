@@ -23,7 +23,7 @@
                         </a>
                         {if isset($subcategory.subsubcategories) && $subcategory.subsubcategories}
                             <b class="caret {if $level3_only_mobile}hidden-lg-up{/if}"></b>
-                            <ul class="dropdown-sub dropdown-menu {if $level3_only_mobile}hidden-lg-up{/if}">
+                            <ul class="dropdown-sub dropdown-menu {if $level3_only_mobile}hidden-lg-up{/if}" style="display:none;">
                                 {foreach from=$subcategory.subsubcategories item=subsubcategory}
                                     <li class="clearfix level3" {if $show_widget_bo == 'admin'}style="margin-left: 20px;"{/if}>
                                         <a href="{$link->getCategoryLink($subsubcategory.id_category, $subsubcategory.link_rewrite)|escape:'htmlall':'UTF-8'}" title="{$subsubcategory.name|escape:'htmlall':'UTF-8'}" class="img" {if isset($subsubcategory.id_category)}data-category-id="{$subsubcategory.id_category}"{/if}>
