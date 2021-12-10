@@ -7,7 +7,7 @@
 *}
 <!-- @file modules\appagebuilder\views\templates\hook\ApImage -->
 
-{* desktop-presta:h-96 desktop-wide:h-100  *}
+{* desktop-presta:h-96 desktop-wide:h-100 text-md tablet:text-xl *}
 {if $page.page_name = 'index'}
 
 
@@ -35,28 +35,39 @@
 	    style=" width:{((isset($formAtts.width) && $formAtts.width) ? $formAtts.width : '100%')|escape:'html':'UTF-8'}; 
 			height:{((isset($formAtts.height) && $formAtts.height) ? $formAtts.height : '100%')|escape:'html':'UTF-8'}" />
 
+
+        {* add any 'dot' class in panel in order to create one and set it's position  *}
         {if $formAtts.class|strstr:"dot"}
-            <div class="absolute bg-white group-hover:bg-main w-4 h-4 rounded-full shadow-md transition
+            <div class="hidden desktop-presta:block absolute bg-white group-hover:bg-main w-4 h-4 rounded-full shadow-md transition
             {if $formAtts.class|strstr:"dot-top"}
                  top-1/3
             {/if}
             {if $formAtts.class|strstr:"dot-top2"}
-                top-2/3
+                top-1/4
             {/if}
             {if $formAtts.class|strstr:"dot-right"}
                  right-1/3
             {/if}
             {if $formAtts.class|strstr:"dot-right2"}
-                 right-2/3
-           {/if}
-            {if $formAtts.class|strstr:"dot-bot"}
-                 bottom-1/3
+                 right-1/4
             {/if}
             {if $formAtts.class|strstr:"dot-left"}
                  left-1/3
             {/if}
-            {if $formAtts.class|strstr:"dot-mid"}
-                 inset-2/4
+            {if $formAtts.class|strstr:"dot-left2"}
+                left-1/4
+            {/if}
+            {if $formAtts.class|strstr:"dot-bot"}
+                bottom-1/3
+            {/if}
+            {if $formAtts.class|strstr:"dot-bot2"}
+                bottom-1/4
+            {/if}
+            {if $formAtts.class|strstr:"dot-mid-x"}
+                 inset-x-2/4
+            {/if}
+            {if $formAtts.class|strstr:"dot-mid-y"}
+                inset-y-2/4
             {/if}
             ">
             </div>
@@ -64,9 +75,9 @@
 
         </div>
         {if isset($formAtts.description) && $formAtts.description}
-            <div class='image_description h-8 mt-6 ml-8 flex'>
+            <div class='image_description h-8 mt-6 ml-2 tablet:ml-8 mr-5 flex'>
 					{($formAtts.description) ? $formAtts.description:'' nofilter}{* HTML form , no escape necessary *} 
-                    <i class="duration-150 opacity-0 group-hover:opacity-100 group-hover:text-main group-hover:translate-x-4 inline-block relative text-lg text-main-dark ti-arrow-right transform transition"></i>
+                    <i class="duration-150 opacity-0 group-hover:opacity-100 group-hover:text-main group-hover:translate-x-4 hidden desktop-presta:inline-block relative text-lg text-main-dark ti-arrow-right transform transition"></i>
             </div>
         {/if}
         {if isset($formAtts.url) && $formAtts.url}

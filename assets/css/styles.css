@@ -128,8 +128,12 @@
     @apply bg-white border-white transform scale-125
 }
 
+.block.last{
+    @apply rounded-md bg-gray-1000;
+}
+
 .block.last a{
-    @apply flex-row desktop-presta:flex-col;
+    @apply flex-row items-center desktop-presta:flex-col;
 }
 
 .block.last a div:first-child{
@@ -137,5 +141,5 @@
 }
 
 .block.last .image_description {
-    @apply flex justify-center items-center rounded-t-md w-2/3 desktop-presta:w-full bg-gray-1000; 
+    @apply flex justify-center items-center desktop-presta:justify-start  w-2/3 desktop-presta:w-full h-full mt-0 ml-0 desktop-presta:mt-6 desktop-presta:ml-8; 
 }
