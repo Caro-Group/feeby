@@ -73,7 +73,7 @@
 }
 
 .block.last a div:first-child{
-    @apply bg-gray-1000 w-1/3 desktop-presta:w-full  ;
+    @apply bg-gray-1000 w-1/3 desktop-presta:w-full;
 }
 
 .block.last.image_description {

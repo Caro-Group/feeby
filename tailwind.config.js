@@ -62,13 +62,17 @@ module.exports = {
       },
       minWidth: {
         'label': '173px'
-      }
+      },
+      transitionDuration: {
+        '2000': '2000ms',
+      },
     },
   },
   variants: {
     extend: {
       grayscale: ['hover', 'focus'],
       translate: ['group-hover'],
+      scale: ['group-hover'],
     },
   },
   plugins: [
