@@ -73,7 +73,7 @@
 }
 
 .block.last a{
-    @apply flex-row items-center desktop-presta:flex-col;
+    @apply flex-row items-center desktop-presta:items-baseline desktop-presta:flex-col;
 }
 
 .block.last a div:first-child{
@@ -81,5 +81,5 @@
 }
 
 .block.last .image_description {
-    @apply flex justify-center items-center desktop-presta:justify-start  w-2/3 desktop-presta:w-full mt-0 ml-0 desktop-presta:mt-6 desktop-presta:ml-8; 
+    @apply flex justify-center items-center desktop-presta:justify-start  w-2/3 desktop-presta:w-auto mt-0 ml-0 desktop-presta:mt-6 desktop-presta:ml-8; 
 }
