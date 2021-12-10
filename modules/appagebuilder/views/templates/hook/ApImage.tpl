@@ -75,7 +75,7 @@
 
         </div>
         {if isset($formAtts.description) && $formAtts.description}
-            <div class='image_description h-8 mt-6 ml-2 tablet:ml-8 mr-5 flex'>
+            <div class='image_description h-8 mt-3 ml-2 tablet:ml-8 tablet:mt-6 tablet:mr-5 flex'>
 					{($formAtts.description) ? $formAtts.description:'' nofilter}{* HTML form , no escape necessary *} 
                     <i class="duration-150 opacity-0 group-hover:opacity-100 group-hover:text-main group-hover:translate-x-4 hidden desktop-presta:inline-block relative text-lg text-main-dark ti-arrow-right transform transition"></i>
             </div>

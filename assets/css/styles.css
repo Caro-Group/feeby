@@ -69,7 +69,7 @@
 }
 
 .block.last{
-    @apply rounded-md bg-gray-1000;
+    @apply rounded-md bg-gray-1000 desktop-presta:bg-none desktop-presta:mt-0 mt-3;
 }
 
 .block.last a{
@@ -77,9 +77,9 @@
 }
 
 .block.last a div:first-child{
-    @apply bg-gray-1000 w-1/3 desktop-presta:w-full;
+    @apply w-1/3 desktop-presta:w-full;
 }
 
 .block.last .image_description {
-    @apply flex justify-center items-center desktop-presta:justify-start  w-2/3 desktop-presta:w-full h-full mt-0 ml-0 desktop-presta:mt-6 desktop-presta:ml-8; 
+    @apply flex justify-center items-center desktop-presta:justify-start  w-2/3 desktop-presta:w-full mt-0 ml-0 desktop-presta:mt-6 desktop-presta:ml-8; 
 }
