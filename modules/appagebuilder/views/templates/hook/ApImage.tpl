@@ -38,7 +38,7 @@
 
         {* add any 'dot' class in panel in order to create one and set it's position  *}
         {if $formAtts.class|strstr:"dot"}
-            <div class="hidden desktop-presta:block absolute bg-white group-hover:bg-main w-4 h-4 rounded-full shadow-md transition
+            <div class="hidden desktop-presta:block absolute bg-white group-hover:bg-main w-3 h-3 rounded-full shadow-md transition
             {if $formAtts.class|strstr:"dot-top"}
                  top-1/3
             {/if}
