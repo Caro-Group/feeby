@@ -129,7 +129,7 @@
 }
 
 .block.last{
-    @apply rounded-md bg-gray-1000 desktop-presta:bg-none desktop-presta:mt-0 mt-3;
+    @apply rounded-md bg-gray-1000 desktop-presta:bg-transparent desktop-presta:mt-0 mt-3;
 }
 
 .block.last a{
