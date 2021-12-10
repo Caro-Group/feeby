@@ -27,13 +27,41 @@
         <a href="{$formAtts.url}{*full url can not escape*}" class="flex flex-col h-full group" {(isset($formAtts.is_open) && $formAtts.is_open) ? 'target="_blank"' : ''|escape:'html':'UTF-8'}>
         {/if}
         <div class="overflow-hidden rounded-md h-full">
-        <img class="object-cover group-hover:scale-110 duration-2000 {if $aplazyload}lazy{/if}" {if $aplazyload}data-src{else}src{/if}="{if isset($formAtts.image) && $formAtts.image}{$path|escape:'html':'UTF-8'}{$formAtts.image|escape:'html':'UTF-8'}{else}{if isset($formAtts.image_link)}{$formAtts.image_link|escape:'html':'UTF-8'}{/if}{/if}" class="{(isset($formAtts.animation) && $formAtts.animation != 'none') ? 'has-animation' : ''|escape:'html':'UTF-8'}"
+        <img class="object-cover transform group-hover:scale-110 duration-2000 {if $aplazyload}lazy{/if}" {if $aplazyload}data-src{else}src{/if}="{if isset($formAtts.image) && $formAtts.image}{$path|escape:'html':'UTF-8'}{$formAtts.image|escape:'html':'UTF-8'}{else}{if isset($formAtts.image_link)}{$formAtts.image_link|escape:'html':'UTF-8'}{/if}{/if}" class="{(isset($formAtts.animation) && $formAtts.animation != 'none') ? 'has-animation' : ''|escape:'html':'UTF-8'}"
             {if isset($formAtts.animation) && $formAtts.animation != 'none'} data-animation="{$formAtts.animation|escape:'html':'UTF-8'}" {/if}
             {if $formAtts.animation_delay != ''} data-animation-delay="{$formAtts.animation_delay|escape:'html':'UTF-8'}" {/if}
             title="{((isset($formAtts.title) && $formAtts.title) ? $formAtts.title : '')|escape:'html':'UTF-8'}"
             alt="{((isset($formAtts.alt) && $formAtts.alt) ? $formAtts.alt : '')|escape:'html':'UTF-8'}"
 	    style=" width:{((isset($formAtts.width) && $formAtts.width) ? $formAtts.width : '100%')|escape:'html':'UTF-8'}; 
 			height:{((isset($formAtts.height) && $formAtts.height) ? $formAtts.height : '100%')|escape:'html':'UTF-8'}" />
+
+        {if $formAtts.class|strstr:"dot"}
+            <div class="absolute bg-white group-hover:bg-main w-4 h-4 rounded-full shadow-md transition
+            {if $formAtts.class|strstr:"dot-top"}
+                 top-1/3
+            {/if}
+            {if $formAtts.class|strstr:"dot-top2"}
+                top-2/3
+            {/if}
+            {if $formAtts.class|strstr:"dot-right"}
+                 right-1/3
+            {/if}
+            {if $formAtts.class|strstr:"dot-right2"}
+                 right-2/3
+           {/if}
+            {if $formAtts.class|strstr:"dot-bot"}
+                 bottom-1/3
+            {/if}
+            {if $formAtts.class|strstr:"dot-left"}
+                 left-1/3
+            {/if}
+            {if $formAtts.class|strstr:"dot-mid"}
+                 inset-2/4
+            {/if}
+            ">
+            </div>
+        {/if}
+
         </div>
         {if isset($formAtts.description) && $formAtts.description}
             <div class='image_description h-8 mt-6 ml-8 flex'>
