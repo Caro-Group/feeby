@@ -7,6 +7,22 @@
 
 @layer components{
 
+    h1,h2{
+        @apply font-header text-main-dark italic;
+    }
+
+    h1{
+        @apply text-2xl tablet:text-4xl font-light;
+    }
+
+    h2{
+        @apply text-base tablet:text-2xl font-normal;
+    }
+
+    p{
+        @apply font-main font-light text-main-dark;
+    }
+
     .center-inside{
         float: none !important;
         @apply mx-auto;

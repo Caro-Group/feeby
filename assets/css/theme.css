@@ -86,62 +86,12 @@ font-family: 'Poppins', sans-serif;
   .table-bordered th,
   .table-bordered td {
     border: 1px solid #ddd !important; } }
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
-  margin-bottom: 0.5rem;
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  line-height: 1.1;
-  color: #000; }
-
-h1, .h1 {
-  font-size: 24px; }
-
-h2, .h2 {
-  font-size: 22px; }
-
-h3, .h3 {
-  font-size: 28px; }
-
-h4, .h4 {
-  font-size: 16px; }
-
-h5, .h5 {
-  font-size: 14px; }
-
-h6, .h6 {
-  font-size: 14px; }
-
-.lead {
-  font-size: 1.25rem;
-  font-weight: 300; }
-
-.display-1 {
-  font-size: 6rem;
-  font-weight: 300; }
-
-.display-2 {
-  font-size: 5.5rem;
-  font-weight: 300; }
-
-.display-3 {
-  font-size: 4.5rem;
-  font-weight: 300; }
-
-.display-4 {
-  font-size: 3.5rem;
-  font-weight: 300; }
 
 hr {
   margin-top: 1rem;
   margin-bottom: 1rem;
   border: 0;
   border-top: 1px solid rgba(0, 0, 0, 0.1); }
-
-small,
-.small {
-  font-size: 80%;
-  font-weight: normal; }
 
 mark,
 .mark {
@@ -160,10 +110,6 @@ mark,
   display: inline-block; }
   .list-inline-item:not(:last-child) {
     margin-right: 5px; }
-
-.initialism {
-  font-size: 90%;
-  text-transform: uppercase; }
 
 .blockquote {
   padding: 0.5rem 1rem;
