@@ -1,3 +1,5 @@
+const { fontFamily } = require("tailwindcss/defaultTheme");
+
 module.exports = {
   future: {
     purgeLayersByDefault: true,
@@ -85,6 +87,10 @@ module.exports = {
       },
       transitionDuration: {
         '2000': '2000ms',
+      },
+      fontFamily: {
+        'header': ['Nomada Didone','serif'],
+        'main': ['Roboto','sans-serif'],
       },
     },
   },
