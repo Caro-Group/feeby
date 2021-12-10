@@ -5,7 +5,7 @@
 * @copyright  Leotheme
 *}
 
-<div class="tablet:-mx-3 desktop-presta:-mx-0 swiper-banner">
+<div class=" tablet:-mx-3 desktop-presta:-mx-0 swiper-banner">
 	<div class="swiper-wrapper max-h-tablet">
 	{if $sliders}
 		{foreach from=$sliders item=slider}
@@ -33,7 +33,7 @@
 					>		
 
 					<img
-						class="min-h-banner max-h-tablet min-w-full desktop-wide:h-banner-final object-left object-cover"
+						class=" min-h-banner max-h-tablet min-w-full desktop-wide:h-banner-final object-left object-cover"
 						src="{$slider.main_image|escape:'html':'UTF-8'}">
 				</a>
 
