@@ -1,4 +1,4 @@
-@imports "fonts.css";
+@import "fonts.css";
 
 @tailwind base;
 
@@ -15,4 +15,4 @@ p{
     @apply font-header;
 }
 
-@layer components;
+@layer components{}
