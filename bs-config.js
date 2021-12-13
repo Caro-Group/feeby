@@ -15,6 +15,11 @@
 
 require('dotenv').config();
 
+var tailwindConfig = {};
+var tailwindConfigOriginal = require('./tailwind.config.js');
+tailwindConfig.theme = tailwindConfigOriginal.theme;
+tailwindConfig.corePlugins = tailwindConfigOriginal.corePlugins;
+
 module.exports = {
     "ui": {
         "port": 3001
@@ -73,7 +78,7 @@ module.exports = {
         rule: {
             match: /<\/head>/i,
             fn: function (snippet, match) {
-                return '<script src="https://cdn.tailwindcss.com"></script>' + snippet + match;
+                return '<script src="https://cdn.tailwindcss.com"></script><script> tailwind.config = ' + JSON.stringify(tailwindConfig) + ';</script>' + snippet + match;
             }
         }
     },
