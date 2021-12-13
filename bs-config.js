@@ -68,7 +68,15 @@ module.exports = {
     "logPrefix": "Browsersync",
     "logConnections": false,
     "logFileChanges": true,
-    "logSnippet": true,
+    "logSnippet": true, 
+    "snippetOptions": {
+        rule: {
+            match: /<\/head>/i,
+            fn: function (snippet, match) {
+                return '<script src="https://cdn.tailwindcss.com"></script>' + snippet + match;
+            }
+        }
+    },
     "rewriteRules": [],
     "open": "local",
     "browser": "default",

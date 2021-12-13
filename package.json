@@ -40,7 +40,7 @@
     "browser-sync": "2.24.6",
     "concurrently": "^6.3.0",
     "cross-env": "^7.0.3",
-    "cssnano": "^5.0.8",
+    "cssnano": "^5.0.12",
     "dotenv": "^10.0.0",
     "postcss-cli": "^9.0.1",
     "postcss-nesting": "^10.0.3"
