@@ -13,6 +13,10 @@ p{
     @apply font-header;
 }
 
+.owl-customized .owl-item{
+    @apply group;
+}
+
 @layer components{
 
     h1,h2{
