@@ -1,12 +1,10 @@
-@imports "fonts.css";
+@import "fonts.css";
 
 @tailwind base;
 
 @tailwind components;
 
 @tailwind utilities;
-
-/* Classes used in builder: tablet-medium:mr-20 tablet-wide:mr-8 desktop:mr-0 tablet-medium:top-auto tablet-medium:w-3/5 tablet-medium:absolute  tablet-medium:-bottom-12 */
 
 h1,
 h2,
@@ -69,7 +67,7 @@ p{
     }
 
     .owl-customized .owl-item{
-        @apply filter group grayscale transition duration-150;
+        @apply filter grayscale transition duration-150;
     }
     .owl-customized .owl-item.active{
         @apply filter grayscale-0 ;

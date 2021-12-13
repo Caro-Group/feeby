@@ -15279,7 +15279,6 @@ button:focus, button:hover {
         line-height: 20px;
         text-transform: uppercase;
         color: #000;
-        font-weight: 600;
         -webkit-transition: all 350ms ease-out;
         -o-transition: all 350ms ease-out;
         transition: all 350ms ease-out;

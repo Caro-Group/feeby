@@ -42,6 +42,10 @@ module.exports = {
     "middleware": false,
     "serveStatic": [
         {
+            route: '/themes/feeby/assets/fonts',
+            dir: 'assets/fonts'
+        },
+        {
             route: '/themes/feeby/assets/css',
             dir: 'assets/css'
         },
