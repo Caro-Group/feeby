@@ -1,4 +1,5 @@
-const { fontFamily } = require("tailwindcss/defaultTheme");
+
+const { fontFamily } = require('tailwindcss/defaultTheme');
 
 module.exports = {
   future: {
@@ -19,10 +20,6 @@ module.exports = {
   },
   darkMode: false,
   theme: {
-    fontFamily: {
-      'body': ['"Nomada Didone"', '"Open Sans"'],
-      'sans': ['"Roboto"', '"ui-sans-serif"', '"system-ui"', '"-apple-system"', '"BlinkMacSystemFont"', '"Segoe UI"', '"Helvetica Neue"', '"Arial"', '"Noto Sans"', '"sans-serif"', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Noto Color Emoji"']
-    },
     screens: {
       'phone': '320px',
       'phone-wide': '480px',
@@ -93,8 +90,15 @@ module.exports = {
         '2000': '2000ms',
       },
       fontFamily: {
-        'header': ['Nomada Didone','serif'],
-        'main': ['Roboto','sans-serif'],
+        'header': [
+          'Nomada Didone',
+          'Roboto', 
+          ...fontFamily.sans
+        ],
+        'body': [
+          'Roboto', 
+          ...fontFamily.sans
+        ],
       },
     },
   },
