@@ -91,12 +91,12 @@ module.exports = {
       },
       fontFamily: {
         'header': [
-          'Nomada Didone',
-          'Roboto', 
+          '"Nomada Didone"',
+          '"Roboto"', 
           ...fontFamily.sans
         ],
         'body': [
-          'Roboto', 
+          '"Roboto"', 
           ...fontFamily.sans
         ],
       },

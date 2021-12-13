@@ -61,7 +61,7 @@ p{
     }
 
     .owl-customized .title{
-        @apply font-semibold mb-6 text-2xl;
+        @apply mb-6 text-2xl;
     }
 
     .owl-customized .descript{
