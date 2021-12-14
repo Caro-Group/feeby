@@ -30,7 +30,7 @@
 
 				{if $slider.link}
 					<a title="{l s='%s' sprintf=[$slider.title] mod='appagebuilder'}" {if $formAtts.is_open}target="_blank"{/if} href="{$slider.link}{*full link can not escape*}">
-					<div class="aspect-square">
+					<div class=" aspect-square ">
 				{/if}
 				{if isset($slider.image) && !empty($slider.image)}
 					<img class="object-cover w-full h-4/5 phablet:h-3/4" src="{$slider.image|escape:'html':'UTF-8'}" alt="{if isset($slider.title)}{$slider.title|escape:'html':'UTF-8'}{/if}"/>
@@ -42,7 +42,7 @@
 				<div class="p-5 bg-white flex flex-col justify-between h-2/6 phablet:h-1/5 ">
 				
 					{if isset($slider.title) && !empty($slider.title)}
-						<h2 class="font-light tablet:text-base  desktop-presta:text-xl line-clamp-2 phablet:line-clamp-1 desktop-presta:line-clamp-2">{$slider.title|escape:'html':'UTF-8' nofilter}</h2>
+						<h2 class="font-light tablet:text-base  desktop-presta:text-2xl line-clamp-2 phablet:line-clamp-1 desktop-presta:line-clamp-2">{$slider.title|escape:'html':'UTF-8' nofilter}</h2>
 					{/if}
 					{if isset($slider.sub_title) && !empty($slider.sub_title)}
 						<p class="uppercase hover:text-main transition font-body font-normal text-[10px] tablet:text-sm">{$slider.sub_title|escape:'html':'UTF-8' nofilter}<i class="ti-arrow-right ml-2"></i></p>
