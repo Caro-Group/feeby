@@ -7,7 +7,7 @@
 *}
 {if $menu.active == 1}
     <li data-menu-type="{$menu.type}" class="nav-item {$menu.menu_class} {$addwidget}" {$model->renderAttrs($menu)}>
-        <a class="nav-link has-category font-main" href="{$model->getLink($menu)}" target="{$menu.target}">
+        <a class="nav-link has-category font-main text-main-dark" href="{$model->getLink($menu)}" target="{$menu.target}">
             {if $menu.icon_class}
                 {if $menu.icon_class != $menu.icon_class|strip_tags}
                     <span class="hasicon menu-icon-class">{$menu.icon_class nofilter}
