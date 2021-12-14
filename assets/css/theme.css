@@ -3575,7 +3575,7 @@ a.bg-inverse:focus, a.bg-inverse:hover {
   font-style: italic; }
 
 .text-white {
-  color: #fff !important; }
+  color: #fff ; }
 
 .text-muted {
   color: #acaaa6 !important; }
