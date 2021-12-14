@@ -32,7 +32,7 @@
     <form action="{$urls.pages.index}#footer" method="post" data-newsletter-form>
       <div>
           {if $conditions}
-            <p class="text-center text-base tablet:text-2xl">{$conditions}</p>
+            <p class="text-center text-base tablet:text-2xl font-body">{$conditions}</p>
           {/if}
             <p data-newsletter-alert>
               {if $msg}
