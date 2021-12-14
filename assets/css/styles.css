@@ -22,7 +22,7 @@
     
     .owl-customized .owl-item .block-carousel-image-container img{
         filter: invert(17%) sepia(49%) saturate(5868%) hue-rotate(328deg) brightness(101%) contrast(93%);
-        @apply tablet:p-2 select-none;
+        @apply p-1 tablet:p-2 select-none;
     }
 
     .owl-customized .title{
