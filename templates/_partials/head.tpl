@@ -103,3 +103,7 @@ tablet-medium:mr-20 tablet-wide:mr-8 desktop:mr-0 tablet-medium:top-auto tablet-
 {/block}
 
 {block name='hook_extra'}{/block}
+
+{* 
+Classes used in builder: tablet-medium:mr-20 tablet-wide:mr-8 desktop:mr-0 tablet-medium:top-auto tablet-medium:w-3/5 tablet-medium:absolute tablet-medium:-bottom-12
+*}

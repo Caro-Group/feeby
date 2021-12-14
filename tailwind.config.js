@@ -74,9 +74,7 @@ module.exports = {
       },
       height: {
         'banner-final' :'750px',
-        'label': '173px'
-      },
-      height: {
+        'label': '173px',
         '100':'28rem', 
       },
       transitionDuration: {

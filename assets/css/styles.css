@@ -6,26 +6,12 @@
 
 @tailwind utilities;
 
-h1,
-h2,
-h3,
-p{
-    @apply font-header;
-}
-
-.owl-customized .owl-item{
-    @apply group;
-}
 
 h1,
 h2,
 h3,
 p{
     @apply font-header;
-}
-
-.owl-customized .owl-item{
-    @apply group;
 }
 
 @layer components{
@@ -78,7 +64,7 @@ p{
     }
 
     .owl-customized .descript{
-        @apply font-header font-light text-base text-main-dark;
+        @apply font-light text-base text-main-dark;
     }
 
     .owl-customized .owl-item{
