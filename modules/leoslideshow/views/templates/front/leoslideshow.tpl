@@ -5,7 +5,7 @@
 * @copyright  Leotheme
 *}
 
-<div class=" tablet:-mx-3 desktop-presta:-mx-0 swiper-banner">
+<div class=" tablet:-mx-3 desktop-presta:-mx-4 swiper-banner">
 	<div class="swiper-wrapper max-h-tablet">
 	{if $sliders}
 		{foreach from=$sliders item=slider}
