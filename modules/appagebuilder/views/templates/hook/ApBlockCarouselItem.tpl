@@ -39,13 +39,13 @@
 						<img class="object-fit w-full h-4/5 phablet:h-3/4" src="{$slider.image_link|escape:'html':'UTF-8'}" alt="{if isset($slider.title)}{$slider.title|escape:'html':'UTF-8'}{/if}"/>
 					{/if}
 				{/if}
-				<div class="p-5 bg-white flex flex-col justify-between h-2/6 phablet:h-1/5">
+				<div class="p-5 bg-white flex flex-col justify-between h-2/6 phablet:h-1/5 ">
 				
 					{if isset($slider.title) && !empty($slider.title)}
-						<h4 class="font-light">{$slider.title|escape:'html':'UTF-8' nofilter}</h4>
+						<h2 class="font-light tablet:text-base  dasktop-presta:text-xl line-clamp-2 phablet:line-clamp-1 desktop-presta:line-clamp-2">{$slider.title|escape:'html':'UTF-8' nofilter}</h2>
 					{/if}
 					{if isset($slider.sub_title) && !empty($slider.sub_title)}
-						<p class="uppercase hover:text-main transition">{$slider.sub_title|escape:'html':'UTF-8' nofilter}<i class="ti-arrow-right ml-2"></i></p>
+						<p class="uppercase hover:text-main transition font-body font-normal text-[10px] tablet:text-sm">{$slider.sub_title|escape:'html':'UTF-8' nofilter}<i class="ti-arrow-right ml-2"></i></p>
 					{/if}
 				</div>
 				{if isset($slider.descript) && !empty($slider.descript)}
