@@ -69,7 +69,7 @@
 			{hook h='displayLeoCartQuantity' product=$product}
 			
 			{block name='product_name'}
-		         <h3 class="text-sm font-weight-normal" itemprop="name"><a class="text-main-dark" href="{$product.canonical_url}">{$product.name}</a></h3>
+		         <h3 itemprop="name"><a class="text-sm tablet:text-base font-light text-main-dark font-body" href="{$product.canonical_url}">{$product.name}</a></h3>
 			{/block}
  
 				{block name='product_price_and_shipping'}
@@ -79,7 +79,7 @@
 							{hook h='displayProductPriceBlock' product=$product type="before_price"}
 
 							<span class="sr-only">{l s='Price' d='Shop.Theme.Catalog'}</span>
-							<span itemprop="price" class=" {if $product.has_discount} text-main {else} text-main-dark {/if} text-base font-bold">{$product.price}</span>
+							<span itemprop="price" class=" {if $product.has_discount} text-main {else} text-main-dark {/if} text-base tablet:text-lg font-bold font-body">{$product.price}</span>
 
 							{hook h='displayProductPriceBlock' product=$product type='unit_price'}
 
