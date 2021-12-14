@@ -48,6 +48,7 @@
               {else}
                 <img id="zoom_product" data-type-zoom="" class="js-qv-product-cover img-fluid" src="{$urls.no_picture_image.bySize.large_default.url}" alt="{$product.name}" title="{$product.name}" itemprop="image">
               {/if}
+              {hook h='displayProductCoverPlacement'}
             </div>
           {/block}
 
@@ -82,6 +83,12 @@
                       itemprop="image"
                     >
                   </a>
+                </div>
+              {/if}
+              {assign var='displayProductThumbEndCustom' value={hook h='displayProductThumbEndCustom'} }
+              {if $displayProductThumbEndCustom}
+                <div class="thumb-container">
+                  {hook h='displayProductThumbEndCustom'}
                 </div>
               {/if}
             </div>

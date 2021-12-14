@@ -1,23 +1,17 @@
-const { fontFamily } = require("tailwindcss/defaultTheme");
+
+const { fontFamily } = require('tailwindcss/defaultTheme');
 
 module.exports = {
   future: {
     purgeLayersByDefault: true,
   },
-  purge: {
-    enabled: process.env.NODE_ENV === 'production',
-    content: [
-      'assets/**/*.{vue,js,ts,jsx,tsx,tpl,yml,css,scss}',
-      'config/**/*.{vue,js,ts,jsx,tsx,tpl,yml}',
-      'modules/**/*.{vue,js,ts,jsx,tsx,tpl,yml}',
-      'templates/**/*.{vue,js,ts,jsx,tsx,tpl,yml}',
-      'nuxt.config.js'
-    ],
-    options: {
-      whitelist: [''],
-    }
-  },
-  darkMode: false,
+  content: [
+    './assets/**/*.{vue,js,ts,jsx,tsx,tpl,yml}',
+    './config/**/*.{vue,js,ts,jsx,tsx,tpl,yml}',
+    './modules/**/*.{vue,js,ts,jsx,tsx,tpl,yml}',
+    './templates/**/*.{vue,js,ts,jsx,tsx,tpl,yml}',
+    './nuxt.config.js'
+  ],
   theme: {
     screens: {
       'phone': '320px',
@@ -61,21 +55,32 @@ module.exports = {
       minWidth: {
         'label': '173px'
       },
+      height: {
+        '100':'28rem', 
+      },
+      transitionDuration: {
+        '2000': '2000ms',
+      },
       fontFamily: {
-        'header': ['Nomada Didone','serif'],
-        'main': ['Roboto','sans-serif'],
+        'header': [
+          '"Nomada Didone"',
+          'Roboto', 
+          ...fontFamily.sans
+        ],
+        'body': [
+          'Roboto', 
+          ...fontFamily.sans
+        ],
       },
     },
   },
-  variants: {
-    extend: {
-      grayscale: ['hover', 'focus'],
-    },
-  },
   plugins: [
+    require("@tailwindcss/typography"),
     require("@tailwindcss/forms")({
       strategy: 'class',
     }),
+    require("@tailwindcss/aspect-ratio"),
+    require("@tailwindcss/line-clamp"),
   ],
   corePlugins: {
    container: false,

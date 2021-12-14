@@ -5731,7 +5731,6 @@ html {
   -webkit-tap-highlight-color: transparent; }
 
 body {
-  font-family: "Poppins", sans-serif;
   font-size: 1rem;
   line-height: 1.5;
   color: #666;
@@ -9311,7 +9310,6 @@ output {
 
 body {
   direction: ltr;
-  font-family: "Poppins", sans-serif;
   font-size: 13px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -15281,7 +15279,6 @@ button:focus, button:hover {
         line-height: 20px;
         text-transform: uppercase;
         color: #000;
-        font-weight: 600;
         -webkit-transition: all 350ms ease-out;
         -o-transition: all 350ms ease-out;
         transition: all 350ms ease-out;

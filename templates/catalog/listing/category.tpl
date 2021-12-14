@@ -37,7 +37,7 @@
         {foreach from=$subcategories item=subcategory}
           <div class="subcategory-block col-xl-4 col-lg-4 col-md-6 col-sm-6 col-xs-6 col-sp-12">
             <div class="subcategory-image">
-              <a href="{$link->getCategoryLink($subcategory.id_category, $subcategory.link_rewrite)|escape:'html':'UTF-8'}" title="{$subcategory.name|escape:'html':'UTF-8'}" class="img">
+              <a href="{$link->getCategoryLink($subcategory.id_category, $subcategory.link_rewrite)|escape:'html':'UTF-8'}" title="{$subcategory.name|escape:'html':'UTF-8'}" class="img" >
                 <img class="lazy img-fluid" data-src="{$link->getCatImageLink($subcategory.link_rewrite, $subcategory.id_image, 'category_default')}" alt="{$subcategory.name|escape:'html':'UTF-8'}"/>
               </a>
             </div>
