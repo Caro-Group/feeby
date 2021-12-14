@@ -42,7 +42,7 @@
 	<div id="{$carouselName|escape:'html':'UTF-8'}" class="owl-carousel owl-theme owl-loading">
             {$Num=array_chunk($formAtts.slides, $formAtts.itempercolumn)}
             {foreach from=$Num item=sliders name=manuloop} 
-            <div class="item">
+            <div class="item group">
                 {foreach from=$sliders item=slider}
                     <div class="block-carousel-container">
                         <div class="left-block">

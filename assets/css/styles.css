@@ -68,7 +68,7 @@ p{
     }
 
     .owl-customized .owl-item{
-        @apply filter group grayscale transition duration-150;
+        @apply filter grayscale transition duration-150;
     }
     .owl-customized .owl-item.active{
         @apply filter grayscale-0 ;
