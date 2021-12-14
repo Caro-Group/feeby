@@ -35,7 +35,7 @@
                         {foreach from=$formAtts.links item=item}
                             {if $item.title && $item.link}
                                 <li class="ml-6">
-                                    <a class="text-main-dark hover:text-main transition" href="{$item.link}"
+                                    <a class="text-main-dark hover:text-main transition font-body" href="{$item.link}"
                                         target="{$item.target_type}">
                                         {if $item.link|strstr:'facebook'}
                                             <svg class="fill-current text-main-dark hover:text-main transition" width="13" height="20" viewBox="0 0 13 20" fill="none" xmlns="http://www.w3.org/2000/svg">

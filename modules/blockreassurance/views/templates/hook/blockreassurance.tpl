@@ -34,7 +34,7 @@
                         <img src="{$block.image}">
                     {/if}
             </div>
-            <div class="flex flex-col text-center text-main-dark">
+            <div class="flex flex-col text-center text-main-dark font-body text-base tablet:text-xl">
                 <div >{$block.title}</div>
                 <p >{$block.description nofilter}</p>
             </div>

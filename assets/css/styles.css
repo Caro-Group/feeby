@@ -17,6 +17,17 @@ p{
     @apply group;
 }
 
+h1,
+h2,
+h3,
+p{
+    @apply font-header;
+}
+
+.owl-customized .owl-item{
+    @apply group;
+}
+
 @layer components{
 
     h1,h2{

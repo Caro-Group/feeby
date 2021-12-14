@@ -42,7 +42,7 @@
         <div>
           <div class="border-gray-2000 border-solid border flex rounded-full pl-4 bg-white ">
             <input
-            class="w-full bg-transparent border-0 py-3 outline-none font-main italic"
+            class="w-full bg-transparent border-0 py-3 outline-none font-body italic"
               name="email"
               type="text"
               value="{$value}"
@@ -50,7 +50,7 @@
             >
 
             <button
-            class="bg-main hover:bg-main-hover duration-150 border-0 rounded-full text-white px-4 uppercase whitespace-nowrap font-main"
+            class="bg-main hover:bg-main-hover duration-150 border-0 rounded-full text-white px-4 uppercase whitespace-nowrap font-body"
               name="submitNewsletter"
               type="submit"
               value="{l s='Subscribe' d='Shop.Theme.Actions'}"
@@ -60,7 +60,7 @@
             </button>
           </div>
           <input type="hidden" name="action" value="0">
-          <div class="font-main">
+          <div class="font-body">
               {if isset($id_module)}
                 {hook h='displayGDPRConsent' id_module=$id_module}
               {/if}
