@@ -25,14 +25,6 @@
         @apply p-1 tablet:p-2 select-none;
     }
 
-    .owl-customized .title{
-        @apply font-semibold mb-6 text-base text-main-dark;
-    }
-
-    .owl-customized .descript{
-        @apply text-main-dark;
-    }
-
     .owl-customized .owl-item{
         @apply filter grayscale transition duration-150;
     }
