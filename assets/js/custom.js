@@ -1241,6 +1241,35 @@ $('body').on('click', "[data-checkout-back]",function(e){
 
 
 
+//Top bar swiper 
+$(document).ready(function () {
+
+	const swiper = new Swiper('.swiper', {
+		speed: 25000,
+		spaceBetween: 50,
+		loop: true,
+		autoplay: {
+			delay: 0,
+		},
+		allowTouchMove: false,
+	  });
+	  
+	const swiperBlog = new Swiper('.swiper-blog', {
+		speed: 300,
+		slidesPerView: 2,
+		spaceBetween: 20,
+		loop: true,
+		navigation: {
+			nextEl: '.swiper_blog-button-next',
+			prevEl: '.swiper_blog-button-prev',
+		  },
+	});
+
+});
+
+
+
+
 $(document).ready(function () {
 
 	$('.owl-customized .owl-theme').on('resize.owl.carousel', checkWidth)
