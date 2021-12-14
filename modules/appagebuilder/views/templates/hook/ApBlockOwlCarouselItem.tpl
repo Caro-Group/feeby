@@ -53,21 +53,23 @@
                                 {/if}
 
                                 {if (isset($slider.image) && !empty($slider.image)) || (isset($slider.image_link) && !empty($slider.image_link))}
-                                    {if isset($formAtts) && isset($formAtts.lazyload) && $formAtts.lazyload}
+                                    <div class="w-[50px] tablet:w-[70px] aspect-square mb-6 bg-gray-1000 rounded-md ">
+									{if isset($formAtts) && isset($formAtts.lazyload) && $formAtts.lazyload}
                                         {* ENABLE LAZY LOAD OWL_CAROUSEL *}
                                         <img class="img-fluid lazyOwl" src="" data-src="{if $slider.image}{$slider.image}{else}{$slider.image_link}{/if}{*full link can not escape*}" alt="{if isset($slider.title)}{$slider.title|escape:'html':'UTF-8'}{/if}"/>
                                     {else}
                                         <img class="img-fluid{if $aplazyload} lazy{/if}" {if $aplazyload} data-src{else}src{/if}="{if $slider.image}{$slider.image}{else}{$slider.image_link}{/if}{*full link can not escape*}" alt="{if isset($slider.title)}{$slider.title|escape:'html':'UTF-8'}{/if}"/>
                                     {/if}
+									</div>
                                 {/if}
                                 {if isset($slider.title) && !empty($slider.title)}
-                                        <h2 class="title font-regular">{$slider.title|escape:'html':'UTF-8' nofilter}</h2>
+                                        <div class="title">{$slider.title|escape:'html':'UTF-8' nofilter}</div>
                                 {/if}
 							{if isset($slider.sub_title) && !empty($slider.sub_title)}
 								<p class="sub-title">{$slider.sub_title|escape:'html':'UTF-8' nofilter}</p>
 							{/if}
                                 {if isset($slider.descript) && !empty($slider.descript)}
-                                        <div class="descript font-body text-sm tablet:text-base">{$slider.descript|rtrim nofilter}{* HTML form , no escape necessary *}</div>
+                                        <div class="descript">{$slider.descript|rtrim nofilter}{* HTML form , no escape necessary *}</div>
                                 {/if}
                                 {if $slider.link}{*full link can not escape*}
                                 </a>
