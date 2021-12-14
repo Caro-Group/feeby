@@ -6,7 +6,7 @@ module.exports = {
     purgeLayersByDefault: true,
   },
   content: [
-    './assets/**/*.{vue,js,ts,jsx,tsx,tpl,yml}',
+    './assets/**/*.{vue,js,ts,jsx,tsx,tpl,yml,svg,scss}',
     './config/**/*.{vue,js,ts,jsx,tsx,tpl,yml}',
     './modules/**/*.{vue,js,ts,jsx,tsx,tpl,yml}',
     './templates/**/*.{vue,js,ts,jsx,tsx,tpl,yml}',
@@ -19,7 +19,9 @@ module.exports = {
       'phablet': '560px',
       'tablet-small': '640px',
       'tablet': '768px',
+      'tablet-medium': '922px',
       'tablet-wide': '1024px',
+      'desktop-presta': '1200px',
       'desktop': '1248px',
       'desktop-wide': '1440px',
       'full-hd': '1680px',
@@ -27,10 +29,15 @@ module.exports = {
     extend: {
       colors: {
         "main" : "#DF1A5B",
+        'main-hover' : '#B7164B',
         "main-dark" : "#232322",
         "require": "#f00",
         gray: {
           default: '#F8F8F8',
+          main: '#232322',
+        },
+        pink: {
+          650: '#DF1A5B',
         },
         gray: {
           1000: '#F8F8F8',
@@ -59,7 +66,15 @@ module.exports = {
         'label': '173px',
         'swiper-mobile':'500px',
       },
+      maxHeight: {
+        'tablet': '768px',
+      },
+      minHeight: {
+        'banner' : '450px',
+      },
       height: {
+        'banner-final' :'750px',
+        'label': '173px',
         '100':'28rem', 
       },
       transitionDuration: {
@@ -76,15 +91,6 @@ module.exports = {
           ...fontFamily.sans
         ],
       },
-      maxHeight: {
-        'tablet': '768px',
-      },
-      minHeight: {
-        'banner' : '450px',
-      },
-      height: {
-        'banner-final' :'750px',
-      },
     },
   },
   plugins: [
@@ -92,7 +98,6 @@ module.exports = {
     require("@tailwindcss/forms")({
       strategy: 'class',
     }),
-    require("@tailwindcss/aspect-ratio"),
     require("@tailwindcss/line-clamp"),
   ],
   corePlugins: {
