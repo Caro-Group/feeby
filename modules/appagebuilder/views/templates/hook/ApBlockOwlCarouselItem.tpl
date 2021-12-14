@@ -63,13 +63,13 @@
 									</div>
                                 {/if}
                                 {if isset($slider.title) && !empty($slider.title)}
-                                        <div class="title">{$slider.title|escape:'html':'UTF-8' nofilter}</div>
+                                        <div class="title text-main-dark font-semibold mb-6 text-base tablet:text-2xl font-header">{$slider.title|escape:'html':'UTF-8' nofilter}</div>
                                 {/if}
 							{if isset($slider.sub_title) && !empty($slider.sub_title)}
 								<p class="sub-title">{$slider.sub_title|escape:'html':'UTF-8' nofilter}</p>
 							{/if}
                                 {if isset($slider.descript) && !empty($slider.descript)}
-                                        <div class="descript">{$slider.descript|rtrim nofilter}{* HTML form , no escape necessary *}</div>
+                                        <div class="descript text-main-dark text-sm tablet:text-base">{$slider.descript|rtrim nofilter}{* HTML form , no escape necessary *}</div>
                                 {/if}
                                 {if $slider.link}{*full link can not escape*}
                                 </a>

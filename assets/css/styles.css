@@ -50,14 +50,6 @@ p{
         @apply p-1 tablet:p-2 select-none;
     }
 
-    .owl-customized .title{
-        @apply mb-6 text-2xl;
-    }
-
-    .owl-customized .descript{
-        @apply font-light text-base text-main-dark;
-    }
-
     .owl-customized .owl-item{
         @apply filter grayscale transition duration-150;
     }
