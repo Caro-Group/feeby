@@ -9,7 +9,7 @@
 {* function genMegaMenuByConfig *}
 {if $menu.active == 1}
 <li data-menu-type="{$menu.type}" class="nav-item parent {$menu.menu_class} {$class} {if $hascat}{$align}{/if} {$addwidget}" {$model->renderAttrs($menu)}>
-    <a class="nav-link dropdown-toggle {if $hascat}has-category{/if} font-main text-main-dark" data-toggle="dropdown" href="{$model->getLink($menu)}" target="{$menu.target}">
+    <a class="nav-link dropdown-toggle {if $hascat}has-category{/if} font-body text-main-dark" data-toggle="dropdown" href="{$model->getLink($menu)}" target="{$menu.target}">
 
         {if $menu.icon_class}
             {if $menu.icon_class != $menu.icon_class|strip_tags}
