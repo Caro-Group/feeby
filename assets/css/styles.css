@@ -12,10 +12,6 @@ p{
     @apply font-header;
 }
 
-.owl-customized .owl-item{
-    @apply group;
-}
-
 @layer components{
 
     h1,h2{
@@ -66,11 +62,11 @@ p{
     }
 
     .owl-customized .descript{
-        @apply font-header font-light text-base text-main-dark;
+        @apply font-light text-base text-main-dark;
     }
 
     .owl-customized .owl-item{
-        @apply filter grayscale transition duration-150;
+        @apply filter group grayscale transition duration-150;
     }
     .owl-customized .owl-item.active{
         @apply filter grayscale-0 ;
