@@ -80,7 +80,7 @@
         {if !isset($formAtts.accordion_type) || $formAtts.accordion_type == 'full'}{* Default : always full *}
             <div class="ApLink {(isset($formAtts.class)) ? $formAtts.class : ''|escape:'html':'UTF-8'}">
                 {if isset($formAtts.title) && !empty($formAtts.title)}
-                    <h4 class="mb-0 text-lg uppercase text-main-dark">
+                    <h4 class="mb-0 text-base tablet:text-xl font-normal uppercase text-main-dark">
                         {$formAtts.title|escape:'html':'UTF-8'}
                     </h4>
                 {/if}
@@ -92,7 +92,7 @@
                     <ul>
                         {foreach from=$formAtts.links item=item}
                             {if $item.title && $item.link}
-                                <li><a class="text-main-dark" href="{$item.link}" target="{$item.target_type}">{$item.title|escape:'html':'UTF-8'}</a></li>
+                                <li><a class="text-main-dark text-sm tablet:text-base" href="{$item.link}" target="{$item.target_type}">{$item.title|escape:'html':'UTF-8'}</a></li>
                             {/if}
                         {/foreach}
                     </ul>
@@ -104,7 +104,7 @@
                 {if isset($formAtts.title) && !empty($formAtts.title)}
                     <div class="title clearfix bg-white tablet:bg-transparent clearfix flex h-14 items-center px-6 tablet:px-0 border-0 border-b-2 border-solid border-gray-1000 tablet:border-b-0"
                         data-target="#footer-link-{$formAtts.form_id|escape:'html':'UTF-8'}" data-toggle="collapse">
-                        <h4 class="mb-0 text-lg uppercase text-main-dark">
+                        <h4 class="mb-0 text-base tablet:text-xl font-normal uppercase text-main-dark">
                             {$formAtts.title|escape:'html':'UTF-8'}
                         </h4>
                         <span class="float-xs-right">
@@ -124,7 +124,7 @@
                             {if $item.title && $item.link}
                                 <li
                                     class="border-0 border-b-2 border-solid border-white tablet:border-b-0 flex h-14 tablet:h-10 items-center px-6">
-                                    <a class="text-main-dark" href="{$item.link}" target="{$item.target_type}">{$item.title|escape:'html':'UTF-8'}</a>
+                                    <a class="text-main-dark text-sm tablet:text-base" href="{$item.link}" target="{$item.target_type}">{$item.title|escape:'html':'UTF-8'}</a>
                                 </li>
                             {/if}
                         {/foreach}
