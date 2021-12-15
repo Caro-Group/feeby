@@ -22045,19 +22045,14 @@ p.promo-code-button {
     line-height: 30px;
     width: 30px;
     height: 30px; }
-    .block-social li:hover {
-      color: #000; }
     .block-social li a {
       white-space: nowrap;
       text-indent: 100%;
       overflow: hidden;
       display: none; }
-      .block-social li a:hover {
-        color: #000; }
     .block-social li:before {
       content: "";
-      font-family: "FontAwesome";
-      font-size: 14px; }
+      font-family: "FontAwesome"; }
     .block-social li.facebook:before {
       content: "\f09a"; }
     .block-social li.twitter:before {
