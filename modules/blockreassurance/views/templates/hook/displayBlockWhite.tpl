@@ -40,7 +40,7 @@
                     {/if}
                 {/if}
             </div>
-            <div class="flex flex-col text-center">
+            <div class="flex flex-col text-center text-main-dark">
                 <div style="color:{$textColor}">{$block['title']}</div>
                 <p style="color:{$textColor};">{$block['description'] nofilter}</p>
             </div>
