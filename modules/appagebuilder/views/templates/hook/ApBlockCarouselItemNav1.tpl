@@ -43,8 +43,6 @@
 						</div>
 					{/if}
 
-					</div>
-
 					{if $slider.link}
 						</a>
 					{else}
