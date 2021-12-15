@@ -110,6 +110,6 @@ p{
     @apply bg-white border-white transform scale-125;
 }
 
-#homepage_content.collapse[aria-expanded="true"]{
+#homepage_content.collapse[aria-expanded="true"] p{
     @apply line-clamp-5;
 }
