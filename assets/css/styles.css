@@ -134,7 +134,8 @@ p{
     @apply bg-white border-white transform scale-125;
 }
 
-#homepage_content.collapse[aria-expanded="true"] p{
+/* Rest of SEO section styles are in builder */
+#homepage_content.collapse[aria-expanded="false"] p{
     @apply line-clamp-5;
 }
 
