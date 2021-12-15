@@ -68,5 +68,47 @@ p{
     .owl-customized .owl-disabled .owl-item:hover img{
         filter: invert(17%) sepia(49%) saturate(5868%) hue-rotate(328deg) brightness(101%) contrast(93%);
     }
+
+}
+
+.leo-wishlist-button.btn-primary{
+    @apply absolute right-0 z-10 top-3 w-6 h-6 tablet:w-8 tablet:h-8 rounded-l-md bg-white shadow-md p-2 
+}
+
+.wishlist .leo-wishlist-button.btn-primary.active{
+    @apply bg-gray-1000
+}
+
+.wishlist .leo-wishlist-button.btn-primary.active:hover{
+    @apply bg-white
+}
+
+.swiper-popular .btn-primary:active:hover{
+    @apply bg-gray-1000
+}
+
+.swiper-popular .btn-primary:hover{
+    @apply bg-white
+}
+
+.leo-wishlist-bt-content{
+    @apply flex
+}
+
+.wishlist-svg{
+    @apply z-20 fill-current text-main-dark group-hover:text-main transition
+}
+
+
+.swiper-popular .swiper-pagination{
+    @apply hidden tablet:block
+}
+
+.swiper-popular .swiper-pagination-bullet{
+    @apply bg-transparent border border-solid border-gray-3000 transition w-3 h-3
+}
+
+.swiper-popular .swiper-pagination-bullet-active{
+    @apply bg-black border-black transform scale-125
 }
 
