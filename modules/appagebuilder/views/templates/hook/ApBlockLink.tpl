@@ -7,7 +7,7 @@
 *}
 <!-- @file modules\appagebuilder\views\templates\hook\ApBlockLink -->
 
-{* mt-10 py-6 w-3/5 items-end flex-col-reverse tablet:hidden tablet:flex-row justify-start tablet:text-left tablet:items-center tablet:justify-start tablet:flex-col tablet:w-full px-6 tablet:px-6 tablet:py-20 case-normal justify-end *}
+{* mt-10 py-6 w-3/5 items-end flex-col-reverse tablet:hidden tablet:flex-row justify-start tablet:text-left tablet:items-center tablet:justify-start tablet:flex-col tablet:w-full px-6 tablet:px-6 tablet:py-20 case-normal justify-end tablet:text-xs *}
 
 {if $hookName == 'displayNav1'}
 
@@ -92,7 +92,7 @@
                     <ul>
                         {foreach from=$formAtts.links item=item}
                             {if $item.title && $item.link}
-                                <li><a class="text-main-dark text-sm tablet:text-base" href="{$item.link}" target="{$item.target_type}">{$item.title|escape:'html':'UTF-8'}</a></li>
+                                <li><a class="text-main-dark text-sm tablet:text-base font-light" href="{$item.link}" target="{$item.target_type}">{$item.title|escape:'html':'UTF-8'}</a></li>
                             {/if}
                         {/foreach}
                     </ul>
@@ -124,7 +124,7 @@
                             {if $item.title && $item.link}
                                 <li
                                     class="border-0 border-b-2 border-solid border-white tablet:border-b-0 flex h-14 tablet:h-10 items-center px-6">
-                                    <a class="text-main-dark text-sm tablet:text-base" href="{$item.link}" target="{$item.target_type}">{$item.title|escape:'html':'UTF-8'}</a>
+                                    <a class="text-main-dark text-sm tablet:text-base font-light" href="{$item.link}" target="{$item.target_type}">{$item.title|escape:'html':'UTF-8'}</a>
                                 </li>
                             {/if}
                         {/foreach}
