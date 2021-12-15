@@ -1081,4 +1081,6 @@ section#checkout-delivery-step.-unreachable {
         display: none;
     }
 
+[disabled="disabled"]{
+    cursor: not-allowed;
 }

@@ -69,7 +69,7 @@
 								<p class="sub-title">{$slider.sub_title|escape:'html':'UTF-8' nofilter}</p>
 							{/if}
                                 {if isset($slider.descript) && !empty($slider.descript)}
-                                        <div class="text-main-dark text-sm tablet:text-base font-light">{$slider.descript|rtrim nofilter}{* HTML form , no escape necessary *}</div>
+                                        <div class="text-main-dark text-sm tablet:text-base font-light font-body">{$slider.descript|rtrim nofilter}{* HTML form , no escape necessary *}</div>
                                 {/if}
                                 {if $slider.link}{*full link can not escape*}
                                 </a>
