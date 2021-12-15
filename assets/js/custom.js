@@ -1240,6 +1240,25 @@ $('body').on('click', "[data-checkout-back]",function(e){
 })(jQuery);
 
 
+//Top bar swiper 
+$(document).ready(function () {
+
+	const swiper = new Swiper('.swiper', {
+		speed: 25000,
+		spaceBetween: 50,
+		loop: true,
+		autoplay: {
+			delay: 0,
+		},
+		allowTouchMove: false,
+	  });
+
+});
+
+
+
+
+
 
 $(document).ready(function () {
 
