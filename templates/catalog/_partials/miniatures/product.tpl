@@ -79,7 +79,7 @@
 							{hook h='displayProductPriceBlock' product=$product type="before_price"}
 
 							<span class="sr-only">{l s='Price' d='Shop.Theme.Catalog'}</span>
-							<span itemprop="price" class=" {if $product.has_discount} text-main {else} text-main-dark {/if} text-base tablet:text-lg font-bold font-body">{$product.price}</span>
+							<span itemprop="price" class=" {if $product.has_discount} text-main {else} text-main-dark {/if} text-base tablet:text-xl font-bold font-body">{$product.price}</span>
 
 							{hook h='displayProductPriceBlock' product=$product type='unit_price'}
 
@@ -88,7 +88,7 @@
 							{if $product.has_discount}
 								{hook h='displayProductPriceBlock' product=$product type="old_price"}
 								<span class="sr-only">{l s='Regular price' d='Shop.Theme.Catalog'}</span>
-								<span class="ml-2 line-through text-gray-3000 text-sm">{$product.regular_price}</span>
+								<span class="ml-2 line-through text-gray-3000 text-sm tablet:text-base">{$product.regular_price}</span>
 								{* {if $product.discount_type === 'percentage'} dać jako alt w flag
 									<span class="discount-percentage discount-product">{$product.discount_percentage}</span>
 								{elseif $product.discount_type === 'amount'}	
