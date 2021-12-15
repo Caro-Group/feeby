@@ -1294,7 +1294,33 @@ function openMenuWithCategory(id)
 	}));
 	
  $('[data-target="\.megamenu-off-canvas-' + menu_id + '"]').first().click();
-} 
+}
+
+$(document).ready(function () {
+
+	var delayValue = $('.swiper-banner .swiper-slide').attr('data-pausetime');
+	if(delayValue==undefined||delayValue==''){
+		delayValue = 2000; 
+	}
+
+	const swiperBanner = new Swiper('.swiper-banner', {
+		speed: 800,
+		slidesPerView: 1,
+		spaceBetween: 0,
+		loop: true,
+		autoplay: {
+			delay: delayValue,
+		},
+		pagination: {
+			el: '.swiper-pagination',
+			clickable: true,
+		},
+		navigation: {
+			prevEl: '.swiper_banner-button-prev',
+			nextEl: '.swiper_banner-button-next',
+		},
+	});
+})
 
 $(document).ready(function () {
 	
