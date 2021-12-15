@@ -20,7 +20,7 @@
 
 					{if $slider.link}
 						<a class="flex justify-center items-center" title="{l s='%s' sprintf=[$slider.title] mod='appagebuilder'}" {if $formAtts.is_open}target="_blank"{/if} href="{$slider.link}{*full link can not escape*}">
-					{/else}
+					{else}
 						<div class="flex justify-center items-center">
 					{/if}
 
