@@ -68,8 +68,8 @@
   width: 30px;
   height: 30px;
   position: absolute;
-  top: 0;
-  right: 0; }
+  top: 1rem;
+  right: 1rem; }
   .rtl .block-toggler .navbar-toggler, .rtl .footer-container .links .navbar-toggler {
     left: 0;
     right: auto; }
@@ -2192,8 +2192,6 @@ textarea.form-control {
     margin: 15px 0; }
   .box-footerlink .block-social .social-title {
     display: none; } }
-.block-social {
-  padding: 0; }
   .block-social .social-title {
     float: left;
     margin: 2px 20px 2px 0;
@@ -7152,10 +7150,10 @@ div.box-coppy2.box-3 {
 .page-home .box-instagram3 .ApColumn .title_block:after {
   background: none; }
 
-.box-coppyright9 {
-  border-top: 1px solid #e5e5e5;
-  margin: 0;
-  padding: 30px 0; }
+  .box-coppyright9 {
+    border-top: 1px solid #ffffff;
+    padding-top: 30px;
+    padding-bottom: 30px; }
   .box-coppyright9 .ApColumn {
     padding: 0; }
   @media (max-width: 767px) {
