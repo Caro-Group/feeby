@@ -5,20 +5,13 @@ module.exports = {
   future: {
     purgeLayersByDefault: true,
   },
-  purge: {
-    enabled: process.env.NODE_ENV === 'production',
-    content: [
-      'assets/**/*.{vue,js,ts,jsx,tsx,tpl,yml,css,scss}',
-      'config/**/*.{vue,js,ts,jsx,tsx,tpl,yml}',
-      'modules/**/*.{vue,js,ts,jsx,tsx,tpl,yml}',
-      'templates/**/*.{vue,js,ts,jsx,tsx,tpl,yml}',
-      'nuxt.config.js'
-    ],
-    options: {
-      whitelist: [''],
-    }
-  },
-  darkMode: false,
+  content: [
+    './assets/**/*.{vue,js,ts,jsx,tsx,tpl,yml,svg,scss}',
+    './config/**/*.{vue,js,ts,jsx,tsx,tpl,yml}',
+    './modules/**/*.{vue,js,ts,jsx,tsx,tpl,yml}',
+    './templates/**/*.{vue,js,ts,jsx,tsx,tpl,yml}',
+    './nuxt.config.js'
+  ],
   theme: {
     screens: {
       'phone': '320px',
@@ -26,6 +19,7 @@ module.exports = {
       'phablet': '560px',
       'tablet-small': '640px',
       'tablet': '768px',
+      'tablet-medium': '922px',
       'tablet-wide': '1024px',
       'desktop-presta': '1200px',
       'desktop': '1248px',
@@ -40,6 +34,10 @@ module.exports = {
         "require": "#f00",
         gray: {
           default: '#F8F8F8',
+          main: '#232322',
+        },
+        pink: {
+          650: '#DF1A5B',
         },
         gray: {
           1000: '#F8F8F8',
@@ -65,7 +63,8 @@ module.exports = {
        'small': '100px',
       },
       minWidth: {
-        'label': '173px'
+        'label': '173px',
+        'swiper-mobile':'500px',
       },
       maxHeight: {
         'tablet': '768px',
@@ -75,6 +74,7 @@ module.exports = {
       },
       height: {
         'banner-final' :'750px',
+        'label': '173px',
         '100':'28rem', 
       },
       transitionDuration: {

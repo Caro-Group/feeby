@@ -15,7 +15,30 @@ p{
     @apply font-header;
 }
 
+h1,
+h2,
+h3,
+p{
+    @apply font-header;
+}
+
 @layer components{
+
+    h1,h2{
+        @apply text-main-dark italic;
+    }
+
+    h1{
+        @apply text-2xl tablet:text-4xl font-light;
+    }
+
+    h2{
+        @apply text-base tablet:text-2xl;
+    }
+
+    p{
+        @apply font-light text-main-dark;
+    }
 
     .center-inside{
         float: none !important;
@@ -31,6 +54,7 @@ p{
     }
     
     .owl-customized .owl-item .block-carousel-image-container img{
+        max-width: 70px;
         filter: invert(17%) sepia(49%) saturate(5868%) hue-rotate(328deg) brightness(101%) contrast(93%);
         @apply p-1 tablet:p-2 select-none;
     }
@@ -113,11 +137,16 @@ p{
 }
 
 .swiper-banner .swiper-pagination .swiper-pagination-bullet{
-    @apply bg-transparent border border-solid border-white opacity-75 transition w-3 h-3
+    @apply bg-transparent border border-solid border-white opacity-75 transition w-3 h-3;
 }
 
 .swiper-banner .swiper-pagination .swiper-pagination-bullet-active{
-    @apply bg-white border-white transform scale-125
+    @apply bg-white border-white transform scale-125;
+}
+
+/* Rest of SEO section styles are in builder */
+#homepage_content.collapse[aria-expanded="false"] p{
+    @apply line-clamp-5;
 }
 
 .block.last{
