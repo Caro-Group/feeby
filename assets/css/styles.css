@@ -127,11 +127,15 @@ p{
 }
 
 .swiper-banner .swiper-pagination .swiper-pagination-bullet{
-    @apply bg-transparent border border-solid border-white opacity-75 transition w-3 h-3
+    @apply bg-transparent border border-solid border-white opacity-75 transition w-3 h-3;
 }
 
 .swiper-banner .swiper-pagination .swiper-pagination-bullet-active{
-    @apply bg-white border-white transform scale-125
+    @apply bg-white border-white transform scale-125;
+}
+
+#homepage_content.collapse[aria-expanded="true"]{
+    @apply line-clamp-5;
 }
 
 .block.last{
