@@ -9,11 +9,8 @@
 
 {* mt-10 py-6 w-3/5 items-end flex-col-reverse tablet:hidden tablet:flex-row justify-start tablet:text-left tablet:items-center tablet:justify-start tablet:flex-col tablet:w-full px-6 tablet:px-6 tablet:py-20 case-normal justify-end tablet:text-xs *}
 
-{if $hookName == 'displayNav1'}
-
-
-
-
+{if $hookName == 'displayNav2'}
+    
     {if isset($formAtts.lib_has_error) && $formAtts.lib_has_error}
         {if isset($formAtts.lib_error) && $formAtts.lib_error}
             <div class="alert alert-warning leo-lib-error">{$formAtts.lib_error}</div>

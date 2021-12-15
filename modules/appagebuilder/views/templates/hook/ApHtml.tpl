@@ -8,7 +8,7 @@
 <!-- @file modules\appagebuilder\views\templates\hook\ApHtml -->
 {* w-max -mx-8 tablet:-mx-0 flex-shrink-0  tablet:my-2 *}
 
-{if $hookName == 'displayNav1'}
+{if $hookName == 'displayNav2'}
 
 <div {if isset($formAtts.id) && $formAtts.id} id="{$formAtts.id|escape:'html':'UTF-8' nofilter}"{/if}
     {if !isset($formAtts.accordion_type) || $formAtts.accordion_type == 'full'}{* Default : always full *}
