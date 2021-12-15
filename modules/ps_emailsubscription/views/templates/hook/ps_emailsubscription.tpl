@@ -24,15 +24,15 @@
  *}
 {if $page.page_name != 'module-psgdpr-gdpr'}
  {* .block is used in js *}
-<div class="block relative bg-newsletter-dashed bg-smaller tablet:bg-small bg-right-bottom bg-no-repeat bg-gray-default desktop:rounded-md flex flex-col items-center justify-center max-w-screen-desktop-wide mx-auto px-2 tablet:px-8 py-20 overflow-hidden"> 
+<div class="block relative bg-newsletter-dashed bg-smaller tablet:bg-small bg-right-bottom bg-no-repeat bg-gray-1000 desktop:rounded-md flex flex-col items-center justify-center max-w-screen-desktop-wide mx-auto px-2 tablet:px-8 py-20 overflow-hidden"> 
   <div class="absolute -left-20 bottom-0 bg-newsletter-plane bg-left-bottom h-3/4 tablet:h-full tablet:left-0 w-full bg-no-repeat bg-contain z-10"></div>
-  <h3 class="title_block text-center z-20">{l s='Newsletter signup' d='Shop.Theme.Global'}</h3>
+  <h3 class="title_block text-center z-20 text-main-dark">{l s='Newsletter signup' d='Shop.Theme.Global'}</h3>
    {* .block_content is used in js *}
   <div class="block_content w-full tablet:w-3/5 z-20">
     <form action="{$urls.pages.index}#footer" method="post" data-newsletter-form>
       <div>
           {if $conditions}
-            <p class="text-center text-lg">{$conditions}</p>
+            <p class="text-center text-lg text-main-dark">{$conditions}</p>
           {/if}
             <p data-newsletter-alert>
               {if $msg}
@@ -40,7 +40,7 @@
               {/if}
             </p>
         <div>
-          <div class="border-gray-300 border-solid border flex rounded-full pl-4 bg-white ">
+          <div class="border-gray-2000 border-solid border flex rounded-full pl-4 bg-white ">
             <input
             class="w-full bg-transparent border-0 py-3 outline-none"
               name="email"
@@ -50,7 +50,7 @@
             >
 
             <button
-            class="bg-main hover:bg-pink-800 duration-150 border-0 rounded-full text-white px-4 uppercase whitespace-nowrap"
+            class="bg-main hover:bg-main-hover duration-150 border-0 rounded-full text-white px-4 uppercase whitespace-nowrap"
               name="submitNewsletter"
               type="submit"
               value="{l s='Subscribe' d='Shop.Theme.Actions'}"

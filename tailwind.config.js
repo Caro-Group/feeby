@@ -5,13 +5,20 @@ module.exports = {
   future: {
     purgeLayersByDefault: true,
   },
-  content: [
-    './assets/**/*.{vue,js,ts,jsx,tsx,tpl,yml}',
-    './config/**/*.{vue,js,ts,jsx,tsx,tpl,yml}',
-    './modules/**/*.{vue,js,ts,jsx,tsx,tpl,yml}',
-    './templates/**/*.{vue,js,ts,jsx,tsx,tpl,yml}',
-    './nuxt.config.js'
-  ],
+  purge: {
+    enabled: process.env.NODE_ENV === 'production',
+    content: [
+      'assets/**/*.{vue,js,ts,jsx,tsx,tpl,yml,css,scss}',
+      'config/**/*.{vue,js,ts,jsx,tsx,tpl,yml}',
+      'modules/**/*.{vue,js,ts,jsx,tsx,tpl,yml}',
+      'templates/**/*.{vue,js,ts,jsx,tsx,tpl,yml}',
+      'nuxt.config.js'
+    ],
+    options: {
+      whitelist: [''],
+    }
+  },
+  darkMode: false,
   theme: {
     screens: {
       'phone': '320px',
@@ -27,6 +34,7 @@ module.exports = {
     extend: {
       colors: {
         "main" : "#DF1A5B",
+        'main-hover' : '#B7164B',
         "require": "#f00",
         gray: {
           default: '#F8F8F8',
