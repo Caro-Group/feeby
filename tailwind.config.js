@@ -35,19 +35,13 @@ module.exports = {
         gray: {
           default: '#F8F8F8',
           main: '#232322',
-        },
-        pink: {
-          650: '#DF1A5B',
-        },
-        gray: {
           1000: '#F8F8F8',
           2000: '#ECECEC',
           3000: '#ADAFBA',
         },
-      },
-      width: {
-        "side": "467px",
-        "miniature": "102px"
+        pink: {
+          650: '#DF1A5B',
+        },
       },
       margin: {
         'miniature': '102px',
@@ -62,20 +56,24 @@ module.exports = {
        'smaller': '70px',
        'small': '100px',
       },
+      width: {
+        "side": "467px",
+        "miniature": "102px"
+      },
       minWidth: {
         'label': '173px',
         'swiper-mobile':'500px',
-      },
-      maxHeight: {
-        'tablet': '768px',
-      },
-      minHeight: {
-        'banner' : '450px',
       },
       height: {
         'banner-final' :'750px',
         'label': '173px',
         '100':'28rem', 
+      },
+      minHeight: {
+        'banner' : '450px',
+      },
+      maxHeight: {
+        'tablet': '768px',
       },
       transitionDuration: {
         '2000': '2000ms',

@@ -443,9 +443,6 @@ $(document).ready(function() {
 
     $('#leo_search_block_top').parent().addClass('search-dekstop-move');
 
-	leoTopSearchMove();
-	$( window ).resize(leoTopSearchMove);
-
 
 	$('#leo_search_block_top').on('click',function(){
 		$('#leo_search_block_top').focus();
@@ -453,16 +450,6 @@ $(document).ready(function() {
 
 
 })
-
-function leoTopSearchMove(){
-	if($(window).width() < 992 && !$('.off-canvas-button-megamenu').next('#leo_search_block_top').length){
-      $('#leo_search_block_top').insertAfter( $('.off-canvas-button-megamenu') );
-    } 
-
-	if($(window).width() > 991 && !$('.search-dekstop-move').prev('#leo_search_block_top').length){
-      $('#leo_search_block_top').insertBefore( $('.search-dekstop-move') );
-	}
-}
 
 
 //auto calculate height of off canvas menu off
