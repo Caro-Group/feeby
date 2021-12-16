@@ -15188,7 +15188,7 @@ button:focus, button:hover {
   .leo-megamenu.navbar {
     padding: 0; }
   .leo-megamenu .navbar-nav {
-    text-align: right; }
+    text-align: center; }
     .rtl .leo-megamenu .navbar-nav {
       text-align: left; }
     .leo-megamenu .navbar-nav > li {
