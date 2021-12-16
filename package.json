@@ -42,7 +42,7 @@
     "cross-env": "^7.0.3",
     "cssnano": "^5.0.12",
     "dotenv": "^10.0.0",
-    "postcss-cli": "^9.0.1",
+    "postcss-cli": "^9.1.0",
     "postcss-nesting": "^10.0.3"
   },
   "devDependencies": {
