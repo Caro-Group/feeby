@@ -1883,26 +1883,7 @@ textarea.form-control {
       margin: auto;
       text-align: center;
       line-height: 80px; }
-  .box-top #leo_search_block_top #leosearchtopbox {
-    position: absolute;
-    width: 300px;
-    top: 100%;
-    transition: all .3s;
-    margin-top: 0;
-    right: 0;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px); }
-    .rtl .box-top #leo_search_block_top #leosearchtopbox {
-      left: 0;
-      right: auto; }
-    @media (max-width: 575px) {
-      .box-top #leo_search_block_top #leosearchtopbox {
-        width: 240px;
-        right: -100px; }
-        .rtl .box-top #leo_search_block_top #leosearchtopbox {
-          left: -100px;
-          right: auto; } }
+  
   .box-top #leo_search_block_top.active .title_block:before {
     content: "\e646";
     color: #000; }

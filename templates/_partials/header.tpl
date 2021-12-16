@@ -27,6 +27,7 @@
  {assign var='displayNav1' value={hook h='displayNav1'}|regex_replace:"/(\s)|\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*|<!--[\s\S]*?-->$/m":""}
  {assign var='displayNav2' value={hook h='displayNav2'}|regex_replace:"/(\s)|\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*|<!--[\s\S]*?-->$/m":""}
  {assign var='displayTop' value={hook h='displayTop'}|regex_replace:"/(\s)|\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*|<!--[\s\S]*?-->$/m":""}
+ {assign var='displayNavFullWidth' value={hook h='displayNavFullWidth'}|regex_replace:"/(\s)|\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*|<!--[\s\S]*?-->$/m":""}
  
  {if $displayBanner}
    {block name='header_banner'}
@@ -59,16 +60,18 @@
    {/block}
  {/if}
  
- {if $displayTop}
-   {block name='header_top'}
-     {if isset($fullwidth_hook.displayTop) AND $fullwidth_hook.displayTop == 0}
-       <div class="container">
-     {/if}
-         {hook h='displayTop'}
-     {if isset($fullwidth_hook.displayTop) AND $fullwidth_hook.displayTop == 0}
-       </div>
-     {/if}
-     {hook h='displayNavFullWidth'}
-   {/block}
- {/if}
- 
+ {if $displayTop && $displayNavFullWidth}
+  {block name='header_top'}
+    {if $displayTop}
+      {if isset($fullwidth_hook.displayTop) AND $fullwidth_hook.displayTop == 0}
+        <div class="container">
+      {/if}
+          {hook h='displayTop'}
+      {if isset($fullwidth_hook.displayTop) AND $fullwidth_hook.displayTop == 0}
+        </div>
+      {/if}
+    {/if}
+    {if $displayNavFullWidth}
+      {hook h='displayNavFullWidth'}
+    {/if}
+  {/block}

@@ -6,6 +6,18 @@
 * @description: ApPageBuilder is module help you can build content for your shop
 *}
 
+{*
+  order-1
+  order-2
+  order-3
+  order-4
+  order-5
+  order-5 
+  tablet-medium:order-2 
+  tablet-medium:ml-auto
+  desktop:order-last
+*}
+
 {if $hookName == 'displayNav1'}
     <!-- @file modules\appagebuilder\views\templates\hook\ApColumn -->
     <div{if isset($formAtts.id) && $formAtts.id} id="{$formAtts.id|escape:'html':'UTF-8'}"{/if}
