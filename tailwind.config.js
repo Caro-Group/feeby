@@ -19,7 +19,7 @@ module.exports = {
       'phablet': '560px',
       'tablet-small': '640px',
       'tablet': '768px',
-      'tablet-medium': '922px',
+      'tablet-medium': '992px',
       'tablet-wide': '1024px',
       'desktop-presta': '1200px',
       'desktop': '1248px',
