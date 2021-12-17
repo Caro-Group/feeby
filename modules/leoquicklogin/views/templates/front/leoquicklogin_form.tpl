@@ -16,7 +16,7 @@
 		</ul>
 	{/if}
 	<div class="leo-form leo-login-form col-sm-{if $leo_form_layout == 'both'}6{else}12{/if}{if $leo_form_layout == 'login' || $leo_form_layout == 'both'} leo-form-active{else} leo-form-inactive{/if}{if $leo_form_layout != 'both'} full-width{/if}">
-		<h3 class="leo-login-title">			
+		<span class="leo-login-title block capitalize mb-3 my-1 text-main-dark text-sm">			
 			<span class="title-both">
 				{l s='Existing Account Login' d='Modules.Leoquicklogin.Shop'}
 			</span>
@@ -24,7 +24,7 @@
 			<span class="title-only">
 				{l s='Login to your account' d='Modules.Leoquicklogin.Shop'}
 			</span>		
-		</h3>
+		</span>
 		<form class="lql-form-content leo-login-form-content" action="#" method="post">
 			<div class="form-group lql-form-mesg has-success">					
 			</div>			
@@ -62,7 +62,7 @@
 			</div>
 		</form>
 		<div class="leo-resetpass-form">
-			<h3>{l s='Reset Password' d='Modules.Leoquicklogin.Shop'}</h3>
+			<span>{l s='Reset Password' d='Modules.Leoquicklogin.Shop'}</span>
 			<form class="lql-form-content leo-resetpass-form-content" action="#" method="post">
 				<div class="form-group lql-form-mesg has-success">					
 				</div>			
@@ -87,9 +87,9 @@
 	</div>
 	
 	<div class="leo-form leo-register-form col-sm-{if $leo_form_layout == 'both'}6{else}12{/if}{if $leo_form_layout == 'register' || $leo_form_layout == 'both'} leo-form-active{else} leo-form-inactive{/if}{if $leo_form_layout != 'both'} full-width{/if}">
-		<h3 class="leo-register-title">
+		<span class="leo-register-title block capitalize mb-3 my-1 text-main-dark text-sm">
 			{l s='New Account Register' d='Modules.Leoquicklogin.Shop'}
-		</h3>
+		</span>
 		<form class="lql-form-content leo-register-form-content" action="#" method="post">
 			<div class="form-group lql-form-mesg has-success">					
 			</div>			
