@@ -3,8 +3,7 @@
 /cache
 .vscode
 .github
-/assets/img/modules
+/assets/img/modules/
 cf_token.sh
 feeby.code-workspace
 bs-config.js
-
