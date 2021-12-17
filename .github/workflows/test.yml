@@ -15,18 +15,6 @@ jobs:
         uses: actions/checkout@v1
         with:
           fetch-depth: 2
-      
-      - name: Get Composer Cache Directory
-        id: composer-cache
-        run: |
-          echo "::set-output name=dir::$(composer config cache-files-dir)"
-
-      - uses: actions/cache@v2
-        with:
-          path: ${{ steps.composer-cache.outputs.dir }}
-          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-composer-
 
       - name: Get npm cache directory
         id: npm-cache
@@ -48,8 +36,8 @@ jobs:
       - name: Install dependency in theme
         run: npm install && npm run deploy
 
-      - name: Remove node
-        run: sudo rm -rf node_modules
+      - name: Generate theme
+        run: npm run deploy
 
       - name: Deploy to Server
         uses: burnett01/rsync-deployments@5.1
