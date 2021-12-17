@@ -78,7 +78,7 @@ module.exports = {
         rule: {
             match: /<\/head>/i,
             fn: function (snippet, match) {
-                return '<script src="https://cdn.tailwindcss.com"></script><script> tailwind.config = ' + JSON.stringify(tailwindConfig) + ';</script>' + snippet + match;
+                return '<script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script><script> tailwind.config = ' + JSON.stringify(tailwindConfig) + ';</script>' + snippet + match;
             }
         }
     },
