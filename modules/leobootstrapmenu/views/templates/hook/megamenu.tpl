@@ -11,6 +11,7 @@
     {if $group_type && $group_type == 'horizontal'}
             <nav data-megamenu-id="{$megamenu_id}" class="leo-megamenu cavas_menu navbar navbar-default {if $show_cavas && $show_cavas == 1}enable-canvas{else}disable-canvas{/if} {if $group_class && $group_class != ''}{$group_class}{/if}" role="navigation">
                             <!-- Brand and toggle get grouped for better mobile display -->
+
                             <div class="navbar-header">
                                     <button type="button" class="navbar-toggler hidden-lg-up" data-toggle="collapse" data-target=".megamenu-off-canvas-{$megamenu_id}">
                                             <span class="sr-only">{l s='Toggle navigation' mod='leobootstrapmenu'}</span>
@@ -22,10 +23,16 @@
                                             -->
                                     </button>
                             </div>
+                           
                             <!-- Collect the nav links, forms, and other content for toggling -->
                             {*
                             <div id="leo-top-menu" class="collapse navbar-collapse navbar-ex1-collapse">{$boostrapmenu|escape:'html':'UTF-8'}</div>
                             *}
+{*
+ul tag is buil in $boostrapmenu
+  tablet-medium:flex 
+  tablet-medium:justify-between 
+*}
                             <div class="leo-top-menu collapse navbar-toggleable-md megamenu-off-canvas megamenu-off-canvas-{$megamenu_id}">{$boostrapmenu|escape:'html':'UTF-8' nofilter}{* HTML form , no escape necessary *}</div>
             </nav>
 <script type="text/javascript">

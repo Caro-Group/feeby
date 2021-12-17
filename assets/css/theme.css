@@ -15188,7 +15188,7 @@ button:focus, button:hover {
   .leo-megamenu.navbar {
     padding: 0; }
   .leo-megamenu .navbar-nav {
-    text-align: right; }
+    text-align: center; }
     .rtl .leo-megamenu .navbar-nav {
       text-align: left; }
     .leo-megamenu .navbar-nav > li {
@@ -15274,7 +15274,7 @@ button:focus, button:hover {
           visibility: visible;
           transform: translateY(0px); } }
       .leo-megamenu .navbar-nav > li > a {
-        padding: 30px 18px;
+        padding: 15px 0;
         font-size: 13px;
         line-height: 20px;
         text-transform: uppercase;
