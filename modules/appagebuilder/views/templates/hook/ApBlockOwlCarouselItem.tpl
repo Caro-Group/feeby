@@ -63,7 +63,7 @@
 									</div>
                                 {/if}
                                 {if isset($slider.title) && !empty($slider.title)}
-                                        <h2 class="mb-6">{$slider.title|escape:'html':'UTF-8' nofilter}</h2>
+                                        <h2 class="mb-6 font-normal">{$slider.title|escape:'html':'UTF-8' nofilter}</h2>
                                 {/if}
 							{if isset($slider.sub_title) && !empty($slider.sub_title)}
 								<p class="sub-title">{$slider.sub_title|escape:'html':'UTF-8' nofilter}</p>
