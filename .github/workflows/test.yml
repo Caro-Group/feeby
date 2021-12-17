@@ -51,6 +51,17 @@ jobs:
       - name: Remove node
         run: sudo rm -rf node_modules  
 
+      - name: Deploy to Server
+        uses: burnett01/rsync-deployments@5.1
+        with:
+          switches: -avzr --delete --exclude={"/node_modules","/cache",".*"}
+          remote_path: ${{ secrets.TARGET }}
+          remote_host: ${{ secrets.REMOTE_HOST }}
+          remote_port: ${{ secrets.REMOTE_PORT }}
+          remote_user: ${{ secrets.REMOTE_USER }}
+          remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
+          # path: src/
+          # remote_key_pass: ${{ secrets.DEPLOY_KEY_PASS }}
 # TODO: Implement SSH for speed of deployment
 #      - name: Deploy to Server
 #        uses: easingthemes/ssh-deploy@v2.1.5
