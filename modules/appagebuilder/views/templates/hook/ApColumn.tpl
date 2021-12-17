@@ -14,8 +14,10 @@
   order-5
   order-5 
   tablet-medium:order-2 
+  desktop:order-5
   tablet-medium:ml-auto
-  desktop:order-last
+  tablet-medium:w-auto
+  flex items-center justify-end
 *}
 
 {if $hookName == 'displayNav1'}
