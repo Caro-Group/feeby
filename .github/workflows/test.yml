@@ -54,7 +54,7 @@ jobs:
       - name: Deploy to Server
         uses: burnett01/rsync-deployments@5.1
         with:
-          switches: -avzr --delete --exclude={"/node_modules","/cache",".*"}
+          switches: -azr --delete --exclude={"/node_modules","/cache",".*"} --dry-run --stats --progress -vv
           remote_path: ${{ secrets.TARGET }}
           remote_host: ${{ secrets.REMOTE_HOST }}
           remote_port: ${{ secrets.REMOTE_PORT }}
