@@ -54,7 +54,7 @@ jobs:
       - name: Deploy to Server
         uses: burnett01/rsync-deployments@5.1
         with:
-          switches: -azr --relative --delete --exclude={"/node_modules","/cache",".*", ".git/"} --stats --progress -vv
+          switches: -azr --relative --delete --exclude={"/node_modules","/cache",".*", "/.git"} --progress
           remote_path: '/home/prestashop/share/themes/feeby'
           remote_host: ${{ secrets.REMOTE_HOST }}
           remote_port: ${{ secrets.REMOTE_PORT }}
