@@ -1,12 +1,13 @@
 .cvsignore
-node_modules
+/node_modules
 node_modules/*
+/cache
 cache/*
-.vscode
+/.vscode
 .vscode/*
 .github
 .github/*
-assets/img/modules
+/assets/img/modules
 assets/img/modules/*
 cf_token.sh
 feeby.code-workspace
