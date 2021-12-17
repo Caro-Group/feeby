@@ -55,10 +55,9 @@ jobs:
         uses: burnett01/rsync-deployments@5.1
         with:
           switches: -azr --relative --delete --progress  --cvs-exclude
-          remote_path: '/home/prestashop/share/themes/feeby'
+          remote_path: ${{ secrets.REMOTE_PATH }}
           remote_host: ${{ secrets.REMOTE_HOST }}
           remote_port: ${{ secrets.REMOTE_PORT }}
           remote_user: ${{ secrets.REMOTE_USER }}
           remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
           path: './'
-          # remote_key_pass: ${{ secrets.DEPLOY_KEY_PASS }}
