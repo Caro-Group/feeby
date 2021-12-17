@@ -139,18 +139,18 @@ p{
     @apply line-clamp-5;
 }
 
-.block.last{
+.ApImage.last{
     @apply rounded-md bg-gray-1000 desktop-presta:bg-transparent desktop-presta:mt-0 mt-3;
 }
 
-.block.last a{
+.ApImage.last a{
     @apply flex-row items-center desktop-presta:items-baseline desktop-presta:flex-col;
 }
 
-.block.last a div:first-child{
+.ApImage.last a div:first-child{
     @apply w-1/3 desktop-presta:w-full;
 }
 
-.block.last .image_description {
+.ApImage.last .image_description {
     @apply flex justify-center items-center desktop-presta:justify-start  w-2/3 desktop-presta:w-auto mt-0 ml-0 desktop-presta:mt-6 desktop-presta:ml-8; 
 }
