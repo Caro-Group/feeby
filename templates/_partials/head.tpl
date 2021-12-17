@@ -97,5 +97,5 @@
 {block name='hook_extra'}{/block}
 
 {* 
-Classes used in builder: tablet-medium:mr-20 tablet-wide:mr-8 desktop:mr-0 tablet-medium:top-auto tablet-medium:w-3/5 tablet-medium:absolute tablet-medium:-bottom-12 py-1 tablet:py-0 tablet:h-[60px] desktop:w-1/2 desktop:pr-32 tablet:text-4xl text-2xl mt-14 tablet:mt-14 mt-16 tablet:mt-26 mt-20 tablet:mt-20  px-10px mb-12
+Classes used in builder: tablet-medium:mr-20 tablet-wide:mr-8 desktop:mr-0 tablet-medium:top-auto tablet-medium:w-3/5 tablet-medium:absolute tablet-medium:-bottom-12 py-1 tablet:py-0 tablet:h-[60px] desktop:w-1/2 desktop:pr-32 tablet:text-4xl text-2xl mt-14 tablet:mt-14 mt-16 tablet:mt-28 mt-20 tablet:mt-20  px-10px mb-12
 *}
