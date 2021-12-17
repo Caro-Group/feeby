@@ -54,7 +54,7 @@ jobs:
       - name: Deploy to Server
         uses: burnett01/rsync-deployments@5.1
         with:
-          switches: -azr --relative --delete --progress  --cvs-exclude
+          switches: -azr --relative --delete --info=progress2 --cvs-exclude
           remote_path: ${{ secrets.REMOTE_PATH }}
           remote_host: ${{ secrets.REMOTE_HOST }}
           remote_port: ${{ secrets.REMOTE_PORT }}
