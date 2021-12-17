@@ -70,6 +70,7 @@ module.exports = {
         '100':'28rem', 
       },
       minHeight: {
+        '8' : '2rem',
         'banner' : '450px',
       },
       maxHeight: {
@@ -77,6 +78,9 @@ module.exports = {
       },
       transitionDuration: {
         '2000': '2000ms',
+      },
+      padding: {
+        '10px':'10px;'
       },
       fontFamily: {
         'header': [
