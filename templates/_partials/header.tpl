@@ -75,3 +75,4 @@
       {hook h='displayNavFullWidth'}
     {/if}
   {/block}
+ {/if}
