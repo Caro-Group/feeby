@@ -4,5 +4,17 @@
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"atlascode.jira.jqlList": [
+			{
+				"id": "52757187-2c91-4168-99af-3ef617fd1e14",
+				"siteId": "4e57ef3a-f9fb-493e-a6d1-535a1c9fd333",
+				"name": "Feeby",
+				"query": "project = \"FEEB\" ORDER BY created DESC",
+				"enabled": true,
+				"monitor": true
+			}
+		],
+		"atlascode.jira.startWorkBranchTemplate.customTemplate": "{{{prefix}}}:[{{{issueKey}}}]-{{{summary}}}"
+	}
 }
