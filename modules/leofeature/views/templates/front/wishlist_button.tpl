@@ -1,6 +1,6 @@
 <div class="wislish-button">
   <a
-    class="ap-btn-wishlist"
+    class="ap-btn-wishlist relative mr-2"
     href="{url entity='module' name='leofeature' controller='mywishlist'}"
     title=""
     rel="nofollow"
