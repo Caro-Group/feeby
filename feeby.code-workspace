@@ -15,6 +15,11 @@
 				"monitor": true
 			}
 		],
-		"atlascode.jira.startWorkBranchTemplate.customTemplate": "{{{prefix}}}:[{{{issueKey}}}]-{{{summary}}}"
+		"atlascode.jira.startWorkBranchTemplate.customTemplate": "{{{prefix}}}:[{{{issueKey}}}]-{{{summary}}}",
+		"git.autofetch": "all",
+		"git.autoStash": true,
+		"git.branchValidationRegex": "[FEEB-*] *",
+		"git.enableSmartCommit": true,
+		"git.supportCancellation": true
 	}
 }
