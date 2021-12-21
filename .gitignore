@@ -34,6 +34,9 @@ old_*
 cache/*
 !cache/index.php
 
+# Files from uploads in panel
+/assets/img/modules
+/assets/img/modules/*
 
 # Generated styles
 *.min.css
