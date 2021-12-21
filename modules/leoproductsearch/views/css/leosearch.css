@@ -92,10 +92,6 @@ form#searchbox input#search_button {
 #leosearchtopbox #dropdownListCateTop:hover, #leosearchbox #dropdownListCate:hover {
   color: #414141; }
 
-#leo_search_block_top {
-  margin: 10px 0;
-  border-radius: 23px;
-  background: #fff; }
   #leo_search_block_top .title_block {
     display: none; }
   #leo_search_block_top form > label {
@@ -155,7 +151,6 @@ form#searchbox input#search_button {
     border-radius: 23px;
     outline: 0;
     font-size: 13px;
-    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
     transition: all .3s; }
     .rtl #leo_search_block_top .form-control {
       padding: 0 20px 0 65px; }

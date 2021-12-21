@@ -17,7 +17,7 @@
 {/function}
 
 <!-- Block search module -->
-<div id="leo_search_block_top" class="w-full block exclusive{if $en_search_by_cat} search-by-category{/if}">
+<div id="leo_search_block_top" class="w-full exclusive{if $en_search_by_cat} search-by-category{/if}">
 		<form method="get" action="{$link->getPageLink('productsearch', true)|escape:'html':'UTF-8'}" id="leosearchtopbox" data-label-suggestion="{l s='Suggestion' mod='leoproductsearch'}" data-search-for="{l s='Search for' mod='leoproductsearch'}" data-in-category="{l s='in category' mod='leoproductsearch'}" data-products-for="{l s='Products For' mod='leoproductsearch'}" data-label-products="{l s='Products' mod='leoproductsearch'}" data-view-all="{l s='View all' mod='leoproductsearch'}">
 		<input type="hidden" name="fc" value="module" />
 		<input type="hidden" name="module" value="leoproductsearch" />
@@ -46,7 +46,7 @@
 			{/if}
 			<div class="leoproductsearch-result">
 				<div class="leoproductsearch-loading cssload-speeding-wheel"></div>
-				<input class="search_query form-control grey" type="text" id="leo_search_query_top" name="search_query" value="{$search_query|escape:'htmlall':'UTF-8'|stripslashes}" placeholder="{l s='Search' mod='leoproductsearch'}"/>
+				<input class="search_query form-control tablet-medium:focus:border-main tablet-medium:border border-gray-2000 border-solid rounded-full" type="text" id="leo_search_query_top" name="search_query" value="{$search_query|escape:'htmlall':'UTF-8'|stripslashes}" placeholder="{l s='Search' mod='leoproductsearch'}"/>
 				<div class="ac_results lps_results"></div>
 			</div>
 			<button type="submit" id="leo_search_top_button" class="btn btn-default button button-small"><span><i class="material-icons search">search</i></span></button> 
