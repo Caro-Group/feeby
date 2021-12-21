@@ -352,20 +352,14 @@ pre {
   padding: 0.5rem 0.75rem;
   font-size: 1rem;
   line-height: 1.25;
-  color: #55595c;
   background-color: #fff;
   background-image: none;
   background-clip: padding-box;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 0.25rem; }
+ }
   .form-control::-ms-expand {
     background-color: transparent;
     border: 0; }
-  .form-control:focus {
-    color: #55595c;
-    background-color: #fff;
-    border-color: #66afe9;
-    outline: none; }
+
   .form-control::placeholder {
     color: #999;
     opacity: 1; }
@@ -9442,8 +9436,6 @@ textarea.form-control {
   height: 145px; }
 
 input.form-control {
-  border: 1px solid #e5e5e5;
-  box-shadow: none;
   height: 40px; }
 
 .input-group.focus {
@@ -15913,18 +15905,11 @@ div.active-hover ul > li:hover > .dropdown-menu {
         background-color: #ff708e; }
       .off-canvas-nav-megamenu .navbar-nav > li > a {
         display: inline-block;
-        color: #2a363b;
-        font-size: 14px;
-        font-weight: 600;
         padding: 14px 20px;
         position: relative;
         text-transform: uppercase; }
         .off-canvas-nav-megamenu .navbar-nav > li > a:hover, .off-canvas-nav-megamenu .navbar-nav > li > a:focus {
           background: none; }
-    .off-canvas-nav-megamenu .navbar-nav .dropdown-sub div.menu-title {
-      font-weight: 600;
-      color: #444;
-      font-size: 12px; }
   .off-canvas-nav-megamenu .nav li.dropdown .caret {
     cursor: pointer;
     position: absolute;
@@ -16006,12 +15991,8 @@ div.active-hover ul > li:hover > .dropdown-menu {
         padding: 0; }
   .off-canvas-nav-megamenu .dropdown-sub div.menu-title {
     margin: 10px 0;
-    color: #000000;
-    font-family: 'Poppins';
-    font-size: 14px;
-    text-transform: uppercase; }
-    .off-canvas-nav-megamenu .dropdown-sub div.menu-title a {
-      color: #000; }
+    }
+
   .off-canvas-nav-megamenu ul.nav-links {
     padding-left: 7px; }
     .rtl .off-canvas-nav-megamenu ul.nav-links {

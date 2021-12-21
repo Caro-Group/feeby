@@ -46,10 +46,15 @@
 			{/if}
 			<div class="leoproductsearch-result">
 				<div class="leoproductsearch-loading cssload-speeding-wheel"></div>
-				<input class="search_query form-control tablet-medium:focus:border-main tablet-medium:border border-gray-2000 border-solid rounded-full text-sm bg-transparent" type="text" id="leo_search_query_top" name="search_query" value="{$search_query|escape:'htmlall':'UTF-8'|stripslashes}" placeholder="{l s='Search' mod='leoproductsearch'}"/>
+				<input class="search_query form-control italic border-0 tablet-medium:border border-gray-2000 border-solid rounded-full text-sm bg-transparent" type="text" id="leo_search_query_top" name="search_query" value="{$search_query|escape:'htmlall':'UTF-8'|stripslashes}" placeholder="{l s='Search' mod='leoproductsearch'}"/>
 				<div class="ac_results lps_results"></div>
 			</div>
-			<button type="submit" id="leo_search_top_button" class="btn bg-transparent"><span><i class="material-icons hover:text-main text-main-dark">search</i></span></button> 
+			<button type="submit" id="leo_search_top_button" class="btn group bg-transparent tablet-medium:w-16 w-12 ">
+			<svg width="24" height="24" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg
+				" class="align-middle fill-current group-hover:text-main text-main-dark transition">
+				<path d="M24.8564 24.8563C25.0479 24.6647 25.0479 24.3545 24.8563 24.163L17.6572 16.9639L17.6867 16.9311C19.3076 15.1315 20.3038 12.7588 20.3038 10.1518C20.3037 4.55414 15.7496 0 10.1519 0C4.55414 0 0 4.55414 0 10.1519C0 15.7496 4.55414 20.3038 10.1519 20.3038C12.7588 20.3038 15.1315 19.3076 16.9312 17.6867L16.9639 17.6573L24.163 24.8563C24.2587 24.9521 24.3843 25 24.5097 25C24.6351 25 24.7606 24.9521 24.8564 24.8563ZM10.1519 19.323C5.09531 19.323 0.980748 15.209 0.980748 10.1519C0.980748 5.09482 5.09531 0.980687 10.1519 0.980687C15.2085 0.980687 19.323 5.09476 19.323 10.1519C19.323 15.209 15.2085 19.323 10.1519 19.323Z"></path>
+			</svg>
+			</button> 
 		</div>
 	</form>
 </div>
