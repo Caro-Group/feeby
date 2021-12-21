@@ -15,18 +15,6 @@ jobs:
         uses: actions/checkout@v1
         with:
           fetch-depth: 2
-      
-      - name: Get Composer Cache Directory
-        id: composer-cache
-        run: |
-          echo "::set-output name=dir::$(composer config cache-files-dir)"
-
-      - uses: actions/cache@v2
-        with:
-          path: ${{ steps.composer-cache.outputs.dir }}
-          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-composer-
 
       - name: Get npm cache directory
         id: npm-cache
@@ -48,29 +36,16 @@ jobs:
       - name: Install dependency in theme
         run: npm install && npm run deploy
 
-      - name: Remove node
-        run: sudo rm -rf node_modules  
+      - name: Generate theme
+        run: npm run deploy
 
-# TODO: Implement SSH for speed of deployment
-#      - name: Deploy to Server
-#        uses: easingthemes/ssh-deploy@v2.1.5
-#        env:
-#          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-#          ARGS: "-rlgoDzvc --delete"
-#          SOURCE: ${{ secrets.SOURCE }}
-#          TARGET: ${{ secrets.TARGET }}
-#          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
-#          REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
-#          REMOTE_USER: ${{ secrets.REMOTE_USER }}
-#          EXCLUDE: "/dist/, /node_modules/, /cache/, /.git/, /.github/"
-
-      - name: Deploy to Server SFTP
-        uses: wlixcc/SFTP-Deploy-Action@v1.0
+      - name: Deploy to Server
+        uses: burnett01/rsync-deployments@5.1
         with:
-          username: ${{ secrets.REMOTE_USER }}
-          server: ${{ secrets.REMOTE_HOST }}
-          port: ${{ secrets.REMOTE_PORT }}
-          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-          local_path: './*'
-          remote_path: ${{ secrets.TARGET }}
-          args: '-o ConnectTimeout=5'
+          switches: -azr --relative --cvs-exclude --filter=':- .gitignore' --delete --include='*.min.*'
+          remote_path: ${{ secrets.REMOTE_PATH }}
+          remote_host: ${{ secrets.REMOTE_HOST }}
+          remote_port: ${{ secrets.REMOTE_PORT }}
+          remote_user: ${{ secrets.REMOTE_USER }}
+          remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
+          path: './'

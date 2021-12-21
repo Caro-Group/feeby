@@ -32,37 +32,41 @@
     {/block}
   </head>
 
-  <body id="{$page.page_name}" class="{$page.body_classes|classnames}{if isset($LEO_LAYOUT_MODE)} {$LEO_LAYOUT_MODE}{/if}{if isset($USE_FHEADER) && $USE_FHEADER} keep-header{/if}">
+  <body id="{$page.page_name}" class="{$page.body_classes|classnames}{if isset($LEO_LAYOUT_MODE)} {$LEO_LAYOUT_MODE}{/if}{if isset($USE_FHEADER) && $USE_FHEADER} keep-header{/if} font-body">
 
     {block name='hook_after_body_opening_tag'}
       {hook h='displayAfterBodyOpeningTag'}
     {/block}
 
-    <main id="page">
+    <div id="page">
+
       {block name='product_activation'}
         {include file='catalog/_partials/product-activation.tpl'}
       {/block}
+
       <header id="header">
-        <div class="header-container">
-          {block name='header'}
-            {include file='_partials/header.tpl'}
-          {/block}
-        </div>
+        {block name='header'}
+          {include file='_partials/header.tpl'}
+        {/block}
       </header>
+
       {block name='notifications'}
         {include file='_partials/notifications.tpl'}
       {/block}
-      <section id="wrapper">
-       {hook h="displayWrapperTop"}
 
-      {if isset($fullwidth_hook.displayHome) AND $fullwidth_hook.displayHome == 0}
-        <div class="container">
-      {/if}
+      <main id="wrapper">
+        {hook h="displayWrapperTop"}
+
+        {if isset($fullwidth_hook.displayHome) AND $fullwidth_hook.displayHome == 0}
+          <div class="container">
+        {/if}
+
           {block name='breadcrumb'}
             {include file='_partials/breadcrumb.tpl'}
           {/block}
-          {block name='topBothColumn'}
-          {/block}
+          
+          {block name='topBothColumn'}{/block}
+          
           <div class="row">
             {block name="left_column"}
               <div id="left-column" class="sidebar col-xs-12 col-sm-12 col-md-4 col-lg-3">
@@ -76,11 +80,11 @@
 
             {block name="content_wrapper"}
               <div id="content-wrapper" class="left-column right-column col-sm-4 col-md-6">
-		{hook h="displayContentWrapperTop"}
-                {block name="content"}
-                  <p>Hello world! This is HTML5 Boilerplate.</p>
-                {/block}
-		{hook h="displayContentWrapperBottom"}
+		            {hook h="displayContentWrapperTop"}
+
+                {block name="content"}{/block}
+
+		            {hook h="displayContentWrapperBottom"}
               </div>
             {/block}
 
@@ -94,17 +98,20 @@
               </div>
             {/block}
           </div>
+
         {if isset($fullwidth_hook.displayHome) AND $fullwidth_hook.displayHome == 0}
           </div>
         {/if}
-	{hook h="displayWrapperBottom"}
-      </section>
+	      
+        {hook h="displayWrapperBottom"}
+      </main>
 
       <footer id="footer" class="footer-container">
         {block name="footer"}
           {include file="_partials/footer.tpl"}
         {/block}
       </footer>
+
       {if isset($LEO_PANELTOOL) && $LEO_PANELTOOL}
           {include file="$tpl_dir./modules/appagebuilder/views/templates/front/info/paneltool.tpl"}
       {/if}
@@ -116,19 +123,19 @@
           </div>
       {/if}
 
-    </main>
+    </div>
 
     {block name='javascript_bottom'}
       {include file="_partials/javascript.tpl" javascript=$javascript.bottom}
     {/block}
 
-{literal}
-<script type="text/javascript">!function(e){"function"==typeof define&&define.amd?define(e):e()}(function(){var e,t=["scroll","wheel","touchstart","touchmove","touchenter","touchend","touchleave","mouseout","mouseleave","mouseup","mousedown","mousemove","mouseenter","mousewheel","mouseover"];if(function(){var e=!1;try{var t=Object.defineProperty({},"passive",{get:function(){e=!0}});window.addEventListener("test",null,t),window.removeEventListener("test",null,t)}catch(e){}return e}()){var n=EventTarget.prototype.addEventListener;e=n,EventTarget.prototype.addEventListener=function(n,o,r){var i,s="object"==typeof r&&null!==r,u=s?r.capture:r;(r=s?function(e){var t=Object.getOwnPropertyDescriptor(e,"passive");return t&&!0!==t.writable&&void 0===t.set?Object.assign({},e):e}(r):{}).passive=void 0!==(i=r.passive)?i:-1!==t.indexOf(n)&&!0,r.capture=void 0!==u&&u,e.call(this,n,o,r)},EventTarget.prototype.addEventListener._original=e}});</script>
-{/literal}
+    {literal}
+      <script type="text/javascript">!function(e){"function"==typeof define&&define.amd?define(e):e()}(function(){var e,t=["scroll","wheel","touchstart","touchmove","touchenter","touchend","touchleave","mouseout","mouseleave","mouseup","mousedown","mousemove","mouseenter","mousewheel","mouseover"];if(function(){var e=!1;try{var t=Object.defineProperty({},"passive",{get:function(){e=!0}});window.addEventListener("test",null,t),window.removeEventListener("test",null,t)}catch(e){}return e}()){var n=EventTarget.prototype.addEventListener;e=n,EventTarget.prototype.addEventListener=function(n,o,r){var i,s="object"==typeof r&&null!==r,u=s?r.capture:r;(r=s?function(e){var t=Object.getOwnPropertyDescriptor(e,"passive");return t&&!0!==t.writable&&void 0===t.set?Object.assign({},e):e}(r):{}).passive=void 0!==(i=r.passive)?i:-1!==t.indexOf(n)&&!0,r.capture=void 0!==u&&u,e.call(this,n,o,r)},EventTarget.prototype.addEventListener._original=e}});</script>
+    {/literal}
 
     {block name='hook_before_body_closing_tag'}
       {hook h='displayBeforeBodyClosingTag'}
     {/block}
+    
   </body>
-
 </html>

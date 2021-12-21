@@ -54,6 +54,11 @@
   <link rel="icon" type="image/vnd.microsoft.icon" href="{$shop.favicon}?{$shop.favicon_update_time}">
   <link rel="shortcut icon" type="image/x-icon" href="{$shop.favicon}?{$shop.favicon_update_time}">
 {/block}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+
 {block name="setting"}
   {include file="layouts/setting.tpl"}
 {/block}
@@ -90,3 +95,7 @@
 {/block}
 
 {block name='hook_extra'}{/block}
+
+{* 
+Classes used in builder: tablet-medium:mr-20 tablet-wide:mr-8 desktop:mr-0 tablet-medium:top-auto tablet-medium:w-3/5 tablet-medium:absolute tablet-medium:-bottom-12 py-1 tablet:py-0 tablet:h-[60px] desktop:w-1/2 desktop:pr-32 tablet:text-4xl text-2xl mt-14 tablet:mt-14 mt-16 tablet:mt-28 mt-20 tablet:mt-20  px-10px mb-12 tablet-medium:mb-12 desktop-presta:px-24 tablet-medium:px-7 pl-2 flex-1 max-w-screen-phablet 
+*}

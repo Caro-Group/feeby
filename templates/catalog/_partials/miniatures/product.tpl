@@ -23,96 +23,79 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 {block name='product_miniature_item'}
-<article class="plist-dsimple product-miniature js-product-miniature" data-id-product="{$product.id_product}" data-id-product-attribute="{$product.id_product_attribute}" itemscope itemtype="http://schema.org/Product">
-	<div class="thumbnail-container">
-		<div class="product-image">
+<article class="product-miniature js-product-miniature" data-id-product="{$product.id_product}" data-id-product-attribute="{$product.id_product_attribute}" itemscope itemtype="http://schema.org/Product">
+	<div>
+		<div class="border border-gray-1000 border-solid mb-3">
 			{block name='product_thumbnail'}
 				{if isset($cfg_product_list_image) && $cfg_product_list_image}
 					<div class="leo-more-info" data-idproduct="{$product.id_product}"></div>
 				{/if}
 				{if $product.cover}
-					<a href="{$product.canonical_url}" class="thumbnail product-thumbnail">
+					<a href="{$product.canonical_url}">
 						<img
-							class="lazy img-fluid"
-							data-src = "{$product.cover.bySize.home_default.url}"
+							class="img-fluid object-cover w-full max-w-sm h-full"
+							width="235" height="303"
+							src = "{$product.cover.bySize.home_default.url}"
 							alt = "{if !empty($product.cover.legend)}{$product.cover.legend}{else}{$product.name|truncate:30:'...'}{/if}"
 							data-full-size-image-url = "{$product.cover.large.url}"
+							loading="lazy"
 						/> 
-						{if isset($cfg_product_one_img) && $cfg_product_one_img}
-							<span class="product-additional" data-idproduct="{$product.id_product}"></span>
-						{/if}
 					</a>
 				{else}
-					<a href="{$product.canonical_url}" class="thumbnail product-thumbnail">
-				            <img class="lazy" data-src = "{$urls.no_picture_image.bySize.home_default.url}" />
-					    {if isset($cfg_product_one_img) && $cfg_product_one_img}
-					    	<span class="product-additional" data-idproduct="{$product.id_product}"></span>
-					    {/if}
+					<a href="{$product.canonical_url}">
+				            <img
+							class="object-cover w-full max-w-sm h-full"
+							width="235" height="303"  
+							src="{$urls.no_picture_image.bySize.home_default.url}" 
+							alt="{l s='No image available' d='Shop.Theme.Catalog'}"
+							loading="lazy" 
+							/>
 				        </a>
 				{/if}	
 			{/block}
 			
-			<!-- @todo: use include file='catalog/_partials/product-flags.tpl'} -->
 			{block name='product_flags'}
-				<ul class="product-flags">
-					{foreach from=$product.flags item=flag}
-						<li class="product-flag {$flag.type}">{$flag.label}</li>
-					{/foreach}
-				</ul>
+				{include file='catalog/_partials/product-flags.tpl'}
 			{/block}
-			<div class="pro3-btn">
-				{block name='quick_view'}
-					<div class="quickview hidden-sm-down">
-						<a
-						  href="#"
-						  class="quick-view"
-						  data-link-action="quickview"
-						  title=""
-						>
-							<span class="leo-quickview-bt-loading cssload-speeding-wheel"></span>
-							<span class="leo-quickview-bt-content">
-								<i class="material-icons search">search</i>
-								<span class="name-btn-product">{l s='Quick view' d='Shop.Theme.Actions'}</span>
-							</span>
-						</a>
-					</div>
-				{/block}
+			
+			<div>
 				{hook h='displayLeoCartButton' product=$product}
-				{hook h='displayLeoCompareButton' product=$product}
 				{hook h='displayLeoWishlistButton' product=$product}
 			</div>
 		</div>
-		<div class="product-meta"> 
+		<div class="product-meta px-6 pt-0"> 
 
 			{hook h='displayLeoCartAttribute' product=$product}
 			{hook h='displayLeoCartQuantity' product=$product}
 			
 			{block name='product_name'}
-		         <h3 class="h3 product-title" itemprop="name"><a href="{$product.canonical_url}">{$product.name|truncate:30:'...'}</a></h3>
+		         <h3 itemprop="name"><a class="text-sm tablet:text-base font-light text-main-dark font-body" href="{$product.canonical_url}">{$product.name}</a></h3>
 			{/block}
  
 				{block name='product_price_and_shipping'}
 					{if $product.show_price}
-            			<div class="product-price-and-shipping">
-							{if $product.has_discount}
-								{hook h='displayProductPriceBlock' product=$product type="old_price"}
-								<span class="sr-only">{l s='Regular price' d='Shop.Theme.Catalog'}</span>
-								<span class="regular-price">{$product.regular_price}</span>
-								{if $product.discount_type === 'percentage'}
-									<span class="discount-percentage discount-product">{$product.discount_percentage}</span>
-								{elseif $product.discount_type === 'amount'}
-									<span class="discount-amount discount-product">{$product.discount_amount_to_display}</span>
-								{/if}
-							{/if}
+            			<div>
 
 							{hook h='displayProductPriceBlock' product=$product type="before_price"}
 
 							<span class="sr-only">{l s='Price' d='Shop.Theme.Catalog'}</span>
-							<span itemprop="price" class="price">{$product.price}</span>
+							<span itemprop="price" class=" {if $product.has_discount} text-main {else} text-main-dark {/if} text-base tablet:text-xl font-medium font-body">{$product.price}</span>
 
 							{hook h='displayProductPriceBlock' product=$product type='unit_price'}
 
 							{hook h='displayProductPriceBlock' product=$product type='weight'}
+
+							{if $product.has_discount}
+								{hook h='displayProductPriceBlock' product=$product type="old_price"}
+								<span class="sr-only">{l s='Regular price' d='Shop.Theme.Catalog'}</span>
+								<span class="ml-2 line-through text-gray-3000 text-sm tablet:text-base">{$product.regular_price}</span>
+								{* {if $product.discount_type === 'percentage'} dać jako alt w flag
+									<span class="discount-percentage discount-product">{$product.discount_percentage}</span>
+								{elseif $product.discount_type === 'amount'}	
+									<span class="discount-amount discount-product">{$product.discount_amount_to_display}</span>
+								{/if} *}
+							{/if}
+
 						</div>
 					{/if}
 				{/block}

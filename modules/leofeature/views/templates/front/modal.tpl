@@ -15,20 +15,20 @@
 			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 			  <span aria-hidden="true">&times;</span>
 			</button>
-			<h4 class="modal-title h6 text-xs-center leo-warning leo-alert">
+			<span class="modal-title leo-warning leo-alert block text-base text-center">
 				<i class="material-icons">info_outline</i>				
 				{l s='You must enter a quantity' d='Modules.Leofeature.Shop'}		
-			</h4>
+			</span>
 			
-			<h4 class="modal-title h6 text-xs-center leo-info leo-alert">
+			<span class="modal-title leo-info leo-alert block text-base text-center">
 				<i class="material-icons">info_outline</i>				
 				{l s='The minimum purchase order quantity for the product is ' d='Modules.Leofeature.Shop'}<strong class="alert-min-qty"></strong>		
-			</h4>	
+			</span>	
 			
-			<h4 class="modal-title h6 text-xs-center leo-block leo-alert">				
+			<span class="modal-title leo-block leo-alert block text-base text-center">				
 				<i class="material-icons">block</i>				
 				{l s='There are not enough products in stock' d='Modules.Leofeature.Shop'}
-			</h4>
+			</span>
 		  </div>
 		  <!--
 		  <div class="modal-body">

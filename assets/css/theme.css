@@ -86,62 +86,12 @@ font-family: 'Poppins', sans-serif;
   .table-bordered th,
   .table-bordered td {
     border: 1px solid #ddd !important; } }
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
-  margin-bottom: 0.5rem;
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  line-height: 1.1;
-  color: #000; }
-
-h1, .h1 {
-  font-size: 24px; }
-
-h2, .h2 {
-  font-size: 22px; }
-
-h3, .h3 {
-  font-size: 28px; }
-
-h4, .h4 {
-  font-size: 16px; }
-
-h5, .h5 {
-  font-size: 14px; }
-
-h6, .h6 {
-  font-size: 14px; }
-
-.lead {
-  font-size: 1.25rem;
-  font-weight: 300; }
-
-.display-1 {
-  font-size: 6rem;
-  font-weight: 300; }
-
-.display-2 {
-  font-size: 5.5rem;
-  font-weight: 300; }
-
-.display-3 {
-  font-size: 4.5rem;
-  font-weight: 300; }
-
-.display-4 {
-  font-size: 3.5rem;
-  font-weight: 300; }
 
 hr {
   margin-top: 1rem;
   margin-bottom: 1rem;
   border: 0;
   border-top: 1px solid rgba(0, 0, 0, 0.1); }
-
-small,
-.small {
-  font-size: 80%;
-  font-weight: normal; }
 
 mark,
 .mark {
@@ -160,10 +110,6 @@ mark,
   display: inline-block; }
   .list-inline-item:not(:last-child) {
     margin-right: 5px; }
-
-.initialism {
-  font-size: 90%;
-  text-transform: uppercase; }
 
 .blockquote {
   padding: 0.5rem 1rem;
@@ -3629,7 +3575,7 @@ a.bg-inverse:focus, a.bg-inverse:hover {
   font-style: italic; }
 
 .text-white {
-  color: #fff !important; }
+  color: #fff ; }
 
 .text-muted {
   color: #acaaa6 !important; }
@@ -5785,7 +5731,6 @@ html {
   -webkit-tap-highlight-color: transparent; }
 
 body {
-  font-family: "Poppins", sans-serif;
   font-size: 1rem;
   line-height: 1.5;
   color: #666;
@@ -9365,7 +9310,6 @@ output {
 
 body {
   direction: ltr;
-  font-family: "Poppins", sans-serif;
   font-size: 13px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -15244,7 +15188,7 @@ button:focus, button:hover {
   .leo-megamenu.navbar {
     padding: 0; }
   .leo-megamenu .navbar-nav {
-    text-align: right; }
+    text-align: center; }
     .rtl .leo-megamenu .navbar-nav {
       text-align: left; }
     .leo-megamenu .navbar-nav > li {
@@ -15330,12 +15274,11 @@ button:focus, button:hover {
           visibility: visible;
           transform: translateY(0px); } }
       .leo-megamenu .navbar-nav > li > a {
-        padding: 30px 18px;
+        padding: 15px 0;
         font-size: 13px;
         line-height: 20px;
         text-transform: uppercase;
         color: #000;
-        font-weight: 600;
         -webkit-transition: all 350ms ease-out;
         -o-transition: all 350ms ease-out;
         transition: all 350ms ease-out;
@@ -16223,7 +16166,6 @@ div.active-hover ul > li:hover > .dropdown-menu {
   width: 40px;
   padding: 0;
   border: 1px solid #333;
-  margin: 20px auto;
   border-radius: 0; }
   .navbar-header .navbar-toggler:focus, .navbar-header .navbar-toggler:hover {
     border-color: #000;
@@ -16937,8 +16879,7 @@ body#category .product_list.grid .ajax_block_product {
 
 .plist-dsimple .thumbnail-container .quick-view i {
   display: none; }
-.plist-dsimple .thumbnail-container .btn-product {
-  position: relative; }
+
   .plist-dsimple .thumbnail-container .btn-product .cssload-speeding-wheel {
     position: absolute;
     top: 0;
@@ -17294,29 +17235,6 @@ body#category .product_list.grid .ajax_block_product {
   max-width: 100%; }
   .plist-dsimple .thumbnail-container .product-image > .wishlist .dropdown-menu .dropdown-item {
     white-space: normal; }
-.plist-dsimple .thumbnail-container .product-image > .wishlist .leo-wishlist-button {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  width: 44px;
-  height: 44px;
-  line-height: 44px;
-  padding: 0;
-  z-index: 9;
-  background: rgba(255, 255, 255, 0.5);
-  color: #333;
-  border-radius: 50%;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
-  @media (max-width: 991px) {
-    .plist-dsimple .thumbnail-container .product-image > .wishlist .leo-wishlist-button {
-      top: 10px;
-      right: 10px;
-      width: 34px;
-      height: 34px;
-      line-height: 34px; } }
   .plist-dsimple .thumbnail-container .product-image > .wishlist .leo-wishlist-button i {
     display: block;
     margin: auto;
@@ -17330,7 +17248,7 @@ body#category .product_list.grid .ajax_block_product {
       font-family: "FontAwesome";
       font-size: 14px;
       color: #000; }
-  .plist-dsimple .thumbnail-container .product-image > .wishlist .leo-wishlist-button .name-btn-product {
+  .wishlist .leo-wishlist-button .name-btn-product {
     position: absolute;
     top: 50%;
     right: 100%;
@@ -17350,12 +17268,12 @@ body#category .product_list.grid .ajax_block_product {
     font-weight: 300;
     border-radius: 11px;
     pointer-events: none; }
-  .plist-dsimple .thumbnail-container .product-image > .wishlist .leo-wishlist-button:hover i:before {
+  .wishlist .leo-wishlist-button:hover i:before {
     color: #e0525c; }
-  .plist-dsimple .thumbnail-container .product-image > .wishlist .leo-wishlist-button:hover .name-btn-product {
+  .wishlist .leo-wishlist-button:hover .name-btn-product {
     opacity: 1;
     visibility: visible; }
-  .plist-dsimple .thumbnail-container .product-image > .wishlist .leo-wishlist-button.added i:before {
+  .wishlist .leo-wishlist-button.added i:before {
     content: "\f004";
     color: #e0525c; }
 .plist-dsimple .thumbnail-container .product-flags li.product-flag span {
@@ -22072,19 +21990,14 @@ p.promo-code-button {
     line-height: 30px;
     width: 30px;
     height: 30px; }
-    .block-social li:hover {
-      color: #000; }
     .block-social li a {
       white-space: nowrap;
       text-indent: 100%;
       overflow: hidden;
       display: none; }
-      .block-social li a:hover {
-        color: #000; }
     .block-social li:before {
       content: "";
-      font-family: "FontAwesome";
-      font-size: 14px; }
+      font-family: "FontAwesome"; }
     .block-social li.facebook:before {
       content: "\f09a"; }
     .block-social li.twitter:before {
@@ -23766,10 +23679,10 @@ body#category #content.page-not-found {
 .dropdown {
   color: #666; }
 
-.thumbnail-container .leo-wishlist-button.added .text-add {
+.leo-wishlist-button.added .text-add {
   display: none; }
 
-.thumbnail-container .leo-wishlist-button.added .text-remove {
+.leo-wishlist-button.added .text-remove {
   display: block; }
 
 .thumbnail-container .product-price-and-shipping .discount-percentage,

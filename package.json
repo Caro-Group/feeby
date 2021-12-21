@@ -31,20 +31,26 @@
   },
   "scripts": {
     "cf_token": "bash ./cf_token.sh 'https://test.feeby.pl' true",
-    "serve": "bash ./cf_token.sh 'https://test.feeby.pl' && cross-env NODE_ENV=development TEST_URL=https://test.feeby.pl concurrently \"postcss assets/css/styles.css -o assets/css/styles.min.css --watch\"  \"npx browser-sync start --config bs-config.js\"",
+    "serve": "cross-env NODE_ENV=development TEST_URL=https://test.feeby.pl concurrently \"postcss assets/css/styles.css -o assets/css/styles.min.css --watch\"  \"npx browser-sync start --config bs-config.js\"",
     "development": "cross-env NODE_ENV=development postcss assets/css/styles.css -o assets/css/styles.min.css",
     "production": "cross-env NODE_ENV=production postcss assets/css/styles.css -o assets/css/styles.min.css",
     "deploy": "npm run production"
   },
   "dependencies": {
-    "@tailwindcss/forms": "^0.3.4",
-    "autoprefixer": "^10.0.2",
     "browser-sync": "2.24.6",
     "concurrently": "^6.3.0",
     "cross-env": "^7.0.3",
-    "cssnano": "^5.0.8",
+    "cssnano": "^5.0.12",
     "dotenv": "^10.0.0",
-    "postcss-cli": "^9.0.1",
-    "tailwindcss": "^2.2.17"
+    "postcss-cli": "^9.1.0",
+    "postcss-nesting": "^10.0.3",
+    "@tailwindcss/aspect-ratio": "^0.4.0",
+    "@tailwindcss/forms": "^0.4.0",
+    "@tailwindcss/line-clamp": "^0.3.0",
+    "@tailwindcss/typography": "^0.5.0",
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.4.5",
+    "postcss-import": "^14.0.2",
+    "tailwindcss": "^3.0.2"
   }
 }

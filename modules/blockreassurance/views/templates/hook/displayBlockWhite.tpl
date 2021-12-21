@@ -29,18 +29,18 @@
 <div class="max-w-screen-desktop-wide mx-auto px-2 tablet:px-8">
     <div class="flex flex-wrap">
     {foreach from=$blocks item=$block key=$key name=blocks}
-        <div class="flex flex-col items-center w-1/2 tablet:w-1/4 px-8 mt-7 text-base"
+        <div class="flex flex-col items-center w-1/2 tablet:w-1/4 px-8 mt-7 text-base font-light tablet:text-xl"
             {if $block['type_link'] !== $LINK_TYPE_NONE && !empty($block['link'])} style="cursor:pointer;" onclick="window.open('{$block['link']}')"{/if}>
             <div class="h-12 w-12 tablet:h-16 tablet:w-16">
                 {if $block['icon'] != 'undefined'}
                     {if $block['icon']}
                         <img src="{$block['icon']}">
                     {elseif $block['custom_icon']}
-                        <img {if $block['is_svg']} {/if}src="{$block['custom_icon']}">
+                        <img src="{$block['custom_icon']}">
                     {/if}
                 {/if}
             </div>
-            <div class="flex flex-col text-center">
+            <div class="flex flex-col text-center text-main-dark">
                 <div style="color:{$textColor}">{$block['title']}</div>
                 <p style="color:{$textColor};">{$block['description'] nofilter}</p>
             </div>

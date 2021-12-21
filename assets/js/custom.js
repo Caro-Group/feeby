@@ -967,14 +967,7 @@ function initSlickProductModal() {
 
 
 //DONGND: fix base prestashop
-$(document).ready(function () {
-	//DONGND: remove css inline of label
-	$('.product-flag').removeAttr('style');
-	prestashop.on('updateProductList', function () {
-		//DONGND: remove css inline of label
-		$('.product-flag').removeAttr('style');
-	});
-})
+
 //Fix translate button choose file to upload: change "Choose file" to choosefile_text
 //Fix filter (category page) does not work on IE change dataset.searchUrl to getAttribute('data-search-url')
 
@@ -1240,6 +1233,54 @@ $('body').on('click', "[data-checkout-back]",function(e){
 })(jQuery);
 
 
+//Top bar swiper 
+$(document).ready(function () {
+
+	const swiper = new Swiper('.swiper', {
+		speed: 25000,
+		spaceBetween: 50,
+		loop: true,
+		autoplay: {
+			delay: 0,
+		},
+		allowTouchMove: false,
+	  });
+
+});
+
+
+
+
+
+
+//Top bar swiper 
+$(document).ready(function () {
+
+	const swiper = new Swiper('.swiper', {
+		speed: 25000,
+		spaceBetween: 50,
+		loop: true,
+		autoplay: {
+			delay: 0,
+		},
+		allowTouchMove: false,
+	  });
+	  
+	const swiperBlog = new Swiper('.swiper-blog', {
+		speed: 300,
+		slidesPerView: 2,
+		spaceBetween: 20,
+		loop: true,
+		navigation: {
+			nextEl: '.swiper_blog-button-next',
+			prevEl: '.swiper_blog-button-prev',
+		  },
+	});
+
+});
+
+
+
 
 $(document).ready(function () {
 
@@ -1282,8 +1323,57 @@ function openMenuWithCategory(id)
 	}));
 	
  $('[data-target="\.megamenu-off-canvas-' + menu_id + '"]').first().click();
-} 
+}
 
+$(document).ready(function () {
 
+	var delayValue = $('.swiper-banner .swiper-slide').attr('data-pausetime');
+	if(delayValue==undefined||delayValue==''){
+		delayValue = 2000; 
+	}
 
+	const swiperBanner = new Swiper('.swiper-banner', {
+		speed: 800,
+		slidesPerView: 1,
+		spaceBetween: 0,
+		loop: true,
+		autoplay: {
+			delay: delayValue,
+		},
+		pagination: {
+			el: '.swiper-pagination',
+			clickable: true,
+		},
+		navigation: {
+			prevEl: '.swiper_banner-button-prev',
+			nextEl: '.swiper_banner-button-next',
+		},
+	});
+})
+
+$(document).ready(function () {
+	
+  
+	const swiperPopular = new Swiper('.swiper-popular', {
+		speed: 300,
+	  	slidesPerView: 2,
+	  	spaceBetween: 20,
+	  	loop: true,
+		pagination: {
+			el: '.swiper-pagination',
+			clickable: true,
+			dynamicBullets: true,
+			dynamicMainBullets: 1,
+		},
+	  	breakpoints: {
+			576: {
+				slidesPerView: 3,
+			},
+			922: {
+				slidesPerView: 4,
+			},
+	  	}
+	});
+	
+});
 

@@ -12,7 +12,54 @@
  *  @copyright 2007-2018 Leotheme
  *  @license   http://leotheme.com - prestashop template provider
  */
+
+// var wishlist_product_btn = '[data-id-wishlist] svg';
+
+var wishlist_product_state_class = {
+	default: ['opacity-100','opacity-0'],
+	loading: ['opacity-100 animate-pulse ','opacity-0'],
+	active: ['opacity-0 text-main fill-current','opacity-100 text-main'],
+};
+
+function WishlistIconState(id,state) {
+	for (let i = 0; i < 2; i++) {
+		
+		$('[data-id-product="' +id+'"] svg').each(function(){
+
+			$($(this).children()[i]).removeClass();
+
+			switch (state) {
+				case 1:
+					$($(this).children()[i]).addClass(wishlist_product_state_class.default[i]);
+					
+					break;
+			
+				case 2:
+					$($(this).children()[i]).addClass(wishlist_product_state_class.loading[i]);
+					
+					break;
+				case 3:
+					$($(this).children()[i]).addClass(wishlist_product_state_class.active[i]);
+					
+					break;
+			}
+		});
+
+	}	
+}
+
 $(document).ready(function(){
+
+	$('.leo-wishlist-button').each(function () {
+		let id_product = $(this).data('id-product');
+		if($(this).hasClass('added')){
+			WishlistIconState(id_product,3);
+		}
+		else{
+			WishlistIconState(id_product,1);
+		}
+	})
+
 	createLeoWishlistModalPopup();
 	LeoWishlistButtonAction();
 	prestashop.on('updateProductList', function() {
@@ -146,7 +193,7 @@ function LeoWishlistButtonAction()
 {
 	if (!$('.leo-wishlist-button').hasClass('show-list'))
 	{
-		$('.leo-wishlist-button').click(function(){
+		$('body').on('click','.leo-wishlist-button',function(){
 			if (!$('.leo-wishlist-button.active').length)
 			{			
 				var id_product = $(this).data('id-product');
@@ -156,6 +203,8 @@ function LeoWishlistButtonAction()
 				var content_wishlist_mess_add = wishlist_add+'. <a href="'+wishlist_url+'" target="_blank"><strong>'+wishlist_viewwishlist+'.</strong></a>';			
 				
 				$(this).addClass('active');
+
+				WishlistIconState(id_product,2);
 				
 				if (!isLogged)
 				{
@@ -175,7 +224,6 @@ function LeoWishlistButtonAction()
 				
 				var object_e = $(this);
 				object_e.find('.leo-wishlist-bt-loading').css({'display':'block'});
-				object_e.find('.leo-wishlist-bt-content').hide();
 				if ($(this).hasClass('added') || $(this).hasClass('delete'))
 				{
 					//DONGND:: remove product form wishlist				
@@ -229,7 +277,7 @@ function LeoWishlistButtonAction()
 									$('.leo-wishlist-button[data-id-product='+id_product+']').removeClass('added');
 									$('.leo-wishlist-button[data-id-product='+id_product+']').attr('title',buttonwishlist_title_add);
 									object_e.find('.leo-wishlist-bt-loading').hide();
-									object_e.find('.leo-wishlist-bt-content').show();
+									WishlistIconState(id_product,1);
 								}
 							}
 						},
@@ -295,6 +343,7 @@ function LeoWishlistButtonAction()
 								$('.leo-wishlist-button[data-id-product='+id_product+']').attr('title',buttonwishlist_title_remove);
 								object_e.find('.leo-wishlist-bt-loading').hide();
 								object_e.find('.leo-wishlist-bt-content').show();
+								WishlistIconState(id_product,3)
 							}
 																		
 						},
@@ -440,6 +489,8 @@ function LeoWishlistButtonAction()
 										parents_e.find('.leo-wishlist-bt-loading').hide();
 										parents_e.find('.leo-wishlist-bt-content').show();
 										parents_e.find('.leo-wishlist-button').removeClass('active');
+
+										WishlistIconState(id_product,1);
 									}
 								}
 							},
@@ -501,6 +552,8 @@ function LeoWishlistButtonAction()
 									parents_e.find('.leo-wishlist-bt-loading').hide();
 									parents_e.find('.leo-wishlist-bt-content').show();
 									parents_e.find('.leo-wishlist-button').removeClass('active');
+
+									WishlistIconState(id_product,3);
 								}
 																			
 							},

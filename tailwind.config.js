@@ -1,21 +1,17 @@
+
+const { fontFamily } = require('tailwindcss/defaultTheme');
+
 module.exports = {
   future: {
     purgeLayersByDefault: true,
   },
-  purge: {
-    enabled: process.env.NODE_ENV === 'production',
-    content: [
-      'assets/**/*.{vue,js,ts,jsx,tsx,tpl,yml,css,scss}',
-      'config/**/*.{vue,js,ts,jsx,tsx,tpl,yml}',
-      'modules/**/*.{vue,js,ts,jsx,tsx,tpl,yml}',
-      'templates/**/*.{vue,js,ts,jsx,tsx,tpl,yml}',
-      'nuxt.config.js'
-    ],
-    options: {
-      whitelist: [''],
-    }
-  },
-  darkMode: false,
+  content: [
+    './assets/**/*.{vue,js,ts,jsx,tsx,tpl,yml,svg,scss}',
+    './config/**/*.{vue,js,ts,jsx,tsx,tpl,yml}',
+    './modules/**/*.{vue,js,ts,jsx,tsx,tpl,yml}',
+    './templates/**/*.{vue,js,ts,jsx,tsx,tpl,yml}',
+    './nuxt.config.js'
+  ],
   theme: {
     screens: {
       'phone': '320px',
@@ -23,7 +19,9 @@ module.exports = {
       'phablet': '560px',
       'tablet-small': '640px',
       'tablet': '768px',
+      'tablet-medium': '992px',
       'tablet-wide': '1024px',
+      'desktop-presta': '1200px',
       'desktop': '1248px',
       'desktop-wide': '1440px',
       'full-hd': '1680px',
@@ -31,17 +29,19 @@ module.exports = {
     extend: {
       colors: {
         "main" : "#DF1A5B",
+        'main-hover' : '#B7164B',
+        "main-dark" : "#232322",
         "require": "#f00",
         gray: {
           default: '#F8F8F8',
+          main: '#232322',
+          1000: '#F8F8F8',
+          2000: '#ECECEC',
+          3000: '#ADAFBA',
         },
         pink: {
           650: '#DF1A5B',
         },
-      },
-      width: {
-        "side": "467px",
-        "miniature": "102px"
       },
       margin: {
         'miniature': '102px',
@@ -56,20 +56,51 @@ module.exports = {
        'smaller': '70px',
        'small': '100px',
       },
+      width: {
+        "side": "467px",
+        "miniature": "102px"
+      },
       minWidth: {
-        'label': '173px'
-      }
-    },
-  },
-  variants: {
-    extend: {
-      grayscale: ['hover', 'focus'],
+        'label': '173px',
+        'swiper-mobile':'500px',
+      },
+      height: {
+        'banner-final' :'750px',
+        'label': '173px',
+        '100':'28rem', 
+      },
+      minHeight: {
+        '8' : '2rem',
+        'banner' : '450px',
+      },
+      maxHeight: {
+        'tablet': '768px',
+      },
+      transitionDuration: {
+        '2000': '2000ms',
+      },
+      padding: {
+        '10px':'10px;'
+      },
+      fontFamily: {
+        'header': [
+          '"Nomada Didone"',
+          'Roboto', 
+          ...fontFamily.sans
+        ],
+        'body': [
+          'Roboto', 
+          ...fontFamily.sans
+        ],
+      },
     },
   },
   plugins: [
+    require("@tailwindcss/typography"),
     require("@tailwindcss/forms")({
       strategy: 'class',
     }),
+    require("@tailwindcss/line-clamp"),
   ],
   corePlugins: {
    container: false,

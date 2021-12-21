@@ -15,6 +15,11 @@
 
 require('dotenv').config();
 
+var tailwindConfig = {};
+var tailwindConfigOriginal = require('./tailwind.config.js');
+tailwindConfig.theme = tailwindConfigOriginal.theme;
+tailwindConfig.corePlugins = tailwindConfigOriginal.corePlugins;
+
 module.exports = {
     "ui": {
         "port": 3001
@@ -42,6 +47,10 @@ module.exports = {
     "middleware": false,
     "serveStatic": [
         {
+            route: '/themes/feeby/assets/fonts',
+            dir: 'assets/fonts'
+        },
+        {
             route: '/themes/feeby/assets/css',
             dir: 'assets/css'
         },
@@ -64,7 +73,15 @@ module.exports = {
     "logPrefix": "Browsersync",
     "logConnections": false,
     "logFileChanges": true,
-    "logSnippet": true,
+    "logSnippet": true, 
+    "snippetOptions": {
+        rule: {
+            match: /<\/head>/i,
+            fn: function (snippet, match) {
+                return '<script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script><script> tailwind.config = ' + JSON.stringify(tailwindConfig) + ';</script>' + snippet + match;
+            }
+        }
+    },
     "rewriteRules": [],
     "open": "local",
     "browser": "default",

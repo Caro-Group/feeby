@@ -23,50 +23,56 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 
-{block name='header_banner'}
-  <div class="header-banner">
-    {if isset($fullwidth_hook.displayBanner) AND $fullwidth_hook.displayBanner == 0}
-      <div class="container">
-      {/if}
-        <div class="inner">{hook h='displayBanner'}</div>
-    {if isset($fullwidth_hook.displayBanner) AND $fullwidth_hook.displayBanner == 0}
-      </div>
-      {/if}
-  </div>
-{/block}
-
-{block name='header_nav'}
-  <nav class="header-nav">
-    <div class="topnav">
-      {if isset($fullwidth_hook.displayNav1) AND $fullwidth_hook.displayNav1 == 0}
-      <div class="container">
-      {/if}
-        <div class="inner">{hook h='displayNav1'}</div>
-      {if isset($fullwidth_hook.displayNav1) AND $fullwidth_hook.displayNav1 == 0}
-      </div>
-      {/if}
-    </div>
-    <div class="bottomnav">
-      {if isset($fullwidth_hook.displayNav2) AND $fullwidth_hook.displayNav2 == 0}
+ {assign var='displayBanner' value={hook h='displayBanner'}|regex_replace:"/(\s)|\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*|<!--[\s\S]*?-->$/m":""}
+ {assign var='displayNav1' value={hook h='displayNav1'}|regex_replace:"/(\s)|\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*|<!--[\s\S]*?-->$/m":""}
+ {assign var='displayNav2' value={hook h='displayNav2'}|regex_replace:"/(\s)|\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*|<!--[\s\S]*?-->$/m":""}
+ {assign var='displayTop' value={hook h='displayTop'}|regex_replace:"/(\s)|\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*|<!--[\s\S]*?-->$/m":""}
+ {assign var='displayNavFullWidth' value={hook h='displayNavFullWidth'}|regex_replace:"/(\s)|\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*|<!--[\s\S]*?-->$/m":""}
+ 
+ {if $displayBanner}
+   {block name='header_banner'}
+     {if isset($fullwidth_hook.displayBanner) AND $fullwidth_hook.displayBanner == 0}
+       <div class="container">
+     {/if}
+         {hook h='displayBanner'}
+     {if isset($fullwidth_hook.displayBanner) AND $fullwidth_hook.displayBanner == 0}
+       </div>
+     {/if}
+   {/block}
+ {/if}
+ 
+ {if $displayNav1 && $displayNav2}
+   {block name='header_nav'}
+     {if isset($fullwidth_hook.displayNav1) AND $fullwidth_hook.displayNav1 == 0}
+       <div class="container">
+     {/if}
+         {hook h='displayNav1'}
+     {if isset($fullwidth_hook.displayNav1) AND $fullwidth_hook.displayNav1 == 0}
+       </div>
+     {/if}
+     {if isset($fullwidth_hook.displayNav2) AND $fullwidth_hook.displayNav2 == 0}
+       <div class="container">
+     {/if}
+         {hook h='displayNav2'}
+     {if isset($fullwidth_hook.displayNav2) AND $fullwidth_hook.displayNav2 == 0}
+       </div>
+     {/if}
+   {/block}
+ {/if}
+ 
+ {if $displayTop || $displayNavFullWidth}
+  {block name='header_top'}
+    {if $displayTop}
+      {if isset($fullwidth_hook.displayTop) AND $fullwidth_hook.displayTop == 0}
         <div class="container">
       {/if}
-        <div class="inner">{hook h='displayNav2'}</div>
-      {if isset($fullwidth_hook.displayNav2) AND $fullwidth_hook.displayNav2 == 0}
+          {hook h='displayTop'}
+      {if isset($fullwidth_hook.displayTop) AND $fullwidth_hook.displayTop == 0}
         </div>
       {/if}
-    </div>
-  </nav>
-{/block}
-
-{block name='header_top'}
-  <div class="header-top">
-    {if isset($fullwidth_hook.displayTop) AND $fullwidth_hook.displayTop == 0}
-          <div class="container">
-        {/if}
-      <div class="inner">{hook h='displayTop'}</div>
-        {if isset($fullwidth_hook.displayTop) AND $fullwidth_hook.displayTop == 0}
-          </div>
-        {/if}
-  </div>
-  {hook h='displayNavFullWidth'}
-{/block}
+    {/if}
+    {if $displayNavFullWidth}
+      {hook h='displayNavFullWidth'}
+    {/if}
+  {/block}
+ {/if}
