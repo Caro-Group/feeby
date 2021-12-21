@@ -2667,7 +2667,7 @@ button.btn.btn-primary.center-block {
       position: static; }
     .box-top .leo-megamenu.disable-canvas .dropdown-menu {
       display: none; } }
-/*update css menu*/
+
 .off-canvas-active > #page {
   -webkit-transition: none;
   -o-transition: none;
