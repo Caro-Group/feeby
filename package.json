@@ -43,9 +43,7 @@
     "cssnano": "^5.0.12",
     "dotenv": "^10.0.0",
     "postcss-cli": "^9.1.0",
-    "postcss-nesting": "^10.0.3"
-  },
-  "devDependencies": {
+    "postcss-nesting": "^10.0.3",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/forms": "^0.4.0",
     "@tailwindcss/line-clamp": "^0.3.0",
