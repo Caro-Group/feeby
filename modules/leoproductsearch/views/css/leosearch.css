@@ -150,8 +150,6 @@ form#searchbox input#search_button {
     outline: 0;}
     .rtl #leo_search_block_top .form-control {
       padding: 0 20px 0 65px; }
-    #leo_search_block_top .form-control:focus {
-      box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2); }
     @media (max-width: 767px) {
       #leo_search_block_top .form-control {
         font-size: 13px;
@@ -166,11 +164,8 @@ form#searchbox input#search_button {
       left: 70px;
       right: auto; }
   #leo_search_block_top .btn {
-    width: 60px;
     height: 45px;
-    line-height: 45px;
     padding: 0;
-    font-size: 16px;
     text-align: center;
     position: absolute;
     top: 0;
@@ -186,8 +181,7 @@ form#searchbox input#search_button {
       -moz-border-radius: 23px 0 0 23px;
       -webkit-border-radius: 23px 0 0 23px;
       border-radius: 23px 0 0 23px; }
-    #leo_search_block_top .btn:hover {
-      color: #000; }
+
     #leo_search_block_top .btn i {
       font-size: 0px;
       width: 24px;

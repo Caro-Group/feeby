@@ -22,7 +22,7 @@
         {/if}
             
         {if $menu.show_title}
-            <span class="menu-title">{$menu.title}</span>
+            <span class="menu-title font-body text-main-dark text-base font-light">{$menu.title}</span>
         {/if}
         {if $menu.text}
             <span class="sub-title">{$menu.text}</span>
