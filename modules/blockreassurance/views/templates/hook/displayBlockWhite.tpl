@@ -36,7 +36,7 @@
                     {if $block['icon']}
                         <img src="{$block['icon']}">
                     {elseif $block['custom_icon']}
-                        <img {if $block['is_svg']} {/if}src="{$block['custom_icon']}">
+                        <img src="{$block['custom_icon']}">
                     {/if}
                 {/if}
             </div>
