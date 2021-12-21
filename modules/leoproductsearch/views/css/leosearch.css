@@ -143,15 +143,11 @@ form#searchbox input#search_button {
     #leo_search_block_top #dropdownListCateTop i {
       font-size: 14px; }
   #leo_search_block_top .form-control {
-    background: #fff;
-    border: 0;
+
     height: 45px;
     line-height: 45px;
     padding: 0 65px 0 20px;
-    border-radius: 23px;
-    outline: 0;
-    font-size: 13px;
-    transition: all .3s; }
+    outline: 0;}
     .rtl #leo_search_block_top .form-control {
       padding: 0 20px 0 65px; }
     #leo_search_block_top .form-control:focus {
@@ -173,17 +169,12 @@ form#searchbox input#search_button {
     width: 60px;
     height: 45px;
     line-height: 45px;
-    border: 0;
     padding: 0;
     font-size: 16px;
     text-align: center;
-    background: #f7f2f2;
-    color: #222;
     position: absolute;
     top: 0;
     right: -2px;
-    -moz-border-radius: 0 23px 23px 0;
-    -webkit-border-radius: 0 23px 23px 0;
     border-radius: 0 23px 23px 0; }
     @media (max-width: 767px) {
       #leo_search_block_top .btn {
