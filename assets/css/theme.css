@@ -16166,7 +16166,6 @@ div.active-hover ul > li:hover > .dropdown-menu {
   width: 40px;
   padding: 0;
   border: 1px solid #333;
-  margin: 20px auto;
   border-radius: 0; }
   .navbar-header .navbar-toggler:focus, .navbar-header .navbar-toggler:hover {
     border-color: #000;
