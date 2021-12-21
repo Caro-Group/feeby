@@ -1080,7 +1080,7 @@ section#checkout-delivery-step.-unreachable {
     .leo-megamenu .nav.navbar-nav.megamenu>li:first-child.aligned-fullwidth>.dropdown-menu{
         display: none;
     }
-
+}
 [disabled="disabled"]{
     cursor: not-allowed;
 }
