@@ -46,10 +46,10 @@
 			{/if}
 			<div class="leoproductsearch-result">
 				<div class="leoproductsearch-loading cssload-speeding-wheel"></div>
-				<input class="search_query form-control tablet-medium:focus:border-main tablet-medium:border border-gray-2000 border-solid rounded-full" type="text" id="leo_search_query_top" name="search_query" value="{$search_query|escape:'htmlall':'UTF-8'|stripslashes}" placeholder="{l s='Search' mod='leoproductsearch'}"/>
+				<input class="search_query form-control tablet-medium:focus:border-main tablet-medium:border border-gray-2000 border-solid rounded-full text-sm bg-transparent" type="text" id="leo_search_query_top" name="search_query" value="{$search_query|escape:'htmlall':'UTF-8'|stripslashes}" placeholder="{l s='Search' mod='leoproductsearch'}"/>
 				<div class="ac_results lps_results"></div>
 			</div>
-			<button type="submit" id="leo_search_top_button" class="btn btn-default button button-small"><span><i class="material-icons search">search</i></span></button> 
+			<button type="submit" id="leo_search_top_button" class="btn bg-transparent"><span><i class="material-icons hover:text-main text-main-dark">search</i></span></button> 
 		</div>
 	</form>
 </div>
