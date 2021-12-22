@@ -15845,6 +15845,7 @@ div.active-hover ul > li:hover > .dropdown-menu {
     -ms-transform: translateX(0);
     -o-transform: translateX(0);
     transform: translateX(0);
+    }
     .rtl .off-canvas-active > .off-canvas-nav-megamenu.active {
       right: 0px;
       left: auto; }
