@@ -6,7 +6,7 @@
 * @description: Content Management
 *}
 {if $menu.active == 1}
-    <li data-menu-type="{$menu.type}" class="nav-item bg-gray-1000 {$menu.menu_class} {$addwidget}" {$model->renderAttrs($menu)}>
+    <li data-menu-type="{$menu.type}" class="nav-item bg-gray-1000 tablet-medium:bg-transparent {$menu.menu_class} {$addwidget}" {$model->renderAttrs($menu)}>
         <a class="nav-link has-category font-body text-main-dark text-base font-light" href="{$model->getLink($menu)}" target="{$menu.target}">
             {if $menu.icon_class}
                 {if $menu.icon_class != $menu.icon_class|strip_tags}
