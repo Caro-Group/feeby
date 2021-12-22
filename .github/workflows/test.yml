@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
         with:
           fetch-depth: 2
 
@@ -34,7 +34,7 @@ jobs:
           node-version: 16.x
 
       - name: Install dependency in theme
-        run: npm install && npm run deploy
+        run: npm install
 
       - name: Generate theme
         run: npm run deploy
@@ -42,7 +42,7 @@ jobs:
       - name: Deploy to Server
         uses: burnett01/rsync-deployments@5.1
         with:
-          switches: -azr --relative --cvs-exclude --filter=':- .gitignore' --delete --include='*.min.*'
+          switches: -azr --relative --cvs-exclude --exclude='node_modules' --exclude='cache' --exclude='assets/img/modules' --exclude='*.code-workspace' --exclude='.*' --exclude='*.sh'  --delete
           remote_path: ${{ secrets.REMOTE_PATH }}
           remote_host: ${{ secrets.REMOTE_HOST }}
           remote_port: ${{ secrets.REMOTE_PORT }}
