@@ -1313,7 +1313,12 @@ function openMenuWithCategory(id)
 	}
 
 	if($(menu_el).parent().hasClass('level3') && !$(menu_el).parent().hasClass('open-sub')){
-		$(menu_el).parent().parent().find('.caret').click();
+		if($(menu_el).parent().parent().hasClass('level2')){
+			$(menu_el).parent().parent().find('.caret').click();
+		}
+		if($(menu_el).parent().parent().parent().hasClass('level2')){
+			$(menu_el).parent().parent().parent().find('.caret').click();
+		}
 	}
  }
 	if(menu_el.parents('.dropdown').each(function(i,item){
