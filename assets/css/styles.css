@@ -156,3 +156,15 @@ p{
 .ApImage.last .image_description {
     @apply flex justify-center items-center desktop-presta:justify-start  w-2/3 desktop-presta:w-auto mt-0 ml-0 desktop-presta:mt-6 desktop-presta:ml-8; 
 }
+
+.off-canvas-nav:before{
+    @apply text-xl font-bold ;
+}
+
+.off-canvas-nav{
+    @apply opacity-0 transition duration-300;
+}
+
+.off-canvas-active .off-canvas-nav{
+    @apply opacity-100 transform rotate-90;
+}

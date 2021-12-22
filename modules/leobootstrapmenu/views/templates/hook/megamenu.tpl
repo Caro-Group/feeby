@@ -13,7 +13,7 @@
                             <!-- Brand and toggle get grouped for better mobile display -->
 
                             <div class="navbar-header">
-                                    <button type="button" class="navbar-toggler hidden-lg-up" data-toggle="collapse" data-target=".megamenu-off-canvas-{$megamenu_id}">
+                                    <button type="button" class="navbar-toggler hidden-lg-up mt-1" data-toggle="collapse" data-target=".megamenu-off-canvas-{$megamenu_id}">
                                             <span class="sr-only">{l s='Toggle navigation' mod='leobootstrapmenu'}</span>
                                             &#9776;
                                             <!--
