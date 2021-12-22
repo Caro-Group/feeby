@@ -188,5 +188,5 @@ li[data-menu-type="url"] a{
 }
 
 .megamenu-overlay,.off-canvas-nav-megamenu .offcanvas-mainnav{
-    @apply top-[53px] tablet-medium:top-[81px];
+    @apply top-[53px] tablet:top-[81px];
   }
