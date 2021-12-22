@@ -2656,10 +2656,6 @@ button.btn.btn-primary.center-block {
 .box-listdetail .leo-widget a:hover {
   border: 1px solid #444; }
 
-.page-cms img {
-  max-width: 100%;
-  height: auto; }
-
 @media (max-width: 991px) {
   .box-top {
     position: relative; }
