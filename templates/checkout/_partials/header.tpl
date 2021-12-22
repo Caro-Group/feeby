@@ -61,7 +61,7 @@
    {/block}
  {/if}
  
- {if $displayTop && $displayNavFullWidth}
+ {if $displayTop || $displayNavFullWidth}
   {block name='header_top'}
     {if $displayTop}
       {if isset($fullwidth_hook.displayTop) AND $fullwidth_hook.displayTop == 0}
@@ -76,4 +76,5 @@
       {hook h='displayNavFullWidth'}
     {/if}
   {/block}
+ {/if}
 {/block}
