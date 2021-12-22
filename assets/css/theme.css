@@ -15916,9 +15916,9 @@ div.active-hover ul > li:hover > .dropdown-menu {
     top: 0;
     margin: auto 0;
     right: 0;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
+    width: 57px;
+    height: 57px;
+    line-height: 57px;
     text-align: center; }
     .rtl .off-canvas-nav-megamenu .nav li.dropdown .caret {
       left: 0;
@@ -15926,17 +15926,12 @@ div.active-hover ul > li:hover > .dropdown-menu {
     .off-canvas-nav-megamenu .nav li.dropdown .caret:before {
       content: "\f107";
       font-family: "FontAwesome";
-      color: #000000;
-      font-size: 15px;
       font-weight: normal;
       display: block;
       text-align: center;
-      transition: all .6s;
       transform-origin: center center; }
   .off-canvas-nav-megamenu .nav li.dropdown .dropdown-toggle::after {
     display: none; }
-  .off-canvas-nav-megamenu .nav li.open-sub > .caret:before {
-    transform: rotate(180deg); }
   .off-canvas-nav-megamenu .nav li li.dropdown-submenu .caret {
     top: 0px;
     width: 30px;
