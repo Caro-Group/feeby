@@ -16,14 +16,6 @@ jobs:
         with:
           fetch-depth: 2
 
-      - name: Install git 
-        run: |
-          sudo apt-get install -y git
-          git --version
-          echo "Path is ... $PATH"
-          PATH=$PATH:$(which git)
-          echo "Path is ... $PATH"
-
       - name: Get npm cache directory
         id: npm-cache
         run: |
@@ -42,15 +34,15 @@ jobs:
           node-version: 16.x
 
       - name: Install dependency in theme
-        run: npm install && npm run deploy
+        run: npm install
 
       - name: Generate theme
         run: npm run deploy
-# -azr -vvv --relative --cvs-exclude --filter=':- .gitignore' --include='**/*.min.css' --delete
+
       - name: Deploy to Server
         uses: burnett01/rsync-deployments@5.1
         with:
-          switches: -azr -vvv --relative --cvs-exclude --exclude=`/usr/bin/git -C ${{ secrets.REMOTE_PATH }} ls-files --exclude-standard -oi --directory` --delete --dry-run
+          switches: -azr -vvv --relative --cvs-exclude --exclude='node_modules' --exclude='cache' --exclude='assets/img/modules' --exclude='feeby.code-workspace' --exclude='.git'  --delete
           remote_path: ${{ secrets.REMOTE_PATH }}
           remote_host: ${{ secrets.REMOTE_HOST }}
           remote_port: ${{ secrets.REMOTE_PORT }}
