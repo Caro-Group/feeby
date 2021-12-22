@@ -7,9 +7,9 @@
 
 <div class="leo-widget" data-id_widget="{$id_widget}">
 {if isset($links)}
-    <div class="widget-links">
+    <div class="widget-links mb-4">
 	{if isset($widget_heading)&&!empty($widget_heading)}
-	<div class="menu-title font-body text-main-dark">
+	<div class="menu-title font-body text-main-dark text-base mt-2">
 		{$widget_heading}
 	</div>
 	{/if}

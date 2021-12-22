@@ -1772,9 +1772,7 @@ tbody.collapse.in {
 .navbar-nav .nav-item {
   float: left; }
 .navbar-nav .nav-link {
-  display: block;
-  padding-top: .425rem;
-  padding-bottom: .425rem; }
+  display: block;}
   .navbar-nav .nav-link + .nav-link {
     margin-left: 1rem; }
 .navbar-nav .nav-item + .nav-item {
@@ -15981,8 +15979,6 @@ div.active-hover ul > li:hover > .dropdown-menu {
           margin-right: 0px;
           margin-left: inherit; }
       .off-canvas-nav-megamenu .dropdown-menu ul li > a {
-        font-weight: 400;
-        color: #888;
         padding: 0; }
   .off-canvas-nav-megamenu .dropdown-sub div.menu-title {
     margin: 10px 0;
