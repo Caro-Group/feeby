@@ -50,7 +50,7 @@ jobs:
       - name: Deploy to Server
         uses: burnett01/rsync-deployments@5.1
         with:
-          switches: -azr -vvv --relative --cvs-exclude --exclude=`git -C ${{ secrets.REMOTE_PATH }} ls-files --exclude-standard -oi --directory` --delete --dry-run
+          switches: -azr -vvv --relative --cvs-exclude --exclude=`/usr/bin/git -C ${{ secrets.REMOTE_PATH }} ls-files --exclude-standard -oi --directory` --delete --dry-run
           remote_path: ${{ secrets.REMOTE_PATH }}
           remote_host: ${{ secrets.REMOTE_HOST }}
           remote_port: ${{ secrets.REMOTE_PORT }}
