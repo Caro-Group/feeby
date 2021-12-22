@@ -38,10 +38,7 @@
   color: transparent;
 }
 
-.off-canvas-nav-megamenu .navbar-nav>li[data-menu-type="url"]>a {
-  color: #aaa;
-  text-transform: none;
-}
+
 
 .off-canvas-nav-megamenu .navbar-nav>li[data-menu-type="category"]{
   border-bottom-color: #fff;

@@ -15840,14 +15840,11 @@ div.active-hover ul > li:hover > .dropdown-menu {
   background: #FFFFFF; }
   .off-canvas-active > .off-canvas-nav-megamenu.active {
     left: 0px;
-    -webkit-transform: translateX(234px);
-    -moz-transform: translateX(234px);
-    -ms-transform: translateX(234px);
-    -o-transform: translateX(234px);
-    transform: translateX(234px);
-    -webkit-transition: all 400ms ease 0s;
-    -o-transition: all 400ms ease 0s;
-    transition: all 400ms ease 0s; }
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
     .rtl .off-canvas-active > .off-canvas-nav-megamenu.active {
       right: 0px;
       left: auto; }
@@ -15864,9 +15861,9 @@ div.active-hover ul > li:hover > .dropdown-menu {
   background: #FFFFFF;
   z-index: 999;
   left: 0;
-  -webkit-transition: all 400ms ease 0s;
-  -o-transition: all 400ms ease 0s;
-  transition: all 400ms ease 0s; }
+  -webkit-transition: all 600ms ease-in-out;
+  -o-transition: all 600ms ease-in-out;
+  transition: all 600ms ease-in-out; }
   .rtl .off-canvas-nav-megamenu {
     right: 0;
     left: auto; }
