@@ -160,11 +160,11 @@ p{
 }
 
 .off-canvas-nav{
-    @apply opacity-0 transition duration-300;
+    @apply opacity-0 transition duration-500;
 }
 
 .off-canvas-active .off-canvas-nav{
-    @apply opacity-100 transform rotate-90;
+    @apply opacity-100 transform rotate-180;
 }
 
 .off-canvas-nav-megamenu .open-sub > .caret{

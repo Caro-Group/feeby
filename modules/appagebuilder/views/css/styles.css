@@ -2675,23 +2675,16 @@ button.btn.btn-primary.center-block {
   transform: none; }
 
 .off-canvas-nav-megamenu {
-  -webkit-transform: translate(0, 0) scale(0, 1);
-  -moz-transform: translate(0, 0) scale(0, 1);
-  -ms-transform: translate(0, 0) scale(0, 1);
-  -o-transform: translate(0, 0) scale(0, 1);
-  transform: translate(0, 0) scale(0, 1);
+  -webkit-transform: translateX(-100vw);
+  -moz-transform: translateX(-100vw);
+  -ms-transform: translateX(-100vw);
+  -o-transform: translateX(-100vw);
+  transform: translateX(-100vw);
   left: 0;
   -webkit-transform-origin: bottom center;
   -moz-transform-origin: bottom center;
   -o-transform-origin: bottom center;
   transform-origin: bottom center; }
-
-.off-canvas-active > .off-canvas-nav-megamenu.active {
-  -webkit-transform: translate(0, 0) scale(1, 1);
-  -moz-transform: translate(0, 0) scale(1, 1);
-  -ms-transform: translate(0, 0) scale(1, 1);
-  -o-transform: translate(0, 0) scale(1, 1);
-  transform: translate(0, 0) scale(1, 1); }
 
 .off-canvas-nav-megamenu .offcanvas-mainnav {
   left: 0; }
