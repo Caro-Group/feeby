@@ -173,4 +173,7 @@ p{
   @apply transform rotate-[180deg] ;
 }
 
+.dropdown-menu-inner .nav-link{
+    @apply p-5 -mx-5 border-0 border-b border-gray-1000 border-solid;
+}
 

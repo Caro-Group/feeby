@@ -34,9 +34,9 @@
             </span>
         {/if}
         
-        {if $model->is_live_edit && $menu.is_group == 0}<b class="caret text-2xl transition"></b>{/if}
+        {if $model->is_live_edit && $menu.is_group == 0}<b class="caret before:text-main-dark text-2xl transition"></b>{/if}
     </a>
-        {if !$model->is_live_edit && $menu.is_group == 0}<b class="caret text-2xl transition"></b>{/if}
+        {if !$model->is_live_edit && $menu.is_group == 0}<b class="caret before:text-main-dark text-2xl transition"></b>{/if}
 
     {if $menu.sub_with == 'widget'}
         <div class="dropdown-sub {if $menu.is_group == 1}dropdown-mega{else}dropdown-menu{/if}" {$style nofilter}>
