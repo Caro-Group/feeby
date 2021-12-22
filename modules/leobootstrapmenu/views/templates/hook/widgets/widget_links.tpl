@@ -9,7 +9,7 @@
 {if isset($links)}
     <div class="widget-links mb-4">
 	{if isset($widget_heading)&&!empty($widget_heading)}
-	<div class="menu-title font-body text-main-dark text-base mt-2">
+	<div class="menu-title font-body text-main-dark text-base ">
 		{$widget_heading}
 	</div>
 	{/if}
@@ -17,7 +17,7 @@
 		<div id="tabs{$id}" class="panel-group">
 			<ul class="nav-links">
 				{foreach $links as $key => $ac}  
-					<li ><a href="{$ac.link}" class="font-body text-main-dark" {if isset($ac.cat_id)}data-category-id="{$ac.cat_id}"{/if}>{$ac.text}</a></li>
+					<li ><a href="{$ac.link}" class="font-body text-main-dark text-base font-normal mt-2" {if isset($ac.cat_id)}data-category-id="{$ac.cat_id}"{/if}>{$ac.text}</a></li>
 				{/foreach}
 			</ul>
 		</div>

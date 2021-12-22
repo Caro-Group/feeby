@@ -17,7 +17,7 @@
             {if $cat->id_category != ''}
                 <ul class="col-count-mob-one text-base" style="{if $id_widget == '1638828508'}column-count:3;{/if}{if $id_widget == '1638828714'}column-count:3;{/if}{if $id_widget == '1638836284'}column-count:3;{/if}{if $id_widget == '1638836384'}column-count:2;{/if}">
                 {foreach from=$subcategories item=subcategory}
-                    <li class="clearfix {if isset($subcategory.subsubcategories)}level2 dropdown{/if}">
+                    <li class="clearfix {if isset($subcategory.subsubcategories)}level2 dropdown mb-2{/if}">
                         <a href="{$link->getCategoryLink($subcategory.id_category, $subcategory.link_rewrite)|escape:'htmlall':'UTF-8'}" title="{$subcategory.name|escape:'htmlall':'UTF-8'}" class="img text-main-dark font-normal mr-2" {if isset($subcategory.id_category)}data-category-id="{$subcategory.id_category}"{/if}>
                                 {$subcategory.name|escape:'htmlall':'UTF-8'} 
                         </a>
