@@ -8,7 +8,7 @@
 
 {* function genMegaMenuByConfig *}
 {if $menu.active == 1}
-<li data-menu-type="{$menu.type}" class="nav-item parent bg-gray-1000 tablet-medium:bg-transparent {$menu.menu_class} {$class} {if $hascat}{$align}{/if} {$addwidget}" {$model->renderAttrs($menu)}>
+<li data-menu-type="{$menu.type}" class="nav-item parent  {$menu.menu_class} {$class} {if $hascat}{$align}{/if} {$addwidget}" {$model->renderAttrs($menu)}>
     <a class="nav-link dropdown-toggle {if $hascat}has-category{/if} font-body text-main-dark text-base font-normal" data-toggle="dropdown" href="{$model->getLink($menu)}" target="{$menu.target}">
 
         {if $menu.icon_class}

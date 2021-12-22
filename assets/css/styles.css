@@ -175,3 +175,18 @@ p{
     @apply p-5 -mx-5 border-0 border-b border-gray-1000 border-solid;
 }
 
+li[data-menu-type="category"]{
+    @apply bg-gray-1000 tablet-medium:bg-transparent;
+}
+
+li[data-menu-type="category"] a{
+    @apply font-light;
+}
+
+li[data-menu-type="url"] a{
+    @apply font-normal;
+}
+
+.megamenu-overlay,.off-canvas-nav-megamenu .offcanvas-mainnav{
+    @apply top-[53px] tablet-medium:top-[81px];
+  }

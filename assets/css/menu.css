@@ -1,7 +1,4 @@
 /* Fix header visibility */
-.megamenu-overlay{
-  top: 53px;
-}
 
 .off-canvas .off-canvas-active{
   background: #FFFFFF;
@@ -24,7 +21,6 @@
   position: fixed;
   bottom: 0;
   overflow-y: auto;
-  top: 53px;
   padding-bottom: 62px;
 }
 
