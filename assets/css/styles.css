@@ -171,42 +171,4 @@ p{
   @apply transform rotate-[180deg] ;
 }
 
-li.level2 a{
-    @apply mr-2;
-}
 
-.level2.open-sub .caret{
-    @apply transform rotate-[180deg] ;
-}
-
-.off-canvas-nav-megamenu .nav .level2 .caret{
-    @apply text-base ;
-}
-
-.off-canvas-nav-megamenu .nav .caret{
-    @apply transition duration-300 text-main-dark text-[22px];
-}
-
-li[data-menu-type="category"].open-sub > a{
-    @apply transform translate-x-1;
-}
-
-li[data-menu-type="category"] > a{
-    @apply transition duration-300;
-}
-
-.off-canvas-nav-megamenu .navbar-nav>li[data-menu-type="category"]{
-    @apply bg-gray-1000 ;
-}
-
-.off-canvas-nav-megamenu .dropdown-menu .more{
-    @apply px-6 py-4 text-main-dark font-normal bg-gray-2000 -mx-5 border-0 border-t border-solid border-white;
-}
-
-.nav-link .menu-title{
-    @apply text-main-dark text-base font-light;
-}
-
-[data-menu-type="url"] .nav-link .menu-title{
-    @apply font-normal;
-}
