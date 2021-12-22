@@ -1,6 +1,6 @@
 /* Fix header visibility */
 .megamenu-overlay{
-  top: 35px;
+  top: 50px;
 }
 
 .off-canvas .off-canvas-active{
@@ -24,7 +24,7 @@
   position: fixed;
   bottom: 0;
   overflow-y: auto;
-  top: 35px;
+  top: 50px;
   padding-bottom: 35px;
 }
 
@@ -50,10 +50,6 @@
 .off-canvas-nav-megamenu .navbar-nav>li[data-menu-type="category"]{
   background: #ebebeb;
   border-bottom-color: #fff;
-}
-
-.off-canvas-button-megamenu .off-canvas-nav{
-  margin: 0 0 0 auto;
 }
 
 .off-canvas-nav-megamenu .dropdown-menu .more{

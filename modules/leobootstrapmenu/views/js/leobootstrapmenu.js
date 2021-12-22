@@ -54,7 +54,7 @@ $(document).ready(function() {
 						var $nav = null;
 						if (!$btn.length)
 							return;
-						var $nav = $("<section class='off-canvas-nav-megamenu' data-megamenu-id="+value.id+"><nav class='offcanvas-mainnav' ><div class='off-canvas-button-megamenu'><span class=''>"+menu_category+"</span><span class='off-canvas-nav'></span><span class='hidden-visually'>"+close_bt_txt+"</span></div></nav></section>");
+						var $nav = $("<section class='off-canvas-nav-megamenu' data-megamenu-id="+value.id+"><nav class='offcanvas-mainnav' ><div class='off-canvas-button-megamenu'><span class='font-header italic text-2xl text-main-dark'>"+menu_category+"</span><span class='hidden-visually'>"+close_bt_txt+"</span><span class='off-canvas-nav'></span></div></nav></section>");
 						// console.log($($btn.data('target')).find('.megamenu'));
 						var $menucontent = $($btn.data('target')).find('.megamenu').clone();
 						$("body").append($nav);

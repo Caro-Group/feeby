@@ -16167,9 +16167,7 @@ div.active-hover ul > li:hover > .dropdown-menu {
     outline: 0; }
     .off-canvas-button-megamenu .off-canvas-nav:before {
       content: "\e646";
-      font-family: 'themify';
-      font-size: 14px;
-      color: #333; }
+      font-family: 'themify';}
   .off-canvas-button-megamenu:focus .off-canvas-nav:before {
     color: #000; }
 

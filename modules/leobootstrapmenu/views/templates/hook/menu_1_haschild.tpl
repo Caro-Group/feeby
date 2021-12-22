@@ -7,7 +7,7 @@
 *}
 {if $menu.active == 1}
 <li data-menu-type="{$menu.type}" class="nav-item parent dropdown {$menu.menu_class} {$align} {$addwidget}" {$model->renderAttrs($menu)}>
-    <a class="nav-link dropdown-toggle has-category" data-toggle="dropdown" href="{$model->getLink($menu)}" target="{$menu.target}">
+    <a class="nav-link dropdown-toggle has-category " data-toggle="dropdown" href="{$model->getLink($menu)}" target="{$menu.target}">
         {if $menu.icon_class}
             {if $menu.icon_class != $menu.icon_class|strip_tags}
                 <span class="hasicon menu-icon-class">{$menu.icon_class nofilter}
@@ -19,7 +19,7 @@
         {/if}
             
         {if $menu.show_title}
-            <span class="menu-title">{$menu.title}</span>
+            <span class="menu-title font-body text-main-dark text-base font-light">{$menu.title}</span>
         {/if}
         {if $menu.text}
             <span class="sub-title">{$menu.text}</span>
