@@ -112,11 +112,15 @@ p{
 }
 
 .leo-wishlist-bt-content{
-    @apply flex
+    @apply flex;
 }
 
 .wishlist-svg{
-    @apply z-20 fill-current text-main-dark group-hover:text-main transition
+    @apply z-20 fill-current text-main-dark group-hover:text-main transition;
+}
+
+.wishlist-svg path{
+    @apply transition;
 }
 
 .swiper-popular .swiper-pagination{
