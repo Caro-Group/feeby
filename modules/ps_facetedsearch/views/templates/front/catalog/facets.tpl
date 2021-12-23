@@ -76,7 +76,7 @@
 
                     <a
                       href="{$filter.nextEncodedFacetsURL}"
-                      class="text-main-dark search-link js-search-link"
+                      class="text-main-dark text-base search-link js-search-link"
                       rel="nofollow"
                     >
                       {$filter.label}
@@ -95,7 +95,7 @@
             <ul id="facet_{$_expand_id}" class="collapse{if !$_collapse} in{/if} max-w-[350px]">
               <li class="border-0 border-b border-solid border-white px-5 py-2">
                 <div class="col-sm-12 col-xs-12 col-md-12 facet-dropdown dropdown">
-                  <a class="select-title" rel="nofollow" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <a class="select-title text-main-dark text-base" rel="nofollow" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     {$active_found = false}
                     <span>
                       {foreach from=$facet.filters item="filter"}
@@ -119,7 +119,7 @@
                         <a
                           rel="nofollow"
                           href="{$filter.nextEncodedFacetsURL}"
-                          class="select-list js-search-link"
+                          class="select-list text-main-dark text-base js-search-link"
                         >
                           {$filter.label}
                           {if $filter.magnitude and $show_quantities}
