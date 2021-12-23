@@ -199,4 +199,20 @@ li[data-menu-type="url"] a{
 
 .megamenu-overlay,.off-canvas-nav-megamenu .offcanvas-mainnav{
     @apply top-[53px] tablet:top-[81px];
-  }
+}
+
+#search_filters .add{
+    @apply pl-5 inline;
+} 
+
+#search_filters .facet-labe.active a{
+    @apply text-main;
+}
+
+#search_filters .facet-labe.active > span{
+    @apply inline-block;
+} 
+
+#search_filters .facet-labe > span{
+    @apply hidden;
+} 

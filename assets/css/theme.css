@@ -1662,16 +1662,6 @@ tbody.collapse.in {
   padding-top: .425rem;
   padding-bottom: .425rem; }
 
-.navbar-toggler {
-  width: 2.5em;
-  height: 2em;
-  padding: 0.5rem 0.75rem;
-  font-size: 1.25rem;
-  line-height: 1;
-  background: transparent no-repeat center center;
-  background-size: 24px 24px;
-  border: 1px solid transparent;
-  border-radius: 0.25rem; }
   .navbar-toggler:focus, .navbar-toggler:hover {
     text-decoration: none; }
 
@@ -9601,7 +9591,6 @@ input.form-control {
       display: inline-block;
       vertical-align: -3px;
       cursor: pointer;
-      border: 1px #666 solid;
       width: 16px;
       height: 16px; }
       .rtl .custom-checkbox input[type="checkbox"] + span, .rtl
@@ -19311,12 +19300,6 @@ body #search_filters .facet {
   body #search_filters .facet .collapse {
     max-height: 210px;
     overflow: auto; }
-  body #search_filters .facet .facet-title {
-    font-weight: 500;
-    margin: 0 0 10px;
-    text-transform: capitalize;
-    font-size: 13px;
-    line-height: 1.5; }
   body #search_filters .facet .facet-label, body #search_filters .facet .custom-checkbox {
     margin-bottom: 0; }
     body #search_filters .facet .facet-label a, body #search_filters .facet .custom-checkbox a {
@@ -22900,9 +22883,6 @@ div.animated-background {
   color: #aaa; }
 .leo-block-sidebar .list-item {
   margin: 0 0 20px; }
-
-#search_filters {
-  padding: 30px; }
 
 .js-modal-content {
   padding: 30px; }

@@ -17,7 +17,7 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
 {if $displayedFacets|count}
-  <div id="search_filters">
+  <div id="search_filters" class="p-0 flex flex-wrap ">
 
     {foreach from=$displayedFacets item="facet"}
       <section class="facet clearfix">
@@ -27,23 +27,22 @@
           {if $filter.active}{assign var=_collapse value=false}{/if}
         {/foreach}
 
-        <div class="title {if $_collapse}collapsed{/if}" data-parent="#search_filters" data-target="#facet_{$_expand_id}" data-toggle="collapse"{if !$_collapse} aria-expanded="true"{/if}>
-          <p class="h6 facet-title">{$facet.label}</p>
-          <span class="navbar-toggler collapse-icons">
-            <i class="material-icons add">&#xE313;</i>
-            <i class="material-icons remove">&#xE316;</i>
+        <div class="title mr-12 font-normal {if $_collapse}collapsed{/if}" data-parent="#search_filters" data-target="#facet_{$_expand_id}" data-toggle="collapse"{if !$_collapse} aria-expanded="true"{/if}>
+          <p class="facet-title">{$facet.label}</p>
+          <span class="pl-4 -top-1 relative">
+            <i class="material-icons text-xl">add</i>
           </span>
         </div>
 
         {if in_array($facet.widgetType, ['radio', 'checkbox'])}
           {block name='facet_item_other'}
-            <ul id="facet_{$_expand_id}" class="collapse">
+            <ul id="facet_{$_expand_id}" class="collapse max-w-[350px]">
               {foreach from=$facet.filters key=filter_key item="filter"}
                 {if !$filter.displayed}
                   {continue}
                 {/if}
 
-                <li>
+                <li class="border-0 border-b border-solid border-white px-5 py-2">
                   <label class="facet-label{if $filter.active} active {/if}" for="facet_input_{$_expand_id}_{$filter_key}">
                     {if $facet.multipleSelectionAllowed}
                       <span class="custom-checkbox">
@@ -58,11 +57,11 @@
                         {elseif isset($filter.properties.texture)}
                           <span class="color texture" style="background-image:url({$filter.properties.texture})"></span>
                         {else}
-                          <span {if !$js_enabled} class="ps-shown-by-js" {/if}><i class="material-icons rtl-no-flip checkbox-checked">&#xE5CA;</i></span>
+                          <span {if !$js_enabled} class="ps-shown-by-js" {/if}><i class="material-icons text-main -top-2.5 text-lg relative">close</i></span>
                         {/if}
                       </span>
                     {else}
-                      <span class="custom-radio">
+                      <span class="custom-radio border-0 bg-transparent">
                         <input
                           id="facet_input_{$_expand_id}_{$filter_key}"
                           data-search-url="{$filter.nextEncodedFacetsURL}"
@@ -70,13 +69,14 @@
                           name="filter {$facet.label}"
                           {if $filter.active }checked{/if}
                         >
-                        <span {if !$js_enabled} class="ps-shown-by-js" {/if}></span>
+                        <span {if !$js_enabled} class="ps-shown-by-js hidden" {/if}>
+                          <i class="material-icons text-main -top-2.5 text-lg relative">close</i></span>
                       </span>
                     {/if}
 
                     <a
                       href="{$filter.nextEncodedFacetsURL}"
-                      class="_gray-darker search-link js-search-link"
+                      class="text-main-dark search-link js-search-link"
                       rel="nofollow"
                     >
                       {$filter.label}
@@ -92,8 +92,8 @@
 
         {elseif $facet.widgetType == 'dropdown'}
           {block name='facet_item_dropdown'}
-            <ul id="facet_{$_expand_id}" class="collapse{if !$_collapse} in{/if}">
-              <li>
+            <ul id="facet_{$_expand_id}" class="collapse{if !$_collapse} in{/if} max-w-[350px]">
+              <li class="border-0 border-b border-solid border-white px-5 py-2">
                 <div class="col-sm-12 col-xs-12 col-md-12 facet-dropdown dropdown">
                   <a class="select-title" rel="nofollow" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     {$active_found = false}
@@ -138,7 +138,7 @@
           {block name='facet_item_slider'}
             {foreach from=$facet.filters item="filter"}
               <ul id="facet_{$_expand_id}"
-                class="faceted-slider collapse{if !$_collapse} in{/if}"
+                class="faceted-slider collapse{if !$_collapse} in{/if} max-w-[350px]"
                 data-slider-min="{$facet.properties.min}"
                 data-slider-max="{$facet.properties.max}"
                 data-slider-id="{$_expand_id}"
@@ -148,7 +148,7 @@
                 data-slider-specifications="{$facet.properties.specifications|@json_encode}"
                 data-slider-encoded-url="{$filter.nextEncodedFacetsURL}"
               >
-                <li>
+                <li class="border-0 border-b border-solid border-white px-5 py-2">
                   <p id="facet_label_{$_expand_id}">
                     {$filter.label}
                   </p>
