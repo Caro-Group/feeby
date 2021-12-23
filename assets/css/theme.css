@@ -20694,7 +20694,6 @@ body #search_filters .clear-all-wrapper {
       height: 20px;
       line-height: 20px;
       padding: 0 8px;
-      left: 50%;
       transform: translateX(-50%);
       background: #000;
       color: #fff;
@@ -20707,14 +20706,7 @@ body #search_filters .clear-all-wrapper {
       font-size: 10px;
       opacity: 0;
       visibility: hidden; }
-      .leo-compare-wishlist-button .btn-product span span:before {
-        content: "";
-        border: 5px solid transparent;
-        border-top-color: #000;
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        margin-left: -5px; }
+      
     .leo-compare-wishlist-button .btn-product:hover {
       color: #000 !important; }
       .leo-compare-wishlist-button .btn-product:hover span span {
