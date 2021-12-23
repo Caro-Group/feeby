@@ -16,19 +16,19 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
-<section id="js-active-search-filters" class="{if $activeFilters|count}active_filters{else}hide{/if}" style="display: flex;align-items: baseline;margin: 0;padding: 10px 30px;flex-wrap: wrap;">
+<section id="js-active-search-filters" class="{if $activeFilters|count}active_filters{else}hide{/if}" style="display: flex;align-items: baseline;flex-wrap: wrap;">
   {block name='active_filters_title'}
-    <p class="h6 {if $activeFilters|count}active-filter-title{else}hidden-xs-up{/if}">{l s='Active filters' d='Shop.Theme.Global'} <span class="hidden-sm-down hidden-lg-up">({$activeFilters|count})</span></p>
+    <p class="{if $activeFilters|count}active-filter-title{else}hidden-xs-up{/if} text-base font-body font-normal">{l s='Active filters' d='Shop.Theme.Global'} <span class="hidden-sm-down hidden-lg-up">({$activeFilters|count})</span></p>
   {/block}
 
   {if $activeFilters|count}
     <ul class="hidden-md-down">
       {foreach from=$activeFilters item="filter"}
         {block name='active_filters_item'}
-          <li class="filter-block">
-            {l s='%1$s:' d='Shop.Theme.Catalog' sprintf=[$filter.facetLabel]}
-            {$filter.label}
-            <a class="js-search-link" href="{$filter.nextEncodedFacetsURL}"><i class="material-icons close">&#xE5CD;</i></a>
+          <li class="filter-block ml-6  border border-gray-2000 border-solid rounded-md py-[2px] px-2 font-normal text-main-dark">
+          <a class="js-search-link" href="{$filter.nextEncodedFacetsURL}"><i class="material-icons close text-lg relative bottom-px">&#xE5CD;</i></a>
+          {l s='%1$s:' d='Shop.Theme.Catalog' sprintf=[$filter.facetLabel]}
+          {$filter.label}
           </li>
         {/block}
       {/foreach}

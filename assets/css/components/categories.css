@@ -215,14 +215,10 @@ body #search_filters .facet {
       padding: 7px 0 7px 20px; }
     body #search_filters .facet .facet-label .magnitude {
       position: absolute;
-      top: 5px;
       height: 20px;
       min-width: 20px;
       display: inline-block;
-      right: 5px;
-      color: #999;
-      font-size: 12px;
-      font-family: 'Poppins'; }
+      right: 5px; }
       .rtl body #search_filters .facet .facet-label .magnitude {
         left: 5px;
         right: auto; }

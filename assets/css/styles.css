@@ -205,14 +205,14 @@ li[data-menu-type="url"] a{
     @apply pl-5 inline;
 } 
 
-#search_filters .facet-labe.active a{
-    @apply text-main;
+#search_filters .facet-label.active a{
+    @apply text-main font-normal ;
 }
 
-#search_filters .facet-labe.active > span{
+#search_filters .facet-label.active > span{
     @apply inline-block;
 } 
 
-#search_filters .facet-labe > span{
+#search_filters .facet-label > span{
     @apply hidden;
 } 

@@ -9555,17 +9555,9 @@ input.form-control {
     filter: alpha(opacity=0); }
   .custom-radio input[type="radio"]:checked + span {
     display: block;
-    background-color: #000;
     position: absolute;
-    left: 2px;
     top: 2px;
-    width: 10px;
-    height: 10px;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-    border-radius: 50%; }
+}
 
 .custom-checkbox {
   position: relative; }
@@ -19290,9 +19282,7 @@ body#checkout #gift_message {
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); }
 
-body #search_filters .facet {
-  padding: 10px 0;
-  margin: 0 0 10px; }
+
   @media (max-width: 991px) {
     body #search_filters .facet {
       margin-bottom: 0;
@@ -19321,14 +19311,10 @@ body #search_filters .facet {
       padding: 7px 0 7px 20px; }
     body #search_filters .facet .facet-label .magnitude {
       position: absolute;
-      top: 5px;
       height: 20px;
       min-width: 20px;
       display: inline-block;
-      right: 5px;
-      color: #999;
-      font-size: 12px;
-      font-family: 'Poppins'; }
+      right: 5px; }
       .rtl body #search_filters .facet .facet-label .magnitude {
         left: 5px;
         right: auto; }
@@ -19401,36 +19387,13 @@ body #search_filters .clear-all-wrapper {
           margin-left: auto; } }
 
 /* Filter */
-.active_filters {
-  background: #f9f9f9;
-  padding: 10px 30px 0;
-  margin-bottom: 20px; }
-  .active_filters .active-filter-title {
-    display: inline;
-    font-weight: 400;
-    margin: 0 10px 0 0;
-    font-size: 13px;
-    color: #666; }
   .active_filters ul {
     display: inline; }
-  .active_filters .filter-block {
-    -moz-box-shadow: 2px 2px 11px 0px rgba(0, 0, 0, 0.1);
-    -webkit-box-shadow: 2px 2px 11px 0px rgba(0, 0, 0, 0.1);
-    -o-box-shadow: 2px 2px 11px 0px rgba(0, 0, 0, 0.1);
-    -ms-box-shadow: 2px 2px 11px 0px rgba(0, 0, 0, 0.1);
-    box-shadow: 2px 2px 11px 0px rgba(0, 0, 0, 0.1);
-    color: #414141;
-    margin-bottom: 10px;
-    background: white;
-    padding: 10px;
-    display: inline-block;
-    font-size: 12px;
-    margin-right: 10px; }
+
     .rtl .active_filters .filter-block {
       margin-left: 10px;
       margin-right: inherit; }
     .active_filters .filter-block .close {
-      color: #414141;
       font-size: 13px;
       margin-top: 3px;
       opacity: 1;
