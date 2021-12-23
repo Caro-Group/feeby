@@ -218,6 +218,7 @@ function LeoWishlistButtonAction()
 					// {
 						$('.leo-modal-wishlist .modal-title').html(wishlist_loggin_required);
 						$('.leo-modal-wishlist').modal('show');
+						WishlistIconState(id_product,1);
 					// }
 					return false;
 				}
