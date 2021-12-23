@@ -86,8 +86,13 @@ p{
 
 }
 
+
 .leo-wishlist-button.btn-primary{
     @apply absolute right-0 z-10 top-3 w-6 h-6 tablet:w-8 tablet:h-8 rounded-l-md bg-white shadow-md p-2 box-content
+}
+
+.page-product .leo-wishlist-button.btn-primary{
+    @apply shadow-none;
 }
 
 .wishlist .leo-wishlist-button.btn-primary.active{
