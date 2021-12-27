@@ -34,22 +34,22 @@
     {l s='Categories' d='Shop.Theme.Global'}
   </div>
 
-  <div style="display: flex;flex-wrap: wrap;">
-    <div style="flex:0 0 auto;" class="hidden-md-up">
+  <div class=" flex flex-wrap justify-between tablet: justify-center" >
+    <div style="flex:0 0 auto;" class="hidden-md-up w-1/2 bg-main-dark rounded-md mr-[10px] tablet:mr-0 order-1 flex justify-center ">
         {if !empty($listing.rendered_facets)}
-          <div class="col-sm-4 col-xs-4 col-sp-12 filter-button">
-            <button id="search_filter_toggler_collapse" class="btn btn-outline" data-toggle="collapse" href="#search_filters_wrapper" aria-expanded="false" aria-controls="search_filters_wrapper">
+          
+            <button id="search_filter_toggler_collapse" class="btn bg-transparent text-white" data-toggle="collapse" href="#search_filters_wrapper" aria-expanded="false" aria-controls="search_filters_wrapper">
               {l s='Filter' d='Shop.Theme.Actions'}{if !empty($activeFilters)} ({$activeFilters|count}){/if}
             </button>
-          </div>
         {/if}
     </div>
 
     {block name='product_list_active_filters'}
       {if isset($listing.rendered_facets) && $listing.rendered_facets}
-          <div class="horizontal_filters" style="width: calc(100% - 12rem)">
+          <div class="horizontal_filters order-3 tablet:order-2 " style="width: calc(100% - 12rem);">
               
-                  <div id="search_filters_wrapper" class="collapse" aria-expanded="false" style="">
+                  <div id="search_filters_wrapper" class="collapse relative" aria-expanded="false" style="">
+                      <div class="absolute h-full right-0 w-24 bg-gradient-to-l from-gray-1000 to-transparent pointer-events-none "></div>
                       {$listing.rendered_facets nofilter}
                   </div>
               
@@ -58,11 +58,10 @@
     {/block}
   
 
-    <div style="
+    <div class="flex justify-center tablet:justify-end order-2 tablet:order-3" style="
     {if !empty($activeFilters)}background: #f9f9f9;{/if}
-    display: flex;
-    justify-content: flex-end;">
-      <div class="row sort-by-row tablet:w-48">
+    ">
+      <div class="sort-by-row w-1/2 ml-[10px] tablet:ml-0 tablet:w-48">
         {block name='sort_by'}
           {include file='catalog/_partials/sort-orders.tpl' sort_orders=$listing.sort_orders}
         {/block}
@@ -70,7 +69,7 @@
     </div>
 
     {block name='product_list_active_filters'}
-      <div style="flex:1 1 auto;" class="hidden-sm-down">
+      <div style="flex:1 1 auto;" class="hidden-sm-down order-4">
         {$listing.rendered_active_filters nofilter}
       </div>
     {/block}

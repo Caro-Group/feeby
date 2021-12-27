@@ -1393,6 +1393,6 @@ $(document).ready(function () {
 	breakpointCheck();
 
 	
-	
+	window.dispatchEvent(new Event('resize'));
 });
 

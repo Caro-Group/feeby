@@ -225,5 +225,5 @@ li[data-menu-type="url"] a{
 }
 
 .swiper-filters .swiper-wrapper .swiper-slide{
-    @apply w-auto;
+    @apply w-auto h-auto  tablet:h-full;
 }
