@@ -1382,3 +1382,24 @@ $(document).ready(function () {
 	
 });
 
+$(document).ready(function () {
+
+	window.addEventListener('resize',function() {
+		
+		if (window.innerWidth>=768) {	
+			if (swiperFilters !== undefined) swiperFilters.destroy(true,true);
+		}
+		else{
+			const swiperFilters = new Swiper('.swiper-filters', {
+				speed: 150,
+				slidesPerView: 'auto',
+				spaceBetween: 20,
+			});
+		}
+	})
+
+	
+  
+	
+});
+

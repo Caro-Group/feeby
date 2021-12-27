@@ -216,3 +216,11 @@ li[data-menu-type="url"] a{
 #search_filters .facet-label > span{
     @apply hidden;
 } 
+
+#search_filters .title.collapsed p,#search_filters .title.collapsed i{
+    @apply text-main-dark;
+}
+
+#search_filters .title p,#search_filters .title i{
+    @apply text-main transition;
+}
