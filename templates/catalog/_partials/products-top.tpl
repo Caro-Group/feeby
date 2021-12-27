@@ -30,7 +30,7 @@
 
 
 <div id="js-product-list-top" class="products-selection">
-  <div style="flex: 1 1 auto;background: #000;display: flex;align-items: center;justify-content: center;color: #fff;border-radius: 20px;padding: 5px 35px 5px 15px;margin-bottom: 10px;" class="hidden-md-up" onclick="openMenuWithCategory({$smarty.get.id_category})">
+  <div style="flex: 1 1 auto;background: #000;display: flex;align-items: center;justify-content: center;color: #fff;border-radius: 20px;padding: 14px 35px 14px 15px;margin-bottom: 10px;" class="hidden-md-up" onclick="openMenuWithCategory({$smarty.get.id_category})">
     {l s='Categories' d='Shop.Theme.Global'}
   </div>
 
@@ -38,7 +38,7 @@
     <div style="flex:0 0 auto;" class="hidden-md-up w-1/2 pr-[10px] order-1 flex justify-center ">
         {if !empty($listing.rendered_facets)}
           
-            <button id="search_filter_toggler_collapse" class="btn bg-main-dark rounded-md text-white" data-toggle="collapse" href="#search_filters_wrapper" aria-expanded="false" aria-controls="search_filters_wrapper">
+            <button id="search_filter_toggler_collapse" class="btn bg-main-dark rounded-md text-white w-full" data-toggle="collapse" href="#search_filters_wrapper" aria-expanded="false" aria-controls="search_filters_wrapper">
               {l s='Filter' d='Shop.Theme.Actions'}{if !empty($activeFilters)} ({$activeFilters|count}){/if}
             </button>
         {/if}
