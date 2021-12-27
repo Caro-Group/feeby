@@ -61,21 +61,6 @@
             {block name='product_list_active_filters'}{/block}
           {/block}
          </div>
-
-         <div class="col-xs-12 col-md-push-12">
-          {block name='product_list_active_filters'}
-            {if isset($listing.rendered_facets) && $listing.rendered_facets}
-             <div class="horizontal_filters">
-              <div class="sidebar top-facet">
-               <div id="search_filters_wrapper" class="collapse" aria-expanded="false" style="">
-                {$listing.rendered_facets nofilter}
-               </div>
-              </div>
-             </div>
-            {/if}
-           {/block}
-          </div>
-
         </div>
 
         <div>
