@@ -22,7 +22,7 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
-<div class="col-sm-12 col-xs-12 products-sort-order dropdown bg-gray-1000 px-0 py-3 rounded-md tablet:border border-solid border-gray-1000 border-0 tablet:rounded-none tablet:rounded-r-md select-title text-base">
+<div class="col-sm-12 col-xs-12 products-sort-order dropdown tablet:bg-gray-1000 px-0 py-3 rounded-md tablet:border-0 border-solid border-gray-1000 border-2 tablet:rounded-none tablet:rounded-r-md select-title text-base">
   <button
     class=" select-title w-full text-base bg-transparent p-0 pr-6"
     rel="nofollow"

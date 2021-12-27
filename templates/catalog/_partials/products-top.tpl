@@ -35,10 +35,10 @@
   </div>
 
   <div class=" flex flex-wrap justify-between tablet: justify-center" >
-    <div style="flex:0 0 auto;" class="hidden-md-up w-1/2 bg-main-dark rounded-md mr-[10px] tablet:mr-0 order-1 flex justify-center ">
+    <div style="flex:0 0 auto;" class="hidden-md-up w-1/2 pr-[10px] order-1 flex justify-center ">
         {if !empty($listing.rendered_facets)}
           
-            <button id="search_filter_toggler_collapse" class="btn bg-transparent text-white" data-toggle="collapse" href="#search_filters_wrapper" aria-expanded="false" aria-controls="search_filters_wrapper">
+            <button id="search_filter_toggler_collapse" class="btn bg-main-dark rounded-md text-white" data-toggle="collapse" href="#search_filters_wrapper" aria-expanded="false" aria-controls="search_filters_wrapper">
               {l s='Filter' d='Shop.Theme.Actions'}{if !empty($activeFilters)} ({$activeFilters|count}){/if}
             </button>
         {/if}
@@ -49,7 +49,7 @@
           <div class="horizontal_filters order-3 tablet:order-2 " style="width: calc(100% - 12rem);">
               
                   <div id="search_filters_wrapper" class="collapse relative" aria-expanded="false" style="">
-                      <div class="absolute h-full right-0 w-24 bg-gradient-to-l from-gray-1000 to-transparent pointer-events-none "></div>
+                      <div class="absolute tablet:h-full right-5 z-10 w-24 bg-gradient-to-l from-gray-1000 to-transparent pointer-events-none "></div>
                       {$listing.rendered_facets nofilter}
                   </div>
               
@@ -58,10 +58,10 @@
     {/block}
   
 
-    <div class="flex justify-center tablet:justify-end order-2 tablet:order-3" style="
+    <div class="flex justify-center tablet:justify-end order-2 tablet:order-3 w-1/2 tablet:w-auto pl-[10px] tablet:pl-0" style="
     {if !empty($activeFilters)}background: #f9f9f9;{/if}
     ">
-      <div class="sort-by-row w-1/2 ml-[10px] tablet:ml-0 tablet:w-48">
+      <div class="sort-by-row w-full tablet:w-48">
         {block name='sort_by'}
           {include file='catalog/_partials/sort-orders.tpl' sort_orders=$listing.sort_orders}
         {/block}
