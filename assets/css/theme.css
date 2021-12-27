@@ -19183,7 +19183,6 @@ body#checkout #gift_message {
   align-items: center;
   -ms-flex-align: center; }
 .products-selection .sort-by {
-  white-space: normal;
   word-break: break-word;
   text-align: right; }
   .rtl .products-selection .sort-by {

@@ -56,13 +56,7 @@
           </div>
       {/if}
     {/block}
-
-	
-    {block name='product_list_active_filters'}
-      <div style="flex:1 1 auto;" class="hidden-sm-down">
-        {$listing.rendered_active_filters nofilter}
-      </div>
-    {/block}
+  
 
     <div style="
     {if !empty($activeFilters)}background: #f9f9f9;{/if}
@@ -74,6 +68,12 @@
         {/block}
       </div>
     </div>
+
+    {block name='product_list_active_filters'}
+      <div style="flex:1 1 auto;" class="hidden-sm-down">
+        {$listing.rendered_active_filters nofilter}
+      </div>
+    {/block}
 
   </div>
 </div>
