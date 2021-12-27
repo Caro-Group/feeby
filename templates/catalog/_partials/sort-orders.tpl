@@ -22,14 +22,14 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
-<div class="col-sm-12 col-xs-12 products-sort-order dropdown">
+<div class="col-sm-12 col-xs-12 products-sort-order dropdown bg-gray-1000 px-0 py-3 rounded-r-md select-title text-base">
   <button
-    class="btn-unstyle select-title py-3 rounded-r-md bg-gray-1000 text-base"
+    class=" select-title w-full text-base"
     rel="nofollow"
     data-toggle="dropdown"
     aria-haspopup="true"
     aria-expanded="false">
-     <span class="sort-by" style="font-weight:700;">{l s='Sort by:' d='Shop.Theme.Global'}</span>
+     <span class="sort-by">{l s='Sort by:' d='Shop.Theme.Global'}</span>
      {if $listing.sort_selected}{$listing.sort_selected}{else}{l s='Select' d='Shop.Theme.Actions'}{/if}
      <i class="material-icons add"></i>
   </button>

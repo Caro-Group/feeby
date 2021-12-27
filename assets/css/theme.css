@@ -19235,16 +19235,10 @@ body#checkout #gift_message {
     overflow: hidden;
     text-overflow: ellipsis;
     width: 100%;
-    background: #f5f5f5;
     cursor: pointer;
-    height: 35px;
-    line-height: 27px;
     position: relative;
     border: 0;
     outline: 0;
-    color: #888;
-    border-radius: 20px;
-    padding: 5px 35px 5px 15px;
     text-align: left; }
     .rtl .products-sort-order .select-title {
       padding: 5px 15px 5px 35px; }
