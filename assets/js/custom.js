@@ -1402,7 +1402,9 @@ $(document).ready(function () {
 		swiperFilters = new Swiper('.swiper-filters', {
 			speed: 150,
 			slidesPerView: 'auto',
-			spaceBetween: 20,
+			freeMode: {
+				enabled: true,
+			},
 		});
 	}
 
