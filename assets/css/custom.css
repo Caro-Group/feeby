@@ -791,7 +791,6 @@ color: #DF1A5B;
 @media (min-width: 768px){
 body #search_filters .facet > ul{
     position: absolute;
-    width: 100%;
     z-index: 20;
     background: #FFF;
 }
@@ -826,7 +825,6 @@ body #search_filters .facet > ul{
 body #search_filters .facet > ul{
     max-height: 210px;
     overflow: auto;
-    margin: 0 -19px;
     background: #f9f9f9;
     box-shadow: 1px 5px 5px #00000014;
 }
