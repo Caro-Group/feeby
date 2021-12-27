@@ -223,3 +223,7 @@ li[data-menu-type="url"] a{
 #search_filters .title p,#search_filters .title i{
     @apply text-main transition;
 }
+
+.swiper-filters .swiper-wrapper .swiper-slide{
+    @apply w-auto;
+}
