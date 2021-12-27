@@ -89,7 +89,7 @@ p{
 
 
 .leo-wishlist-button.btn-primary{
-    @apply absolute right-0 z-10 top-3 w-6 h-6 tablet:w-8 tablet:h-8 rounded-l-md bg-white shadow-md p-2 box-content
+    @apply absolute right-0 top-3 w-6 h-6 tablet:w-8 tablet:h-8 rounded-l-md bg-white shadow-md p-2 box-content
 }
 
 .page-product .leo-wishlist-button.btn-primary{
@@ -117,7 +117,7 @@ p{
 }
 
 .wishlist-svg{
-    @apply z-20 fill-current text-main-dark group-hover:text-main transition;
+    @apply fill-current text-main-dark group-hover:text-main transition;
 }
 
 .wishlist-svg path{

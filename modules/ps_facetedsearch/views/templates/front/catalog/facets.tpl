@@ -17,11 +17,11 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
 {if $displayedFacets|count}
-  <div id="search_filters" class="flex flex-wrap px-5 py-3 rounded-md bg-gray-1000 ">
-    <div class="swiper-filters">
+  <div id="search_filters" class="flex flex-wrap pr-5 py-3 rounded-md bg-gray-1000 ">
+    <div class="swiper-filters pl-5 pb-[250px] mb-[-250px]">
       <div class="swiper-wrapper">
       {foreach from=$displayedFacets item="facet"}
-        <div class="swiper-slide">
+        <div class="swiper-slide w-auto">
           <section class="facet clearfix">
             {assign var=_expand_id value=10|mt_rand:100000}
             {assign var=_collapse value=true}

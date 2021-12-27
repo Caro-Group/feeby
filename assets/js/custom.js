@@ -1384,22 +1384,32 @@ $(document).ready(function () {
 
 $(document).ready(function () {
 
-	window.addEventListener('resize',function() {
-		
-		if (window.innerWidth>=768) {	
-			if (swiperFilters !== undefined) swiperFilters.destroy(true,true);
+	const breakpoint = window.matchMedia('(max-width:768px)')
+
+	let swiperFilters;
+
+	const breakpointCheck = function () {
+		if (breakpoint.matches == true) {
+			if (swiperFilters !== undefined) swiperFilters.destroy(true,true); 
 		}
-		else{
-			const swiperFilters = new Swiper('.swiper-filters', {
-				speed: 150,
-				slidesPerView: 'auto',
-				spaceBetween: 20,
-			});
+		else if (breakpoint.matches == false) {
+			return enableSwiperFilter();
+			
 		}
-	})
+	};
+
+	const enableSwiperFilter =function () {
+		swiperFilters = new Swiper('.swiper-filters', {
+			speed: 150,
+			slidesPerView: 'auto',
+			spaceBetween: 20,
+		});
+	}
+
+	breakpoint.addListener(breakpointCheck);
+	breakpointCheck();
 
 	
-  
 	
 });
 
