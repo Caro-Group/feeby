@@ -48,11 +48,11 @@
     {block name='product_list_active_filters'}
       {if isset($listing.rendered_facets) && $listing.rendered_facets}
           <div class="horizontal_filters" style="width: calc(100% - 12rem)">
-              <div class="sidebar top-facet">
+              
                   <div id="search_filters_wrapper" class="collapse" aria-expanded="false" style="">
                       {$listing.rendered_facets nofilter}
                   </div>
-              </div>
+              
           </div>
       {/if}
     {/block}
@@ -64,11 +64,9 @@
       </div>
     {/block}
 
-    <div style="flex: 1 1 auto;
+    <div style="
     {if !empty($activeFilters)}background: #f9f9f9;{/if}
     display: flex;
-    padding-right: 15px;
-    padding-left: 15px;
     justify-content: flex-end;">
       <div class="row sort-by-row tablet:w-48">
         {block name='sort_by'}
