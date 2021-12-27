@@ -24,7 +24,7 @@
  *}
 <div class="col-sm-12 col-xs-12 products-sort-order dropdown bg-gray-1000 px-0 py-3 rounded-r-md select-title text-base">
   <button
-    class=" select-title w-full text-base"
+    class=" select-title w-full text-base bg-transparent p-0 pr-6"
     rel="nofollow"
     data-toggle="dropdown"
     aria-haspopup="true"
