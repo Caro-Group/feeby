@@ -28,6 +28,7 @@
     {/block}
 {/if}
 
+
 <div id="js-product-list-top" class="products-selection">
   <div style="flex: 1 1 auto;background: #000;display: flex;align-items: center;justify-content: center;color: #fff;border-radius: 20px;padding: 5px 35px 5px 15px;margin-bottom: 10px;" class="hidden-md-up" onclick="openMenuWithCategory({$smarty.get.id_category})">
     {l s='Categories' d='Shop.Theme.Global'}
@@ -44,6 +45,18 @@
         {/if}
     </div>
 
+    {block name='product_list_active_filters'}
+      {if isset($listing.rendered_facets) && $listing.rendered_facets}
+          <div class="horizontal_filters" style="width: calc(100% - 12rem)">
+              <div class="sidebar top-facet">
+                  <div id="search_filters_wrapper" class="collapse" aria-expanded="false" style="">
+                      {$listing.rendered_facets nofilter}
+                  </div>
+              </div>
+          </div>
+      {/if}
+    {/block}
+
 	
     {block name='product_list_active_filters'}
       <div style="flex:1 1 auto;" class="hidden-sm-down">
@@ -57,7 +70,7 @@
     padding-right: 15px;
     padding-left: 15px;
     justify-content: flex-end;">
-      <div class="row sort-by-row">
+      <div class="row sort-by-row tablet:w-48">
         {block name='sort_by'}
           {include file='catalog/_partials/sort-orders.tpl' sort_orders=$listing.sort_orders}
         {/block}
