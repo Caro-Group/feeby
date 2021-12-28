@@ -29,7 +29,7 @@
               {if $filter.active}{assign var=_collapse value=false}{/if}
             {/foreach}
 
-            <div class="title tablet:mr-12 px-5 tablet:px-0 border-0 border-b-2 tablet:border-b-0 border-gray-1000 border-solid py-3 tablet:py-0 justify-between tablet:justify-start {if $_collapse}collapsed{/if}" data-parent="#search_filters" data-target="#facet_{$_expand_id}" data-toggle="collapse"{if !$_collapse} aria-expanded="true"{/if}>
+            <div class="title tablet:mr-12 cursor-pointer px-5 tablet:px-0 border-0 border-b-2 tablet:border-b-0 border-gray-1000 border-solid py-3 tablet:py-0 justify-between tablet:justify-start {if $_collapse}collapsed{/if}" data-parent="#search_filters" data-target="#facet_{$_expand_id}" data-toggle="collapse"{if !$_collapse} aria-expanded="true"{/if}>
               <p class="facet-title m-0 text-base font-body font-normal">{$facet.label}</p>
               <span class="pl-4 -top-1 relative">
                 <i class="material-icons text-xl ">add</i>
