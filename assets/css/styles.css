@@ -235,3 +235,11 @@ li[data-menu-type="url"] a{
 .faceted-overlay .spinner.spinner {
     @apply border-t-main;
 }
+
+.sidebar .category-sub-menu li a{
+    @apply font-normal text-base text-main-dark hover:text-main transition pl-5;
+}
+
+.sidebar .category-sub-menu .collapsed i{
+    @apply transform rotate-0
+}

@@ -20424,9 +20424,7 @@ body #search_filters .clear-all-wrapper {
       content: "\f16d"; }
 
 .products-selection {
-  margin-bottom: 30px;
-  padding: 18px 0px;
-  border-bottom: 1px solid #eee; }
+  padding: 12px 0px; }
   .products-selection .title {
     color: #878787; }
 
