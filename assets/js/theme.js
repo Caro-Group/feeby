@@ -2570,7 +2570,7 @@
             var e = (0, a.default)(t.target).closest("form");
             l.default.emit("updateFacets", "?" + e.serialize())
         }), l.default.on("updateProductList", function(t) {
-            r(t), window.scrollTo(0, 0)
+            r(t)
         })
     })
 }, function(t, e, n) {
