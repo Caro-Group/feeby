@@ -242,8 +242,9 @@ li[data-menu-type="url"] a{
 }
 
 .sidebar .category-sub-menu li[data-depth="0"] a{
-    @apply pl-5;
+    @apply pl-5 border-gray-1000;
 }
+
 
 .sidebar .category-sub-menu .collapsed i{
     @apply transform rotate-0;
