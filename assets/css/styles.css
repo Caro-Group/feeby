@@ -231,3 +231,7 @@ li[data-menu-type="url"] a{
 #search_filters_wrapper.collapse.in #search_filters .swiper-filters{
     @apply tablet:pb-[250px] tablet:mb-[-250px];
 }
+
+.faceted-overlay .spinner.spinner {
+    @apply border-t-main;
+}
