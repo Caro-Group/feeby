@@ -16,19 +16,19 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
-<section id="js-active-search-filters" class="{if $activeFilters|count}active_filters{else}hide{/if}" style="display: flex;align-items: baseline;flex-wrap: wrap;">
+<section id="js-active-search-filters" class="mt-5 {if $activeFilters|count}active_filters{else}hide{/if}" style="display: flex;align-items: baseline;flex-wrap: wrap;">
   {block name='active_filters_title'}
-    <p class="{if $activeFilters|count}active-filter-title{else}hidden-xs-up{/if} text-base font-body font-normal">{l s='Active filters' d='Shop.Theme.Global'} <span class="hidden-sm-down hidden-lg-up">({$activeFilters|count})</span></p>
+    <p class="{if $activeFilters|count}active-filter-title{else}hidden-xs-up{/if} text-base font-body font-normal ">{l s='Active filters' d='Shop.Theme.Global'} <span class="hidden-sm-down hidden-lg-up">({$activeFilters|count})</span></p>
   {/block}
 
   {if $activeFilters|count}
-    <ul class="hidden-md-down">
+    <ul class="hidden-md-down flex">
       {foreach from=$activeFilters item="filter"}
         {block name='active_filters_item'}
-          <li class="filter-block ml-6  border border-gray-2000 border-solid rounded-md py-[2px] px-2 font-normal text-main-dark">
-          <a class="js-search-link" href="{$filter.nextEncodedFacetsURL}"><i class="material-icons close text-lg relative bottom-px">&#xE5CD;</i></a>
+          <li class="filter-block ml-4 text-sm border-2 border-gray-2000 border-solid rounded-md py-1 pl-1 pr-2 font-normal text-main-dark">
           {l s='%1$s:' d='Shop.Theme.Catalog' sprintf=[$filter.facetLabel]}
           {$filter.label}
+          <a class="js-search-link float-left mr-2" href="{$filter.nextEncodedFacetsURL}"><i class="material-icons close text-lg relative mt-[2px] flex justify-center items-center text-main-dark hover:text-main transition">&#xE5CD;</i></a>
           </li>
         {/block}
       {/foreach}
@@ -37,8 +37,8 @@
 
     {block name='facets_clearall_button'}
       {if $activeFilters|count}
-        <div id="_desktop_search_filters_clear_all" class="hidden-sm-down clear-all-wrapper">
-          <button data-search-url="{$clear_all_link}" class="btn btn-tertiary js-search-filters-clear-all" style="padding: 10px;">
+        <div id="_desktop_search_filters_clear_all" class="hidden-sm-down clear-all-wrapper relative">
+          <button data-search-url="{$clear_all_link}" class="js-search-filters-clear-all bg-gray-1000 border-0 border-2 border-gray-1000 border-solid cursor-pointer text-main-dark ml-4 px-5 py-1 relative rounded-full text-sm">
             {l s='Clear all' d='Shop.Theme.Actions'}
           </button>
         </div>

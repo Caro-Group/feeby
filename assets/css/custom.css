@@ -792,7 +792,6 @@ color: #DF1A5B;
 body #search_filters .facet > ul{
     position: absolute;
     z-index: 20;
-    background: #FFF;
 }
 }
 

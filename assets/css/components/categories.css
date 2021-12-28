@@ -298,8 +298,6 @@ body #search_filters .clear-all-wrapper {
     margin: 0 10px 0 0;
     font-size: 13px;
     color: #666; }
-  .active_filters ul {
-    display: inline; }
   .active_filters .filter-block {
     -moz-box-shadow: 2px 2px 11px 0px rgba(0, 0, 0, 0.1);
     -webkit-box-shadow: 2px 2px 11px 0px rgba(0, 0, 0, 0.1);
