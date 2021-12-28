@@ -19281,7 +19281,7 @@ body#checkout #gift_message {
       padding-bottom: 0; } }
   body #search_filters .facet .collapse {
     max-height: 210px;
-    overflow: auto; }
+    overflow-y: scroll; }
   body #search_filters .facet .facet-label, body #search_filters .facet .custom-checkbox {
     margin-bottom: 0; }
     body #search_filters .facet .facet-label a, body #search_filters .facet .custom-checkbox a {

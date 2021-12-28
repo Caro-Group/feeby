@@ -58,9 +58,7 @@
     {/block}
   
 
-    <div class="flex justify-center tablet:justify-end order-2 tablet:order-3 w-1/2 tablet:w-auto pl-[10px] tablet:pl-0 tablet:rounded-none rounded-md tablet:rounded-r-md " style="
-    {if !empty($activeFilters)}background: #f9f9f9;{/if}
-    ">
+    <div class="flex justify-center tablet:justify-end order-2 tablet:order-3 w-1/2 tablet:w-auto pl-[10px] tablet:pl-0 tablet:rounded-none rounded-md tablet:rounded-r-md ">
       <div class="sort-by-row w-full tablet:w-48">
         {block name='sort_by'}
           {include file='catalog/_partials/sort-orders.tpl' sort_orders=$listing.sort_orders}

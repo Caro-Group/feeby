@@ -181,10 +181,6 @@ body #search_filters .facet {
     body #search_filters .facet {
       margin-bottom: 0;
       padding-bottom: 0; } }
-  body #search_filters .facet .collapse {
-    display: block;
-    max-height: 210px;
-    overflow: auto; }
   body #search_filters .facet .facet-title {
     font-weight: 500;
     margin: 0 0 10px;
