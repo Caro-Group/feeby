@@ -240,7 +240,7 @@ li[data-menu-type="url"] a{
     @apply font-normal text-base text-main-dark hover:text-main transition;
 }
 
-.sidebar .category-sub-menu li[data-depth="0"] a{
+.sidebar .category-sub-menu li[data-depth="0"]{
     @apply pl-5 border-gray-1000;
 }
 
