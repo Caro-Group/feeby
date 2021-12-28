@@ -19237,8 +19237,7 @@ body#checkout #gift_message {
     cursor: pointer;
     position: relative;
     border: 0;
-    outline: 0;
-    text-align: left; }
+    outline: 0;}
     .rtl .products-sort-order .select-title {
       padding: 5px 15px 5px 35px; }
     .rtl .products-sort-order .select-title {

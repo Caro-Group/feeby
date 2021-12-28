@@ -1411,7 +1411,11 @@ $(document).ready(function () {
 	breakpoint.addListener(breakpointCheck);
 	breakpointCheck();
 
+
+	prestashop.on("updateProductList", function(t) {
+		window.dispatchEvent(new Event('resize'));
+	})
+
 	
-	window.dispatchEvent(new Event('resize'));
 });
 

@@ -17,8 +17,8 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
 {if $displayedFacets|count}
-  <div id="search_filters" class="flex flex-wrap pr-5 py-3 rounded:md tablet:rounded-none tablet:rounded-l-md bg-gray-1000 ">
-    <div class="swiper-filters pl-5 tablet:overflow-hidden tablet:pb-[250px] tablet:mb-[-250px] w-full">
+  <div id="search_filters" class="flex flex-wrap pr-5 py-3">
+    <div class="swiper-filters pl-5 tablet:overflow-hidden w-full">
       <div class="swiper-wrapper flex-col tablet:flex-row">
       {foreach from=$displayedFacets item="facet"}
         <div class="swiper-slide">
@@ -29,7 +29,7 @@
               {if $filter.active}{assign var=_collapse value=false}{/if}
             {/foreach}
 
-            <div class="title mr-12  {if $_collapse}collapsed{/if}" data-parent="#search_filters" data-target="#facet_{$_expand_id}" data-toggle="collapse"{if !$_collapse} aria-expanded="true"{/if}>
+            <div class="title tablet:mr-12  border-0 border-b-2 border-gray-1000 border-solid py-3 tablet:py-0 justify-between tablet:justify-start {if $_collapse}collapsed{/if}" data-parent="#search_filters" data-target="#facet_{$_expand_id}" data-toggle="collapse"{if !$_collapse} aria-expanded="true"{/if}>
               <p class="facet-title m-0 text-base font-body font-normal">{$facet.label}</p>
               <span class="pl-4 -top-1 relative">
                 <i class="material-icons text-xl ">add</i>
@@ -38,7 +38,7 @@
 
             {if in_array($facet.widgetType, ['radio', 'checkbox'])}
               {block name='facet_item_other'}
-                <ul id="facet_{$_expand_id}" class="collapse max-w-[350px] -ml-[19px] mt-[13px]">
+                <ul id="facet_{$_expand_id}" class="collapse -mx-5 tablet:mr-0 tablet:max-w-[350px] tablet:-ml-[19px] tablet:mt-[13px] bg-gray-1000 tablet:rounded-b-md">
                   {foreach from=$facet.filters key=filter_key item="filter"}
                     {if !$filter.displayed}
                       {continue}
@@ -94,7 +94,7 @@
 
             {elseif $facet.widgetType == 'dropdown'}
               {block name='facet_item_dropdown'}
-                <ul id="facet_{$_expand_id}" class="collapse{if !$_collapse} in{/if} max-w-[350px] -ml-[19px] mt-[13px]">
+                <ul id="facet_{$_expand_id}" class="collapse{if !$_collapse} in{/if} -mx-5 tablet:mr-0 tablet:max-w-[350px] tablet:-ml-[19px] tablet:mt-[13px] bg-gray-1000 tablet:rounded-b-md">
                   <li class="border-0 border-b border-solid border-white px-5 py-2">
                     <div class="col-sm-12 col-xs-12 col-md-12 facet-dropdown dropdown">
                       <a class="select-title text-main-dark text-base font-light" rel="nofollow" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -140,7 +140,7 @@
               {block name='facet_item_slider'}
                 {foreach from=$facet.filters item="filter"}
                   <ul id="facet_{$_expand_id}"
-                    class="faceted-slider collapse{if !$_collapse} in{/if} max-w-[350px] -ml-[19px] mt-[13px]"
+                    class="faceted-slider collapse{if !$_collapse} in{/if} -mx-5 tablet:mr-0 tablet:max-w-[350px] tablet:-ml-[19px] tablet:mt-[13px] bg-gray-1000 tablet:rounded-b-md"
                     data-slider-min="{$facet.properties.min}"
                     data-slider-max="{$facet.properties.max}"
                     data-slider-id="{$_expand_id}"
