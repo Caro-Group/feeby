@@ -825,8 +825,6 @@ body #search_filters .facet > ul{
 body #search_filters .facet > ul{
     max-height: 210px;
     overflow: auto;
-    background: #f9f9f9;
-    box-shadow: 1px 5px 5px #00000014;
 }
 
 

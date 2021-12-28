@@ -24,14 +24,14 @@
  *}
 <div class="col-sm-12 col-xs-12 products-sort-order dropdown tablet:bg-gray-1000 px-0 py-3 rounded-md tablet:border-0 border-solid border-gray-1000 border-2 tablet:rounded-none tablet:rounded-r-md select-title text-base">
   <button
-    class=" select-title w-full text-base bg-transparent p-0 pr-6"
+    class=" select-title w-full text-base bg-transparent p-0 pr-6 pl-5 text-left font-light text-white phone-wide:text-main-dark"
     rel="nofollow"
     data-toggle="dropdown"
     aria-haspopup="true"
     aria-expanded="false">
-     <span class="sort-by">{l s='Sort by:' d='Shop.Theme.Global'}</span>
+     <span class="sort-by text-main-dark font-normal">{l s='Sort by:' d='Shop.Theme.Global'}</span>
      {if $listing.sort_selected}{$listing.sort_selected}{else}{l s='Select' d='Shop.Theme.Actions'}{/if}
-     <i class="material-icons add"></i>
+     <i class="material-icons add text-3xl text-main-dark"></i>
   </button>
   <div class="dropdown-menu">
     {foreach from=$listing.sort_orders item=sort_order}
