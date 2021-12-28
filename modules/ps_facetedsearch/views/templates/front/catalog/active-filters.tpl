@@ -22,7 +22,7 @@
   {/block}
 
   {if $activeFilters|count}
-    <ul class="hidden-md-down flex">
+    <ul class="hidden tablet:flex">
       {foreach from=$activeFilters item="filter"}
         {block name='active_filters_item'}
           <li class="filter-block ml-4 text-sm border-2 border-gray-2000 border-solid rounded-md py-1 pl-1 pr-2 font-normal text-main-dark">
