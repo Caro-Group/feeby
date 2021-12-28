@@ -55,9 +55,9 @@
                               {if $filter.active }checked{/if}
                             >
                             {if isset($filter.properties.color)}
-                              <span class="color" style="background-color:{$filter.properties.color}"></span>
+                              <i class="material-icons text-main -left-1 -top-[7px] text-lg relative">close</i>
                             {elseif isset($filter.properties.texture)}
-                              <span class="color texture" style="background-image:url({$filter.properties.texture})"></span>
+                              <i class="material-icons text-main -left-1 -top-[7px] text-lg relative">close</i>
                             {else}
                               <span {if !$js_enabled} class="ps-shown-by-js" {/if}><i class="material-icons text-main -left-1 -top-[7px] text-lg relative">close</i></span>
                             {/if}
