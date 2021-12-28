@@ -237,10 +237,14 @@ li[data-menu-type="url"] a{
     @apply border-t-main;
 }
 
-.sidebar .category-sub-menu li a{
-    @apply font-normal text-base text-main-dark hover:text-main transition pl-5;
+.sidebar .category-sub-menu a{
+    @apply font-normal text-base text-main-dark hover:text-main transition;
+}
+
+.sidebar .category-sub-menu li[data-depth="0"] a{
+    @apply pl-5;
 }
 
 .sidebar .category-sub-menu .collapsed i{
-    @apply transform rotate-0
+    @apply transform rotate-0;
 }
