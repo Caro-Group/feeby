@@ -33,11 +33,10 @@
             {if $depth===0}
               <a href="{$node.link}" {if isset($category.id) && $node.id == $category.id}class="selected"{/if}>{$node.name}</a>
               {if $node.children}
-                <div class="navbar-toggler collapse-icons" data-toggle="collapse" data-target="#exCollapsingNavbar{$node.id}">
-                  <i class="fa fa-caret-right add"></i>
-                  <i class="fa fa-caret-down remove"></i>
+                <div class="navbar-toggler collapse-icons float-right relative bottom-2" data-toggle="collapse" data-target="#exCollapsingNavbar{$node.id}">
+                  <i class="material-icons text-3xl text-main-dark transition transform rotate-180"></i>
                 </div>
-                <div class="collapse" id="exCollapsingNavbar{$node.id}">
+                <div class="collapse mt-5 bg-gray-1000" id="exCollapsingNavbar{$node.id}">
                   {categories nodes=$node.children depth=$depth+1}
                 </div>
               {/if}
@@ -61,11 +60,11 @@
   {/strip}
 {/function}
 
-<div class="block-categories block block-highlighted hidden-sm-down">
-  <h4 class="title_block"><a href="{$categories.link nofilter}">{$categories.name}</a></h4>
+<div class="hidden-sm-down pt-12">
+  <h4 class="title_block mb-3"><a class="text-2xl font-light text-main-dark" href="{$categories.link nofilter}">{$categories.name}</a></h4>
   <div class="block_content">
     <ul class="category-top-menu">
-      <li data-id="">{categories nodes=$categories.children}</li>
+      <li class="border-0 border-gray-1000 border-solid border-t pl-5 py-[18px]" data-id="">{categories nodes=$categories.children}</li>
     </ul>
   </div>
 </div>
