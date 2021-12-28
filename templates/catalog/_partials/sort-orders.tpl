@@ -24,7 +24,7 @@
  *}
 <div class="col-sm-12 col-xs-12 products-sort-order dropdown tablet:bg-gray-1000 px-0 py-3 rounded-md tablet:border-0 border-solid border-gray-1000 border-2 tablet:rounded-none tablet:rounded-r-md select-title text-base">
   <button
-    class=" select-title w-full text-base bg-transparent p-0 pr-6 pl-5 text-left font-light text-white phone-wide:text-main-dark"
+    class=" select-title w-full text-base bg-transparent p-0 pr-6 pl-[10px] tablet:pl-5 text-left font-light text-white phone-wide:text-main-dark"
     rel="nofollow"
     data-toggle="dropdown"
     aria-haspopup="true"

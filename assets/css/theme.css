@@ -19379,18 +19379,13 @@ body #search_filters .clear-all-wrapper {
           margin-left: auto; } }
 
 /* Filter */
-  .active_filters ul {
-    display: inline; }
+
 
     .rtl .active_filters .filter-block {
       margin-left: 10px;
       margin-right: inherit; }
     .active_filters .filter-block .close {
-      font-size: 13px;
-      margin-top: 3px;
-      opacity: 1;
-      filter: alpha(opacity=100);
-      margin-left: 5px; }
+      opacity: 1; }
       .rtl .active_filters .filter-block .close {
         margin-right: 5px;
         margin-left: inherit; }
