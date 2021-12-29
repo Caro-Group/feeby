@@ -22,12 +22,12 @@
 {if isset($products) && $products}
     {if !isset($apAjax)}
     <!-- Products list -->
-    <ul{if isset($id) && $id} id="{$id|intval}"{/if} class="product_list grid row{if isset($class) && $class} {$class|escape:'html':'UTF-8'}{/if} {if isset($productClassWidget)}{$productClassWidget|escape:'html':'UTF-8'}{/if}">
+    <ul {if isset($id) && $id} id="{$id|intval}"{/if} class="product_list grid row{if isset($class) && $class} {$class|escape:'html':'UTF-8'}{/if} {if isset($productClassWidget)}{$productClassWidget|escape:'html':'UTF-8'}{/if}">
     {/if}
         {foreach from=$products item=product name=products key="position"}
             <li class="ajax_block_product{if isset($formAtts.use_animation) && $formAtts.use_animation} has-animation{/if} product_block 
                 {if $scolumn == 5} col-lg-2-4 {else} col-lg-{12/$scolumn|intval}{/if} 
-                col-sm-6 col-xs-6 col-sp-12 {if $smarty.foreach.products.first}first_item{elseif $smarty.foreach.products.last}last_item{/if}"{if isset($formAtts.use_animation) && $formAtts.use_animation} data-animation="fadeInUp" data-animation-delay="{$smarty.foreach.products.iteration*100}ms" data-animation-duration="2s" data-animation-iteration-count="1"{/if}>
+                col-sm-6 col-xs-6 {if $smarty.foreach.products.first}first_item{elseif $smarty.foreach.products.last}last_item{/if}"{if isset($formAtts.use_animation) && $formAtts.use_animation} data-animation="fadeInUp" data-animation-delay="{$smarty.foreach.products.iteration*100}ms" data-animation-duration="2s" data-animation-iteration-count="1"{/if}>
                     {if isset($product_item_path)}
                         {include file="$product_item_path" position=$position}
                     {/if}
