@@ -55,13 +55,13 @@
   {/if}
 </div>
 {else}
-<nav data-depth="{$breadcrumb.count}" class="breadcrumb py-2 before:absolute before:bg-gray-1000 before:block before:content-[''] before:h-px before:left-1/2 before:ml-[-880px] before:w-[1760px]">
-  <ol class="mb-8" itemscope itemtype="http://schema.org/BreadcrumbList">
+<nav data-depth="{$breadcrumb.count}" class="breadcrumb hidden desktop-presta:block before:absolute before:bg-gray-1000 before:block before:content-[''] before:h-px before:left-1/2 before:ml-[-880px] before:w-[1760px]">
+  <ol class="mb-8 py-2" itemscope itemtype="http://schema.org/BreadcrumbList">
     {block name='breadcrumb'}
       {foreach from=$breadcrumb.links item=path name=breadcrumb}
         {block name='breadcrumb_item'}
           <li class="after:content-['/'] after:px-1 after:font-bold after:italic after:text-main last:after:hidden text-xs text-gray-3000 last:text-main-dark hover:text-main-dark " itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-            <a class="text-inherit" itemprop="item" href="{$path.url}">
+            <a class="text-inherit transition" itemprop="item" href="{$path.url}">
               <span itemprop="name">{$path.title}</span>
             </a>
             <meta itemprop="position" content="{$smarty.foreach.breadcrumb.iteration}">
