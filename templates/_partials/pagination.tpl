@@ -23,7 +23,7 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 
-<nav class="pagination">
+<nav class="pagination flex justify-center">
 
   {* <div class="col-xs-12 col-md-6 col-lg-4 text-md-left text-xs-center">
     {block name='pagination_summary'}
@@ -31,12 +31,12 @@
     {/block}
   </div> *}
 
-  <div class="col-xs-12 col-md-6 col-lg-8">
+  <div class="col-xs-12 col-md-6 col-lg-8 mx-auto">
     {block name='pagination_page_list'}
      {if $pagination.should_be_displayed}
-      <ul class="page-list clearfix text-md-right text-xs-center">
+      <ul class="page-list clearfix text-md-right text-xs-center flex justify-center">
         {foreach from=$pagination.pages item="page"}
-          <li {if $page.current} class="current font-normal hover:text-main-dark p-3 mx-2.5 text-base text-gray-3000 transition" {/if}>
+          <li  class="{if $page.current}current text-main-dark after:-ml-4 after:absolute after:bg-main after:block after:bottom-1 after:content-[''] after:h-1 after:left-1/2 after:rounded-full after:w-8 js-search-link text-inherit {/if} font-normal hover:text-main-dark p-3 mx-2.5 text-base text-gray-3000 transition">
             {if $page.type === 'spacer'}
               <span class="spacer">&hellip;</span>
             {else}
@@ -49,9 +49,9 @@
                   <i class="fa fa-long-arrow-left"></i><span>{l s='Previous' d='Shop.Theme.Actions'}</span>
                 {elseif $page.type === 'next'}
                   <span>{l s='Next' d='Shop.Theme.Actions'}</span><i class="fa fa-long-arrow-right"></i>
-                {else}
+                {else} *}
                   {$page.page}
-                {/if} *}
+                {* {/if} *}
               </a>
             {/if}
           </li>
