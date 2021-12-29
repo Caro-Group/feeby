@@ -38,7 +38,7 @@
 
             {if in_array($facet.widgetType, ['radio', 'checkbox'])}
               {block name='facet_item_other'}
-                <ul id="facet_{$_expand_id}" class="collapse tablet:max-w-[350px] tablet:-ml-[19px] tablet:mt-[13px] bg-gray-1000 rounded-b-md">
+                <ul id="facet_{$_expand_id}" class="collapse tablet:max-w-[350px] tablet:min-w-[260px] tablet:-ml-[19px] tablet:mt-[13px] bg-gray-1000 rounded-b-md">
                   {foreach from=$facet.filters key=filter_key item="filter"}
                     {if !$filter.displayed}
                       {continue}
@@ -94,7 +94,7 @@
 
             {elseif $facet.widgetType == 'dropdown'}
               {block name='facet_item_dropdown'}
-                <ul id="facet_{$_expand_id}" class="collapse{if !$_collapse} in{/if} tablet:max-w-[350px] tablet:-ml-[19px] tablet:mt-[13px] bg-gray-1000 rounded-b-md">
+                <ul id="facet_{$_expand_id}" class="collapse{if !$_collapse} in{/if} tablet:max-w-[350px] tablet:min-w-[260px] tablet:-ml-[19px] tablet:mt-[13px] bg-gray-1000 rounded-b-md">
                   <li class="border-0 border-b border-solid border-white px-5 py-2">
                     <div class="col-sm-12 col-xs-12 col-md-12 facet-dropdown dropdown">
                       <a class="select-title text-main-dark text-base font-light" rel="nofollow" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -140,7 +140,7 @@
               {block name='facet_item_slider'}
                 {foreach from=$facet.filters item="filter"}
                   <ul id="facet_{$_expand_id}"
-                    class="faceted-slider collapse{if !$_collapse} in{/if} tablet:max-w-[350px] tablet:-ml-[19px] tablet:mt-[13px] bg-gray-1000 rounded-b-md"
+                    class="faceted-slider collapse{if !$_collapse} in{/if} tablet:max-w-[350px] tablet:min-w-[260px] tablet:-ml-[19px] tablet:mt-[13px] bg-gray-1000 rounded-b-md"
                     data-slider-min="{$facet.properties.min}"
                     data-slider-max="{$facet.properties.max}"
                     data-slider-id="{$_expand_id}"

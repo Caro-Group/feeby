@@ -19258,21 +19258,15 @@ body#checkout #gift_message {
   .products-sort-order.open .select-title {
     color: #000; }
   .products-sort-order .select-list {
-    display: block;
-    color: #666;
-    padding: 5px 15px;
-    font-size: 13px; }
+    display: block;}
     .products-sort-order .select-list:hover {
       background: #f5f5f5;
       color: #000; }
   .products-sort-order .dropdown-menu {
     left: auto;
     width: calc(100% - 30px);
-    min-width: 200px;
-    background: #FFFFFF;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); }
+    min-width: 190px;
+    border: none;}
 
 
   @media (max-width: 991px) {
@@ -22422,10 +22416,6 @@ ul, ol {
   margin: 0;
   padding: 0;
   list-style: none; }
-
-.dropdown-menu {
-  font-size: 13px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); }
 
 .block-social li {
   position: relative; }
