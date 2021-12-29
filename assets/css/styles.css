@@ -232,9 +232,14 @@ li[data-menu-type="url"] a{
     @apply tablet:pb-[250px] tablet:mb-[-250px];
 }
 
+.select-list.js-search-link.current{
+    @apply font-normal;
+}
+
 .faceted-overlay .spinner.spinner {
     @apply border-t-main;
 }
+
 
 .sidebar .category-sub-menu a{
     @apply font-normal text-base text-main-dark hover:text-main transition;
@@ -248,14 +253,10 @@ li[data-menu-type="url"] a{
     @apply pl-5 py-[18px];
 }
 
-.sidebar .category-sub-menu li a{
-    @apply pl-5 py-[18px];
-}
-
 .sidebar .category-sub-menu li div:last-child{
     @apply w-full;
 }
 
-.select-list.js-search-link.current{
-    @apply font-normal;
+.sidebar .category-sub-menu .collapsed i{
+    @apply transform rotate-0;
 }

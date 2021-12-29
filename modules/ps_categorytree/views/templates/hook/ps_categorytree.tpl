@@ -29,12 +29,12 @@
       <ul class="category-sub-menu">
         {foreach from=$nodes item=node}
           {if $node.desc|strstr:"<!-- ARTYSTA -->" !== "<!-- ARTYSTA -->"}
-          <li class="   border-0 border-white border-solid border-t flex justify-center items-center flex-wrap" data-depth="{$depth}" {if isset($node.id)}data-cat-id="{$node.id}"{/if}>
+          <li class="   border-0 border-white border-solid border-t flex justify-between items-center flex-wrap" data-depth="{$depth}" {if isset($node.id)}data-cat-id="{$node.id}"{/if}>
             {if $depth===0}
               <a href="{$node.link}" {if isset($category.id) && $node.id == $category.id}class="selected"{/if}>{$node.name}</a>
               {if $node.children}
-                <div class="navbar-toggler collapse-icons float-right collapsed" data-toggle="collapse" data-target="#exCollapsingNavbar{$node.id}">
-                  <i class="material-icons text-3xl text-main-dark transition transform rotate-180 pr-5"></i>
+                <div class="navbar-toggler collapse-icons float-right pr-5 collapsed" data-toggle="collapse" data-target="#exCollapsingNavbar{$node.id}">
+                  <i class="material-icons text-3xl text-main-dark transition transform rotate-180"></i>
                 </div>
                 <div class="collapse bg-gray-1000" id="exCollapsingNavbar{$node.id}">
                   {categories nodes=$node.children depth=$depth+1}
