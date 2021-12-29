@@ -33,8 +33,8 @@
             {if $depth===0}
               <a href="{$node.link}" {if isset($category.id) && $node.id == $category.id}class="selected"{/if}>{$node.name}</a>
               {if $node.children}
-                <div class="navbar-toggler collapse-icons float-right pr-5 collapsed" data-toggle="collapse" data-target="#exCollapsingNavbar{$node.id}">
-                  <i class="material-icons text-3xl text-main-dark transition transform rotate-180"></i>
+                <div class="navbar-toggler collapse-icons float-right p-3 pr-5 collapsed" data-toggle="collapse" data-target="#exCollapsingNavbar{$node.id}">
+                  <i class="material-icons select-none text-3xl text-main-dark transition transform rotate-180"></i>
                 </div>
                 <div class="collapse bg-gray-1000" id="exCollapsingNavbar{$node.id}">
                   {categories nodes=$node.children depth=$depth+1}
