@@ -73,7 +73,7 @@
                 </div>
             {/if}
 
-            <div class="ajax_block_product px-0 {$colValue}
+            <div class="ajax_block_product {$colValue}
                 {if $smarty.foreach.products.iteration%$nbItemsPerLine == 0} last-in-line
                 {elseif $smarty.foreach.products.iteration%$nbItemsPerLine == 1} first-in-line{/if}
                 {if $smarty.foreach.products.iteration > ($smarty.foreach.products.total - $totModulo)} last-line{/if}
