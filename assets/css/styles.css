@@ -269,3 +269,7 @@ li[data-menu-type="url"] a{
 .ajax_block_product.ajax_block_product{
     @apply px-0;
 } 
+
+.pagination .current{
+    @apply text-main-dark;
+}
