@@ -31,12 +31,12 @@
     {/block}
   </div> *}
 
-  <div class="col-xs-12 col-md-6 col-lg-8 mx-auto">
+  <div class="col-xs-12 col-md-6 col-lg-8 my-8 tablet:my-16 mx-auto">
     {block name='pagination_page_list'}
      {if $pagination.should_be_displayed}
       <ul class="page-list clearfix text-md-right text-xs-center flex justify-center">
         {foreach from=$pagination.pages item="page"}
-          <li  class="{if $page.current}current text-main-dark relative after:-ml-4 after:absolute after:bg-main after:block after:bottom-1 after:content-[''] after:h-1 after:left-1/2 after:rounded-full after:w-8 js-search-link text-inherit {/if} font-normal hover:text-main-dark text-base text-gray-3000 transition">
+          <li  class="{if $page.current}current relative after:-ml-4 after:absolute after:bg-main after:block after:-bottom-2 after:content-[''] after:h-1 after:left-1/2 after:rounded-full after:w-8 js-search-link text-inherit {/if} font-normal hover:text-main-dark text-base text-gray-3000 transition">
             {if $page.type === 'spacer'}
               <span class="spacer text-gray-3000">&hellip;</span>
             {else}
