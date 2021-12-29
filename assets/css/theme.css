@@ -19446,15 +19446,6 @@ body #search_filters .clear-all-wrapper {
   padding: 7px 8px 6px; }
 
 /*** Responsive part ***/
-@media (min-width: 576px) {
-  .pagination {
-    display: -webkit-box;
-    display: -moz-box;
-    display: box;
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flexbox;
-    display: flex; } }
 @media (max-width: 767px) {
   #category .sidebar .block {
     display: none; }
