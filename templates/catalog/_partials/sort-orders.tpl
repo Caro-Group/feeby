@@ -37,7 +37,7 @@
     {if $listing.sort_selected}{$listing.sort_selected}{else}{l s='Select' d='Shop.Theme.Actions'}{/if}
      <i class="material-icons add text-3xl text-main-dark"></i>
   </button>
-  <div class="dropdown-menu p-0 bg-gray-1000 rounded-md">
+  <div class="dropdown-menu p-0 bg-gray-1000 rounded-md overflow-hidden">
     {foreach from=$listing.sort_orders item=sort_order}
       <a
         rel="nofollow"
