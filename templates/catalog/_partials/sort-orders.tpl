@@ -37,12 +37,12 @@
     {if $listing.sort_selected}{$listing.sort_selected}{else}{l s='Select' d='Shop.Theme.Actions'}{/if}
      <i class="material-icons add text-3xl text-main-dark"></i>
   </button>
-  <div class="dropdown-menu">
+  <div class="dropdown-menu p-0 bg-gray-1000 rounded-md">
     {foreach from=$listing.sort_orders item=sort_order}
       <a
         rel="nofollow"
         href="{$sort_order.url}"
-        class="select-list {['current' => $sort_order.current, 'js-search-link' => true]|classnames}"
+        class="select-list border-0 border-b border-solid border-white font-light js-search-link px-5 py-2 select-list text-main-dark text-sm {['current' => $sort_order.current, 'js-search-link' => true]|classnames}"
       >
         {$sort_order.label}
       </a>
