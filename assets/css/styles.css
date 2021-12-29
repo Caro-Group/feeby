@@ -241,12 +241,19 @@ li[data-menu-type="url"] a{
 }
 
 .sidebar .category-sub-menu li[data-depth="0"]{
-    @apply pl-5 border-gray-1000;
+    @apply border-gray-1000;
 }
 
+.sidebar .category-sub-menu li a{
+    @apply pl-5 py-[18px];
+}
 
-.sidebar .category-sub-menu .collapsed i{
-    @apply transform rotate-0;
+.sidebar .category-sub-menu li a{
+    @apply pl-5 py-[18px];
+}
+
+.sidebar .category-sub-menu li div:last-child{
+    @apply w-full;
 }
 
 .select-list.js-search-link.current{
