@@ -242,7 +242,11 @@ li[data-menu-type="url"] a{
 
 
 .sidebar .category-sub-menu a{
-    @apply font-normal text-base text-main-dark hover:text-main transition;
+    @apply font-light text-base text-main-dark hover:text-main transition;
+}
+
+.sidebar .category-sub-menu li[data-depth="0"]>a{
+    @apply font-normal;
 }
 
 .sidebar .category-sub-menu li[data-depth="0"]{
