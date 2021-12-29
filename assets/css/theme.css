@@ -2078,9 +2078,7 @@ tbody.collapse.in {
       display: inline-block;
       width: 100%; } }
 .breadcrumb {
-  list-style: none;
-  background-color: #0c0c0e;
-  border-radius: 0.25rem; }
+  list-style: none; }
 
 .breadcrumb-item {
   float: left; }
