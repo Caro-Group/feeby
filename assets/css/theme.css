@@ -2095,13 +2095,6 @@ tbody.collapse.in {
   .breadcrumb-item.active {
     color: #FFFFFF; }
 
-.pagination {
-  display: inline-block;
-  padding-left: 0;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 0.25rem; }
-
 .page-item {
   display: inline; }
   .page-item:first-child .page-link {
@@ -19302,67 +19295,6 @@ body#checkout #gift_message {
       margin-right: 0; }
 body #search_filters .clear-all-wrapper {
   margin: 10px 0; }
-
-/* Pagination */
-.pagination {
-  display: block !important;
-  width: 100%;
-  background: #fff;
-  min-height: 50px;
-  padding: 20px 0;
-  border-top: 1px solid #eee;
-  text-align: center; }
-  .pagination:after {
-    content: "";
-    display: block;
-    clear: both; }
-  .pagination > div {
-    width: 100%;
-    text-align: center !important; }
-  .pagination .page-list {
-    padding: 20px 0;
-    margin-bottom: 0;
-    text-align: center !important; }
-    .pagination .page-list li {
-      display: inline; }
-      .pagination .page-list li a {
-        padding: 0 8px; }
-      .pagination .page-list li span {
-        display: none; }
-        .pagination .page-list li span.spacer {
-          display: inline-block; }
-  .pagination a {
-    color: #000000;
-    font-weight: 400;
-    display: inline-block; }
-    .pagination a:hover, .pagination a:focus {
-      color: #000;
-      text-decoration: none; }
-  .pagination .disabled {
-    color: #666;
-    cursor: no-drop; }
-    .pagination .disabled:hover {
-      color: #666; }
-  .pagination .current a {
-    color: #000;
-    text-decoration: none; }
-  @media (min-width: 992px) {
-    .pagination {
-      display: flex !important;
-      -webkit-box-align: center;
-      -moz-box-align: center;
-      box-align: center;
-      -webkit-align-items: center;
-      -moz-align-items: center;
-      -ms-align-items: center;
-      -o-align-items: center;
-      align-items: center;
-      -ms-flex-align: center; }
-      .pagination > div {
-        width: auto !important;
-        padding: 0; }
-        .pagination > div:last-child {
-          margin-left: auto; } }
 
 /* Filter */
 
