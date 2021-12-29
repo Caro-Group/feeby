@@ -1395,6 +1395,7 @@ $(document).ready(function () {
 
 	prestashop.on("updateProductList", function(t) {
 		window.dispatchEvent(new Event('resize'));
+		enableSwiperFilter();
 	})
 
 	
