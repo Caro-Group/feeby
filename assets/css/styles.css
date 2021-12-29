@@ -264,3 +264,8 @@ li[data-menu-type="url"] a{
 .sidebar .category-sub-menu .collapsed i{
     @apply transform rotate-0;
 }
+
+
+.ajax_block_product.ajax_block_product{
+    @apply px-0;
+} 
