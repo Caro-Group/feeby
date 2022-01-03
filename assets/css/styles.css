@@ -88,7 +88,7 @@ p{
 
 
 .leo-wishlist-button.btn-primary{
-    @apply absolute right-0 top-3 w-6 h-6 tablet:w-8 tablet:h-8 rounded-l-md bg-white shadow-md p-2 box-content indent-1;
+    @apply absolute right-0 top-3 w-6 h-6 tablet:w-8 tablet:h-8 rounded-l-md bg-white shadow-md p-2 box-content z-20;
 }
 
 .page-product .leo-wishlist-button.btn-primary{
@@ -228,9 +228,9 @@ li[data-menu-type="url"] a{
     @apply w-auto h-auto  tablet:h-full;
 }
 
-#search_filters_wrapper.collapse.in #search_filters .swiper-filters{
+/* #search_filters_wrapper.collapse.in #search_filters .swiper-filters{
     @apply tablet:pb-[250px] tablet:mb-[-250px];
-}
+} */
 
 .select-list.js-search-link.current{
     @apply font-normal;

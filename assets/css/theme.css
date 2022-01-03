@@ -20333,7 +20333,7 @@ body #search_filters .clear-all-wrapper {
       content: "\f16d"; }
 
 .products-selection {
-  padding: 12px 0px;     z-index: 10;
+  padding: 12px 0px;     z-index: 25;
   position: relative;}
   .products-selection .title {
     color: #878787; }
