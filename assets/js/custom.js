@@ -1382,6 +1382,7 @@ $(document).ready(function () {
 	const enableSwiperFilter =function () {
 		swiperFilters = new Swiper('.swiper-filters', {
 			speed: 150,
+			roundLengths: true,
 			slidesPerView: 'auto',
 			freeMode: {
 				enabled: true,
