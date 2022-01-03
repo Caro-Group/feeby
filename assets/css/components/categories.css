@@ -137,9 +137,6 @@
     position: relative;
     border: 0;
     outline: 0;
-    color: #888;
-    border-radius: 20px;
-    padding: 5px 35px 5px 15px;
     text-align: left; }
     .rtl .products-sort-order .select-title {
       padding: 5px 15px 5px 35px; }
@@ -184,10 +181,6 @@ body #search_filters .facet {
     body #search_filters .facet {
       margin-bottom: 0;
       padding-bottom: 0; } }
-  body #search_filters .facet .collapse {
-    display: block;
-    max-height: 210px;
-    overflow: auto; }
   body #search_filters .facet .facet-title {
     font-weight: 500;
     margin: 0 0 10px;
@@ -215,14 +208,10 @@ body #search_filters .facet {
       padding: 7px 0 7px 20px; }
     body #search_filters .facet .facet-label .magnitude {
       position: absolute;
-      top: 5px;
       height: 20px;
       min-width: 20px;
       display: inline-block;
-      right: 5px;
-      color: #999;
-      font-size: 12px;
-      font-family: 'Poppins'; }
+      right: 5px; }
       .rtl body #search_filters .facet .facet-label .magnitude {
         left: 5px;
         right: auto; }
@@ -305,8 +294,6 @@ body #search_filters .clear-all-wrapper {
     margin: 0 10px 0 0;
     font-size: 13px;
     color: #666; }
-  .active_filters ul {
-    display: inline; }
   .active_filters .filter-block {
     -moz-box-shadow: 2px 2px 11px 0px rgba(0, 0, 0, 0.1);
     -webkit-box-shadow: 2px 2px 11px 0px rgba(0, 0, 0, 0.1);

@@ -29,15 +29,14 @@
       <ul class="category-sub-menu">
         {foreach from=$nodes item=node}
           {if $node.desc|strstr:"<!-- ARTYSTA -->" !== "<!-- ARTYSTA -->"}
-          <li data-depth="{$depth}" {if isset($node.id)}data-cat-id="{$node.id}"{/if}>
+          <li class="   border-0 border-white border-solid border-t flex justify-between items-center flex-wrap" data-depth="{$depth}" {if isset($node.id)}data-cat-id="{$node.id}"{/if}>
             {if $depth===0}
               <a href="{$node.link}" {if isset($category.id) && $node.id == $category.id}class="selected"{/if}>{$node.name}</a>
               {if $node.children}
-                <div class="navbar-toggler collapse-icons" data-toggle="collapse" data-target="#exCollapsingNavbar{$node.id}">
-                  <i class="fa fa-caret-right add"></i>
-                  <i class="fa fa-caret-down remove"></i>
+                <div class="navbar-toggler collapse-icons float-right p-3 pr-5 collapsed" data-toggle="collapse" data-target="#exCollapsingNavbar{$node.id}">
+                  <i class="material-icons select-none text-3xl text-main-dark transition transform rotate-180"></i>
                 </div>
-                <div class="collapse" id="exCollapsingNavbar{$node.id}">
+                <div class="collapse bg-gray-1000" id="exCollapsingNavbar{$node.id}">
                   {categories nodes=$node.children depth=$depth+1}
                 </div>
               {/if}
@@ -61,8 +60,8 @@
   {/strip}
 {/function}
 
-<div class="block-categories block block-highlighted hidden-sm-down">
-  <h4 class="title_block"><a href="{$categories.link nofilter}">{$categories.name}</a></h4>
+<div class="hidden-sm-down pt-12 pr-10">
+  <h4 class="title_block mb-3"><a class="text-2xl font-light text-main-dark" href="{$categories.link nofilter}">{$categories.name}</a></h4>
   <div class="block_content">
     <ul class="category-top-menu">
       <li data-id="">{categories nodes=$categories.children}</li>

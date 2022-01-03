@@ -22,7 +22,7 @@
 {if isset($products) && $products}
     {if !isset($apAjax)}
     <!-- Products list -->
-    <ul{if isset($id) && $id} id="{$id|intval}"{/if} class="product_list grid row{if isset($class) && $class} {$class|escape:'html':'UTF-8'}{/if} {if isset($productClassWidget)}{$productClassWidget|escape:'html':'UTF-8'}{/if}">
+    <ul {if isset($id) && $id} id="{$id|intval}"{/if} class="product_list grid row{if isset($class) && $class} {$class|escape:'html':'UTF-8'}{/if} {if isset($productClassWidget)}{$productClassWidget|escape:'html':'UTF-8'}{/if}">
     {/if}
         {foreach from=$products item=product name=products key="position"}
             <li class="ajax_block_product{if isset($formAtts.use_animation) && $formAtts.use_animation} has-animation{/if} product_block 

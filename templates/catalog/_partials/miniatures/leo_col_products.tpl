@@ -83,6 +83,7 @@
                 {elseif $smarty.foreach.products.iteration%$nbItemsPerLineMobile == 1} first-item-of-mobile-line{/if}
                 {if $smarty.foreach.products.iteration > ($smarty.foreach.products.total - $totModuloMobile)} last-mobile-line{/if}
                 ">
+                <div class="relative overflow-hidden mx-2.5">
                 {block name='product_miniature'}
                     {if isset($productProfileDefault) && $productProfileDefault}
                         {* exits THEME_NAME/profiles/profile_name.tpl -> load template*}
@@ -95,6 +96,7 @@
                         {include file='catalog/_partials/miniatures/product.tpl' product=$product}
                     {/if}
                 {/block}
+                </div>
             </div>
         {/foreach}
     </div>

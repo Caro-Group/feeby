@@ -58,7 +58,8 @@ module.exports = {
       },
       width: {
         "side": "467px",
-        "miniature": "102px"
+        "miniature": "102px",
+        "filter":"calc(100% - 12rem)"
       },
       minWidth: {
         'label': '173px',

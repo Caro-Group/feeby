@@ -788,71 +788,15 @@ color: #DF1A5B;
 
 
 
-
-body #search_filters .facet.facet{
-    padding: 10px 0;
-    margin: 0 auto;
-    flex: 1 1 auto;
-    position: relative;
-    padding-right: 15px;
-    width: 100%;
-    margin-left: 0;
-}
-
-@media (min-width: 768px){
-body #search_filters .facet.facet{
-    max-width: 50%;
-}
-}
-
-@media (min-width: 1201px){
-body #search_filters .facet.facet{
-    max-width: 25%;
-}
-}
-
-body #search_filters{
-    display: flex;
-    padding: 0;
-    flex-wrap: wrap;
-}
-
-body #search_filters .remove{
-    display: block;
-}
-
-body #search_filters .add{
-    display: none;
-}
-
-body #search_filters .title.collapsed .remove{
-    display: none;
-}
-
-body #search_filters .title.collapsed .add{
-    display: block;
-}
-
 @media (min-width: 768px){
 body #search_filters .facet > ul{
     position: absolute;
-    width: 100%;
-    padding-right: 30px;
-    z-index: 10;
-    background: #FFF;
+    z-index: 20;
 }
 }
 
-body #search_filters .facet .facet-title{
-	margin-bottom: 0;
-}
 
-#search_filters .facet .title .collapse-icons{
-    margin-left: auto;
-    padding: 0 15px;
-    width: auto;
-    height: auto;
-}
+
 
 @media (max-width: 767px){
  body#category .sidebar #search_filters .facet .navbar-toggler {
@@ -880,10 +824,6 @@ body #search_filters .facet .facet-title{
 body #search_filters .facet > ul{
     max-height: 210px;
     overflow: auto;
-    padding: 10px;
-    margin: 0 -10px;
-    background: #f9f9f9;
-    box-shadow: 1px 5px 5px #00000014;
 }
 
 

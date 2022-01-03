@@ -1382,3 +1382,41 @@ $(document).ready(function () {
 	
 });
 
+$(document).ready(function () {
+
+	const breakpoint = window.matchMedia('(max-width:768px)')
+
+	let swiperFilters;
+
+	const breakpointCheck = function () {
+		if (breakpoint.matches == true) {
+			if (swiperFilters !== undefined) swiperFilters.destroy(true,true); 
+		}
+		else if (breakpoint.matches == false) {
+			return enableSwiperFilter();
+			
+		}
+	};
+
+	const enableSwiperFilter =function () {
+		swiperFilters = new Swiper('.swiper-filters', {
+			speed: 150,
+			slidesPerView: 'auto',
+			freeMode: {
+				enabled: true,
+			},
+		});
+	}
+
+	breakpoint.addListener(breakpointCheck);
+	breakpointCheck();
+
+
+	prestashop.on("updateProductList", function(t) {
+		window.dispatchEvent(new Event('resize'));
+		enableSwiperFilter();
+	})
+
+	
+});
+
