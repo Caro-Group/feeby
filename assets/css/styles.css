@@ -261,6 +261,10 @@ li[data-menu-type="url"] a{
     @apply w-full;
 }
 
+.sidebar .category-sub-menu i{
+    @apply cursor-pointer;
+}
+
 .sidebar .category-sub-menu .collapsed i{
     @apply transform rotate-0;
 }
@@ -287,6 +291,8 @@ div#js-product-list-top:before {
     opacity: 1;
     top: 0;
     bottom: 0;
+    z-index: 16;
+    height: 900px;
 }
 div#js-product-list-top:after {
     content: '';
@@ -300,6 +306,7 @@ div#js-product-list-top:after {
     top: 0;
     opacity: 1;
     bottom: 0;
+    height: 900px;
 }
 #left-column{
     z-index: 26;
