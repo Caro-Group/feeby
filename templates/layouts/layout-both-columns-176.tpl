@@ -65,7 +65,7 @@
             {include file='_partials/breadcrumb.tpl'}
           {/block}
 
-          {block name='topBothColumn'}{/block}
+            {block name="displayTopBothColumn"}{/block}
 
             <div class="row">
               {block name="left_column"}
@@ -80,11 +80,11 @@
 
               {block name="content_wrapper"}
                 <div id="content-wrapper" class="left-column right-column col-sm-4 col-md-6">
-                  {hook h="displayContentWrapperTop"}
+                  {block name="displayContentWrapperTop"}{/block}
 
                   {block name="content"}{/block}
 
-                  {hook h="displayContentWrapperBottom"}
+                  {block name="displayContentWrapperBottom"}{/block}
                 </div>
               {/block}
 
@@ -103,7 +103,7 @@
           </div>
         {/if}
 
-	      {hook h="displayWrapperBottom"}
+        {block name="displayBottomBothColumn"}{/block}
       </main>
 
       <footer id="footer" class="footer-container">
