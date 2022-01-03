@@ -53,3 +53,6 @@
     {/if}
   </div>
 {/block}
+
+
+{block name='product_list_header'}{/block}

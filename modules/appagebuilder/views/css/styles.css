@@ -1062,6 +1062,7 @@ body#checkout .custom-checkbox input[type="checkbox"],
 body#checkout .custom-checkbox input[type="radio"] {
   width: 16px;
   height: 16px;
+  border: 1px solid;
   z-index: 3; }
   body#checkout .custom-checkbox input[type="checkbox"] + span,
   body#checkout .custom-checkbox input[type="radio"] + span {
