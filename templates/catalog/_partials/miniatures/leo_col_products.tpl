@@ -68,9 +68,12 @@
             {if $totModuloMobile == 0}{assign var='totModuloMobile' value=$nbItemsPerLineMobile}{/if}
 
             {if !$smarty.server.REQUEST_URI|strstr:'?page=' && $product@index eq 9}
-                 <div class="col-xs-12">
-                   <img class="img-fluid" src="{$link->getMediaLink($smarty.const._THEME_CAT_DIR_)}{$smarty.get.id_category}_thumb.jpg" />
+                {assign var="img_baner" value="`$link->getMediaLink($smarty.const._THEME_CAT_DIR_)``$smarty.get.id_category`_thumb.jpg"}
+                {if file_exists($img_baner)}
+                    <div class="col-xs-12">
+                    <img class="img-fluid" src="{$link->getMediaLink($smarty.const._THEME_CAT_DIR_)}{$smarty.get.id_category}_thumb.jpg" />
                 </div>
+                {/if}
             {/if}
 
             <div class="ajax_block_product {$colValue}
