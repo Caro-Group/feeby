@@ -1402,3 +1402,8 @@ $(document).ready(function () {
 	
 });
 
+$('.page-list a').on('click',function(){
+	window.scrollTo(0,0);
+  })
+  
+
