@@ -128,7 +128,7 @@ p{
 }
 
 .swiper-popular .swiper-pagination-bullet{
-    @apply bg-transparent border border-solid border-gray-3000 transition w-3 h-3
+    @apply bg-transparent border border-solid border-main-dark transition w-3 h-3
 }
 
 .swiper-popular .swiper-pagination-bullet-active{

@@ -767,10 +767,6 @@ font-weight: normal;
 color: #888;
 }
 
-#category-description a{
-color: #DF1A5B;
-}
-
 .title-on-image.ApImage{
     display: flex;
     flex-direction: column-reverse;
