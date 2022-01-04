@@ -19139,16 +19139,7 @@ body#checkout #gift_message {
   @media (max-width: 991px) {
     .block-category #category-description {
       padding: 0; } }
-  .block-category #category-description p,
-  .block-category #category-description strong {
-    /* font-weight: 400; */
-    color: #545454; }
-  .block-category #category-description p {
-    color: #888;
-    margin-bottom: 0;
-    line-height: 20px; }
-    .block-category #category-description p:first-child {
-      margin-bottom: 0; }
+
 
 .products-selection .sort-by-row {
   display: -webkit-box;
