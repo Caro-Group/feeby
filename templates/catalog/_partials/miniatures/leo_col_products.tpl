@@ -24,7 +24,7 @@
 
     {if $LISTING_PRODUCT_COLUMN=="5"}       {assign var="col_cat_product_xl" value="col-xl-2-4"}{else}{assign var="col_cat_product_xl" value="col-xl-{12/$LISTING_PRODUCT_COLUMN}"}{/if}
     {if $LISTING_PRODUCT_LARGEDEVICE=="5"}  {assign var="col_cat_product_lg" value="col-lg-2-4"}{else}{assign var="col_cat_product_lg" value="col-lg-{12/$LISTING_PRODUCT_LARGEDEVICE}"}{/if}
-    {assign var="colValue" value="col-sp-{12/$LISTING_PRODUCT_MOBILE} col-xs-{12/$LISTING_PRODUCT_EXTRASMALLDEVICE} col-sm-{12/$LISTING_PRODUCT_SMALLDEVICE} col-md-{12/$LISTING_PRODUCT_TABLET} {$col_cat_product_lg} {$col_cat_product_xl}" scope="global"}
+    {assign var="colValue" value="col-sp-6 col-xs-12 col-sm-{12/$LISTING_PRODUCT_SMALLDEVICE} col-md-{12/$LISTING_PRODUCT_TABLET} {$col_cat_product_lg} {$col_cat_product_xl}" scope="global"}
 
 {if isset($CATEGORY_LAYOUT_CLEAN)}
  {assign var="colValue" value="ajax_block_product col-sp-12 col-xs-6 col-sm-4 col-md-4 col-lg-3 col-xl-3" scope="global"}
@@ -36,7 +36,7 @@
     {if $LISTING_PRODUCT_COLUMN_MODULE=="5"}{assign var="col_cat_product_xl" value="col-xl-2-4"}{else}{assign var="col_cat_product_xl" value="col-xl-{12/$LISTING_PRODUCT_COLUMN_MODULE}"}{/if}
     {if $LISTING_PRODUCT_LARGEDEVICE=="5"}  {assign var="col_cat_product_lg" value="col-lg-2-4"}{else}{assign var="col_cat_product_lg" value="col-lg-{12/$LISTING_PRODUCT_LARGEDEVICE}"}{/if}
     
-    {assign var="colValue" value="col-sp-{12/$LISTING_PRODUCT_MOBILE} col-xs-{12/$LISTING_PRODUCT_EXTRASMALLDEVICE} col-sm-{12/$LISTING_PRODUCT_SMALLDEVICE} col-md-{12/$LISTING_PRODUCT_TABLET} {$col_cat_product_lg} {$col_cat_product_xl}" scope="global"}
+    {assign var="colValue" value="col-sp-6 col-xs-12 col-sm-{12/$LISTING_PRODUCT_SMALLDEVICE} col-md-{12/$LISTING_PRODUCT_TABLET} {$col_cat_product_lg} {$col_cat_product_xl}" scope="global"}
 {/if}
         
 
