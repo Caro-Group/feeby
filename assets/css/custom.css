@@ -761,12 +761,6 @@ text-align:left;
 color:#DF1A5B!important;
 }
 
-.block-category #category-description p, 
-.block-category #category-description strong{
-font-weight: normal;
-color: #888;
-}
-
 .title-on-image.ApImage{
     display: flex;
     flex-direction: column-reverse;
