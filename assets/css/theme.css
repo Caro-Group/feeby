@@ -1277,10 +1277,6 @@ tbody.collapse.in {
 .input-group-btn,
 .input-group .form-control {
   display: table-cell; }
-  .input-group-addon:not(:first-child):not(:last-child),
-  .input-group-btn:not(:first-child):not(:last-child),
-  .input-group .form-control:not(:first-child):not(:last-child) {
-    border-radius: 0; }
 
 .input-group-addon,
 .input-group-btn {
@@ -1315,28 +1311,9 @@ tbody.collapse.in {
   .input-group-addon input[type="checkbox"] {
     margin-top: 0; }
 
-.input-group .form-control:not(:last-child),
-.input-group-addon:not(:last-child),
-.input-group-btn:not(:last-child) > .btn,
-.input-group-btn:not(:last-child) > .btn-group > .btn,
-.input-group-btn:not(:last-child) > .dropdown-toggle,
-.input-group-btn:not(:first-child) > .btn:not(:last-child):not(.dropdown-toggle),
-.input-group-btn:not(:first-child) > .btn-group:not(:last-child) > .btn {
-  border-bottom-right-radius: 0;
-  border-top-right-radius: 0; }
 
 .input-group-addon:not(:last-child) {
   border-right: 0; }
-
-.input-group .form-control:not(:first-child),
-.input-group-addon:not(:first-child),
-.input-group-btn:not(:first-child) > .btn,
-.input-group-btn:not(:first-child) > .btn-group > .btn,
-.input-group-btn:not(:first-child) > .dropdown-toggle,
-.input-group-btn:not(:last-child) > .btn:not(:first-child),
-.input-group-btn:not(:last-child) > .btn-group:not(:first-child) > .btn {
-  border-bottom-left-radius: 0;
-  border-top-left-radius: 0; }
 
 .form-control + .input-group-addon:not(:first-child) {
   border-left: 0; }
@@ -9408,7 +9385,7 @@ small.label, small.value {
 textarea.form-control {
   height: 145px; }
 
-input.form-control {
+.form-control {
   height: 40px; }
 
 .input-group.focus {
@@ -9485,8 +9462,7 @@ input.form-control {
 
 .bootstrap-touchspin input:focus {
   outline: none; }
-.bootstrap-touchspin input.form-control {
-  border: 1px solid rgba(0, 0, 0, 0.15); }
+
 .bootstrap-touchspin .btn-touchspin {
   border: 1px solid rgba(0, 0, 0, 0.15);
   height: 21px; }
@@ -9507,9 +9483,9 @@ input.form-control {
     -ms-border-radius: 0px;
     -o-border-radius: 0px;
     border-radius: 0px; }
-  .bootstrap-touchspin .input-group-btn-vertical .touchspin-up:after {
+  .bootstrap-touchspin  .touchspin-up:after {
     content: "\E5CE"; }
-  .bootstrap-touchspin .input-group-btn-vertical .touchspin-down:after {
+  .bootstrap-touchspin  .touchspin-down:after {
     content: "\E5CF"; }
   .bootstrap-touchspin .input-group-btn-vertical i {
     top: 1px;
