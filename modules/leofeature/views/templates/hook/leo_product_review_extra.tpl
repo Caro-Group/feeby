@@ -7,7 +7,7 @@
 *}
 
 {if ($nbReviews_product_extra == 0 && $too_early_extra == false && ($customer.is_logged || $allow_guests_extra)) || ($nbReviews_product_extra != 0)}
-	<div id="leo_product_reviews_block_extra" class="flex flex-row" {if $nbReviews_product_extra != 0}itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating"{/if}>
+	<div id="leo_product_reviews_block_extra" class="flex flex-row mb-5" {if $nbReviews_product_extra != 0}itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating"{/if}>
 		<div class="reviews_note clearfix">
 			<div class="star_content clearfix">
 				{if $nbReviews_product_extra != 0}	
@@ -28,7 +28,7 @@
 				{/if}
 			</div>
 		</div>		
-		<div>
+		<div class="ml-3">
 			{if $nbReviews_product_extra != 0}
 				<a href="javascript:void(0)" class="read-review">					
 					<i class="material-icons">&#xE0B9;</i>
@@ -36,7 +36,7 @@
 				</a>
 			{else if ($too_early_extra == false AND ($customer.is_logged OR $allow_guests_extra))}
 				<a class="open-review-form" href="#reviewForm" data-id-product="{$id_product_review_extra}" data-is-logged="{$customer.is_logged}" data-product-link="{$link_product_review_extra}">
-					<span class="font-light leading-10 text-5xl">+</span>
+					<span class="font-body">+</span>
 					{l s='Write a review' d='Modules.Leofeature.Shop'}
 				</a>
 			{/if}
