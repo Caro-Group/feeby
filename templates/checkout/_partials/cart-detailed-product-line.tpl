@@ -126,7 +126,7 @@
           <span class="gift-quantity">{$product.quantity}</span>
         {else}
           <input
-            class="js-cart-line-product-quantity border border-gray-2000 border-r-0 border-solid py-3 rounded-l-md h-[50px] w-[50px] float-left  focus:ring-0"
+            class="js-cart-line-product-quantity border border-gray-2000 border-r-0 border-solid py-3 rounded-l-md h-[50px] w-[50px] float-left text-sm tablet:text-base focus:ring-0"
             data-down-url="{$product.down_quantity_url}"
             data-up-url="{$product.up_quantity_url}"
             data-update-url="{$product.update_quantity_url}"

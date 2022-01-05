@@ -57,8 +57,8 @@
         {/block}
 
         {block name='continue_shopping'}
-          <a class="hidden tablet-wide:flex items-center label font-bold" href="{$urls.pages.index}">
-            <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" width="9" height="14" fill="none"><path d="M8 13 2 7l6-6" stroke="#000" stroke-opacity=".7" stroke-width="2"/></svg>
+          <a class="hidden tablet-wide:flex items-center label mt-auto text-[12px] tablet:text-sm text-main-dark uppercase group hover:text-main transition font-normal " href="{$urls.pages.index}">
+            <i class="ti-arrow-left text-main-dark mr-2 group-hover:text-main transition font-normal "></i>
             {l s='Continue shopping' d='Shop.Theme.Actions'}
           </a>
         {/block}
@@ -68,7 +68,7 @@
       <div class="w-full tablet:w-auto flex-initial tablet-wide:w-side">
 
         {block name='cart_summary'}
-          <div class="block bg-gray-200 rounded mb-6">
+          <div class="bg-gray-1000 rounded-md px-[30px] mb-6">
 
             {block name='hook_shopping_cart'}
               {hook h='displayShoppingCart'}
@@ -82,9 +82,9 @@
               {include file='checkout/_partials/cart-detailed-actions.tpl' cart=$cart}
             {/block}
 
-            <p class="card-block text-center">
+            <div class="block text-center mb-5 text-main-dark text-sm tablet:text-base font-medium">
               {l s='Your order will be available in 2 work day' d='Shop.Theme.Checkout'}
-            </p>
+            </div>
 
           </div>
         {/block}

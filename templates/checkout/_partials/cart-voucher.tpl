@@ -24,11 +24,11 @@
  *}
 {if $cart.vouchers.allowed}
   {block name='cart_voucher'}
-    <div class="block-promo my-8">
+    <div class="block-promo ml-[122px] my-6">
       <div class="cart-voucher">
-        <h2 class="font-bold mb-2 text-xl">
+        <span class="font-header font-light italic tablet:text-2xl text-main-dark text-xl ml-5">
           {l s='Add coupon' d='Shop.Theme.Checkout'}
-        </h2>
+        </span>
         {if $cart.vouchers.added}
           {block name='cart_voucher_list'}
             <ul class="promo-name card-block">
@@ -48,18 +48,18 @@
         {/if}
 
         <div class="{if $cart.discounts|count > 0} with-discounts{/if}">
-          <div class="promo-code">
+          <div class="promo-code border-gray-2000 border-solid border flex rounded-full pl-4 bg-white ">
             {block name='cart_voucher_form'}
               <form action="{$urls.pages.cart}" data-link-action="add-voucher" method="post">
                 <input type="hidden" name="token" value="{$static_token}">
                 <input type="hidden" name="addDiscount" value="1">
-                <input class="promo-input" type="text" name="discount_name" placeholder="{l s='Promo code' d='Shop.Theme.Checkout'}">
-                <button type="submit" class="btn btn-primary"><span>{l s='Add' d='Shop.Theme.Actions'}</span></button>
+                <input class="promo-input w-full bg-transparent border-0 py-3 outline-none font-body italic focus:ring-0 text-[12px] tablet:text-sm" type="text" name="discount_name" placeholder="{l s='Promo code' d='Shop.Theme.Checkout'}">
+                <button type="submit" class="bg-main hover:bg-main-hover transition border-0 rounded-full text-white px-8 uppercase whitespace-nowrap font-body"><span class="font-light leading-10 text-5xl" >+</span></button>
               </form>
             {/block}
 
             {block name='cart_voucher_notifications'}
-              <div class="alert alert-danger js-error" role="alert">
+              <div class="alert bg-opacity-10 bg-red-600 border-red-600 max-w-lg mx-auto text-red-600 js-error" role="alert">
                 <i class="material-icons">&#xE001;</i><span class="ml-1 js-error-text"></span>
               </div>
             {/block}
