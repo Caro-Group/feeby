@@ -129,12 +129,12 @@
     border: 0;
 }
 
-.product-description{
+.product-desc-wrapper .product-description{
 	margin-bottom: 20px;
 }
 
 @media(min-width: 1200px){
-	.product-description{
+	.product-desc-wrapper .product-description{
 		padding-right: 100px;
 		margin-bottom: 0;
 	}
