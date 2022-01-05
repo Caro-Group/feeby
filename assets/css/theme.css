@@ -9257,9 +9257,6 @@ body {
 #page {
   overflow: hidden; }
 
-#cart #page{
-  overflow: unset;
-}
 body.modal-open {
   overflow-x: hidden;
   overflow-y: auto; }

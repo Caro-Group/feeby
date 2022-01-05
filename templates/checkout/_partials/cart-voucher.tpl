@@ -24,7 +24,7 @@
  *}
 {if $cart.vouchers.allowed}
   {block name='cart_voucher'}
-    <div class="block-promo ml-[122px] my-6">
+    <div class="block-promo tablet:ml-[122px] w-full tablet:w-auto my-6">
       <div class="cart-voucher">
         <span class="font-header font-light italic tablet:text-2xl text-main-dark text-xl ml-5">
           {l s='Add coupon' d='Shop.Theme.Checkout'}
@@ -47,19 +47,19 @@
           {/block}
         {/if}
 
-        <div class="{if $cart.discounts|count > 0} with-discounts{/if}">
-          <div class="promo-code border-gray-2000 border-solid border flex rounded-full pl-4 bg-white ">
+        <div class=" mt-4 {if $cart.discounts|count > 0} with-discounts{/if}">
+          <div class="promo-code">
             {block name='cart_voucher_form'}
-              <form action="{$urls.pages.cart}" data-link-action="add-voucher" method="post">
+              <form class="border-gray-2000 border-solid border flex rounded-full pl-4 bg-white" action="{$urls.pages.cart}" data-link-action="add-voucher" method="post">
                 <input type="hidden" name="token" value="{$static_token}">
                 <input type="hidden" name="addDiscount" value="1">
                 <input class="promo-input w-full bg-transparent border-0 py-3 outline-none font-body italic focus:ring-0 text-[12px] tablet:text-sm" type="text" name="discount_name" placeholder="{l s='Promo code' d='Shop.Theme.Checkout'}">
-                <button type="submit" class="bg-main hover:bg-main-hover transition border-0 rounded-full text-white px-8 uppercase whitespace-nowrap font-body"><span class="font-light leading-10 text-5xl" >+</span></button>
+                <button type="submit" class="bg-main hover:bg-main-hover overflow-hidden transition border-0 rounded-full text-white px-8 uppercase whitespace-nowrap font-body"><span class="font-light leading-[38px] tablet:leading-[43px] flex text-5xl" >+</span></button>
               </form>
             {/block}
 
             {block name='cart_voucher_notifications'}
-              <div class="alert bg-opacity-10 bg-red-600 border-red-600 max-w-lg mx-auto text-red-600 js-error" role="alert">
+              <div class="alert bg-opacity-10 bg-red-600 border-red-600 max-w-lg mx-auto text-red-600 js-error hidden " role="alert">
                 <i class="material-icons">&#xE001;</i><span class="ml-1 js-error-text"></span>
               </div>
             {/block}
