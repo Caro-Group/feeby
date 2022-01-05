@@ -121,7 +121,7 @@
       <div class="text-base text-gray-3000 block tablet-wide:hidden flex-auto">
         {l s='Quantity' d='Shop.Theme.Checkout'}
       </div>
-      <div class="flex-auto flex justify-end tablet-wide:justify-start">
+      <div class="flex justify-end tablet-wide:justify-start">
         {if isset($product.is_gift) && $product.is_gift}
           <span class="gift-quantity">{$product.quantity}</span>
         {else}
