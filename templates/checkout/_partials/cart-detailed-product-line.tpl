@@ -140,7 +140,7 @@
       </div>
     </div>
 
-    <div class="flex w-full tablet-wide:w-32">
+    <div class="flex w-full tablet-wide:w-32 mb-6">
       <div class="block tablet-wide:hidden flex-auto">
         {l s='Total cost' d='Shop.Theme.Checkout'}
       </div>
@@ -153,7 +153,7 @@
       </span>
     </div>
 
-    <div class="w-4 flex-none absolute tablet-wide:relative top-0 right-0">
+    <div class="w-4 flex-none absolute tablet-wide:relative top-0 right-0 mb-5">
       <div class="cart-line-product-actions">
         <a
             class                       = "remove-from-cart"

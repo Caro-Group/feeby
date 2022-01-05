@@ -1820,8 +1820,8 @@
                 verticalbuttons: !0,
                 verticalupclass: "material-icons touchspin-up  absolute w-full top-0 text-xl left-0",
                 verticaldownclass: "material-icons touchspin-down  absolute w-full bottom-2 text-xl left-0",
-                buttondown_class: "js-touchspin js-increase-product-quantity block bootstrap-touchspin-up border-0 h-[25px] w-5 relative bg-gray-2000 hover:bg-gray-300 rounded-tr-md transition cursor-pointer",
-                buttonup_class: "js-touchspin js-decrease-product-quantity block bootstrap-touchspin-up border-0 h-[25px] w-5 relative bg-gray-2000 hover:bg-gray-300 rounded-br-md transition cursor-pointer",
+                buttondown_class: "js-touchspin js-increase-product-quantity block  border-0 h-[25px] w-5 relative bg-gray-2000 hover:bg-gray-300 rounded-tr-md transition cursor-pointer",
+                buttonup_class: "js-touchspin js-decrease-product-quantity block border-0 h-[25px] w-5 relative bg-gray-2000 hover:bg-gray-300 rounded-br-md transition cursor-pointer",
                 min: parseInt((0, a.default)(e).attr("min"), 10),
                 max: 1e6
             })
