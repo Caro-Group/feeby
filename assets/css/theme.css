@@ -19582,13 +19582,6 @@ body #search_filters .clear-all-wrapper {
     #product #content .mask li {
       display: inline; }
 
-.product-detail-name {
-  margin: 0 0 15px;
-  font-size: 24px;
-  line-height: 1.5;
-  letter-spacing: 0;
-  text-transform: capitalize; }
-
 .product-price {
   color: #000;
   display: inline-block;
@@ -20646,61 +20639,6 @@ body #search_filters .clear-all-wrapper {
     padding: 0 15px 0 40px; }
     .rtl .page-product > .col-md-6:nth-child(2) {
       padding: 0 40px 0 15px; } }
-
-#leo_product_reviews_block_extra {
-  line-height: 20px;
-  color: #5a5050;
-  margin: 0 0 20px;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap; }
-  #leo_product_reviews_block_extra a {
-    color: #5a5050; }
-    #leo_product_reviews_block_extra a:hover {
-      color: #000; }
-  #leo_product_reviews_block_extra:after {
-    content: "";
-    display: block;
-    clear: both; }
-  #leo_product_reviews_block_extra .reviews_note {
-    float: left;
-    margin: 0 15px 0 0;
-    padding: 0 15px 0 0;
-    position: relative;
-    height: 20px; }
-    .rtl #leo_product_reviews_block_extra .reviews_note {
-      float: right; }
-    .rtl #leo_product_reviews_block_extra .reviews_note {
-      margin: 0 0 0 15px; }
-    .rtl #leo_product_reviews_block_extra .reviews_note {
-      padding: 0 0 0 15px; }
-    #leo_product_reviews_block_extra .reviews_note:before {
-      content: "";
-      width: 2px;
-      height: 12px;
-      background: #5a5050;
-      position: absolute;
-      top: 4px;
-      right: 0; }
-      .rtl #leo_product_reviews_block_extra .reviews_note:before {
-        left: 0;
-        right: auto; }
-    #leo_product_reviews_block_extra .reviews_note > span {
-      display: none; }
-  #leo_product_reviews_block_extra .reviews_advices {
-    float: left;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap; }
-    .rtl #leo_product_reviews_block_extra .reviews_advices {
-      float: right; }
-    #leo_product_reviews_block_extra .reviews_advices li {
-      line-height: 20px;
-      margin: 10px 10px 10px 0; }
-    #leo_product_reviews_block_extra .reviews_advices li.last {
-      border: 0;
-      padding: 0; }
 
 @media (min-width: 768px) {
   .product-tabs.tabs {
@@ -23108,8 +23046,6 @@ div.iview-controlNav div.iview-items {
   div.iview-controlNav div.iview-items {
     bottom: 15px; }
 
-  .product-detail-name {
-    margin: 20px 0 15px; }
 
   .block-category.card h1 {
     margin: 20px 0 10px; } }
