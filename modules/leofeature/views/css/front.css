@@ -293,40 +293,6 @@ div.star.star_on:before, div.star.star_hover:before {
   -ms-flex-align: center;
   font-size: 12px; }
 
-.reviews_advices {
-  margin: 20px 0;
-  font-size: 12px; }
-  .reviews_advices a {
-    color: #888; }
-    .reviews_advices a:hover {
-      color: #000; }
-
-@media (min-width: 481px) {
-  .reviews_advices li {
-    display: inline-block; } }
-.reviews_advices li i {
-  font-size: 16px;
-  vertical-align: -4px; }
-
-@media (min-width: 481px) {
-  .reviews_advices li.last {
-    margin-left: 10px;
-    border-left: 1px solid #eee;
-    padding-left: 10px;
-    line-height: 2; }
-    .rtl .reviews_advices li.last {
-      margin-right: 10px;
-      margin-left: inherit; }
-    .rtl .reviews_advices li.last {
-      border-right: 1px solid #eee;
-      border-left: inherit; }
-    .rtl .reviews_advices li.last {
-      padding-right: 10px;
-      padding-left: inherit; } }
-@media (max-width: 480px) {
-  .reviews_advices li.last {
-    margin-top: 10px; } }
-
 #product_reviews_block_tab .review {
   margin-bottom: 10px;
   border-bottom: 1px solid #e5e5e5;
