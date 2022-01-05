@@ -1402,11 +1402,18 @@ $(document).ready(function () {
 	
 });
 
-$('.page-list a').on('click',function(){
-	window.scrollTo({
-		top: 0,
-		behavior: "smooth"
-	});
-  })
-  
+
+function paginationGoTop() {
+	$('.page-list a').click(function(){
+		window.scrollTo({
+			top: 0,
+			behavior: "smooth"
+		});
+	})
+}
+
+$(document).ready(function () {
+	paginationGoTop();
+	prestashop.on("updateProductList", paginationGoTop)
+})
 
