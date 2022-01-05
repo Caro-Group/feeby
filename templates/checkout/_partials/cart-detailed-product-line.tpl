@@ -26,22 +26,22 @@
   <!--  product line left content: image-->
   <div class="w-miniature flex-none mr-5">
     {if $product.cover}
-      <img class="rounded-sm" src="{$product.cover.bySize.cart_default.url}" alt="{$product.name|escape:'quotes'}" width="102px" height="102px">
+      <img class="border border-gray-1000 border-solid rounded-md" src="{$product.cover.bySize.cart_default.url}" alt="{$product.name|escape:'quotes'}" width="102px" height="102px">
     {else}
-      <img class="rounded-sm" src="{$urls.no_picture_image.bySize.cart_default.url}" alt="{l s='Placeholder' d='Shop.Theme.Checkout'}" width="102px" height="102px"/>
+      <img class="border border-gray-1000 border-solid rounded-md" src="{$urls.no_picture_image.bySize.cart_default.url}" alt="{l s='Placeholder' d='Shop.Theme.Checkout'}" width="102px" height="102px"/>
     {/if}
   </div>
 
-  <div class="flex flex-col tablet-wide:flex-row w-full flex-auto">
+  <div class="flex flex-col tablet-wide:flex-row w-full flex-auto items-center">
     <!--  product line body: label, attributes, customizations -->
-    <div class="flex-1 tablet-wide:pr-5 mb-6">
+    <div class="flex-1 tablet-wide:pr-5">
       
-      <a class="block mb-2 text-black font-bold text-sm" href="{$product.url}" data-id_customization="{$product.id_customization|intval}">{$product.name}</a>
+      <a class="block font-normal mb-2 text-base text-main-dark" href="{$product.url}" data-id_customization="{$product.id_customization|intval}">{$product.name}</a>
 
       {foreach from=$product.attributes key="attribute" item="value"}
         <div class="flex flex-row">
-          <span class="text-gray-500 mr-1">{$attribute}:</span>
-          <span class="text-gray-500">{$value}</span>
+          <span class="font-light mr-1 text-base text-main-dark">{$attribute}:</span>
+          <span class="font-light text-base text-main-dark">{$value}</span>
         </div>
       {/foreach}
 
@@ -107,7 +107,7 @@
           </div>
         {/if}
         <div class="current-price">
-          <span class="price">{$product.price}</span>
+          <span class="price text-base tablet:text-lg text-main-dark font-medium">{$product.price}</span>
           {if $product.unit_price_full}
             <div class="unit-price-cart">{$product.unit_price_full}</div>
           {/if}
@@ -126,7 +126,7 @@
           <span class="gift-quantity">{$product.quantity}</span>
         {else}
           <input
-            class="js-cart-line-product-quantity"
+            class="js-cart-line-product-quantity border border-gray-2000 border-r-0 border-solid py-3 rounded-l-md h-[50px] w-[50px] float-left  focus:ring-0"
             data-down-url="{$product.down_quantity_url}"
             data-up-url="{$product.up_quantity_url}"
             data-update-url="{$product.update_quantity_url}"
@@ -134,6 +134,7 @@
             type="number"
             value="{$product.quantity}"
             name="product-quantity-spin"
+            min="1"
           />
         {/if}
       </div>
@@ -143,14 +144,12 @@
       <div class="block tablet-wide:hidden flex-auto">
         {l s='Total cost' d='Shop.Theme.Checkout'}
       </div>
-      <span class="product-price flex-auto flex justify-center tablet-wide:justify-start">
-        <strong>
+      <span class="product-price flex-auto flex justify-center tablet-wide:justify-start text-base tablet:text-lg text-main-dark font-medium font-body">
           {if isset($product.is_gift) && $product.is_gift}
             <span class="gift">{l s='Gift' d='Shop.Theme.Checkout'}</span>
           {else}
             {$product.total}
           {/if}
-        </strong>
       </span>
     </div>
 
@@ -166,7 +165,7 @@
             data-id-customization   	  = "{$product.id_customization|escape:'javascript'}"
         >
           {if !isset($product.is_gift) || !$product.is_gift}
-            <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#EAEEEC" d="M0 0h12v12H0z"/><g clip-path="url(#a)"><path fill="#fff" d="M-1130-465H790V993h-1920z"/><path d="m10.391.492 1.117 1.116c.099.1.112.186.038.26l-9.68 9.679c-.072.073-.159.06-.258-.039L.492 10.392c-.1-.1-.113-.186-.04-.26l9.68-9.679c.074-.073.16-.06.26.039Z" fill="#C4C4C4"/><path d="m1.873.458 9.67 9.67c.076.076.065.164-.035.264l-1.116 1.116c-.1.1-.187.11-.264.034l-9.67-9.67c-.076-.076-.065-.164.034-.264L1.61.492c.1-.1.187-.11.264-.034Z" fill="#C4C4C4"/></g><defs><clipPath id="a"><path fill="#fff" transform="translate(-1130 -465)" d="M0 0h1920v1458H0z"/></clipPath></defs></svg>
+            <svg class="fill-current hover:text-main text-main-dark transition" width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h12v12H0z"/><g clip-path="url(#a)"><path fill="#fff" d="M-1130-465H790V993h-1920z"/><path d="m10.391.492 1.117 1.116c.099.1.112.186.038.26l-9.68 9.679c-.072.073-.159.06-.258-.039L.492 10.392c-.1-.1-.113-.186-.04-.26l9.68-9.679c.074-.073.16-.06.26.039Z"/><path d="m1.873.458 9.67 9.67c.076.076.065.164-.035.264l-1.116 1.116c-.1.1-.187.11-.264.034l-9.67-9.67c-.076-.076-.065-.164.034-.264L1.61.492c.1-.1.187-.11.264-.034Z" /></g><defs><clipPath id="a"><path fill="#fff" transform="translate(-1130 -465)" d="M0 0h1920v1458H0z"/></clipPath></defs></svg>
           {/if}
         </a>
 

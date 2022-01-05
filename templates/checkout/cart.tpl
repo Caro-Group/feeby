@@ -28,13 +28,13 @@
 
 {block name='content'}
   <section id="main">
-    <div class="flex flex-wrap mt-12 mb-6">
+    <div class="flex flex-wrap mt-12 mb-12">
       <div class="flex flex-col items-start flex-auto w-full ">
         <a class="block tablet-wide:hidden mb-4" href="{$urls.pages.index}" title="{l s='Continue shopping' d='Shop.Theme.Actions'}">
           <i class="material-icons text-3xl leading-none -ml-2">chevron_left</i>
         </a>
-        <h1 class="h1 mb-2">{l s='Shopping Cart' d='Shop.Theme.Checkout'}</h1>
-        <p class="m-0 bg-gray-200 text-black p-1.5 font-bold rounded">{l s='Do not hesitate and order the product - adding it to the cart does not mean a reservation.' d='Shop.Theme.Checkout'}</p>
+        <h1 class="text-xl tablet:text-[45px] mb-12">{l s='Shopping Cart' d='Shop.Theme.Checkout'}</h1>
+        <span class="bg-gray-1000 font-medium m-0 px-5 py-2 rounded-md tablet:text-base text-main-dark text-sm">{l s='Do not hesitate and order the product - adding it to the cart does not mean a reservation.' d='Shop.Theme.Checkout'}</span>
       </div>
     </div>
 
