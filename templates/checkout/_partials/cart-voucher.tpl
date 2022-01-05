@@ -24,7 +24,7 @@
  *}
 {if $cart.vouchers.allowed}
   {block name='cart_voucher'}
-    <div class="block-promo tablet:ml-[122px] w-full tablet:w-auto my-6">
+    <div class="block-promo desktop:ml-[122px] tablet:max-w-[370px] my-6 tablet-wide:ml-[122px] w-full">
       <div class="cart-voucher">
         <span class="font-header font-light italic tablet:text-2xl text-main-dark text-xl ml-5">
           {l s='Add coupon' d='Shop.Theme.Checkout'}
@@ -54,7 +54,7 @@
                 <input type="hidden" name="token" value="{$static_token}">
                 <input type="hidden" name="addDiscount" value="1">
                 <input class="promo-input w-full bg-transparent border-0 py-3 outline-none font-body italic focus:ring-0 text-[12px] tablet:text-sm" type="text" name="discount_name" placeholder="{l s='Promo code' d='Shop.Theme.Checkout'}">
-                <button type="submit" class="bg-main hover:bg-main-hover overflow-hidden transition border-0 rounded-full text-white px-8 uppercase whitespace-nowrap font-body"><span class="font-light leading-[38px] tablet:leading-[43px] flex text-5xl" >+</span></button>
+                <button type="submit" class="bg-main hover:bg-main-hover overflow-hidden transition border-0 rounded-full text-white px-8 uppercase whitespace-nowrap font-body"><span class="font-light leading-[38px] tablet:leading-[43px] flex justify-center text-5xl" >+</span></button>
               </form>
             {/block}
 

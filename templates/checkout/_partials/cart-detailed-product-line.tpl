@@ -36,7 +36,7 @@
     <!--  product line body: label, attributes, customizations -->
     <div class="flex-1 tablet-wide:pr-5">
       
-      <a class="block font-normal mb-2 text-base text-main-dark" href="{$product.url}" data-id_customization="{$product.id_customization|intval}">{$product.name}</a>
+      <a class="block font-normal mb-2 text-base text-main-dark mr-4 tablet-wide:mr-0" href="{$product.url}" data-id_customization="{$product.id_customization|intval}">{$product.name}</a>
 
       {foreach from=$product.attributes key="attribute" item="value"}
         <div class="flex flex-row">
@@ -87,11 +87,11 @@
     </div>
     
     <!--  product line body: discounts, price  -->
-    <div class="flex flex-row tablet-wide:w-32 tablet-wide:pr-5 mb-6 {if $product.has_discount}has-discount{/if}">
-      <div class="block tablet-wide:hidden flex-auto">
+    <div class="flex flex-row w-full tablet-wide:w-32 tablet-wide:pr-5 mt-6 tablet-wide:mt-0 mb-6 {if $product.has_discount}has-discount{/if}">
+      <div class="text-base text-gray-3000 block tablet-wide:hidden flex-auto">
         {l s='Price' d='Shop.Theme.Checkout'}
       </div>
-      <div class="flex-auto flex justify-center tablet-wide:justify-start">
+      <div class="flex justify-end tablet-wide:justify-start">
         {if $product.has_discount}
           <div class="product-discount">
             <span class="regular-price">{$product.regular_price}</span>
@@ -117,11 +117,11 @@
 
 
     <!--  product line right content: actions (quantity, delete), price -->
-    <div class="flex flex-row tablet-wide:w-32 items-start tablet-wide:pr-5 qty mb-6">
-      <div class="block tablet-wide:hidden flex-auto">
+    <div class="flex flex-row w-full tablet-wide:w-32 items-start tablet-wide:pr-5 qty mb-6">
+      <div class="text-base text-gray-3000 block tablet-wide:hidden flex-auto">
         {l s='Quantity' d='Shop.Theme.Checkout'}
       </div>
-      <div class="flex-auto flex justify-center tablet-wide:justify-start w-4">
+      <div class="flex-auto flex justify-end tablet-wide:justify-start">
         {if isset($product.is_gift) && $product.is_gift}
           <span class="gift-quantity">{$product.quantity}</span>
         {else}
@@ -141,10 +141,10 @@
     </div>
 
     <div class="flex w-full tablet-wide:w-32 mb-6">
-      <div class="block tablet-wide:hidden flex-auto">
+      <div class="text-base text-gray-3000 block tablet-wide:hidden flex-auto">
         {l s='Total cost' d='Shop.Theme.Checkout'}
       </div>
-      <span class="product-price flex-auto flex justify-center tablet-wide:justify-start text-base tablet:text-lg text-main-dark font-medium font-body">
+      <span class="product-price flex-auto flex justify-end tablet-wide:justify-start text-base tablet:text-lg text-main-dark font-medium font-body">
           {if isset($product.is_gift) && $product.is_gift}
             <span class="gift">{l s='Gift' d='Shop.Theme.Checkout'}</span>
           {else}
