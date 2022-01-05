@@ -79,13 +79,6 @@
             {/block}
           {/block}
 
-          {hook h='displayProductButtons' product=$product}
-          {hook h='displayLeoProductReviewExtra' product=$product}
-
-          {block name='product_prices'}
-            {include file='catalog/_partials/product-prices.tpl'}
-          {/block}
-
           <div class="product-information">
             {block name='product_description_short'}
               <div id="product-description-short-{$product.id}" class="product-description" itemprop="description">{$product.description_short nofilter}</div>
@@ -144,6 +137,13 @@
             {/block}
 
           </div>
+
+          {hook h='displayProductButtons' product=$product}
+          {hook h='displayLeoProductReviewExtra' product=$product}
+
+          {block name='product_prices'}
+            {include file='catalog/_partials/product-prices.tpl'}
+          {/block}
         </div>
       </div>
 
