@@ -75,7 +75,7 @@
             {foreach from=$group.attributes key=id_attribute item=group_attribute}
               <li class="mb-5 mr-2 float-left">
                 <label>
-                  <input class="input-radio peer" type="radio" data-product-attribute="{$id_attribute_group}" name="group[{$id_attribute_group}]" value="{$id_attribute}" title="{$group_attribute.name}"{if $group_attribute.selected} checked="checked"{/if}>
+                  <input class="form-radio sr-only peer" type="radio" data-product-attribute="{$id_attribute_group}" name="group[{$id_attribute_group}]" value="{$id_attribute}" title="{$group_attribute.name}"{if $group_attribute.selected} checked="checked"{/if}>
                   <span class="peer-checked:text-gray-main peer-checked:border-main radio-label">{$group_attribute.name}</span>
                 </label>
               </li>
