@@ -30,7 +30,7 @@
   <div>
     {foreach from=$cart.subtotals item="subtotal"}
       {if $subtotal && $subtotal.value|count_characters > 0 && $subtotal.type !== 'tax' && $subtotal.type !== 'discount'}
-      <div class="flex w-full flex-wrap items-center justify-between {if $cart.subtotals.discounts} pb-1 {else} pb-5 tablet:pb-7 {/if} pt-5 tablet:pt-3 border-0 border-b border-solid border-gray-2000 " id="cart-subtotal-{$subtotal.type}">
+      <div class="flex w-full flex-wrap items-center justify-between {if $cart.subtotals.discounts && $subtotal.type === 'products' } pb-1 {else} pb-5 tablet:pb-7 {/if} pt-5 tablet:pt-3 border-0 border-b border-solid border-gray-2000 " id="cart-subtotal-{$subtotal.type}">
           <span class="flex label text-base tablet:text-xl text-main-dark font-normal text-left {if 'products' === $subtotal.type} js-subtotal{/if}">
             {if 'products' == $subtotal.type}
               {l s='Order value' d='Shop.Theme.Checkout'}
