@@ -274,3 +274,7 @@ li[data-menu-type="url"] a{
 .pagination .current{
     @apply text-main-dark;
 }
+
+.thumb.selected{
+    @apply border-main;
+}
