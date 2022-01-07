@@ -19586,22 +19586,7 @@ body #search_filters .clear-all-wrapper {
   min-width: 70px;
   color: #000;
   letter-spacing: 1px; }
-.product-actions .add-to-cart {
-  height: 64px;
-  line-height: 64px;
-  padding: 0 20px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin: 0 15px 0 0;
-  max-width: 240px;
-  min-width: 200px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin: 0 15px 0 0; }
-  .rtl .product-actions .add-to-cart {
-    margin: 0 0 0 15px; }
-  .product-actions .add-to-cart i {
-    display: none; }
+
 
 .product-quantity .add {
   white-space: nowrap;
@@ -19684,31 +19669,7 @@ body #search_filters .clear-all-wrapper {
     text-align: center;
     border: 5px #ebebeb solid; }
 
-.product-prices {
-  margin: 10px 0 20px; }
-  .product-prices .current-price {
-    font-size: 26px;
-    color: #000; }
-    .product-prices .current-price span[itemprop="price"] {
-      display: inline-block;
-      margin: 0 13px 0 0; }
-      .rtl .product-prices .current-price span[itemprop="price"] {
-        margin: 0 0 0 13px; }
-  .product-prices .tax-shipping-delivery-label {
-    font-size: 13px;
-    color: #878787; }
-  .product-prices .product-discount {
-    display: inline-block;
-    font-size: 16px; }
 
-.product-discount {
-  color: #acaaa6; }
-  .product-discount .regular-price {
-    text-decoration: line-through;
-    font-weight: normal;
-    margin: 0 13px 0 0; }
-    .rtl .product-discount .regular-price {
-      margin: 0 0 0 13px; }
 
 .has-discount.product-price, .has-discount p {
   color: #f39d72; }
@@ -21087,14 +21048,6 @@ body #search_filters .clear-all-wrapper {
     .rtl .cart-summary-line .label {
       padding-right: 0;
       padding-left: inherit; }
-  .cart-summary-line .value {
-    color: #414141;
-    float: right;
-    font-size: 15px;
-    font-weight: 600;
-    font-family: "Poppins", sans-serif; }
-    .rtl .cart-summary-line .value {
-      float: left; }
   .cart-summary-line.cart-summary-subtotals .label,
   .cart-summary-line.cart-summary-subtotals .value {
     font-weight: normal; }
@@ -21121,8 +21074,6 @@ body #search_filters .clear-all-wrapper {
       text-decoration: underline;
       cursor: pointer; }
 
-.cart-detailed-totals > .card-block {
-  border-bottom: 1px solid #ddd; }
 
 .block-promo .promo-code {
   /* padding: 1.60rem; */

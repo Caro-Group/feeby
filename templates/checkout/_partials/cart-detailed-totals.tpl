@@ -24,31 +24,28 @@
  *}
 {block name='cart_detailed_totals'}
 <div>
-  <span class="font-header italic tablet:text-2xl text-main-dark text-xl block py-[30px] mb-[10px]">
+  <span class="font-header italic text-2xl text-main-dark block py-[20px] tablet:py-[30px] mb-2 tablet:mb-[10px]">
     {l s='Summary' d='Shop.Theme.Checkout'}
   </span>
   <div>
     {foreach from=$cart.subtotals item="subtotal"}
       {if $subtotal && $subtotal.value|count_characters > 0 && $subtotal.type !== 'tax'}
-        <div class="flex items-center justify-between pb-4 border-0 border-b border-solid border-gray-2000" id="cart-subtotal-{$subtotal.type}">
-          <span class="flex label text-base tablet:text-xl text-main-dark font-normal {if 'products' === $subtotal.type} js-subtotal{/if}">
+        <div class="flex items-center justify-between pb-5 pt-5 tablet:pb-7 tablet:pt-3 border-0 border-b border-solid border-gray-2000 " id="cart-subtotal-{$subtotal.type}">
+          <span class="flex label text-base tablet:text-xl text-main-dark font-normal text-left {if 'products' === $subtotal.type} js-subtotal{/if}">
             {if 'products' == $subtotal.type}
               {l s='Order value' d='Shop.Theme.Checkout'}
             {else if 'shipping' == $subtotal.type}
               {$subtotal.label}
               <div data-toggle="popover" data-title="" data-content="" data-html="true" data-trigger="hover">
-                <svg class="ml-1 text-main fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none">
-                  <path d="M10 0a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16Z" />
-                  <path d="M10 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2ZM10 8a1 1 0 0 0-1 1v5a1 1 0 1 0 2 0V9a1 1 0 0 0-1-1Z" />
-                </svg>
+                <i class="ml-1 bottom-[7px] material-icons relative tablet:bottom-1 tablet:text-[22px] text-lg text-main"></i>    
               </div>
             {else}
               {$subtotal.label}
             {/if}
           </span>
-          <span class="ml-auto value text-base tablet:text-xl text-main-dark font-normal">
+          <span class="ml-auto value text-xl text-main-dark font-normal">
             {if $subtotal.amount == 0}
-              <span class="bg-main font-normal px-3 py-1 rounded-full tablet:text-base text-sm text-white">{l s='Free of charge' d='Shop.Theme.Checkout'}</span>
+              <span class="bg-main font-normal px-3 py-[3px] uppercase rounded-full tablet:text-base text-sm text-white">{l s='Free of charge' d='Shop.Theme.Checkout'}</span>
             {else}
               {if 'discount' == $subtotal.type}-&nbsp;{/if}{$subtotal.value}
             {/if}
