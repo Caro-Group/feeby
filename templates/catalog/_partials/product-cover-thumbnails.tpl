@@ -95,7 +95,7 @@
         },
       });
     </script>
-      {/literal}}
+      {/literal}
     {/block}
     {if $product.images|@count > 1}
       <div class="arrows-product-fake slick-arrows">
