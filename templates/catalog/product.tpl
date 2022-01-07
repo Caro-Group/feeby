@@ -92,10 +92,6 @@
               {/block}
             {/if}
 
-            {block name='product_prices'}
-              {include file='catalog/_partials/product-prices.tpl'}
-            {/block}
-
             <div class="product-actions">
               {block name='product_buy'}
                 <form action="{$urls.pages.cart}" method="post" id="add-to-cart-or-refresh">
@@ -120,6 +116,10 @@
                     {/if}
                   {/block}
 
+                  {block name='product_prices'}
+                    {include file='catalog/_partials/product-prices.tpl'}
+                  {/block}
+                  
                   {block name='product_discounts'}
                     {include file='catalog/_partials/product-discounts.tpl'}
                   {/block}
