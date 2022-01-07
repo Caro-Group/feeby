@@ -6445,12 +6445,6 @@
   content: "\f004";
   font-family: 'Font Awesome 5 Pro'; }
 
-.product-actions .add-to-cart i {
-  display: inline-block;
-  font-style: normal; }
-  .product-actions .add-to-cart i:before {
-    content: "\f290";
-    font-family: 'Font Awesome 5 Pro'; }
 
 .box-nav1 #leo_search_block_top.active .title_block:before,
 .box-top #leo_search_block_top.active .title_block:before {
