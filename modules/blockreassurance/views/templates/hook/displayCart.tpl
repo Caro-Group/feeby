@@ -1,7 +1,7 @@
 
-<div class="flex flex-wrap">
+<div class="flex flex-wrap border-0 border-b tablet:border-b-0 before:bg-gray-1000 border-solid pb-11 tablet:pb-0">
 {foreach from=$blocks item=$block key=$key}
-    <div class="flex items-center justify-center mx-auto w-1/2 w-full" {if $block['type_link'] !== $LINK_TYPE_NONE && !empty($block['link'])} style="cursor:pointer;" onclick="window.open('{$block['link']}')"{/if}>
+    <div class="flex items-center justify-center mt-7 tablet:mt-0 mx-auto w-1/2 w-full" {if $block['type_link'] !== $LINK_TYPE_NONE && !empty($block['link'])} style="cursor:pointer;" onclick="window.open('{$block['link']}')"{/if}>
         <div class="flex flex-col tablet:flex-row items-center justify-start w-[200px] max-w-full">
             {if $block['icon'] != 'undefined'}
                 <span class="flex item-product items-center tablet:mr-2">
