@@ -33,7 +33,7 @@
       {/if}
     {/block}
 
-    <div class="flex flex-row items-end"> 
+    <div class="flex flex-row items-baseline"> 
 
       {block name='product_price'}
         <div

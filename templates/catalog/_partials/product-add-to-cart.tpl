@@ -27,8 +27,8 @@
     {block name='product_quantity'}
       <div class="product-quantity clearfix">
         <div class="flex ">
-          <div class="qty clearfix">
-            <span class="control-label">{l s='Quantity' d='Shop.Theme.Catalog'}</span>
+          <div class="qty clearfix mr-5">
+            <span class="control-label sr-only">{l s='Quantity' d='Shop.Theme.Catalog'}</span>
             <input
               type="number"
               name="qty"
@@ -42,7 +42,7 @@
 
           <div class="add">
             <button
-              class="bg-main hover:bg-main-hover font-me text-white py-2 px-4 text-xl uppercase text-center"
+              class="bg-main hover:bg-main-hover font-me text-white py-2 px-4 text-xl uppercase text-center border-0 rounded-full font-medium w-full cursor-pointer"
               data-button-action="add-to-cart"
               type="submit"
               {if !$product.add_to_cart_url}

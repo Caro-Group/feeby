@@ -24,7 +24,7 @@
  *}
 {block name='cart_detailed_totals'}
 <div>
-  <span class="font-header italic text-2xl text-main-dark block py-[20px] tablet:py-[30px] mb-2 tablet:mb-[10px]">
+  <span class="font-header italic text-2xl text-main-dark block pt-[20px] tablet:pt-[30px] mb-2 tablet:mb-[10px]">
     {l s='Summary' d='Shop.Theme.Checkout'}
   </span>
   <div>
@@ -54,6 +54,12 @@
               <div><small class="value">{hook h='displayCheckoutSubtotalDetails' subtotal=$subtotal}</small></div>
           {/if}
         </div>
+        {if $subtotal.type === 'products' && $cart.subtotals.discount }
+          <div class="flex justify-between">
+          <span class="text-main-dark text-sm tablet:text-base font-light">{$subtotal.label}</span>
+          <span class="text-main text-lg font-light">-&nbsp;{$cart.subtotals.discount.value}</span>
+          </div>
+        {/if}
       {/if}
     {/foreach}
   </div>
