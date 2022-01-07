@@ -93,7 +93,7 @@
       </div>
       <div class="relative flex justify-end tablet-wide:justify-start">
         {if $product.has_discount}
-          <div class="absolute flex -top-5 right-0">
+          <div class="absolute flex -top-5">
             <span class="line-through tablet:text-base text-gray-3000 text-sm">{$product.regular_price}</span>
             {if $product.discount_type === 'percentage'}
               <span class=" text-white px-2 bg-main rounded-full ml-2 text-sm h-5">
