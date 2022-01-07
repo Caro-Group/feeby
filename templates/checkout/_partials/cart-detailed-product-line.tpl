@@ -87,16 +87,16 @@
     </div>
     
     <!--  product line body: discounts, price  -->
-    <div class="flex flex-row w-full tablet-wide:w-32 tablet-wide:pr-5 mt-6 tablet-wide:mt-0 mb-6 {if $product.has_discount}has-discount{/if}">
+    <div class="flex flex-row w-full tablet-wide:w-36 tablet-wide:pr-5 mt-6 tablet-wide:mt-0 mb-6 {if $product.has_discount}has-discount{/if}">
       <div class="text-base text-gray-3000 block tablet-wide:hidden flex-auto">
         {l s='Price' d='Shop.Theme.Checkout'}
       </div>
-      <div class="relative flex justify-end tablet-wide:justify-start">
+      <div class="relative flex justify-end flex-col tablet-wide:justify-start >
         {if $product.has_discount}
-          <div class="absolute flex -top-5">
+          <div class=" flex justify-end flex-wrap">
             <span class="line-through tablet:text-base text-gray-3000 text-sm">{$product.regular_price}</span>
             {if $product.discount_type === 'percentage'}
-              <span class=" text-white px-2 bg-main rounded-full ml-2 text-sm h-5">
+              <span class=" text-white px-2 bg-main rounded-full ml-2 tablet-wide:-mr-5 text-sm h-5">
                 -{$product.discount_percentage_absolute}
               </span>
             {* {else}
@@ -140,7 +140,7 @@
       </div>
     </div>
 
-    <div class="flex w-full tablet-wide:w-32 mb-6">
+    <div class="flex w-full tablet-wide:w-28 mb-6">
       <div class="text-base text-gray-3000 block tablet-wide:hidden flex-auto">
         {l s='Total cost' d='Shop.Theme.Checkout'}
       </div>
