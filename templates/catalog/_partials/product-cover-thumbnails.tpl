@@ -65,7 +65,7 @@
           <div class="swiper" data-swiper-product>
             <div class="swiper-wrapper">
               {foreach from=$product.images item=image}
-                <div class="w-auto h-full relative thumb-container {if $image.id_image == $product.default_image.id_image} active {/if}" style="    flex-shrink: 0;
+                <div class="swiper-custom-slide w-auto h-full relative thumb-container {if $image.id_image == $product.default_image.id_image} active {/if}" style="    flex-shrink: 0;
                   transition-property: transform;">
                   <a href="javascript:void(0)" data-image="{$image.bySize.large_default.url}" data-zoom-image="{$image.bySize.large_default.url}"> 
                     <img
