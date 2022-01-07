@@ -82,9 +82,7 @@
           {hook h='displayLeoProductReviewExtra' product=$product}
 
           <div class="product-information">
-            {block name='product_description_short'}
-              <div id="product-description-short-{$product.id}" class="product-description" itemprop="description">{$product.description_short nofilter}</div>
-            {/block}
+            {block name='product_description_short'}{/block}
 
             {if $product.is_customizable && count($product.customizations.fields)}
               {block name='product_customization'}
