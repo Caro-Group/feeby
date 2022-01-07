@@ -1256,7 +1256,7 @@ $(document).ready(function () {
 //Top bar swiper 
 $(document).ready(function () {
 
-	const swiper = new Swiper('.swiper', {
+	const swiper = new Swiper('[data-top-bar-swiper]', {
 		speed: 25000,
 		spaceBetween: 50,
 		loop: true,
