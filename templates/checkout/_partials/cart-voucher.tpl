@@ -32,12 +32,12 @@
           {block name='cart_voucher_list'}
             <ul class="promo-name py-6">
               {foreach from=$cart.vouchers.added item=voucher}
-                <li class="cart-summary-line flex justify-between items-center ">
+                <li class="cart-summary-line bg-gray-1000 rounded-md px-5 flex justify-between items-center ">
                   <span class="text-main-dark text-sm">{$voucher.name}</span>
                   <div class="flex-shrink-0">
                     <span class="font-medium tablet:text-2xl text-base text-main" >{$voucher.reduction_formatted}</span>
                       {if isset($voucher.code) && $voucher.code !== ''}
-                        <a href="{$voucher.delete_url}" data-link-action="remove-voucher"><i class="material-icons">&#xE872;</i></a>
+                        <a href="{$voucher.delete_url}" data-link-action="remove-voucher"><i class="material-icons relative bottom-2.5 text-lg">close</i></a>
                       {/if}
                   </div>
                 </li>
