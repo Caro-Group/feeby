@@ -19582,9 +19582,6 @@ body #search_filters .clear-all-wrapper {
   letter-spacing: 1px; }
 
 
-.product-quantity .add {
-  white-space: nowrap;
-  position: relative; }
 .product-quantity .input-group {
   border: 2px solid #ddd;
   height: 64px;

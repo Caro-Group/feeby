@@ -42,7 +42,7 @@
 
           <div class="add">
             <button
-              class="bg-main hover:bg-main-hover font-me text-white py-2 px-4 text-xl uppercase text-center"
+              class="bg-main hover:bg-main-hover font-me text-white py-2 px-4 text-xl uppercase text-center border-0 rounded-full font-medium w-full cursor-pointer"
               data-button-action="add-to-cart"
               type="submit"
               {if !$product.add_to_cart_url}
