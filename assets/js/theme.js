@@ -1820,8 +1820,8 @@
                 verticalbuttons: !0,
                 verticalupclass: "material-icons touchspin-up  absolute w-full top-0 text-xl left-0",
                 verticaldownclass: "material-icons touchspin-down  absolute w-full bottom-2 text-xl left-0",
-                buttondown_class: "js-touchspin js-increase-product-quantity block  border-0 h-[25px] w-5 relative bg-gray-2000 hover:bg-gray-300 rounded-tr-md transition cursor-pointer",
-                buttonup_class: "js-touchspin js-decrease-product-quantity block border-0 h-[25px] w-5 relative bg-gray-2000 hover:bg-gray-300 rounded-br-md transition cursor-pointer",
+                buttonup_class: "js-touchspin js-increase-product-quantity block border-0 h-[25px] w-5 relative bg-gray-2000 hover:bg-gray-300 rounded-tr-md transition cursor-pointer",
+                buttondown_class: "js-touchspin js-decrease-product-quantity block  border-0 h-[25px] w-5 relative bg-gray-2000 hover:bg-gray-300 rounded-br-md transition cursor-pointer",
                 min: parseInt((0, a.default)(e).attr("min"), 10),
                 max: 1e6
             })
@@ -2616,10 +2616,10 @@
             var t = (0, o.default)("#quantity_wanted");
             t.TouchSpin({
                 verticalbuttons: !0,
-                verticalupclass: "material-icons touchspin-up",
-                verticaldownclass: "material-icons touchspin-down",
-                buttondown_class: "btn btn-touchspin js-touchspin",
-                buttonup_class: "btn btn-touchspin js-touchspin",
+                verticalupclass: "material-icons touchspin-up absolute w-full top-0 text-xl left-0",
+                verticaldownclass: "material-icons touchspin-down absolute w-full bottom-2 text-xl left-0",
+                buttonup_class: "js-touchspin js-increase-product-quantity block  border-0 h-[25px] w-5 relative bg-gray-2000 hover:bg-gray-300 rounded-tr-md transition cursor-pointer",
+                buttondown_class: "js-touchspin js-decrease-product-quantity block border-0 h-[25px] w-5 relative bg-gray-2000 hover:bg-gray-300 rounded-br-md transition cursor-pointer",
                 min: parseInt(t.attr("min"), 10),
                 max: 1e6
             }), (0, o.default)("body").on("change keyup", "#quantity_wanted", function(t) {
@@ -2791,7 +2791,7 @@
 
                 function p() {
                     var e;
-                    e = C.verticalbuttons ? '<div class="input-group bootstrap-touchspin"><span class="input-group-addon bootstrap-touchspin-prefix">' + C.prefix + '</span><span class="input-group-addon bootstrap-touchspin-postfix">' + C.postfix + '</span><span class="flex flex-col"><button class="' + C.buttondown_class + ' bootstrap-touchspin-up" type="button"><i class="' + C.verticalupclass + '"></i></button><button class="' + C.buttonup_class + ' bootstrap-touchspin-down" type="button"><i class="' + C.verticaldownclass + '"></i></button></span></div>' : '<div class="input-group bootstrap-touchspin"><span class="input-group-btn"><button class="' + C.buttondown_class + ' bootstrap-touchspin-down" type="button">' + C.buttondown_txt + '</button></span><span class="input-group-addon bootstrap-touchspin-prefix">' + C.prefix + '</span><span class="input-group-addon bootstrap-touchspin-postfix">' + C.postfix + '</span><span class="input-group-btn"><button class="' + C.buttonup_class + ' bootstrap-touchspin-up" type="button">' + C.buttonup_txt + "</button></span></div>", A = t(e).insertBefore(L), t(".bootstrap-touchspin-prefix", A).after(L), L.hasClass("input-sm") ? A.addClass("input-group-sm") : L.hasClass("input-lg") && A.addClass("input-group-lg")
+                    e = C.verticalbuttons ? '<div class="input-group bootstrap-touchspin"><span class="input-group-addon bootstrap-touchspin-prefix">' + C.prefix + '</span><span class="input-group-addon bootstrap-touchspin-postfix">' + C.postfix + '</span><span class="flex flex-col"><button class="' + C.buttonup_class + ' bootstrap-touchspin-up" type="button"><i class="' + C.verticalupclass + '"></i></button><button class="' + C.buttondown_class + ' bootstrap-touchspin-down" type="button"><i class="' + C.verticaldownclass + '"></i></button></span></div>' : '<div class="input-group bootstrap-touchspin"><span class="input-group-btn"><button class="' + C.buttondown_class + ' bootstrap-touchspin-down" type="button">' + C.buttondown_txt + '</button></span><span class="input-group-addon bootstrap-touchspin-prefix">' + C.prefix + '</span><span class="input-group-addon bootstrap-touchspin-postfix">' + C.postfix + '</span><span class="input-group-btn"><button class="' + C.buttonup_class + ' bootstrap-touchspin-up" type="button">' + C.buttonup_txt + "</button></span></div>", A = t(e).insertBefore(L), t(".bootstrap-touchspin-prefix", A).after(L), L.hasClass("input-sm") ? A.addClass("input-group-sm") : L.hasClass("input-lg") && A.addClass("input-group-lg")
                 }
 
                 function h() {
