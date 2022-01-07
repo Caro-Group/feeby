@@ -41,20 +41,6 @@
       {block name='product_add_to_cart'}
         {include file='catalog/_partials/product-add-to-cart.tpl'}
       {/block}
-
-{literal}
-<style>
-.product-detail .product-prices{
-    display: flex;
-    align-items: baseline;
-flex-wrap: wrap;
-margin-bottom:0;
-margin-top: 20px;
-
-}
-.p-cartwapper{margin:0;border: 0;}
-</style>
-{/literal}
     </div>
 
       {block name='product_refresh'}
