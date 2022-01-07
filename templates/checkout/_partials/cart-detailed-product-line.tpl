@@ -32,9 +32,9 @@
     {/if}
   </div>
 
-  <div class="flex flex-col tablet-wide:flex-row w-full flex-auto ">
+  <div class="flex flex-col tablet-wide:flex-row tablet-wide:items-center w-full flex-auto ">
     <!--  product line body: label, attributes, customizations -->
-    <div class="flex-1 tablet-wide:pr-5">
+    <div class="flex-1 tablet-wide:pr-5 w-full">
       
       <a class="block font-normal mb-2 text-base text-main-dark mr-4 mt-3 tablet:mt-1 tablet-wide:mr-0" href="{$product.url}" data-id_customization="{$product.id_customization|intval}">{$product.name}</a>
 
@@ -93,7 +93,7 @@
       </div>
       <div class="relative flex justify-end tablet-wide:justify-start">
         {if $product.has_discount}
-          <div class="absolute flex -top-5">
+          <div class="absolute flex -top-5 right-0">
             <span class="line-through tablet:text-base text-gray-3000 text-sm">{$product.regular_price}</span>
             {if $product.discount_type === 'percentage'}
               <span class=" text-white px-2 bg-main rounded-full ml-2 text-sm h-5">
@@ -154,7 +154,7 @@
     </div>
 
   </div>
-  <div class="w-4 absolute right-0 phone:relative flex-none tablet-wide:mb-6">
+  <div class="absolute ml-3 right-0 phone:relative flex-none tablet-wide:mb-6">
       <div class="cart-line-product-actions">
         <a
             class                       = "remove-from-cart"
