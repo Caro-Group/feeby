@@ -27,9 +27,7 @@
     {if !empty($group.attributes)}
 
       <div class="clearfix product-variants-item flex flex-col items-start mb-[10px]">
-        <span class="flex font-bold text-[20px] leading-[27px] items-start mb-[10px]">
-
-        <span class="mr-[5px] text-sm text-gray-main">
+        <span class="flex text-sm text-gray-main text-base leading-normal items-start mb-[10px]">
           {if $group.group_name == "Rozmiar"}
             {l s='Choose size' d='Shop.Theme.Actions'}
           {elseif $group.group_name == "Rodzaj fototapety"}
@@ -37,14 +35,12 @@
             {$group.name}
           {/if}
         </span>
-
-        </span>
         
         {if $group.group_name == "Rodzaj fototapety"}
         {elseif $group.group_type == 'select'}
 
           <select
-            class="form-select bg-gray-default rounded border-none w-full"
+            class="form-select bg-gray-default rounded border-none w-full mb-[10px]"
             id="group_{$id_attribute_group}"
             data-product-attribute="{$id_attribute_group}"
             name="group[{$id_attribute_group}]">
@@ -77,10 +73,10 @@
 
           <ul id="group_{$id_attribute_group}">
             {foreach from=$group.attributes key=id_attribute item=group_attribute}
-              <li class="input-container float-xs-left">
+              <li class="mb-5 mr-2 float-left">
                 <label>
-                  <input class="input-radio" type="radio" data-product-attribute="{$id_attribute_group}" name="group[{$id_attribute_group}]" value="{$id_attribute}" title="{$group_attribute.name}"{if $group_attribute.selected} checked="checked"{/if}>
-                  <span class="radio-label">{$group_attribute.name}</span>
+                  <input class="input-radio peer" type="radio" data-product-attribute="{$id_attribute_group}" name="group[{$id_attribute_group}]" value="{$id_attribute}" title="{$group_attribute.name}"{if $group_attribute.selected} checked="checked"{/if}>
+                  <span class="peer-checked:text-gray-main peer-checked:border-main radio-label">{$group_attribute.name}</span>
                 </label>
               </li>
             {/foreach}
@@ -88,7 +84,7 @@
           
         {/if}
 
-        <span class="text-[16px] leading-[22px]">
+        <span class="text-base leading-normal">
           {if $group.group_name == "Rozmiar"}
 
             {l s='See' d='Shop.Theme.Actions'} <a class="underline font-medium" href="/tabela-rozmiarow" target="_blank">{l s='table size' d='Shop.Theme.Actions'}</a>

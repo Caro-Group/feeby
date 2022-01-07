@@ -19544,13 +19544,6 @@ body #search_filters .clear-all-wrapper {
     #product #content .mask li {
       display: inline; }
 
-.product-price {
-  color: #000;
-  display: inline-block;
-  font-family: 'Poppins'; 
-  line-height: normal;
-}
-
 .p-desception {
   color: #67747c;
   line-height: 30px; }
@@ -22646,8 +22639,7 @@ section#products {
 .fw-100 {
   font-weight: 100; }
 
-.product-detail .product-prices .product-price {
-  margin: 0; }
+
 
 .box-instagram .ApInstagram .link-instagram {
   margin: 0;
