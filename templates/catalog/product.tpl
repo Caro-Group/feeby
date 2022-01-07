@@ -92,6 +92,10 @@
               {/block}
             {/if}
 
+            {block name='product_prices'}
+              {include file='catalog/_partials/product-prices.tpl'}
+            {/block}
+
             <div class="product-actions">
               {block name='product_buy'}
                 <form action="{$urls.pages.cart}" method="post" id="add-to-cart-or-refresh">
@@ -134,18 +138,14 @@
               {/block}
             </div>
 
+            {hook h='displayProductButtons' product=$product}
+
             {block name='hook_display_reassurance'}
               {hook h='displayReassurance'}
             {/block}
 
           </div>
 
-          {hook h='displayProductButtons' product=$product}
-          
-
-          {block name='product_prices'}
-            {include file='catalog/_partials/product-prices.tpl'}
-          {/block}
         </div>
       </div>
 
