@@ -9449,12 +9449,6 @@ textarea.form-control {
 .bootstrap-touchspin input:focus {
   outline: none; }
 
-.bootstrap-touchspin .btn-touchspin {
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  height: 21px; }
-  .bootstrap-touchspin .btn-touchspin:hover {
-    background-color: #ebebeb;
-    color: #000; }
 .bootstrap-touchspin .input-group-btn-vertical {
   color: #414141; }
   .bootstrap-touchspin .input-group-btn-vertical .bootstrap-touchspin-up {
@@ -19588,9 +19582,6 @@ body #search_filters .clear-all-wrapper {
   letter-spacing: 1px; }
 
 
-.product-quantity .add {
-  white-space: nowrap;
-  position: relative; }
 .product-quantity .input-group {
   border: 2px solid #ddd;
   height: 64px;
@@ -20435,13 +20426,6 @@ body #search_filters .clear-all-wrapper {
       float: right; }
   .product-add-to-cart .product-quantity {
     position: relative; }
-    .product-add-to-cart .product-quantity .qty {
-      margin: 0 15px 10px 0;
-      width: 100px; }
-      .rtl .product-add-to-cart .product-quantity .qty {
-        margin: 0 0 10px 15px; }
-      .product-add-to-cart .product-quantity .qty .control-label {
-        display: none; }
 
 .ps-hidden-by-js {
   display: none; }
