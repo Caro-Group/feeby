@@ -19586,22 +19586,7 @@ body #search_filters .clear-all-wrapper {
   min-width: 70px;
   color: #000;
   letter-spacing: 1px; }
-.product-actions .add-to-cart {
-  height: 64px;
-  line-height: 64px;
-  padding: 0 20px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin: 0 15px 0 0;
-  max-width: 240px;
-  min-width: 200px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin: 0 15px 0 0; }
-  .rtl .product-actions .add-to-cart {
-    margin: 0 0 0 15px; }
-  .product-actions .add-to-cart i {
-    display: none; }
+
 
 .product-quantity .add {
   white-space: nowrap;
@@ -19684,31 +19669,7 @@ body #search_filters .clear-all-wrapper {
     text-align: center;
     border: 5px #ebebeb solid; }
 
-.product-prices {
-  margin: 10px 0 20px; }
-  .product-prices .current-price {
-    font-size: 26px;
-    color: #000; }
-    .product-prices .current-price span[itemprop="price"] {
-      display: inline-block;
-      margin: 0 13px 0 0; }
-      .rtl .product-prices .current-price span[itemprop="price"] {
-        margin: 0 0 0 13px; }
-  .product-prices .tax-shipping-delivery-label {
-    font-size: 13px;
-    color: #878787; }
-  .product-prices .product-discount {
-    display: inline-block;
-    font-size: 16px; }
 
-.product-discount {
-  color: #acaaa6; }
-  .product-discount .regular-price {
-    text-decoration: line-through;
-    font-weight: normal;
-    margin: 0 13px 0 0; }
-    .rtl .product-discount .regular-price {
-      margin: 0 0 0 13px; }
 
 .has-discount.product-price, .has-discount p {
   color: #f39d72; }
