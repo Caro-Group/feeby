@@ -21082,10 +21082,6 @@ body #search_filters .clear-all-wrapper {
 .cart-summary-line {
   margin-bottom: 10px;
   clear: both; }
-  .cart-summary-line::after {
-    content: "";
-    display: table;
-    clear: both; }
   .cart-summary-line .label {
     white-space: inherit; }
     .rtl .cart-summary-line .label {
