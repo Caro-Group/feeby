@@ -62,22 +62,40 @@
     {/block}
     {block name='product_images'}
       <div id="thumb-gallery" class="product-thumb-images flex">
-        {foreach from=$product.images item=image}
-          <div class="thumb-container {if $image.id_image == $product.default_image.id_image} active {/if}">
-            <a  href="javascript:void(0)" data-image="{$image.bySize.large_default.url}" data-zoom-image="{$image.bySize.large_default.url}"> 
-              <img
-                class="thumb js-thumb {if $image.id_image == $product.default_image.id_image} selected {/if}"
-                data-image-medium-src="{$image.bySize.medium_default.url}"
-                data-image-large-src="{$image.bySize.large_default.url}"
-                src="{$image.bySize.home_default.url}"
-                alt="{$image.legend}"
-                title="{$image.legend}"
-                itemprop="image"
-              >
-            </a>
-          </div>
-        {/foreach}
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          {foreach from=$product.images item=image}
+            <div class="swiper-slide thumb-container {if $image.id_image == $product.default_image.id_image} active {/if}">
+              <a  href="javascript:void(0)" data-image="{$image.bySize.large_default.url}" data-zoom-image="{$image.bySize.large_default.url}"> 
+                <img
+                  class="thumb js-thumb {if $image.id_image == $product.default_image.id_image} selected {/if}"
+                  data-image-medium-src="{$image.bySize.medium_default.url}"
+                  data-image-large-src="{$image.bySize.large_default.url}"
+                  src="{$image.bySize.home_default.url}"
+                  alt="{$image.legend}"
+                  title="{$image.legend}"
+                  itemprop="image"
+                >
+              </a>
+            </div>
+          {/foreach}
+          
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
       </div>
+      {{literal}
+            <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: "auto",
+        spaceBetween: 30,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+      {/literal}}
     {/block}
     {if $product.images|@count > 1}
       <div class="arrows-product-fake slick-arrows">
