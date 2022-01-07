@@ -84,7 +84,7 @@
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
       </div>
-      {{literal}
+      {literal}
             <script>
       var swiper = new Swiper(".mySwiper", {
         slidesPerView: "auto",
