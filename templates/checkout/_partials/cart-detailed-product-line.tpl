@@ -22,26 +22,26 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
-<div class="flex flex-row flex-wrap phone:flex-nowrap w-full relative">
+<div class="flex flex-row flex-wrap phone:flex-nowrap w-full relative tablet-wide:items-center">
   <!--  product line left content: image-->
-  <div class="w-miniature flex-none mr-5">
+  <div class="flex-none h-[65px] mr-5 phone-wide:h-[102px] phone-wide:w-miniature w-[65px]">
     {if $product.cover}
-      <img class="rounded-sm" src="{$product.cover.bySize.cart_default.url}" alt="{$product.name|escape:'quotes'}" width="102px" height="102px">
-    {else}
-      <img class="rounded-sm" src="{$urls.no_picture_image.bySize.cart_default.url}" alt="{l s='Placeholder' d='Shop.Theme.Checkout'}" width="102px" height="102px"/>
+      <img class="border border-gray-1000 border-solid rounded-md object-contain h-full" src="{$product.cover.bySize.cart_default.url}" alt="{$product.name|escape:'quotes'}" width="102px" height="102px">
+    {else} 
+      <img class="border border-gray-1000 border-solid rounded-md object-contain h-full" src="{$urls.no_picture_image.bySize.cart_default.url}" alt="{l s='Placeholder' d='Shop.Theme.Checkout'}" width="102px" height="102px"/>
     {/if}
   </div>
 
-  <div class="flex flex-col tablet-wide:flex-row w-full flex-auto">
+  <div class="flex flex-col tablet-wide:flex-row tablet-wide:items-center w-full flex-auto ">
     <!--  product line body: label, attributes, customizations -->
-    <div class="flex-1 tablet-wide:pr-5 mb-6">
+    <div class="flex-1 tablet-wide:pr-5 w-full">
       
-      <a class="block mb-2 text-black font-bold text-sm" href="{$product.url}" data-id_customization="{$product.id_customization|intval}">{$product.name}</a>
+      <a class="block font-normal mb-2 text-base text-main-dark mr-4 mt-3 tablet:mt-1 tablet-wide:mr-0" href="{$product.url}" data-id_customization="{$product.id_customization|intval}">{$product.name}</a>
 
       {foreach from=$product.attributes key="attribute" item="value"}
         <div class="flex flex-row">
-          <span class="text-gray-500 mr-1">{$attribute}:</span>
-          <span class="text-gray-500">{$value}</span>
+          <span class="font-light mr-1 text-base text-main-dark">{$attribute}:</span>
+          <span class="font-light text-base text-main-dark">{$value}</span>
         </div>
       {/foreach}
 
@@ -87,27 +87,27 @@
     </div>
     
     <!--  product line body: discounts, price  -->
-    <div class="flex flex-row tablet-wide:w-32 tablet-wide:pr-5 mb-6 {if $product.has_discount}has-discount{/if}">
-      <div class="block tablet-wide:hidden flex-auto">
+    <div class="flex flex-row w-full tablet-wide:w-36 tablet-wide:pr-5 mt-6 tablet-wide:mt-0 mb-6 {if $product.has_discount}has-discount{/if}">
+      <div class="text-base text-gray-3000 block tablet-wide:hidden flex-auto">
         {l s='Price' d='Shop.Theme.Checkout'}
       </div>
-      <div class="flex-auto flex justify-center tablet-wide:justify-start">
+      <div class="relative flex justify-end flex-col tablet-wide:justify-start">
         {if $product.has_discount}
-          <div class="product-discount">
-            <span class="regular-price">{$product.regular_price}</span>
+          <div class=" flex justify-end flex-wrap">
+            <span class="line-through tablet:text-base text-gray-3000 text-sm">{$product.regular_price}</span>
             {if $product.discount_type === 'percentage'}
-              <span class="discount discount-percentage">
+              <span class=" text-white px-2 bg-main rounded-full ml-2 tablet-wide:-mr-5 text-sm h-5">
                 -{$product.discount_percentage_absolute}
               </span>
-            {else}
+            {* {else}
               <span class="discount discount-amount">
                 -{$product.discount_to_display}
-              </span>
+              </span> *}
             {/if}
           </div>
         {/if}
-        <div class="current-price">
-          <span class="price">{$product.price}</span>
+        <div class="current-price text-right tablet-wide:text-left">
+      <span class="price text-base tablet:text-lg {if $product.has_discount} text-main {else} text-main-dark {/if} font-medium">{$product.price}</span>
           {if $product.unit_price_full}
             <div class="unit-price-cart">{$product.unit_price_full}</div>
           {/if}
@@ -117,16 +117,16 @@
 
 
     <!--  product line right content: actions (quantity, delete), price -->
-    <div class="flex flex-row tablet-wide:w-32 items-start tablet-wide:pr-5 qty mb-6">
-      <div class="block tablet-wide:hidden flex-auto">
+    <div class="flex flex-row w-full tablet-wide:w-32 items-start tablet-wide:pr-5 qty mb-6">
+      <div class="text-base text-gray-3000 block tablet-wide:hidden flex-auto">
         {l s='Quantity' d='Shop.Theme.Checkout'}
       </div>
-      <div class="flex-auto flex justify-center tablet-wide:justify-start w-4">
+      <div class="flex justify-end tablet-wide:justify-start">
         {if isset($product.is_gift) && $product.is_gift}
           <span class="gift-quantity">{$product.quantity}</span>
         {else}
           <input
-            class="js-cart-line-product-quantity"
+            class="js-cart-line-product-quantity  -mr-5 border border-gray-2000 border-solid float-left focus:ring-0 font-normal h-[50px] pl-1 pr-5 py-3 rounded-md tablet:text-base text-center text-lg text-sm w-[75px] "
             data-down-url="{$product.down_quantity_url}"
             data-up-url="{$product.up_quantity_url}"
             data-update-url="{$product.update_quantity_url}"
@@ -134,27 +134,27 @@
             type="number"
             value="{$product.quantity}"
             name="product-quantity-spin"
+            min="1"
           />
         {/if}
       </div>
     </div>
 
-    <div class="flex w-full tablet-wide:w-32">
-      <div class="block tablet-wide:hidden flex-auto">
+    <div class="flex w-full tablet-wide:w-28 mb-6">
+      <div class="text-base text-gray-3000 block tablet-wide:hidden flex-auto">
         {l s='Total cost' d='Shop.Theme.Checkout'}
       </div>
-      <span class="product-price flex-auto flex justify-center tablet-wide:justify-start">
-        <strong>
+      <span class="product-price flex-auto flex justify-end tablet-wide:justify-start text-base tablet:text-lg text-main-dark font-medium font-body">
           {if isset($product.is_gift) && $product.is_gift}
             <span class="gift">{l s='Gift' d='Shop.Theme.Checkout'}</span>
           {else}
             {$product.total}
           {/if}
-        </strong>
       </span>
     </div>
 
-    <div class="w-4 flex-none absolute tablet-wide:relative top-0 right-0">
+  </div>
+  <div class="absolute ml-3 right-0 phone:relative flex-none tablet-wide:mb-6">
       <div class="cart-line-product-actions">
         <a
             class                       = "remove-from-cart"
@@ -166,7 +166,7 @@
             data-id-customization   	  = "{$product.id_customization|escape:'javascript'}"
         >
           {if !isset($product.is_gift) || !$product.is_gift}
-            <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#EAEEEC" d="M0 0h12v12H0z"/><g clip-path="url(#a)"><path fill="#fff" d="M-1130-465H790V993h-1920z"/><path d="m10.391.492 1.117 1.116c.099.1.112.186.038.26l-9.68 9.679c-.072.073-.159.06-.258-.039L.492 10.392c-.1-.1-.113-.186-.04-.26l9.68-9.679c.074-.073.16-.06.26.039Z" fill="#C4C4C4"/><path d="m1.873.458 9.67 9.67c.076.076.065.164-.035.264l-1.116 1.116c-.1.1-.187.11-.264.034l-9.67-9.67c-.076-.076-.065-.164.034-.264L1.61.492c.1-.1.187-.11.264-.034Z" fill="#C4C4C4"/></g><defs><clipPath id="a"><path fill="#fff" transform="translate(-1130 -465)" d="M0 0h1920v1458H0z"/></clipPath></defs></svg>
+            <i class="material-icons font-light text-2xl relative flex justify-center items-center text-gray-3000 tablet:text-main-dark hover:text-main transition">&#xE5CD;</i>
           {/if}
         </a>
 
@@ -176,7 +176,5 @@
 
       </div>
     </div>
-
-  </div>
 
 </div>

@@ -26,30 +26,29 @@
   {if !$configuration.is_catalog}
     {block name='product_quantity'}
       <div class="product-quantity clearfix">
-        <div class="p-cartwapper">
-          <div class="qty clearfix">
-            <span class="control-label">{l s='Quantity' d='Shop.Theme.Catalog'}</span>
+        <div class="flex ">
+          <div class="qty clearfix mr-5">
+            <span class="control-label sr-only">{l s='Quantity' d='Shop.Theme.Catalog'}</span>
             <input
               type="number"
               name="qty"
               id="quantity_wanted"
               value="{$product.quantity_wanted}"
-              class="input-group"
+              class="input-group -mr-5 border border-gray-2000 border-solid float-left focus:ring-0 font-normal h-[50px] pl-1 pr-5 py-3 rounded-md tablet:text-base text-center text-lg text-sm w-[75px]"
               min="{$product.minimal_quantity}"
               aria-label="{l s='Quantity' d='Shop.Theme.Actions'}"
             >
           </div>
 
-          <div class="add">
+          <div class="add flex-1">
             <button
-              class="btn btn-primary add-to-cart"
+              class="bg-main hover:bg-main-hover font-me text-white py-2 px-4 text-xl uppercase text-center border-0 rounded-full font-medium w-full cursor-pointer w-full"
               data-button-action="add-to-cart"
               type="submit"
               {if !$product.add_to_cart_url}
                 disabled
               {/if}
             >
-              <i class="icon-bag"></i>
               {l s='Add to cart' d='Shop.Theme.Actions'}
             </button>
           </div> 

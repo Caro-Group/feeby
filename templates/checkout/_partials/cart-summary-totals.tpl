@@ -22,7 +22,7 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
-<div class="card-block cart-summary-totals">
+<div class="cart-summary-totals mt-2">
 
   {block name='cart_summary_total'}
     {if !$configuration.display_prices_tax_incl && $configuration.taxes_enabled}
@@ -30,14 +30,14 @@
         <span class="label">{$cart.totals.total.label}&nbsp;{$cart.labels.tax_short}</span>
         <span class="value">{$cart.totals.total.value}</span>
       </div>
-      <div class="cart-summary-line cart-total">
-        <span class="label">{$cart.totals.total_including_tax.label}</span>
-        <span class="value">{$cart.totals.total_including_tax.value}</span>
+      <div class="cart-summary-line cart-total flex justify-between items-center">
+        <span class="label text-base tablet:text-xl text-main-dark font-medium">{$cart.totals.total_including_tax.label}</span>
+        <span class="value text-2xl text-main-dark font-medium">{$cart.totals.total_including_tax.value}</span>
       </div>
     {else}
-      <div class="cart-summary-line cart-total">
-        <span class="label">{$cart.totals.total.label}&nbsp;{if $configuration.taxes_enabled}{$cart.labels.tax_short}{/if}</span>
-        <span class="value">{$cart.totals.total.value}</span>
+      <div class="cart-summary-line cart-total flex justify-between items-center">
+        <span class="label text-base tablet:text-xl text-main-dark font-medium">{$cart.totals.total.label} {if $configuration.taxes_enabled}{$cart.labels.tax_short}{/if}</span>
+        <span class="value text-2xl text-main-dark font-medium">{$cart.totals.total.value}</span>
       </div>
     {/if}
   {/block}

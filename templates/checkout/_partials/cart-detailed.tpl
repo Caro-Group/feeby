@@ -26,11 +26,11 @@
   <div class="w-full js-cart cart-overview" data-refresh-url="{url entity='cart' params=['ajax' => true, 'action' => 'refresh']}">
     {if $cart.products}
 
-    <div class="hidden tablet-wide:flex border-b pb-1">
+    <div class="border-0 border-b border-gray-1000 border-solid hidden pb-1 tablet-wide:flex tablet:text-xl text-base text-gray-3000">
       <div class="ml-miniature px-5 flex-auto">
         {l s='Product' d='Shop.Theme.Checkout'}
       </div>
-      <div class="w-32 pr-5">
+      <div class="w-36 pr-5">
         {l s='Price' d='Shop.Theme.Checkout'}
       </div>
       <div class="w-32 pr-5">
@@ -43,7 +43,7 @@
 
     <ul class="flex flex-col">
       {foreach from=$cart.products item=product}
-        <li class="flex-auto py-8 border-b">
+        <li class="border-0 border-b border-gray-1000 border-solid flex-auto py-7">
           {block name='cart_detailed_product_line'}
             {include file='checkout/_partials/cart-detailed-product-line.tpl' product=$product}
           {/block}

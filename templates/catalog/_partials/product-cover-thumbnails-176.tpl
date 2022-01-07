@@ -42,7 +42,7 @@
     </div>
   {else}
     {block name='product_cover'}
-      <div class="product-cover">
+      <div class="product-cover border border-solid rounded-[5px] border-gray-default">
         {block name='product_flags'}
           <ul class="product-flags">
             {foreach from=$product.flags item=flag}
@@ -61,7 +61,7 @@
       </div>
     {/block}
     {block name='product_images'}
-      <div id="thumb-gallery" class="product-thumb-images">
+      <div id="thumb-gallery" class="product-thumb-images flex">
         {foreach from=$product.images item=image}
           <div class="thumb-container {if $image.id_image == $product.cover.id_image} active {/if}">
             <a  href="javascript:void(0)" data-image="{$image.bySize.large_default.url}" data-zoom-image="{$image.bySize.large_default.url}"> 

@@ -35,7 +35,6 @@
 
 .dropdown-sub.dropdown-menu .nav-links a,
 ul.category-top-menu .category-sub-menu a,
-.product-detail-name,
 .facet-title,
 .product-features > dl.data-sheet dt.name {
     text-transform: none!important;
@@ -761,16 +760,6 @@ text-align:left;
 color:#DF1A5B!important;
 }
 
-.block-category #category-description p, 
-.block-category #category-description strong{
-font-weight: normal;
-color: #888;
-}
-
-#category-description a{
-color: #DF1A5B;
-}
-
 .title-on-image.ApImage{
     display: flex;
     flex-direction: column-reverse;
@@ -897,7 +886,6 @@ border: none;
         margin-left: -70px;
     }
 }
-
 
 
 /* CHECKOUT */

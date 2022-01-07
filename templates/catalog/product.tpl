@@ -75,21 +75,14 @@
         <div class="col-md-6">
           {block name='page_header_container'}
             {block name='page_header'}
-              <h1 class="h1 product-detail-name" itemprop="name">{block name='page_title'}{$product.name}{/block}</h1>
+              <h1 class="font-header product-detail-name text-[35px] leading-[45px] mb-5" itemprop="name">{block name='page_title'}{$product.name}{/block}</h1>
             {/block}
           {/block}
 
-          {hook h='displayProductButtons' product=$product}
           {hook h='displayLeoProductReviewExtra' product=$product}
 
-          {block name='product_prices'}
-            {include file='catalog/_partials/product-prices.tpl'}
-          {/block}
-
           <div class="product-information">
-            {block name='product_description_short'}
-              <div id="product-description-short-{$product.id}" class="product-description" itemprop="description">{$product.description_short nofilter}</div>
-            {/block}
+            {block name='product_description_short'}{/block}
 
             {if $product.is_customizable && count($product.customizations.fields)}
               {block name='product_customization'}
@@ -121,6 +114,10 @@
                     {/if}
                   {/block}
 
+                  {block name='product_prices'}
+                    {include file='catalog/_partials/product-prices.tpl'}
+                  {/block}
+                  
                   {block name='product_discounts'}
                     {include file='catalog/_partials/product-discounts.tpl'}
                   {/block}
@@ -139,11 +136,14 @@
               {/block}
             </div>
 
+            {hook h='displayProductButtons' product=$product}
+
             {block name='hook_display_reassurance'}
               {hook h='displayReassurance'}
             {/block}
 
           </div>
+
         </div>
       </div>
 

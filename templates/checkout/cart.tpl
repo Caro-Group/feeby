@@ -28,13 +28,13 @@
 
 {block name='content'}
   <section id="main">
-    <div class="flex flex-wrap mt-12 mb-6">
+    <div class="flex flex-wrap mt-5 tablet:mt-12 tablet:mb-12">
       <div class="flex flex-col items-start flex-auto w-full ">
-        <a class="block tablet-wide:hidden mb-4" href="{$urls.pages.index}" title="{l s='Continue shopping' d='Shop.Theme.Actions'}">
-          <i class="material-icons text-3xl leading-none -ml-2">chevron_left</i>
+        <a class="block tablet-wide:hidden mb-2" href="{$urls.pages.index}" title="{l s='Continue shopping' d='Shop.Theme.Actions'}">
+          <i class="hover:text-main text-base text-main-dark ti-arrow-left transition"></i>
         </a>
-        <h1 class="h1 mb-2">{l s='Shopping Cart' d='Shop.Theme.Checkout'}</h1>
-        <p class="m-0 bg-gray-200 text-black p-1.5 font-bold rounded">{l s='Do not hesitate and order the product - adding it to the cart does not mean a reservation.' d='Shop.Theme.Checkout'}</p>
+        <h1 class="text-2xl tablet:text-[45px] mb-8 tablet:mb-12">{l s='Shopping Cart' d='Shop.Theme.Checkout'}</h1>
+        <span class="bg-gray-1000 font-medium m-0 px-5 py-2 rounded-md tablet:text-base text-main-dark text-sm">{l s='Do not hesitate and order the product - adding it to the cart does not mean a reservation.' d='Shop.Theme.Checkout'}</span>
       </div>
     </div>
 
@@ -57,8 +57,8 @@
         {/block}
 
         {block name='continue_shopping'}
-          <a class="hidden tablet-wide:flex items-center label font-bold" href="{$urls.pages.index}">
-            <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" width="9" height="14" fill="none"><path d="M8 13 2 7l6-6" stroke="#000" stroke-opacity=".7" stroke-width="2"/></svg>
+          <a class="hidden tablet:flex items-center label mt-auto text-[12px] tablet:text-sm text-main-dark uppercase group hover:text-main transition font-normal " href="{$urls.pages.index}">
+            <i class="ti-arrow-left text-main-dark mr-2 group-hover:text-main transition font-normal "></i>
             {l s='Continue shopping' d='Shop.Theme.Actions'}
           </a>
         {/block}
@@ -68,7 +68,7 @@
       <div class="w-full tablet:w-auto flex-initial tablet-wide:w-side">
 
         {block name='cart_summary'}
-          <div class="block bg-gray-200 rounded mb-6">
+          <div class="bg-gray-1000 rounded-md px-[30px] pb-4 mb-6">
 
             {block name='hook_shopping_cart'}
               {hook h='displayShoppingCart'}
@@ -82,9 +82,9 @@
               {include file='checkout/_partials/cart-detailed-actions.tpl' cart=$cart}
             {/block}
 
-            <p class="card-block text-center">
+            <div class=" font-medium mt-7 tablet:text-base text-center text-main-dark text-sm">
               {l s='Your order will be available in 2 work day' d='Shop.Theme.Checkout'}
-            </p>
+            </div>
 
           </div>
         {/block}
