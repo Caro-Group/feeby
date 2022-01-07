@@ -21073,15 +21073,6 @@ body #search_filters .clear-all-wrapper {
         -ms-transform: scale(1, 1);
         -o-transform: scale(1, 1);
         transform: scale(1, 1); } }
-.p-cartwapper {
-  margin: 30px 0;
-  padding: 15px 0 0;
-  border: 1px solid #ddd;
-  border-width: 1px 0; }
-  .p-cartwapper > div {
-    display: inline-flex;
-    vertical-align: top;
-    margin-bottom: 15px; }
 
 .form-new-review .form-group {
   margin-bottom: 5px; }
