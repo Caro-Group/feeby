@@ -34,15 +34,15 @@
               name="qty"
               id="quantity_wanted"
               value="{$product.quantity_wanted}"
-              class="input-group border border-gray-2000 border-r-0 border-solid py-3 px-2 rounded-l-md h-[50px] w-[50px] float-left text-sm tablet:text-base focus:ring-0 text-center text-lg font-normal"
+              class="input-group -mr-5 border border-gray-2000 border-solid float-left focus:ring-0 font-normal h-[50px] pl-1 pr-5 py-3 rounded-md tablet:text-base text-center text-lg text-sm w-[75px]"
               min="{$product.minimal_quantity}"
               aria-label="{l s='Quantity' d='Shop.Theme.Actions'}"
             >
           </div>
 
-          <div class="add">
+          <div class="add flex-1">
             <button
-              class="bg-main hover:bg-main-hover font-me text-white py-2 px-4 text-xl uppercase text-center border-0 rounded-full font-medium w-full cursor-pointer"
+              class="bg-main hover:bg-main-hover font-me text-white py-2 px-4 text-xl uppercase text-center border-0 rounded-full font-medium w-full cursor-pointer w-full"
               data-button-action="add-to-cart"
               type="submit"
               {if !$product.add_to_cart_url}
