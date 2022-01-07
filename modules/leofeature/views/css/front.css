@@ -242,8 +242,6 @@ div.star.star_on:before, div.star.star_hover:before {
     .new_review_form_content .form-new-review .form-control-label {
       text-align: center !important; } }
 
-.open-review-form {
-  display: none; }
 
 .leo-modal-review .has-success, .leo-modal-review .has-danger {
   text-align: center; }

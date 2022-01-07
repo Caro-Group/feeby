@@ -26,8 +26,8 @@
   {foreach from=$groups key=id_attribute_group item=group}
     {if !empty($group.attributes)}
 
-      <div class="clearfix product-variants-item flex flex-col items-start mb-[10px]">
-        <span class="flex text-sm text-gray-main text-base leading-normal items-start mb-[10px]">
+      <div class="clearfix product-variants-item flex flex-col items-start mb-5">
+        <span class="block text-sm text-gray-main text-base leading-normal mb-[10px]">
           {if $group.group_name == "Rozmiar"}
             {l s='Choose size' d='Shop.Theme.Actions'}
           {elseif $group.group_name == "Rodzaj fototapety"}
@@ -71,12 +71,12 @@
 
         {elseif $group.group_type == 'radio'}
 
-          <ul id="group_{$id_attribute_group}">
+          <ul id="group_{$id_attribute_group}" class="flex flex-row flex-wrap">
             {foreach from=$group.attributes key=id_attribute item=group_attribute}
-              <li class="mb-5 mr-2 float-left">
-                <label>
+              <li class="mb-2 mr-2">
+                <label class="mb-0">
                   <input class="form-radio sr-only peer" type="radio" data-product-attribute="{$id_attribute_group}" name="group[{$id_attribute_group}]" value="{$id_attribute}" title="{$group_attribute.name}"{if $group_attribute.selected} checked="checked"{/if}>
-                  <span class="peer-checked:text-gray-main peer-checked:border-main radio-label">{$group_attribute.name}</span>
+                  <span class="bg-gray-default block border-2 border-solid cursor-pointer p-3 peer-checked:border-main peer-checked:text-gray-main rounded text-[#BABABA] transition">{$group_attribute.name}</span>
                 </label>
               </li>
             {/foreach}
@@ -84,7 +84,7 @@
           
         {/if}
 
-        <span class="text-base leading-normal">
+        <span class="block leading-normal text-base text-gray-main text-sm">
           {if $group.group_name == "Rozmiar"}
 
             {l s='See' d='Shop.Theme.Actions'} <a class="underline font-medium" href="/tabela-rozmiarow" target="_blank">{l s='table size' d='Shop.Theme.Actions'}</a>
