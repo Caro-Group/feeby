@@ -369,11 +369,6 @@ pre {
   .form-control:disabled {
     cursor: not-allowed; }
 
-select.form-control:not([size]):not([multiple]) {
-  height: calc(2.5rem - 2px); }
-select.form-control:focus::-ms-value {
-  color: #55595c;
-  background-color: #fff; }
 
 .form-control-file,
 .form-control-range {
@@ -23577,11 +23572,6 @@ ul.list-1 li {
   .sidebar .block .title_block.products-section-title + .block_content .ajax_block_product {
     padding: 0; }
 
-select.form-control {
-  border: 1px solid #e5e5e5; }
-
-select.form-control:focus {
-  border-color: #000; }
 
 body#authentication .page-header {
   text-align: center; }
