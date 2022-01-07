@@ -1236,7 +1236,7 @@ $('body').on('click', "[data-checkout-back]",function(e){
 //Top bar swiper 
 $(document).ready(function () {
 
-	const swiper = new Swiper('.swiper', {
+	const swiper = new Swiper('[data-top-bar-swiper]', {
 		speed: 25000,
 		spaceBetween: 50,
 		loop: true,
@@ -1256,7 +1256,7 @@ $(document).ready(function () {
 //Top bar swiper 
 $(document).ready(function () {
 
-	const swiper = new Swiper('.swiper', {
+	const swiper = new Swiper('[data-top-bar-swiper]', {
 		speed: 25000,
 		spaceBetween: 50,
 		loop: true,
@@ -1417,7 +1417,14 @@ $(document).ready(function () {
 		enableSwiperFilter();
 	})
 
-	
+	var swiperProduct = new Swiper("[data-swiper-product]", {
+        slidesPerView: "auto",
+        spaceBetween: 0,
+        navigation: {
+          nextEl: "[data-swiper-product-next]",
+          prevEl: "[data-swiper-product-prev]",
+        },
+      });
 });
 
 
