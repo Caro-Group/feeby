@@ -68,7 +68,7 @@
                 <div class="swiper-slide w-auto thumb-container {if $image.id_image == $product.default_image.id_image} active {/if}">
                   <a href="javascript:void(0)" data-image="{$image.bySize.large_default.url}" data-zoom-image="{$image.bySize.large_default.url}"> 
                     <img
-                      class="w-auto thumb js-thumb {if $image.id_image == $product.default_image.id_image} selected {/if}"
+                      class="w-auto thumb js-thumb border border-solid rounded-lg mr-[18px] {if $image.id_image == $product.default_image.id_image} border-main {/if}"
                       data-image-medium-src="{$image.bySize.medium_default.url}"
                       data-image-large-src="{$image.bySize.large_default.url}"
                       src="{$image.bySize.home_default.url}"
@@ -83,8 +83,8 @@
               {/foreach}
             </div>
             {if $product.images|@count > 1}
-              <div class="swiper-button-next"></div>
-              <div class="swiper-button-prev"></div>
+              <div data-swiper-product-prev class="absolute bg-gray-default left-0 rounded-r-[5px]"></div>
+              <div data-swiper-product-next class="absolute bg-gray-default right-0 rounded-l-[5px]"></div>
             {/if}
           </div>
         </div> 
