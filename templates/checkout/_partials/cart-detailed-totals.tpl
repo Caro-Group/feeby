@@ -29,8 +29,8 @@
   </span>
   <div>
     {foreach from=$cart.subtotals item="subtotal"}
-      {if $subtotal && $subtotal.value|count_characters > 0 && $subtotal.type !== 'tax'}
-        <div class="flex items-center justify-between pb-5 pt-5 tablet:pb-7 tablet:pt-3 border-0 border-b border-solid border-gray-2000 " id="cart-subtotal-{$subtotal.type}">
+      {if $subtotal && $subtotal.value|count_characters > 0 && $subtotal.type !== 'tax' && $subtotal.type !== 'discount'}
+        <div class="flex w-full flex-wrap items-center justify-between pb-5 pt-5 tablet:pb-7 tablet:pt-3 border-0 border-b border-solid border-gray-2000 " id="cart-subtotal-{$subtotal.type}">
           <span class="flex label text-base tablet:text-xl text-main-dark font-normal text-left {if 'products' === $subtotal.type} js-subtotal{/if}">
             {if 'products' == $subtotal.type}
               {l s='Order value' d='Shop.Theme.Checkout'}
@@ -53,13 +53,13 @@
           {if $subtotal.type === 'shipping'}
               <div><small class="value">{hook h='displayCheckoutSubtotalDetails' subtotal=$subtotal}</small></div>
           {/if}
+          {if $subtotal.type === 'products' && $cart.subtotals.discounts }
+            <div class="flex justify-between w-full mt-3">
+              <span class="text-main-dark text-sm tablet:text-base font-light">{$cart.subtotals.discounts.label}</span>
+              <span class="text-main text-lg font-light">-&nbsp;{$cart.subtotals.discounts.value}</span>
+            </div>
+          {/if}
         </div>
-        {if $subtotal.type === 'products' && $cart.subtotals.discount }
-          <div class="flex justify-between">
-          <span class="text-main-dark text-sm tablet:text-base font-light">{$subtotal.label}</span>
-          <span class="text-main text-lg font-light">-&nbsp;{$cart.subtotals.discount.value}</span>
-          </div>
-        {/if}
       {/if}
     {/foreach}
   </div>
