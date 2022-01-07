@@ -99,21 +99,21 @@
           </ul>
           
         {/if}
+
+        {if $group.group_name == "Rozmiar"}
+
+          <span class="text-[16px] leading-[22px]">{l s='See' d='Shop.Theme.Actions'} <a class="underline font-medium" href="/tabela-rozmiarow" target="_blank">{l s='table size' d='Shop.Theme.Actions'}</a></span>
+          
+        {elseif $group.group_name == "Typ"}
+          {if $breadcrumb["count"] > 0 && $breadcrumb["links"][1]["title"]|strstr:"Parawany"}
+            <span class="text-[16px] leading-[22px]">{l s='Learn more about the' d='Shop.Theme.Actions'} <a class="underline font-medium" href="/nasze-parawany" target="_blank">{l s='manufacturing technology' d='Shop.Theme.Actions'}</a></span>
+          {else}
+            <span class="text-[16px] leading-[22px]">{l s='Learn more about the' d='Shop.Theme.Actions'} <a class="underline font-medium" href="/technologia-wykonania" target="_blank">{l s='manufacturing technology' d='Shop.Theme.Actions'}</a></span>
+          {/if}
+        {/if}
+
       </div>
     {/if}
-
-    {if $group.group_name == "Rozmiar"}
-
-      <span class="text-[16px] leading-[22px]">{l s='See' d='Shop.Theme.Actions'} <a class="underline font-medium" href="/tabela-rozmiarow" target="_blank">{l s='table size' d='Shop.Theme.Actions'}</a></span>
-      
-    {elseif $group.group_name == "Typ"}
-      {if $breadcrumb["count"] > 0 && $breadcrumb["links"][1]["title"]|strstr:"Parawany"}
-        <span class="text-[16px] leading-[22px]">{l s='Learn more about the' d='Shop.Theme.Actions'} <a class="underline font-medium" href="/nasze-parawany" target="_blank">{l s='manufacturing technology' d='Shop.Theme.Actions'}</a></span>
-      {else}
-        <span class="text-[16px] leading-[22px]">{l s='Learn more about the' d='Shop.Theme.Actions'} <a class="underline font-medium" href="/technologia-wykonania" target="_blank">{l s='manufacturing technology' d='Shop.Theme.Actions'}</a></span>
-      {/if}
-    {/if}
-
- {/foreach}
+  {/foreach}
 </div>
 
