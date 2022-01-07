@@ -577,41 +577,6 @@
     .product-features > dl.data-sheet dt.name {
       text-transform: capitalize; }
 
-.product-variants > .product-variants-item {
-  margin: 20px 0;
-  display: -webkit-box;
-  display: -moz-box;
-  display: box;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -moz-box-align: center;
-  box-align: center;
-  -webkit-align-items: center;
-  -moz-align-items: center;
-  -ms-align-items: center;
-  -o-align-items: center;
-  align-items: center;
-  -ms-flex-align: center; }
-  .product-variants > .product-variants-item select {
-    min-height: 40px; }
-    .product-variants > .product-variants-item select:active {
-      color: #000; }
-  .product-variants > .product-variants-item ul li {
-    margin: 0 10px 0 0; }
-    .rtl .product-variants > .product-variants-item ul li {
-      margin: 0 0 0 10px; }
-    .product-variants > .product-variants-item ul li label {
-      margin: 5px 0; }
-  .product-variants > .product-variants-item .color,
-  .product-variants > .product-variants-item .input-color {
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    border-width: 1px;
-    vertical-align: top; }
 
 .product-customization {
   margin: 40px 0; }
@@ -1535,8 +1500,7 @@
   margin: 0 0 15px 0;
   float: none !important;
   display: inline-block; }
-.product-image-no-thumbs-fullwidth .product-variants > .product-variants-item {
-  justify-content: center; }
+
 .product-image-no-thumbs-fullwidth .product-add-to-cart .product-quantity .qty {
   margin: 0 auto 30px; }
 .product-image-no-thumbs-fullwidth .leo-compare-wishlist-button .wishlist,
@@ -1620,15 +1584,6 @@
         -ms-transform: scale(1, 1);
         -o-transform: scale(1, 1);
         transform: scale(1, 1); } }
-.p-cartwapper {
-  margin: 30px 0;
-  padding: 15px 0 0;
-  border: 1px solid #ddd;
-  border-width: 1px 0; }
-  .p-cartwapper > div {
-    display: inline-flex;
-    vertical-align: top;
-    margin-bottom: 15px; }
 
 .form-new-review .form-group {
   margin-bottom: 5px; }

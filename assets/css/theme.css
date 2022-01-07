@@ -20990,8 +20990,7 @@ body #search_filters .clear-all-wrapper {
   margin: 0 0 15px 0;
   float: none !important;
   display: inline-block; }
-.product-image-no-thumbs-fullwidth .product-variants > .product-variants-item {
-  justify-content: center; }
+
 .product-image-no-thumbs-fullwidth .product-add-to-cart .product-quantity .qty {
   margin: 0 auto 30px; }
 .product-image-no-thumbs-fullwidth .leo-compare-wishlist-button .wishlist,
@@ -21075,15 +21074,6 @@ body #search_filters .clear-all-wrapper {
         -ms-transform: scale(1, 1);
         -o-transform: scale(1, 1);
         transform: scale(1, 1); } }
-.p-cartwapper {
-  margin: 30px 0;
-  padding: 15px 0 0;
-  border: 1px solid #ddd;
-  border-width: 1px 0; }
-  .p-cartwapper > div {
-    display: inline-flex;
-    vertical-align: top;
-    margin-bottom: 15px; }
 
 .form-new-review .form-group {
   margin-bottom: 5px; }
@@ -22439,18 +22429,6 @@ body .paneltool.multiproductdetailtool .panelbutton:before {
   .rtl body .paneltool.multiproductdetailtool .panelbutton:before {
     right: -25px;
     left: auto; }
-
-.product-variants > .product-variants-item ul li.outstock .radio-label {
-  background-image: linear-gradient(to bottom left, transparent 50%, #999 50%, #999 calc(50% + 1px), transparent 50%), linear-gradient(to bottom right, transparent 50%, #999 50%, #999 calc(50% + 1px), transparent 50%); }
-
-.product-variants > .product-variants-item ul li.outstock .color:after {
-  content: "";
-  background-image: linear-gradient(to bottom left, transparent 50%, #999 50%, #999 calc(50% + 1px), transparent 50%), linear-gradient(to bottom right, transparent 50%, #999 50%, #999 calc(50% + 1px), transparent 50%);
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0; }
 
 img {
   max-width: 100%; }

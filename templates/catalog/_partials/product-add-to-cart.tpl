@@ -26,7 +26,7 @@
   {if !$configuration.is_catalog}
     {block name='product_quantity'}
       <div class="product-quantity clearfix">
-        <div class="p-cartwapper">
+        <div class="flex ">
           <div class="qty clearfix">
             <span class="control-label">{l s='Quantity' d='Shop.Theme.Catalog'}</span>
             <input

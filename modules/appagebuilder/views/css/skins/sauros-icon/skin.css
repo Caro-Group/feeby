@@ -6506,10 +6506,6 @@
   content: "\f00d";
   font-family: 'Font Awesome 5 Pro'; }
 
-.product-variants > .product-variants-item .color:before {
-  content: "\f00c";
-  font-family: 'Font Awesome 5 Pro'; }
-
 .ti-lock:before {
   content: "\f2f6";
   font-family: 'Font Awesome 5 Pro'; }
