@@ -68,7 +68,7 @@
       <div class="w-full tablet:w-auto flex-initial tablet-wide:w-side">
 
         {block name='cart_summary'}
-          <div class="bg-gray-1000 rounded-md px-[30px] mb-6">
+          <div class="bg-gray-1000 rounded-md px-[30px] pb-4 mb-6">
 
             {block name='hook_shopping_cart'}
               {hook h='displayShoppingCart'}
@@ -82,7 +82,7 @@
               {include file='checkout/_partials/cart-detailed-actions.tpl' cart=$cart}
             {/block}
 
-            <div class="block text-center mb-5 text-main-dark text-sm tablet:text-base font-medium">
+            <div class=" font-medium mt-7 tablet:text-base text-center text-main-dark text-sm">
               {l s='Your order will be available in 2 work day' d='Shop.Theme.Checkout'}
             </div>
 
