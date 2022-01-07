@@ -62,7 +62,7 @@
     {/block}
     {block name='product_images'}
       <div id="thumb-gallery" class="product-thumb-images flex">
-      <div class="swiper mySwiper">
+      <div class="swiper" data-swiper-product>
         <div class="swiper-wrapper">
           {foreach from=$product.images item=image}
             <div class="swiper-slide thumb-container {if $image.id_image == $product.default_image.id_image} active {/if}">
@@ -84,18 +84,6 @@
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
       </div>
-      {literal}
-            <script>
-      var swiper = new Swiper(".mySwiper", {
-        slidesPerView: "auto",
-        spaceBetween: 30,
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-      });
-    </script>
-      {/literal}
     {/block}
     {if $product.images|@count > 1}
       <div class="arrows-product-fake slick-arrows">
