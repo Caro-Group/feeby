@@ -98,16 +98,7 @@
 .product-quantity .add {
   white-space: nowrap;
   position: relative; }
-.product-quantity .input-group {
-  border: 2px solid #ddd;
-  height: 64px;
-  padding: 0 30px;
-  position: relative; }
-  .product-quantity .input-group .input-group-btn-vertical {
-    width: auto;
-    height: auto;
-    position: static;
-    display: block; }
+
 .product-quantity #quantity_wanted {
   color: #444;
   background: none;
