@@ -30,7 +30,7 @@
       <div class="ml-miniature px-5 flex-auto">
         {l s='Product' d='Shop.Theme.Checkout'}
       </div>
-      <div class="w-32 pr-5">
+      <div class="w-36 pr-5">
         {l s='Price' d='Shop.Theme.Checkout'}
       </div>
       <div class="w-32 pr-5">
