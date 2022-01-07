@@ -91,7 +91,7 @@
       <div class="text-base text-gray-3000 block tablet-wide:hidden flex-auto">
         {l s='Price' d='Shop.Theme.Checkout'}
       </div>
-      <div class="relative flex justify-end flex-col tablet-wide:justify-start >
+      <div class="relative flex justify-end flex-col tablet-wide:justify-start">
         {if $product.has_discount}
           <div class=" flex justify-end flex-wrap">
             <span class="line-through tablet:text-base text-gray-3000 text-sm">{$product.regular_price}</span>
