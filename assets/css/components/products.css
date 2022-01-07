@@ -52,10 +52,6 @@
         width: 210px; } }
     #product #content .mask li {
       display: inline; }
-.product-price {
-  color: #000;
-  display: inline-block;
-  font-family: 'Poppins'; }
 
 .product-information div[itemprop="description"] {
   line-height: 2;
