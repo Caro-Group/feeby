@@ -27,8 +27,8 @@
     {block name='product_quantity'}
       <div class="product-quantity clearfix">
         <div class="flex ">
-          <div class="qty clearfix">
-            <span class="control-label">{l s='Quantity' d='Shop.Theme.Catalog'}</span>
+          <div class="qty clearfix mr-5">
+            <span class="control-label sr-only">{l s='Quantity' d='Shop.Theme.Catalog'}</span>
             <input
               type="number"
               name="qty"
