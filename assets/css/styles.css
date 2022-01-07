@@ -311,3 +311,6 @@ div#js-product-list-top:after {
 #left-column{
     z-index: 26;
 }
+.thumb.selected{
+    @apply border-main;
+}
