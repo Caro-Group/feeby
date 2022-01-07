@@ -26,7 +26,7 @@
   {foreach from=$groups key=id_attribute_group item=group}
     {if !empty($group.attributes)}
 
-      <div class="clearfix product-variants-item flex flex-col items-start">
+      <div class="clearfix product-variants-item flex flex-col items-start mb-[10px]">
         <span class="flex font-bold text-[20px] leading-[27px] items-start mb-[10px]">
 
           {if $group.group_name == "Rozmiar"}
@@ -56,7 +56,7 @@
         {elseif $group.group_type == 'select'}
 
           <select
-            class="form-control form-control-select"
+            class="form-control form-select"
             id="group_{$id_attribute_group}"
             data-product-attribute="{$id_attribute_group}"
             name="group[{$id_attribute_group}]">
@@ -70,7 +70,7 @@
           <ul id="group_{$id_attribute_group}">
             {foreach from=$group.attributes key=id_attribute item=group_attribute}
               <li class="float-xs-left input-container">
-                <label aria-label="{$group_attribute.name}" style="display: flex;flex-direction: column;">
+                <label aria-label="{$group_attribute.name}" class="flex flex-col">
                   <input class="input-color" type="radio" data-product-attribute="{$id_attribute_group}" name="group[{$id_attribute_group}]" value="{$id_attribute}" title="{$group_attribute.name}"{if $group_attribute.selected} checked="checked"{/if}>
                   <span
                     {if $group_attribute.texture}
@@ -78,8 +78,8 @@
                     {elseif $group_attribute.html_color_code}
                       class="color" style="background-color: {$group_attribute.html_color_code}" 
                     {/if}
-          ></span>
-                  <span style="color: #000;text-align: center;padding: 10px 0 0;">{$group_attribute.name}</span>
+                  ></span>
+                  <span class="text-black text-center p-0 pt-[10px]">{$group_attribute.name}</span>
                 </label>
               </li>
             {/foreach}
@@ -104,13 +104,13 @@
 
     {if $group.group_name == "Rozmiar"}
 
-      <span style="font-size: 16px;line-height: 22px;">{l s='See' d='Shop.Theme.Actions'} <a style="text-decoration: underline;font-weight: 500;" href="/tabela-rozmiarow" target="_blank">{l s='table size' d='Shop.Theme.Actions'}</a></span>
+      <span class="text-[16px] leading-[22px]">{l s='See' d='Shop.Theme.Actions'} <a class="underline font-medium" href="/tabela-rozmiarow" target="_blank">{l s='table size' d='Shop.Theme.Actions'}</a></span>
       
     {elseif $group.group_name == "Typ"}
       {if $breadcrumb["count"] > 0 && $breadcrumb["links"][1]["title"]|strstr:"Parawany"}
-        <span style="font-size: 16px;line-height: 22px;">{l s='Learn more about the' d='Shop.Theme.Actions'} <a style="text-decoration: underline;font-weight: 500;" href="/nasze-parawany" target="_blank">{l s='manufacturing technology' d='Shop.Theme.Actions'}</a></span>
+        <span class="text-[16px] leading-[22px]">{l s='Learn more about the' d='Shop.Theme.Actions'} <a class="underline font-medium" href="/nasze-parawany" target="_blank">{l s='manufacturing technology' d='Shop.Theme.Actions'}</a></span>
       {else}
-        <span style="font-size: 16px;line-height: 22px;">{l s='Learn more about the' d='Shop.Theme.Actions'} <a style="text-decoration: underline;font-weight: 500;" href="/technologia-wykonania" target="_blank">{l s='manufacturing technology' d='Shop.Theme.Actions'}</a></span>
+        <span class="text-[16px] leading-[22px]">{l s='Learn more about the' d='Shop.Theme.Actions'} <a class="underline font-medium" href="/technologia-wykonania" target="_blank">{l s='manufacturing technology' d='Shop.Theme.Actions'}</a></span>
       {/if}
     {/if}
 
