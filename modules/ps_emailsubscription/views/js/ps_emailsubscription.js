@@ -37,9 +37,9 @@ $(document).ready(function () {
             data: $(this).serialize(),
             success: function (data) {
                 if (data.nw_error) {
-                    psemailsubscriptionForm.find("[data-newsletter-alert]").prepend(data.msg).addClass("alert alert-danger bg-opacity-10 bg-red-600 border-red-600 max-w-lg mx-auto text-red-600");
+                    psemailsubscriptionForm.find("[data-newsletter-alert]").prepend(data.msg).addClass("alert alert-danger bg-opacity-10 bg-red-600 border-red-600 max-w-lg mx-auto text-red-600 font-body font-normal");
                 } else {
-                    psemailsubscriptionForm.find("[data-newsletter-alert]").prepend(data.msg).addClass("alert alert-success bg-opacity-10 bg-green-600 border-green-600 max-w-lg mx-auto text-green-600");
+                    psemailsubscriptionForm.find("[data-newsletter-alert]").prepend(data.msg).addClass("alert alert-success bg-opacity-10 bg-green-600 border-green-600 max-w-lg mx-auto text-green-600 font-body font-normal");
                 }
             },
             error: function (err) {

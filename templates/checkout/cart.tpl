@@ -90,7 +90,7 @@
         {/block}
 
         <div>
-          {block name='hook_reassurance'}
+          {block name='hook_display_reassurance'}
             {hook h='displayReassurance'}
           {/block}
         </div>
