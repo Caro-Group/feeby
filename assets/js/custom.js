@@ -1423,8 +1423,8 @@ $(document).ready(function () {
         slidesPerView: "auto",
         spaceBetween: 0,
         navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
+          nextEl: "[data-swiper-product-next]",
+          prevEl: "[data-swiper-product-prev]",
         },
       });
 });
