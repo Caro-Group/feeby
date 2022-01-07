@@ -1402,6 +1402,7 @@ $(document).ready(function () {
 	var swiperProduct = new Swiper("[data-swiper-product]", {
         slidesPerView: "auto",
         spaceBetween: 0,
+		slideClass: 'swiper-custom-slide',
         navigation: {
           nextEl: "[data-swiper-product-next]",
           prevEl: "[data-swiper-product-prev]",
