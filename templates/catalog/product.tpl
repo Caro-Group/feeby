@@ -116,6 +116,10 @@
                     {/if}
                   {/block}
 
+                  {block name='product_prices'}
+                    {include file='catalog/_partials/product-prices.tpl'}
+                  {/block}
+                  
                   {block name='product_discounts'}
                     {include file='catalog/_partials/product-discounts.tpl'}
                   {/block}
@@ -134,18 +138,14 @@
               {/block}
             </div>
 
+            {hook h='displayProductButtons' product=$product}
+
             {block name='hook_display_reassurance'}
               {hook h='displayReassurance'}
             {/block}
 
           </div>
 
-          {hook h='displayProductButtons' product=$product}
-          
-
-          {block name='product_prices'}
-            {include file='catalog/_partials/product-prices.tpl'}
-          {/block}
         </div>
       </div>
 
