@@ -43,7 +43,7 @@
 
     <ul class="flex flex-col">
       {foreach from=$cart.products item=product}
-        <li class="border-0 border-b border-gray-1000 border-solid flex-auto py-10">
+        <li class="border-0 border-b border-gray-1000 border-solid flex-auto py-7">
           {block name='cart_detailed_product_line'}
             {include file='checkout/_partials/cart-detailed-product-line.tpl' product=$product}
           {/block}
