@@ -237,15 +237,6 @@
     display: inline-block;
     font-size: 16px; }
 
-.product-discount {
-  color: #acaaa6; }
-  .product-discount .regular-price {
-    text-decoration: line-through;
-    font-weight: normal;
-    margin: 0 13px 0 0; }
-    .rtl .product-discount .regular-price {
-      margin: 0 0 0 13px; }
-
 .has-discount.product-price, .has-discount p {
   color: #f39d72; }
 .has-discount .discount {
