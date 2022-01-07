@@ -95,17 +95,6 @@
   font-weight: 400;
   border: 2px solid white; }
 
-.product-actions .control-label {
-  display: block;
-  font-size: 12px;
-  text-transform: uppercase;
-  font-weight: 400;
-  margin: auto 10px auto 0;
-  min-width: 70px;
-  color: #000;
-  letter-spacing: 1px; }
-
-
 .product-quantity .add {
   white-space: nowrap;
   position: relative; }
