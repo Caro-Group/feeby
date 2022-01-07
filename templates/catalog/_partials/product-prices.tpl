@@ -26,7 +26,7 @@
   <div class="product-prices">
     {block name='product_discount'}
       {if $product.has_discount}
-        <div class="product-discount">
+        <div class="leading-none mb-1 product-discount text-[#BABABA] text-base line-through">
           {hook h='displayProductPriceBlock' product=$product type="old_price"}
           <span class="regular-price">{$product.regular_price}</span>
         </div>
@@ -37,7 +37,7 @@
 
       {block name='product_price'}
         <div
-          class="font-medium leading-none product-price text-[35px] {if $product.has_discount}has-discount{/if}"
+          class="font-medium leading-none product-price text-[35px] mr-1 {if $product.has_discount}has-discount{/if}"
           itemprop="offers"
           itemscope
           itemtype="https://schema.org/Offer"
@@ -91,7 +91,7 @@
 
       {hook h='displayProductPriceBlock' product=$product type="weight" hook_origin='product_sheet'}
 
-      <div class="tax-shipping-delivery-label leading-none">
+      <div class="leading-none tax-shipping-delivery-label lowercase font-light text-base text-[#BABABA]">
         {if isset($configuration.taxes_enabled) &&  !$configuration.taxes_enabled}
           {l s='No tax' d='Shop.Theme.Catalog'}
         {elseif $configuration.display_taxes_label}

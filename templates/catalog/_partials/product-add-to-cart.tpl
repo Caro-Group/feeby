@@ -42,14 +42,13 @@
 
           <div class="add">
             <button
-              class="btn btn-primary add-to-cart"
+              class="bg-main hover:bg-main-hover font-me text-white py-2 px-4 text-xl uppercase text-center"
               data-button-action="add-to-cart"
               type="submit"
               {if !$product.add_to_cart_url}
                 disabled
               {/if}
             >
-              <i class="icon-bag"></i>
               {l s='Add to cart' d='Shop.Theme.Actions'}
             </button>
           </div> 
