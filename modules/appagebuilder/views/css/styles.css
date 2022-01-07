@@ -2790,8 +2790,6 @@ button.btn.btn-primary.center-block,
 @media (max-width: 991px) {
   .leo-more-info {
     display: none; } }
-.product-variants > .product-variants-item select {
-  width: auto; }
 
 /*end update product image more infor*/
 .leoquicklogin-cssload-speeding-wheel {
