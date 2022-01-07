@@ -65,7 +65,8 @@
           <div class="swiper" data-swiper-product>
             <div class="swiper-wrapper">
               {foreach from=$product.images item=image}
-                <div class="swiper-slide w-auto thumb-container {if $image.id_image == $product.default_image.id_image} active {/if}">
+                <div class="w-auto h-full relative thumb-container {if $image.id_image == $product.default_image.id_image} active {/if}" style="    flex-shrink: 0;
+                  transition-property: transform;">
                   <a href="javascript:void(0)" data-image="{$image.bySize.large_default.url}" data-zoom-image="{$image.bySize.large_default.url}"> 
                     <img
                       class="w-auto thumb js-thumb border border-solid rounded-lg mr-[18px] {if $image.id_image == $product.default_image.id_image} border-main {/if}"
@@ -83,8 +84,16 @@
               {/foreach}
             </div>
             {if $product.images|@count > 1}
-              <div data-swiper-product-prev class="absolute bg-gray-default left-0 rounded-r-[5px]"></div>
-              <div data-swiper-product-next class="absolute bg-gray-default right-0 rounded-l-[5px]"></div>
+              <div data-swiper-product-prev class="absolute bg-gray-default bottom-0 flex items-center justify-center left-0 m-auto rounded-r-[5px] swiper-button-disabled top-0 w-[24px] h-[40px] z-10">
+                <svg xmlns="http://www.w3.org/2000/svg" width="7" height="14" fill="none">
+                  <path d="M0 6.175 6.132 0h.001L7 .873 1.218 6.612l5.78 5.737-.866.873L0 7.048v-.873Z" fill="#181828"/>
+                </svg>
+              </div>
+              <div data-swiper-product-next class="absolute bg-gray-default bottom-0 flex items-center justify-center right-0 m-auto rounded-l-[5px] swiper-button-disabled top-0 w-[24px] h-[40px] z-10">
+                <svg xmlns="http://www.w3.org/2000/svg" width="7" height="14" fill="none">
+                  <path d="M7 6.175.868 0H.867L0 .873l5.782 5.739-5.78 5.737.866.873L7 7.048v-.873Z" fill="#181828"/>
+                </svg>
+              </div>
             {/if}
           </div>
         </div> 
