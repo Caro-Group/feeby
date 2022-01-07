@@ -60,12 +60,6 @@
             </div>
           {/if}
         </div>
-        {if $subtotal.type === 'products' && $cart.subtotals.discount }
-          <div class="flex justify-between">
-          <span class="text-main-dark text-sm tablet:text-base font-light">{$subtotal.label}</span>
-          <span class="text-main text-lg font-light">-&nbsp;{$cart.subtotals.discount.value}</span>
-          </div>
-        {/if}
       {/if}
     {/foreach}
   </div>
