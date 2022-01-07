@@ -2618,8 +2618,8 @@
                 verticalbuttons: !0,
                 verticalupclass: "material-icons touchspin-up",
                 verticaldownclass: "material-icons touchspin-down",
-                buttondown_class: "btn btn-touchspin js-touchspin",
-                buttonup_class: "btn btn-touchspin js-touchspin",
+                buttonup_class: "js-touchspin js-increase-product-quantity block  border-0 h-[25px] w-5 relative bg-gray-2000 hover:bg-gray-300 rounded-tr-md transition cursor-pointer",
+                buttondown_class: "js-touchspin js-decrease-product-quantity block border-0 h-[25px] w-5 relative bg-gray-2000 hover:bg-gray-300 rounded-br-md transition cursor-pointer",
                 min: parseInt(t.attr("min"), 10),
                 max: 1e6
             }), (0, o.default)("body").on("change keyup", "#quantity_wanted", function(t) {
