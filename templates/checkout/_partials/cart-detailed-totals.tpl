@@ -23,14 +23,14 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 {block name='cart_detailed_totals'}
-<div>
+<div class="cart-detailed-totals">
   <span class="font-header italic text-2xl text-main-dark block pt-[20px] tablet:pt-[30px] mb-2 tablet:mb-[10px]">
     {l s='Summary' d='Shop.Theme.Checkout'}
   </span>
   <div>
     {foreach from=$cart.subtotals item="subtotal"}
       {if $subtotal && $subtotal.value|count_characters > 0 && $subtotal.type !== 'tax' && $subtotal.type !== 'discount'}
-        <div class="flex w-full flex-wrap items-center justify-between pb-5 pt-5 tablet:pb-7 tablet:pt-3 border-0 border-b border-solid border-gray-2000 " id="cart-subtotal-{$subtotal.type}">
+      <div class="flex w-full flex-wrap items-center justify-between {if $cart.subtotals.discounts} pb-1 {else} pb-5 tablet:pb-7 {/if} pt-5 tablet:pt-3 border-0 border-b border-solid border-gray-2000 " id="cart-subtotal-{$subtotal.type}">
           <span class="flex label text-base tablet:text-xl text-main-dark font-normal text-left {if 'products' === $subtotal.type} js-subtotal{/if}">
             {if 'products' == $subtotal.type}
               {l s='Order value' d='Shop.Theme.Checkout'}
@@ -54,7 +54,7 @@
               <div><small class="value">{hook h='displayCheckoutSubtotalDetails' subtotal=$subtotal}</small></div>
           {/if}
           {if $subtotal.type === 'products' && $cart.subtotals.discounts }
-            <div class="flex justify-between w-full mt-3">
+            <div class="flex justify-between items-center w-full mt-1">
               <span class="text-main-dark text-sm tablet:text-base font-light">{$cart.subtotals.discounts.label}</span>
               <span class="text-main text-lg font-light">-&nbsp;{$cart.subtotals.discounts.value}</span>
             </div>
