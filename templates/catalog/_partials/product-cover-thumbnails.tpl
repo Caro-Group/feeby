@@ -83,8 +83,16 @@
               {/foreach}
             </div>
             {if $product.images|@count > 1}
-              <div data-swiper-product-prev class="absolute bg-gray-default left-0 rounded-r-[5px]"></div>
-              <div data-swiper-product-next class="absolute bg-gray-default right-0 rounded-l-[5px]"></div>
+              <div data-swiper-product-prev class="absolute bg-gray-default bottom-0 flex items-center justify-center left-0 m-auto rounded-r-[5px] swiper-button-disabled top-0 w-[30px] z-10">
+                <svg xmlns="http://www.w3.org/2000/svg" width="7" height="14" fill="none">
+                  <path d="M0 6.175 6.132 0h.001L7 .873 1.218 6.612l5.78 5.737-.866.873L0 7.048v-.873Z" fill="#181828"/>
+                </svg>
+              </div>
+              <div data-swiper-product-next class="absolute bg-gray-default bottom-0 flex items-center justify-center right-0 m-auto rounded-l-[5px] swiper-button-disabled top-0 w-[30px] z-10">
+                <svg xmlns="http://www.w3.org/2000/svg" width="7" height="14" fill="none">
+                  <path d="M7 6.175.868 0H.867L0 .873l5.782 5.739-5.78 5.737.866.873L7 7.048v-.873Z" fill="#181828"/>
+                </svg>
+              </div>
             {/if}
           </div>
         </div> 
