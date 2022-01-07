@@ -30,14 +30,14 @@
         </span>
         {if $cart.vouchers.added}
           {block name='cart_voucher_list'}
-            <ul class="promo-name pt-6 pb-3">
+            <ul class="promo-name py-6">
               {foreach from=$cart.vouchers.added item=voucher}
-                <li class="cart-summary-line bg-gray-1000 px-5 py-2 flex justify-between items-center ">
-                  <span class=" text-main-dark text-sm tablet:text-base font-light">{$voucher.name}</span>
+                <li class="cart-summary-line flex justify-between items-center ">
+                  <span class="text-main-dark text-sm">{$voucher.name}</span>
                   <div class="flex-shrink-0">
                     <span class="font-medium tablet:text-2xl text-base text-main" >{$voucher.reduction_formatted}</span>
                       {if isset($voucher.code) && $voucher.code !== ''}
-                        <a href="{$voucher.delete_url}" data-link-action="remove-voucher"><i class="material-icons relative bottom-2.5 transform text-xl">close</i></a>
+                        <a href="{$voucher.delete_url}" data-link-action="remove-voucher"><i class="material-icons">&#xE872;</i></a>
                       {/if}
                   </div>
                 </li>
@@ -46,7 +46,7 @@
           {/block}
         {/if}
 
-        <div class=" mt-3 {if $cart.discounts|count > 0} with-discounts{/if}">
+        <div class=" mt-4 {if $cart.discounts|count > 0} with-discounts{/if}">
           <div class="promo-code">
             {block name='cart_voucher_form'}
               <form class="border-gray-2000 border-solid border flex rounded-full pl-4 bg-white" action="{$urls.pages.cart}" data-link-action="add-voucher" method="post">
@@ -58,7 +58,9 @@
             {/block}
 
             {block name='cart_voucher_notifications'}
-              <div class="alert bg-opacity-10 bg-red-600 border-red-600 max-w-lg mx-auto text-red-600 js-error hidden   before:content-['\f00d'] before:font-['FontAwesome']  " role="alert"></div>
+              <div class="alert bg-opacity-10 bg-red-600 border-red-600 max-w-lg mx-auto text-red-600 js-error hidden " role="alert">
+                <span class="ml-1 js-error-text before:content-['\f00d'] before:font-['FontAwesome']"></span>
+              </div>
             {/block}
           </div>
         </div>
