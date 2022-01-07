@@ -1421,7 +1421,7 @@ $(document).ready(function () {
 
 	var swiperProduct = new Swiper("[data-swiper-product]", {
         slidesPerView: "auto",
-        spaceBetween: 30,
+        spaceBetween: 0,
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
