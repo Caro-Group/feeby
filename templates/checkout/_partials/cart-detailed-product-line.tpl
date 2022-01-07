@@ -106,8 +106,8 @@
             {/if}
           </div>
         {/if}
-        <div class="current-price">
-      <span class="price text-base tablet:text-lg {if $product.has_discount} text-main text-right tablet-wide:text-left {else} text-main-dark {/if} font-medium">{$product.price}</span>
+        <div class="current-price text-right tablet-wide:text-left">
+      <span class="price text-base tablet:text-lg {if $product.has_discount} text-main {else} text-main-dark {/if} font-medium">{$product.price}</span>
           {if $product.unit_price_full}
             <div class="unit-price-cart">{$product.unit_price_full}</div>
           {/if}
