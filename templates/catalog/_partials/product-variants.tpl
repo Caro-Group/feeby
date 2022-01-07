@@ -56,7 +56,7 @@
         {elseif $group.group_type == 'select'}
 
           <select
-            class="form-control form-select"
+            class="form-control form-select w-full"
             id="group_{$id_attribute_group}"
             data-product-attribute="{$id_attribute_group}"
             name="group[{$id_attribute_group}]">
