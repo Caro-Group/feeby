@@ -1245,26 +1245,6 @@ $(document).ready(function () {
 		},
 		allowTouchMove: false,
 	  });
-
-});
-
-
-
-
-
-
-//Top bar swiper 
-$(document).ready(function () {
-
-	const swiper = new Swiper('[data-top-bar-swiper]', {
-		speed: 25000,
-		spaceBetween: 50,
-		loop: true,
-		autoplay: {
-			delay: 0,
-		},
-		allowTouchMove: false,
-	  });
 	  
 	const swiperBlog = new Swiper('.swiper-blog', {
 		speed: 300,
@@ -1427,6 +1407,10 @@ $(document).ready(function () {
           prevEl: "[data-swiper-product-prev]",
         },
       });
+
+	  prestashop.on("updateProduct", function(t) {
+		swiperProduct.update();
+	})
 });
 
 
