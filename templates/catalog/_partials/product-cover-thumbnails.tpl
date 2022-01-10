@@ -100,15 +100,5 @@
       {/block}
     {/if}
   {/block}
-  {literal}
-  <script>
-    if (typeof prestashop !== 'undefined') {
-      prestashop.emit(
-        'productThumbnailUpdate',
-        {}
-      );
-    };
-  </script>  
-  {/literal}
   {hook h='displayAfterProductThumbs'}
 </div>

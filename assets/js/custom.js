@@ -1412,7 +1412,7 @@ $(document).ready(function () {
 
 	  if (typeof prestashop !== 'undefined') {
 		prestashop.on(
-		  'productThumbnailUpdate',
+		  'updatedProduct',
 		  function (event) {
 			swiperProduct.init();
 		  }
