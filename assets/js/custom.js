@@ -1408,6 +1408,10 @@ $(document).ready(function () {
           prevEl: "[data-swiper-product-prev]",
         },
       });
+
+	  prestashop.on("updateProduct", function(t) {
+		swiperProduct.update();
+	})
 });
 
 
