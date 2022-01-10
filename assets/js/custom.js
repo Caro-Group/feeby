@@ -1400,7 +1400,6 @@ $(document).ready(function () {
 	})
 
 	var swiperProduct = new Swiper("[data-swiper-product]", {
-		init: false,
         slidesPerView: "auto",
         spaceBetween: 0,
 		slideClass: 'swiper-custom-slide',
@@ -1409,12 +1408,11 @@ $(document).ready(function () {
           prevEl: "[data-swiper-product-prev]",
         },
       });
-
-	  prestashop.on("productThumbnailUpdate", function(t) {
-		swiperProduct.init();
-	  });
 });
 
+function productThumbnailUpdate(){
+	swiperProduct.init();
+}
 
 function paginationGoTop() {
 	$('.page-list a').click(function(){
