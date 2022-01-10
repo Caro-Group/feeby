@@ -1233,6 +1233,7 @@ $('body').on('click', "[data-checkout-back]",function(e){
 })(jQuery);
 
 
+
 //Top bar swiper 
 $(document).ready(function () {
 
@@ -1409,8 +1410,9 @@ $(document).ready(function () {
       });
 
 	  prestashop.on("updateProduct", function(t) {
+		swiperProduct.init();
 		swiperProduct.update();
-	})
+	  });
 });
 
 
