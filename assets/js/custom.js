@@ -1400,6 +1400,7 @@ $(document).ready(function () {
 	})
 
 	var swiperProduct = new Swiper("[data-swiper-product]", {
+		init: false,
         slidesPerView: "auto",
         spaceBetween: 0,
 		slideClass: 'swiper-custom-slide',
@@ -1409,9 +1410,8 @@ $(document).ready(function () {
         },
       });
 
-	  prestashop.on("updateProduct", function(t) {
+	  prestashop.on("productThumbnailUpdate", function(t) {
 		swiperProduct.init();
-		swiperProduct.update();
 	  });
 });
 

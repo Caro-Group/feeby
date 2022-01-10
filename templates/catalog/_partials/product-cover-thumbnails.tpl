@@ -100,5 +100,12 @@
       {/block}
     {/if}
   {/block}
+  {literal}
+  <script>
+    $(document).ready(function () {
+      $(document).trigger('productThumbnailUpdate', []);
+    });
+  </script>  
+  {/literal}}
   {hook h='displayAfterProductThumbs'}
 </div>
