@@ -102,10 +102,8 @@
   {/block}
   {literal}
   <script>
-    $(document).ready(function () {
-      $(document).trigger('productThumbnailUpdate', []);
-    });
+    productThumbnailUpdate();
   </script>  
-  {/literal}}
+  {/literal}
   {hook h='displayAfterProductThumbs'}
 </div>
