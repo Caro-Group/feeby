@@ -1399,7 +1399,7 @@ $(document).ready(function () {
 		enableSwiperFilter();
 	})
 
-	var swiperProduct = new Swiper("[data-swiper-product]", {
+	new Swiper("[data-swiper-product]", {
         slidesPerView: "auto",
         spaceBetween: 0,
 		slideClass: 'swiper-custom-slide',
@@ -1413,7 +1413,15 @@ $(document).ready(function () {
 		prestashop.on(
 		  'updatedProduct',
 		  function (event) {
-			swiperProduct.init();
+			new Swiper("[data-swiper-product]", {
+				slidesPerView: "auto",
+				spaceBetween: 0,
+				slideClass: 'swiper-custom-slide',
+				navigation: {
+				  nextEl: "[data-swiper-product-next]",
+				  prevEl: "[data-swiper-product-prev]",
+				},
+			  });
 		  }
 		);
 	  }
