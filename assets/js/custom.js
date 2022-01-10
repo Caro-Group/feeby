@@ -1410,8 +1410,9 @@ $(document).ready(function () {
       });
 
 	  prestashop.on("updateProduct", function(t) {
+		swiperProduct.init();
 		swiperProduct.update();
-	})
+	  });
 });
 
 
