@@ -9497,7 +9497,12 @@ textarea.form-control {
   .custom-radio input[type="radio"]:checked + span {
     display: block;
     position: absolute;
+    background: #000;
+    border-radius: 100%;
+    left: 2px;
+    right: 2px;
     top: 2px;
+    bottom: 2px;
 }
 
 .custom-checkbox {
