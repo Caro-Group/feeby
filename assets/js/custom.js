@@ -1400,6 +1400,7 @@ $(document).ready(function () {
 	})
 
 	var swiperProduct = new Swiper("[data-swiper-product]", {
+		init: false,
         slidesPerView: "auto",
         spaceBetween: 0,
 		slideClass: 'swiper-custom-slide',
@@ -1408,11 +1409,16 @@ $(document).ready(function () {
           prevEl: "[data-swiper-product-prev]",
         },
       });
-});
 
-function productThumbnailUpdate(){
-	swiperProduct.init();
-}
+	  if (typeof prestashop !== 'undefined') {
+		prestashop.on(
+		  'productThumbnailUpdate',
+		  function (event) {
+			swiperProduct.init();
+		  }
+		);
+	  }
+});
 
 function paginationGoTop() {
 	$('.page-list a').click(function(){
