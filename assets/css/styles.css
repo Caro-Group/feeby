@@ -314,3 +314,11 @@ div#js-product-list-top:after {
 .thumb.selected{
     @apply border-main;
 }
+
+.products .product_list ul{
+    @apply mt-1 mr-12 ml-0;
+}
+
+.products .product_list ul li{
+    @apply w-auto float-none;
+}
