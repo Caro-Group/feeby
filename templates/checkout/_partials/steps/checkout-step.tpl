@@ -32,9 +32,9 @@
                         'js-current-step' => $step_is_current
                     ]|classnames}"
   >
-    <h1 class="step-title absolute mt-8 top-0 w-1/4 px-2 ">
-      <i class="material-icons -top-5 absolute bg-main bg-transparent font-normal h-7 left-1/3 material-icons not-italic p-0 pt-0.5 rounded-full rtl-no-flip step-number text-base text-center text-white w-7">&#xE876;</i>
-      <span class="step-number -top-5 absolute bg-transparent border border-gray-2000 border-solid font-body font-normal text-gray-3000 h-7 left-1/3 not-italic p-0 rounded-full step-number text-base text-center text-main-dark w-7">{if $position == 4}3{else}{$position}{/if}</span>
+    <h1 class="step-title absolute pt-8 mt-7 top-0 w-1/4 px-2 text-center ">
+      <i class="material-icons top-7 absolute bg-main bg-transparent font-normal h-7 mx-2.5 material-icons not-italic p-0 pt-0.5 rounded-full rtl-no-flip text-base text-center text-white w-7 z-10">&#xE876;</i>
+      <span class="step-number top-7 absolute bg-transparent border border-gray-2000 border-solid font-body font-normal pt-0.5 text-gray-3000 h-7 mx-2.5 not-italic p-0 rounded-full text-base text-center text-main-dark w-7">{if $position == 4}3{else}{$position}{/if}</span>
       <span class="font-body font-normal normal-case not-italic text-[10px] text-gray-3000 ">{$title}</span>
     </h1>
 

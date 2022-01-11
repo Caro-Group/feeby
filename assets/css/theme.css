@@ -18327,8 +18327,6 @@ body#checkout section.checkout-step {
     display: block; }
   body#checkout section.checkout-step.-reachable.-complete h1 .done {
     display: inline-block; }
-  body#checkout section.checkout-step.-reachable.-complete h1 .step-number {
-    display: none; }
   body#checkout section.checkout-step.-reachable.-complete h1 .step-edit {
     cursor: pointer;
     display: block;
