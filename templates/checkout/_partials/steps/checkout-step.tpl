@@ -32,10 +32,10 @@
                         'js-current-step' => $step_is_current
                     ]|classnames}"
   >
-    <h1 class="step-title absolute pt-8 mt-7 top-0 w-1/4 px-2 text-center leading-3 ">
-      <i class="material-icons top-1 absolute bg-main font-normal h-7 -ml-[14px] left-1/2 material-icons not-italic p-0 pt-0.5 rounded-full rtl-no-flip text-base text-center text-white w-7 z-10">&#xE876;</i>
-      <span class="step-number top-1 absolute bg-transparent border border-gray-2000 border-solid font-body font-normal pt-0.5 text-gray-3000 h-7 -ml-[14px] left-1/2 not-italic p-0 rounded-full text-base text-center text-main-dark w-7">{if $position == 4}3{else}{$position}{/if}</span>
-      <span class="font-body font-normal normal-case not-italic text-[10px] text-gray-3000 ">{$title}</span>
+    <h1 class="step-title absolute pt-8 mt-7 tablet:pt-14 top-0 w-1/4 px-2 text-center leading-3 ">
+      <i class="material-icons tablet:text-xl tablet:leading-[45px] tablet:-ml-[25px] tablet:h-[50px] tablet:w-[50px] tablet:-top-1  top-1 absolute bg-main font-normal h-7 -ml-[14px] left-1/2 material-icons not-italic p-0 pt-0.5 rounded-full rtl-no-flip text-base text-center text-white w-7 z-10">&#xE876;</i>
+      <span class="step-number tablet:text-xl tablet:leading-[45px] tablet:-ml-[25px] tablet:h-[50px] tablet:w-[50px] tablet:-top-1  top-1 absolute bg-transparent border border-gray-2000 border-solid font-body font-normal pt-0.5 text-gray-3000 h-7 -ml-[14px] left-1/2 not-italic p-0 rounded-full text-base text-center text-main-dark w-7">{if $position == 4}3{else}{$position}{/if}</span>
+      <span class="font-body tablet:text-xl font-normal normal-case not-italic text-[10px] text-gray-3000 ">{$title}</span>
     </h1>
 
     <div class="content">
