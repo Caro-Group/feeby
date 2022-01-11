@@ -29,12 +29,12 @@
 {/if}
 
 
-<div id="js-product-list-top" class="products-selection">
-  <div style="flex: 1 1 auto;display: flex;align-items: center;justify-content: center;color: #fff;border-radius: 20px;padding: 14px 35px 14px 15px;margin-bottom: 10px;" class="hidden-md-up text-base bg-main-dark" onclick="openMenuWithCategory({$smarty.get.id_category})">
+<div id="js-product-list-top" class="pb-7 tablet:pb-3 products-selection">
+  <div class="bg-main-dark mb-5 p-2 rounded-full tablet:hidden text-base text-center text-white" onclick="openMenuWithCategory({$smarty.get.id_category})">
     {l s='Categories' d='Shop.Theme.Global'}
   </div>
 
-  <div class=" flex flex-wrap justify-between tablet: justify-center" >
+  <div class=" flex flex-wrap justify-between " >
     <div style="flex:0 0 auto;" class="hidden-md-up w-1/2 pr-[10px] order-1 flex justify-center ">
         {if !empty($listing.rendered_facets)}
           
@@ -51,7 +51,7 @@
       {if isset($listing.rendered_facets) && $listing.rendered_facets}
           <div class="horizontal_filters order-3 tablet:order-2 tablet:rounded-l-md tablet:bg-gray-1000 w-full tablet:w-filter ">
               
-                  <div id="search_filters_wrapper" class="collapse tablet:block h-auto relative" aria-expanded="false" style="">
+                  <div id="search_filters_wrapper" class="collapse tablet:block tablet:h-auto relative" aria-expanded="false" style="">
                       <div class="absolute tablet:h-full z-10 w-24 bg-gradient-to-l from-gray-1000 pointer-events-none right-0"></div>
                       {$listing.rendered_facets nofilter}
                   </div>

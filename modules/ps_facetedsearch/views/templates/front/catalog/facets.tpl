@@ -17,7 +17,7 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
 {if $displayedFacets|count}
-  <div id="search_filters" class="flex flex-wrap tablet:pr-5 py-3">
+  <div id="search_filters" class="flex flex-wrap tablet:pr-5 py-2.5">
     <div class="swiper-filters tablet:pl-5 tablet:overflow-hidden w-full">
       <div class="swiper-wrapper flex-col tablet:flex-row">
       {foreach from=$displayedFacets item="facet"}
