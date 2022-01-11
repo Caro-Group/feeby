@@ -18370,9 +18370,6 @@ body#checkout section.checkout-step {
       margin-left: 20px;
       margin-right: inherit; }
 
-  body#checkout section.checkout-step .step-number {
-    display: inline-block;
-    padding: 10px; }
   body#checkout section.checkout-step .address-selector {
     display: -webkit-box;
     display: -moz-box;
