@@ -52,7 +52,7 @@
           <div class="horizontal_filters order-3 tablet:order-2 tablet:rounded-l-md tablet:bg-gray-1000 w-full tablet:w-filter ">
               
                   <div id="search_filters_wrapper" class="collapse tablet:block h-auto relative" aria-expanded="false" style="">
-                      <div class="absolute tablet:h-full right-5 z-10 w-24 bg-gradient-to-l from-gray-1000 pointer-events-none right-0"></div>
+                      <div class="absolute tablet:h-full z-10 w-24 bg-gradient-to-l from-gray-1000 pointer-events-none right-0"></div>
                       {$listing.rendered_facets nofilter}
                   </div>
               
