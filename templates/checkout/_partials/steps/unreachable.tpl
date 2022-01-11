@@ -24,8 +24,8 @@
  *}
 {block name='step'}
   <section class="checkout-step -unreachable" id="{$identifier}">
-    <h1 class="step-title absolute pt-8 mt-7 top-0 w-1/4 px-2 ">
-      <span class="step-number top-7 absolute bg-transparent border border-gray-2000 border-solid font-body font-normal text-gray-3000 h-7 left-1/3 not-italic p-0 rounded-full  text-base text-center text-main-dark w-7">{$position}</span> 
+    <h1 class="step-title absolute pt-8 mt-7 top-0 w-1/4 px-2 text-center">
+      <span class="step-number top-1 absolute bg-transparent border border-gray-2000 border-solid font-body font-normal pt-0.5 text-gray-3000 h-7 ml-[7px] not-italic p-0 rounded-full text-base text-center text-main-dark w-7">{$position}</span> 
       <span class="font-body font-normal normal-case not-italic text-[10px] text-gray-3000 ">{$title}</span>
     </h1>
   </section>

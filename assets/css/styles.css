@@ -342,3 +342,16 @@ div#js-product-list-top:after {
 .checkout-step.-current .step-title span{
     @apply text-main-dark;
 }
+.checkout-step.-current .step-title i{
+    @apply hidden;
+}
+
+#checkout .checkout-step .step-number{
+    @apply after:content-[''] after:w-[calc(100%-4rem)] after:absolute after:h-px after:mx-[2rem] after:bg-gray-2000 after:top-10 after:left-1/2 after:transition;
+}
+#checkout .checkout-step.-complete .step-number{
+    @apply after:bg-main;
+}
+#checkout .checkout-step:last-child .step-number{
+    @apply after:hidden;
+}
