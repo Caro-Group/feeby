@@ -53,7 +53,7 @@
       <div class="container">
 
       {block name='content'}
-        <section id="content" class="relative pt-24">
+        <section id="content" class="relative pt-24 tablet:pt-40">
           <div class="flex flex-wrap">
             <div class="cart-grid-body flex-auto w-full tablet-wide:w-2/3 tablet-wide:pr-40">
               {block name='checkout_process'}
