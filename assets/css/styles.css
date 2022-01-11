@@ -355,7 +355,7 @@ div#js-product-list-top:after {
 }
 
 #checkout .checkout-step .step-title{
-    @apply after:content-[''] after:w-[calc(100%-40px)] after:absolute after:h-px after:mx-[20px] after:bg-gray-2000 after:top-[18px] after:left-1/2 after:rounded-full after:transition;
+    @apply after:content-[''] after:w-[calc(100%-40px)] after:mx-[20px] tablet:after:w-[calc(100%-80px)] tablet:after:mx-[40px] after:absolute after:h-px  after:bg-gray-2000 after:top-[18px] after:left-1/2 after:rounded-full after:transition;
 }
 #checkout .checkout-step.-complete .step-title{
     @apply after:bg-main;
