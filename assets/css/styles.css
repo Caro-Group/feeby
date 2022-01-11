@@ -322,3 +322,23 @@ div#js-product-list-top:after {
 .products .product_list ul li{
     @apply w-auto float-none;
 }
+
+.checkout-step:nth-child(1) .step-title{
+    @apply left-0;
+}
+.checkout-step:nth-child(2) .step-title{
+    @apply left-1/4;
+}
+.checkout-step:nth-child(3) .step-title{
+    @apply left-2/4;
+}
+.checkout-step:nth-child(4) .step-title{
+    @apply left-3/4;
+}
+
+.checkout-step.-current .step-title span.step-number{
+    @apply bg-main border-0  text-white;
+}
+.checkout-step.-current .step-title span{
+    @apply text-main-dark;
+}
