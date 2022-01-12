@@ -68,7 +68,7 @@
       <div class="w-full tablet:w-auto flex-initial tablet-wide:w-side">
 
         {block name='cart_summary'}
-          <div class="bg-gray-1000 rounded-md px-[30px] pb-4 mb-6">
+          <div class="bg-gray-1000 -mx-[20px] tablet:rounded-md px-[30px] pb-4 mb-6">
 
             {block name='hook_shopping_cart'}
               {hook h='displayShoppingCart'}
