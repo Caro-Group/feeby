@@ -29,7 +29,7 @@
     </h2>
   </div>
 
-  <div class="card-block p-[30px]">
+  <div class="card-block px-[30px] py-0 font-body">
 
     {block name='hook_checkout_summary_top'}
       {hook h='displayCheckoutSummaryTop'}
@@ -39,13 +39,13 @@
       {include file='checkout/_partials/cart-summary-subtotals.tpl' cart=$cart}
     {/block}
 
+    {block name='cart_summary_totals'}
+      {include file='checkout/_partials/cart-summary-totals.tpl' cart=$cart}
+    {/block}
   </div>
 
-  {block name='cart_summary_totals'}
-    {include file='checkout/_partials/cart-summary-totals.tpl' cart=$cart}
-  {/block}
 
-  <p class="card-block text-center">
+  <p class="font-body font-medium mt-7 px-[30px] py-5 tablet:text-base text-center text-main-dark text-sm">
     {l s='Your order will be available in 2 work day' d='Shop.Theme.Checkout'}
   </p>
 </section>
