@@ -45,7 +45,7 @@
       </form>
 
   {else}
-    <div class="absolute inset-0 z-10 bg-gray-100 mt-24" data-login-panel>
+    <div class="absolute inset-0 z-10 bg-gray-100 mt-[120px] tablet:mt-40" data-login-panel>
       <div class="flex flex-wrap tablet-wide:flex-nowrap">
         <div class="flex flex-col border-r my-8 tablet-wide:my-20 px-8 tablet-wide:px-24 w-full tablet-wide:w-1/2 items-start">
           <h2>{l s='I do not have an account' d='Shop.Theme.Checkout'}</h2>
