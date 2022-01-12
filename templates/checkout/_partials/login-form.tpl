@@ -26,7 +26,7 @@
 
 {block name='form_buttons'}
   <button
-    class="bg-black hover:opcaity-80 duration-150 border-0 rounded-full text-white p-2 px-4 uppercase whitespace-nowrap mb-2 flex items-center justify-between cursor-pointer"
+    class="bg-main-dark border-0 cursor-pointer duration-150 flex font-body hover:text-white hover:bg-black items-center justify-between max-w-[320px] mb-2 px-5 py-3 rounded-full tablet:max-w-[300px] text-white text-xs  tablet:text-sm uppercase w-full whitespace-nowrap"
     name="continue"
     data-link-action="sign-in"
     type="submit"

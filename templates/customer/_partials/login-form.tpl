@@ -39,7 +39,7 @@
         {/foreach}
       {/block}
       <div class="flex flex-auto flex-col">
-        <a class="underline text-sm" href="{$urls.pages.password}" rel="nofollow">
+        <a class="font-body font-normal ml-5 text-sm text-main-dark underline hover:underline hover:text-main transition" href="{$urls.pages.password}" rel="nofollow">
           {l s='Forgot your password?' d='Shop.Theme.Customeraccount'}
         </a>
       </div>

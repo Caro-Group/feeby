@@ -320,3 +320,11 @@ li[data-menu-type="url"] a{
 #checkout .checkout-step:last-child .step-title{
     @apply after:hidden;
 }
+
+.checkout-step #login-form input[type="text"] + .input-group-btn span:nth-child(1){
+    @apply opacity-0;
+}
+
+.checkout-step #login-form input[type="text"] + .input-group-btn span:nth-child(2){
+    @apply opacity-100;
+}

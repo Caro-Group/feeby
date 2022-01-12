@@ -42,7 +42,7 @@
   {/if}
 
   <div class="flex flex-auto {if isset($theme)}flex-col{else}flex-col phablet:flex-row{/if} mb-form {if !empty($field.errors)}has-error{/if}" data-field="{$field.type}">
-    <label class="min-w-label text-left {if $field.required && $field.type !== 'checkbox'} required{/if}">
+    <label class="font-body font-normal ml-5 mt-3 text-base tablet:text-xl text-main-dark {if $field.required && $field.type !== 'checkbox'} required{/if}">
       {if $field.type !== 'checkbox'}
         {$field.label}
       {/if}
@@ -156,7 +156,7 @@
               pattern=".{literal}{{/literal}5,{literal}}{/literal}"
               {if $field.required}required{/if}
             >
-            <span class="input-group-btn">
+            <span class="input-group-btn group w-11">
               <button
                 class="btn btn-outline"
                 type="button"
@@ -165,7 +165,13 @@
                 data-text-hide="{l s='Hide' d='Shop.Theme.Actions'}"
               >
                 {l s='Show' d='Shop.Theme.Actions'}
+              
               </button>
+              <span class=" absolute bottom-3 group-hover:text-main-dark material-icons opacity-100 right-3 text-2xl text-gray-3000 transition duration-100 ">
+                  visibility
+                </span><span class="absolute bottom-3 material-icons opacity-0 right-3 text-2xl text-main-dark transition duration-100 z-10">
+                  visibility_off
+                </span>
             </span>
           </div>
         {/block}

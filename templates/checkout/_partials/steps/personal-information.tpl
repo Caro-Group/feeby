@@ -45,16 +45,16 @@
       </form>
 
   {else}
-    <div class="absolute inset-0 z-10 bg-gray-100 mt-[120px] tablet:mt-40" data-login-panel>
+    <div class="absolute bg-gray-1000 inset-0 mt-[120px] tablet:mt-40 tablet:rounded-md z-10" data-login-panel>
       <div class="flex flex-wrap tablet-wide:flex-nowrap">
-        <div class="flex flex-col border-r my-8 tablet-wide:my-20 px-8 tablet-wide:px-24 w-full tablet-wide:w-1/2 items-start">
-          <h2>{l s='I do not have an account' d='Shop.Theme.Checkout'}</h2>
-          <p>
+        <div class="border-0 border-gray-3000 tablet:border-r border-solid flex flex-col items-start my-8 px-5 tablet-wide:px-24 tablet:my-20 tablet:w-1/2 w-full">
+          <h2 class="text-2xl tablet:text-3xl font-normal">{l s='I do not have an account' d='Shop.Theme.Checkout'}</h2>
+          <p class="hidden tablet:block font-body font-light text-base text-main-dark">
             {l s='You do not have an account? You can place an order as a guest, or create an account to save your details and shipping preferences for your next purchase.' d='Shop.Theme.Checkout'}
           </p>
           {if $guest_allowed}
             <a
-              class="bg-main hover:opacity-80 duration-150 border-0 rounded-full text-white p-2 px-4 uppercase whitespace-nowrap mb-2 flex items-center justify-between cursor-pointer"
+              class="bg-main border-0 cursor-pointer duration-150 flex font-body hover:text-white hover:bg-main-hover items-center justify-between max-w-[320px] mb-2 px-5 py-3 rounded-full tablet:max-w-[300px] text-white text-xs  tablet:text-sm uppercase w-full whitespace-nowrap"
               href="#checkout-guest-form"
               aria-controls="checkout-guest-form"
               >
@@ -63,7 +63,7 @@
             </a>
           {/if}
           <a
-            class="bg-black hover:opcaity-80 duration-150 border-0 rounded-full text-white p-2 px-4 uppercase whitespace-nowrap mb-2 flex items-center justify-between cursor-pointer"
+            class="bg-main-dark border-0 cursor-pointer duration-150 flex font-body hover:text-white hover:bg-black items-center justify-between max-w-[320px] mb-2 px-5 py-3 rounded-full tablet:max-w-[300px] text-white text-xs  tablet:text-sm uppercase w-full whitespace-nowrap"
             href="#checkout-register-form"
             aria-controls="checkout-guest-form"
             >
@@ -71,7 +71,7 @@
              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" fill="none" class="ml-2 flex-0"><path fill-rule="evenodd" clip-rule="evenodd" d="m9.25 14.359 6.25-6.25v-.884L9.25.975l-.884.884 5.183 5.184H.5v1.25h13.05l-5.185 5.182.884.884h.001Z" fill="#fff"/></svg>
           </a>
         </div>
-        <div class="my-8 tablet-wide:my-20 px-8 tablet-wide:px-24 w-full tablet-wide:w-1/2">
+        <div class="flex flex-col items-start my-8 px-5 tablet-wide:px-24 tablet:my-20 tablet:w-1/2 w-full">
           <h2>{l s='I have an account' d='Shop.Theme.Checkout'}</h2>
           <div class="{if $show_login_form}active{/if}" id="checkout-login-form">
             {render file='checkout/_partials/login-form.tpl' ui=$login_form}
