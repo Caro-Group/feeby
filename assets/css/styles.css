@@ -321,7 +321,7 @@ li[data-menu-type="url"] a{
     @apply after:hidden;
 }
 
-.checkout-step #login-form input + .input-group-btn button{
+.checkout-step #login-form input + .input-group-btn.input-group-btn button{
     @apply text-[0px] w-11 z-20;
 }
 .checkout-step #login-form input[type="text"] + .input-group-btn span:nth-of-type(1){
