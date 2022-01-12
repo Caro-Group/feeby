@@ -50,7 +50,7 @@
 
     <section id="wrapper">
       {hook h="displayWrapperTop"}
-      <div class="container">
+      <div class="container  container -mx-[10px] px-0 tablet:mx-auto">
 
       {block name='content'}
         <section id="content" class="relative pt-[120px] tablet:pt-40">

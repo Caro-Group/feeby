@@ -967,11 +967,11 @@ body#checkout section.checkout-step #invoice-address {
       left: 0;
       right: auto; }
     body#checkout section.checkout-step #customer-form .input-group-btn .btn[data-action="show-password"],
-    body#checkout section.checkout-step #login-form .input-group-btn .btn[data-action="show-password"],
+    /* body#checkout section.checkout-step #login-form .input-group-btn .btn[data-action="show-password"], */
     body#checkout section.checkout-step #invoice-address .input-group-btn .btn[data-action="show-password"] {
       font-size: 0; }
       body#checkout section.checkout-step #customer-form .input-group-btn .btn[data-action="show-password"]:before,
-      body#checkout section.checkout-step #login-form .input-group-btn .btn[data-action="show-password"]:before,
+      /* body#checkout section.checkout-step #login-form .input-group-btn .btn[data-action="show-password"]:before, */
       body#checkout section.checkout-step #invoice-address .input-group-btn .btn[data-action="show-password"]:before {
         display: inline-block;
         font-family: FontAwesome;
@@ -980,7 +980,7 @@ body#checkout section.checkout-step #invoice-address {
         content: "\F06E";
         font-size: 17px; }
   body#checkout section.checkout-step #customer-form input[type="text"] + .input-group-btn .btn[data-action="show-password"]:before,
-  body#checkout section.checkout-step #login-form input[type="text"] + .input-group-btn .btn[data-action="show-password"]:before,
+  /* body#checkout section.checkout-step #login-form input[type="text"] + .input-group-btn .btn[data-action="show-password"]:before, */
   body#checkout section.checkout-step #invoice-address input[type="text"] + .input-group-btn .btn[data-action="show-password"]:before {
     content: "\f070"; }
 
