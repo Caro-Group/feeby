@@ -41,8 +41,8 @@
        
   {/if}
 
-  <div class="flex flex-auto {if isset($theme)}flex-col{else}flex-col tablet-medium:flex-row{/if} mb-form {if !empty($field.errors)}has-error{/if}" data-field="{$field.type}">
-    <label class="font-body font-normal ml-5 mt-3 tablet-medium:ml-0 tablet-medium:w-[220px] text-base tablet:text-xl text-main-dark text-left {if $field.required && $field.type !== 'checkbox'} required{/if}">
+  <div class="flex flex-auto {if isset($theme)}flex-col{else}flex-col desktop-presta:flex-row{/if} mb-form {if !empty($field.errors)}has-error{/if}" data-field="{$field.type}">
+    <label class="font-body font-normal ml-5 mt-3 tablet-medium:ml-0 desktop-presta:w-[220px] text-base tablet:text-xl text-main-dark text-left {if $field.required && $field.type !== 'checkbox'} required{/if}">
       {if $field.type !== 'checkbox'}
         {$field.label}
       {/if}
@@ -64,7 +64,7 @@
 
         {block name='form_field_item_country'}
           <select
-          class="form-select rounded-md border w-full form-control-select js-country"
+          class="form-select border border-gray-1000 rounded-full pl-4 bg-gray-1000 w-full focus:border-gray-3000 focus:ring-0 w-full form-control-select font-medium js-country"
           name="{$field.name}"
           {if $field.required}required{/if}
           >
