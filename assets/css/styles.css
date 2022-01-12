@@ -322,7 +322,7 @@ li[data-menu-type="url"] a{
 }
 
 .checkout-step #login-form input + .input-group-btn button{
-    @apply test-[0px] w-11 z-20;
+    @apply text-[0px] w-11 z-20;
 }
 .checkout-step #login-form input[type="text"] + .input-group-btn span:nth-of-type(1){
     @apply opacity-0;
