@@ -41,13 +41,13 @@
        
   {/if}
 
-  <div class="flex flex-auto {if isset($theme)}flex-col{else}flex-col phablet:flex-row{/if} mb-form {if !empty($field.errors)}has-error{/if}" data-field="{$field.type}">
-    <label class="font-body font-normal ml-5 mt-3 text-base tablet:text-xl text-main-dark text-left {if $field.required && $field.type !== 'checkbox'} required{/if}">
+  <div class="flex flex-auto {if isset($theme)}flex-col{else}flex-col tablet-medium:flex-row{/if} mb-form {if !empty($field.errors)}has-error{/if}" data-field="{$field.type}">
+    <label class="font-body font-normal ml-5 mt-3 tablet-medium:ml-0 tablet-medium:w-[220px] text-base tablet:text-xl text-main-dark text-left {if $field.required && $field.type !== 'checkbox'} required{/if}">
       {if $field.type !== 'checkbox'}
         {$field.label}
       {/if}
     </label>
-    <div class="{if ($field.type === 'radio-buttons')} form-control-valign{/if}">
+    <div class=" flex-1 {if ($field.type === 'radio-buttons')} form-control-valign{/if}">
 
       {if $field.type === 'select'}
 
