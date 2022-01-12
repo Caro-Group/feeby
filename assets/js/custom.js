@@ -1443,3 +1443,16 @@ $(document).ready(function () {
 	prestashop.on("updateProductList", paginationGoTop)
 })
 
+
+$(document).ready(function () {
+	prestashop.on("changedCheckoutStep",function(){
+		let currentStep=$('.js-current-step .step-number').text();
+		if(currentStep == 1){
+			$('[data-js-elem="cart"]').addClass('hidden')
+		}
+		else{
+			$('[data-js-elem="cart"]').removeClass('hidden')
+		}
+	})
+})
+

@@ -42,7 +42,7 @@
   {/if}
 
   <div class="flex flex-auto {if isset($theme)}flex-col{else}flex-col phablet:flex-row{/if} mb-form {if !empty($field.errors)}has-error{/if}" data-field="{$field.type}">
-    <label class="font-body font-normal ml-5 mt-3 text-base tablet:text-xl text-main-dark {if $field.required && $field.type !== 'checkbox'} required{/if}">
+    <label class="font-body font-normal ml-5 mt-3 text-base tablet:text-xl text-main-dark text-left {if $field.required && $field.type !== 'checkbox'} required{/if}">
       {if $field.type !== 'checkbox'}
         {$field.label}
       {/if}
@@ -124,7 +124,7 @@
       {elseif $field.type === 'birthday'}
 
         {block name='form_field_item_birthday'}
-          <div class="js-parent-focus">
+          <div class="js-parent-focus ">
             {html_select_date
             field_order=DMY
             time={$field.value}
@@ -148,7 +148,7 @@
         {block name='form_field_item_password'}
           <div class="input-group js-parent-focus">
             <input
-              class="form-input rounded-md border w-full js-child-focus js-visible-password"
+              class="form-input js-child-focus js-visible-password border-gray-2000 border-solid border flex rounded-full pl-4 bg-white w-full focus:border-gray-3000 focus:ring-0"
               name="{$field.name}"
               title="{l s='At least 5 characters long' d='Shop.Forms.Help'}"
               type="password"
@@ -156,7 +156,7 @@
               pattern=".{literal}{{/literal}5,{literal}}{/literal}"
               {if $field.required}required{/if}
             >
-            <span class="input-group-btn group w-11">
+            <span class="input-group-btn group">
               <button
                 class="btn btn-outline"
                 type="button"
@@ -180,7 +180,7 @@
 
         {block name='form_field_item_other'}
           <input
-            class="form-input rounded-md border"
+            class="form-input border-gray-2000 border-solid border flex rounded-full pl-4 bg-white w-full focus:border-gray-3000 focus:ring-0"
             name="{$field.name}"
             type="{$field.type}"
             value="{$field.value}"
