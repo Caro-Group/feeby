@@ -288,10 +288,6 @@ li[data-menu-type="url"] a{
 }
 
 
-.checkout-step span,.checkout-step i{
-    @apply transition;
-}
-
 .checkout-step:nth-child(1) .step-title{
     @apply left-0;
 }
@@ -313,9 +309,6 @@ li[data-menu-type="url"] a{
 }
 .checkout-step.-current .step-title span{
     @apply text-main-dark transition;
-}
-.checkout-step.-current .step-title i{
-    @apply opacity-0;
 }
 
 #checkout .checkout-step .step-title{
