@@ -55,12 +55,12 @@
       {block name='content'}
         <section id="content" class="relative pt-[120px] tablet:pt-40">
           <div class="flex flex-wrap">
-            <div class="cart-grid-body flex-auto w-full tablet-medium:w-1/2 desktop-presta:w-2/3 desktop-presta:pr-40">
+            <div class="cart-grid-body flex-auto w-full tablet:w-1/2 desktop-presta:w-2/3 desktop-presta:pr-40">
               {block name='checkout_process'}
                 {render file='checkout/checkout-process.tpl' ui=$checkout_process}
               {/block}
             </div>
-            <div class="cart-grid-body flex-auto w-full tablet-medium:w-1/2 desktop-presta:w-1/3" data-js-elem="cart">
+            <div class="cart-grid-body flex-auto w-full tablet:w-1/2 desktop-presta:w-1/3" data-js-elem="cart">
 
               {block name='cart_summary'}
                 {include file='checkout/_partials/cart-summary.tpl' cart = $cart}

@@ -26,7 +26,7 @@
   <div class="w-full js-cart cart-overview" data-refresh-url="{url entity='cart' params=['ajax' => true, 'action' => 'refresh']}">
     {if $cart.products}
 
-    <div class="border-0 border-b border-gray-1000 border-solid hidden pb-1 tablet-wide:flex tablet:text-xl text-base text-gray-3000">
+    <div class="border-0 border-b border-gray-1000 border-solid hidden pb-1 desktop-presta:flex tablet:text-xl text-base text-gray-3000">
       <div class="ml-miniature px-5 flex-auto">
         {l s='Product' d='Shop.Theme.Checkout'}
       </div>
