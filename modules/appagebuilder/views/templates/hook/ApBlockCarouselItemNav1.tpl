@@ -14,7 +14,7 @@
 	<div class="swiper" data-top-bar-swiper style="min-width: 800px">
 		<div class="swiper-wrapper h-5 tablet:h-10  select-none py-1 tablet:py-0" style="transition-timing-function: linear !important;" >
 			{foreach from=$Num item=sliders name=val}
-				{if $smarty.foreach.val.first}{assign var="lazyImg" value="lazy"}{else}{assign var="lazyImg" value="eager"}{/if}
+				{if $smarty.foreach.val.first}{assign var="lazyImg" value="eager"}{else}{assign var="lazyImg" value="lazy"}{/if}
 				<div class="swiper-slide h-5 tablet:h-10 flex items-center justify-center whitespace-nowrap" style="min-width:max-content !important;">
 				{foreach from=$sliders item=slider name="sliders"}
 
