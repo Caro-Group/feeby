@@ -18332,8 +18332,6 @@ body#checkout section.checkout-step {
     display: block; }
   body#checkout section.checkout-step.-reachable.-complete h1 .done {
     display: inline-block; }
-  body#checkout section.checkout-step.-reachable.-complete h1 .step-number {
-    display: none; }
   body#checkout section.checkout-step.-reachable.-complete h1 .step-edit {
     cursor: pointer;
     display: block;
@@ -18375,9 +18373,6 @@ body#checkout section.checkout-step {
       margin-left: 20px;
       margin-right: inherit; }
 
-  body#checkout section.checkout-step .step-number {
-    display: inline-block;
-    padding: 10px; }
   body#checkout section.checkout-step .address-selector {
     display: -webkit-box;
     display: -moz-box;

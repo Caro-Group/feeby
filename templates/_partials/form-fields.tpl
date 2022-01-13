@@ -41,13 +41,13 @@
        
   {/if}
 
-  <div class="flex flex-auto {if isset($theme)}flex-col{else}flex-col phablet:flex-row{/if} mb-form {if !empty($field.errors)}has-error{/if}" data-field="{$field.type}">
-    <label class="min-w-label text-left {if $field.required && $field.type !== 'checkbox'} required{/if}">
+  <div class="flex flex-auto {if isset($theme)}flex-col{else}flex-col desktop-presta:flex-row{/if} mb-form {if !empty($field.errors)}has-error{/if}" data-field="{$field.type}">
+    <label class="font-body font-normal ml-5 mt-3 tablet-medium:ml-0 desktop-presta:w-[220px] text-base tablet:text-xl text-main-dark text-left {if $field.required && $field.type !== 'checkbox'} required{/if}">
       {if $field.type !== 'checkbox'}
         {$field.label}
       {/if}
     </label>
-    <div class="{if ($field.type === 'radio-buttons')} form-control-valign{/if}">
+    <div class=" flex-1 {if ($field.type === 'radio-buttons')} form-control-valign{/if}">
 
       {if $field.type === 'select'}
 
@@ -64,7 +64,7 @@
 
         {block name='form_field_item_country'}
           <select
-          class="form-select rounded-md border w-full form-control-select js-country"
+          class="form-select border border-gray-1000 rounded-full pl-4 bg-gray-1000 w-full focus:border-gray-3000 focus:ring-0 w-full form-control-select font-medium js-country"
           name="{$field.name}"
           {if $field.required}required{/if}
           >
@@ -124,7 +124,7 @@
       {elseif $field.type === 'birthday'}
 
         {block name='form_field_item_birthday'}
-          <div class="js-parent-focus">
+          <div class="js-parent-focus ">
             {html_select_date
             field_order=DMY
             time={$field.value}
@@ -148,7 +148,7 @@
         {block name='form_field_item_password'}
           <div class="input-group js-parent-focus">
             <input
-              class="form-input rounded-md border w-full js-child-focus js-visible-password"
+              class="form-input js-child-focus js-visible-password border-gray-2000 border-solid border flex rounded-full pl-4 bg-white w-full focus:border-gray-3000 focus:ring-0"
               name="{$field.name}"
               title="{l s='At least 5 characters long' d='Shop.Forms.Help'}"
               type="password"
@@ -156,7 +156,7 @@
               pattern=".{literal}{{/literal}5,{literal}}{/literal}"
               {if $field.required}required{/if}
             >
-            <span class="input-group-btn">
+            <span class="input-group-btn group">
               <button
                 class="btn btn-outline"
                 type="button"
@@ -165,7 +165,13 @@
                 data-text-hide="{l s='Hide' d='Shop.Theme.Actions'}"
               >
                 {l s='Show' d='Shop.Theme.Actions'}
+              
               </button>
+              <span class=" absolute bottom-3 group-hover:text-main-dark material-icons opacity-100 right-3 text-2xl text-gray-3000 transition duration-100 ">
+                  visibility
+                </span><span class="absolute bottom-3 material-icons opacity-0 right-3 text-2xl text-main-dark transition duration-100 z-10">
+                  visibility_off
+                </span>
             </span>
           </div>
         {/block}
@@ -174,7 +180,7 @@
 
         {block name='form_field_item_other'}
           <input
-            class="form-input rounded-md border"
+            class="form-input border-gray-2000 border-solid border flex rounded-full pl-4 bg-white w-full focus:border-gray-3000 focus:ring-0"
             name="{$field.name}"
             type="{$field.type}"
             value="{$field.value}"

@@ -22,7 +22,7 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
-<div class="flex flex-row flex-wrap phone:flex-nowrap w-full relative tablet-wide:items-center">
+<div class="flex flex-row flex-wrap phone:flex-nowrap w-full relative desktop-presta:items-center">
   <!--  product line left content: image-->
   <div class="flex-none h-[65px] mr-5 phone-wide:h-[102px] phone-wide:w-miniature w-[65px]">
     {if $product.cover}
@@ -32,11 +32,11 @@
     {/if}
   </div>
 
-  <div class="flex flex-col tablet-wide:flex-row tablet-wide:items-center w-full flex-auto ">
+  <div class="flex flex-col desktop-presta:flex-row desktop-presta:items-center w-full flex-auto ">
     <!--  product line body: label, attributes, customizations -->
-    <div class="flex-1 tablet-wide:pr-5 w-full">
+    <div class="flex-1 desktop-presta:pr-5 w-full">
       
-      <a class="block font-normal mb-2 text-base text-main-dark mr-4 mt-3 tablet:mt-1 tablet-wide:mr-0" href="{$product.url}" data-id_customization="{$product.id_customization|intval}">{$product.name}</a>
+      <a class="block font-normal mb-2 text-base text-main-dark mr-4 mt-3 tablet:mt-1 desktop-presta:mr-0" href="{$product.url}" data-id_customization="{$product.id_customization|intval}">{$product.name}</a>
 
       {foreach from=$product.attributes key="attribute" item="value"}
         <div class="flex flex-row">
@@ -87,16 +87,16 @@
     </div>
     
     <!--  product line body: discounts, price  -->
-    <div class="flex flex-row w-full tablet-wide:w-36 tablet-wide:pr-5 mt-6 tablet-wide:mt-0 mb-6 {if $product.has_discount}has-discount{/if}">
-      <div class="text-base text-gray-3000 block tablet-wide:hidden flex-auto">
+    <div class="flex flex-row w-full desktop-presta:w-36 desktop-presta:pr-5 mt-6 desktop-presta:mt-0 mb-6 {if $product.has_discount}has-discount{/if}">
+      <div class="text-base text-gray-3000 block desktop-presta:hidden flex-auto">
         {l s='Price' d='Shop.Theme.Checkout'}
       </div>
-      <div class="relative flex justify-end flex-col tablet-wide:justify-start">
+      <div class="relative flex justify-end flex-col desktop-presta:justify-start">
         {if $product.has_discount}
           <div class=" flex justify-end flex-wrap">
             <span class="line-through tablet:text-base text-gray-3000 text-sm">{$product.regular_price}</span>
             {if $product.discount_type === 'percentage'}
-              <span class=" text-white px-2 bg-main rounded-full ml-2 tablet-wide:-mr-5 text-sm h-5">
+              <span class=" text-white px-2 bg-main rounded-full ml-2 desktop-presta:-mr-5 text-sm h-5">
                 -{$product.discount_percentage_absolute}
               </span>
             {* {else}
@@ -106,7 +106,7 @@
             {/if}
           </div>
         {/if}
-        <div class="current-price text-right tablet-wide:text-left">
+        <div class="current-price text-right desktop-presta:text-left">
       <span class="price text-base tablet:text-lg {if $product.has_discount} text-main {else} text-main-dark {/if} font-medium">{$product.price}</span>
           {if $product.unit_price_full}
             <div class="unit-price-cart">{$product.unit_price_full}</div>
@@ -117,11 +117,11 @@
 
 
     <!--  product line right content: actions (quantity, delete), price -->
-    <div class="flex flex-row w-full tablet-wide:w-32 items-start tablet-wide:pr-5 qty mb-6">
-      <div class="text-base text-gray-3000 block tablet-wide:hidden flex-auto">
+    <div class="flex flex-row w-full desktop-presta:w-32 items-start desktop-presta:pr-5 qty mb-6">
+      <div class="text-base text-gray-3000 block desktop-presta:hidden flex-auto">
         {l s='Quantity' d='Shop.Theme.Checkout'}
       </div>
-      <div class="flex justify-end tablet-wide:justify-start">
+      <div class="flex justify-end desktop-presta:justify-start">
         {if isset($product.is_gift) && $product.is_gift}
           <span class="gift-quantity">{$product.quantity}</span>
         {else}
@@ -140,11 +140,11 @@
       </div>
     </div>
 
-    <div class="flex w-full tablet-wide:w-28 mb-6">
-      <div class="text-base text-gray-3000 block tablet-wide:hidden flex-auto">
+    <div class="flex w-full desktop-presta:w-28 mb-6">
+      <div class="text-base text-gray-3000 block desktop-presta:hidden flex-auto">
         {l s='Total cost' d='Shop.Theme.Checkout'}
       </div>
-      <span class="product-price flex-auto flex justify-end tablet-wide:justify-start text-base tablet:text-lg text-main-dark font-medium font-body">
+      <span class="product-price flex-auto flex justify-end desktop-presta:justify-start text-base tablet:text-lg text-main-dark font-medium font-body">
           {if isset($product.is_gift) && $product.is_gift}
             <span class="gift">{l s='Gift' d='Shop.Theme.Checkout'}</span>
           {else}
@@ -154,7 +154,7 @@
     </div>
 
   </div>
-  <div class="absolute ml-3 right-0 phone:relative flex-none tablet-wide:mb-6">
+  <div class="absolute ml-3 right-0 phone:relative flex-none desktop-presta:mb-6">
       <div class="cart-line-product-actions">
         <a
             class                       = "remove-from-cart"

@@ -1177,18 +1177,21 @@ $('body').on('click', '#payment-confirmation button', function(){
 $('body').on('click', "[href=\"#checkout-guest-form\"], [href=\"#checkout-register-form\"]", function(e){ 
 	e.preventDefault();
 	$('[data-login-panel]').hide();
+	$('[data-js-elem="cart"]').removeClass('hidden')
 });
 
 $('body').on('click', "[href=\"#checkout-register-form\"]", function(e){ 
 	e.preventDefault();
 	if(!prestashop.customer.is_guest_logged){
 		$('#checkout-guest-form [data-field=\"password\"]').show();
+		// $('[data-js-elem="cart"]').removeClass('hidden')
 	}
 });
 
 $('body').on('click', "[href=\"#checkout-login-panel\"]", function(e){ 
 	e.preventDefault();
 	$('[data-login-panel]').show();
+	$('[data-js-elem="cart"]').addClass('hidden')
 });
 
 $('body').on('click', "[href=\"#checkout-guest-form\"]", function(e){ 
@@ -1439,5 +1442,20 @@ function paginationGoTop() {
 $(document).ready(function () {
 	paginationGoTop();
 	prestashop.on("updateProductList", paginationGoTop)
+})
+
+
+$(document).ready(function () {
+	prestashop.on("changedCheckoutStep",function(){
+		let currentStep=$('.js-current-step .step-number').text();
+		if(currentStep == 1){
+			if ($('[data-login-panel]').is(":visible")) {
+				$('[data-js-elem="cart"]').addClass('hidden')
+			}
+		}
+		else{
+			$('[data-js-elem="cart"]').removeClass('hidden')
+		}
+	})
 })
 

@@ -39,14 +39,14 @@
         {/foreach}
       {/block}
       <div class="flex flex-auto flex-col">
-        <a class="underline text-sm" href="{$urls.pages.password}" rel="nofollow">
+        <a class="font-body font-normal ml-5 text-sm text-main-dark underline hover:underline hover:text-main transition" href="{$urls.pages.password}" rel="nofollow">
           {l s='Forgot your password?' d='Shop.Theme.Customeraccount'}
         </a>
       </div>
     </section>
 
     {block name='login_form_footer'}
-      <footer class="form-footer text-sm-center clearfix">
+      <footer class="mt-[30px] text-sm-center clearfix">
         <input type="hidden" name="submitLogin" value="1">
         {block name='form_buttons'}
           <button id="submit-login" class="btn btn-primary" data-link-action="sign-in" type="submit" class="form-control-submit">
