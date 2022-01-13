@@ -14,9 +14,9 @@
 	<div class="swiper" data-top-bar-swiper style="min-width: 800px">
 		<div class="swiper-wrapper h-5 tablet:h-10  select-none py-1 tablet:py-0" style="transition-timing-function: linear !important;" >
 			{foreach from=$Num item=sliders name=val}
-				{foreach from=$sliders item=slider name="sliders"}
+				{foreach from=$sliders item=slider key=i name="sliders"}
 					<div class="swiper-slide h-5 tablet:h-10 flex items-center justify-center whitespace-nowrap" style="min-width:max-content !important;">
-					{if $smarty.foreach.sliders.index == 0}{assign var="lazyImg" value="eager"}{else}{assign var="lazyImg" value="lazy"}{/if}
+					{if $i == 0}{assign var="lazyImg" value="eager"}{else}{assign var="lazyImg" value="lazy"}{/if}
 					{if $slider.link}
 						<a class="flex justify-center items-center" title="{l s='%s' sprintf=[$slider.title] mod='appagebuilder'}" {if $formAtts.is_open}target="_blank"{/if} href="{$slider.link}{*full link can not escape*}">
 					{else}

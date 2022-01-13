@@ -25,8 +25,8 @@
 		{foreach from=$Num item=sliders name=val}
 
 			<div class="swiper-slide">
-			{foreach from=$sliders item=slider name="sliders"}
-				{if $smarty.foreach.sliders.index == 0}{assign var="lazyImg" value="eager"}{else}{assign var="lazyImg" value="lazy"}{/if}
+			{foreach from=$sliders item=slider key=i name="sliders"}
+				{if $i == 0}{assign var="lazyImg" value="eager"}{else}{assign var="lazyImg" value="lazy"}{/if}
 				{if $slider.link}
 					<a title="{l s='%s' sprintf=[$slider.title] mod='appagebuilder'}" {if $formAtts.is_open}target="_blank"{/if} href="{$slider.link}{*full link can not escape*}">
 					<div class=" aspect-square ">
