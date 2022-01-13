@@ -9,7 +9,7 @@
 	<div class="swiper-wrapper max-h-tablet">
 	{if $sliders}
 		{foreach from=$sliders item=slider key=i name="sliders"}
-		{if $i == 0}{assign var="lazyImg" value="eager"}{else}{assign var="lazyImg" value="lazy"}{/if}
+		{if $i == 1}{assign var="lazyImg" value="eager"}{else}{assign var="lazyImg" value="lazy"}{/if}
 		<div class="swiper-slide"
 		data-pausetime="{$slider.data_delay|escape:'html':'UTF-8'}">
 		
