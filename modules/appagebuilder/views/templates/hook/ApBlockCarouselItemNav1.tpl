@@ -16,7 +16,7 @@
 			{foreach from=$Num item=sliders name=val}
 				{foreach from=$sliders item=slider key=i name="sliders"}
 					<div class="swiper-slide h-5 tablet:h-10 flex items-center justify-center whitespace-nowrap" style="min-width:max-content !important;">
-					{if $i == 0}{assign var="lazyImg" value="eager"}{else}{assign var="lazyImg" value="lazy"}{/if}
+					{if $i == 1}{assign var="lazyImg" value="eager"}{else}{assign var="lazyImg" value="lazy"}{/if}
 					{if $slider.link}
 						<a class="flex justify-center items-center" title="{l s='%s' sprintf=[$slider.title] mod='appagebuilder'}" {if $formAtts.is_open}target="_blank"{/if} href="{$slider.link}{*full link can not escape*}">
 					{else}
