@@ -8,7 +8,8 @@
 <div class=" tablet:-mx-4 swiper-banner">
 	<div class="swiper-wrapper max-h-tablet">
 	{if $sliders}
-		{foreach from=$sliders item=slider}
+		{foreach from=$sliders item=slider name="sliders"}
+		{if $smarty.foreach.sliders.index == 0}{assign var="lazyImg" value="eager"}{else}{assign var="lazyImg" value="lazy"}{/if}
 		<div class="swiper-slide"
 		data-pausetime="{$slider.data_delay|escape:'html':'UTF-8'}">
 		
@@ -34,6 +35,7 @@
 
 					<img
 						class=" min-h-banner max-h-tablet min-w-full desktop-wide:h-banner-final object-left object-cover"
+						loading="{$lazyImg}"
 						src="{$slider.main_image|escape:'html':'UTF-8'}">
 				</a>
 
