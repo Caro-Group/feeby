@@ -323,6 +323,9 @@ div#js-product-list-top:after {
     @apply w-auto float-none;
 }
 
+.nav-link.active{
+    @apply text-gray-main;
+}
 
 .checkout-step:nth-child(1) .step-title{
     @apply left-0;
