@@ -63,14 +63,14 @@
                 {foreach from=$delivery_options item=carrier key=carrier_id name=delivery_options_loop}
                     <div class="delivery-option bg-gray-1000 delivery-option flex flex-row mb-2 mb-5 px-5 py-3 rounded-md " {if $carrier.id === 31 || $carrier.id === 32}onclick="gmParcelLockerChoose(this);return false;"{/if}>
                       <div class="flex items-center justify-center w-16">
-                        <span class="custom-radio float-xs-left">
-                          <input type="radio" name="delivery_option[{$id_address_delivery}]" id="delivery_option_{$carrier.id}" value="{$carrier_id}"{if ($smarty.foreach.delivery_options_loop.index == 0 && $delivery_option != $carrier_id) || $delivery_option == $carrier_id} checked{/if} />
-                          <span></span>
+                        <span class=" float-xs-left">
+                          <input type="radio" name="delivery_option[{$id_address_delivery}]" id="delivery_option_{$carrier.id}" value="{$carrier_id}"{if ($smarty.foreach.delivery_options_loop.index == 0 && $delivery_option != $carrier_id) || $delivery_option == $carrier_id} checked{/if} class="after:absolute after:bg-white after:content-[''] after:h-[10px] after:m-[3px] after:rounded-sm after:transition after:w-[10px] appearance-none border-2 border-gray-3000 border-solid checked:after:bg-main checked:bg-white checked:border-main checked:focus:bg-white checked:focus:border-main checked:focus:ring-transparent checked:focus:shadow-none checked:hover:bg-white checked:hover:border-main checked:ring-0 checked:ring-transparent focus:ring-0 focus:ring-offset-0 focus:ring-transparent h-5 outline-none ring-transparent rounded transition transition-all w-5" />
+                          
                         </span>
                       </div>
                       <label for="delivery_option_{$carrier.id}" class="flex-auto delivery-option-2 mb-0 ">
-                        <div class="flex flex-col-reverse tablet-wide:flex-row flex-wrap items-start tablet-wide:items-center">
-                          <div class="bg-main font-normal px-3 py-[3px] font-body uppercase rounded-full tablet:text-base text-sm text-white mr-4">
+                        <div class="flex flex-col-reverse tablet-wide:flex-row items-start tablet-wide:items-center">
+                          <div class="bg-main font-normal px-3 py-[3px] font-body uppercase rounded-full tablet:text-base text-sm text-white mr-4 whitespace-none">
                             {$carrier.price}
                           </div>
                           <div class="flex-auto tablet:text-base text-sm text-main-dark font-medium py-1">
