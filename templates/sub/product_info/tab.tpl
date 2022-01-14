@@ -51,12 +51,14 @@
 	  	</ul>
 
 	  	<div class="tab-content" id="tab-content">
-		   	<div class="tab-pane fade in{if $product.description} active{/if}" id="description" role="tabpanel">
+		   	<div class="tab-pane p-5 pt-8 fade in{if $product.description} active{/if}" id="description" role="tabpanel">
 		     	{block name='product_description'}
-				 	<h2 class="h2 product-title" itemprop="name">{$product.name}</h2>
-					<div class="product-desc-wrapper">
-		       			<div class="product-description">{$product.description nofilter}</div>
-						<div class="product-icons-description">{hook h='displayApSC' sc_key=sc3645178611}</div>
+					<div class="flex flex-wrap product-desc-wrapper">
+		       			<div class="w-full tablet:w-1/2 product-description">
+						   <h2 class="h2 product-title" itemprop="name">{$product.name}</h2>
+						   {$product.description nofilter}
+						</div>
+						<div class="w-full tablet:w-1/2 product-icons-description">{hook h='displayApSC' sc_key=sc3645178611}</div>
 					</div>
 		     	{/block}
 		   	</div>
