@@ -25,10 +25,10 @@
 {block name='address_selector_blocks'}
   {foreach $addresses as $address}
     <article
-      class="address-item {if $address.id == $selected} selected {/if}"
+      class="address-item {if $address.id == $selected} selected {/if} bg-gray-1000 mb-5 p-2 pb-4 rounded-md  "
       id="{$name|classname}-address-{$address.id}"
     >
-      <header class="h4">
+      <header >
         <label class="radio-block">
           <span class="custom-radio">
             <input
@@ -39,27 +39,28 @@
             >
             <span></span>
           </span>
-          <span class="address-alias h4">{$address.alias}</span>
-          <div class="address">{$address.formatted nofilter}</div>
+          <span class="font-body font-medium tablet:text-xl text-base">{$address.alias}</span>
+          <div class="font-body font-light pt-3 tablet:p-5 phablet:ml-8 tablet:text-base text-sm">{$address.formatted nofilter}</div>
         </label>
       </header>
       <hr>
       <footer class="address-footer">
         {if $interactive}
           <a
-            class="edit-address text-muted"
-            data-link-action="edit-address"
-            href="{url entity='order' params=['id_address' => $address.id, 'editAddress' => $type, 'token' => $token]}"
-          >
-            <i class="material-icons edit">&#xE254;</i>{l s='Edit' d='Shop.Theme.Actions'}
-          </a>
-          <a
-            class="delete-address text-muted"
+            class="font-body font-normal hover:text-main mr-5 tablet:text-sm text-main-dark text-xs transition uppercase"
             data-link-action="delete-address"
             href="{url entity='order' params=['id_address' => $address.id, 'deleteAddress' => true, 'token' => $token]}"
           >
-            <i class="material-icons delete">&#xE872;</i>{l s='Delete' d='Shop.Theme.Actions'}
+            {l s='Delete' d='Shop.Theme.Actions'}
           </a>
+          <a
+            class="border-2 border-main-dark border-solid font-body font-normal hover:bg-main-dark hover:text-white px-6 py-3 rounded-full text-main-dark text-sm transition uppercase whitespace-nowrap"
+            data-link-action="edit-address"
+            href="{url entity='order' params=['id_address' => $address.id, 'editAddress' => $type, 'token' => $token]}"
+          >
+            {l s='Edit' d='Shop.Theme.Actions'}
+          </a>
+          
         {/if}
       </footer>
     </article>
