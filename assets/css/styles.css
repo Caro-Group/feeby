@@ -325,7 +325,7 @@ div#js-product-list-top:after {
 }
 
 .nav-link.active{
-    @apply text-gray-main;
+    @apply text-gray-main border-main;
 }
 
 .checkout-step:nth-child(1) .step-title{
