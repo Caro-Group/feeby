@@ -7,11 +7,11 @@
 *}
 {block name='product_tabs'}
 	<div class="product-tabs tabs">
-	  	<ul class="nav nav-tabs" role="tablist">
+	  	<ul class="flex items-baseline flex-nowrap nav nav-tabs" role="tablist">
 		    {if $product.description}
-		    	<li class="nav-item">
+		    	<li class="nav-item mr-[79px]">
 				   <a
-					 class="nav-link{if $product.description} active{/if}"
+					 class="font-header nav-link{if $product.description} active{/if}"
 					 data-toggle="tab"
 					 href="#description"
 					 role="tab"
@@ -19,9 +19,9 @@
 					 {if $product.description} aria-selected="true"{/if}>{l s='Description' d='Shop.Theme.Catalog'}</a>
 				</li>
 	    	{/if}
-		    <li class="nav-item">
+		    <li class="nav-item mr-[79px]">
 				<a
-				  class="nav-link{if !$product.description} active{/if}"
+				  class="font-header nav-link{if !$product.description} active{/if}"
 				  data-toggle="tab"
 				  href="#product-details"
 				  role="tab"
@@ -29,9 +29,9 @@
 				  {if !$product.description} aria-selected="true"{/if}>{l s='Product Details' d='Shop.Theme.Catalog'}</a>
 			</li>
 		    {if $product.attachments}
-				<li class="nav-item">
+				<li class="nav-item mr-[79px]">
 				  <a
-					class="nav-link"
+					class="font-header nav-link"
 					data-toggle="tab"
 					href="#attachments"
 					role="tab"
@@ -39,9 +39,9 @@
 				</li>
 			 {/if}
 		    {foreach from=$product.extraContent item=extra key=extraKey}
-			    <li class="nav-item">
+			    <li class="nav-item mr-[79px]">
 				  <a
-					class="nav-link"
+					class="font-header nav-link"
 					data-toggle="tab"
 					href="#extra-{$extraKey}"
 					role="tab"
