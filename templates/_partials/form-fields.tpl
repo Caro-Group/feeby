@@ -80,12 +80,12 @@
         {block name='form_field_item_radio'}
           {foreach from=$field.availableValues item="label" key="value"}
             <label class="radio-inline">
-              <span class="custom-radio">
+              <span class="mr-5 align-[3px]">
                 <input
                   name="{$field.name}"
                   type="radio"
                   value="{$value}"
-                  class="bg-white border-2 border-gray-3000 border-solid checked:bg-main checked:bg-none checked:focus:bg-main checked:hover:bg-main checked:ring-2 checked:ring-main checked:ring-offset-[3px] checked:rounded-[2px] checked:scale-[0.65] duration-300 form-checkbox opacity-100 outline-none ring-offset-0 rounded transition transition-all"
+                  class="after:absolute after:bg-white after:content-[''] after:h-[10px] after:m-[3px] after:rounded-sm after:transition after:w-[10px] appearance-none border-2 border-gray-3000 border-solid checked:after:bg-main checked:bg-white checked:border-main checked:focus:bg-white checked:focus:border-main checked:focus:ring-transparent checked:focus:shadow-none checked:hover:bg-white checked:hover:border-main checked:ring-0 checked:ring-transparent focus:ring-0 focus:ring-offset-0 focus:ring-transparent h-5 outline-none ring-transparent rounded transition transition-all w-5"
                   {if $field.required}required{/if}
                   {if $value eq $field.value} checked {/if}
                 >

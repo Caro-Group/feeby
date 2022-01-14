@@ -18414,10 +18414,7 @@ body#checkout section.checkout-step {
       color: #414141; }
       body#checkout section.checkout-step .add-address a i {
         font-size: 13px; }
-  body#checkout section.checkout-step .delivery-option {
-    background: #f6f6f6;
-    padding: 15px 0;
-    margin: 0 0 25px; }
+
     body#checkout section.checkout-step .delivery-option label {
       text-align: inherit; }
   body#checkout section.checkout-step .carrier-delay,
