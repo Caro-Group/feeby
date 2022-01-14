@@ -33,7 +33,7 @@
   {if $field.name == 'company'}
 
     <div id="company" class="pb-8 ">
-      <a class="block mb-8 border-b text-black w-full desktop-presta:ml-[220px] hover:text-main transition text-xs tablet:text-sm collapsed font-body" data-toggle="collapse" href="#collapseCompany" role="button" aria-expanded="false" aria-controls="collapseCompany">
+      <a class="block mb-8 border-b text-main-dark w-full desktop-presta:ml-[220px] hover:text-main transition text-xs tablet:text-sm collapsed font-body" data-toggle="collapse" href="#collapseCompany" role="button" aria-expanded="false" aria-controls="collapseCompany">
         <svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" fill="none"><path fill="#181828" d="M0 3h7v1H0z"/><path fill="#181828" d="M4 0v7H3V0z"/></svg>
         {l s='Add tax identification number and company name' d='Shop.Theme.Checkout'}
       </a>

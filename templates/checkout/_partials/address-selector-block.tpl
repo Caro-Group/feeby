@@ -32,12 +32,12 @@
         <label class="radio-block">
           <span class="custom-radio">
             <input
+              class="bg-white border-2 border-gray-3000 border-solid checked:bg-main checked:bg-none checked:focus:bg-main checked:hover:bg-main checked:ring-2 checked:ring-main checked:ring-offset-[3px] checked:rounded-[2px] checked:scale-[0.65] duration-300 form-checkbox opacity-100 outline-none ring-offset-0 rounded transition transition-all"
               type="radio"
               name="{$name}"
               value="{$address.id}"
               {if $address.id == $selected}checked{/if}
             >
-            <span></span>
           </span>
           <span class="font-body font-medium tablet:text-xl text-base">{$address.alias}</span>
           <div class="font-body font-light pt-3 tablet:p-5 phablet:ml-8 tablet:text-base text-sm">{$address.formatted nofilter}</div>
