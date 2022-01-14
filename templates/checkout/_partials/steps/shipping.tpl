@@ -61,24 +61,24 @@
             {block name='delivery_options'}
               <div class="delivery-options flex flex-col flex-wrap">
                 {foreach from=$delivery_options item=carrier key=carrier_id name=delivery_options_loop}
-                    <div class="delivery-option mb-2 flex flex-row" {if $carrier.id === 31 || $carrier.id === 32}onclick="gmParcelLockerChoose(this);return false;"{/if}>
+                    <div class="delivery-option bg-gray-1000 delivery-option flex flex-row mb-2 mb-5 px-5 py-3 rounded-md " {if $carrier.id === 31 || $carrier.id === 32}onclick="gmParcelLockerChoose(this);return false;"{/if}>
                       <div class="flex items-center justify-center w-16">
                         <span class="custom-radio float-xs-left">
                           <input type="radio" name="delivery_option[{$id_address_delivery}]" id="delivery_option_{$carrier.id}" value="{$carrier_id}"{if ($smarty.foreach.delivery_options_loop.index == 0 && $delivery_option != $carrier_id) || $delivery_option == $carrier_id} checked{/if} />
                           <span></span>
                         </span>
                       </div>
-                      <label for="delivery_option_{$carrier.id}" class="flex-auto delivery-option-2">
+                      <label for="delivery_option_{$carrier.id}" class="flex-auto delivery-option-2 mb-0 ">
                         <div class="flex flex-col-reverse tablet-wide:flex-row flex-wrap items-start tablet-wide:items-center">
-                          <div class="flex-initial w-24">
+                          <div class="bg-main font-normal px-3 py-[3px] font-body uppercase rounded-full tablet:text-base text-sm text-white mr-4">
                             {$carrier.price}
                           </div>
-                          <div class="flex-auto">
+                          <div class="flex-auto tablet:text-base text-sm text-main-dark font-medium py-1">
                               {$carrier.name} {if isset($carrier.delay)} - {$carrier.delay}{/if}
                           </div>
                           {if $carrier.logo}
-                            <div class="flex-none tablet-wide:ml-auto tablet-wide:mr-6">
-                                <img src="{$carrier.logo}" alt="{$carrier.name}" class="h-10 w-auto max-w-none"/>
+                            <div class="flex-none tablet-wide:ml-auto">
+                                <img src="{$carrier.logo}" alt="{$carrier.name}" class="h-12 rounded-md w-auto max-w-none"/>
                             </div>
                           {/if}
                         </div>
@@ -118,7 +118,7 @@
   
           <div class="flex flex-wrap justify-between">
             <button data-checkout-back="#checkout-personal-information-step" class="text-black bg-transparent border-0 uppercase whitespace-nowrap mb-2 flex items-center justify-between cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" fill="none" class="mr-2"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.25 13.384 0 7.134V6.25L6.25 0l.884.884L1.95 6.067H15v1.25H1.95L7.135 12.5l-.884.884H6.25Z" fill="#181828"/></svg>{l s='Go back' d='Shop.Theme.Checkout'}</button>  
-            <button type="submit" class="continue continue bg-main hover:opacity-80 duration-150 border-0 rounded-full text-white p-2 px-4 uppercase whitespace-nowrap mb-2 flex items-center justify-between ml-auto cursor-pointer" name="confirmDeliveryOption" value="1">
+            <button type="submit" class="continue continue bg-main hover:bg-main-hover duration-150 border-0 rounded-full text-white p-2 px-4 uppercase whitespace-nowrap mb-2 flex items-center justify-between ml-auto cursor-pointer" name="confirmDeliveryOption" value="1">
               {l s='Continue' d='Shop.Theme.Actions'}
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" fill="none" class="ml-2 flex-0"><path fill-rule="evenodd" clip-rule="evenodd" d="m9.25 14.359 6.25-6.25v-.884L9.25.975l-.884.884 5.183 5.184H.5v1.25h13.05l-5.185 5.182.884.884h.001Z" fill="#fff"/></svg>
             </button>
