@@ -70,7 +70,7 @@
                       </div>
                       <label for="delivery_option_{$carrier.id}" class="flex-auto delivery-option-2 mb-0 ">
                         <div class="flex flex-col-reverse tablet-wide:flex-row items-start tablet-wide:items-center">
-                          <div class="bg-main font-normal px-3 py-[3px] font-body uppercase rounded-full tablet:text-base text-sm text-white mr-4 whitespace-none">
+                          <div class="bg-main font-normal px-3 py-[3px] font-body uppercase rounded-full tablet:text-base text-sm text-white mr-4 whitespace-nowrap">
                             {$carrier.price}
                           </div>
                           <div class="flex-auto tablet:text-base text-sm text-main-dark font-medium py-1">
