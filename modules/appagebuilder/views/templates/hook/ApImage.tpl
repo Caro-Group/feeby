@@ -89,7 +89,7 @@
             
     </div>
     
-    {else if( $page.page_name = 'product' && $hookName == 'displayTop')}
+    {else if( $page.page_name = 'product' && $hookName = 'displayTop')}
         <div id="image-{$formAtts.form_id|escape:'html':'UTF-8'}" class="block {(isset($formAtts.class)) ? $formAtts.class : ''|escape:'html':'UTF-8'}">
             {($apLiveEdit)?$apLiveEdit:'' nofilter}{* HTML form , no escape necessary *}
             
