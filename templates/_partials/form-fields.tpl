@@ -101,8 +101,8 @@
         {block name='form_field_item_checkbox'}
           <span class="custom-checkbox">
             <label>
-              <input name="{$field.name}" type="checkbox" class="form-checkbox" value="1" {if $field.value}checked="checked"{/if} {if $field.required}required{/if}>
-              <span><i class="material-icons rtl-no-flip checkbox-checked">&#xE5CA;</i></span>
+              <input name="{$field.name}" type="checkbox" class="form-checkbox bg-transparent border-2 border-gray-3000 border-solid checked:bg-main-dark checked:focus:bg-main-dark checked:hover:bg-main-dark focus:ring-0 focus:ring-transparent form-checkbox opacity-100 outline-none rounded transition" value="1" {if $field.value}checked="checked"{/if} {if $field.required}required{/if}>
+              <span></span>
               <span>{$field.label nofilter}
                 {if $field.required}<span class="text-require">*</span>{/if}
               </span>
