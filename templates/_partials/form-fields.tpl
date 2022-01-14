@@ -80,7 +80,7 @@
         {block name='form_field_item_radio'}
           {foreach from=$field.availableValues item="label" key="value"}
             <label class="radio-inline">
-              <span class="mr-5 align-[3px]">
+              <span >
                 <input
                   name="{$field.name}"
                   type="radio"
