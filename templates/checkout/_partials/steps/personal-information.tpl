@@ -12,7 +12,7 @@
 
   {if $customer.is_logged && !$customer.is_guest}
 
-    <h2 class="mb-4">
+    <h2 class="mb-4 font-normal italic mb-2 tablet:mb-[10px] text-2xl text-main-dark">
       {l s='%firstname% %lastname%'
         d='Shop.Theme.Customeraccount'
         sprintf=[
@@ -21,21 +21,22 @@
         ]
       }
     </h2>
-    <p class="mb-2">
+    <p class="mb-2 text-sm tablet:text-base font-body text-main-dark">
       {l s='Do you give up shopping?' d='Shop.Theme.Checkout'}
-      <a href="{$urls.actions.logout}">
+      <a href="{$urls.actions.logout}" class="text-main hover:text-main-hover transition">
         {l s='Log out' d='Shop.Theme.Checkout'}
       </a>
     </p>
     
     {if !isset($empty_cart_on_logout) || $empty_cart_on_logout}
-      <p class="mb-2"><small>{l s='If you sign out now, your cart will be emptied.' d='Shop.Theme.Checkout'}</small></p>
+      <p class="mb-2 text-xs tablet:text-sm font-body text-gray-3000 ">
+      {l s='If you sign out now, your cart will be emptied.' d='Shop.Theme.Checkout'}</p>
     {/if}
 
     
       <form method="GET" action="{$urls.pages.order}">
         <button
-          class="bg-main hover:opacity-80 duration-150 border-0 rounded-full text-white p-2 px-4 uppercase whitespace-nowrap mb-2 flex items-center justify-between cursor-pointer ml-auto"
+          class="bg-main hover:bg-main duration-150 border-0 rounded-full text-white p-2 px-4 uppercase whitespace-nowrap mb-2 flex items-center justify-between cursor-pointer ml-auto"
           name="controller"
           type="submit"
           value="order"
@@ -45,7 +46,7 @@
       </form>
 
   {else}
-    <div class="absolute bg-gray-1000 inset-0 mt-[120px] tablet:mt-40 tablet:rounded-md z-10" data-login-panel>
+    <div class=" bg-gray-1000 inset-0 tablet:rounded-md z-10 desktop-presta:-mr-40 pb-12" data-login-panel>
       <div class="flex flex-wrap tablet-wide:flex-nowrap">
         <div class="border-0 border-b border-gray-3000 border-solid flex flex-col items-start mb-0 my-8 pb-11 px-0 mx-5 tablet:px-5 tablet:mx-0 tablet-wide:px-24 tablet:border-b-0 tablet:border-r tablet:mb-8 tablet:my-20 tablet:w-1/2 w-full">
           <h2 class="text-2xl tablet:text-3xl font-normal mb-5">{l s='I do not have an account' d='Shop.Theme.Checkout'}</h2>
