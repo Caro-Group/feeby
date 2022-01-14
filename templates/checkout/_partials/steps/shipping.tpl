@@ -26,9 +26,9 @@
 
  {block name='step_content'}
  
-  <div class="border-0 border-b border-solid border-gray-1000 mb-8">
+  <div class="border-0 border-b border-solid border-gray-1000 mb-8 p-5 tablet:p-0">
     <div class="flex flex-row mb-14">
-      <h2 class="border-0 border-b border-main border-solid mb-0 pb-3">
+      <h2 class="border-0 border-b-[3px] rounded-b-sm border-main border-solid mb-0 pb-3">
         {l s='Data of the ordering person' d='Shop.Theme.Checkout'}
       </h2>
     </div>
@@ -36,10 +36,10 @@
     {include file='checkout/_partials/steps/addresses.tpl'}
   </div>
 
-  <div class="{if !($customer.addresses|count) || $show_delivery_address_form || $show_invoice_address_form } pointer-events-none opacity-5 {/if}">
+  <div class="{if !($customer.addresses|count) || $show_delivery_address_form || $show_invoice_address_form } pointer-events-none opacity-5 {/if} p-5 tablet:p-0">
 
-    <div class="flex flex-row mb-14">
-      <h2 class="border-0 border-b border-main border-solid mb-0 pb-3">
+    <div class="flex flex-row mb-14 ">
+      <h2 class="border-0 border-b-[3px] rounded-b-sm border-main border-solid mb-0 pb-3">
         {l s='Delivery method' d='Shop.Theme.Checkout'}
       </h2>
     </div>
