@@ -383,3 +383,17 @@ input[type="text"] + .input-group-btn span:nth-of-type(2){
 #checkout-personal-information-step.checkout-step [style="display: none;"] + #checkout-guest-form{
     @apply block;
 }
+
+
+/* product-desc-right-box - on product page right bar */
+.product-desc-right-box  .ApColumn .block{
+    @apply mb-0;
+}
+
+.product-desc-right-box .ApColumn .title_block{
+    @apply font-header mb-5 text-[25px];
+}
+
+.product-desc-right-box .ApImage img{
+    @apply bg-gray-1000 rounded-[5px] w-full h-auto max-w-[60px] max-h-[60px];
+}
