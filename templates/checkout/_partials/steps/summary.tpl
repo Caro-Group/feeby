@@ -77,13 +77,13 @@
     <div>
       <div id="payment-confirmation">
         <div class="ps-shown-by-js">
-          <button type="submit" disabled="disabled" class="btn bg-main hover:opacity-80 duration-150 border-0 rounded-full text-white p-2 px-4 uppercase whitespace-nowrap mb-2 flex items-center justify-between cursor-pointer">
+          <button type="submit" disabled="disabled" class="btn bg-main hover:bg-main-hover duration-150 border-0 rounded-full text-white p-2 px-4 uppercase whitespace-nowrap mb-2 flex items-center justify-between cursor-pointer">
             {l s='Order with an obligation to pay' d='Shop.Theme.Checkout'}
           </button>
         </div>
         <div class="ps-hidden-by-js">
           {if $selected_payment_option}
-            <label for="pay-with-{$selected_payment_option}" class="bg-main hover:opacity-80 duration-150 border-0 rounded-full text-white p-2 px-4 uppercase whitespace-nowrap mb-2 flex items-center justify-between cursor-pointer">{l s='Order with an obligation to pay' d='Shop.Theme.Checkout'}</label>
+            <label for="pay-with-{$selected_payment_option}" class="bg-main hover:bg-main-hover duration-150 border-0 rounded-full text-white p-2 px-4 uppercase whitespace-nowrap mb-2 flex items-center justify-between cursor-pointer">{l s='Order with an obligation to pay' d='Shop.Theme.Checkout'}</label>
           {/if}
         </div>
       </div>
