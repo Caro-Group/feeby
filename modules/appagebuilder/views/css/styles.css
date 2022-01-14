@@ -321,19 +321,6 @@
 .block .panel-group {
   margin-bottom: 0; }
 
-.nav-tabs {
-  border-bottom: 1px solid transparent;
-  padding-bottom: 20px; }
-  .nav-tabs > li > a {
-    color: #767676;
-    border-bottom: 2px solid transparent;
-    text-transform: uppercase; }
-  .nav-tabs > li.active a, .nav-tabs > li.active a:hover, .nav-tabs > li.active a:focus {
-    border: 1px solid transparent;
-    background: #eeeeee;
-    border-bottom: 2px solid #c0c700;
-    color: #000000; }
-
 /**
 * Start for module ap_gmap
 */

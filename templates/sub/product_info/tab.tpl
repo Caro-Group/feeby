@@ -7,11 +7,11 @@
 *}
 {block name='product_tabs'}
 	<div class="product-tabs tabs">
-	  	<ul class="nav nav-tabs" role="tablist">
+	  	<ul class="flex items-baseline flex-nowrap nav nav-tabs" role="tablist">
 		    {if $product.description}
-		    	<li class="nav-item">
+		    	<li class="nav-item mr-[79px]">
 				   <a
-					 class="nav-link{if $product.description} active{/if}"
+					 class="font-header text-[25px] text-gray-3000 border-0 border-b-[3px] border-solid rounded-b-[3px] nav-link{if $product.description} active{/if}"
 					 data-toggle="tab"
 					 href="#description"
 					 role="tab"
@@ -19,9 +19,9 @@
 					 {if $product.description} aria-selected="true"{/if}>{l s='Description' d='Shop.Theme.Catalog'}</a>
 				</li>
 	    	{/if}
-		    <li class="nav-item">
+		    <li class="nav-item mr-[79px]">
 				<a
-				  class="nav-link{if !$product.description} active{/if}"
+				  class="font-header text-[25px] text-gray-3000 border-0 border-b-[3px] border-solid rounded-b-[3px] nav-link{if !$product.description} active{/if}"
 				  data-toggle="tab"
 				  href="#product-details"
 				  role="tab"
@@ -29,9 +29,9 @@
 				  {if !$product.description} aria-selected="true"{/if}>{l s='Product Details' d='Shop.Theme.Catalog'}</a>
 			</li>
 		    {if $product.attachments}
-				<li class="nav-item">
+				<li class="nav-item mr-[79px]">
 				  <a
-					class="nav-link"
+					class="font-header text-[25px] text-gray-3000 border-0 border-b-[3px] border-solid rounded-b-[3px] nav-link"
 					data-toggle="tab"
 					href="#attachments"
 					role="tab"
@@ -39,9 +39,9 @@
 				</li>
 			 {/if}
 		    {foreach from=$product.extraContent item=extra key=extraKey}
-			    <li class="nav-item">
+			    <li class="nav-item mr-[79px]">
 				  <a
-					class="nav-link"
+					class="font-header text-[25px] text-gray-3000 border-0 border-b-[3px] border-solid rounded-b-[3px] nav-link"
 					data-toggle="tab"
 					href="#extra-{$extraKey}"
 					role="tab"
@@ -51,12 +51,14 @@
 	  	</ul>
 
 	  	<div class="tab-content" id="tab-content">
-		   	<div class="tab-pane fade in{if $product.description} active{/if}" id="description" role="tabpanel">
+		   	<div class="tab-pane p-5 pt-8 fade in{if $product.description} active{/if}" id="description" role="tabpanel">
 		     	{block name='product_description'}
-				 	<h2 class="h2 product-title" itemprop="name">{$product.name}</h2>
-					<div class="product-desc-wrapper">
-		       			<div class="product-description">{$product.description nofilter}</div>
-						<div class="product-icons-description">{hook h='displayApSC' sc_key=sc3645178611}</div>
+					<div class="flex flex-wrap product-desc-wrapper">
+		       			<div class="w-full tablet:w-1/2 product-description">
+						   <h2 class="h2 product-title" itemprop="name">{$product.name}</h2>
+						   {$product.description nofilter}
+						</div>
+						<div class="w-full tablet:w-1/2 product-icons-description">{hook h='displayApSC' sc_key=sc3645178611}</div>
 					</div>
 		     	{/block}
 		   	</div>
