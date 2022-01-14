@@ -26,7 +26,7 @@
 
  {block name='step_content'}
  
-  <div class="border-0 border-b border-solid border-gray-200 mb-8">
+  <div class="border-0 border-b border-solid border-gray-1000 mb-8">
     <div class="flex flex-row mb-14">
       <h2 class="border-0 border-b border-main border-solid mb-0 pb-3">
         {l s='Data of the ordering person' d='Shop.Theme.Checkout'}

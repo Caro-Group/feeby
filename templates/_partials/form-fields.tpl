@@ -32,8 +32,8 @@
 
   {if $field.name == 'company'}
 
-    <div id="company" class="mb-8">
-      <a class="block mb-8 border-b text-black w-full collapsed" data-toggle="collapse" href="#collapseCompany" role="button" aria-expanded="false" aria-controls="collapseCompany">
+    <div id="company" class="pb-8 ">
+      <a class="block mb-8 border-b text-black w-full desktop-presta:ml-[220px] hover:text-main transition text-xs tablet:text-sm collapsed font-body" data-toggle="collapse" href="#collapseCompany" role="button" aria-expanded="false" aria-controls="collapseCompany">
         <svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" fill="none"><path fill="#181828" d="M0 3h7v1H0z"/><path fill="#181828" d="M4 0v7H3V0z"/></svg>
         {l s='Add tax identification number and company name' d='Shop.Theme.Checkout'}
       </a>
@@ -64,7 +64,7 @@
 
         {block name='form_field_item_country'}
           <select
-          class="form-select border border-gray-1000 rounded-full pl-4 bg-gray-1000 w-full focus:border-gray-3000 focus:ring-0 w-full form-control-select font-medium js-country"
+          class="form-select font-body font-medium border border-gray-1000 rounded-full pl-4 bg-gray-1000 w-full focus:border-gray-3000 focus:ring-0 w-full form-control-select font-medium js-country"
           name="{$field.name}"
           {if $field.required}required{/if}
           >
@@ -85,7 +85,7 @@
                   name="{$field.name}"
                   type="radio"
                   value="{$value}"
-                  class="form-radio"
+                  class="bg-white border-2 border-gray-3000 border-solid checked:bg-main checked:bg-none checked:focus:bg-main checked:hover:bg-main checked:ring-2 checked:ring-main checked:ring-offset-[3px] checked:rounded-[2px] checked:scale-[0.65] duration-300 form-checkbox opacity-100 outline-none ring-offset-0 rounded transition transition-all"
                   {if $field.required}required{/if}
                   {if $value eq $field.value} checked {/if}
                 >
@@ -101,7 +101,7 @@
         {block name='form_field_item_checkbox'}
           <span class="custom-checkbox">
             <label>
-              <input name="{$field.name}" type="checkbox" class="form-checkbox bg-transparent border-2 border-gray-3000 border-solid checked:bg-main-dark checked:focus:bg-main-dark checked:hover:bg-main-dark focus:ring-0 focus:ring-transparent form-checkbox opacity-100 outline-none rounded transition" value="1" {if $field.value}checked="checked"{/if} {if $field.required}required{/if}>
+              <input name="{$field.name}" type="checkbox" class="form-checkbox bg-white border-2 border-gray-3000 border-solid checked:bg-main-dark checked:focus:bg-main-dark checked:hover:bg-main-dark focus:ring-0 focus:ring-transparent form-checkbox opacity-100 outline-none rounded transition" value="1" {if $field.value}checked="checked"{/if} {if $field.required}required{/if}>
               <span></span>
               <span>{$field.label nofilter}
                 {if $field.required}<span class="text-require">*</span>{/if}
@@ -148,7 +148,7 @@
         {block name='form_field_item_password'}
           <div class="input-group js-parent-focus">
             <input
-              class="form-input js-child-focus js-visible-password border-gray-2000 border-solid border flex rounded-full pl-4 bg-white w-full focus:border-gray-3000 focus:ring-0"
+              class="form-input js-child-focus js-visible-password font-body border-gray-2000 border-solid border flex rounded-full pl-4 bg-white w-full focus:border-gray-3000 focus:ring-0"
               name="{$field.name}"
               title="{l s='At least 5 characters long' d='Shop.Forms.Help'}"
               type="password"
@@ -180,7 +180,7 @@
 
         {block name='form_field_item_other'}
           <input
-            class="form-input border-gray-2000 border-solid border flex rounded-full pl-4 bg-white w-full focus:border-gray-3000 focus:ring-0"
+            class="form-input font-body text-sm placeholder:italic border-gray-2000 border-solid border flex rounded-full pl-4 bg-white w-full focus:border-gray-3000 focus:ring-0"
             name="{$field.name}"
             type="{$field.type}"
             value="{$field.value}"

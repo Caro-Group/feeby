@@ -1056,23 +1056,9 @@ body#checkout section.checkout-step .address-selector {
 /* 
 body#checkout section.checkout-step .address-item.selected {
   border: #282828 1px solid; } */
-body#checkout section.checkout-step .address-item .radio-block {
-  display: block; }
-body#checkout section.checkout-step .address-item .custom-radio {
-  border: #888 1px solid;
-  width: 16px;
-  height: 16px;
-  vertical-align: -7px; }
-body#checkout section.checkout-step .address-item .address-alias {
-  margin-bottom: 10px;
-  font-size: 14px;
-  padding: 0 5px;
-  text-transform: uppercase;
-  line-height: 20px;
-  font-weight: 500; }
-body#checkout section.checkout-step .address-item .address {
-  line-height: 1.5;
-  font-size: 12px; }
+
+
+
 
 /* #checkout-personal-information-step.-complete .content .clearfix {
   padding: 20px; } */

@@ -37,7 +37,7 @@
       <span class="font-body tablet:text-xl font-normal normal-case not-italic text-[10px] text-gray-3000 ">{$title}</span>
     </h1>
 
-    <div class="content px-[30px]">
+    <div class="content tablet:pr-8">
       {block name='step_content'}DUMMY STEP CONTENT{/block}
     </div>
   </section>
