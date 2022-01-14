@@ -371,3 +371,16 @@ input[type="text"] + .input-group-btn span:nth-of-type(1){
 input[type="text"] + .input-group-btn span:nth-of-type(2){
     @apply opacity-100;
 }
+
+
+#checkout-personal-information-step.checkout-step.-complete [data-login-panel]{
+    @apply hidden;
+}
+
+#checkout-personal-information-step.checkout-step [data-login-panel] + #checkout-guest-form{
+    @apply hidden;
+}
+
+#checkout-personal-information-step.checkout-step [style="display: none;"] + #checkout-guest-form{
+    @apply block;
+}

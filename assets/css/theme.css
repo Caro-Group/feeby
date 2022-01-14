@@ -18306,8 +18306,7 @@ body#checkout section.checkout-step {
     text-transform: uppercase;
     cursor: pointer;
     margin-bottom: 0; }
-  body#checkout section.checkout-step .content {
-    padding: 0 37px; }
+
   body#checkout section.checkout-step .step-edit {
     text-transform: lowercase;
     font-weight: normal; }
@@ -18667,8 +18666,7 @@ body#checkout #gift_message {
   body#checkout #header .header-nav {
     max-height: none;
     padding: 0; }
-  body#checkout section.checkout-step .content {
-    padding: 15px; }
+
   body#checkout .form-group {
     margin-bottom: 8px; }
 
@@ -18692,8 +18690,7 @@ body#checkout #gift_message {
       margin-bottom: 16px;
       padding-bottom: 16px; } }
 @media (max-width: 575px) {
-  body#checkout section.checkout-step .content {
-    padding: 15px 0; }
+
 
   #payment-confirmation button {
     font-size: 12px; }
@@ -22388,8 +22385,6 @@ section#products {
 .font-weight-bold {
   font-weight: 600; }
 
-.lql-social-login {
-  margin: 10px 0; }
   .lql-social-login .btn {
     width: 100%; }
     .lql-social-login .btn.facebook-login-bt {
