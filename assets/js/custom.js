@@ -1450,10 +1450,12 @@ $(document).ready(function () {
 	if(currentStep == 1){
 		if ($('[data-login-panel]').is(":visible")) {
 			$('[data-js-elem="cart"]').addClass('hidden')
+			$('#checkout-guest-form').addClass('hidden')
 		}
 	}
 	else{
 		$('[data-js-elem="cart"]').removeClass('hidden')
+		$('#checkout-guest-form').removeClass('hidden')
 	}
 	
 	prestashop.on("changedCheckoutStep",function(){
@@ -1461,10 +1463,12 @@ $(document).ready(function () {
 		if(currentStep == 1){
 			if ($('[data-login-panel]').is(":visible")) {
 				$('[data-js-elem="cart"]').addClass('hidden')
+				$('#checkout-guest-form').addClass('hidden')
 			}
 		}
 		else{
 			$('[data-js-elem="cart"]').removeClass('hidden')
+			$('#checkout-guest-form').removeClass('hidden')
 		}
 	})
 })
