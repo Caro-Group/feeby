@@ -12,9 +12,16 @@
   {if $show_final_summary}
     {include file='checkout/_partials/order-final-summary.tpl'}
   {/if}
-
+  
+  <div class="block tablet:hidden">
+  {block name='cart_summary'}
+    {include file='checkout/_partials/cart-summary.tpl' cart = $cart}
+  {/block}
+  </div>
+  
+  
   <div id="delivery">
-    <a class="border-b text-black w-full collapsed" data-toggle="collapse" href="#collapseDeliveryMessage" role="button" aria-expanded="false" aria-controls="collapseDeliveryMessage">
+    <a class="border-b text-black w-full collapsed mb-4 text-main-dark w-full hover:text-main transition text-xs tablet:text-sm font-body " data-toggle="collapse" href="#collapseDeliveryMessage" role="button" aria-expanded="false" aria-controls="collapseDeliveryMessage">
       <svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" fill="none"><path fill="#181828" d="M0 3h7v1H0z"/><path fill="#181828" d="M4 0v7H3V0z"/></svg>
       {l s='Add information for the store' d='Shop.Theme.Checkout'}
     </a>
@@ -45,19 +52,18 @@
           {foreach from=$conditions_to_approve item="condition" key="condition_name"}
             <li>
               <div class="float-xs-left">
-                <span class="custom-checkbox">
+                <span class="">
                   <input  id    = "conditions_to_approve[{$condition_name}]"
                           name  = "conditions_to_approve[{$condition_name}]"
                           required
                           type  = "checkbox"
                           value = "1"
-                          class = "ps-shown-by-js"
+                          class = "ps-shown-by-js form-checkbox cursor-pointer bg-white border-2 border-gray-3000 border-solid checked:bg-main-dark checked:focus:bg-main-dark checked:hover:bg-main-dark focus:ring-0 focus:ring-transparent form-checkbox opacity-100 outline-none rounded transition"
                   >
-                  <span><i class="material-icons rtl-no-flip checkbox-checked">&#xE5CA;</i></span>
                 </span>
               </div>
               <div class="condition-label">
-                <label class="js-terms" for="conditions_to_approve[{$condition_name}]">
+                <label class="js-terms cursor-pointer font-body text-sm tablet:text-base text-gray-3000" for="conditions_to_approve[{$condition_name}]">
                   {$condition nofilter}
                 </label>
               </div>
@@ -92,6 +98,10 @@
     </div>
   </div>
 
+  <div class="block tablet:hidden">
+    {hook h='displayReassurance'}
+  </div>
+
   <div class="modal fade" id="modal">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -102,4 +112,5 @@
       </div>
     </div>
   </div>
+  
 {/block}
