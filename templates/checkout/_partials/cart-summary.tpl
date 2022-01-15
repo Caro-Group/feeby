@@ -49,3 +49,7 @@
     {l s='Your order will be available in 2 work day' d='Shop.Theme.Checkout'}
   </p>
 </section>
+
+{if $show_final_summary}
+  <p>TEST</p>
+{/if}
