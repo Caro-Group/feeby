@@ -32,24 +32,26 @@
 {if count($customer.addresses) > 0}
   <div class="flex flex-row flex-wrap">
     {if $cart.id_address_delivery}
-      <div class="w-full tablet-wide:w-1/2 mb-form tablet-wide:mb-0 border-0 border-b border-solid pb-8 pr-8">
-        <h4 class="h5 black addresshead">{l s='Your Delivery Address' d='Shop.Theme.Checkout'}</h4>
-        <div class="mb-4">
+      <div class="w-full tablet-wide:w-1/2 mb-8  border-0 border-b border-solid px-5 tablet-wide:pl-0 pb-9 tablet-wide:pr-8">
+        <h4 class="addresshead font-body font-normal tablet:text-xl text-base text-main-dark">{l s='Your Delivery Address' d='Shop.Theme.Checkout'}</h4>
+        <div class="mb-5 font-body font-light mb-4 tablet:text-base text-main-dark text-sm">
           {$customer.addresses[$cart.id_address_delivery]['formatted'] nofilter}
         </div>
-        <span class="js-edit-delivery flex flex-row items-center">
+        <span class="js-edit-delivery flex flex-row items-center font-body text-gray-3000 uppercase 
+        text-xs tablet:text-sm cursor-pointer">
           {l s='edit' d='Shop.Theme.Actions'}
           <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" fill="none" class="ml-2"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.75 13.384 15 7.134V6.25L8.75 0l-.884.884 5.183 5.183H0v1.25h13.05L7.865 12.5l.884.884h.001Z" fill="#BABABA"/></svg>
         </span>
       </div>
     {/if}
     {if $cart.id_address_invoice}
-      <div class="w-full tablet-wide:w-1/2 mb-form tablet-wide:mb-0 border-0 border-b border-solid pb-8 pr-8">
-        <h4 class="h5 black addresshead">{l s='Your Invoice Address' d='Shop.Theme.Checkout'}</h4>
-        <div class="mb-4">
+      <div class="w-full tablet-wide:w-1/2 mb-8  border-0 border-b border-solid px-5 tablet-wide:pl-0 pb-9 tablet-wide:pr-8">
+        <h4 class="addresshead font-body font-normal tablet:text-xl text-base text-main-dark">{l s='Your Invoice Address' d='Shop.Theme.Checkout'}</h4>
+        <div class="mb-5 font-body font-light mb-4 tablet:text-base text-main-dark text-sm">
           {$customer.addresses[$cart.id_address_invoice]['formatted'] nofilter}
         </div>
-        <span class="js-edit-delivery flex flex-row items-center">
+        <span class="js-edit-delivery flex flex-row items-center font-body text-gray-3000 uppercase 
+        text-xs tablet:text-sm cursor-pointer">
           {l s='edit' d='Shop.Theme.Actions'}
           <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" fill="none" class="ml-2"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.75 13.384 15 7.134V6.25L8.75 0l-.884.884 5.183 5.183H0v1.25h13.05L7.865 12.5l.884.884h.001Z" fill="#BABABA"/></svg>
         </span>
@@ -60,12 +62,12 @@
 
   <div class="flex flex-row flex-wrap">
     
-    <div class="w-full tablet-wide:w-1/2 mb-form tablet-wide:mb-0 border-0 border-b border-solid pb-8 pr-8">
-      <h4 class="h4">
+    <div class="w-full tablet-wide:w-1/2 mb-8  border-0 border-b border-solid px-5 tablet-wide:pl-0 pb-9 tablet-wide:pr-8">
+      <h4 class="font-body font-normal tablet:text-xl text-base text-main-dark">
         {l s='Shipping Method' d='Shop.Theme.Checkout'} 
       </h4>
 
-      <div class="flex flex-row flex-wrap mb-4">
+      <div class="flex flex-row flex-wrap mb-5 font-body font-light items-center mb-4 tablet:text-base text-main-dark text-sm">
         <div class="flex flex-col flex-auto">
           <span class="carrier-name">{$selected_delivery_option.name}</span>
           <span class="carrier-delay">{$selected_delivery_option.delay}</span>
@@ -78,18 +80,19 @@
         {/if}
       </div>
 
-      <span class="js-edit-delivery flex flex-row items-center">
+      <span class="js-edit-delivery flex flex-row items-center font-body text-gray-3000 uppercase 
+      text-xs tablet:text-sm cursor-pointer">
         {l s='edit' d='Shop.Theme.Actions'}
         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" fill="none" class="ml-2"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.75 13.384 15 7.134V6.25L8.75 0l-.884.884 5.183 5.183H0v1.25h13.05L7.865 12.5l.884.884h.001Z" fill="#BABABA"/></svg>
       </span>
     </div>
 
-    <div class="w-full tablet-wide:w-1/2 mb-form tablet-wide:mb-0 border-0 border-b border-solid pb-8 pr-8">
-      <h4 class="h4">
+    <div class="w-full tablet-wide:w-1/2 mb-8  border-0 border-b border-solid px-5 tablet-wide:pl-0 pb-9 tablet-wide:pr-8">
+      <h4 class="font-body font-normal tablet:text-xl text-base text-main-dark">
         {l s='Payment Method' d='Shop.Theme.Checkout'}
       </h4>
 
-      <div class="mb-4">
+      <div class="mb-5 font-body font-light mb-4 tablet:text-base text-main-dark text-sm">
         {if $is_free}
           <p>{l s='No payment needed for this order' d='Shop.Theme.Checkout'}</p>
         {else}

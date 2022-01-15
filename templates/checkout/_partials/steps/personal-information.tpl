@@ -32,9 +32,7 @@
         <p class="mb-2 text-xs tablet:text-sm font-body text-gray-3000 ">
         {l s='If you sign out now, your cart will be emptied.' d='Shop.Theme.Checkout'}</p>
       {/if}
-    </div>
-
-    
+      
       <form method="GET" action="{$urls.pages.order}">
         <button
           class="bg-main hover:bg-main-hover duration-150 border-0 rounded-full text-white p-2 px-4 uppercase whitespace-nowrap mb-2 flex items-center justify-between cursor-pointer ml-auto"
@@ -45,6 +43,9 @@
           {l s='Continue' d='Shop.Theme.Actions'}
         </button>
       </form>
+    </div>
+
+    
 
   {else}
     <div class=" bg-gray-1000 inset-0 tablet:rounded-md z-10 desktop-presta:-mr-40 pb-12" data-login-panel>
