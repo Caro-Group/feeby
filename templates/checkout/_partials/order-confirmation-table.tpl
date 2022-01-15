@@ -22,7 +22,7 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
-<div id="order-items" class="px-5 tablet:px-0"
+<div id="order-items" class="px-5 tablet:px-0">
   <div>
     {block name='order_items_table_head'}
       <h3 class="font-body font-normal tablet:text-xl text-base text-main-dark">{l s='Order items' d='Shop.Theme.Checkout'}</h3>
