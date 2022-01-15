@@ -50,6 +50,3 @@
   </p>
 </section>
 
-{if $show_final_summary}
-  <p>TEST</p>
-{/if}
