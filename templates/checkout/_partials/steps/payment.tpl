@@ -32,7 +32,7 @@
       {foreach from=$payment_options item="module_options"}
         {foreach from=$module_options item="option"}
           <div>
-            <div id="{$option.id}-container" class="bg-gray-1000 flex flex-row mb-5 p-5 payment-option rounded-md">
+            <div id="{$option.id}-container" class="bg-gray-1000 flex flex-row mb-5 p-5 payment-option min-h-[80px] rounded-md">
               {* This is the way an option should be selected when Javascript is enabled *}
               <span class="flex items-center tablet:ml-[10px]">
                 <input

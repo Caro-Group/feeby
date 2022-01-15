@@ -22,7 +22,7 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
-<section id="order-summary-content" class="page-content page-order-confirmation">
+<section id="order-summary-content" class="page-content p-5 tablet:p-0 page-order-confirmation">
   <div class="flex flex-row mb-14">
     <h2 class="border-0 border-b-[3px] rounded-b-sm border-main border-solid mb-0 pb-3">
       {l s='Order summary' d='Shop.Theme.Checkout'}
