@@ -414,3 +414,7 @@ input[type="text"] + .input-group-btn span:nth-of-type(2){
 .payment-options .additional-information p{
     @apply font-body text-main-dark;
 }
+
+.condition-label .js-terms a{
+    @apply font-medium transition
+}
