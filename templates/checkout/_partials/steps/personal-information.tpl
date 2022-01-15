@@ -11,27 +11,28 @@
   {hook h='displayPersonalInformationTop' customer=$customer}
 
   {if $customer.is_logged && !$customer.is_guest}
-
-    <h2 class="mb-4 font-normal italic mb-2 tablet:mb-[10px] text-2xl text-main-dark">
-      {l s='%firstname% %lastname%'
-        d='Shop.Theme.Customeraccount'
-        sprintf=[
-          '%firstname%' => $customer.firstname,
-          '%lastname%' => $customer.lastname
-        ]
-      }
-    </h2>
-    <p class="mb-2 text-sm tablet:text-base font-body text-main-dark">
-      {l s='Do you give up shopping?' d='Shop.Theme.Checkout'}
-      <a href="{$urls.actions.logout}" class="text-main hover:text-main-hover transition">
-        {l s='Log out' d='Shop.Theme.Checkout'}
-      </a>
-    </p>
-    
-    {if !isset($empty_cart_on_logout) || $empty_cart_on_logout}
-      <p class="mb-2 text-xs tablet:text-sm font-body text-gray-3000 ">
-      {l s='If you sign out now, your cart will be emptied.' d='Shop.Theme.Checkout'}</p>
-    {/if}
+    <div class="p-5 tablet:p-0">
+      <h2 class="mb-4 font-normal italic mb-2 tablet:mb-[10px] text-2xl text-main-dark">
+        {l s='%firstname% %lastname%'
+          d='Shop.Theme.Customeraccount'
+          sprintf=[
+            '%firstname%' => $customer.firstname,
+            '%lastname%' => $customer.lastname
+          ]
+        }
+      </h2>
+      <p class="mb-2 text-sm tablet:text-base font-body text-main-dark">
+        {l s='Do you give up shopping?' d='Shop.Theme.Checkout'}
+        <a href="{$urls.actions.logout}" class="text-main hover:text-main-hover transition">
+          {l s='Log out' d='Shop.Theme.Checkout'}
+        </a>
+      </p>
+      
+      {if !isset($empty_cart_on_logout) || $empty_cart_on_logout}
+        <p class="mb-2 text-xs tablet:text-sm font-body text-gray-3000 ">
+        {l s='If you sign out now, your cart will be emptied.' d='Shop.Theme.Checkout'}</p>
+      {/if}
+    </div>
 
     
       <form method="GET" action="{$urls.pages.order}">
