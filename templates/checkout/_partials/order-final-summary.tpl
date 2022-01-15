@@ -40,7 +40,7 @@
         <span class="js-edit-delivery flex flex-row items-center font-body text-gray-3000 uppercase hover:text-black transition
         text-xs tablet:text-sm cursor-pointer">
           {l s='edit' d='Shop.Theme.Actions'}
-          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" fill="none" class="ml-2"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.75 13.384 15 7.134V6.25L8.75 0l-.884.884 5.183 5.183H0v1.25h13.05L7.865 12.5l.884.884h.001Z" fill="#BABABA"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" fill="none" class="ml-2 fill-current"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.75 13.384 15 7.134V6.25L8.75 0l-.884.884 5.183 5.183H0v1.25h13.05L7.865 12.5l.884.884h.001Z" fill="#BABABA"/></svg>
         </span>
       </div>
     {/if}
@@ -53,7 +53,7 @@
         <span class="js-edit-delivery flex flex-row items-center font-body text-gray-3000 uppercase hover:text-black transition
         text-xs tablet:text-sm cursor-pointer">
           {l s='edit' d='Shop.Theme.Actions'}
-          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" fill="none" class="ml-2"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.75 13.384 15 7.134V6.25L8.75 0l-.884.884 5.183 5.183H0v1.25h13.05L7.865 12.5l.884.884h.001Z" fill="#BABABA"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" fill="none" class="ml-2 fill-current"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.75 13.384 15 7.134V6.25L8.75 0l-.884.884 5.183 5.183H0v1.25h13.05L7.865 12.5l.884.884h.001Z" fill="#BABABA"/></svg>
         </span>
       </div>
     {/if}
@@ -83,25 +83,25 @@
       <span class="js-edit-delivery flex flex-row items-center font-body text-gray-3000 uppercase hover:text-black transition
       text-xs tablet:text-sm cursor-pointer">
         {l s='edit' d='Shop.Theme.Actions'}
-        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" fill="none" class="ml-2"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.75 13.384 15 7.134V6.25L8.75 0l-.884.884 5.183 5.183H0v1.25h13.05L7.865 12.5l.884.884h.001Z" fill="#BABABA"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" fill="none" class="ml-2 fill-current"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.75 13.384 15 7.134V6.25L8.75 0l-.884.884 5.183 5.183H0v1.25h13.05L7.865 12.5l.884.884h.001Z" fill="#BABABA"/></svg>
       </span>
     </div>
 
-    <div class="w-full tablet-wide:w-1/2 mb-8  border-0 border-b border-solid px-5 tablet-wide:pl-0 pb-9 tablet-wide:pr-8">
+    <div class="w-full tablet-wide:w-1/2 mb-8  border-0 border-b border-solid px-5 tablet-wide:pl-0 pb-9 tablet-wide:pr-8flex flex-col">
       <h4 class="font-body font-normal tablet:text-xl text-base text-main-dark">
         {l s='Payment Method' d='Shop.Theme.Checkout'}
       </h4>
 
-      <div class="mb-5 font-body font-light mb-4 tablet:text-base text-main-dark text-sm">
+      <div class="mb-5 font-body font-light mb-4 tablet:text-base text-main-dark text-sm flex-1">
         {if $is_free}
           <p>{l s='No payment needed for this order' d='Shop.Theme.Checkout'}</p>
         {else}
-          <div class="payment-options pointer-events-none">
+          <div class="payment-options pointer-events-none h-full">
             {foreach from=$payment_options item="module_options"}
               {foreach from=$module_options item="option"}
                 {if $option.id === $selected_payment_option}
 
-                  <div class="flex flex-row flex-wrap phablet:flex-nowrap">
+                  <div class="flex flex-row flex-wrap phablet:flex-nowrap h-full">
                     <div class="flex flex-col flex-auto">
                       {if $option.additionalInformation}
                         <div
@@ -144,7 +144,7 @@
                     </div>
         
                     {if $option.logo}
-                      <div class="flex-none tablet-wide:ml-auto">
+                      <div class="flex flex-col flex-none justify-center tablet-wide:ml-auto">
                         <img src="{$option.logo}" class="h-10 w-auto">
                       </div>
                     {/if}
@@ -177,7 +177,7 @@
 
       <span data-checkout-back="#checkout-payment-step" class="flex flex-row items-center font-body text-gray-3000 uppercase text-xs tablet:text-sm cursor-pointer hover:text-black transition">
         {l s='edit' d='Shop.Theme.Actions'}  
-        <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="15" height="14" fill="none" class="ml-2"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.75 13.384 15 7.134V6.25L8.75 0l-.884.884 5.183 5.183H0v1.25h13.05L7.865 12.5l.884.884h.001Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" fill="none" class="ml-2 fill-current"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.75 13.384 15 7.134V6.25L8.75 0l-.884.884 5.183 5.183H0v1.25h13.05L7.865 12.5l.884.884h.001Z"/></svg>
       </span>
     </div>
 
