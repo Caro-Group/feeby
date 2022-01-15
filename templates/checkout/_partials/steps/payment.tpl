@@ -32,9 +32,9 @@
       {foreach from=$payment_options item="module_options"}
         {foreach from=$module_options item="option"}
           <div>
-            <div id="{$option.id}-container" class="bg-gray-1000 flex flex-row mb-4 p-4 payment-option rounded-md">
+            <div id="{$option.id}-container" class="bg-gray-1000 flex flex-row mb-5 p-5 payment-option rounded-md">
               {* This is the way an option should be selected when Javascript is enabled *}
-              <span class="flex items-center">
+              <span class="flex items-center tablet:ml-[10px]">
                 <input
                   class="ps-shown-by-js {if $option.binary} binary {/if} after:absolute after:content-[''] after:h-[10px] after:m-[3px] after:rounded-sm after:transition after:w-[10px] appearance-none border-2 border-gray-3000 border-solid checked:after:bg-main checked:bg-white checked:border-main checked:focus:bg-white checked:focus:border-main checked:focus:ring-transparent checked:focus:shadow-none checked:hover:bg-white checked:hover:border-main checked:ring-0 checked:ring-transparent focus:ring-0 focus:ring-offset-0 focus:ring-transparent h-5 outline-none ring-transparent rounded transition transition-all w-5"
                   id="{$option.id}"
@@ -52,8 +52,8 @@
                   </button>
               </form>
 
-              <label for="{$option.id}" class="flex flex-auto flex-wrap font-body font-normal justify-between mb-0 ml-4 tablet:text-base text-sm">
-                <span>{$option.call_to_action_text}</span>
+              <label for="{$option.id}" class="flex flex-auto flex-wrap font-body font-normal justify-between items-center mb-0 ml-[30px] tablet:text-base text-sm">
+                <span class="text-sm tablet:text-base text-main-dark font-medium">{$option.call_to_action_text}</span>
                 {if $option.logo}
                   <img src="{$option.logo}">
                 {/if}

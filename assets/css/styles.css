@@ -409,3 +409,8 @@ input[type="text"] + .input-group-btn span:nth-of-type(2){
 .carrier-extra-content .gmparcellocker-button button{
     @apply bg-transparent border-2 border-main-dark border-solid font-body font-normal hover:bg-main-dark hover:text-white px-6 py-3 rounded-full text-main-dark text-sm transition uppercase whitespace-nowrap
 }
+
+
+.payment-options .additional-information p{
+    @apply font-body text-main-dark;
+}
