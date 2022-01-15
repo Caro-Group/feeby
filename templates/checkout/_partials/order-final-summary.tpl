@@ -146,7 +146,8 @@
                     {if $option.logo}
                       <div class="flex flex-col flex-none justify-center tablet-wide:ml-auto">
                         <img src="{$option.logo}" class="h-10 w-auto">
-                      </div>
+                      </label>
+                      {* </div> *}
                     {/if}
 
                     <div
