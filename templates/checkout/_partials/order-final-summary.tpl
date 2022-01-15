@@ -69,8 +69,8 @@
 
       <div class="flex flex-row flex-wrap mb-5 font-body font-light items-center mb-4 tablet:text-base text-main-dark text-sm">
         <div class="flex flex-col flex-auto">
-          <span class="carrier-name">{$selected_delivery_option.name}</span>
-          <span class="carrier-delay">{$selected_delivery_option.delay}</span>
+          <span class="carrier-name font-normal">{$selected_delivery_option.name}</span>
+          <span class="carrier-delay text-sm">{$selected_delivery_option.delay}</span>
           <span class="carrier-price">{$selected_delivery_option.price}</span>
         </div>
         {if $selected_delivery_option.logo}
@@ -140,7 +140,7 @@
         
                         </div>
                       </div>
-                      <span>{$option.call_to_action_text}</span>
+                      <span class="font-normal">{$option.call_to_action_text}</span>
                     </div>
         
                     {if $option.logo}
@@ -183,7 +183,7 @@
 
   </div>
 
-  <div class="row">
+
     {block name='order_confirmation_table'}
       {include file='checkout/_partials/order-final-summary-table.tpl'
          products=$cart.products
@@ -194,5 +194,5 @@
          add_product_link=true
        }
     {/block}
-  </div>
+    
 </section>
