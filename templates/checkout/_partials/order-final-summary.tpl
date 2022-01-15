@@ -37,7 +37,7 @@
         <div class="mb-5 font-body font-light mb-4 tablet:text-base text-main-dark text-sm">
           {$customer.addresses[$cart.id_address_delivery]['formatted'] nofilter}
         </div>
-        <span class="js-edit-delivery flex flex-row items-center font-body text-gray-3000 uppercase 
+        <span class="js-edit-delivery flex flex-row items-center font-body text-gray-3000 uppercase hover:text-black transition
         text-xs tablet:text-sm cursor-pointer">
           {l s='edit' d='Shop.Theme.Actions'}
           <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" fill="none" class="ml-2"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.75 13.384 15 7.134V6.25L8.75 0l-.884.884 5.183 5.183H0v1.25h13.05L7.865 12.5l.884.884h.001Z" fill="#BABABA"/></svg>
@@ -50,7 +50,7 @@
         <div class="mb-5 font-body font-light mb-4 tablet:text-base text-main-dark text-sm">
           {$customer.addresses[$cart.id_address_invoice]['formatted'] nofilter}
         </div>
-        <span class="js-edit-delivery flex flex-row items-center font-body text-gray-3000 uppercase 
+        <span class="js-edit-delivery flex flex-row items-center font-body text-gray-3000 uppercase hover:text-black transition
         text-xs tablet:text-sm cursor-pointer">
           {l s='edit' d='Shop.Theme.Actions'}
           <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" fill="none" class="ml-2"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.75 13.384 15 7.134V6.25L8.75 0l-.884.884 5.183 5.183H0v1.25h13.05L7.865 12.5l.884.884h.001Z" fill="#BABABA"/></svg>
@@ -80,7 +80,7 @@
         {/if}
       </div>
 
-      <span class="js-edit-delivery flex flex-row items-center font-body text-gray-3000 uppercase 
+      <span class="js-edit-delivery flex flex-row items-center font-body text-gray-3000 uppercase hover:text-black transition
       text-xs tablet:text-sm cursor-pointer">
         {l s='edit' d='Shop.Theme.Actions'}
         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" fill="none" class="ml-2"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.75 13.384 15 7.134V6.25L8.75 0l-.884.884 5.183 5.183H0v1.25h13.05L7.865 12.5l.884.884h.001Z" fill="#BABABA"/></svg>
@@ -146,7 +146,7 @@
                     {if $option.logo}
                       <div class="flex-none tablet-wide:ml-auto">
                         <img src="{$option.logo}" class="h-10 w-auto">
-                      </label>
+                      </div>
                     {/if}
 
                     <div
@@ -175,9 +175,9 @@
 
       </div>
 
-      <span data-checkout-back="#checkout-payment-step" class="flex flex-row items-center">
+      <span data-checkout-back="#checkout-payment-step" class="flex flex-row items-center font-body text-gray-3000 uppercase text-xs tablet:text-sm cursor-pointer hover:text-black transition">
         {l s='edit' d='Shop.Theme.Actions'}  
-        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" fill="none" class="ml-2"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.75 13.384 15 7.134V6.25L8.75 0l-.884.884 5.183 5.183H0v1.25h13.05L7.865 12.5l.884.884h.001Z" fill="#BABABA"/></svg>
+        <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="15" height="14" fill="none" class="ml-2"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.75 13.384 15 7.134V6.25L8.75 0l-.884.884 5.183 5.183H0v1.25h13.05L7.865 12.5l.884.884h.001Z"/></svg>
       </span>
     </div>
 
