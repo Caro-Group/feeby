@@ -78,7 +78,7 @@
                           </div>
                           {if $carrier.logo}
                             <div class="flex-none tablet-wide:ml-auto">
-                                <img src="{$carrier.logo}" alt="{$carrier.name}" class="h-12 rounded-md w-auto max-w-none"/>
+                                <img src="{$carrier.logo}" alt="{$carrier.name}" class="h-8 tablet:h-12 rounded-md w-auto max-w-none"/>
                             </div>
                           {/if}
                         </div>
