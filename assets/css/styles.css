@@ -401,3 +401,11 @@ input[type="text"] + .input-group-btn span:nth-of-type(2){
 .easypack-widget .map-widget .leaflet-popup .leaflet-popup-content-wrapper .point-wrapper p{
     @apply font-body text-white;
 }
+
+.carrier-extra-content .gmparcellocker-button p{
+    @apply font-body
+}
+
+.carrier-extra-content .gmparcellocker-button button{
+    @apply bg-transparent border-2 border-main-dark border-solid font-body font-normal hover:bg-main-dark hover:text-white px-6 py-3 rounded-full text-main-dark text-sm transition uppercase whitespace-nowrap
+}
