@@ -1,0 +1,19 @@
+.seo-description{
+    @apply desktop:columns-[5rem];
+}
+
+.seo-description > *{
+    @apply break-inside-avoid-column;
+}
+
+.seo-description h2,
+.seo-description h3,
+.seo-description h4
+.seo-description h5,
+.seo-description h6{
+    @apply text-main-dark font-normal italic text-base;
+}
+
+.seo-description p{
+    @apply text-main-dark font-body text-sm tablet:text-base text-justify;
+}
