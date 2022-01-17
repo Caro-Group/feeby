@@ -17,3 +17,7 @@
 .seo-description p{
     @apply text-main-dark font-body text-sm tablet:text-base text-justify;
 }
+
+.seo-description .mb-8{
+    @apply mb-8;
+}
