@@ -8,8 +8,7 @@
 <!-- @file modules\appagebuilder\views\templates\hook\ApImage -->
 
 {* desktop-presta:h-96 desktop-wide:h-100 text-md tablet:text-xl not-italic *}
-{if $page.page_name == 'index'}
-
+{if $page_name == 'index'}
 
     <div id="image-{$formAtts.form_id|escape:'html':'UTF-8'}" class="flex flex-col {(isset($formAtts.class)) ? $formAtts.class : ''|escape:'html':'UTF-8'}">
         {($apLiveEdit)?$apLiveEdit:'' nofilter}{* HTML form , no escape necessary *}
@@ -89,7 +88,9 @@
             
     </div>
     
-    {elseif $page.page_name == 'product' && $hookName == 'displayTop'}
+    
+        
+{elseif $page_name == 'product' && $hookName == 'displayTop'}
         <div id="image-{$formAtts.form_id|escape:'html':'UTF-8'}" class="block {(isset($formAtts.class)) ? $formAtts.class : ''|escape:'html':'UTF-8'}">
             {($apLiveEdit)?$apLiveEdit:'' nofilter}{* HTML form , no escape necessary *}
             
@@ -122,9 +123,7 @@
                     </div>
                 {/if}
         </div> 
-    {else}
-    
-    
+{else}
     
     <div id="image-{$formAtts.form_id|escape:'html':'UTF-8'}" class="block {(isset($formAtts.class)) ? $formAtts.class : ''|escape:'html':'UTF-8'}">
         {($apLiveEdit)?$apLiveEdit:'' nofilter}{* HTML form , no escape necessary *}
@@ -160,6 +159,6 @@
             {/if}
     </div>
     
-    {/if}
+{/if}
     
     
