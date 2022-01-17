@@ -34,7 +34,7 @@
                     </div>
                 {/if}
                 {if $category.description}
-                    <div id="category-description" class="text-muted">{$category.description nofilter}</div>
+                    <div id="category-description" class="seo-description text-muted">{$category.description nofilter}</div>
                 {/if}
             </div>
         </div>
