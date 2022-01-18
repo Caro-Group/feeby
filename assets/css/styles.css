@@ -1,12 +1,11 @@
 @import "fonts.css";
+@import "seo-description.css";
 
 @tailwind base;
 
 @tailwind components;
 
 @tailwind utilities;
-
-@import "seo-description.css";
 
 h1,
 h2,
