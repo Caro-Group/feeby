@@ -1,5 +1,5 @@
 .seo-description{
-    @apply desktop:columns-[5rem];
+    @apply desktop:columns-2 gap-[5rem];
 }
 
 .seo-description > *{
