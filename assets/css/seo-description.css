@@ -8,7 +8,7 @@
 
 .seo-description h2,
 .seo-description h3,
-.seo-description h4
+.seo-description h4,
 .seo-description h5,
 .seo-description h6{
     @apply text-main-dark font-normal italic text-base;
