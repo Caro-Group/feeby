@@ -10,6 +10,14 @@
 {block name='form_field'}
   {if $field.name eq "alias"}
     {* we don't ask for alias here *}
+  {elseif $field.name eq "phone"}
+    {$smarty.block.parent}
+       <div class="flex flex-auto flex-col desktop-presta:flex-row mb-form -mt-form">
+         <label class="font-body font-normal ml-5 mt-3 tablet-medium:ml-0 desktop-presta:w-[220px] text-base tablet:text-xl text-main-dark text-left "></label>
+          <div class=" flex-1 ">
+           <span class="font-body text-[12px]">{l s='For courier delivery' d='Shop.Theme.Checkout'}</span>
+          </div>
+       </div>
   {else}
     {$smarty.block.parent}
   {/if}
@@ -40,14 +48,14 @@
   {if !$form_has_continue_button}
     <div class="flex flex-wrap justify-between">
       <a class="js-cancel-address cancel-address float-xs-right" href="{url entity='order' params=['cancelAddress' => {$type}]}">{l s='Cancel' d='Shop.Theme.Actions'}</a>
-      <button type="submit" class="bg-main hover:opacity-80 duration-150 border-0 rounded-full text-white p-2 px-4 uppercase whitespace-nowrap mb-2 flex items-center justify-between cursor-pointer">{l s='Save' d='Shop.Theme.Actions'}</button>
+      <button type="submit" class="bg-main hover:bg-main-hover duration-150 border-0 rounded-full text-white p-2 px-4 uppercase whitespace-nowrap mb-2 flex items-center justify-between cursor-pointer">{l s='Save' d='Shop.Theme.Actions'}</button>
     </div>
   {else}
     <form>
       {if $customer.addresses|count > 0}
         <a class="js-cancel-address cancel-address float-xs-right" href="{url entity='order' params=['cancelAddress' => {$type}]}">{l s='Cancel' d='Shop.Theme.Actions'}</a>
       {/if}
-      <button type="submit" class="continue bg-main hover:opacity-80 duration-150 border-0 rounded-full text-white p-2 px-4 uppercase whitespace-nowrap mb-2 flex items-center justify-between cursor-pointer" name="confirm-addresses" value="1">
+      <button type="submit" class="continue bg-main hover:bg-main-hover duration-150 border-0 rounded-full text-white p-2 px-4 uppercase whitespace-nowrap mb-2 flex items-center justify-between cursor-pointer" name="confirm-addresses" value="1">
           {l s='Continue' d='Shop.Theme.Actions'}
       </button>
     </form>

@@ -28,15 +28,15 @@
       <div class="alert alert-warning" role="alert">
         {$cart.minimalPurchaseRequired}
       </div>
-      <div class="text-sm-center">
+      <div class="text-center">
         <button type="button" class="bg-main text-lg tablet:text-xl text-white hover:bg-main-hover w-full py-3 block uppercase rounded-full transition hover:text-white cursor-not-allowed" disabled>{l s='Proceed to checkout' d='Shop.Theme.Actions'}</button>
       </div>
     {elseif empty($cart.products) }
-      <div class="text-sm-center">
+      <div class="text-center">
         <button type="button" class="bg-main text-lg tablet:text-xl text-white hover:bg-main-hover w-full py-3 block uppercase rounded-full transition hover:text-white cursor-not-allowed" disabled>{l s='Proceed to checkout' d='Shop.Theme.Actions'}</button>
       </div>
     {else}
-      <div class="text-sm-center">
+      <div class="text-center">
         <a href="{$urls.pages.order}" class="bg-main text-lg tablet:text-xl text-white hover:bg-main-hover w-full py-3 block uppercase rounded-full transition hover:text-white">{l s='Proceed to checkout' d='Shop.Theme.Actions'}</a>
         {hook h='displayExpressCheckout'}
       </div>

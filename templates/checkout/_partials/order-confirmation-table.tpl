@@ -22,80 +22,84 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
-<div id="order-items" class="col-md-12">
-  <div class="row">
+<div id="order-items" class="p-5 tablet:p-0 -mx-[10px] tablet:mx-0 bg-gray-1000 ">
+<div class="bg-white rounded-md border tablet:border-0 border-solid border-gray-2000">
+  <div class="p-[30px] tablet:p-0 tablet:mb-7 flex justify-between items-center collapsed" data-toggle="collapse" data-target="#collapsingOrderTable">
     {block name='order_items_table_head'}
-      <h3 class="card-title h3 col-md-6 col-12">{l s='Order items' d='Shop.Theme.Checkout'}</h3>
+      <h3 class="font-body font-normal tablet:text-xl text-base text-main-dark mb-0
+      ">{l s='Order items' d='Shop.Theme.Checkout'}</h3>
+      <i class="material-icons tablet:hidden select-none text-3xl text-main-dark transition transform rotate-180"></i>
     {/block}
   </div>
 
-  <div class="order-confirmation-table">
+  <div class="order-confirmation-table tablet:block tablet:h-full px-5 tablet:px-0 border-0 border-b border-gray-1000 border-solid  collapse" id="collapsingOrderTable">
 
     {block name='order_confirmation_table'}
       {foreach from=$products item=product}
-        <div class="flex flex-wrap">
-          <span class="image">
+        <div class="flex items-center pb-3 mb-3 tablet:mb-0 border-0 border-b tablet:border-b-0 border-gray-1000 border-solid last:mb-0 last:border-b-0 ">
+          <span class="flex-0 h-[65px] mr-5 phone-wide:h-[102px] phone-wide:w-miniature w-[65px]">
             {if !empty($product.cover)}
-              <img src="{$product.cover.medium.url}" class="max-w-full w-24"/>
+              <img src="{$product.cover.medium.url}" width="102px" height="102px" class="border border-gray-1000 border-solid rounded-md object-contain h-full"/>
             {else}
-              <img src="{$urls.no_picture_image.bySize.medium_default.url}" class="max-w-full w-24"/>
+              <img src="{$urls.no_picture_image.bySize.medium_default.url}" class="border border-gray-1000 border-solid rounded-md object-contain h-full"/>
             {/if}
           </span>
-          
-          <div class="">
-            {if $add_product_link}<a href="{$product.url}" target="_blank">{/if}
-              <span>{$product.name}</span>
-            {if $add_product_link}</a>{/if}
+          <div class="flex flex-1 flex-col phone-wide:flex-row phone-wide:items-center justify-between">
+            <div class="font-body mr-5 text-main-dark">
+              {if $add_product_link}<a class="block mb-2" href="{$product.url}" target="_blank">{/if}
+                <span class="text-main-dark text-sm tablet:text-base font-normal">{$product.name}</span>
+              {if $add_product_link}</a>{/if}
 
-            {if is_array($product.customizations) && $product.customizations|count}
-              {foreach from=$product.customizations item="customization"}
-                <div class="customizations">
-                  <a href="#" data-toggle="modal" data-target="#product-customizations-modal-{$customization.id_customization}">{l s='Product customization' d='Shop.Theme.Catalog'}</a>
-                </div>
-                <div class="modal fade customization-modal" id="product-customizations-modal-{$customization.id_customization}" tabindex="-1" role="dialog" aria-hidden="true">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="{l s='Close' d='Shop.Theme.Global'}">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                        <h4 class="modal-title">{l s='Product customization' d='Shop.Theme.Catalog'}</h4>
-                      </div>
-                      <div class="modal-body">
-                        {foreach from=$customization.fields item="field"}
-                          <div class="product-customization-line row">
-                            <div class="col-sm-3 col-xs-4 label">
-                              {$field.label}
-                            </div>
-                            <div class="col-sm-9 col-xs-8 value">
-                              {if $field.type == 'text'}
-                                {if (int)$field.id_module}
-                                  {$field.text nofilter}
-                                {else}
-                                  {$field.text}
+              {if is_array($product.customizations) && $product.customizations|count}
+                {foreach from=$product.customizations item="customization"}
+                  <div class="customizations">
+                    <a href="#" data-toggle="modal" data-target="#product-customizations-modal-{$customization.id_customization}">{l s='Product customization' d='Shop.Theme.Catalog'}</a>
+                  </div>
+                  <div class="modal fade customization-modal" id="product-customizations-modal-{$customization.id_customization}" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="{l s='Close' d='Shop.Theme.Global'}">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                          <h4 class="modal-title">{l s='Product customization' d='Shop.Theme.Catalog'}</h4>
+                        </div>
+                        <div class="modal-body">
+                          {foreach from=$customization.fields item="field"}
+                            <div class="product-customization-line row">
+                              <div class="col-sm-3 col-xs-4 label">
+                                {$field.label}
+                              </div>
+                              <div class="col-sm-9 col-xs-8 value">
+                                {if $field.type == 'text'}
+                                  {if (int)$field.id_module}
+                                    {$field.text nofilter}
+                                  {else}
+                                    {$field.text}
+                                  {/if}
+                                {elseif $field.type == 'image'}
+                                  <img class="lazy" data-src="{$field.image.small.url}">
                                 {/if}
-                              {elseif $field.type == 'image'}
-                                <img class="lazy" data-src="{$field.image.small.url}">
-                              {/if}
+                              </div>
                             </div>
-                          </div>
-                        {/foreach}
+                          {/foreach}
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              {/foreach}
-            {/if}
+                {/foreach}
+              {/if}
 
-            <div class="">{l s='Unit price' d='Shop.Theme.Checkout'} {$product.price}</div>
-            <div class="">{l s='Quantity' d='Shop.Theme.Checkout'} {$product.quantity}</div>
+              <div class="font-light tablet:text-sm text-xs mb-2">{l s='Unit price' d='Shop.Theme.Checkout'} {$product.price}</div>
+              <div class="font-light tablet:text-sm text-xs mb-2">{l s='Quantity' d='Shop.Theme.Checkout'} {$product.quantity}</div>
 
-            {hook h='displayProductPriceBlock' product=$product type="unit_price"}
-          </div>
-          <div class=" qty">
-            <div class="row">
+              {hook h='displayProductPriceBlock' product=$product type="unit_price"}
+            </div>
+            <div class=" qty">
+              <div>
 
-              <div class="col-xs-4 text-sm-center text-xs-right bold"><span class="block tablet-wide:hidden">{l s='Total products' d='Shop.Theme.Checkout'}</span>{$product.total}</div>
+                <div class="tablet:mt-2 font-body font-normal tablet:text-xl text-base text-main-dark"><span class="block tablet-wide:hidden text-xs tablet:text-sm font-body font-light">{l s='Total products' d='Shop.Theme.Checkout'}</span>{$product.total}</div>
+              </div>
             </div>
           </div>
         </div>
@@ -103,4 +107,5 @@
     {/block}
 
   </div>
+</div>
 </div>

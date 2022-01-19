@@ -321,19 +321,6 @@
 .block .panel-group {
   margin-bottom: 0; }
 
-.nav-tabs {
-  border-bottom: 1px solid transparent;
-  padding-bottom: 20px; }
-  .nav-tabs > li > a {
-    color: #767676;
-    border-bottom: 2px solid transparent;
-    text-transform: uppercase; }
-  .nav-tabs > li.active a, .nav-tabs > li.active a:hover, .nav-tabs > li.active a:focus {
-    border: 1px solid transparent;
-    background: #eeeeee;
-    border-bottom: 2px solid #c0c700;
-    color: #000000; }
-
 /**
 * Start for module ap_gmap
 */
@@ -988,7 +975,6 @@ body#checkout .custom-checkbox input[type="checkbox"],
 body#checkout .custom-checkbox input[type="radio"] {
   width: 16px;
   height: 16px;
-  border: 1px solid #000;
   opacity: 1;
   z-index: 3; }
   body#checkout .custom-checkbox input[type="checkbox"] + span,
@@ -1070,23 +1056,9 @@ body#checkout section.checkout-step .address-selector {
 /* 
 body#checkout section.checkout-step .address-item.selected {
   border: #282828 1px solid; } */
-body#checkout section.checkout-step .address-item .radio-block {
-  display: block; }
-body#checkout section.checkout-step .address-item .custom-radio {
-  border: #888 1px solid;
-  width: 16px;
-  height: 16px;
-  vertical-align: -7px; }
-body#checkout section.checkout-step .address-item .address-alias {
-  margin-bottom: 10px;
-  font-size: 14px;
-  padding: 0 5px;
-  text-transform: uppercase;
-  line-height: 20px;
-  font-weight: 500; }
-body#checkout section.checkout-step .address-item .address {
-  line-height: 1.5;
-  font-size: 12px; }
+
+
+
 
 /* #checkout-personal-information-step.-complete .content .clearfix {
   padding: 20px; } */
@@ -1237,25 +1209,6 @@ body#checkout #order-summary-content #order-items h3.h3.card-title {
 .card {
   border-radius: 0; }
 
-#content-hook_order_confirmation {
-  text-align: center; }
-
-#content-hook_order_confirmation {
-  text-align: center;
-  color: #999; }
-  #content-hook_order_confirmation .card-title {
-    font-size: 16px;
-    margin: 0 0 20px; }
-    #content-hook_order_confirmation .card-title i {
-      vertical-align: -4px;
-      margin-right: 15px; }
-      .rtl #content-hook_order_confirmation .card-title i {
-        margin-left: 15px;
-        margin-right: inherit; }
-  #content-hook_order_confirmation .card-block {
-    padding: 30px 15px; }
-  #content-hook_order_confirmation p {
-    margin: 0; }
 
 h5.aeuc_scart {
   text-transform: uppercase;
@@ -2831,9 +2784,6 @@ button.btn.btn-primary.center-block,
         height: 6px;
         border-radius: 50%;
         background: #eee; }
-
-.nav-tabs .nav-link.active, .nav-tabs .nav-link.active:focus, .nav-tabs .nav-link.active:hover, .nav-tabs .nav-item.open .nav-link, .nav-tabs .nav-item.open .nav-link:focus, .nav-tabs .nav-item.open .nav-link:hover {
-  color: #000; }
 
 .footer-container .box-footerlink2 .block_newsletter .title_block {
   margin: 0 0 20px;

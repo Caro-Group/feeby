@@ -1446,16 +1446,33 @@ $(document).ready(function () {
 
 
 $(document).ready(function () {
+	let currentStep=$('.js-current-step .step-number').text();
+	if(currentStep == 1){
+		if ($('[data-login-panel]').is(":visible")) {
+			$('[data-js-elem="cart"]').addClass('hidden')
+			$('#checkout-guest-form').addClass('hidden')
+		}
+	}
+	else{
+		$('[data-js-elem="cart"]').removeClass('hidden')
+		$('#checkout-guest-form').removeClass('hidden')
+	}
+	
 	prestashop.on("changedCheckoutStep",function(){
-		let currentStep=$('.js-current-step .step-number').text();
+		currentStep=$('.js-current-step .step-number').text();
 		if(currentStep == 1){
 			if ($('[data-login-panel]').is(":visible")) {
 				$('[data-js-elem="cart"]').addClass('hidden')
+				$('#checkout-guest-form').addClass('hidden')
 			}
 		}
 		else{
 			$('[data-js-elem="cart"]').removeClass('hidden')
+			$('#checkout-guest-form').removeClass('hidden')
 		}
 	})
-})
+});
 
+$(document).ready(function () {
+	$('#checkout [name="postcode"]').mask("99-999");
+});

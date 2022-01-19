@@ -38,7 +38,7 @@
       </div>
     </div>
 
-    <div class="flex flex-row flex-wrap tablet:flex-nowrap">
+    <div class="flex flex-row flex-wrap desktop-presta:flex-nowrap">
       <!-- Left Block: cart product informations & shpping -->
       <div class="flex flex-col items-start flex-auto tablet:pr-8">
 
@@ -57,7 +57,7 @@
         {/block}
 
         {block name='continue_shopping'}
-          <a class="hidden tablet:flex items-center label mt-auto text-[12px] tablet:text-sm text-main-dark uppercase group hover:text-main transition font-normal " href="{$urls.pages.index}">
+          <a class="hidden desktop-presta:flex items-center label mt-auto text-[12px] tablet:text-sm text-main-dark uppercase group hover:text-main transition font-normal " href="{$urls.pages.index}">
             <i class="ti-arrow-left text-main-dark mr-2 group-hover:text-main transition font-normal "></i>
             {l s='Continue shopping' d='Shop.Theme.Actions'}
           </a>
@@ -65,9 +65,11 @@
       </div>
       
       <!-- Right Block: cart subtotal & cart total -->
-      <div class="w-full tablet:w-auto flex-initial tablet-wide:w-side">
+      {if $cart.products}
+      <div class="w-full  flex-initial desktop-presta:w-side">
 
         {block name='cart_summary'}
+          
           <div class="bg-gray-1000 -mx-[20px] tablet:rounded-md px-[30px] pb-4 mb-6">
 
             {block name='hook_shopping_cart'}
@@ -95,7 +97,17 @@
           {/block}
         </div>
 
+        {block name='continue_shopping'}
+          <div class="flex desktop-presta:hidden mt-10">
+            <a class="items-center label mt-auto text-[12px] tablet:text-sm text-main-dark uppercase group hover:text-main transition font-normal " href="{$urls.pages.index}">
+              <i class="ti-arrow-left text-main-dark mr-2 group-hover:text-main transition font-normal "></i>
+              {l s='Continue shopping' d='Shop.Theme.Actions'}
+            </a>
+          <div>
+        {/block}
+
       </div>
+      {/if}
 
     </div>
   </section>

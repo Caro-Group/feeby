@@ -26,9 +26,9 @@
 
  {block name='step_content'}
  
-  <div class="border-0 border-b border-solid border-gray-200 mb-8">
+  <div class="border-0 border-b border-solid border-gray-1000 mb-8 p-5 tablet:p-0">
     <div class="flex flex-row mb-14">
-      <h2 class="border-0 border-b border-main border-solid mb-0 pb-3">
+      <h2 class="border-0 border-b-[3px] rounded-b-sm border-main border-solid mb-0 pb-3">
         {l s='Data of the ordering person' d='Shop.Theme.Checkout'}
       </h2>
     </div>
@@ -36,10 +36,10 @@
     {include file='checkout/_partials/steps/addresses.tpl'}
   </div>
 
-  <div class="{if !($customer.addresses|count) || $show_delivery_address_form || $show_invoice_address_form } pointer-events-none opacity-5 {/if}">
+  <div class="{if !($customer.addresses|count) || $show_delivery_address_form || $show_invoice_address_form } pointer-events-none opacity-5 {/if} p-5 tablet:p-0">
 
-    <div class="flex flex-row mb-14">
-      <h2 class="border-0 border-b border-main border-solid mb-0 pb-3">
+    <div class="flex flex-row mb-14 ">
+      <h2 class="border-0 border-b-[3px] rounded-b-sm border-main border-solid mb-0 pb-3">
         {l s='Delivery method' d='Shop.Theme.Checkout'}
       </h2>
     </div>
@@ -60,25 +60,40 @@
           <div class="form-fields mb-14 pb-1">
             {block name='delivery_options'}
               <div class="delivery-options flex flex-col flex-wrap">
+                {assign var="carrier_module" value=''}
                 {foreach from=$delivery_options item=carrier key=carrier_id name=delivery_options_loop}
-                    <div class="delivery-option mb-2 flex flex-row" {if $carrier.id === 31 || $carrier.id === 32}onclick="gmParcelLockerChoose(this);return false;"{/if}>
+                    {if isset($carrier.external_module_name) && $carrier.external_module_name != $carrier_module}
+                      <div class="flex flex-row flex-wrap justify-between mb-5">
+                        <div class="font-body text-xl">
+                          {if $carrier.external_module_name == ''}
+                            {l s='Courier' d='Shop.Theme.Checkout'}
+                          {else}
+                            {l s=$carrier.external_module_name d='Shop.Theme.Checkout'}
+                          {/if}
+                        </div>
+                        {if isset($carrier.delay)}  
+                          <div>{$carrier.delay}</div>
+                        {/if}
+                      </div>
+                      {assign var="carrier_module" value=$carrier.external_module_name}
+                    {/if}
+                    <div class="delivery-option bg-gray-1000 delivery-option flex flex-row mx-0 mb-5 px-5 py-3 rounded-md cursor-pointer" {if $carrier.id === 31 || $carrier.id === 32}onclick="gmParcelLockerChoose(this);return false;"{/if}>
                       <div class="flex items-center justify-center w-16">
-                        <span class="custom-radio float-xs-left">
-                          <input type="radio" name="delivery_option[{$id_address_delivery}]" id="delivery_option_{$carrier.id}" value="{$carrier_id}"{if ($smarty.foreach.delivery_options_loop.index == 0 && $delivery_option != $carrier_id) || $delivery_option == $carrier_id} checked{/if} />
-                          <span></span>
+                        <span class=" float-xs-left">
+                          <input type="radio" name="delivery_option[{$id_address_delivery}]" id="delivery_option_{$carrier.id}" value="{$carrier_id}"{if ($smarty.foreach.delivery_options_loop.index == 0 && $delivery_option != $carrier_id) || $delivery_option == $carrier_id} checked{/if} class="after:absolute after:content-[''] after:h-[10px] after:m-[3px] after:rounded-sm after:transition after:w-[10px] appearance-none border-2 border-gray-3000 border-solid checked:after:bg-main checked:bg-white checked:border-main checked:focus:bg-white checked:focus:border-main checked:focus:ring-transparent checked:focus:shadow-none checked:hover:bg-white checked:hover:border-main checked:ring-0 checked:ring-transparent focus:ring-0 focus:ring-offset-0 focus:ring-transparent h-5 outline-none ring-transparent rounded transition transition-all w-5" />
                         </span>
                       </div>
-                      <label for="delivery_option_{$carrier.id}" class="flex-auto delivery-option-2">
-                        <div class="flex flex-col-reverse tablet-wide:flex-row flex-wrap items-start tablet-wide:items-center">
-                          <div class="flex-initial w-24">
+                      <label for="delivery_option_{$carrier.id}" class="flex-auto delivery-option-2 mb-0 ">
+                        <div class="flex flex-col-reverse tablet-wide:flex-row items-start tablet-wide:items-center">
+                          <div class="bg-main font-normal px-3 py-[3px] font-body uppercase rounded-full tablet:text-base text-sm text-white mr-4 whitespace-nowrap">
                             {$carrier.price}
                           </div>
-                          <div class="flex-auto">
-                              {$carrier.name} {if isset($carrier.delay)} - {$carrier.delay}{/if}
+                          <div class="flex-auto tablet:text-base text-sm text-main-dark font-medium py-1">
+                              {$carrier.name}
                           </div>
                           {if $carrier.logo}
-                            <div class="flex-none tablet-wide:ml-auto tablet-wide:mr-6">
-                                <img src="{$carrier.logo}" alt="{$carrier.name}" class="h-10 w-auto max-w-none"/>
+                            <div class="flex-none tablet-wide:ml-auto">
+                                <img src="{$carrier.logo}" alt="{$carrier.name}" class="h-8 tablet:h-12 rounded-md w-auto max-w-none"/>
                             </div>
                           {/if}
                         </div>
@@ -118,7 +133,7 @@
   
           <div class="flex flex-wrap justify-between">
             <button data-checkout-back="#checkout-personal-information-step" class="text-black bg-transparent border-0 uppercase whitespace-nowrap mb-2 flex items-center justify-between cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" fill="none" class="mr-2"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.25 13.384 0 7.134V6.25L6.25 0l.884.884L1.95 6.067H15v1.25H1.95L7.135 12.5l-.884.884H6.25Z" fill="#181828"/></svg>{l s='Go back' d='Shop.Theme.Checkout'}</button>  
-            <button type="submit" class="continue continue bg-main hover:opacity-80 duration-150 border-0 rounded-full text-white p-2 px-4 uppercase whitespace-nowrap mb-2 flex items-center justify-between ml-auto cursor-pointer" name="confirmDeliveryOption" value="1">
+            <button type="submit" class="continue continue bg-main hover:bg-main-hover duration-150 border-0 rounded-full text-white p-2 px-4 uppercase whitespace-nowrap mb-2 flex items-center justify-between ml-auto cursor-pointer" name="confirmDeliveryOption" value="1">
               {l s='Continue' d='Shop.Theme.Actions'}
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" fill="none" class="ml-2 flex-0"><path fill-rule="evenodd" clip-rule="evenodd" d="m9.25 14.359 6.25-6.25v-.884L9.25.975l-.884.884 5.183 5.184H.5v1.25h13.05l-5.185 5.182.884.884h.001Z" fill="#fff"/></svg>
             </button>

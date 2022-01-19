@@ -32,8 +32,8 @@
 
   {if $field.name == 'company'}
 
-    <div id="company" class="mb-8">
-      <a class="block mb-8 border-b text-black w-full collapsed" data-toggle="collapse" href="#collapseCompany" role="button" aria-expanded="false" aria-controls="collapseCompany">
+    <div id="company" class="pb-8 ">
+      <a class="block mb-8 border-b text-main-dark w-full desktop-presta:ml-[220px] hover:text-main transition text-xs tablet:text-sm collapsed font-body" data-toggle="collapse" href="#collapseCompany" role="button" aria-expanded="false" aria-controls="collapseCompany">
         <svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" fill="none"><path fill="#181828" d="M0 3h7v1H0z"/><path fill="#181828" d="M4 0v7H3V0z"/></svg>
         {l s='Add tax identification number and company name' d='Shop.Theme.Checkout'}
       </a>
@@ -64,7 +64,7 @@
 
         {block name='form_field_item_country'}
           <select
-          class="form-select border border-gray-1000 rounded-full pl-4 bg-gray-1000 w-full focus:border-gray-3000 focus:ring-0 w-full form-control-select font-medium js-country"
+          class="form-select font-body font-medium border border-gray-1000 rounded-full pl-4 bg-gray-1000 w-full focus:border-gray-3000 focus:ring-0 w-full form-control-select font-medium js-country"
           name="{$field.name}"
           {if $field.required}required{/if}
           >
@@ -80,12 +80,12 @@
         {block name='form_field_item_radio'}
           {foreach from=$field.availableValues item="label" key="value"}
             <label class="radio-inline">
-              <span class="custom-radio">
+              <span >
                 <input
                   name="{$field.name}"
                   type="radio"
                   value="{$value}"
-                  class="form-radio"
+                  class="after:absolute after:content-[''] after:h-[10px] after:m-[3px] after:rounded-sm after:transition after:w-[10px] appearance-none border-2 border-gray-3000 border-solid checked:after:bg-main checked:bg-white checked:border-main checked:focus:bg-white checked:focus:border-main checked:focus:ring-transparent checked:focus:shadow-none checked:hover:bg-white checked:hover:border-main checked:ring-0 checked:ring-transparent focus:ring-0 focus:ring-offset-0 focus:ring-transparent h-5 outline-none ring-transparent rounded transition transition-all w-5"
                   {if $field.required}required{/if}
                   {if $value eq $field.value} checked {/if}
                 >
@@ -99,11 +99,11 @@
       {elseif $field.type === 'checkbox'}
 
         {block name='form_field_item_checkbox'}
-          <span class="custom-checkbox">
+          <span>
             <label>
-              <input name="{$field.name}" type="checkbox" class="form-checkbox" value="1" {if $field.value}checked="checked"{/if} {if $field.required}required{/if}>
-              <span><i class="material-icons rtl-no-flip checkbox-checked">&#xE5CA;</i></span>
-              <span>{$field.label nofilter}
+              <input name="{$field.name}" type="checkbox" class="form-checkbox  cursor-pointer bg-white border-2 border-gray-3000 border-solid checked:bg-main-dark checked:focus:bg-main-dark checked:hover:bg-main-dark focus:ring-0 focus:ring-transparent form-checkbox opacity-100 outline-none rounded transition" value="1" {if $field.value}checked="checked"{/if} {if $field.required}required{/if}>
+              <span></span>
+              <span class="cursor-pointer pl-3">{$field.label nofilter}
                 {if $field.required}<span class="text-require">*</span>{/if}
               </span>
             </label>
@@ -148,15 +148,16 @@
         {block name='form_field_item_password'}
           <div class="input-group js-parent-focus">
             <input
-              class="form-input js-child-focus js-visible-password border-gray-2000 border-solid border flex rounded-full pl-4 bg-white w-full focus:border-gray-3000 focus:ring-0"
+              class="form-input js-child-focus js-visible-password placeholder:italic text-sm font-body border-gray-2000 border-solid border flex rounded-full pl-4 bg-white w-full focus:border-gray-3000 focus:ring-0"
               name="{$field.name}"
               title="{l s='At least 5 characters long' d='Shop.Forms.Help'}"
               type="password"
+              placeholder="{l s='Enter the password' d='Shop.Forms.Help'}"
               value=""
-              pattern=".{literal}{{/literal}5,{literal}}{/literal}"
+              pattern=".{ldelim}5,{rdelim}"
               {if $field.required}required{/if}
             >
-            <span class="input-group-btn group">
+            <span class="input-group-btn group absolute right-0 top-0 w-auto">
               <button
                 class="btn btn-outline"
                 type="button"
@@ -180,11 +181,15 @@
 
         {block name='form_field_item_other'}
           <input
-            class="form-input border-gray-2000 border-solid border flex rounded-full pl-4 bg-white w-full focus:border-gray-3000 focus:ring-0"
+            class="form-input font-body text-sm placeholder:italic border-gray-2000 border-solid border flex rounded-full pl-4 bg-white w-full focus:border-gray-3000 focus:ring-0"
             name="{$field.name}"
             type="{$field.type}"
             value="{$field.value}"
-            {if isset($field.availableValues.placeholder)}placeholder="{$field.availableValues.placeholder}"{/if}
+            {if isset($field.availableValues.placeholder)}
+              placeholder="{$field.availableValues.placeholder}"
+            {else}
+              placeholder="{l s=$field.name d='Shop.Forms.Help'}"
+            {/if}
             {if $field.maxLength}maxlength="{$field.maxLength}"{/if}
             {if $field.required}required{/if}
           >

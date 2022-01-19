@@ -1,0 +1,12 @@
+.checkout-step{
+    flex: 0 1 auto;
+}
+
+body#checkout  section.checkout-step.-current{
+    @apply flex-auto w-full;
+}
+
+#checkout-summary-step.-current + .cart-grid-body{
+    @apply hidden desktop-presta:block;
+}
+

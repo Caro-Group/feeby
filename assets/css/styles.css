@@ -1,5 +1,6 @@
 @import "fonts.css";
 @import "seo-description.css";
+@import "checkout-step.css";
 
 @tailwind base;
 
@@ -324,6 +325,9 @@ div#js-product-list-top:after {
     @apply w-auto float-none;
 }
 
+.nav-link.active{
+    @apply text-gray-main border-main;
+}
 
 .checkout-step:nth-child(1) .step-title{
     @apply left-0;
@@ -354,11 +358,11 @@ div#js-product-list-top:after {
 #checkout .checkout-step.-complete .step-title{
     @apply after:bg-main;
 }
-#checkout .checkout-step:last-child .step-title{
+#checkout #checkout-summary-step .step-title{
     @apply after:hidden;
 }
 
-.checkout-step.checkout-step input + .input-group-btn.input-group-btn button{
+#login-form input + .input-group-btn.input-group-btn button{
     font-size: 0px;
     @apply w-10 z-20;
 }
@@ -370,4 +374,57 @@ input[type="text"] + .input-group-btn span:nth-of-type(1){
 }
 input[type="text"] + .input-group-btn span:nth-of-type(2){
     @apply opacity-100;
+}
+
+
+
+#checkout-personal-information-step.checkout-step [data-login-panel] + #checkout-guest-form{
+    @apply hidden;
+}
+
+#checkout-personal-information-step.checkout-step [style="display: none;"] + #checkout-guest-form{
+    @apply block;
+}
+
+
+/* product-desc-right-box - on product page right bar */
+.product-desc-right-box  .ApColumn .block{
+    @apply mb-0;
+}
+
+.product-desc-right-box .ApColumn .title_block{
+    @apply font-header mb-5 text-xl;
+}
+
+.product-desc-right-box .ApImage img{
+    @apply bg-gray-1000 rounded-[5px] w-full h-auto max-w-[60px] max-h-[60px];
+}
+
+.easypack-widget .map-widget .leaflet-popup .leaflet-popup-content-wrapper .point-wrapper p{
+    @apply font-body text-white;
+}
+
+.carrier-extra-content .gmparcellocker-button p{
+    @apply font-body
+}
+
+.carrier-extra-content .gmparcellocker-button button{
+    @apply bg-transparent border-2 border-main-dark border-solid font-body font-normal hover:bg-main-dark hover:text-white px-6 py-3 rounded-full text-main-dark text-sm transition uppercase whitespace-nowrap
+}
+
+
+.payment-options .additional-information p{
+    @apply font-body text-main-dark;
+}
+
+.condition-label .js-terms a{
+    @apply font-medium transition;
+}
+
+#order-summary-content #order-items .collapsed i{
+    @apply rotate-0;
+}
+
+#checkout-summary-step .reassurance div{
+    @apply border-b-0;
 }
