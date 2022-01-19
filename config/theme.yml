@@ -10,9 +10,12 @@ assets:
         path: assets/css/styles.min.css
       - id: menu-style
         path: assets/css/menu.css
-      - id: swiper-styles
+      - id: swiper-style
         path: assets/css/swiper.css
   js:
+    checkout:
+     - id: jquery-plugin-mask-js
+       path: assets/js/jquery.mask.min.js
     all:
      - id: swiper-js
        path: assets/js/swiper.js

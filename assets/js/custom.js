@@ -1471,5 +1471,8 @@ $(document).ready(function () {
 			$('#checkout-guest-form').removeClass('hidden')
 		}
 	})
-})
+});
 
+$(document).ready(function () {
+	$('#checkout [name="postcode"]').mask("99-999");
+});
