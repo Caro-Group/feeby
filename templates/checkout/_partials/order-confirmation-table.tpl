@@ -32,11 +32,11 @@
     {/block}
   </div>
 
-  <div class="order-confirmation-table tablet:block tablet:h-full px-5 tablet:px-0 collapse" id="collapsingOrderTable">
+  <div class="order-confirmation-table tablet:block tablet:h-full px-5 tablet:px-0 border-0 border-b border-gray-1000 border-solid  collapse" id="collapsingOrderTable">
 
     {block name='order_confirmation_table'}
       {foreach from=$products item=product}
-        <div class="flex items-center pb-3">
+        <div class="flex items-center pb-3 mb-3 tablet:mb-0 border-0 border-b tablet:border-b-0 border-gray-1000 border-solid last:mb-0 last:border-b-0 ">
           <span class="flex-0 h-[65px] mr-5 phone-wide:h-[102px] phone-wide:w-miniature w-[65px]">
             {if !empty($product.cover)}
               <img src="{$product.cover.medium.url}" width="102px" height="102px" class="border border-gray-1000 border-solid rounded-md object-contain h-full"/>
@@ -107,5 +107,5 @@
     {/block}
 
   </div>
-<div>
+</div>
 </div>
