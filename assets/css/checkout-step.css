@@ -10,7 +10,7 @@
     @apply none;
 }
 
-@media screen('desktop-presta') {
+@media screen(tablet) {
     #checkout-summary-step + .cart-grid-body.-current{
         @apply block;
     }
