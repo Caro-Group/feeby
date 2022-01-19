@@ -89,7 +89,7 @@
                             {$carrier.price}
                           </div>
                           <div class="flex-auto tablet:text-base text-sm text-main-dark font-medium py-1">
-                              {$carrier.name} {if isset($carrier.delay)} - {$carrier.delay}{/if}
+                              {$carrier.name}
                           </div>
                           {if $carrier.logo}
                             <div class="flex-none tablet-wide:ml-auto">
