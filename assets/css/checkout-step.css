@@ -1,0 +1,7 @@
+.checkout-step{
+    flex: 0 1 auto;
+}
+
+.checkout-step.-current{
+    @apply flex-auto w-full tablet:w-1/2 desktop-presta:w-2/3 desktop-presta:pr-40;
+}

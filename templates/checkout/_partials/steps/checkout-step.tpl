@@ -30,7 +30,7 @@
                         '-reachable'      => $step_is_reachable,
                         '-complete'       => $step_is_complete,
                         'js-current-step' => $step_is_current
-                    ]|classnames}"
+                    ]|classnames}" {* JS NEED CHANGE TOO *}
   >
     <h1 class="step-title absolute pt-8 mt-7 tablet:pt-14 top-0 w-1/4 px-2 text-center leading-3 ">
       <span class="step-number tablet:text-xl tablet:leading-[45px] tablet:-ml-[25px] tablet:h-[50px] tablet:w-[50px] tablet:-top-1  top-1 absolute bg-transparent border border-gray-2000 border-solid font-body font-normal pt-0.5 text-gray-3000 h-7 -ml-[14px] left-1/2 not-italic p-0 rounded-full text-base text-center text-main-dark w-7">{$position}</span>
