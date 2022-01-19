@@ -24,7 +24,7 @@
  *}
 <div id="order-items" class="p-5 tablet:p-0 -mx-[10px] tablet:mx-0 bg-gray-1000 ">
 <div class="bg-white rounded-md border tablet:border-0 border-solid border-gray-2000">
-  <div class="order_items_table_head p-[30px] tablet:p-0 tablet:mb-7 flex justify-between items-center" data-toggle="collapse" data-target="#collapsingOrderTable">
+  <div class="p-[30px] tablet:p-0 tablet:mb-7 flex justify-between items-center collapsed" data-toggle="collapse" data-target="#collapsingOrderTable">
     {block name='order_items_table_head'}
       <h3 class="font-body font-normal tablet:text-xl text-base text-main-dark mb-0
       ">{l s='Order items' d='Shop.Theme.Checkout'}</h3>
