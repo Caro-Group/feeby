@@ -24,7 +24,7 @@
     </p>
     {include file='module:ps_wirepayment/views/templates/hook/_partials/payment_infos.tpl'}
 
-    <p class="font-light text-sm tablet:text-base mt-4 tablet:mt-6 mb-6 tablet:mb-10 text-main-dark font-body>
+    <p class="font-light text-sm tablet:text-base mt-4 tablet:mt-6 mb-6 tablet:mb-10 text-main-dark font-body">
       {l s='We\'ve also sent you this information by e-mail.' d='Modules.Wirepayment.Shop'}
     </p>
     <strong class="font-medium text-sm tablet:text-base text-main-dark font-body" >{l s='Your order will be sent as soon as we receive payment.' d='Modules.Wirepayment.Shop'}</strong>
@@ -33,6 +33,6 @@
     </p>
 {else}
     <p class="warning font-body">
-      {l s='We noticed a problem with your order. If you think this is an error, feel free to contact our [1]expert customer support team[/1].' d='Modules.Wirepayment.Shop' sprintf=['[1]' => "<a class="hover:text-main transition" href='{$contact_url}'>", '[/1]' => '</a>']}
+      {l s='We noticed a problem with your order. If you think this is an error, feel free to contact our [1]expert customer support team[/1].' d='Modules.Wirepayment.Shop' sprintf=['[1]' => "<a href='{$contact_url}'>", '[/1]' => '</a>']}
     </p>
 {/if}
