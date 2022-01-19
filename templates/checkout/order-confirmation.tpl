@@ -9,19 +9,16 @@
 
 {block name='page_content_container' prepend}
 
-    <section id="content-hook_order_confirmation" class="card">
+    <section id="content-hook_order_confirmation">
       <div class="card-block">
-        <div class="row">
-          <div class="col-md-12">
-
             {block name='order_confirmation_header'}
-              <h3 class="h1 card-title">
-                <i class="material-icons rtl-no-flip done">&#xE876;</i>{l s='Your order is confirmed' d='Shop.Theme.Checkout'}
+              <h3 class="font-normal text-2xl tablet:text-4xl mb-8 tablet:mb-10">
+                {l s='Your order is confirmed' d='Shop.Theme.Checkout'}
               </h3>
             {/block}
 
-            <p>
-              {l s='An email has been sent to your mail address %email%.' d='Shop.Theme.Checkout' sprintf=['%email%' => $customer.email]}
+            <p class="font-light text-sm tablet:text-base mb-6 tablet:mb-10">
+              {l s='An email has been sent to your mail address ' d='Shop.Theme.Checkout'} <span class="font-medium"> {l s='%email%.' sprintf=['%email%' => $customer.email]} </span>
               {if $order.details.invoice_url}
                 {* [1][/1] is for a HTML tag. *}
                 {l
@@ -38,9 +35,6 @@
             {block name='hook_order_confirmation'}
               {$HOOK_ORDER_CONFIRMATION nofilter}
             {/block}
-
-          </div>
-        </div>
       </div>
     </section>
 {/block}
@@ -49,13 +43,9 @@
 
   {block name='hook_payment_return'}
     {if ! empty($HOOK_PAYMENT_RETURN)}
-    <section id="content-hook_payment_return" class="card definition-list">
-      <div class="card-block">
-        <div class="row">
-          <div class="col-md-12">
-            {$HOOK_PAYMENT_RETURN nofilter}
-          </div>
-        </div>
+    <section id="content-hook_payment_return" class="definition-list">
+      <div class="">
+        {$HOOK_PAYMENT_RETURN nofilter}
       </div>
     </section>
     {/if}
