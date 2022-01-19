@@ -157,7 +157,7 @@
               pattern=".{ldelim}5,{rdelim}"
               {if $field.required}required{/if}
             >
-            <span class="input-group-btn group absolute right-0 top-0 w-auto opacity-0">
+            <span class="input-group-btn group absolute right-0 top-0 w-auto">
               <button
                 class="btn btn-outline"
                 type="button"

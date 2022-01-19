@@ -13,7 +13,7 @@ assets:
       - id: swiper-style
         path: assets/css/swiper.css
   js:
-    checkout:
+    order:
      - id: jquery-plugin-mask-js
        path: assets/js/jquery.mask.min.js
     all:
