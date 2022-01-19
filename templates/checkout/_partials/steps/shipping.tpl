@@ -65,8 +65,10 @@
                     {if isset($carrier.external_module_name) && $carrier.external_module_name != $carrier_module}
                       <div class="flex flex-row flex-wrap justify-between mb-5">
                         <div class="font-body text-xl">
-                          {if $carrier.external_module_name == ''}
+                          {if $carrier.external_module_name === ''}
                             {l s='Courier' d='Shop.Theme.Checkout'}
+                          {elseif $carrier.external_module_name === 'gmparcellocker'}
+                            {l s='gmparcellocker' d='Shop.Theme.Checkout'}
                           {else}
                             {l s=$carrier.external_module_name d='Shop.Theme.Checkout'}
                           {/if}
