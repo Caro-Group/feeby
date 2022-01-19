@@ -7,7 +7,7 @@
 }
 
 #checkout-summary-step + .cart-grid-body.-current{
-    @apply none;
+    @apply hidden;
 }
 
 @media screen(tablet) {
