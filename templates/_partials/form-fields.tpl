@@ -148,7 +148,7 @@
         {block name='form_field_item_password'}
           <div class="input-group js-parent-focus">
             <input
-              class="form-input js-child-focus js-visible-password text-sm placeholder:italic font-body border-gray-2000 border-solid border flex rounded-full pl-4 bg-white w-full focus:border-gray-3000 focus:ring-0"
+              class="form-input js-child-focus js-visible-password placeholder:italic text-sm font-body border-gray-2000 border-solid border flex rounded-full pl-4 bg-white w-full focus:border-gray-3000 focus:ring-0"
               name="{$field.name}"
               title="{l s='At least 5 characters long' d='Shop.Forms.Help'}"
               type="password"

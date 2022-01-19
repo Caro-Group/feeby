@@ -1,5 +1,5 @@
 {**
- * 2007-2017 PrestaShop
+ * 2007-2020 PrestaShop and Contributors
  *
  * NOTICE OF LICENSE
  *
@@ -11,25 +11,15 @@
  * obtain it through the world-wide-web, please send an email
  * to license@prestashop.com so we can send you a copy immediately.
  *
- * DISCLAIMER
- *
- * Do not edit or add to this file if you wish to upgrade PrestaShop to newer
- * versions in the future. If you wish to customize PrestaShop for your
- * needs please refer to http://www.prestashop.com for more information.
- *
  * @author    PrestaShop SA <contact@prestashop.com>
- * @copyright PrestaShop SA
+ * @copyright 2007-2020 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
-{extends file='page.tpl'}
 
-{block name='page_title'}
-  {$page.title}
-{/block}
-
-{block name='breadcrumb'}{/block}
-  
-{block name='page_content_container'}
-  {include file='errors/not-found.tpl'}
-{/block}
+<p class="payment_module">
+	<a href="{$link->getModuleLink('ps_wirepayment', 'payment')|escape:'html'}" title="{l s='Pay by bank wire' d='Modules.Wirepayment.Shop'}">
+		<img src="{$this_path_bw}logo.png" alt="{l s='Pay by bank wire' d='Modules.Wirepayment.Shop'}" width="86" height="49"/>
+		{l s='Pay by bank wire' d='Modules.Wirepayment.Shop'}&nbsp;<span>{l s='(order processing will be longer)' d='Modules.Wirepayment.Shop'}</span>
+	</a>
+</p>

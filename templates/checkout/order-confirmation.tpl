@@ -7,12 +7,14 @@
 *}
 {extends file='page.tpl'}
 
+{block name='breadcrumb'}{/block}
+
 {block name='page_content_container' prepend}
 
     <section id="content-hook_order_confirmation">
       <div class="">
             {block name='order_confirmation_header'}
-              <h3 class="font-normal text-2xl tablet:text-4xl mt-14 mb-8 tablet:mb-10 text-main-dark italic">
+              <h3 class="font-normal text-2xl tablet:text-4xl mt-14 mb-8 tablet:mb-10 text-main-dark italic max-w-[350px]">
                 {l s='Your order is confirmed' d='Shop.Theme.Checkout'}
               </h3>
             {/block}
@@ -48,17 +50,6 @@
         {$HOOK_PAYMENT_RETURN nofilter}
       </div>
     </section>
-    {/if}
-  {/block}
-
-  {block name='customer_registration_form'}
-    {if $customer.is_guest}
-      <div id="registration-form" class="card font-body text-main-dark">
-        <div class="card-block">
-          <h4 class="h4">{l s='Save time on your next order, sign up now' d='Shop.Theme.Checkout'}</h4>
-          {render file='customer/_partials/customer-form.tpl' ui=$register_form}
-        </div>
-      </div>
     {/if}
   {/block}
 
