@@ -28,6 +28,8 @@
   {$page.title}
 {/block}
 
+{block name='breadcrumb'}{/block}
+  
 {block name='page_content_container'}
   {include file='errors/not-found.tpl'}
 {/block}

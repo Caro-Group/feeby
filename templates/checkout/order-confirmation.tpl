@@ -7,6 +7,8 @@
 *}
 {extends file='page.tpl'}
 
+{block name='breadcrumb'}{/block}
+
 {block name='page_content_container' prepend}
 
     <section id="content-hook_order_confirmation">
