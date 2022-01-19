@@ -18,7 +18,7 @@
  *}
 
 {if $status == 'ok'}
-    <p>
+    <p class="font-light text-sm tablet:text-base mb-4 tablet:mb-6 text-main-dark font-body" >
       {l s='Your order on %s is complete.' sprintf=[$shop_name] d='Modules.Wirepayment.Shop'}<br/>
       {l s='Please send us a bank wire with:' d='Modules.Wirepayment.Shop'}
     </p>
