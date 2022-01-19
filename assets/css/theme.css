@@ -9315,13 +9315,6 @@ a:focus {
     font-size: 14px;
     vertical-align: -2px; }
 
-label, .label {
-  color: #414141;
-  text-align: right;
-  font-size: 13px; }
-  .rtl label, .rtl .label {
-    text-align: left; }
-
 small.label, small.value {
   font-size: 13px; }
 
@@ -18329,8 +18322,6 @@ body#checkout section.checkout-step {
     padding: 10px 50px; }
   body#checkout section.checkout-step .form-footer {
     text-align: center; }
-  body#checkout section.checkout-step #conditions-to-approve {
-    padding-top: 16px; }
 
   body#checkout section.checkout-step .payment-options .custom-radio {
     margin-right: 20px; }

@@ -6,12 +6,6 @@
     @apply flex-auto w-full tablet:w-1/2 desktop-presta:w-2/3 desktop-presta:pr-40;
 }
 
-#checkout-summary-step + .cart-grid-body.-current{
-    @apply none;
-}
-
-@media screen(tablet) {
-    #checkout-summary-step + .cart-grid-body.-current{
-        @apply block;
-    }
+#checkout-summary-step.-current + .cart-grid-body{
+    @apply hidden tablet:block;
 }
