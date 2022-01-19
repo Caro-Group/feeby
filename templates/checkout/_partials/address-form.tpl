@@ -34,10 +34,10 @@
 
 {block name='form_fields' append}
   <input type="hidden" name="saveAddress" value="{$type}">
-  {if $type === "delivery" || $customer.addresses|count < 1}
+  {if $type === "delivery" || $customer.addresses|count === 1}
     <div class="form-group row hide">
       <div class="col-md-9 col-md-offset-3">
-        <input name = "use_same_address" id="use_same_address" type = "checkbox" value = "1" checked{if $use_same_address} checked {/if}>
+        <input name = "use_same_address" id="use_same_address" type = "checkbox" value = "1" {if $use_same_address} checked {/if}>
         <label for="use_same_address">{l s='Use this address for invoice too' d='Shop.Theme.Checkout'}</label>
       </div>
     </div>
