@@ -188,8 +188,8 @@
             value="{$field.value}"
             {if isset($field.availableValues.placeholder)}
               placeholder="{$field.availableValues.placeholder}"
-            {elseif $field.type === 'email'}
-              placeholder="{l s='Your e-mail address' d='Shop.Forms.Help'}"
+            {else}
+              placeholder="{l s=$field.name d='Shop.Forms.Help'}"
             {/if}
             {if $field.maxLength}maxlength="{$field.maxLength}"{/if}
             {if $field.required}required{/if}
