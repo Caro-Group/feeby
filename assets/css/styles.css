@@ -358,7 +358,7 @@ div#js-product-list-top:after {
 #checkout .checkout-step.-complete .step-title{
     @apply after:bg-main;
 }
-#checkout .checkout-step:last-child .step-title{
+#checkout #checkout-summary-step .step-title{
     @apply after:hidden;
 }
 
@@ -423,4 +423,8 @@ input[type="text"] + .input-group-btn span:nth-of-type(2){
 
 #order-summary-content #order-items .collapsed i{
     @apply rotate-0;
+}
+
+#checkout-summary-step .reassurance div{
+    @apply border-b-0;
 }
