@@ -146,14 +146,16 @@
       {elseif $field.type === 'password'}
 
         {block name='form_field_item_password'}
+          {assign var="pass_pattern" value=".{5,}"}
           <div class="input-group js-parent-focus">
             <input
               class="form-input js-child-focus js-visible-password font-body border-gray-2000 border-solid border flex rounded-full pl-4 bg-white w-full focus:border-gray-3000 focus:ring-0"
               name="{$field.name}"
               title="{l s='At least 5 characters long' d='Shop.Forms.Help'}"
               type="password"
+              placeholder="{l s='Enter the password' d='Shop.Forms.Help'}"
               value=""
-              pattern=".{literal}{{/literal}5,{literal}}{/literal}"
+              pattern="{$pass_pattern}"
               {if $field.required}required{/if}
             >
             <span class="input-group-btn group absolute right-0 top-0 w-auto">
@@ -184,7 +186,11 @@
             name="{$field.name}"
             type="{$field.type}"
             value="{$field.value}"
-            {if isset($field.availableValues.placeholder)}placeholder="{$field.availableValues.placeholder}"{/if}
+            {if isset($field.availableValues.placeholder)}
+              placeholder="{$field.availableValues.placeholder}"
+            {elseif $field.type === 'email'}
+              placeholder="{l s='Your e-mail address' d='Shop.Forms.Help'}"
+            {/if}
             {if $field.maxLength}maxlength="{$field.maxLength}"{/if}
             {if $field.required}required{/if}
           >
