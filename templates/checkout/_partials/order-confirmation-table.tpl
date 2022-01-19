@@ -22,18 +22,21 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
-<div id="order-items" class="px-5 tablet:px-0">
-  <div>
+<div id="order-items" class="p-5 tablet:p-0 -mx-[10px] tablet:mx-0 bg-gray-1000 ">
+<div class="bg-white rounded-md border tablet:border-0 border-solid border-gray-2000">
+  <div class="p-[30px] tablet:p-0 tablet:mb-7 flex justify-center" data-toggle="collapse" data-target="#collapsingOrderTable">
     {block name='order_items_table_head'}
-      <h3 class="font-body font-normal tablet:text-xl text-base text-main-dark">{l s='Order items' d='Shop.Theme.Checkout'}</h3>
+      <h3 class="font-body font-normal tablet:text-xl text-base text-main-dark mb-0
+      ">{l s='Order items' d='Shop.Theme.Checkout'}</h3>
+      <i class="material-icons tablet:hidden select-none text-3xl text-main-dark transition transform "></i>
     {/block}
   </div>
 
-  <div class="order-confirmation-table">
+  <div class="order-confirmation-table collapse" id="collapsingOrderTable" class="tablet:block tablet:h-full px-5 tablet:px-0">
 
     {block name='order_confirmation_table'}
       {foreach from=$products item=product}
-        <div class="flex items-center mb-3">
+        <div class="flex items-center b-3">
           <span class="flex-0 h-[65px] mr-5 phone-wide:h-[102px] phone-wide:w-miniature w-[65px]">
             {if !empty($product.cover)}
               <img src="{$product.cover.medium.url}" width="102px" height="102px" class="border border-gray-1000 border-solid rounded-md object-contain h-full"/>
@@ -41,7 +44,7 @@
               <img src="{$urls.no_picture_image.bySize.medium_default.url}" class="border border-gray-1000 border-solid rounded-md object-contain h-full"/>
             {/if}
           </span>
-          <div class="flex flex-1 flex-col phone-wide:flex-row phone-wide:items-center">
+          <div class="flex flex-1 flex-col phone-wide:flex-row phone-wide:items-center justify-between">
             <div class="font-body mr-5 text-main-dark">
               {if $add_product_link}<a class="block mb-2" href="{$product.url}" target="_blank">{/if}
                 <span class="text-main-dark text-sm tablet:text-base font-normal">{$product.name}</span>
@@ -104,4 +107,5 @@
     {/block}
 
   </div>
+<div>
 </div>

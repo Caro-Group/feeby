@@ -8,7 +8,7 @@
 
 .seo-description h2,
 .seo-description h3,
-.seo-description h4
+.seo-description h4,
 .seo-description h5,
 .seo-description h6{
     @apply text-main-dark font-normal italic text-base;
@@ -18,6 +18,6 @@
     @apply text-main-dark font-body text-sm tablet:text-base text-justify;
 }
 
-.seo-description .mb-8{
+.seo-description > div{
     @apply mb-8;
 }

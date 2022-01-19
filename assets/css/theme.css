@@ -18611,9 +18611,6 @@ body#checkout #gift_message {
   body#checkout .form-group {
     margin-bottom: 8px; }
 
-  #order-items {
-    border-right: 0;
-    margin-bottom: 40px; }
     .rtl #order-items {
       border-left: 0;
       border-right: inherit; }

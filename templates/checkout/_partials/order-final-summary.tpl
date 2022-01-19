@@ -22,7 +22,7 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
-<section id="order-summary-content" class="page-content p-5 tablet:p-0 page-order-confirmation">
+<section id="order-summary-content" class="page-content p-5 pb-0 tablet:pb-5 tablet:p-0 page-order-confirmation">
   <div class="flex flex-row mb-14">
     <h2 class="border-0 border-b-[3px] rounded-b-sm border-main border-solid mb-0 pb-3">
       {l s='Order summary' d='Shop.Theme.Checkout'}
@@ -87,7 +87,7 @@
       </span>
     </div>
 
-    <div class="w-full tablet-wide:w-1/2 mb-8  border-0 border-b border-solid px-5 tablet-wide:pl-0 pb-9 tablet-wide:pr-8flex flex-col">
+    <div class="w-full tablet-wide:w-1/2 tablet:mb-8  border-0 tablet:border-b border-solid px-5 tablet-wide:pl-0 pb-9 tablet-wide:pr-8 flex flex-col">
       <h4 class="font-body font-normal tablet:text-xl text-base text-main-dark">
         {l s='Payment Method' d='Shop.Theme.Checkout'}
       </h4>
