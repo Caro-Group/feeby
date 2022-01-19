@@ -61,7 +61,7 @@
             {block name='delivery_options'}
               <div class="delivery-options flex flex-col flex-wrap">
                 {foreach from=$delivery_options item=carrier key=carrier_id name=delivery_options_loop}
-                    <div class="delivery-option bg-gray-1000 delivery-option flex flex-row mx-0 mb-5 px-5 py-3 rounded-md " {if $carrier.id === 31 || $carrier.id === 32}onclick="gmParcelLockerChoose(this);return false;"{/if}>
+                    <div class="delivery-option bg-gray-1000 delivery-option flex flex-row mx-0 mb-5 px-5 py-3 rounded-md cursor-pointer" {if $carrier.id === 31 || $carrier.id === 32}onclick="gmParcelLockerChoose(this);return false;"{/if}>
                       <div class="flex items-center justify-center w-16">
                         <span class=" float-xs-left">
                           <input type="radio" name="delivery_option[{$id_address_delivery}]" id="delivery_option_{$carrier.id}" value="{$carrier_id}"{if ($smarty.foreach.delivery_options_loop.index == 0 && $delivery_option != $carrier_id) || $delivery_option == $carrier_id} checked{/if} class="after:absolute after:content-[''] after:h-[10px] after:m-[3px] after:rounded-sm after:transition after:w-[10px] appearance-none border-2 border-gray-3000 border-solid checked:after:bg-main checked:bg-white checked:border-main checked:focus:bg-white checked:focus:border-main checked:focus:ring-transparent checked:focus:shadow-none checked:hover:bg-white checked:hover:border-main checked:ring-0 checked:ring-transparent focus:ring-0 focus:ring-offset-0 focus:ring-transparent h-5 outline-none ring-transparent rounded transition transition-all w-5" />
