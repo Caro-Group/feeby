@@ -63,8 +63,14 @@
                 {assign var="carrier_module" value=''}
                 {foreach from=$delivery_options item=carrier key=carrier_id name=delivery_options_loop}
                     {if isset($carrier.external_module_name) && $carrier.external_module_name != $carrier_module}
-                      <div class="flex flex-row flex-wrap">
-                        <div>{l s=$carrier.external_module_name d='Shop.Theme.Checkout'}</div>
+                      <div class="flex flex-row flex-wrap justify-between mb-5">
+                        <div class="font-body text-xl">
+                          {if $carrier.external_module_name == ''}
+                            {l s='Courier' d='Shop.Theme.Checkout'}
+                          {else}
+                            {l s=$carrier.external_module_name d='Shop.Theme.Checkout'}
+                          {/if}
+                        </div>
                         {if isset($carrier.delay)}  
                           <div>{$carrier.delay}</div>
                         {/if}
