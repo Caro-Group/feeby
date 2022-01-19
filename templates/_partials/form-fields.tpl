@@ -146,7 +146,6 @@
       {elseif $field.type === 'password'}
 
         {block name='form_field_item_password'}
-          {assign var="pass_pattern" value=".{5\,}"}
           <div class="input-group js-parent-focus">
             <input
               class="form-input js-child-focus js-visible-password font-body border-gray-2000 border-solid border flex rounded-full pl-4 bg-white w-full focus:border-gray-3000 focus:ring-0"
@@ -155,7 +154,7 @@
               type="password"
               placeholder="{l s='Enter the password' d='Shop.Forms.Help'}"
               value=""
-              pattern="{$pass_pattern}"
+              pattern=".{ldelim}5,{rdelim}"
               {if $field.required}required{/if}
             >
             <span class="input-group-btn group absolute right-0 top-0 w-auto">
