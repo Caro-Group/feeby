@@ -7,11 +7,5 @@
 }
 
 #checkout-summary-step.-current + .cart-grid-body{
-    @apply hidden;
-}
-
-@media screen(tablet) {
-    #checkout-summary-step.-current + .cart-grid-body{
-        @apply block;
-    }
+    @apply hidden tablet:block;
 }
