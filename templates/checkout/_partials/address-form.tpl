@@ -10,6 +10,14 @@
 {block name='form_field'}
   {if $field.name eq "alias"}
     {* we don't ask for alias here *}
+  {elseif $field.name eq "phone"}
+    {$smarty.block.parent}
+       <div class="flex flex-auto flex-col desktop-presta:flex-row mb-form -mt-form">
+         <label class="font-body font-normal ml-5 mt-3 tablet-medium:ml-0 desktop-presta:w-[220px] text-base tablet:text-xl text-main-dark text-left "></label>
+          <div class=" flex-1 ">
+           <span class="font-body text-[12px]"> For courier delivery </span>
+          </div>
+       </div>
   {else}
     {$smarty.block.parent}
   {/if}
