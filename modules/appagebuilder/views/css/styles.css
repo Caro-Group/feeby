@@ -1209,25 +1209,6 @@ body#checkout #order-summary-content #order-items h3.h3.card-title {
 .card {
   border-radius: 0; }
 
-#content-hook_order_confirmation {
-  text-align: center; }
-
-#content-hook_order_confirmation {
-  text-align: center;
-  color: #999; }
-  #content-hook_order_confirmation .card-title {
-    font-size: 16px;
-    margin: 0 0 20px; }
-    #content-hook_order_confirmation .card-title i {
-      vertical-align: -4px;
-      margin-right: 15px; }
-      .rtl #content-hook_order_confirmation .card-title i {
-        margin-left: 15px;
-        margin-right: inherit; }
-  #content-hook_order_confirmation .card-block {
-    padding: 30px 15px; }
-  #content-hook_order_confirmation p {
-    margin: 0; }
 
 h5.aeuc_scart {
   text-transform: uppercase;
