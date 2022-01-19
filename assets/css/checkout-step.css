@@ -3,9 +3,10 @@
 }
 
 body#checkout  section.checkout-step.-current{
-    @apply flex-auto w-full tablet:w-1/2 desktop-presta:w-2/3 desktop-presta:pr-40 ;
+    @apply flex-auto w-full;
 }
 
 #checkout-summary-step.-current + .cart-grid-body{
     @apply hidden desktop-presta:block;
 }
+

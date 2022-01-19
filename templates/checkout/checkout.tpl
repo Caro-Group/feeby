@@ -60,7 +60,7 @@
               {render file='checkout/checkout-process.tpl' ui=$checkout_process}
             {/block}
             
-            <div class="cart-grid-body flex-auto w-full desktop-presta:w-side hidden" data-js-elem="cart">
+            <div class="cart-grid-body desktop-presta:ml-40 flex-auto w-full hidden desktop-presta:flex-[0_0_467px] " data-js-elem="cart">
               
               {block name='cart_summary'}
                 {include file='checkout/_partials/cart-summary.tpl' cart = $cart}
