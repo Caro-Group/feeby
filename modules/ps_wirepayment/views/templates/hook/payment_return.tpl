@@ -33,6 +33,6 @@
   </p>
 {else}
   <p class="warning font-body">
-    {l s='We noticed a problem with your order. If you think this is an error, feel free to contact our [1]expert customer support team[/1].' d='Modules.Wirepayment.Shop' sprintf=['[1]' => "<a class="hover:text-main transition" href='{$contact_url}'>", '[/1]' => '</a>']}
+    {l s='We noticed a problem with your order. If you think this is an error, feel free to contact our [1]expert customer support team[/1].' d='Modules.Wirepayment.Shop' sprintf=['[1]' => "<a class='hover:text-main transition' href='{$contact_url}'>", '[/1]' => '</a>']}
   </p>
 {/if}
