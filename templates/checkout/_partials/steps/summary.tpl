@@ -99,7 +99,7 @@
     </div>
   </div>
 
-  <div class="block tablet:hidden">
+  <div class="reassurance block tablet:hidden">
     {hook h='displayReassurance'}
   </div>
 
