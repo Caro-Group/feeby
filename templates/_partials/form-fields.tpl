@@ -99,11 +99,11 @@
       {elseif $field.type === 'checkbox'}
 
         {block name='form_field_item_checkbox'}
-          <span class="custom-checkbox">
+          <span>
             <label>
               <input name="{$field.name}" type="checkbox" class="form-checkbox  cursor-pointer bg-white border-2 border-gray-3000 border-solid checked:bg-main-dark checked:focus:bg-main-dark checked:hover:bg-main-dark focus:ring-0 focus:ring-transparent form-checkbox opacity-100 outline-none rounded transition" value="1" {if $field.value}checked="checked"{/if} {if $field.required}required{/if}>
               <span></span>
-              <span class="cursor-pointer">{$field.label nofilter}
+              <span class="cursor-pointer pl-3">{$field.label nofilter}
                 {if $field.required}<span class="text-require">*</span>{/if}
               </span>
             </label>
@@ -156,7 +156,7 @@
               pattern=".{literal}{{/literal}5,{literal}}{/literal}"
               {if $field.required}required{/if}
             >
-            <span class="input-group-btn group">
+            <span class="input-group-btn group absolute right-0 top-0 w-auto">
               <button
                 class="btn btn-outline"
                 type="button"

@@ -361,7 +361,7 @@ div#js-product-list-top:after {
     @apply after:hidden;
 }
 
-.checkout-step.checkout-step input + .input-group-btn.input-group-btn button{
+#login-form input + .input-group-btn.input-group-btn button{
     font-size: 0px;
     @apply w-10 z-20;
 }
