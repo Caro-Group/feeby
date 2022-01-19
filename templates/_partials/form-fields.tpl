@@ -148,7 +148,7 @@
         {block name='form_field_item_password'}
           <div class="input-group js-parent-focus">
             <input
-              class="form-input js-child-focus js-visible-password font-body border-gray-2000 border-solid border flex rounded-full pl-4 bg-white w-full focus:border-gray-3000 focus:ring-0"
+              class="form-input js-child-focus js-visible-password text-sm placeholder:italic font-body border-gray-2000 border-solid border flex rounded-full pl-4 bg-white w-full focus:border-gray-3000 focus:ring-0"
               name="{$field.name}"
               title="{l s='At least 5 characters long' d='Shop.Forms.Help'}"
               type="password"
@@ -157,7 +157,7 @@
               pattern=".{ldelim}5,{rdelim}"
               {if $field.required}required{/if}
             >
-            <span class="input-group-btn group absolute right-0 top-0 w-auto">
+            <span class="input-group-btn group absolute right-0 top-0 w-auto opacity-0">
               <button
                 class="btn btn-outline"
                 type="button"
@@ -170,7 +170,7 @@
               </button>
               <span class=" absolute bottom-3 group-hover:text-main-dark material-icons opacity-100 right-3 text-2xl text-gray-3000 transition duration-100 ">
                   visibility
-                </span><span class="absolute bottom-3 material-icons opacity-0 right-3 text-2xl text-main-dark transition duration-100 z-10">
+                </span><span class="absolute bottom-3 material-icons opacity-0 right-3 text-2xl text-main-dark transition duration-100">
                   visibility_off
                 </span>
             </span>

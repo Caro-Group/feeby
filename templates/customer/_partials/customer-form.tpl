@@ -43,8 +43,9 @@
     <footer class="form-footer clearfix flex items-center justify-between">
       <input type="hidden" name="submitCreate" value="1">
       {block "form_buttons"}
-        <button class="btn btn-primary form-control-submit float-xs-right" data-link-action="save-customer" type="submit">
+        <button class="form-control-submit bg-main-dark border-0 cursor-pointer duration-150 flex font-body hover:text-white hover:bg-black items-center justify-between max-w-[320px] mb-3 px-5 py-3 rounded-full tablet:max-w-[300px] text-white text-xs  tablet:text-sm uppercase w-full whitespace-nowrap" data-link-action="save-customer" type="submit">
           {l s='Save' d='Shop.Theme.Actions'}
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" fill="none" class="ml-2 flex-0"><path fill-rule="evenodd" clip-rule="evenodd" d="m9.25 14.359 6.25-6.25v-.884L9.25.975l-.884.884 5.183 5.184H.5v1.25h13.05l-5.185 5.182.884.884h.001Z" fill="#fff"></path></svg>
         </button>
       {/block}
     </footer>
