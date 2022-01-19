@@ -48,7 +48,7 @@
     
 
   {else}
-    <div class=" bg-gray-1000 inset-0 tablet:rounded-md z-10 desktop-presta:-mr-40 pb-12" data-login-panel>
+    <div class=" bg-gray-1000 inset-0 tablet:rounded-md z-10 pb-12" data-login-panel>
       <div class="flex flex-wrap tablet-wide:flex-nowrap">
         <div class="border-0 border-b border-gray-3000 border-solid flex flex-col items-start mb-0 my-8 pb-11 px-0 mx-5 tablet:px-5 tablet:mx-0 tablet-wide:px-24 tablet:border-b-0 tablet:border-r tablet:mb-8 tablet:my-20 tablet:w-1/2 w-full">
           <h2 class="text-2xl tablet:text-3xl font-normal mb-5">{l s='I do not have an account' d='Shop.Theme.Checkout'}</h2>
