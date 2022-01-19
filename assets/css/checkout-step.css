@@ -7,5 +7,5 @@ body#checkout  section.checkout-step.-current{
 }
 
 #checkout-summary-step.-current + .cart-grid-body{
-    @apply hidden tablet:block;
+    @apply hidden desktop-presta:block;
 }

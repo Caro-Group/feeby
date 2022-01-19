@@ -13,7 +13,7 @@
     {include file='checkout/_partials/order-final-summary.tpl'}
   {/if}
   
-  <div class="block tablet:hidden">
+  <div class="block desktop-presta:hidden">
   {block name='cart_summary'}
     {include file='checkout/_partials/cart-summary.tpl' cart = $cart}
   {/block}
@@ -99,7 +99,7 @@
     </div>
   </div>
 
-  <div class="reassurance block tablet:hidden">
+  <div class="reassurance block desktop-presta:hidden">
     {hook h='displayReassurance'}
   </div>
 
