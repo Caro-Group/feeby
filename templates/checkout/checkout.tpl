@@ -54,7 +54,7 @@
 
       {block name='content'}
         <section id="content" class="relative pt-[120px] tablet:pt-40">
-          <div class="flex flex-wrap">
+          <div class="flex flex-wrap desktop-presta:flex-nowrap">
           
             {block name='checkout_process'}
               {render file='checkout/checkout-process.tpl' ui=$checkout_process}
