@@ -146,7 +146,7 @@
       {elseif $field.type === 'password'}
 
         {block name='form_field_item_password'}
-          {assign var="pass_pattern" value=".{5\,}"}
+          {assign var="pass_pattern" value=".{5,}"}
           <div class="input-group js-parent-focus">
             <input
               class="form-input js-child-focus js-visible-password font-body border-gray-2000 border-solid border flex rounded-full pl-4 bg-white w-full focus:border-gray-3000 focus:ring-0"
