@@ -187,8 +187,24 @@
             value="{$field.value}"
             {if isset($field.availableValues.placeholder)}
               placeholder="{$field.availableValues.placeholder}"
-            {else}
-              placeholder="{l s=$field.name d='Shop.Forms.Help'}"
+            {elseif $field.name == 'email'}
+              placeholder="{l s='email' d='Shop.Forms.Help'}"
+            {elseif $field.name == 'firstname'}
+              placeholder="{l s='firstname' d='Shop.Forms.Help'}"
+            {elseif $field.name == 'lastname'}
+              placeholder="{l s='lastname' d='Shop.Forms.Help'}"
+            {elseif $field.name == 'company'}
+              placeholder="{l s='company' d='Shop.Forms.Help'}"
+            {elseif $field.name == 'vat_number'}
+              placeholder="{l s='vat_number' d='Shop.Forms.Help'}"
+            {elseif $field.name == 'address1'}
+              placeholder="{l s='address1' d='Shop.Forms.Help'}"
+            {elseif $field.name == 'phone'}
+              placeholder="{l s='phone' d='Shop.Forms.Help'}"
+            {elseif $field.name == 'postcode'}
+              placeholder="{l s='postcode' d='Shop.Forms.Help'}"
+            {elseif $field.name == 'city'}
+              placeholder="{l s='city' d='Shop.Forms.Help'}"
             {/if}
             {if $field.maxLength}maxlength="{$field.maxLength}"{/if}
             {if $field.required}required{/if}
