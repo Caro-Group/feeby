@@ -31,6 +31,17 @@
     <p class="font-light text-sm tablet:text-base mb-6 tablet:mb-10 text-main-dark font-body">
       {l s='If you have questions, comments or concerns, please contact our [1]expert customer support team[/1].' d='Modules.Wirepayment.Shop' sprintf=['[1]' => "<a href='{$contact_url}'>", '[/1]' => '</a>']}
     </p>
+
+    <div class="cart_navigation">
+    <a href="{$urls.pages.register}" class="account-link">
+        <i class="material-icons">&#xE5CB;</i>
+        <span>{l s='Create account' d='Modules.Wirepayment.Shop'}</span>
+    </a>
+    <a href="{$urls.pages.index}" class="account-link">
+        <i class="material-icons">&#xE5CB;</i>
+        <span>{l s='Back to homepage' d='Modules.Wirepayment.Shop'}</span>
+    </a>
+    </div>
 {else}
     <p class="warning font-body">
       {l s='We noticed a problem with your order. If you think this is an error, feel free to contact our [1]expert customer support team[/1].' d='Modules.Wirepayment.Shop' sprintf=['[1]' => "<a href='{$contact_url}'>", '[/1]' => '</a>']}
