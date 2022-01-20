@@ -7,6 +7,8 @@
 *}
 {extends file=$layout}
 
+{block name='breadcrumb'}{/block}
+
 {block name='content'}
 
     <section id="main">
