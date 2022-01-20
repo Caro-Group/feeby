@@ -75,7 +75,7 @@
      {/if}
 
      {if !$use_same_address}
-       <h2 class="h4 mb-4 mt-12">{l s='Shipping Address' d='Shop.Theme.Checkout'}</h2>
+       <h2 class="font-light font-medium mb-4 mt-12">{l s='Shipping Address' d='Shop.Theme.Checkout'}</h2>
      {/if}
 
      {if $show_delivery_address_form}
