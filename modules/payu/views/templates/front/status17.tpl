@@ -25,7 +25,7 @@
                     {l s='Confirmation and order summary has been sent on: ' d='Modules.PayU.Shop'} <br> <span class="font-medium mt-3 tablet:mt-5"> {l s='%email%.' sprintf=['%email%' => $customer.email]} </span>
                 </p>
                 <p class="font-light text-sm tablet:text-base mb-10 tablet:mb-12 ">
-                    {l s='Order number: ' d='Modules.PayU.Shop'} <a href="{$redirectUrl}" class="font-medium"> {l s='%s' sprintf=[$reference]} </a>
+                    {l s='Order number: ' d='Modules.PayU.Shop'} <a href="{$redirectUrl}" class="font-medium"> {$orderPublicId} </a>
                 </p>
                 <a href="{$urls.pages.index}" class="text-black bg-transparent border-0 uppercase mb-2 flex items-center justify-between cursor-pointer">
                 <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" fill="none" class="mr-2"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.25 13.384 0 7.134V6.25L6.25 0l.884.884L1.95 6.067H15v1.25H1.95L7.135 12.5l-.884.884H6.25Z" fill="#181828"></path></svg>
