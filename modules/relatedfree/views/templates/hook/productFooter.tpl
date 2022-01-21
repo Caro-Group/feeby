@@ -11,20 +11,5 @@
 
 
 {if isset($products) && $products}
-    <div id="featured-category-products-block-center" class="{$rf_maincss}">
-        {include file='_partials/slider_header.tpl' title={l s='Related products' mod='relatedfree'}}
-        
-        <div class="swiper">
-  
-            <div class="swiper-wrapper">
-                {foreach from=$products item="product"}
-                    <div class="swiper-slide w-[235px] tablet:w-[346px]">
-                        {include file='catalog/_partials/miniatures/product.tpl' product=$product}
-                    </div>
-                {/foreach}
-            </div>
-            
-            <div class="swiper-pagination"></div>
-        </div>
-    </div>
+    {include file='_partials/slider.tpl' products=$products title={l s='Related products' mod='relatedfree'}}
 {/if}
