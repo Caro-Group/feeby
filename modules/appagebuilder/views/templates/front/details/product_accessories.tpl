@@ -8,8 +8,6 @@
 
 {block name='product_accessories'}
   {if $accessories}
-    {if isset($products) && $products}
-      {include file='_partials/slider.tpl' type='product-accessories' products=$products title={l s='You might also like' d='Shop.Theme.Catalog'}}
-    {/if}
+    {include file='_partials/slider.tpl' type='product-accessories' products=$products title={l s='You might also like' d='Shop.Theme.Catalog'}}
   {/if}
 {/block}
