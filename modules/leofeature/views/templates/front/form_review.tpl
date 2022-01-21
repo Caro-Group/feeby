@@ -50,7 +50,7 @@
 				<button class="leo-fake-button leo-modal-review-bt bg-main hover:bg-main-hover font-me text-white py-2 px-4 text-xl uppercase text-center border-0 rounded-full font-medium cursor-pointer" type="submit">
 					<span class="leo-modal-review-loading cssload-speeding-wheel"></span>
 					<span class="leo-modal-review-bt-text">
-						{l s='Submit' d='Modules.Leofeature.Shop'}
+						{l s='Add review' d='Modules.Leofeature.Shop'}
 					</span>
 				</button>
 			</div>
