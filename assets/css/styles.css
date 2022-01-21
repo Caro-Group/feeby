@@ -392,12 +392,24 @@ input[type="text"] + .input-group-btn span:nth-of-type(2){
     @apply mb-0;
 }
 
+.product-desc-right-box  .ApColumn:not(:first-child) .block{
+    @apply mb-[40px];
+}
+
 .product-desc-right-box .ApColumn .title_block{
     @apply font-header mb-5 text-xl;
 }
 
+.product-desc-right-box  .ApColumn:first-child .title_block{
+    @apply font-body font-normal mb-[40px] text-[20px];
+}
+
 .product-desc-right-box .ApImage img{
     @apply bg-gray-1000 rounded-[5px] w-full h-auto max-w-[60px] max-h-[60px];
+}
+
+.product-desc-right-box .ApImage .image_description p{
+    @apply font-body font-light text-base;
 }
 
 .easypack-widget .map-widget .leaflet-popup .leaflet-popup-content-wrapper .point-wrapper p{
