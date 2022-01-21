@@ -1476,3 +1476,10 @@ $(document).ready(function () {
 $(document).ready(function () {
 	$('#checkout [name="postcode"]').mask("99-999");
 });
+
+$(document).ready(function () {
+	const swiper = new Swiper('[data-swiper-carousel]', {
+		speed: 400,
+		spaceBetween: 10,
+	});
+});
