@@ -15,7 +15,6 @@
 {/if}
 
 		<div id="product_reviews_block_tab">
-			<span class="product-opinion-title">{l s='Yours opinion' d='Modules.Leofeature.Shop'}</span>
 			<div style="display: flex;flex-direction: row;flex-wrap: wrap;width: 100%;">
 				{if $reviews}
 					{foreach from=$reviews item=review}
