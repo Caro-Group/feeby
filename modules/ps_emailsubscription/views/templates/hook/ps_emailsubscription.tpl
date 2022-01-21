@@ -22,7 +22,7 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
-{if $page.page_name != 'module-psgdpr-gdpr'}
+{if $page_name != 'module-psgdpr-gdpr' && $page_name != 'module-payu-success' && $page_name != 'authentication'}
  {* .block is used in js *}
 <div class="block relative bg-newsletter-dashed bg-smaller tablet:bg-small bg-right-bottom bg-no-repeat bg-gray-1000 desktop:rounded-md flex flex-col items-center justify-center max-w-screen-desktop-wide mx-auto px-2 tablet:px-8 py-20 overflow-hidden"> 
   <div class="absolute -left-20 bottom-0 bg-newsletter-plane bg-left-bottom h-3/4 tablet:h-full tablet:left-0 w-full bg-no-repeat bg-contain z-10"></div>
