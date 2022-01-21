@@ -18,8 +18,8 @@
   
             <div class="swiper-wrapper">
                 {foreach from=$products item="product"}
-                    <div class="swiper-slide w-full tablet:w-1/2 tablet-wide:w-1/4">
-                    {include file='catalog/_partials/miniatures/product.tpl' product=$product}
+                    <div class="swiper-slide w-[235px] tablet:w-[346px]">
+                        {include file='catalog/_partials/miniatures/product.tpl' product=$product}
                     </div>
                 {/foreach}
             </div>
