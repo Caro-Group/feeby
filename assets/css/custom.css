@@ -35,8 +35,7 @@
 
 .dropdown-sub.dropdown-menu .nav-links a,
 ul.category-top-menu .category-sub-menu a,
-.facet-title,
-.product-features > dl.data-sheet dt.name {
+.facet-title {
     text-transform: none!important;
 }
 

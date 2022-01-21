@@ -19809,53 +19809,6 @@ body #search_filters .clear-all-wrapper {
 #product-details .label {
   font-weight: 600; }
 
-.product-features {
-  margin-top: 20px; }
-  .product-features > dl.data-sheet {
-    display: -webkit-box;
-    display: -moz-box;
-    display: box;
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-lines: multiple;
-    -moz-box-lines: multiple;
-    box-lines: multiple;
-    -webkit-flex-wrap: wrap;
-    -moz-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-align: start;
-    -moz-box-align: start;
-    box-align: start;
-    -webkit-align-items: flex-start;
-    -moz-align-items: flex-start;
-    -ms-align-items: flex-start;
-    -o-align-items: flex-start;
-    align-items: flex-start;
-    -ms-flex-align: start; }
-    .product-features > dl.data-sheet dd.value,
-    .product-features > dl.data-sheet dt.name {
-      -webkit-box-flex: 1;
-      -moz-box-flex: 1;
-      box-flex: 1;
-      -webkit-flex: 1 0 40%;
-      -moz-flex: 1 0 40%;
-      -ms-flex: 1 0 40%;
-      flex: 1 0 40%;
-      font-weight: normal;
-      background: #ebebeb;
-      padding: 10px;
-      margin-right: 10px;
-      min-height: 40px;
-      word-break: break-all; }
-      .product-features > dl.data-sheet dd.value:nth-of-type(even),
-      .product-features > dl.data-sheet dt.name:nth-of-type(even) {
-        background: #f6f6f6; }
-    .product-features > dl.data-sheet dt.name {
-      text-transform: capitalize; }
-
 .product-customization {
   margin: 40px 0; }
   .product-customization .product-customization-item {
