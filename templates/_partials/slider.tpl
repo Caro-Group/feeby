@@ -1,5 +1,5 @@
 <div id="{$type}">
-    <div class="flex justify-between mb-[30px]">
+    <div class="flex justify-between">
         <h2 class="flex-shrink-0 font-light text-2xl tablet:text-4xl">
             {$title}
         </h2>
@@ -13,7 +13,7 @@
 
         <div class="swiper-wrapper desktop:justify-between">
             {foreach from=$products item="product"}
-                <div class="slide relative shrink-0 transition-transform h-full w-[235px] tablet:w-[346px]">
+                <div class="slide relative shrink-0 transition-transform h-full w-[235px] tablet:w-[346px] desktop:w-1/4 pr-5">
                     {include file='catalog/_partials/miniatures/product.tpl' product=$product}
                 </div>
             {/foreach}
