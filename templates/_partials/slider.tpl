@@ -5,7 +5,7 @@
 
         <div class="swiper-wrapper desktop:justify-between">
             {foreach from=$products item="product"}
-                <div class="slide relative shrink-0 transition-transform h-full w-[235px] tablet:w-[346px]">
+                <div class="slide relative shrink-0 transition-transform h-full w-[235px] tablet:w-[346px] desktop:w-1/4">
                     {include file='catalog/_partials/miniatures/product.tpl' product=$product}
                 </div>
             {/foreach}
