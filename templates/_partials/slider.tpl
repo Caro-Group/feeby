@@ -1,5 +1,5 @@
 <div id="{$type}">
-    <div class="flex justify-between">
+    <div class="flex justify-between mb-[30px]">
         <h2 class="flex-shrink-0 font-light text-2xl tablet:text-4xl">
             {$title}
         </h2>
