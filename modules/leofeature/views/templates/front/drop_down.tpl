@@ -82,7 +82,7 @@
 							{if ($product.attributes|count && $show_combination) || ($product.customizations|count && $show_customization)}
 								<div class="view-additional">								
 									<div class="view-leo-dropdown-additional rounded-md bg-main-dark">
-										<i class="material-icons -right-[3px] absolute select-none text-3xl text-white transition transform rotate-180"></i>
+										<i class="material-icons -right-[3px] absolute select-none text-3xl text-white transition transform duration-300 rotate-180"></i>
 									</div>
 								</div>
 							{/if}
@@ -137,10 +137,10 @@
 								<div class="{$subtotal.type} clearfix">
 									<div class="flex">
 										<div class="p-0 flex-1">
-											<span class="label">{$subtotal.label}</span>
+											<span class="label text-main-dark">{$subtotal.label}</span>
 										</div>
 										<div class="p-0 text-right">
-											<span class="value">{$subtotal.value}</span>
+											<span class="value text-main-dark">{$subtotal.value}</span>
 										</div>
 									</div>
 								</div>
@@ -165,7 +165,7 @@
 						{if $remaining_to_spend > 0}
 						  <div class="leo_free_price">
 						  {assign var=currency value=Context::getContext()->currency}
-						  <p>{l s='Spent' d='Modules.Leofeature.Shop'} {Tools::displayPrice($remaining_to_spend,$currency)} {l s='To get free ship!' d='Modules.Leofeature.Shop'}</p>
+						  <p class="font-body">{l s='Spent' d='Modules.Leofeature.Shop'} {Tools::displayPrice($remaining_to_spend,$currency)} {l s='To get free ship!' d='Modules.Leofeature.Shop'}</p>
 						  </div>
 						{/if}
 					{/if}
