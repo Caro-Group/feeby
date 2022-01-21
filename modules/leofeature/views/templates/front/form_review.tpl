@@ -6,8 +6,8 @@
 * @description: Leo feature for prestashop 1.7: ajax cart, review, compare, wishlist at product list 
 *}
 
-<div class="bg-gray-default flex flex-col tablet-wide:flex-row flex-wrap p-12 tablet-wide:p-[80px]">
-	<div class="text-main-dark">
+<div class="bg-gray-default flex flex-col tablet-wide:flex-row flex-wrap p-12 tablet-wide:p-[80px] mt-2">
+	<div class="flex flex-col pr-10 text-main-dark flex-auto justify-center">
 		<span class="font-italic text-[25px] font-header">{l s='Do you have this product?' d='Modules.Leofeature.Shop'}</span>
 		<span class="font-italic text-[20px] font-body">{l s='Tell others how you rate it!' d='Modules.Leofeature.Shop'}</span>
 	</div>
@@ -31,20 +31,18 @@
 			{/foreach}
 			</ul>
 		{/if}				
-		<form class="form-new-review" action="#" method="post">
-			<div class="form-group">
+		<form class="form-new-review flex flex-row flex-wrap" action="#" method="post">
+			<div class="flex flex-col flex-wrap w-full tablet:w-1/2">
 				<label class="text-[20px]" for="new_review_title">{l s='Your title' d='Modules.Leofeature.Shop'}</label>
-				<input type="text" class="form-input" id="new_review_title" required="required" name="new_review_title"  placeholder="{l s='Your title here' d='Modules.Leofeature.Shop'}">					  
+				<input type="text" class="border-0 font-italic form-input px-[20px] rounded-[5px] text-[14px]" id="new_review_title" required="required" name="new_review_title"  placeholder="{l s='Your title here' d='Modules.Leofeature.Shop'}">					  
 			</div>
-			{if $allow_guests == true && !$is_logged}
-				<div class="form-group">
-					<label class="text-[20px]" for="new_review_customer_name">{l s='Your pseudonim' d='Modules.Leofeature.Shop'}</label>
-					<input type="text" class="form-input" id="new_review_customer_name" required="required" name="new_review_customer_name" placeholder="{l s='Your pseudonim here' d='Modules.Leofeature.Shop'}">					  
-				</div>
-			{/if}
-			<div class="form-group">
+			<div class="flex flex-col flex-wrap w-full tablet:w-1/2">
+				<label class="text-[20px]" for="new_review_customer_name">{l s='Your pseudonim' d='Modules.Leofeature.Shop'}</label>
+				<input type="text" class="border-0 font-italic form-input px-[20px] rounded-[5px] text-[14px]" id="new_review_customer_name" required="required" name="new_review_customer_name" placeholder="{l s='Your pseudonim here' d='Modules.Leofeature.Shop'}">					  
+			</div>
+			<div class="flex flex-col flex-wrap w-full">
 				<label class="text-[20px]" for="new_review_content">{l s='Your comment' d='Modules.Leofeature.Shop'}</label>
-				<textarea type="text" class="form-textarea" id="new_review_content" required="required" name="new_review_content" placeholder="{l s='Your comment here' d='Modules.Leofeature.Shop'}"></textarea>				  
+				<textarea type="text" class="form-textarea border-0 font-italic px-[20px] rounded-[5px] text-[14px] resize-none" id="new_review_content" required="required" name="new_review_content" placeholder="{l s='Your comment here' d='Modules.Leofeature.Shop'}"></textarea>				  
 			</div>
 			
 			<input id="id_product_review" name="id_product_review" type="hidden" value='{$product_modal_review->id}' />
