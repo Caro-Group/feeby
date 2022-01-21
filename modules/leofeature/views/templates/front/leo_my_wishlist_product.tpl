@@ -9,7 +9,7 @@
 	{foreach from=$products item=product_item name=for_products}
 		{assign var='product' value=$product_item.product_info}
 		{assign var='wishlist' value=$product_item.wishlist_info}
-		<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 product-miniature js-product-miniature leo-wishlistproduct-item leo-wishlistproduct-item-{$wishlist.id_wishlist_product} product-{$product.id_product}" data-id-product="{$product.id_product}" data-id-product-attribute="{$product.id_product_attribute}" itemscope itemtype="http://schema.org/Product">
+		<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 product-miniature relative js-product-miniature leo-wishlistproduct-item leo-wishlistproduct-item-{$wishlist.id_wishlist_product} product-{$product.id_product}" data-id-product="{$product.id_product}" data-id-product-attribute="{$product.id_product_attribute}" itemscope itemtype="http://schema.org/Product">
 			<div class="delete-wishlist-product clearfix">
 				<a class="leo-wishlist-button-delete btn" href="javascript:void(0)" title="{l s='Remove from this wishlist' d='Modules.Leofeature.Shop'}" data-id-wishlist="{$wishlist.id_wishlist}" data-id-wishlist-product="{$wishlist.id_wishlist_product}" data-id-product="{$product.id_product}"><i class="material-icons">&#xE872;</i>
 				</a>

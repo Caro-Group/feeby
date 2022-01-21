@@ -130,11 +130,11 @@ p{
 }
 
 .swiper-pagination.swiper-pagination-bullets-dynamic .swiper-pagination-bullet{
-    @apply bg-transparent border border-solid border-main-dark transition w-3 h-3
+    @apply bg-transparent border border-solid border-main-dark transition w-3 h-3;
 }
 
 .swiper-pagination.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active{
-    @apply bg-black border-black transform scale-125
+    @apply bg-black border-black transform scale-125;
 }
 
 .swiper-banner .swiper-pagination .swiper-pagination-bullet{
