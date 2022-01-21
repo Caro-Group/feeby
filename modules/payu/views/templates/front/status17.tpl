@@ -11,7 +11,7 @@
 
     {assign var="orderApproved" value=true}
     {if $request_uri|strstr:"anulowana"}
-        {$orderStatus = false}
+        {$orderApproved = false}
     {/if}
 
 {block name='content'}
@@ -36,7 +36,7 @@
                         <p class="font-light font-body text-sm tablet:text-base mb-6">
                             {l s='Confirmation and order summary has been sent on: ' d='Modules.Payu.Shop'} <br> <span class="font-medium mt-3 tablet:mt-5 underline"> {l s='%email%' sprintf=['%email%' => $customer.email]} </span>
                         </p>
-                        <p class="font-light font-body text-sm tablet:text-base mb-10 tablet:mb-12 ">
+                        <p class="font-light font-body text-sm tablet:text-base mb-0 ">
                             {l s='Order number: ' d='Modules.Payu.Shop'} <a href="{$redirectUrl}" class="font-medium text-main-dark hover:text-main transition"> {$orderPublicId} </a>
                         </p>
                     {else}
@@ -46,7 +46,7 @@
 
                     {/if}
 
-                <a href="{$urls.pages.index}" class="bg-transparent border-0 cursor-pointer flex items-center justify-between mb-2 tablet:text-sm text-main-dark hover:text-main transition text-xs uppercase font-normal">
+                <a href="{$urls.pages.index}" class="bg-transparent border-0 cursor-pointer flex items-center justify-between mt-10 tablet:mt-12 mb-2 tablet:text-sm text-main-dark hover:text-main transition text-xs uppercase font-normal">
                     <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" class="mr-2 fill-current"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.25 13.384 0 7.134V6.25L6.25 0l.884.884L1.95 6.067H15v1.25H1.95L7.135 12.5l-.884.884H6.25Z"></path></svg>
                     {l s='Back to homepage' d='Modules.Payu.Shop'}
                 </a>
@@ -57,12 +57,13 @@
                 <h2 class="text-2xl tablet:text-3xl font-normal mb-7 tablet:mb-10">
                     {l s='Stay on feeby %s for longer' sprintf=['<br>'] d='Modules.Payu.Shop'}
                 </h2>
-                <p class="font-light font-body text-sm tablet:text-base mb-6 ">
+                <p class="font-light font-body text-sm tablet:text-base mb-0 ">
                     {l s='Create an account with used order information' d='Modules.Payu.Shop'}
                 </p>
-                <a href="{$urls.pages.index}" class="bg-transparent border-0 cursor-pointer flex items-center justify-between mb-2 tablet:text-sm text-main-dark hover:text-main transition text-xs uppercase font-normal">
+                <a href="{$urls.pages.index}" class="bg-transparent border-0 cursor-pointer flex items-center justify-between mt-10 tablet:mt-12 mb-2 tablet:text-sm text-main-dark hover:text-main transition text-xs uppercase font-normal">
                     {l s='Create an account' d='Modules.Payu.Shop'}
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" class="ml-2 flex-0 fill-current"><path fill-rule="evenodd" clip-rule="evenodd" d="m9.25 14.359 6.25-6.25v-.884L9.25.975l-.884.884 5.183 5.184H.5v1.25h13.05l-5.185 5.182.884.884h.001Z"></path></svg>                </a>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" class="ml-2 flex-0 fill-current"><path fill-rule="evenodd" clip-rule="evenodd" d="m9.25 14.359 6.25-6.25v-.884L9.25.975l-.884.884 5.183 5.184H.5v1.25h13.05l-5.185 5.182.884.884h.001Z"></path></svg>                
+                </a>
             </div>
         </div>
     </section>
