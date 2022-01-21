@@ -28,7 +28,7 @@
 									</p>
 									<p itemprop="reviewBody">{$review.content|escape:'html':'UTF-8'|nl2br nofilter}</p>
 									
-								</div><!-- .review_details -->
+								</div>
 								
 								<div class="review_author">
 									<div class="review_author_infos" style="display: flex;justify-content: space-between;flex-wrap: wrap;">
@@ -54,36 +54,7 @@
 
 							</div>
 							
-							<div class="review_button">
-								<ul style="display: flex;flex-direction: row;justify-content: space-between;align-items: baseline;">
-									{if $review.total_advice > 0}
-										<li>
-											{l s='%1$d out of %2$d people found this review useful.' sprintf=[$review.total_useful,$review.total_advice] d='Modules.Leofeature.Shop'}
-										</li>
-									{/if}
-									{if $customer.is_logged}
-										{if !$review.customer_advice && $allow_usefull_button}
-										<li>
-											<span>{l s='Was this review useful to you?' d='Modules.Leofeature.Shop'}</span>
-											<button class="usefulness_btn btn btn-default button button-small" data-is-usefull="1" data-id-product-review="{$review.id_product_review}">
-												<span>{l s='Yes' d='Modules.Leofeature.Shop'}</span>
-											</button>
-											<button class="usefulness_btn btn btn-default button button-small" data-is-usefull="0" data-id-product-review="{$review.id_product_review}">
-												<span>{l s='No' d='Modules.Leofeature.Shop'}</span>
-											</button>
-										</li>
-										{/if}
-										{if !$review.customer_report && $allow_report_button}
-										<li>
-											<a href="javascript:void(0)" class="btn report_btn" data-id-product-review="{$review.id_product_review}">
-												{l s='Report abuse' d='Modules.Leofeature.Shop'}
-											</a>
-										</li>
-										{/if}
-									{/if}
-								</ul>
-							</div>
-						</div> <!-- .review -->
+						</div>
 						{/if}
 					{/foreach}
 				{/if}
@@ -98,5 +69,5 @@
 {else}
 	</div>	
 {/if}
-
+ 
 <div id="reviewForm" class="review-form" data-review-form data-id-product="{$id_product_tab_content}" data-is-logged="{$customer.is_logged}" data-product-link="{$link_product_tab_content}"></div>
