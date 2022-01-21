@@ -81,8 +81,8 @@
 							</a>
 							{if ($product.attributes|count && $show_combination) || ($product.customizations|count && $show_customization)}
 								<div class="view-additional">								
-									<div class="view-leo-dropdown-additional rounded-md bg-main-dark">
-										<i class="material-icons -right-[3px] absolute select-none text-3xl text-white transition transform duration-300 rotate-180"></i>
+									<div class="view-leo-dropdown-additional rounded-md bg-gray-1000">
+										<i class="material-icons -right-[3px] absolute select-none text-3xl text-main-dark transition transform duration-300 rotate-0"></i>
 									</div>
 								</div>
 							{/if}
