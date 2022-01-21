@@ -22,12 +22,7 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
-<section class="featured-products clearfix block">
-  {include file='_partials/slider_header.tpl' title={l s='Popular Products' d='Shop.Theme.Catalog'}}
-  
-  <div class="block_content">
-    <div class="products">
-      {include file="catalog/_partials/miniatures/leo_col_products.tpl" products=$products}
-    </div>
-  </div>
-</section>
+ 
+{if isset($products) && $products}
+  {include file='_partials/slider.tpl' type='products-featured' products=$products title={l s='Popular Products' d='Shop.Theme.Catalog'}}
+{/if}

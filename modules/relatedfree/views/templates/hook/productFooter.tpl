@@ -9,7 +9,6 @@
 * support@mypresta.eu
 *}
 
-
 {if isset($products) && $products}
-    {include file='_partials/slider.tpl' products=$products title={l s='Related products' mod='relatedfree'}}
+    {include file='_partials/slider.tpl' type='products-releated-footer' products=$products title={l s='Related products' mod='relatedfree'}}
 {/if}
