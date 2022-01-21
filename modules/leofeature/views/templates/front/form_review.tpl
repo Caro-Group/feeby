@@ -6,17 +6,19 @@
 * @description: Leo feature for prestashop 1.7: ajax cart, review, compare, wishlist at product list 
 *}
 
-<div class="bg-gray-default" style="display:flex;flex-direction:row;flex-wrap:wrap;">
-	<div class="review-title" style="">
-		<span style="font-style: normal;font-weight: bold;font-size: 25px;line-height: 34px;display: flex;align-items: center;letter-spacing: -0.015em;color: #424242;">{l s='Do you have this product?' d='Modules.Leofeature.Shop'}</span>
-		<span style="font-style: normal;font-weight: bold;font-size: 20px;line-height: 27px;display: flex;align-items: center;letter-spacing: -0.015em;color: #424242;">{l s='Tell others how you rate it!' d='Modules.Leofeature.Shop'}</span>
+<div class="bg-gray-default flex flex-col tablet-wide:flex-row flex-wrap p-12 tablet-wide:p-[80px]">
+	<div class="text-main-dark">
+		<span class="font-italic text-[25px] font-header">{l s='Do you have this product?' d='Modules.Leofeature.Shop'}</span>
+		<span class="font-italic text-[20px] font-body">{l s='Tell others how you rate it!' d='Modules.Leofeature.Shop'}</span>
 	</div>
-	<div class="new_review_form_content col-xs-12 col-sm-12" style="flex: 1 1 50%;padding:0;">
+	<div class="new_review_form_content col-xs-12 col-sm-12 p-0 flex-[1_1_50%]">
 		{if $criterions|@count > 0}
 			<ul id="criterions_list">
 			{foreach from=$criterions item='criterion'}
-				<li style="display: flex;align-items: center;">
-					{if isset($criterion.name) && $criterion.name != ''}<label class="form-control-label" style="margin: auto 20px 0 0;line-height: normal;float: none;display: block;padding: 0;">{$criterion.name|escape:'html':'UTF-8'}:</label>{/if}
+				<li class="flex items-center">
+					{if isset($criterion.name) && $criterion.name != ''}
+						<label class="form-control-label mb-[20px] block p-0">{$criterion.name|escape:'html':'UTF-8'}:</label>
+					{/if}
 					<div class="star_content">
 						<input class="star not_uniform" type="radio" name="criterion[{$criterion.id_product_review_criterion|round}]" value="1" />
 						<input class="star not_uniform" type="radio" name="criterion[{$criterion.id_product_review_criterion|round}]" value="2" />
@@ -44,10 +46,9 @@
 				<label class="form-control-label" for="new_review_content">{l s='Your comment' d='Modules.Leofeature.Shop'}</label>
 				<textarea type="text" class="form-control" id="new_review_content" required="required" name="new_review_content" placeholder="{l s='Your comment here' d='Modules.Leofeature.Shop'}"></textarea>				  
 			</div>
-			<div class="form-group">
-				<input id="id_product_review" name="id_product_review" type="hidden" value='{$product_modal_review->id}' />
-			</div>
-			<div style="display: flex;flex-direction: revert;justify-content: space-between; align-items: flex-start;padding-top: 10px;">
+			
+			<input id="id_product_review" name="id_product_review" type="hidden" value='{$product_modal_review->id}' />
+			<div class="flex flex-row-revert justify-between items-start pt-[10px]">
 				<button class="btn btn-primary form-control-submit leo-fake-button pull-xs-right leo-modal-review-bt btn btn-primary" type="submit">
 					<span class="leo-modal-review-loading cssload-speeding-wheel"></span>
 					<span class="leo-modal-review-bt-text">
