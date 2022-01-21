@@ -23,6 +23,4 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 
-{if isset($products) && $products}
-	{include file='_partials/slider.tpl' type='product-featured-special' products=$products title={l s='On sale' d='Shop.Theme.Catalog'}}
-{/if}
+{include file='_partials/slider.tpl' type='product-featured-special' products=$products title={l s='On sale' d='Shop.Theme.Catalog'}}
