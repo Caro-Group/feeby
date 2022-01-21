@@ -30,7 +30,7 @@
 		</div>		
 		<div class="ml-3">
 			{if $nbReviews_product_extra != 0}
-				<a href="javascript:void(0)" class="read-review">					
+				<a href="javascript:void(0)" class="open-review-form read-review">					
 					<i class="material-icons">&#xE0B9;</i>
 					<span itemprop="reviewCount">{$nbReviews_product_extra}</span> {l s='Reviews' d='Modules.Leofeature.Shop'}
 				</a>
