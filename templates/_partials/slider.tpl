@@ -1,4 +1,4 @@
-<div id="{$type}">
+<div id="{$type}" class="mb-[100px]">
     <div class="flex justify-between mb-[30px]">
         <h2 class="flex-shrink-0 font-light text-2xl tablet:text-4xl">
             {$title}
