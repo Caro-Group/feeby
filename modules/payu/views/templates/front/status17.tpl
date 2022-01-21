@@ -20,11 +20,10 @@
     <section id="main" class="my-7 tablet:my-14 -mx-[10px] tablet:mx-0">
         <div class="flex flex-col tablet:flex-row bg-gray-1000 tablet:rounded-md">    
             <div class="tablet:w-1/2 border-0 border-b border-gray-3000 border-solid flex flex-col items-start mb-0 my-14 pb-11 px-0 mx-5 tablet:px-5 tablet:mx-0 tablet-wide:px-24 tablet:border-b-0 tablet:border-r tablet:mb-12 tablet:my-20">
-            {if $orderApproved}
+
                 <h2 class="text-2xl tablet:text-3xl font-normal mb-7 tablet:mb-10">
                     {l s='Thank you for shopping %s on www.feeby.pl' sprintf=['<br>'] d='Modules.Payu.Shop'}
-                </h2>                
-            {/if}
+                </h2> 
             
                 <p class="font-medium font-body text-sm tablet:text-base mb-6 ">
                     {l s='Your payment has been' d='Modules.Payu.Shop'} 
