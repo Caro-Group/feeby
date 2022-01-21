@@ -16,7 +16,7 @@
         <div class="flex flex-col tablet:flex-row bg-gray-1000 tablet:rounded-md">    
             <div class="tablet:w-1/2 border-0 border-b border-gray-3000 border-solid flex flex-col items-start mb-0 my-14 pb-11 px-0 mx-5 tablet:px-5 tablet:mx-0 tablet-wide:px-24 tablet:border-b-0 tablet:border-r tablet:mb-12 tablet:my-20">
                 <h2 class="text-2xl tablet:text-3xl font-normal mb-7 tablet:mb-10">
-                    {l s='Thank you for shopping on www.feeby.pl' d='Modules.PayU.Shop'}
+                    {l s='Thank you for shopping %s on www.feeby.pl' sprintf=['<br>'] d='Modules.PayU.Shop'}
                 </h2>
                 <p class="font-medium font-body text-sm tablet:text-base mb-6 ">
                     {l s='Order status' d='Modules.PayU.Shop'} - {$orderStatus} 
@@ -27,8 +27,8 @@
                 <p class="font-light font-body text-sm tablet:text-base mb-10 tablet:mb-12 ">
                     {l s='Order number: ' d='Modules.PayU.Shop'} <a href="{$redirectUrl}" class="font-medium text-main-dark hover:text-main"> {$orderPublicId} </a>
                 </p>
-                <a href="{$urls.pages.index}" class="bg-transparent border-0 cursor-pointer flex items-center justify-between mb-2 tablet:text-sm text-main-dark text-xs uppercase font-normal">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" fill="none" class="mr-2"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.25 13.384 0 7.134V6.25L6.25 0l.884.884L1.95 6.067H15v1.25H1.95L7.135 12.5l-.884.884H6.25Z" fill="#232322"></path></svg>
+                <a href="{$urls.pages.index}" class="bg-transparent border-0 cursor-pointer flex items-center justify-between mb-2 tablet:text-sm text-main-dark hover:text-main transition text-xs uppercase font-normal">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" class="mr-2 fill-current"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.25 13.384 0 7.134V6.25L6.25 0l.884.884L1.95 6.067H15v1.25H1.95L7.135 12.5l-.884.884H6.25Z"></path></svg>
                     {l s='Back to homepage' d='Modules.PayU.Shop'}
                 </a>
 
@@ -36,14 +36,14 @@
             </div>
             <div class="tablet:w-1/2 flex flex-col items-start mb-0 my-14 pb-11 px-0 mx-5 tablet:px-5 tablet:mx-0 tablet-wide:px-24 tablet:mb-12 tablet:my-20">
                 <h2 class="text-2xl tablet:text-3xl font-normal mb-7 tablet:mb-10">
-                    {l s='Stay here for longer' d='Modules.PayU.Shop'}
+                    {l s='Stay on feeby %s for longer' sprintf=['<br>'] d='Modules.PayU.Shop'}
                 </h2>
-                <p class="font-medium font-body text-sm tablet:text-base mb-6 ">
+                <p class="font-light font-body text-sm tablet:text-base mb-6 ">
                     {l s='Create an account with used order information' d='Modules.PayU.Shop'}
                 </p>
-                <a href="{$urls.pages.index}" class="bg-transparent border-0 cursor-pointer flex items-center justify-between mb-2 tablet:text-sm text-main-dark text-xs uppercase font-normal">
+                <a href="{$urls.pages.index}" class="bg-transparent border-0 cursor-pointer flex items-center justify-between mb-2 tablet:text-sm text-main-dark hover:text-main transition text-xs uppercase font-normal">
                     {l s='Create an account' d='Modules.PayU.Shop'}
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" fill="none" class="ml-2 flex-0"><path fill-rule="evenodd" clip-rule="evenodd" d="m9.25 14.359 6.25-6.25v-.884L9.25.975l-.884.884 5.183 5.184H.5v1.25h13.05l-5.185 5.182.884.884h.001Z" fill="#232322"></path></svg>                </a>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" class="ml-2 flex-0 fill-current"><path fill-rule="evenodd" clip-rule="evenodd" d="m9.25 14.359 6.25-6.25v-.884L9.25.975l-.884.884 5.183 5.184H.5v1.25h13.05l-5.185 5.182.884.884h.001Z"></path></svg>                </a>
             </div>
         </div>
     </section>
