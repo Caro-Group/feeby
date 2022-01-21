@@ -910,7 +910,6 @@ div.star.star_on:before, div.star.star_hover:before {
     filter: alpha(opacity=100); }
 
 .leo-dropdown-cart-item.high-light, .leo-dropdown-cart-item.show-combination, .leo-dropdown-cart-item.show-customization, .leo-dropdown-cart-item.show-additional {
-  background-color: #f9f9f9;
   z-index: 9999; }
 
 .leo-dropdown-additional .view-customization {
@@ -972,52 +971,8 @@ div.star.star_on:before, div.star.star_hover:before {
 .view-leo-dropdown-additional {
   width: 25px;
   height: 25px;
-  background: #2c2c2c;
   position: relative;
   cursor: pointer; }
-  .view-leo-dropdown-additional.show {
-    background: #000; }
-    .view-leo-dropdown-additional.show:before {
-      -webkit-transform: rotate(-45deg);
-      -moz-transform: rotate(-45deg);
-      -ms-transform: rotate(-45deg);
-      -o-transform: rotate(-45deg);
-      transform: rotate(-45deg); }
-    .view-leo-dropdown-additional.show:after {
-      -webkit-transform: rotate(45deg);
-      -moz-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-      -o-transform: rotate(45deg);
-      transform: rotate(45deg); }
-  .view-leo-dropdown-additional:before, .view-leo-dropdown-additional:after {
-    content: "";
-    display: block;
-    width: 10px;
-    height: 3px;
-    background: white;
-    position: absolute;
-    top: 12px;
-    -webkit-transition: transform 0.3s;
-    -o-transition: transform 0.3s;
-    transition: transform 0.3s; }
-  .view-leo-dropdown-additional:before {
-    right: 10px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    transform: rotate(45deg); }
-  .view-leo-dropdown-additional:after {
-    right: 5px;
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px; }
 
 /*****************addition arrow END***********************/
 .leo-dropdown-overlay {

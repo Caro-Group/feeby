@@ -6,12 +6,12 @@
 * @description: Leo feature for prestashop 1.7: ajax cart, review, compare, wishlist at product list 
 *}
 	{if $only_total != 1}
-		<div class="leo-dropdown-cart-content clearfix">
+		<div class="leo-dropdown-cart-content clearfix rounded-md font-body font-light text-main-dark text-sm">
 			<div class="leo-dropdown-list-item-warpper">
 				<ul class="leo-dropdown-list-item">{foreach from=$cart.products item=product name="cart_product"}<li style="width: {$width_cart_item}px; height: {$height_cart_item}px" class="leo-dropdown-cart-item clearfix{if ($product.attributes|count && $show_combination) || ($product.customizations|count && $show_customization)} has-view-additional{/if}{if $smarty.foreach.cart_product.first} first{/if}{if $smarty.foreach.cart_product.last} last{/if}">						
 							<div class="leo-cart-item-img">
 								{if $product.images}
-									<a class="label" href="{$product.url}" title="{$product.name}"><img class="img-fluid" src="{$product.images.0.bySize.small_default.url}" alt="{$product.name}" title="{$product.name}"/></a>
+									<a class="label" href="{$product.url}" title="{$product.name}"><img class="img-fluid border border-solid bg-gray-1000 rounded-md" src="{$product.images.0.bySize.small_default.url}" alt="{$product.name}" title="{$product.name}"/></a>
 								{/if}	
 							</div>						
 							<div class="leo-cart-item-info">					
@@ -81,7 +81,9 @@
 							</a>
 							{if ($product.attributes|count && $show_combination) || ($product.customizations|count && $show_customization)}
 								<div class="view-additional">								
-									<div class="view-leo-dropdown-additional"></div>
+									<div class="view-leo-dropdown-additional rounded-md bg-dark-main">
+										<i class="material-icons -right-[3px] absolute select-none text-3xl text-main-dark transition transform rotate-180"></i>
+									</div>
 								</div>
 							{/if}
 							<div class="leo-dropdown-overlay">
@@ -129,15 +131,15 @@
 			<div class="leo-dropdown-bottom">
 			{/if}
 				<div class="leo-dropdown-total" data-cart-total="{$cart.products_count}">
-					<div class="leo-dropdown-cart-subtotals">
+					<div class="leo-dropdown-cart-subtotals p-5">
 						{foreach from=$cart.subtotals item="subtotal"}
 							{if $subtotal}
 								<div class="{$subtotal.type} clearfix">
-									<div class="row">
-										<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+									<div class="flex">
+										<div class="p-0 flex-1">
 											<span class="label">{$subtotal.label}</span>
 										</div>
-										<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+										<div class="p-0 text-right">
 											<span class="value">{$subtotal.value}</span>
 										</div>
 									</div>
@@ -146,12 +148,12 @@
 						{/foreach}
 					</div>
 					<div class="leo-dropdown-cart-total clearfix">
-						<div class="row">
-							<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-								<span class="label">{$cart.totals.total.label}</span>
+						<div class="flex items-baseline ">
+							<div class="p-0 flex-1">
+								<span class="font-body font-normal text-base text-main-dark">{$cart.totals.total.label}</span>
 							</div>
-							<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-								<span class="value">{$cart.totals.total.value}</span>
+							<div class="p-0 text-right">
+								<span class="font-body font-normal text-main-dark text-xl">{$cart.totals.total.value}</span>
 							</div>
 						</div>
 					</div>
@@ -171,8 +173,14 @@
 				</div>
 			{if $only_total != 1}
 				<div class="leo-cart-dropdown-action clearfix">
-					<a class="cart-dropdow-button cart-dropdow-viewcart btn btn-primary btn-outline" href="{$cart_url}">{l s='View Cart' d='Modules.Leofeature.Shop'}</a>
-					<a class="cart-dropdow-button cart-dropdow-checkout btn btn-primary btn-outline" href="{$order_url}">{l s='Check Out' d='Modules.Leofeature.Shop'}</a>
+					<a class="flex justify-between py-3 px-6 border-2 text-main-dark border-main-dark hover:bg-main-dark hover:text-white rounded-full border-solid transition font-body text-sm font-normal whitespace-nowrapcart-dropdow-button cart-dropdow-viewcart btn btn-primary btn-outline" href="{$cart_url}">
+						{l s='View Cart' d='Modules.Leofeature.Shop'}
+						<i class="ti-arrow-right ml-2"></i>
+					</a>
+					<a class="bg-main mt-5 border-0 cursor-pointer duration-150 flex font-body hover:text-white hover:bg-main-hover items-center justify-between max-w-[320px] mb-3 px-5 py-3 rounded-full tablet:max-w-[300px] text-white text-xs  tablet:text-sm uppercase w-full whitespace-nowrap" href="{$order_url}">
+						{l s='Check Out' d='Modules.Leofeature.Shop'}
+						<i class="ti-arrow-right ml-2"></i>
+					</a>
 				</div>
 			</div>
 		</div>
