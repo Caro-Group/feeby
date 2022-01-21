@@ -16,7 +16,7 @@
         <div class="flex flex-col tablet:flex-row">    
             <div class="w-full tablet:w-1/2 border-0 border-b border-gray-3000 border-solid flex flex-col items-start mb-0 my-14 pb-11 px-0 mx-5 tablet:px-5 tablet:mx-0 tablet-wide:px-24 tablet:border-b-0 tablet:border-r tablet:mb-8 tablet:my-20">
                 <h2 class="text-2xl tablet:text-3xl font-normal mb-7 tablet:mb-10">
-                    {l s='Thank you for shopping with %s .' sprintf=[$shop_name] d='Modules.PayU.Shop'}
+                    {l s='Thank you for shopping on www.feeby.pl' d='Modules.PayU.Shop'}
                 </h2>
                 <p class="font-light text-sm tablet:text-base mb-6 ">
                     {l s='Order status' d='Modules.PayU.Shop'} {$orderPublicId} - {$orderStatus} 
