@@ -23,12 +23,6 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 
-<section class="featured-products clearfix m-t-3 block">
-	{include file='_partials/slider_header.tpl' title={l s='On sale' d='Shop.Theme.Catalog'}}
-
-  	<div class="block_content">
-	  	<div class="products">
-	    	{include file='catalog/_partials/miniatures/leo_col_products.tpl' products=$products}
-	  	</div>
-	</div>
-</section>
+{if isset($products) && $products}
+	{include file='_partials/slider.tpl' type='product-featured-special' products=$products title={l s='On sale' d='Shop.Theme.Catalog'}}
+{/if}
