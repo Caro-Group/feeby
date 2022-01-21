@@ -1447,20 +1447,8 @@ $(document).ready(function () {
 
 
 $(document).ready(function () {
-	let currentStep=$('.js-current-step .step-number').text();
-	if(currentStep == 1){
-		if ($('[data-login-panel]').is(":visible")) {
-			$('[data-js-elem="cart"]').addClass('hidden')
-			$('#checkout-guest-form').addClass('hidden')
-		}
-	}
-	else{
-		$('[data-js-elem="cart"]').removeClass('hidden')
-		$('#checkout-guest-form').removeClass('hidden')
-	}
-	
-	prestashop.on("changedCheckoutStep",function(){
-		currentStep=$('.js-current-step .step-number').text();
+	if($('#checkout').length != 0) {
+		let currentStep=$('.js-current-step .step-number').text();
 		if(currentStep == 1){
 			if ($('[data-login-panel]').is(":visible")) {
 				$('[data-js-elem="cart"]').addClass('hidden')
@@ -1471,19 +1459,43 @@ $(document).ready(function () {
 			$('[data-js-elem="cart"]').removeClass('hidden')
 			$('#checkout-guest-form').removeClass('hidden')
 		}
-	})
+		
+		prestashop.on("changedCheckoutStep",function(){
+			currentStep=$('.js-current-step .step-number').text();
+			if(currentStep == 1){
+				if ($('[data-login-panel]').is(":visible")) {
+					$('[data-js-elem="cart"]').addClass('hidden')
+					$('#checkout-guest-form').addClass('hidden')
+				}
+			}
+			else{
+				$('[data-js-elem="cart"]').removeClass('hidden')
+				$('#checkout-guest-form').removeClass('hidden')
+			}
+		});
+	};
 });
 
 $(document).ready(function () {
-	$('#checkout [name="postcode"]').mask("99-999");
+	if($('#checkout [name="postcode"]').length != 0) {
+		$('#checkout [name="postcode"]').mask("99-999");
+	}
 });
 
 $(document).ready(function () {
-	const swiper = new Swiper('[data-swiper-carousel]', {
-		speed: 400,
-		spaceBetween: 10,
-		slidesPerView: 'auto',
-		rewind: true,
-		slideClass: 'slide'
-	});
+	if($('[data-swiper-carousel]').length != 0) {
+		new Swiper('[data-swiper-carousel]', {
+			speed: 400,
+			spaceBetween: 10,
+			slidesPerView: 'auto',
+			rewind: true,
+			slideClass: 'slide',
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+				dynamicBullets: true,
+				dynamicMainBullets: 1,
+			},
+		});
+	};
 });
