@@ -29,7 +29,7 @@
 							{foreach from=$products item=product_item name=for_products}
 								{assign var='product' value=$product_item.product_info}
 								{assign var='wishlist' value=$product_item.wishlist_info}
-								<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 product-miniature js-product-miniature leo-wishlistproduct-item leo-wishlistproduct-item-{$wishlist.id_wishlist_product} product-{$product.id_product}" data-id-product="{$product.id_product}" data-id-product-attribute="{$product.id_product_attribute}" itemscope itemtype="http://schema.org/Product">
+								<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 product-miniature relative js-product-miniature leo-wishlistproduct-item leo-wishlistproduct-item-{$wishlist.id_wishlist_product} product-{$product.id_product}" data-id-product="{$product.id_product}" data-id-product-attribute="{$product.id_product_attribute}" itemscope itemtype="http://schema.org/Product">
 									<div class="thumbnail-container clearfix">
 										<div class="product-image">
 											{block name='product_thumbnail'}
