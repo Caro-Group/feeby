@@ -9,24 +9,43 @@
 
 {block name='breadcrumb'}{/block}
 
+    {assign var="orderApproved" value=true}
+    {if $request_uri|strstr:"anulowana"}
+        {$orderStatus = false}
+    {/if}
+
 {block name='content'}
 
 
     <section id="main" class="my-7 tablet:my-14 -mx-[10px] tablet:mx-0">
         <div class="flex flex-col tablet:flex-row bg-gray-1000 tablet:rounded-md">    
             <div class="tablet:w-1/2 border-0 border-b border-gray-3000 border-solid flex flex-col items-start mb-0 my-14 pb-11 px-0 mx-5 tablet:px-5 tablet:mx-0 tablet-wide:px-24 tablet:border-b-0 tablet:border-r tablet:mb-12 tablet:my-20">
+            {if $orderApproved}
                 <h2 class="text-2xl tablet:text-3xl font-normal mb-7 tablet:mb-10">
                     {l s='Thank you for shopping %s on www.feeby.pl' sprintf=['<br>'] d='Modules.Payu.Shop'}
-                </h2>
+                </h2>                
+            {/if}
+            
                 <p class="font-medium font-body text-sm tablet:text-base mb-6 ">
-                    {l s='Order status' d='Modules.Payu.Shop'} - {$orderStatus} 
-                </p>
-                <p class="font-light font-body text-sm tablet:text-base mb-6">
-                    {l s='Confirmation and order summary has been sent on: ' d='Modules.Payu.Shop'} <br> <span class="font-medium mt-3 tablet:mt-5 underline"> {l s='%email%' sprintf=['%email%' => $customer.email]} </span>
-                </p>
-                <p class="font-light font-body text-sm tablet:text-base mb-10 tablet:mb-12 ">
-                    {l s='Order number: ' d='Modules.Payu.Shop'} <a href="{$redirectUrl}" class="font-medium text-main-dark hover:text-main transition"> {$orderPublicId} </a>
-                </p>
+                    {l s='Your payment has been' d='Modules.Payu.Shop'} 
+                    {if $orderApproved}
+                        {l s='%s approved%s. The order has been transferred for realization.' sprintf=['<span class="text-green-400">','</span>'] d='Modules.Payu.Shop'} 
+                                
+                        </p>
+
+                        <p class="font-light font-body text-sm tablet:text-base mb-6">
+                            {l s='Confirmation and order summary has been sent on: ' d='Modules.Payu.Shop'} <br> <span class="font-medium mt-3 tablet:mt-5 underline"> {l s='%email%' sprintf=['%email%' => $customer.email]} </span>
+                        </p>
+                        <p class="font-light font-body text-sm tablet:text-base mb-10 tablet:mb-12 ">
+                            {l s='Order number: ' d='Modules.Payu.Shop'} <a href="{$redirectUrl}" class="font-medium text-main-dark hover:text-main transition"> {$orderPublicId} </a>
+                        </p>
+                    {else}
+                        {l s='%s canceled%s.' sprintf=['<span class="text-red-500">','</span>'] d='Modules.Payu.Shop'} 
+                                
+                        </p>       
+
+                    {/if}
+
                 <a href="{$urls.pages.index}" class="bg-transparent border-0 cursor-pointer flex items-center justify-between mb-2 tablet:text-sm text-main-dark hover:text-main transition text-xs uppercase font-normal">
                     <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" class="mr-2 fill-current"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.25 13.384 0 7.134V6.25L6.25 0l.884.884L1.95 6.067H15v1.25H1.95L7.135 12.5l-.884.884H6.25Z"></path></svg>
                     {l s='Back to homepage' d='Modules.Payu.Shop'}
