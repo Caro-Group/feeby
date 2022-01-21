@@ -10,7 +10,7 @@
 {block name='breadcrumb'}{/block}
 
     {assign var="orderApproved" value=true}
-    {if $request_uri|strstr:"anulowana"}
+    {if $orderStatus|strstr:"anulowana"}
         {$orderApproved = false}
     {/if}
 
