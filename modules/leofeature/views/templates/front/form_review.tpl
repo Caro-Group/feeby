@@ -7,17 +7,17 @@
 *}
 
 <div class="bg-gray-default flex flex-col tablet-wide:flex-row flex-wrap p-12 tablet-wide:p-[80px] mt-2 mb-[100px]">
-	<div class="flex flex-col pr-10 text-main-dark flex-auto justify-center">
+	<div class="flex flex-col pr-10 text-main-dark flex-auto justify-center mb-[20px]">
 		<span class="font-italic text-[25px] font-header">{l s='Do you have this product?' d='Modules.Leofeature.Shop'}</span>
 		<span class="font-italic text-[20px] font-body">{l s='Tell others how you rate it!' d='Modules.Leofeature.Shop'}</span>
 	</div>
-	<div class="new_review_form_content col-xs-12 col-sm-12 p-0 flex-[1_1_50%]">
+	<div class="new_review_form_content p-0 flex-[1_1_50%] mb-[20px]">
 		{if $criterions|@count > 0}
 			<ul id="criterions_list">
 			{foreach from=$criterions item='criterion'}
 				<li class="flex items-center">
 					{if isset($criterion.name) && $criterion.name != ''}
-						<label class="text-main-dark text-[20px] mb-[20px] block px-[20px]">{$criterion.name|escape:'html':'UTF-8'}:</label>
+						<label class="text-main-dark text-[20px] block px-[20px]">{$criterion.name|escape:'html':'UTF-8'}:</label>
 					{/if}
 					<div class="star_content">
 						<input class="star not_uniform" type="radio" name="criterion[{$criterion.id_product_review_criterion|round}]" value="1" />
@@ -50,7 +50,7 @@
 				<button class="leo-fake-button leo-modal-review-bt bg-main hover:bg-main-hover font-me text-white py-2 px-4 text-xl uppercase text-center border-0 rounded-full font-medium cursor-pointer" type="submit">
 					<span class="leo-modal-review-loading cssload-speeding-wheel"></span>
 					<span class="leo-modal-review-bt-text">
-						{l s='Submit' d='Modules.Leofeature.Shop'}
+						{l s='Add review' d='Modules.Leofeature.Shop'}
 					</span>
 				</button>
 			</div>
