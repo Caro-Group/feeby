@@ -9,7 +9,7 @@
         </svg>
     </div>
 
-    <div data-swiper-carousel class="swiper">
+    <div data-swiper-carousel class="swiper pb-4">
 
         <div class="swiper-wrapper desktop:justify-between">
             {foreach from=$products item="product"}
