@@ -1486,7 +1486,7 @@ $(document).ready(function () {
 	if($('[data-swiper-carousel]').length != 0) {
 		new Swiper('[data-swiper-carousel]', {
 			speed: 400,
-			spaceBetween: 0,
+			spaceBetween: 20,
 			slidesPerView: 'auto',
 			rewind: true,
 			slideClass: 'slide',
@@ -1496,6 +1496,11 @@ $(document).ready(function () {
 				dynamicBullets: true,
 				dynamicMainBullets: 1,
 			},
+			breakpoints: {
+				1200: {
+					slidesPerView: 4,
+				},
+			  }
 		});
 	};
 });
