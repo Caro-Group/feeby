@@ -8,7 +8,8 @@
 {block name='product_accessories'}
   {if $accessories}
     <section class="product-accessories clearfix">
-      <h3 class="h5 products-section-title">{l s='You might also like' d='Shop.Theme.Catalog'}</h3>
+      {include file='_partials/slider_header.tpl' title={l s='You might also like' d='Shop.Theme.Catalog'}}
+
       <div class="products">
         <div class="owl-row {if isset($productClassWidget)} {$productClassWidget}{/if}">
           <div id="category-products2">
