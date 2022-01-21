@@ -801,12 +801,6 @@ div.star.star_on:before, div.star.star_hover:before {
       float: left; }
     .rtl .leo-dropdown-cart-subtotals .value, .rtl .leo-dropdown-cart-total .value {
       text-align: left; }
-  .leo-dropdown-cart-subtotals .label, .leo-dropdown-cart-total .label {
-    float: left;
-    color: #666;
-    font-size: 13px;
-    text-transform: capitalize;
-    text-align: left; }
     .rtl .leo-dropdown-cart-subtotals .label, .rtl .leo-dropdown-cart-total .label {
       float: right; }
     .rtl .leo-dropdown-cart-subtotals .label, .rtl .leo-dropdown-cart-total .label {

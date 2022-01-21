@@ -137,10 +137,10 @@
 								<div class="{$subtotal.type} clearfix">
 									<div class="flex">
 										<div class="p-0 flex-1">
-											<span class="label text-main-dark">{$subtotal.label}</span>
+											<span class="text-main-dark">{$subtotal.label}</span>
 										</div>
 										<div class="p-0 text-right">
-											<span class="value text-main-dark">{$subtotal.value}</span>
+											<span class="text-main-dark">{$subtotal.value}</span>
 										</div>
 									</div>
 								</div>
