@@ -7,7 +7,7 @@
 *}
 {block name='product_tabs'}
 	<div class="product-tabs tabs">
-	  	<ul class="flex items-baseline flex-nowrap nav nav-tabs" role="tablist">
+	  	<ul class="flex items-baseline flex-nowrap nav nav-tabs mb-5" role="tablist">
 		    {if $product.description}
 		    	<li class="nav-item mr-[79px]">
 				   <a
