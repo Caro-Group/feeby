@@ -125,7 +125,7 @@ p{
 }
 
 .swiper-pagination.swiper-pagination-bullets-dynamic{
-    @apply hidden tablet:block
+    @apply hidden tablet:flex items-center justify-center h-4;
 }
 
 .swiper-pagination.swiper-pagination-bullets-dynamic .swiper-pagination-bullet{
