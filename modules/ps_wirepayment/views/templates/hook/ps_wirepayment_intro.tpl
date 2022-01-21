@@ -57,10 +57,6 @@
                 <div class="w-[250px] text-main-dark font-medium text-sm tablet:text-base">{l s='Bank name' d='Modules.Wirepayment.Shop'}</div>
                 <div class="w-full flex-1 text-main-dark font-light text-sm tablet:text-base">{$total}</div>
             </div>
-            <div class="flex flex-col tablet:flex-row mb-[2px] p-5 bg-gray-1000">
-                <div class="w-[250px] text-main-dark font-medium text-sm tablet:text-base">{l s='Bankwire description' d='Modules.Wirepayment.Shop'}</div>
-                <div class="w-full flex-1 text-main-dark font-light text-sm tablet:text-base">{l s='%s' sprintf=[$reference]}</div>
-            </div>
           </div>
 
           {$bankwireCustomText nofilter}
