@@ -1486,7 +1486,7 @@ $(document).ready(function () {
 	if($('[data-swiper-carousel]').length != 0) {
 		new Swiper('[data-swiper-carousel]', {
 			speed: 400,
-			spaceBetween: 20,
+			spaceBetween: 0,
 			slidesPerView: 'auto',
 			rewind: true,
 			slideClass: 'slide',
