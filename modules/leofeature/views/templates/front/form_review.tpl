@@ -33,23 +33,23 @@
 		{/if}				
 		<form class="form-new-review" action="#" method="post">
 			<div class="form-group">
-				<label class="form-control-label" for="new_review_title">{l s='Your title' d='Modules.Leofeature.Shop'}</label>
-				<input type="text" class="form-control" id="new_review_title" required="required" name="new_review_title"  placeholder="{l s='Your title here' d='Modules.Leofeature.Shop'}">					  
+				<label class="text-[20px]" for="new_review_title">{l s='Your title' d='Modules.Leofeature.Shop'}</label>
+				<input type="text" class="form-input" id="new_review_title" required="required" name="new_review_title"  placeholder="{l s='Your title here' d='Modules.Leofeature.Shop'}">					  
 			</div>
 			{if $allow_guests == true && !$is_logged}
 				<div class="form-group">
-					<label class="form-control-label" for="new_review_customer_name">{l s='Your pseudonim' d='Modules.Leofeature.Shop'}</label>
-					<input type="text" class="form-control" id="new_review_customer_name" required="required" name="new_review_customer_name" placeholder="{l s='Your pseudonim here' d='Modules.Leofeature.Shop'}">					  
+					<label class="text-[20px]" for="new_review_customer_name">{l s='Your pseudonim' d='Modules.Leofeature.Shop'}</label>
+					<input type="text" class="form-input" id="new_review_customer_name" required="required" name="new_review_customer_name" placeholder="{l s='Your pseudonim here' d='Modules.Leofeature.Shop'}">					  
 				</div>
 			{/if}
 			<div class="form-group">
-				<label class="form-control-label" for="new_review_content">{l s='Your comment' d='Modules.Leofeature.Shop'}</label>
-				<textarea type="text" class="form-control" id="new_review_content" required="required" name="new_review_content" placeholder="{l s='Your comment here' d='Modules.Leofeature.Shop'}"></textarea>				  
+				<label class="text-[20px]" for="new_review_content">{l s='Your comment' d='Modules.Leofeature.Shop'}</label>
+				<textarea type="text" class="form-textarea" id="new_review_content" required="required" name="new_review_content" placeholder="{l s='Your comment here' d='Modules.Leofeature.Shop'}"></textarea>				  
 			</div>
 			
 			<input id="id_product_review" name="id_product_review" type="hidden" value='{$product_modal_review->id}' />
 			<div class="flex flex-row-revert justify-between items-start pt-[10px]">
-				<button class="btn btn-primary form-control-submit leo-fake-button pull-xs-right leo-modal-review-bt btn btn-primary" type="submit">
+				<button class="leo-fake-button leo-modal-review-bt bg-main hover:bg-main-hover font-me text-white py-2 px-4 text-xl uppercase text-center border-0 rounded-full font-medium cursor-pointer" type="submit">
 					<span class="leo-modal-review-loading cssload-speeding-wheel"></span>
 					<span class="leo-modal-review-bt-text">
 						{l s='Submit' d='Modules.Leofeature.Shop'}
