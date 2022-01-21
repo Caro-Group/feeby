@@ -5,7 +5,7 @@
 * @copyright Apollotheme
 * @description: ApPageBuilder is module help you can build content for your shop
 *}
-<article class="product-miniature js-product-miniature" data-id-product="{$product.id_product}" data-id-product-attribute="{$product.id_product_attribute}" itemscope itemtype="http://schema.org/Product">
+<article class="product-miniature relative js-product-miniature" data-id-product="{$product.id_product}" data-id-product-attribute="{$product.id_product_attribute}" itemscope itemtype="http://schema.org/Product">
   <div class="thumbnail-container">
     <div class="product-image">
 {block name='product_thumbnail'}
