@@ -1368,34 +1368,35 @@ $(document).ready(function () {
 
 $(document).ready(function () {
 
-	const breakpoint = window.matchMedia('(max-width:768px)')
+	if(jQuery('.swiper-filters').length != 0){
+		const breakpoint = window.matchMedia('(max-width:768px)')
 
-	let swiperFilters;
+		let swiperFilters;
 
-	const breakpointCheck = function () {
-		if (breakpoint.matches == true) {
-			if (swiperFilters !== undefined) swiperFilters.destroy(true,true); 
+		const breakpointCheck = function () {
+			if (breakpoint.matches == true) {
+				if (typeof swiperFilters !== 'undefined') swiperFilters.destroy(true,true); 
+			}
+			else if (breakpoint.matches == false) {
+				return enableSwiperFilter();
+				
+			}
+		};
+
+		const enableSwiperFilter =function () {
+			swiperFilters = new Swiper('.swiper-filters', {
+				speed: 150,
+				roundLengths: true,
+				slidesPerView: 'auto',
+				freeMode: {
+					enabled: true,
+				},
+			});
 		}
-		else if (breakpoint.matches == false) {
-			return enableSwiperFilter();
-			
-		}
-	};
 
-	const enableSwiperFilter =function () {
-		swiperFilters = new Swiper('.swiper-filters', {
-			speed: 150,
-			roundLengths: true,
-			slidesPerView: 'auto',
-			freeMode: {
-				enabled: true,
-			},
-		});
+		breakpoint.addListener(breakpointCheck);
+		breakpointCheck();
 	}
-
-	breakpoint.addListener(breakpointCheck);
-	breakpointCheck();
-
 
 	prestashop.on("updateProductList", function(t) {
 		window.dispatchEvent(new Event('resize'));
@@ -1482,6 +1483,7 @@ $(document).ready(function () {
 		speed: 400,
 		spaceBetween: 10,
 		slidesPerView: 'auto',
-		rewind: true
+		rewind: true,
+		slideClass: 'slide'
 	});
 });
