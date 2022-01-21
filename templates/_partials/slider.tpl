@@ -1,5 +1,5 @@
 {if isset($products) && $products}
-    <div id="{$type}" class="mb-[100px]">
+    <div id="{$type}">
 
         <div class="flex justify-between mb-[30px]">
             <h2 class="flex-shrink-0 font-light text-2xl tablet:text-4xl">
@@ -17,7 +17,7 @@
 
         <div data-swiper-carousel class="swiper">
 
-            <div class="swiper-wrapper desktop:justify-between pb-4">
+            <div class="swiper-wrapper desktop:justify-between pb-12">
                 {foreach from=$products item="product"}
                     <div class="slide relative shrink-0 transition-transform h-full w-[235px] tablet:w-[346px]">
                         {include file='catalog/_partials/miniatures/product.tpl' product=$product}
