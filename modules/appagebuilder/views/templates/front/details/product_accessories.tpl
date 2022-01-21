@@ -5,6 +5,7 @@
 * @copyright Apollotheme
 * @description: ApPageBuilder is module help you can build content for your shop
 *}
+
 {block name='product_accessories'}
   {if $accessories}
     {if isset($products) && $products}
