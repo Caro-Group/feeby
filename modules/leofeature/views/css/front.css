@@ -189,14 +189,12 @@
   float: left;
   margin: 0 1px;
   cursor: pointer;
-  font-size: 12px;
-  line-height: 14px; }
+  font-size: 20px;
+ }
   .rtl .cancel, .rtl .star {
     float: right; }
 
 div.star:before {
-  content: "\f005";
-  color: #ccc;
   font-family: "FontAwesome";
   display: inline-block; }
 
