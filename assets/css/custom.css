@@ -588,12 +588,6 @@ a[title="Strona główna"] + ul.nested li {
 
 /* Menu */
 
-.leo-megamenu.leo-megamenu .dropdown-menu{
-    -webkit-transition: all 0s;
-    -o-transition: all 0s;
-    transition: all 0s;
-}
-
 @media(min-width: 768px){
 .box-top.box-top.box-h2 .leo-megamenu .navbar-nav{text-align:center;}
 }
