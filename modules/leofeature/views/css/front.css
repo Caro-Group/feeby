@@ -298,6 +298,8 @@ div.star.star_on:before, div.star.star_hover:before {
 
   #product_reviews_block_tab .review:last-child{
     border-bottom: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
 
 @media (min-width: 576px) {
