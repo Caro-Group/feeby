@@ -22,11 +22,11 @@
 						<div class="review" style="" itemprop="review" itemscope itemtype="https://schema.org/Review">
 							<div class="review-info mt-[60px] mb-[60px]">
 
-								<div class="review_details" class="mb-[20px]">
+								<div class="review_details mb-[20px]">
 									<p itemprop="name" class="font-body font-normal italic">
 										{$review.title}
 									</p>
-									<p class="font-light" itemprop="reviewBody">{$review.content|escape:'html':'UTF-8'|nl2br nofilter}</p>
+									<p class="font-light font-body" itemprop="reviewBody">{$review.content|escape:'html':'UTF-8'|nl2br nofilter}</p>
 								</div>
 								
 								<div class="review_author">

@@ -296,6 +296,10 @@ div.star.star_on:before, div.star.star_hover:before {
   border-bottom: 1px solid #e5e5e5;
   padding-bottom: 10px; }
 
+  #product_reviews_block_tab .review:last-child{
+    border-bottom: 0;
+  }
+
 @media (min-width: 576px) {
   #product_reviews_block_tab .review_author {
     border-right: 1px solid #eee; }
