@@ -44,6 +44,8 @@
 				<label class="text-main-dark text-[20px] px-[20px]" for="new_review_content">{l s='Your comment' d='Modules.Leofeature.Shop'}</label>
 				<textarea type="text" class="form-textarea border border-solid border-gray-2000 font-italic px-[20px] rounded-[23px] text-[14px] resize-none" id="new_review_content" required="required" name="new_review_content" placeholder="{l s='Your comment here' d='Modules.Leofeature.Shop'}"></textarea>				  
 			</div>
+
+			{hook h='displayGDPRConsent' id_module=$id_module}
 			
 			<input id="id_product_review" name="id_product_review" type="hidden" value='{$product_modal_review->id}' />
 			<div class="flex flex-row-revert justify-between items-start pt-[10px]">

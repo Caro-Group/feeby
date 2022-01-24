@@ -15,24 +15,23 @@
 {/if}
 
 		<div id="product_reviews_block_tab">
-			<div style="display: flex;flex-direction: row;flex-wrap: wrap;width: 100%;">
+			<div class="flex flex-row flex-wrap w-full">
 				{if $reviews}
 					{foreach from=$reviews item=review}
 						{if $review.content}
 						<div class="review" style="" itemprop="review" itemscope itemtype="https://schema.org/Review">
-							<div class="review-info">
+							<div class="review-info mt-[60px] mb-[60px]">
 
-								<div class="review_details" style="margin-bottom: 20px;">
-									<p itemprop="name" class="title_block">
-										<strong>{$review.title}</strong>
+								<div class="review_details" class="mb-[20px]">
+									<p itemprop="name" class="font-body font-normal italic">
+										{$review.title}
 									</p>
-									<p itemprop="reviewBody">{$review.content|escape:'html':'UTF-8'|nl2br nofilter}</p>
-									
+									<p class="font-light" itemprop="reviewBody">{$review.content|escape:'html':'UTF-8'|nl2br nofilter}</p>
 								</div>
 								
 								<div class="review_author">
-									<div class="review_author_infos" style="display: flex;justify-content: space-between;flex-wrap: wrap;">
-										<div style="display: flex;align-items: center;justify-content: flex-start;flex-wrap: wrap;">
+									<div class="review_author_infos flex justify-between flex-wrap">
+										<div class="flex items-center justify-start flex-wrap">
 											<div style="margin-right: 10px;" class="star_content clearfix"  itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
 												{section name="i" start=0 loop=5 step=1}
 													{if $review.grade le $smarty.section.i.index}
