@@ -13,7 +13,6 @@
 {else}
 	<div class="tab-pane fade in active" id="leo-product-show-review-content">	
 {/if}
-
 		<div id="product_reviews_block_tab">
 			<div class="tablet:columns-2 w-full tablet:gap-[80px]">
 				{if $reviews}
@@ -70,3 +69,4 @@
 {/if}
  
 <div id="reviewForm" class="review-form" data-review-form data-id-product="{$id_product_tab_content}" data-is-logged="{$customer.is_logged}" data-product-link="{$link_product_tab_content}"></div>
+
