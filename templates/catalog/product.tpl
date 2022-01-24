@@ -52,11 +52,11 @@
     {hook h='displayLeoProfileProduct' product=$product typeProduct='detail'}
   {else}
 
-    <section id="main" class="product-detail" itemscope itemtype="https://schema.org/Product">
+    <section id="main" class="product-detail pt-[20px]" itemscope itemtype="https://schema.org/Product">
       <meta itemprop="url" content="{$product.url}">
 
-      <div class="row product-container">
-        <div class="col-md-6">
+      <div class="flex flex-wrap flex-row">
+        <div class="w-full tablet:w-3/5 tablet:pr-10">
           {block name='page_content_container'}
             <section class="page-content" id="content">
               {block name='page_content'}
@@ -72,7 +72,7 @@
           {/block}
         </div>
 
-        <div class="col-md-6">
+        <div class="w-full tablet:w-2/5">
           {block name='page_header_container'}
             {block name='page_header'}
               <h1 class="font-header product-detail-name text-[35px] leading-[45px] mb-5" itemprop="name">{block name='page_title'}{$product.name}{/block}</h1>
