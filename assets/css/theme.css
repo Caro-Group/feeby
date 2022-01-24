@@ -20296,14 +20296,8 @@ body #search_filters .clear-all-wrapper {
     right: 25px;
     left: auto; }
 
-.review_details p[itemprop="name"] {
-  color: #333; }
   .review_details p[itemprop="name"]:first-letter {
     text-transform: uppercase; }
-  .review_details p[itemprop="name"] strong {
-    display: block; }
-.review_details strong {
-  font-weight: 600; }
 
 .review-info .review_author .star_content {
   margin: 5px 0; }
