@@ -15,7 +15,7 @@
 {/if}
 
 		<div id="product_reviews_block_tab">
-			<div class="columns-2 w-full gap-[80px]">
+			<div class="tablet:columns-2 w-full tablet:gap-[80px]">
 				{if $reviews}
 					{foreach from=$reviews item=review}
 						{if $review.content}
