@@ -57,6 +57,8 @@
       <main id="wrapper">
         {hook h="displayWrapperTop"}
 
+        <hr class="bg-gray-1000 block h-px w-full w-content-max:w-[1760px]"/>
+
         {if isset($fullwidth_hook.displayHome) AND $fullwidth_hook.displayHome == 0}
           <div class="container">
         {/if}
