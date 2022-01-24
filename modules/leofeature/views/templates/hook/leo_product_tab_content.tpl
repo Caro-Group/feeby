@@ -19,7 +19,7 @@
 				{if $reviews}
 					{foreach from=$reviews item=review}
 						{if $review.content}
-						<div class="break-inside-avoid-column review pb-5" style="" itemprop="review" itemscope itemtype="https://schema.org/Review">
+						<div class="break-inside-avoid-column review pb-5" itemprop="review" itemscope itemtype="https://schema.org/Review">
 							<div class="review-info mt-[60px] mb-[60px] border-0 border-b border-solid border-gray-2000 pb-5">
 
 								<div class="review_details mb-[20px]">
