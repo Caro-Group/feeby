@@ -462,3 +462,7 @@ input[type="text"] + .input-group-btn span:nth-of-type(2){
 .view-leo-dropdown-additional.show{
     @apply bg-white;
 }
+
+#criterions_list .cancel{
+    @apply hidden;
+}
