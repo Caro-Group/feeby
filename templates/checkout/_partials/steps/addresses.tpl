@@ -43,7 +43,7 @@
 
      {if !$use_same_address}
 
-       <h2 class="font-light font-medium">{l s='Your Invoice Address' d='Shop.Theme.Checkout'}</h2>
+       <h2 class="font-body font-light not-italic tablet:text-xl text-base">{l s='Your Invoice Address' d='Shop.Theme.Checkout'}</h2>
 
        {if $show_invoice_address_form}
          <div id="invoice-address">

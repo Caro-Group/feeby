@@ -28,7 +28,7 @@
  
   <div class="border-0 border-b border-solid border-gray-1000 mb-8 p-5 tablet:p-0">
     <div class="flex flex-row mb-14">
-      <h2 class="border-0 border-b-[3px] rounded-b-sm border-main border-solid mb-0 pb-3">
+      <h2 class="border-0 border-b-[3px] rounded-b-sm border-main border-solid mb-0 pb-2 tablet:pb-3 font-normal text-xl tablet:text-2xl">
         {l s='Data of the ordering person' d='Shop.Theme.Checkout'}
       </h2>
     </div>
@@ -39,7 +39,7 @@
   <div class="{if !($customer.addresses|count) || $show_delivery_address_form || $show_invoice_address_form } pointer-events-none opacity-5 {/if} p-5 tablet:p-0">
 
     <div class="flex flex-row mb-14 ">
-      <h2 class="border-0 border-b-[3px] rounded-b-sm border-main border-solid mb-0 pb-3">
+      <h2 class="border-0 border-b-[3px] rounded-b-sm border-main border-solid mb-0 pb-2 tablet:pb-3 font-normal text-xl tablet:text-2xl">
         {l s='Delivery method' d='Shop.Theme.Checkout'}
       </h2>
     </div>
@@ -87,7 +87,15 @@
                       </div>
                       <label for="delivery_option_{$carrier.id}" class="flex-auto delivery-option-2 mb-0 cursor-pointer">
                         <div class="flex flex-row items-center tablet-wide:items-center">
-                          <div class="bg-main font-normal px-3 py-[3px] font-body uppercase rounded-full tablet:text-base text-sm text-white mr-4 whitespace-nowrap">
+                        {capture name='carrier_temp_price'}{l s='Free' d='Shop.Theme.Checkout'}{/capture}
+                          <div class="
+                          {if $carrier.price == $smarty.capture.carrier_temp_price }
+                            bg-main font-normal rounded-full px-3 py-[3px] tablet:text-base text-sm text-white
+                          {else}  
+                            text-main-dark tablet:text-xl text-base
+                          {/if}
+                          font-body uppercase  mr-4 whitespace-nowrap">
+        
                             {$carrier.price}
                           </div>
                           <div class="flex-auto font-body tablet:text-base text-sm text-main-dark font-medium py-1 mr-3">
@@ -134,8 +142,8 @@
           </div>
   
           <div class="flex flex-wrap justify-between">
-            <button data-checkout-back="#checkout-personal-information-step" class="text-black bg-transparent border-0 uppercase whitespace-nowrap mb-2 flex items-center justify-between cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" fill="none" class="mr-2"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.25 13.384 0 7.134V6.25L6.25 0l.884.884L1.95 6.067H15v1.25H1.95L7.135 12.5l-.884.884H6.25Z" fill="#181828"/></svg>{l s='Go back' d='Shop.Theme.Checkout'}</button>  
-            <button type="submit" class="continue continue bg-main hover:bg-main-hover duration-150 border-0 rounded-full text-white p-2 px-4 uppercase whitespace-nowrap mb-2 flex items-center justify-between ml-auto cursor-pointer" name="confirmDeliveryOption" value="1">
+            <button data-checkout-back="#checkout-personal-information-step" class="text-main-dark bg-transparent border-0 uppercase whitespace-nowrap mb-2 flex items-center justify-between cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" fill="none" class="mr-2"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.25 13.384 0 7.134V6.25L6.25 0l.884.884L1.95 6.067H15v1.25H1.95L7.135 12.5l-.884.884H6.25Z" fill="#181828"/></svg>{l s='Go back' d='Shop.Theme.Checkout'}</button>  
+            <button type="submit" class="continue w-full text-xs tablet:text-sm tablet:w-auto continue bg-main hover:bg-main-hover duration-150 border-0 rounded-full text-white p-2 px-4 uppercase whitespace-nowrap mb-2 flex items-center justify-between ml-auto cursor-pointer" name="confirmDeliveryOption" value="1">
               {l s='Continue' d='Shop.Theme.Actions'}
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" fill="none" class="ml-2 flex-0"><path fill-rule="evenodd" clip-rule="evenodd" d="m9.25 14.359 6.25-6.25v-.884L9.25.975l-.884.884 5.183 5.184H.5v1.25h13.05l-5.185 5.182.884.884h.001Z" fill="#fff"/></svg>
             </button>

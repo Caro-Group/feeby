@@ -24,7 +24,7 @@
  *}
 <section id="order-summary-content" class="page-content p-5 pb-0 tablet:pb-5 tablet:p-0 page-order-confirmation">
   <div class="flex flex-row mb-14">
-    <h2 class="border-0 border-b-[3px] rounded-b-sm border-main border-solid mb-0 pb-3">
+    <h2 class="border-0 border-b-[3px] rounded-b-sm border-main border-solid mb-0 pb-2 tablet:pb-3 font-normal text-xl tablet:text-2xl">
       {l s='Order summary' d='Shop.Theme.Checkout'}
     </h2>
   </div>
