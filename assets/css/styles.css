@@ -401,7 +401,7 @@ input[type="text"] + .input-group-btn span:nth-of-type(2){
 }
 
 .product-desc-right-box .ApColumn .title_block{
-    @apply font-header mb-5 text-xl;
+    @apply font-header mb-5 text-xl font-normal italic;
 }
 
 .product-desc-right-box  .ApColumn:first-child .title_block{
