@@ -15211,7 +15211,7 @@ button:focus, button:hover {
       .leo-megamenu .dropdown-menu {
         opacity: 0;
         visibility: hidden;
-        transform: translateY(5px); } }
+        transform: translateY(-5px); } }
     @media (max-width: 991px) {
       .leo-megamenu .dropdown-menu {
         -webkit-transition: none;
