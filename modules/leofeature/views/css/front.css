@@ -715,8 +715,6 @@ div.star.star_on:before, div.star.star_hover:before {
     -ms-transform: translateY(0px);
     -o-transform: translateY(0px);
     transform: translateY(0px); } }
-#_desktop_cart .leo-dropdown-cart-content {
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
 
 .leo-dropdown-cart {
   position: absolute; }
@@ -768,8 +766,7 @@ div.star.star_on:before, div.star.star_hover:before {
   background: #fff;
   z-index: 99;
   min-width: 265px;
-  right: 0;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); }
+  right: 0;}
   .leo-dropdown-cart-content .leo-dropdown-list-item.active-scrollbar {
     overflow: auto; }
   .leo-dropdown-cart-content a.leo-dropdown-customization, .leo-dropdown-cart-content a.leo-dropdown-combination {
