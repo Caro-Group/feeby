@@ -42,7 +42,7 @@
 			</div>
 			<div class="flex flex-col flex-wrap w-full mb-[15px]">
 				<label class="text-main-dark text-[20px] px-[20px]" for="new_review_content">{l s='Your comment' d='Modules.Leofeature.Shop'}</label>
-				<textarea type="text" class="form-textarea border border-solid border-gray-2000 font-italic px-[20px] rounded-[23px] text-[14px] resize-none" id="new_review_content" required="required" name="new_review_content" placeholder="{l s='Your comment here' d='Modules.Leofeature.Shop'}"></textarea>				  
+				<textarea type="text" rows="5" class="form-textarea border border-solid border-gray-2000 font-italic px-[20px] rounded-[23px] text-[14px] resize-none" id="new_review_content" required="required" name="new_review_content" placeholder="{l s='Your comment here' d='Modules.Leofeature.Shop'}"></textarea>				  
 			</div>
 
 			{hook h='displayGDPRConsent' id_module='leofeature'}
