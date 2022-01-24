@@ -19,8 +19,8 @@
 				{if $reviews}
 					{foreach from=$reviews item=review}
 						{if $review.content}
-						<div class="break-inside-avoid-column review" style="" itemprop="review" itemscope itemtype="https://schema.org/Review">
-							<div class="review-info mt-[60px] mb-[60px] border-0 border-b border-solid border-gray-2000">
+						<div class="break-inside-avoid-column border-0 border-b border-solid border-gray-2000 review" style="" itemprop="review" itemscope itemtype="https://schema.org/Review">
+							<div class="review-info mt-[60px] mb-[60px]">
 
 								<div class="review_details mb-[20px]">
 									<p itemprop="name" class="font-body font-normal italic">
