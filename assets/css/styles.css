@@ -388,24 +388,28 @@ input[type="text"] + .input-group-btn span:nth-of-type(2){
 
 
 /* product-desc-right-box - on product page right bar */
+.product-desc-right-box {
+    @apply tablet:ml-[60px];
+}
+
 .product-desc-right-box  .ApColumn .block{
     @apply mb-0;
 }
 
 .product-desc-right-box  .ApColumn:not(:first-child) .block{
-    @apply mb-[40px];
+    @apply mb-[40px] pl-[20px];
 }
 
 .product-desc-right-box .ApColumn .title_block{
-    @apply font-header mb-5 text-xl;
+    @apply font-header mb-5 text-xl font-normal italic normal-case;
 }
 
 .product-desc-right-box  .ApColumn:first-child .title_block{
-    @apply font-body font-normal mb-[40px] text-[20px];
+    @apply font-body font-normal mb-[40px] text-[20px] not-italic;
 }
 
 .product-desc-right-box .ApImage img{
-    @apply bg-gray-1000 rounded-[5px] w-full h-auto max-w-[60px] max-h-[60px];
+    @apply bg-gray-1000 rounded-[5px] w-full h-auto max-w-[60px] max-h-[60px] p-[7px];
 }
 
 .product-desc-right-box .ApImage .image_description p{
@@ -414,7 +418,7 @@ input[type="text"] + .input-group-btn span:nth-of-type(2){
 
 
 .product-description h2{
-    @apply font-body normal-case text-[20px];
+    @apply font-body normal-case text-[20px] font-normal;
 }
 
 .product-description p{
@@ -458,4 +462,8 @@ input[type="text"] + .input-group-btn span:nth-of-type(2){
 
 .view-leo-dropdown-additional.show{
     @apply bg-white;
+}
+
+#criterions_list .cancel{
+    @apply hidden;
 }

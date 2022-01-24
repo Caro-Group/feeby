@@ -42,13 +42,13 @@
 			</div>
 			<div class="flex flex-col flex-wrap w-full mb-[15px]">
 				<label class="text-main-dark text-[20px] px-[20px]" for="new_review_content">{l s='Your comment' d='Modules.Leofeature.Shop'}</label>
-				<textarea type="text" class="form-textarea border border-solid border-gray-2000 font-italic px-[20px] rounded-[23px] text-[14px] resize-none" id="new_review_content" required="required" name="new_review_content" placeholder="{l s='Your comment here' d='Modules.Leofeature.Shop'}"></textarea>				  
+				<textarea type="text" rows="5" class="form-textarea border border-solid border-gray-2000 font-italic px-[20px] rounded-[23px] text-[14px] resize-none" id="new_review_content" required="required" name="new_review_content" placeholder="{l s='Your comment here' d='Modules.Leofeature.Shop'}"></textarea>				  
 			</div>
 
-			{hook h='displayGDPRConsent' id_module=$id_module}
+			{hook h='displayGDPRConsent' id_module='leofeature'}
 			
 			<input id="id_product_review" name="id_product_review" type="hidden" value='{$product_modal_review->id}' />
-			<div class="flex flex-row-revert justify-between items-start pt-[10px]">
+			<div class="flex flex-row-revert justify-between items-start pt-[10px] ml-auto">
 				<button class="leo-fake-button leo-modal-review-bt bg-main hover:bg-main-hover font-me text-white py-2 px-4 text-[14px] uppercase text-center border-0 rounded-full font-medium cursor-pointer" type="submit">
 					<span class="leo-modal-review-loading cssload-speeding-wheel"></span>
 					<span class="leo-modal-review-bt-text">
