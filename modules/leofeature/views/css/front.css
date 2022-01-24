@@ -200,12 +200,6 @@ div.star:before {
   font-family: "FontAwesome";
   display: inline-block; }
 
-div.star.star_on:before, div.star.star_hover:before {
-  content: "\f005";
-  color: #FFD314;
-  font-family: "FontAwesome";
-  display: inline-block; }
-
 #criterions_list {
   list-style-type: none; }
   #criterions_list .star_content {
