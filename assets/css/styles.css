@@ -404,11 +404,11 @@ input[type="text"] + .input-group-btn span:nth-of-type(2){
 }
 
 .product-desc-right-box  .ApColumn:first-child .title_block{
-    @apply font-body font-normal mb-[40px] text-[20px];
+    @apply font-body font-normal mb-[40px] text-[20px] not-italic;
 }
 
 .product-desc-right-box .ApImage img{
-    @apply bg-gray-1000 rounded-[5px] w-full h-auto max-w-[60px] max-h-[60px] p-[14px];
+    @apply bg-gray-1000 rounded-[5px] w-full h-auto max-w-[60px] max-h-[60px] p-[7px];
 }
 
 .product-desc-right-box .ApImage .image_description p{
