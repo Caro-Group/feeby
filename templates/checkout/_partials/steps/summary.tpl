@@ -83,7 +83,7 @@
       <div class="ml-auto tablet:w-auto w-full">
         <div id="payment-confirmation">
           <div class="ps-shown-by-js">
-            <button type="submit" disabled="disabled" class="w-full tablet:w-auto text-xs tablet:text-sm btn bg-main hover:bg-main-hover duration-150 border-0 rounded-full text-white p-3 px-4 uppercase whitespace-nowrap mb-2 flex items-center justify-between cursor-pointer">
+            <button type="submit" disabled="disabled" class="w-full tablet:w-auto text-xs tablet:text-sm btn bg-main hover:bg-main-hover duration-150 border-0 rounded-full text-white p-3 px-4 uppercase whitespace-nowrap mb-8 tablet:mb-2 flex items-center justify-between cursor-pointer">
               {l s='Order with an obligation to pay' d='Shop.Theme.Checkout'}
             </button>
           </div>
