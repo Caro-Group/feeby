@@ -6,7 +6,7 @@
 * @description: Leo feature for prestashop 1.7: ajax cart, review, compare, wishlist at product list 
 *}
 
-<div class="bg-gray-default flex flex-col tablet-wide:flex-row flex-wrap p-12 tablet-wide:p-[80px] mt-2 mb-[100px]">
+<div class="bg-gray-default flex flex-col tablet-wide:flex-row flex-wrap p-12 tablet-wide:p-[80px] mt-2 mb-[100px] rounded-[5px]">
 	<div class="flex flex-col pr-10 text-main-dark flex-auto justify-center mb-[20px]">
 		<span class="font-italic text-[25px] font-header">{l s='Do you have this product?' d='Modules.Leofeature.Shop'}</span>
 		<span class="text-[20px] font-body">{l s='Tell others how you rate it!' d='Modules.Leofeature.Shop'}</span>
