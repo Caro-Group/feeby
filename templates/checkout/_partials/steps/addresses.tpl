@@ -105,8 +105,8 @@
        {/if}
 
        {if $use_same_address}
-         <a href="{$new_address_delivery_url}" class="mb-4 border-b text-main-dark w-full hover:text-main transition text-xs tablet:text-sm font-body ">
-           <svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" fill="none"><path fill="#181828" d="M0 3h7v1H0z"/><path fill="#181828" d="M4 0v7H3V0z"/></svg>
+         <a href="{$new_address_delivery_url}" class="mb-4  border-b text-main-dark w-full hover:text-main transition text-sm font-body ">
+         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none"><path fill="#181828" d="M0 5h12v1H0z"></path><path fill="#181828" d="M5 0v12H6V0z" class=""></path></svg>
            {l s='Different shipping delivery address' d='Shop.Theme.Actions'}
          </a>
        {/if}
