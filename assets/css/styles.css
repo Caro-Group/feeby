@@ -47,7 +47,6 @@ p{
     }
     
     .owl-customized .owl-item .block-carousel-image-container img{
-        max-width: 70px;
         filter: invert(17%) sepia(49%) saturate(5868%) hue-rotate(328deg) brightness(101%) contrast(93%);
         @apply p-1 tablet:p-2 select-none;
     }
@@ -413,7 +412,7 @@ input[type="text"] + .input-group-btn span:nth-of-type(2){
 }
 
 .product-desc-right-box .ApImage .image_description p{
-    @apply font-body font-light text-base;
+    @apply font-body font-light text-base text-main-dark;
 }
 
 
