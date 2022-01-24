@@ -387,12 +387,16 @@ input[type="text"] + .input-group-btn span:nth-of-type(2){
 
 
 /* product-desc-right-box - on product page right bar */
+.product-desc-right-box {
+    @apply ml-[60px];
+}
+
 .product-desc-right-box  .ApColumn .block{
     @apply mb-0;
 }
 
 .product-desc-right-box  .ApColumn:not(:first-child) .block{
-    @apply mb-[40px];
+    @apply mb-[40px] pl-[20px];
 }
 
 .product-desc-right-box .ApColumn .title_block{
@@ -404,7 +408,7 @@ input[type="text"] + .input-group-btn span:nth-of-type(2){
 }
 
 .product-desc-right-box .ApImage img{
-    @apply bg-gray-1000 rounded-[5px] w-full h-auto max-w-[60px] max-h-[60px];
+    @apply bg-gray-1000 rounded-[5px] w-full h-auto max-w-[46px] max-h-[46px];
 }
 
 .product-desc-right-box .ApImage .image_description p{
@@ -413,7 +417,7 @@ input[type="text"] + .input-group-btn span:nth-of-type(2){
 
 
 .product-description h2{
-    @apply font-body normal-case text-[20px];
+    @apply font-body normal-case text-[20px] font-normal;
 }
 
 .product-description p{
