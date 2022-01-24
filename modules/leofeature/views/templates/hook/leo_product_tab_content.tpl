@@ -13,6 +13,7 @@
 {else}
 	<div class="tab-pane fade in active" id="leo-product-show-review-content">	
 {/if}
+
 		<div id="product_reviews_block_tab">
 			<div class="tablet:columns-2 w-full tablet:gap-[80px]">
 				{if $reviews}
