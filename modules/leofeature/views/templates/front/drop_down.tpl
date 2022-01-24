@@ -6,7 +6,7 @@
 * @description: Leo feature for prestashop 1.7: ajax cart, review, compare, wishlist at product list 
 *}
 	{if $only_total != 1}
-		<div class="leo-dropdown-cart-content clearfix rounded-md font-body font-light text-main-dark text-sm shadow-lg">
+		<div class="leo-dropdown-cart-content clearfix rounded-md font-body font-light text-main-dark text-sm">
 			<div class="leo-dropdown-list-item-warpper">
 				<ul class="leo-dropdown-list-item">{foreach from=$cart.products item=product name="cart_product"}<li style="width: {$width_cart_item}px; height: {$height_cart_item}px" class="leo-dropdown-cart-item clearfix{if ($product.attributes|count && $show_combination) || ($product.customizations|count && $show_customization)} has-view-additional{/if}{if $smarty.foreach.cart_product.first} first{/if}{if $smarty.foreach.cart_product.last} last{/if}">						
 							<div class="leo-cart-item-img">

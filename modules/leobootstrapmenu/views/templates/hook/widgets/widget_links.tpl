@@ -9,7 +9,7 @@
 {if isset($links)}
     <div class="widget-links mb-4">
 	{if isset($widget_heading)&&!empty($widget_heading)}
-	<div class="menu-title font-body text-main-dark text-base tablet-medium:font-header tablet-medium:italic tablet-medium:uppercase pb-1 mb-5 border-0 tablet-medium:border-b-[3px] rounded-b-sm border-main border-solid tablet-medium:w-min ">
+	<div class="menu-title font-body text-main-dark text-base ">
 		{$widget_heading}
 	</div>
 	{/if}
@@ -17,7 +17,7 @@
 		<div id="tabs{$id}" class="panel-group">
 			<ul class="nav-links">
 				{foreach $links as $key => $ac}  
-					<li><a href="{$ac.link}" class="font-body text-base font-light mt-2 tablet-medium:hover:text-main transition duration-200 {if $page_name == 'category'}{if $category.id == $ac.cat_id || $category.id_parent == $ac.cat_id}text-main{else}text-main-dark{/if}{else}text-main-dark{/if}" {if isset($ac.cat_id)}data-category-id="{$ac.cat_id}"{/if}>{$ac.text}</a></li>
+					<li><a href="{$ac.link}" class="font-body text-base font-light mt-2 {if $page_name == 'category'}{if $category.id == $ac.cat_id || $category.id_parent == $ac.cat_id}text-main{else}text-main-dark{/if}{else}text-main-dark{/if}" {if isset($ac.cat_id)}data-category-id="{$ac.cat_id}"{/if}>{$ac.text}</a></li>
 				{/foreach}
 			</ul>
 		</div>
