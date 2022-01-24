@@ -18397,9 +18397,7 @@ body#checkout .condition-label {
     clear: none; }
 body#checkout .cancel-address {
   margin: 10px;
-  display: block;
-  color: #878787;
-  text-decoration: underline; }
+  display: block; }
 body#checkout #cart-summary-product-list img {
   border: #ebebeb 1px solid;
   width: 50px; }
