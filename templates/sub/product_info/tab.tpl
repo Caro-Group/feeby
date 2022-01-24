@@ -7,7 +7,7 @@
 *}
 {block name='product_tabs'}
 	<div class="product-tabs tabs">
-	  	<ul class="flex items-baseline flex-nowrap nav nav-tabs mb-5" role="tablist">
+	  	<ul class="flex items-baseline flex-nowrap nav nav-tabs mb-5 after:content-[''] after:h-[1px] after:w-full after:absolute after:bottom-[2px] relative after:bg-[#F8F8F8] after:z-[-1]" role="tablist">
 		    {if $product.description}
 		    	<li class="nav-item mr-[79px]">
 				   <a
@@ -94,7 +94,7 @@
 	</div>
 
 	<div class="product-tabs tabs reviews">
-	  	<ul class="nav nav-tabs" role="tablist">
+	  	<ul class="nav nav-tabs after:content-[''] after:h-[1px] after:w-full after:absolute after:bottom-[2px] relative after:bg-[#F8F8F8] after:z-[-1]" role="tablist">
 			{hook h='displayLeoProductTab' product=$product}
 	  	</ul>
 
