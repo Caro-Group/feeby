@@ -9214,9 +9214,6 @@ body {
   color: #666;
   line-height: 1.55; }
 
-#page {
-  overflow: hidden; }
-
 body.modal-open {
   overflow-x: hidden;
   overflow-y: auto; }
