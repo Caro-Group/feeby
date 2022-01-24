@@ -15120,6 +15120,7 @@ button:focus, button:hover {
       @media (min-width: 992px) {
         .leo-megamenu .navbar-nav > li.parent > a span.menu-title {
           position: static; }
+        }
           
       .leo-megamenu .navbar-nav > li > a {
         padding: 15px 0;
