@@ -55,7 +55,7 @@
     <section id="main" class="product-detail pt-[20px]" itemscope itemtype="https://schema.org/Product">
       <meta itemprop="url" content="{$product.url}">
 
-      <div class="row product-container">
+      <div class="flex flex-wrap flex-row">
         <div class="w-full tablet:w-3/5 tablet:pr-10">
           {block name='page_content_container'}
             <section class="page-content" id="content">
