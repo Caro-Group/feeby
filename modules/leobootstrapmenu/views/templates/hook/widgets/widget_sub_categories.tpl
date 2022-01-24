@@ -9,7 +9,7 @@
 {if isset($subcategories)}
     <div class="widget-subcategories">
         {if isset($widget_heading)&&!empty($widget_heading)}
-        <div class="widget-heading show-desktop hide-mobile mb-2 menu-title">
+        <div class="widget-heading show-desktop hide-mobile mb-2 menu-title  tablet-medium:font-header tablet-medium:italic tablet-medium:uppercase pb-1 mb-5 border-0 tablet-medium:border-b-[3px] rounded-b-sm border-main border-solid tablet-medium:w-min text-main-dark font-light ">
                 {$widget_heading}
         </div>
         {/if}
@@ -23,7 +23,7 @@
                         </a>
                         {if isset($subcategory.subsubcategories) && $subcategory.subsubcategories}
                             <b class="caret {if $level3_only_mobile}hidden-lg-up{/if}"></b>
-                            <ul class="dropdown-sub dropdown-menu tablet-medium:rounded-md tablet-medium:shadow-lg {if $level3_only_mobile}hidden-lg-up{/if}" style="display:none;">
+                            <ul class="dropdown-sub dropdown-menu {if $level3_only_mobile}hidden-lg-up{/if}" style="display:none;">
                                 {foreach from=$subcategory.subsubcategories item=subsubcategory}
                                     <li class="clearfix level3 text-base" {if $show_widget_bo == 'admin'}style="margin-left: 20px;"{/if}>
                                         <a href="{$link->getCategoryLink($subsubcategory.id_category, $subsubcategory.link_rewrite)|escape:'htmlall':'UTF-8'}" title="{$subsubcategory.name|escape:'htmlall':'UTF-8'}" class="img font-light {if $page_name == 'category' && isset($subsubcategory.id_category)}{if $category.id == $subsubcategory.id_category || $category.id_parent == $subsubcategory.id_category}text-main{else}text-main-dark{/if}{else}text-main-dark{/if}" {if isset($subsubcategory.id_category)}data-category-id="{$subsubcategory.id_category}"{/if}>

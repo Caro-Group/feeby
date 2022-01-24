@@ -9,7 +9,7 @@
 {if isset($links)}
     <div class="widget-links mb-4">
 	{if isset($widget_heading)&&!empty($widget_heading)}
-	<div class="menu-title font-body text-main-dark text-base tablet-medium:font-header tablet-medium:italic ">
+	<div class="menu-title font-body text-main-dark text-base tablet-medium:font-header tablet-medium:italic tablet-medium:uppercase pb-1 mb-5 border-0 tablet-medium:border-b-[3px] rounded-b-sm border-main border-solid tablet-medium:w-min ">
 		{$widget_heading}
 	</div>
 	{/if}
