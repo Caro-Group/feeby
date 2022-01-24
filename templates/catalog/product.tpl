@@ -79,6 +79,11 @@
             {/block}
           {/block}
 
+          <div class="leo-compare-wishlist-button">
+            {hook h='displayLeoWishlistButton' product=$product}
+            {hook h='displayLeoCompareButton' product=$product}
+          </div>
+
           {hook h='displayLeoProductReviewExtra' product=$product}
 
           <div class="product-information">
