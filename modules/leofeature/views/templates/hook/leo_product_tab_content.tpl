@@ -24,7 +24,7 @@
 
 								<div class="review_details mb-[20px]">
 									<p itemprop="name" class="font-body font-normal italic">
-										{$review.title}
+										~{$review.title}
 									</p>
 									<p class="font-light font-body" itemprop="reviewBody">{$review.content|escape:'html':'UTF-8'|nl2br nofilter}</p>
 								</div>
