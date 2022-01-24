@@ -70,3 +70,4 @@
 {/if}
  
 <div id="reviewForm" class="review-form" data-review-form data-id-product="{$id_product_tab_content}" data-is-logged="{$customer.is_logged}" data-product-link="{$link_product_tab_content}"></div>
+
