@@ -467,3 +467,7 @@ input[type="text"] + .input-group-btn span:nth-of-type(2){
 #criterions_list .cancel{
     @apply hidden;
 }
+
+div.star.star_on:before, div.star.star_hover:before{
+    @apply text-main;
+}
