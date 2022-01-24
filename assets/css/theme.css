@@ -15232,7 +15232,6 @@ button:focus, button:hover {
           margin-left: inherit; }
       .leo-megamenu .dropdown-menu li a {
         padding: 5px 0;
-        font-weight: 400;
         font-size: 13px;
         line-height: 25px;
         display: block;
