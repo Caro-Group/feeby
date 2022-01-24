@@ -25,6 +25,7 @@ module.exports = {
       'desktop': '1248px',
       'desktop-wide': '1440px',
       'full-hd': '1680px',
+      'content-max': '1760px'
     },
     extend: {
       colors: {
