@@ -49,6 +49,7 @@
 
       {block name="address_form_footer"}
       <footer class="flex flex-wrap justify-between">
+        <div class="w-0 desktop-presta:w-[220px]"></div>
         <input type="hidden" name="submitAddress" value="1">
         {block name='form_buttons'}
           <button class="bg-main hover:bg-main-hover duration-150 border-0 rounded-full text-white p-2 px-4 uppercase whitespace-nowrap mb-2 flex items-center justify-between cursor-pointer form-control-submit" type="submit">
