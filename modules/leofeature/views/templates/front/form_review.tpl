@@ -48,7 +48,7 @@
 			{hook h='displayGDPRConsent' id_module='leofeature'}
 			
 			<input id="id_product_review" name="id_product_review" type="hidden" value='{$product_modal_review->id}' />
-			<div class="flex flex-row-revert justify-between items-start pt-[10px]">
+			<div class="flex flex-row-revert justify-between items-start pt-[10px] ml-auto">
 				<button class="leo-fake-button leo-modal-review-bt bg-main hover:bg-main-hover font-me text-white py-2 px-4 text-[14px] uppercase text-center border-0 rounded-full font-medium cursor-pointer" type="submit">
 					<span class="leo-modal-review-loading cssload-speeding-wheel"></span>
 					<span class="leo-modal-review-bt-text">
