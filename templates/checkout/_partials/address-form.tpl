@@ -47,15 +47,15 @@
 {block name='form_buttons'}
   {if !$form_has_continue_button}
     <div class="flex flex-wrap">
-      <a class="js-cancel-address cancel-address cursor-pointer flex items-center justify-between mb-2 text-main-dark uppercase whitespace-nowrap" href="{url entity='order' params=['cancelAddress' => {$type}]}"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" fill="none" class="mr-2"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.25 13.384 0 7.134V6.25L6.25 0l.884.884L1.95 6.067H15v1.25H1.95L7.135 12.5l-.884.884H6.25Z" fill="#181828"></path></svg> {l s='Cancel' d='Shop.Theme.Actions'}</a>
+      <a class="js-cancel-address cancel-address mr-auto cursor-pointer flex items-center justify-between mb-2 text-main-dark uppercase whitespace-nowrap" href="{url entity='order' params=['cancelAddress' => {$type}]}"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" fill="none" class="mr-2"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.25 13.384 0 7.134V6.25L6.25 0l.884.884L1.95 6.067H15v1.25H1.95L7.135 12.5l-.884.884H6.25Z" fill="#181828"></path></svg> {l s='Cancel' d='Shop.Theme.Actions'}</a>
       <button type="submit" class="bg-main hover:bg-main-hover duration-150 border-0 rounded-full text-white p-2 px-4 uppercase whitespace-nowrap mb-2 flex items-center justify-between cursor-pointer">{l s='Save' d='Shop.Theme.Actions'}</button>
     </div>
   {else}
     <form>
       {if $customer.addresses|count > 0}
-        <a class="js-cancel-address cancel-address cursor-pointer flex items-center justify-between mb-2 text-main-dark uppercase whitespace-nowrap" href="{url entity='order' params=['cancelAddress' => {$type}]}"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" fill="none" class="mr-2"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.25 13.384 0 7.134V6.25L6.25 0l.884.884L1.95 6.067H15v1.25H1.95L7.135 12.5l-.884.884H6.25Z" fill="#181828"></path></svg>{l s='Cancel' d='Shop.Theme.Actions'}</a>
+        <a class="js-cancel-address cancel-address mr-auto cursor-pointer flex items-center justify-between mb-2 text-main-dark uppercase whitespace-nowrap" href="{url entity='order' params=['cancelAddress' => {$type}]}"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" fill="none" class="mr-2"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.25 13.384 0 7.134V6.25L6.25 0l.884.884L1.95 6.067H15v1.25H1.95L7.135 12.5l-.884.884H6.25Z" fill="#181828"></path></svg>{l s='Cancel' d='Shop.Theme.Actions'}</a>
       {/if}
-      <button type="submit" class="continue ml-auto bg-main hover:bg-main-hover duration-150 border-0 rounded-full text-white p-2 px-4 uppercase whitespace-nowrap mb-2 flex items-center justify-between cursor-pointer" name="confirm-addresses" value="1">
+      <button type="submit" class="continue bg-main hover:bg-main-hover duration-150 border-0 rounded-full text-white p-2 px-4 uppercase whitespace-nowrap mb-2 flex items-center justify-between cursor-pointer" name="confirm-addresses" value="1">
           {l s='Continue' d='Shop.Theme.Actions'}
       </button>
     </form>
