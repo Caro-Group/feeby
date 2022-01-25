@@ -7,7 +7,7 @@
 *}
 
 <div class="bg-gray-default flex flex-col tablet-wide:flex-row flex-wrap p-[20px] py-[47px] tablet:p-12 tablet-wide:p-[80px] mt-2 mb-[100px] rounded-[5px]">
-	<div class="flex flex-col pr-10 text-main-dark flex-auto justify-center mb-[20px]">
+	<div class="flex flex-col pr-10 text-main-dark flex-auto justify-center mb-[40px] tablet:mb-[20px]">
 		<span class="font-italic text-[20px] tablet:text-[25px] font-header">{l s='Do you have this product?' d='Modules.Leofeature.Shop'}</span>
 		<span class="text-base tablet:text-[20px] font-body">{l s='Tell others how you rate it!' d='Modules.Leofeature.Shop'}</span>
 	</div>
@@ -49,7 +49,7 @@
 			
 			<input id="id_product_review" name="id_product_review" type="hidden" value='{$product_modal_review->id}' />
 			<div class="flex flex-row-revert justify-between items-start pt-[10px] ml-auto w-full tablet:w-auto">
-				<button class="leo-fake-button leo-modal-review-bt bg-main hover:bg-main-hover font-me text-white py-2 px-4 text-[12px] tablet:text-[14px] uppercase text-center border-0 rounded-full font-medium cursor-pointer w-full" type="submit">
+				<button class="leo-fake-button leo-modal-review-bt bg-main hover:bg-main-hover font-me text-white py-2 px-4 text-[12px] tablet:text-[14px] uppercase text-center border-0 rounded-full font-medium cursor-pointer mx-auto" type="submit">
 					<span class="leo-modal-review-loading cssload-speeding-wheel"></span>
 					<span class="leo-modal-review-bt-text">
 						{l s='Add review' d='Modules.Leofeature.Shop'}
