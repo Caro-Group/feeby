@@ -19505,22 +19505,6 @@ body #search_filters .clear-all-wrapper {
 
 
 
-.has-discount.product-price, .has-discount p {
-  color: #f39d72; }
-.has-discount .discount {
-  background: #f39d72;
-  color: white;
-  font-weight: 500;
-  padding: 6px 10px 4px;
-  font-size: 10px;
-  margin: 0 13px 0 0;
-  text-transform: uppercase;
-  display: inline-block;
-  vertical-align: 5px;
-  border-radius: 2px; }
-  .rtl .has-discount .discount {
-    margin: 0 0 0 13px; }
-
 .product-unit-price {
   font-size: 13px;
   margin-bottom: 0; }
