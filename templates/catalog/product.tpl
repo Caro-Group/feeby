@@ -75,7 +75,7 @@
         <div class="h-max position-sticky tablet:w-2/5 top-0 w-full">
           {block name='page_header_container'}
             {block name='page_header'}
-              <h1 class="font-header product-detail-name text-[35px] leading-[45px] mb-5" itemprop="name">{block name='page_title'}{$product.name}{/block}</h1>
+              <h1 class="font-header product-detail-name text-[35px] leading-[45px] mb-5 pr-[46px]" itemprop="name">{block name='page_title'}{$product.name}{/block}</h1>
             {/block}
           {/block}
 
