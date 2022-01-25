@@ -486,7 +486,7 @@ div.star.star_on:before, div.star.star_hover:before{
     @apply h-12 w-12 mb-2 transition-all duration-200;
 }
 
-.page-customer-account .lql-social-login,.page-customer-account .form-control-submit{
+.page-customer-account .lql-social-login a, .page-customer-account .form-control-submit{
     @apply ml-auto;
 }
 
