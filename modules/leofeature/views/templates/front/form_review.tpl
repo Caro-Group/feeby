@@ -6,7 +6,7 @@
 * @description: Leo feature for prestashop 1.7: ajax cart, review, compare, wishlist at product list 
 *}
 
-<div class="bg-gray-default flex flex-col tablet-wide:flex-row flex-wrap p-5 py-3 tablet:p-12 tablet-wide:p-[80px] mt-2 mb-[100px] rounded-[5px]">
+<div class="bg-gray-default flex flex-col tablet-wide:flex-row flex-wrap p-[20px] py-[47px] tablet:p-12 tablet-wide:p-[80px] mt-2 mb-[100px] rounded-[5px]">
 	<div class="flex flex-col pr-10 text-main-dark flex-auto justify-center mb-[20px]">
 		<span class="font-italic text-[20px] tablet:text-[25px] font-header">{l s='Do you have this product?' d='Modules.Leofeature.Shop'}</span>
 		<span class="text-base tablet:text-[20px] font-body">{l s='Tell others how you rate it!' d='Modules.Leofeature.Shop'}</span>
@@ -15,7 +15,7 @@
 		{if $criterions|@count > 0}
 			<ul id="criterions_list" class="flex list-unstyled mb-5">
 			{foreach from=$criterions item='criterion'}
-				<li class="flex items-center">
+				<li class="flex items-center flex-col tablet:flex-row">
 					{if isset($criterion.name) && $criterion.name != ''}
 						<label class="mb-0 mr-auto tablet:mr-[18px] px-[20px] text-base tablet:text-[20px] text-main-dark">{$criterion.name|escape:'html':'UTF-8'}:</label>
 					{/if}
@@ -48,8 +48,8 @@
 			{hook h='displayGDPRConsent' id_module='leofeature'}
 			
 			<input id="id_product_review" name="id_product_review" type="hidden" value='{$product_modal_review->id}' />
-			<div class="flex flex-row-revert justify-between items-start pt-[10px] ml-auto">
-				<button class="leo-fake-button leo-modal-review-bt bg-main hover:bg-main-hover font-me text-white py-2 px-4 text-[12px] tablet:text-[14px] uppercase text-center border-0 rounded-full font-medium cursor-pointer" type="submit">
+			<div class="flex flex-row-revert justify-between items-start pt-[10px] ml-auto w-full tablet:w-auto">
+				<button class="leo-fake-button leo-modal-review-bt bg-main hover:bg-main-hover font-me text-white py-2 px-4 text-[12px] tablet:text-[14px] uppercase text-center border-0 rounded-full font-medium cursor-pointer w-full" type="submit">
 					<span class="leo-modal-review-loading cssload-speeding-wheel"></span>
 					<span class="leo-modal-review-bt-text">
 						{l s='Add review' d='Modules.Leofeature.Shop'}

@@ -98,7 +98,7 @@
 			{hook h='displayLeoProductTab' product=$product}
 	  	</ul>
 
-	  	<div class="tab-content" id="tab-content">
+	  	<div class="tab-content  -mx-5" id="tab-content">
 		   	{hook h='displayLeoProductTabContent' product=$product}
 		</div>
   	</div>
