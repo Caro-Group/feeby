@@ -22241,7 +22241,10 @@ div.slick-arrows .slick-arrow.slick-next {
 
 div.slick-arrows .slick-arrow {
   height: 40px;
-  width: 40px; }
+  width: 40px; 
+top: 169px;}
+
+div.slick-arrows .slick-arrow
 
 div.slick-arrows .slick-arrow.slick-next:before,
 div.slick-arrows .slick-arrow.slick-prev:before {
