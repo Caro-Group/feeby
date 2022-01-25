@@ -92,9 +92,9 @@
           {elseif $group.group_name == "Typ"}
 
             {if $breadcrumb["count"] > 0 && $breadcrumb["links"][1]["title"]|strstr:"Parawany"}
-              {l s='Learn more about the' d='Shop.Theme.Actions'} <a class="underline font-medium" href="/nasze-parawany" target="_blank">{l s='manufacturing technology' d='Shop.Theme.Actions'}</a>
+              {l s='Learn more about the' d='Shop.Theme.Actions'} <a class="underline font-medium text-[#ADAFBA]" href="/nasze-parawany" target="_blank">{l s='manufacturing technology' d='Shop.Theme.Actions'}</a>
             {else}
-              {l s='Learn more about the' d='Shop.Theme.Actions'} <a class="underline font-medium" href="/technologia-wykonania" target="_blank">{l s='manufacturing technology' d='Shop.Theme.Actions'}</a>
+              {l s='Learn more about the' d='Shop.Theme.Actions'} <a class="underline font-medium text-[#ADAFBA]" href="/technologia-wykonania" target="_blank">{l s='manufacturing technology' d='Shop.Theme.Actions'}</a>
             {/if}
             
           {/if}
