@@ -396,7 +396,7 @@ input[type="text"] + .input-group-btn span:nth-of-type(2){
 }
 
 .product-desc-right-box  .ApColumn:not(:first-child) .block{
-    @apply mb-[40px] pl-[20px];
+    @apply mb-[40px] tablet:pl-[20px];
 }
 
 .product-desc-right-box .ApColumn .title_block{

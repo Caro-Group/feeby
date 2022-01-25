@@ -200,40 +200,11 @@ div.star:before {
 
 #criterions_list {
   list-style-type: none; }
-  #criterions_list .star_content {
-    display: inline-block; }
-
-#criterions_list label {
-  display: inline;
-  float: left;
-  margin: 0 10px 0 0;
-  line-height: 13px; }
-  .rtl #criterions_list label {
-    float: right; }
-  .rtl #criterions_list label {
-    margin: 0 0 0 10px; }
 
 .star a {
   display: block;
   position: absolute;
   text-indent: -5000px; }
-
-.new_review_form_content #criterions_list {
-  padding-bottom: 5px;
-  list-style-type: none; }
-
-.new_review_form_content .form-group.has-error input, .new_review_form_content .form-group.has-error textarea {
-  outline: 2px solid #ff4c4c; }
-
-@media (max-width: 575px) {
-  .new_review_form_content {
-    margin-top: 10px;
-    text-align: center; }
-    .new_review_form_content #criterions_list li {
-      display: inline-block; }
-    .new_review_form_content .form-new-review .form-control-label {
-      text-align: center !important; } }
-
 
 .leo-modal-review .has-success, .leo-modal-review .has-danger {
   text-align: center; }
