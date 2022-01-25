@@ -17,4 +17,4 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 
-{include file='customer/_partials/my-account-block.tpl' type='psgdpr-link' link={$front_controller} title={l s='GDPR - Personal data' mod='psgdpr'} icon="account_box"}
+{include file='customer/_partials/my-account-block.tpl' type='psgdpr-link' link={$front_controller} title={l s='GDPR - Personal data' mod='psgdpr'} icon="assets\img\icons\admin_panel_settings_black_24dp.svg"}
