@@ -48,9 +48,9 @@
     
 
   {else}
-    <div class=" bg-gray-1000 inset-0 tablet:rounded-md z-10 pb-12" data-login-panel>
+    <div class=" bg-gray-1000 inset-0 tablet:rounded-md z-10 tablet:pb-12" data-login-panel>
       <div class="flex flex-wrap tablet-wide:flex-nowrap">
-        <div class="border-0 border-b border-gray-3000 border-solid flex flex-col items-start mb-0 my-8 pb-11 px-0 mx-5 tablet:px-5 tablet:mx-0 tablet-wide:px-24 tablet:border-b-0 tablet:border-r tablet:mb-8 tablet:my-20 tablet:w-1/2 w-full">
+        <div class="border-0 border-b border-gray-3000 border-solid flex flex-col items-start mb-0 my-10 pb-10 px-0 mx-5 tablet:px-5 tablet:mx-0 tablet-wide:px-24 tablet:border-b-0 tablet:border-r tablet:mb-8 tablet:my-20 tablet:w-1/2 w-full">
           <h2 class="text-2xl tablet:text-3xl font-normal mb-5">{l s='I do not have an account' d='Shop.Theme.Checkout'}</h2>
           <p class="hidden tablet:block font-body font-light text-base text-main-dark mb-8">
             {l s='You do not have an account? You can place an order as a guest, or create an account to save your details and shipping preferences for your next purchase.' d='Shop.Theme.Checkout'}
@@ -74,7 +74,7 @@
              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" fill="none" class="ml-2 flex-0"><path fill-rule="evenodd" clip-rule="evenodd" d="m9.25 14.359 6.25-6.25v-.884L9.25.975l-.884.884 5.183 5.184H.5v1.25h13.05l-5.185 5.182.884.884h.001Z" fill="#fff"/></svg>
           </a>
         </div>
-        <div class="flex flex-col items-start my-8 px-5 tablet-wide:px-24 tablet:my-20 tablet:w-1/2 w-full">
+        <div class="flex flex-col items-start my-10 mb-5 px-5 tablet-wide:px-24 tablet:my-20 tablet:w-1/2 w-full">
           <h2 class="text-2xl tablet:text-3xl font-normal">{l s='I have an account' d='Shop.Theme.Checkout'}</h2>
           <div class="{if $show_login_form}active{/if} w-full" id="checkout-login-form">
             {render file='checkout/_partials/login-form.tpl' ui=$login_form}
