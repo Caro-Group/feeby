@@ -80,7 +80,7 @@
             {/block}
           {/block}
 
-          <div class="leo-compare-wishlist-button">
+          <div class="leo-compare-wishlist-button absolute top-0 right-0">
             {hook h='displayLeoWishlistButton' product=$product}
             {hook h='displayLeoCompareButton' product=$product}
           </div>

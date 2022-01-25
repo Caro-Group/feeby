@@ -6,18 +6,18 @@
 * @description: Leo feature for prestashop 1.7: ajax cart, review, compare, wishlist at product list 
 *}
 
-<div class="bg-gray-default flex flex-col tablet-wide:flex-row flex-wrap p-12 tablet-wide:p-[80px] mt-2 mb-[100px] rounded-[5px]">
+<div class="bg-gray-default flex flex-col tablet-wide:flex-row flex-wrap p-5 py-3 tablet:p-12 tablet-wide:p-[80px] mt-2 mb-[100px] rounded-[5px]">
 	<div class="flex flex-col pr-10 text-main-dark flex-auto justify-center mb-[20px]">
 		<span class="font-italic text-[25px] font-header">{l s='Do you have this product?' d='Modules.Leofeature.Shop'}</span>
 		<span class="text-[20px] font-body">{l s='Tell others how you rate it!' d='Modules.Leofeature.Shop'}</span>
 	</div>
-	<div class="new_review_form_content p-0 flex-[1_1_50%] mb-[20px]">
+	<div class="new_review_form_content p-0 flex-[1_1_50%] tablet:mb-[20px]">
 		{if $criterions|@count > 0}
-			<ul id="criterions_list" class="mb-5">
+			<ul id="criterions_list" class="flex list-unstyled mb-5">
 			{foreach from=$criterions item='criterion'}
 				<li class="flex items-center">
 					{if isset($criterion.name) && $criterion.name != ''}
-						<label class="text-main-dark text-[20px] block px-[20px]">{$criterion.name|escape:'html':'UTF-8'}:</label>
+						<label class="mb-0 mr-auto tablet:mr-[18px] px-[20px] text-[20px] text-main-dark">{$criterion.name|escape:'html':'UTF-8'}:</label>
 					{/if}
 					<div class="star_content">
 						<input class="star not_uniform" type="radio" name="criterion[{$criterion.id_product_review_criterion|round}]" value="1" />
