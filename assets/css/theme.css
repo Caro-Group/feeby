@@ -18383,8 +18383,7 @@ body#checkout section.checkout-step {
   body#checkout section.checkout-step .forgot-password {
     margin-left: 230px; }
 body#checkout .additional-information {
-  font-size: 13px;
-  margin-top: 20px; }
+  font-size: 13px;}
 body#checkout .condition-label {
   margin-left: 40px;
   margin-top: 10px; }
