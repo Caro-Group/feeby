@@ -22,7 +22,7 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
-<div id="order-items" class="p-5 tablet:p-0 -mx-[10px] tablet:mx-0 bg-gray-1000 ">
+<div id="order-items" class="p-5 tablet:p-0 -mx-[20px] tablet:mx-0 bg-gray-1000 ">
 <div class="bg-white rounded-md border tablet:border-0 border-solid border-gray-2000">
   <div class="p-[30px] tablet:p-0 tablet:mb-7 flex justify-between items-center collapsed" data-toggle="collapse" data-target="#collapsingOrderTable">
     {block name='order_items_table_head'}
@@ -32,7 +32,7 @@
     {/block}
   </div>
 
-  <div class="order-confirmation-table tablet:block tablet:h-full px-5 tablet:px-0 border-0 border-b border-gray-1000 border-solid  collapse" id="collapsingOrderTable">
+  <div class="order-confirmation-table tablet:block tablet:h-full px-5 tablet:px-0 border-0 desktop-presta:border-b border-gray-1000 border-solid  collapse" id="collapsingOrderTable">
 
     {block name='order_confirmation_table'}
       {foreach from=$products item=product}
