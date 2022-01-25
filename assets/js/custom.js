@@ -1368,34 +1368,35 @@ $(document).ready(function () {
 
 $(document).ready(function () {
 
-	const breakpoint = window.matchMedia('(max-width:768px)')
+	if(jQuery('.swiper-filters').length != 0){
+		const breakpoint = window.matchMedia('(max-width:768px)')
 
-	let swiperFilters;
+		let swiperFilters;
 
-	const breakpointCheck = function () {
-		if (breakpoint.matches == true) {
-			if (swiperFilters !== undefined) swiperFilters.destroy(true,true); 
+		const breakpointCheck = function () {
+			if (breakpoint.matches == true) {
+				if (typeof swiperFilters !== 'undefined') swiperFilters.destroy(true,true); 
+			}
+			else if (breakpoint.matches == false) {
+				return enableSwiperFilter();
+				
+			}
+		};
+
+		const enableSwiperFilter =function () {
+			swiperFilters = new Swiper('.swiper-filters', {
+				speed: 150,
+				roundLengths: true,
+				slidesPerView: 'auto',
+				freeMode: {
+					enabled: true,
+				},
+			});
 		}
-		else if (breakpoint.matches == false) {
-			return enableSwiperFilter();
-			
-		}
-	};
 
-	const enableSwiperFilter =function () {
-		swiperFilters = new Swiper('.swiper-filters', {
-			speed: 150,
-			roundLengths: true,
-			slidesPerView: 'auto',
-			freeMode: {
-				enabled: true,
-			},
-		});
+		breakpoint.addListener(breakpointCheck);
+		breakpointCheck();
 	}
-
-	breakpoint.addListener(breakpointCheck);
-	breakpointCheck();
-
 
 	prestashop.on("updateProductList", function(t) {
 		window.dispatchEvent(new Event('resize'));
@@ -1446,20 +1447,8 @@ $(document).ready(function () {
 
 
 $(document).ready(function () {
-	let currentStep=$('.js-current-step .step-number').text();
-	if(currentStep == 1){
-		if ($('[data-login-panel]').is(":visible")) {
-			$('[data-js-elem="cart"]').addClass('hidden')
-			$('#checkout-guest-form').addClass('hidden')
-		}
-	}
-	else{
-		$('[data-js-elem="cart"]').removeClass('hidden')
-		$('#checkout-guest-form').removeClass('hidden')
-	}
-	
-	prestashop.on("changedCheckoutStep",function(){
-		currentStep=$('.js-current-step .step-number').text();
+	if($('#checkout').length != 0) {
+		let currentStep=$('.js-current-step .step-number').text();
 		if(currentStep == 1){
 			if ($('[data-login-panel]').is(":visible")) {
 				$('[data-js-elem="cart"]').addClass('hidden')
@@ -1470,9 +1459,48 @@ $(document).ready(function () {
 			$('[data-js-elem="cart"]').removeClass('hidden')
 			$('#checkout-guest-form').removeClass('hidden')
 		}
-	})
+		
+		prestashop.on("changedCheckoutStep",function(){
+			currentStep=$('.js-current-step .step-number').text();
+			if(currentStep == 1){
+				if ($('[data-login-panel]').is(":visible")) {
+					$('[data-js-elem="cart"]').addClass('hidden')
+					$('#checkout-guest-form').addClass('hidden')
+				}
+			}
+			else{
+				$('[data-js-elem="cart"]').removeClass('hidden')
+				$('#checkout-guest-form').removeClass('hidden')
+			}
+		});
+	};
 });
 
 $(document).ready(function () {
-	$('#checkout [name="postcode"]').mask("99-999");
+	if($('#checkout [name="postcode"]').length != 0) {
+		$('#checkout [name="postcode"]').mask("99-999");
+	}
+});
+
+$(document).ready(function () {
+	if($('[data-swiper-carousel]').length != 0) {
+		new Swiper('[data-swiper-carousel]', {
+			speed: 400,
+			spaceBetween: 20,
+			slidesPerView: 'auto',
+			rewind: true,
+			slideClass: 'slide',
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+				dynamicBullets: true,
+				dynamicMainBullets: 1,
+			},
+			breakpoints: {
+				1200: {
+					slidesPerView: 4,
+				},
+			  }
+		});
+	};
 });

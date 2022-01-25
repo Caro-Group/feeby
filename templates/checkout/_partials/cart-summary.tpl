@@ -23,7 +23,7 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 <section id="js-checkout-summary" class="bg-gray-1000 tablet:rounded-md js-cart mb-8 js-cart" data-refresh-url="{$urls.pages.cart}?ajax=1&action=refresh">
-  <div class="card-block flex flex-row p-[30px] pb-0">
+  <div class="card-block flex flex-row px-[30px] py-[15px] pb-0">
     <h2 class="block font-header font-normal italic mb-2 tablet:mb-[10px] text-2xl text-main-dark">
       {l s='Your order' d='Shop.Theme.Checkout'}
     </h2>

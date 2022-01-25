@@ -27,6 +27,7 @@
 {block name='head_seo' prepend}
   <link rel="canonical" href="{$product.canonical_url}">
 {/block}
+
 {block name='head' append}
   <meta property="og:type" content="product">
   <meta property="og:url" content="{$urls.current_url}">
@@ -52,11 +53,11 @@
     {hook h='displayLeoProfileProduct' product=$product typeProduct='detail'}
   {else}
 
-    <section id="main" class="product-detail" itemscope itemtype="https://schema.org/Product">
+    <section id="main" class="product-detail pt-[20px]" itemscope itemtype="https://schema.org/Product">
       <meta itemprop="url" content="{$product.url}">
 
-      <div class="row product-container">
-        <div class="col-md-6">
+      <div class="flex flex-wrap flex-row">
+        <div class="w-full tablet:w-3/5 tablet:pr-10">
           {block name='page_content_container'}
             <section class="page-content" id="content">
               {block name='page_content'}
@@ -72,12 +73,17 @@
           {/block}
         </div>
 
-        <div class="col-md-6">
+        <div class="h-max position-sticky tablet:w-2/5 top-0 w-full">
           {block name='page_header_container'}
             {block name='page_header'}
-              <h1 class="font-header product-detail-name text-[35px] leading-[45px] mb-5" itemprop="name">{block name='page_title'}{$product.name}{/block}</h1>
+              <h1 class="font-header product-detail-name text-[20px] tablet:text-[35px] tablet:leading-[45px] leading-24px mb-5 pr-[46px]" itemprop="name">{block name='page_title'}{$product.name}{/block}</h1>
             {/block}
           {/block}
+
+          <div class="leo-compare-wishlist-button absolute top-0 right-0">
+            {hook h='displayLeoWishlistButton' product=$product}
+            {hook h='displayLeoCompareButton' product=$product}
+          </div>
 
           {hook h='displayLeoProductReviewExtra' product=$product}
 
@@ -114,6 +120,8 @@
                     {/if}
                   {/block}
 
+                  <hr class="border-gray-1000 block w-full content-max:w-[1760px]"/>
+                  
                   {block name='product_prices'}
                     {include file='catalog/_partials/product-prices.tpl'}
                   {/block}
@@ -160,97 +168,35 @@
 
 
 
-<aside class="products-aside">
-{hook h='displayApSC' sc_key=sc2585205791}
-</aside>
+      <aside class="products-aside">
+        {hook h='displayApSC' sc_key=sc2585205791}
+      </aside>
 
-
-{block name='product_accessories'}
-  {if $accessories}
-    <section class="product-accessories clearfix">
-      <h3 class="h5 products-section-title">{l s='You might also like' d='Shop.Theme.Catalog'}</h3>
-      <div class="products" itemscope itemtype="http://schema.org/ItemList">
-        <div class="owl-row {if isset($productClassWidget)} {$productClassWidget}{/if}">
-          <div id="category-products2" class="owl-carousel owl-theme owl-loading">
-            {foreach from=$accessories item="product_accessory" key="position"}
-              <div class="item{if $smarty.foreach.mypLoop.index == 0} first{/if}">
-                {block name='product_miniature'}
-                  {if isset($productProfileDefault) && $productProfileDefault}
-                      {* exits THEME_NAME/profiles/profile_name.tpl -> load template*}
-                      {hook h='displayLeoProfileProduct' product=$product_accessory profile=$productProfileDefault}
-                  {else}
-                      {include file='catalog/_partials/miniatures/product.tpl' product=$product_accessory position=$position}
-                  {/if}
-                {/block}
+      {block name='product_accessories'}
+        {if $accessories}
+          <section class="product-accessories clearfix">
+            <h3 class="h5 products-section-title">{l s='You might also like' d='Shop.Theme.Catalog'}</h3>
+            <div class="products" itemscope itemtype="http://schema.org/ItemList">
+              <div class="owl-row {if isset($productClassWidget)} {$productClassWidget}{/if}">
+                <div id="category-products2" class="owl-carousel owl-theme owl-loading">
+                  {foreach from=$accessories item="product_accessory" key="position"}
+                    <div class="item{if $smarty.foreach.mypLoop.index == 0} first{/if}">
+                      {block name='product_miniature'}
+                        {if isset($productProfileDefault) && $productProfileDefault}
+                            {* exits THEME_NAME/profiles/profile_name.tpl -> load template*}
+                            {hook h='displayLeoProfileProduct' product=$product_accessory profile=$productProfileDefault}
+                        {else}
+                            {include file='catalog/_partials/miniatures/product.tpl' product=$product_accessory position=$position}
+                        {/if}
+                      {/block}
+                    </div>
+                  {/foreach}
+                </div>
               </div>
-            {/foreach}
-          </div>
-        </div>
-      </div>
-    </section>
-  {/if}
-{/block}
-
-
-
-<script type="text/javascript">
-  products_list_functions.push(
-    function(){
-      if($('#category-products2').parents('.tab-pane').length)
-      {   
-          if(!$('#category-products2').parents('.tab-pane').hasClass('active'))
-          {
-              var width_owl_active_tab = $('#category-products2').parents('.tab-pane').siblings('.active').find('.owl-carousel').width();   
-              $('#category-products2').width(width_owl_active_tab);
-          }
-      }
-      $('#category-products2').owlCarousel({
-        {if isset($IS_RTL) && $IS_RTL}
-          direction:'rtl',
-        {else}
-          direction:'ltr',
+            </div>
+          </section>
         {/if}
-        items : 4,
-        itemsCustom : false,
-        itemsDesktop : [1200, 4],
-        itemsDesktopSmall : [992, 3],
-        itemsTablet : [768, 2],
-        itemsTabletSmall : false,
-        itemsMobile : [480, 1],
-        singleItem : false,         // true : show only 1 item
-        itemsScaleUp : false,
-        slideSpeed : 200,  //  change speed when drag and drop a item
-        paginationSpeed :800, // change speed when go next page
-
-        autoPlay : false,   // time to show each item
-        stopOnHover : false,
-        navigation : true,
-        navigationText : ["&lsaquo;", "&rsaquo;"],
-
-        scrollPerPage :true,
-        responsive :true,
-        
-        pagination : false,
-        paginationNumbers : false,
-        
-        addClassActive : true,
-        
-        mouseDrag : true,
-        touchDrag : true,
-
-        addClassActive :    true,
-        afterInit: OwlLoaded,
-        afterAction : SetOwlCarouselFirstLast,
-
-      });
-    }
-  );
-  function OwlLoaded(el){
-    el.removeClass('owl-loading').addClass('owl-loaded').parents('.owl-row').addClass('hide-loading');
-    if ($(el).parents('.tab-pane').length && !$(el).parents('.tab-pane').hasClass('active'))
-        el.width('100%');
-  };
-</script>
+      {/block}
 
       {block name='product_footer'}
         {hook h='displayFooterProduct' product=$product category=$category}

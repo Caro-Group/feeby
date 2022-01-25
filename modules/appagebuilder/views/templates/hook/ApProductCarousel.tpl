@@ -11,34 +11,17 @@
         <div class="alert alert-warning leo-lib-error">{$formAtts.lib_error}</div>
     {/if}
 {else}
-    <div class="block products_block exclusive appagebuilder {(isset($formAtts.class)) ? $formAtts.class : ''|escape:'html':'UTF-8'}">
-        {($apLiveEdit)?$apLiveEdit:'' nofilter}{* HTML form , no escape necessary *}
+    {($apLiveEdit)?$apLiveEdit:'' nofilter}{* HTML form , no escape necessary *}
+
+    {if isset($products) && !empty($products)}
         {if isset($formAtts.title)&&!empty($formAtts.title)}
-        <h4 class="title_block">
-            {$formAtts.title|rtrim|escape:'html':'UTF-8'}
-        </h4>
+            {include file='_partials/slider.tpl' type='products-exclusive' products=$products title={$formAtts.title|rtrim|escape:'html':'UTF-8'}}
+        {else}
+            {include file='_partials/slider.tpl' type='products-exclusive' products=$products title=""}
         {/if}
-        {if isset($formAtts.sub_title) && $formAtts.sub_title}
-            <div class="sub-title-widget">{$formAtts.sub_title nofilter}</div>
-        {/if}
-        <div class="block_content">	
-			{if !empty($products)}
-                {if $formAtts.carousel_type == "slickcarousel"}
-                    {assign var=leo_include_file value=$leo_helper->getTplTemplate('ProductSlickCarousel.tpl', $formAtts['override_folder'])}
-                    {include file=$leo_include_file}
-                {else}
-    				{if $formAtts.carousel_type == "boostrap"}
-    					{assign var=leo_include_file value=$leo_helper->getTplTemplate('ProductCarousel.tpl', $formAtts['override_folder'])}
-    					{include file=$leo_include_file}
-    				{else}
-    					{assign var=leo_include_file value=$leo_helper->getTplTemplate('ProductOwlCarousel.tpl', $formAtts['override_folder'])}
-    					{include file=$leo_include_file}
-    				{/if}
-                {/if}
-			{else}
-				<p class="alert alert-info">{l s='No products at this time.' mod='appagebuilder'}</p>	
-			{/if}
-        </div>
-        {($apLiveEditEnd)?$apLiveEditEnd:'' nofilter}{* HTML form , no escape necessary *}
-    </div>
+    {else}
+        <p class="alert alert-info">{l s='No products at this time.' mod='appagebuilder'}</p>	
+    {/if}
+
+    {($apLiveEditEnd)?$apLiveEditEnd:'' nofilter}{* HTML form , no escape necessary *}
 {/if}

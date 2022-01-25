@@ -1011,8 +1011,6 @@ body#checkout .custom-checkbox em {
 .input-group.focus {
   outline: 0; }
 
-body#checkout section.checkout-step .form-footer {
-  margin: 30px 0 10px; }
   body#checkout section.checkout-step .form-footer button.btn {
     float: none !important;
     min-width: 50%; }
@@ -1524,43 +1522,6 @@ textarea.form-control {
 @media (min-width: 992px) {
   body .off-canvas-nav-megamenu {
     display: none; } }
-
-#category-products > .item,
-#category-products2 > .item {
-  float: left;
-  padding: 0 15px;
-  width: 25%;
-  display: none; }
-  @media (max-width: 991px) {
-    #category-products > .item,
-    #category-products2 > .item {
-      width: 33.333%; } }
-  @media (max-width: 767px) {
-    #category-products > .item,
-    #category-products2 > .item {
-      width: 50%; } }
-  @media (max-width: 480px) {
-    #category-products > .item,
-    #category-products2 > .item {
-      width: 100%; } }
-  #category-products > .item:nth-child(1), #category-products > .item:nth-child(2), #category-products > .item:nth-child(3), #category-products > .item:nth-child(4),
-  #category-products2 > .item:nth-child(1),
-  #category-products2 > .item:nth-child(2),
-  #category-products2 > .item:nth-child(3),
-  #category-products2 > .item:nth-child(4) {
-    display: block; }
-  @media (max-width: 991px) {
-    #category-products > .item:nth-child(4),
-    #category-products2 > .item:nth-child(4) {
-      display: none; } }
-  @media (max-width: 767px) {
-    #category-products > .item:nth-child(3),
-    #category-products2 > .item:nth-child(3) {
-      display: none; } }
-  @media (max-width: 480px) {
-    #category-products > .item:nth-child(2),
-    #category-products2 > .item:nth-child(2) {
-      display: none; } }
 
 /*UPDATE HOME CSS*/
 @media (min-width: 992px) {
@@ -2581,6 +2542,8 @@ button.btn.btn-primary.center-block,
   margin: 15px 0 25px; }
 
 @media (max-width: 767px) {
+  .product-detail .product-prices {
+    margin: 15px 0 20px; }
   .leo-modal-review .new_review_form_content {
     text-align: left; }
     .rtl .leo-modal-review .new_review_form_content {

@@ -25,12 +25,12 @@
 {extends "customer/_partials/customer-form.tpl"}
 
 {block "form_buttons"}
-    <a href="#checkout-login-panel" class="text-black bg-transparent border-0 uppercase mb-2 flex items-center justify-between cursor-pointer">
+    <a href="#checkout-login-panel" class="text-black bg-transparent border-0 uppercase flex items-center justify-between cursor-pointer">
       <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" fill="none" class="mr-2"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.25 13.384 0 7.134V6.25L6.25 0l.884.884L1.95 6.067H15v1.25H1.95L7.135 12.5l-.884.884H6.25Z" fill="#181828"/></svg>
       {l s='Back to Login' d='Shop.Theme.Actions'}
     </a>
     <button
-      class="bg-main hover:opcaity-80 duration-150 border-0 rounded-full text-white p-2 px-4 uppercase whitespace-nowrap mb-2 flex items-center justify-between ml-auto cursor-pointer"
+      class="w-full text-xs tablet:text-sm tablet:w-auto bg-main hover:opcaity-80 duration-150 border-0 rounded-full text-white p-3 px-4 uppercase whitespace-nowrap mb-8 tablet:mb-0 flex items-center justify-between ml-auto cursor-pointer"
       name="continue"
       data-link-action="register-new-customer"
       type="submit"

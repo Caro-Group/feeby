@@ -19,7 +19,7 @@
 		<div>{$formAtts.descript|escape:'html':'UTF-8'}</div>
 	{/if}
 
-	<div class="swiper-blog overflow-hidden min-w-swiper-mobile">
+	<div class="swiper-blog overflow-hidden">
 		<div class="swiper-wrapper ml-4">
 		{$Num=array_chunk($formAtts.slides, $itemsperpage)}
 		{foreach from=$Num item=sliders name=val}
@@ -32,13 +32,13 @@
 					<div class=" aspect-square ">
 				{/if}
 				{if isset($slider.image) && !empty($slider.image)}
-					<img class="object-cover w-full h-4/5 phablet:h-3/4" loading="{$lazyImg}" src="{$slider.image|escape:'html':'UTF-8'}" alt="{if isset($slider.title)}{$slider.title|escape:'html':'UTF-8'}{/if}"/>
+					<img class="object-cover w-full h-3/6 phablet:h-4/5 phablet:h-3/4" loading="{$lazyImg}" src="{$slider.image|escape:'html':'UTF-8'}" alt="{if isset($slider.title)}{$slider.title|escape:'html':'UTF-8'}{/if}"/>
 				{else}
 					{if isset($slider.image_link) && !empty($slider.image_link)}
-						<img class="object-cover w-full h-4/5 phablet:h-3/4" loading="{$lazyImg}" src="{$slider.image_link|escape:'html':'UTF-8'}" alt="{if isset($slider.title)}{$slider.title|escape:'html':'UTF-8'}{/if}"/>
+						<img class="object-cover w-full h-3/6 phablet:h-4/5 phablet:h-3/4" loading="{$lazyImg}" src="{$slider.image_link|escape:'html':'UTF-8'}" alt="{if isset($slider.title)}{$slider.title|escape:'html':'UTF-8'}{/if}"/>
 					{/if}
 				{/if}
-				<div class="p-5 bg-white flex flex-col justify-between h-2/6 phablet:h-1/5 ">
+				<div class="p-5 bg-white flex flex-col justify-between h-3/6 phablet:h-1/5 ">
 				
 					{if isset($slider.title) && !empty($slider.title)}
 						<h2 class="font-normal tablet:text-base italic desktop-presta:text-2xl line-clamp-2 phablet:line-clamp-1 desktop-wide:line-clamp-2">{$slider.title|escape:'html':'UTF-8' nofilter}</h2>

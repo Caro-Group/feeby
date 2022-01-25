@@ -9,18 +9,4 @@
 * support@mypresta.eu
 *}
 
-
-{if isset($products) && $products}
-    <div id="featured-category-products-block-center" class="{$rf_maincss}">
-        <h1 class="products-section-title text-uppercase ">
-            {if $related_link==1}<a href="{$link->getCategoryLink($related_category, null, $id_lang)}">{/if}
-                {l s='Related products' mod='relatedfree'}
-            {if $related_link==1}</a>{/if}
-        </h1>
-            <div class="{$rf_productscss}">
-                {foreach from=$products item="product"}
-                    {include file=$rf_tpath product=$product}
-                {/foreach}
-            </div>
-    </div>
-{/if}
+{include file='_partials/slider.tpl' type='products-releated-footer' products=$products title={l s='Related products' mod='relatedfree'}}

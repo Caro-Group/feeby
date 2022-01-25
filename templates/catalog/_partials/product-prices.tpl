@@ -37,7 +37,7 @@
 
       {block name='product_price'}
         <div
-          class="font-medium leading-none product-price text-[35px] mr-1 {if $product.has_discount}has-discount{/if}"
+          class="font-medium leading-none product-price text-[25px] tablet:text-[35px] mr-[10px] {if $product.has_discount}text-main{else}text-[#232322]{/if} {if $product.has_discount}has-discount{/if}"
           itemprop="offers"
           itemscope
           itemtype="https://schema.org/Offer"
@@ -47,16 +47,6 @@
 
           <div class="current-price">
             <span itemprop="price" content="{if $product.rounded_display_price}{$product.rounded_display_price}{else}{$product.price}{/if}">{$product.price}</span>
-
-            {if $product.has_discount}
-              {if $product.discount_type === 'percentage'}
-                <span class="discount discount-percentage">{l s='Save %percentage%' d='Shop.Theme.Catalog' sprintf=['%percentage%' => $product.discount_percentage_absolute]}</span>
-              {else}
-                <span class="discount discount-amount">
-                    {l s='Save %amount%' d='Shop.Theme.Catalog' sprintf=['%amount%' => $product.discount_to_display]}
-                </span>
-              {/if}
-            {/if}
           </div>
 
           {block name='product_unit_price'}

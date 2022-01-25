@@ -40,7 +40,7 @@
   </section>
 
   {block name='customer_form_footer'}
-    <footer class="form-footer clearfix flex items-center justify-between">
+    <footer class="clearfix flex flex-col-reverse form-footer items-baseline items-center tablet:flex-row mb-10 tablet:mb-[30px]">
       <input type="hidden" name="submitCreate" value="1">
       {block "form_buttons"}
         <button class="btn btn-primary form-control-submit float-xs-right" data-link-action="save-customer" type="submit">

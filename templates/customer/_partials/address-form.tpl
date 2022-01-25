@@ -48,10 +48,11 @@
       {/block}
 
       {block name="address_form_footer"}
-      <footer class="flex flex-wrap justify-between">
+      <footer class="flex flex-wrap flex-col-reverse tablet:flex-row items-baseline">
+        <div class="w-0 desktop-presta:w-[220px]"></div>
         <input type="hidden" name="submitAddress" value="1">
         {block name='form_buttons'}
-          <button class="bg-main hover:bg-main-hover duration-150 border-0 rounded-full text-white p-2 px-4 uppercase whitespace-nowrap mb-2 flex items-center justify-between cursor-pointer form-control-submit" type="submit">
+          <button class="ml-auto bg-main hover:bg-main-hover duration-150 border-0 rounded-full text-white p-2 px-4 uppercase whitespace-nowrap mt-5 flex items-center justify-between cursor-pointer form-control-submit" type="submit">
             {l s='Save' d='Shop.Theme.Actions'}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" fill="none" class="ml-2 flex-0"><path fill-rule="evenodd" clip-rule="evenodd" d="m9.25 14.359 6.25-6.25v-.884L9.25.975l-.884.884 5.183 5.184H.5v1.25h13.05l-5.185 5.182.884.884h.001Z" fill="#fff"/></svg>
           </button>

@@ -26,8 +26,8 @@
   {foreach from=$groups key=id_attribute_group item=group}
     {if !empty($group.attributes)}
 
-      <div class="clearfix product-variants-item flex flex-col items-start mb-5">
-        <span class="block text-sm text-gray-main text-base leading-normal mb-[10px]">
+      <div class="clearfix product-variants-item flex flex-col items-start mb-[40px] tablet:mb-5">
+        <span class="block text-[14px] text-gray-main text-base leading-normal mb-[10px] font-light">
           {if $group.group_name == "Rozmiar"}
             {l s='Choose size' d='Shop.Theme.Actions'}
           {elseif $group.group_name == "Rodzaj fototapety"}
@@ -73,10 +73,10 @@
 
           <ul id="group_{$id_attribute_group}" class="flex flex-row flex-wrap">
             {foreach from=$group.attributes key=id_attribute item=group_attribute}
-              <li class="mb-2 mr-2">
-                <label class="mb-0">
+              <li class="mb-2 w-full phone:w-1/2 tablet:w-auto">
+                <label class="mb-0 mr-2">
                   <input class="form-radio sr-only peer" type="radio" data-product-attribute="{$id_attribute_group}" name="group[{$id_attribute_group}]" value="{$id_attribute}" title="{$group_attribute.name}"{if $group_attribute.selected} checked="checked"{/if}>
-                  <span class="bg-gray-default block border-2 border-solid cursor-pointer p-3 peer-checked:border-main peer-checked:text-gray-main rounded text-[#BABABA] transition">{$group_attribute.name}</span>
+                  <span class="bg-gray-default block border-2 border-solid cursor-pointer p-3 peer-checked:border-main peer-checked:text-gray-main rounded text-[#BABABA] transition text-base tablet:text-[20px]">{$group_attribute.name}</span>
                 </label>
               </li>
             {/foreach}
@@ -84,17 +84,17 @@
           
         {/if}
 
-        <span class="block leading-normal text-base text-gray-main text-sm">
+        <span class="block leading-normal text-[14px] tablet:text-base text-[#ADAFBA]">
           {if $group.group_name == "Rozmiar"}
 
-            {l s='See' d='Shop.Theme.Actions'} <a class="underline font-medium" href="/tabela-rozmiarow" target="_blank">{l s='table size' d='Shop.Theme.Actions'}</a>
+            {l s='See' d='Shop.Theme.Actions'} <a class="underline font-medium text-[#ADAFBA]" href="/tabela-rozmiarow" target="_blank">{l s='table size' d='Shop.Theme.Actions'}</a>
 
           {elseif $group.group_name == "Typ"}
 
             {if $breadcrumb["count"] > 0 && $breadcrumb["links"][1]["title"]|strstr:"Parawany"}
-              {l s='Learn more about the' d='Shop.Theme.Actions'} <a class="underline font-medium" href="/nasze-parawany" target="_blank">{l s='manufacturing technology' d='Shop.Theme.Actions'}</a>
+              {l s='Learn more about the' d='Shop.Theme.Actions'} <a class="underline font-medium text-[#ADAFBA]" href="/nasze-parawany" target="_blank">{l s='manufacturing technology' d='Shop.Theme.Actions'}</a>
             {else}
-              {l s='Learn more about the' d='Shop.Theme.Actions'} <a class="underline font-medium" href="/technologia-wykonania" target="_blank">{l s='manufacturing technology' d='Shop.Theme.Actions'}</a>
+              {l s='Learn more about the' d='Shop.Theme.Actions'} <a class="underline font-medium text-[#ADAFBA]" href="/technologia-wykonania" target="_blank">{l s='manufacturing technology' d='Shop.Theme.Actions'}</a>
             {/if}
             
           {/if}

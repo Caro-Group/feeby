@@ -22,7 +22,7 @@
 						
 						{foreach from=$products item=product name=for_products}
 							{assign var='replace_id' value=$product.id|cat:'|'}
-							<td class="product-miniature js-product-miniature leo-productscompare-item product-{$product.id_product}" data-id-product="{$product.id_product}" data-id-product-attribute="{$product.id_product_attribute}" itemscope itemtype="http://schema.org/Product">
+							<td class="product-miniature relative js-product-miniature leo-productscompare-item product-{$product.id_product}" data-id-product="{$product.id_product}" data-id-product-attribute="{$product.id_product_attribute}" itemscope itemtype="http://schema.org/Product">
 								<div class="delete-productcompare clearfix">
 									<a class="leo-compare-button btn delete" href="#" title="{l s='Remove from Compare' d='Modules.Leofeature.Shop'}" data-id-product="{$product.id_product}"><i class="material-icons">&#xE872;</i>
 									</a>

@@ -57,6 +57,10 @@
       <main id="wrapper">
         {hook h="displayWrapperTop"}
 
+        {if $page_name != 'index'}
+          <hr class="border-gray-1000 block w-full content-max:w-[1760px]"/>
+        {/if}
+
         {if isset($fullwidth_hook.displayHome) AND $fullwidth_hook.displayHome == 0}
           <div class="container">
         {/if}

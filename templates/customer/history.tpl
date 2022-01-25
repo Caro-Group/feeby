@@ -29,11 +29,11 @@
 {/block}
 
 {block name='page_content'}
-  <h6>{l s='Here are the orders you\'ve placed since your account was created.' d='Shop.Theme.Customeraccount'}</h6>
+  <h6 class="text-xs font-normal text-gray-3000">{l s='Here are the orders you\'ve placed since your account was created.' d='Shop.Theme.Customeraccount'}</h6>
 
   {if $orders}
     <table class="table table-striped table-bordered table-labeled hidden-sm-down">
-      <thead class="thead-default">
+      <thead class="thead-default text-main-dark">
         <tr>
           <th>{l s='Order reference' d='Shop.Theme.Checkout'}</th>
           <th>{l s='Date' d='Shop.Theme.Checkout'}</th>
@@ -46,8 +46,8 @@
       </thead>
       <tbody>
         {foreach from=$orders item=order}
-          <tr>
-            <th scope="row">{$order.details.reference}</th>
+          <tr class="text-main-dark">
+            <th scope="row" class="select-all">{$order.details.reference}</th>
             <td>{$order.details.order_date}</td>
             <td class="text-xs-right">{$order.totals.total.value}</td>
             <td class="hidden-md-down">{$order.details.payment}</td>
@@ -71,7 +71,7 @@
                 {l s='Details' d='Shop.Theme.Customeraccount'}
               </a>
               {if $order.details.reorder_url}
-                <a href="{$order.details.reorder_url}">{l s='Reorder' d='Shop.Theme.Actions'}</a>
+                <a class="whitespace-nowrap" href="{$order.details.reorder_url}">{l s='Reorder' d='Shop.Theme.Actions'}</a>
               {/if}
             </td>
           </tr>
@@ -83,8 +83,8 @@
       {foreach from=$orders item=order}
         <div class="order">
           <div class="row">
-            <div class="col-xs-10">
-              <a href="{$order.details.details_url}"><h3>{$order.details.reference}</h3></a>
+            <div class="col-xs-10 text-main-dark">
+              <a href="{$order.details.details_url}"><h3 class="font-body text-main-dark font-normal">{$order.details.reference}</h3></a>
               <div class="date">{$order.details.order_date}</div>
               <div class="total">{$order.totals.total.value}</div>
               <div class="status">

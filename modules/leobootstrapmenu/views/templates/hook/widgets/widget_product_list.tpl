@@ -27,7 +27,7 @@
 					{foreach from=$products item=product name=homeFeaturedProducts}
 						{math equation="(total%perLine)" total=$smarty.foreach.homeFeaturedProducts.total perLine=$nbItemsPerLine assign=totModulo}
 						{if $totModulo == 0}{assign var='totModulo' value=$nbItemsPerLine}{/if} 
-						<div class="product-miniature js-product-miniature" data-id-product="{$product.id_product}" data-id-product-attribute="{$product.id_product_attribute}" itemscope itemtype="http://schema.org/Product">
+						<div class="product-miniature relative js-product-miniature" data-id-product="{$product.id_product}" data-id-product-attribute="{$product.id_product_attribute}" itemscope itemtype="http://schema.org/Product">
 							<div class="thumbnail-container clearfix">
 								<div class="product-image">
 									{block name='product_thumbnail'}

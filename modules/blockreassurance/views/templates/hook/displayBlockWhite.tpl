@@ -23,7 +23,7 @@
 *  International Registered Trademark & Property of PrestaShop SA
 *}
 
-{if $page.page_name != 'index' && $page.page_name != 'module-psgdpr-gdpr' && $page.page_name != 'my-account' && $page.page_name != 'order-follow' && $page.page_name != 'order-slip' && $page.page_name != 'module-leofeature-mywishlist' && $page.page_name != 'address' &&$page.page_name != 'addresses' && $page.page_name != 'cart' && $page.page_name != 'discount' && $page.page_name != 'history' && $page.page_name != 'identity' && $page.page_name != 'myaccount' && $page.page_name != 'order' && $page.page_name != 'orderconfirmation' && $page.page_name != 'orderdetail' && $page.page_name != 'orderfollow' && $page.page_name != 'orderreturn' && $page.page_name != 'orderslip' && $page.page_name != 'checkout' }
+{if $page_name != 'index' && $page_name != 'module-psgdpr-gdpr' && $page_name != 'my-account' && $page_name != 'order-follow' && $page_name != 'order-slip' && $page_name != 'module-leofeature-mywishlist' && $page_name != 'address' &&$page_name != 'addresses' && $page_name != 'cart' && $page_name != 'discount' && $page_name != 'history' && $page_name != 'identity' && $page_name != 'myaccount' && $page_name != 'order' && $page_name != 'orderconfirmation' && $page_name != 'orderdetail' && $page_name != 'orderfollow' && $page_name != 'orderreturn' && $page_name != 'orderslip' && $page_name != 'checkout' && $page_name != 'success' && $page_name != 'authentication'  && $page_name != 'mywishlist'  && $page_name != 'gdpr' }
 
 
 <div class="max-w-screen-desktop-wide mx-auto px-2 tablet:px-8">

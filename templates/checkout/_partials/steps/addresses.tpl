@@ -29,7 +29,7 @@
    action="{url entity='order' params=['id_address' => $id_address]}"
    data-refresh-url="{url entity='order' params=['ajax' => 1, 'action' => 'addressForm']}"
  >
-   <div class="mb-14 pb-1">
+   <div>
      {if $use_same_address && !$cart.is_virtual}
        <p class="font-body font-light tablet:text-sm text-xs text-main-dark">
          {l s='The selected address will be used both as your personal address (for invoice) and as your delivery address.' d='Shop.Theme.Checkout'}
@@ -43,7 +43,7 @@
 
      {if !$use_same_address}
 
-       <h2 class="font-light font-medium">{l s='Your Invoice Address' d='Shop.Theme.Checkout'}</h2>
+       <h2 class="font-body font-light not-italic tablet:text-xl text-base">{l s='Your Invoice Address' d='Shop.Theme.Checkout'}</h2>
 
        {if $show_invoice_address_form}
          <div id="invoice-address">
@@ -75,7 +75,7 @@
      {/if}
 
      {if !$use_same_address}
-       <h2 class="h4 mb-4 mt-12">{l s='Shipping Address' d='Shop.Theme.Checkout'}</h2>
+       <h2 class="font-body font-light not-italic tablet:text-xl text-base mt-12">{l s='Shipping Address' d='Shop.Theme.Checkout'}</h2>
      {/if}
 
      {if $show_delivery_address_form}
@@ -105,8 +105,8 @@
        {/if}
 
        {if $use_same_address}
-         <a href="{$new_address_delivery_url}" class="mb-4 border-b text-main-dark w-full hover:text-main transition text-xs tablet:text-sm font-body ">
-           <svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" fill="none"><path fill="#181828" d="M0 3h7v1H0z"/><path fill="#181828" d="M4 0v7H3V0z"/></svg>
+         <a href="{$new_address_delivery_url}" class="mb-4  border-b text-main-dark w-full hover:text-main transition text-sm font-body ">
+         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none"><path fill="#181828" d="M0 5h12v1H0z"></path><path fill="#181828" d="M5 0v12H6V0z" class=""></path></svg>
            {l s='Different shipping delivery address' d='Shop.Theme.Actions'}
          </a>
        {/if}

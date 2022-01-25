@@ -47,7 +47,6 @@ p{
     }
     
     .owl-customized .owl-item .block-carousel-image-container img{
-        max-width: 70px;
         filter: invert(17%) sepia(49%) saturate(5868%) hue-rotate(328deg) brightness(101%) contrast(93%);
         @apply p-1 tablet:p-2 select-none;
     }
@@ -125,16 +124,16 @@ p{
     @apply transition;
 }
 
-.swiper-popular .swiper-pagination{
-    @apply hidden tablet:block
+.swiper-pagination.swiper-pagination-bullets-dynamic{
+    @apply hidden tablet:block h-4;
 }
 
-.swiper-popular .swiper-pagination-bullet{
-    @apply bg-transparent border border-solid border-main-dark transition w-3 h-3
+.swiper-pagination.swiper-pagination-bullets-dynamic .swiper-pagination-bullet{
+    @apply bg-transparent border border-solid border-main-dark transition w-3 h-3 top-[2px];
 }
 
-.swiper-popular .swiper-pagination-bullet-active{
-    @apply bg-black border-black transform scale-125
+.swiper-pagination.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active{
+    @apply bg-black border-black transform scale-125;
 }
 
 .swiper-banner .swiper-pagination .swiper-pagination-bullet{
@@ -388,17 +387,44 @@ input[type="text"] + .input-group-btn span:nth-of-type(2){
 
 
 /* product-desc-right-box - on product page right bar */
+.product-desc-right-box {
+    @apply tablet:ml-[60px];
+}
+
 .product-desc-right-box  .ApColumn .block{
     @apply mb-0;
 }
 
+.product-desc-right-box  .ApColumn:not(:first-child) .block{
+    @apply mb-[40px] tablet:pl-[20px];
+}
+
 .product-desc-right-box .ApColumn .title_block{
-    @apply font-header mb-5 text-xl;
+    @apply font-header mb-[15px] tablet:mb-5 text-xl font-normal italic normal-case text-main-dark;
+}
+
+.product-desc-right-box  .ApColumn:first-child .title_block{
+    @apply font-body font-normal mb-[40px] text-[20px] not-italic;
 }
 
 .product-desc-right-box .ApImage img{
-    @apply bg-gray-1000 rounded-[5px] w-full h-auto max-w-[60px] max-h-[60px];
+    @apply bg-gray-1000 rounded-[5px] w-full h-auto max-w-[60px] max-h-[60px] p-[7px];
 }
+
+.product-desc-right-box .ApImage .image_description p{
+    @apply font-body font-light text-[14px] tablet:text-base text-main-dark;
+}
+
+
+.product-description h2{
+    @apply font-body normal-case text-base tablet:text-[20px] font-normal;
+}
+
+.product-description p{
+    @apply font-body text-[14px] tablet:text-base;
+}
+
+
 
 .easypack-widget .map-widget .leaflet-popup .leaflet-popup-content-wrapper .point-wrapper p{
     @apply font-body text-white;
@@ -428,3 +454,43 @@ input[type="text"] + .input-group-btn span:nth-of-type(2){
 #checkout-summary-step .reassurance div{
     @apply border-b-0;
 }
+
+.view-leo-dropdown-additional.show i {
+    @apply transform rotate-180 translate-y-0;
+}
+
+.view-leo-dropdown-additional.show{
+    @apply bg-white;
+}
+
+#criterions_list .cancel{
+    @apply hidden;
+}
+
+div.star.star_on:before, div.star.star_hover:before{
+    content: "\f005";
+    @apply text-main;
+}
+
+.star:before{
+    content: "\f006";
+    @apply text-main;
+}
+
+.item-link:hover img{
+    filter: invert(17%) sepia(49%) saturate(5868%) hue-rotate(328deg) brightness(101%) contrast(93%) grayscale(0);
+}
+
+.item-link img{
+    filter: invert(17%) sepia(49%) saturate(5868%) hue-rotate(328deg) brightness(101%) contrast(93%) grayscale(1);
+    @apply h-12 w-12 mb-2 transition-all duration-200;
+}
+
+.page-customer-account .lql-social-login a, .page-customer-account .form-control-submit{
+    @apply ml-auto;
+}
+
+.view-wishlist-product.active i{
+    @apply text-main
+}
+

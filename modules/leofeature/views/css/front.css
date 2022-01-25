@@ -189,59 +189,22 @@
   float: left;
   margin: 0 1px;
   cursor: pointer;
-  font-size: 12px;
-  line-height: 14px; }
+  font-size: 20px;
+ }
   .rtl .cancel, .rtl .star {
     float: right; }
 
 div.star:before {
-  content: "\f005";
-  color: #ccc;
-  font-family: "FontAwesome";
-  display: inline-block; }
-
-div.star.star_on:before, div.star.star_hover:before {
-  content: "\f005";
-  color: #FFD314;
   font-family: "FontAwesome";
   display: inline-block; }
 
 #criterions_list {
   list-style-type: none; }
-  #criterions_list .star_content {
-    display: inline-block; }
-
-#criterions_list label {
-  display: inline;
-  float: left;
-  margin: 0 10px 0 0;
-  line-height: 13px; }
-  .rtl #criterions_list label {
-    float: right; }
-  .rtl #criterions_list label {
-    margin: 0 0 0 10px; }
 
 .star a {
   display: block;
   position: absolute;
   text-indent: -5000px; }
-
-.new_review_form_content #criterions_list {
-  padding-bottom: 5px;
-  list-style-type: none; }
-
-.new_review_form_content .form-group.has-error input, .new_review_form_content .form-group.has-error textarea {
-  outline: 2px solid #ff4c4c; }
-
-@media (max-width: 575px) {
-  .new_review_form_content {
-    margin-top: 10px;
-    text-align: center; }
-    .new_review_form_content #criterions_list li {
-      display: inline-block; }
-    .new_review_form_content .form-new-review .form-control-label {
-      text-align: center !important; } }
-
 
 .leo-modal-review .has-success, .leo-modal-review .has-danger {
   text-align: center; }
@@ -290,18 +253,6 @@ div.star.star_on:before, div.star.star_hover:before {
   align-items: center;
   -ms-flex-align: center;
   font-size: 12px; }
-
-#product_reviews_block_tab .review {
-  margin-bottom: 10px;
-  border-bottom: 1px solid #e5e5e5;
-  padding-bottom: 10px; }
-
-@media (min-width: 576px) {
-  #product_reviews_block_tab .review_author {
-    border-right: 1px solid #eee; }
-    .rtl #product_reviews_block_tab .review_author {
-      border-left: 1px solid #eee;
-      border-right: inherit; } }
 
 #product_reviews_block_tab .btn {
   padding: 0 5px;
@@ -593,8 +544,6 @@ div.star.star_on:before, div.star.star_hover:before {
       margin-left: 5px;
       margin-right: inherit; }
 
-.list-wishlist tr.show {
-  background-color: #d9edf7 !important; }
 
 .leo-view-wishlist-product-loading {
   display: none;
@@ -709,8 +658,6 @@ div.star.star_on:before, div.star.star_hover:before {
     -ms-transform: translateY(0px);
     -o-transform: translateY(0px);
     transform: translateY(0px); } }
-#_desktop_cart .leo-dropdown-cart-content {
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
 
 .leo-dropdown-cart {
   position: absolute; }
@@ -736,11 +683,11 @@ div.star.star_on:before, div.star.star_hover:before {
       transform: translateY(0px); }
   .leo-dropdown-cart.dropdown {
     top: 100%;
-    -webkit-transform: translateY(5px);
-    -moz-transform: translateY(5px);
-    -ms-transform: translateY(5px);
-    -o-transform: translateY(5px);
-    transform: translateY(5px);
+    -webkit-transform: translateY(-5px);
+    -moz-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    -o-transform: translateY(-5px);
+    transform: translateY(-5px);
     z-index: 999; }
   .leo-dropdown-cart.dropup {
     top: 100%;
@@ -762,8 +709,7 @@ div.star.star_on:before, div.star.star_hover:before {
   background: #fff;
   z-index: 99;
   min-width: 265px;
-  right: 0;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); }
+  right: 0;}
   .leo-dropdown-cart-content .leo-dropdown-list-item.active-scrollbar {
     overflow: auto; }
   .leo-dropdown-cart-content a.leo-dropdown-customization, .leo-dropdown-cart-content a.leo-dropdown-combination {
@@ -801,12 +747,6 @@ div.star.star_on:before, div.star.star_hover:before {
       float: left; }
     .rtl .leo-dropdown-cart-subtotals .value, .rtl .leo-dropdown-cart-total .value {
       text-align: left; }
-  .leo-dropdown-cart-subtotals .label, .leo-dropdown-cart-total .label {
-    float: left;
-    color: #666;
-    font-size: 13px;
-    text-transform: capitalize;
-    text-align: left; }
     .rtl .leo-dropdown-cart-subtotals .label, .rtl .leo-dropdown-cart-total .label {
       float: right; }
     .rtl .leo-dropdown-cart-subtotals .label, .rtl .leo-dropdown-cart-total .label {
@@ -910,8 +850,8 @@ div.star.star_on:before, div.star.star_hover:before {
     filter: alpha(opacity=100); }
 
 .leo-dropdown-cart-item.high-light, .leo-dropdown-cart-item.show-combination, .leo-dropdown-cart-item.show-customization, .leo-dropdown-cart-item.show-additional {
-  background-color: #f9f9f9;
-  z-index: 9999; }
+  z-index: 9999;
+  background-color: #f8f8f8; }
 
 .leo-dropdown-additional .view-customization {
   margin-top: 5px; }
@@ -972,52 +912,8 @@ div.star.star_on:before, div.star.star_hover:before {
 .view-leo-dropdown-additional {
   width: 25px;
   height: 25px;
-  background: #2c2c2c;
   position: relative;
   cursor: pointer; }
-  .view-leo-dropdown-additional.show {
-    background: #000; }
-    .view-leo-dropdown-additional.show:before {
-      -webkit-transform: rotate(-45deg);
-      -moz-transform: rotate(-45deg);
-      -ms-transform: rotate(-45deg);
-      -o-transform: rotate(-45deg);
-      transform: rotate(-45deg); }
-    .view-leo-dropdown-additional.show:after {
-      -webkit-transform: rotate(45deg);
-      -moz-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-      -o-transform: rotate(45deg);
-      transform: rotate(45deg); }
-  .view-leo-dropdown-additional:before, .view-leo-dropdown-additional:after {
-    content: "";
-    display: block;
-    width: 10px;
-    height: 3px;
-    background: white;
-    position: absolute;
-    top: 12px;
-    -webkit-transition: transform 0.3s;
-    -o-transition: transform 0.3s;
-    transition: transform 0.3s; }
-  .view-leo-dropdown-additional:before {
-    right: 10px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    transform: rotate(45deg); }
-  .view-leo-dropdown-additional:after {
-    right: 5px;
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px; }
 
 /*****************addition arrow END***********************/
 .leo-dropdown-overlay {

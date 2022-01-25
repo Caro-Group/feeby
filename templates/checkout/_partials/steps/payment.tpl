@@ -9,8 +9,8 @@
 
 {block name='step_content'}
   <div class="p-5 tablet:p-0">
-    <div class="flex flex-row mb-14">
-      <h2 class="border-0 border-b-[3px] rounded-b-sm border-main border-solid mb-0 pb-3">
+    <div class="flex flex-row mb-[30px] tablet:mb-14">
+      <h2 class="border-0 border-b-[3px] rounded-b-sm border-main border-solid mb-0 pb-2 tablet:pb-3 font-normal text-xl tablet:text-2xl">
         {l s='Payment method' d='Shop.Theme.Checkout'}
       </h2>
     </div>
@@ -28,11 +28,11 @@
         {l s='No payment needed for this order' d='Shop.Theme.Checkout'}
       </p>
     {/if}
-    <div class="payment-options {if $is_free}hidden{/if} mb-14 pb-1">
+    <div class="payment-options {if $is_free}hidden{/if} mb-10 pb-1">
       {foreach from=$payment_options item="module_options"}
         {foreach from=$module_options item="option"}
           <div>
-            <div id="{$option.id}-container" class="bg-gray-1000 flex flex-row mb-5 p-5 payment-option min-h-[55px] tablet:min-h-[80px] rounded-md">
+            <div id="{$option.id}-container" class="bg-gray-1000 flex flex-row mb-2.5 tablet:mb-5 p-5 payment-option min-h-[55px] tablet:min-h-[80px] rounded-md">
               {* This is the way an option should be selected when Javascript is enabled *}
               <span class="flex items-center tablet:ml-[10px]">
                 <input
@@ -92,13 +92,14 @@
       {/foreach}
     </div>
 
-    <div class="flex flex-wrap-reverse justify-between">
-      <button data-checkout-back="#checkout-delivery-step" class=" text-black bg-transparent border-0 uppercase whitespace-nowrap mb-2 flex items-center justify-between cursor-pointer">
+    <div class="flex flex-wrap-reverse justify-between mb-10 tablet:mb-[30px]">
+      <button data-checkout-back="#checkout-delivery-step" class="text-main-dark bg-transparent border-0 uppercase whitespace-nowrap flex items-center justify-between cursor-pointer">
         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" fill="none" class="mr-2"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.25 13.384 0 7.134V6.25L6.25 0l.884.884L1.95 6.067H15v1.25H1.95L7.135 12.5l-.884.884H6.25Z" fill="#181828"/></svg>
         {l s='Go back' d='Shop.Theme.Checkout'}
       </button>  
-      <button data-checkout-payment disabled class="ml-auto leading-5 bg-main hover:bg-main-hover duration-150 border-0 rounded-full text-white p-2 px-4 uppercase whitespace-nowrap mb-2 flex items-center justify-between cursor-pointer">
+      <button data-checkout-payment disabled class="w-full text-xs tablet:text-sm tablet:w-auto ml-auto bg-main hover:bg-main-hover duration-150 border-0 rounded-full text-white p-3 px-4 uppercase whitespace-nowrap mb-8 tablet:mb-0 flex items-center justify-between cursor-pointer">
         {l s='Go to the summary' d='Shop.Theme.Checkout'}
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" fill="none" class="ml-2 flex-0"><path fill-rule="evenodd" clip-rule="evenodd" d="m9.25 14.359 6.25-6.25v-.884L9.25.975l-.884.884 5.183 5.184H.5v1.25h13.05l-5.185 5.182.884.884h.001Z" fill="#fff"></path></svg>
       </button>
     </div>
   </div>

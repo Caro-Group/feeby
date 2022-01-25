@@ -23,17 +23,4 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 
-<section class="featured-products clearfix block">
-  	<h2 class="h2 products-section-title title_block text-uppercase">
-  		{l s='New products' d='Shop.Theme.Catalog'}
-  	</h2>
-  	<div class="block_content">
-	  	<div class="products">
-	    	{include file='catalog/_partials/miniatures/leo_col_products.tpl' products=$products}
-	  	</div>
-	  	<a href="{$allNewProductsLink}" class="all-product-link float-xs-left float-md-right btn btn-outline">
-	  		{l s='All new products' d='Shop.Theme.Catalog'}
-	  	</a>
-  	</div>
-</section>
-
+{include file='_partials/slider.tpl' type='products-new' products=$products title={l s='New products' d='Shop.Theme.Catalog'}}
