@@ -35,7 +35,7 @@
       {include file='customer/_partials/my-account-block.tpl' type='identity-link' link={$urls.pages.identity} title={l s='Information' d='Shop.Theme.Customeraccount'} icon="&#xE853;"}
 
       {if $customer.addresses|count}
-        {include file='customer/_partials/my-account-block.tpl' type='identity-link' link={$urls.pages.addresses} title={l s='Addresses' d='Shop.Theme.Customeraccount'} icon="&#xE567;"}
+        {include file='customer/_partials/my-account-block.tpl' type='addresses-link' link={$urls.pages.addresses} title={l s='Addresses' d='Shop.Theme.Customeraccount'} icon="&#xE567;"}
       {else}
         {include file='customer/_partials/my-account-block.tpl' type='address-link' link={$urls.pages.address} title={l s='Add first address' d='Shop.Theme.Customeraccount'} icon="&#xE567;"}
       {/if}

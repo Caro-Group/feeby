@@ -6,10 +6,4 @@
 * @description: Leo feature for prestashop 1.7: ajax cart, review, compare, wishlist at product list 
 *}
 
-<a class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="mywishlist-link" href="{$wishlist_link}">
-	<span class="link-item">
-		<i class="material-icons">&#xE87D;</i>
-		{l s='My Wishlist' d='Modules.Leofeature.Shop'}
-	</span>
-</a>
-
+{include file='customer/_partials/my-account-block.tpl' type='mywishlist-link' link={$wishlist_link} title={l s='My Wishlist' d='Modules.Leofeature.Shop'} icon="&#xE87D;"}
