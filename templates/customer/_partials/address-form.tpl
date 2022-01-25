@@ -48,7 +48,7 @@
       {/block}
 
       {block name="address_form_footer"}
-      <footer class="flex flex-wrap flex-col-reverse tablet:flex-row">
+      <footer class="flex flex-wrap flex-col-reverse tablet:flex-row items-baseline">
         <div class="w-0 desktop-presta:w-[220px]"></div>
         <input type="hidden" name="submitAddress" value="1">
         {block name='form_buttons'}

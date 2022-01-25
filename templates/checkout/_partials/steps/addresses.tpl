@@ -29,7 +29,7 @@
    action="{url entity='order' params=['id_address' => $id_address]}"
    data-refresh-url="{url entity='order' params=['ajax' => 1, 'action' => 'addressForm']}"
  >
-   <div class="mb-14 pb-1">
+   <div>
      {if $use_same_address && !$cart.is_virtual}
        <p class="font-body font-light tablet:text-sm text-xs text-main-dark">
          {l s='The selected address will be used both as your personal address (for invoice) and as your delivery address.' d='Shop.Theme.Checkout'}
