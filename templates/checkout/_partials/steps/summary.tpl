@@ -74,7 +74,7 @@
       {/if}
     </div>
 
-    <div class="flex flex-wrap-reverse justify-between items-center pb-[30px] border-0 border-b border-solid border-gray-1000 tablet:pb-0 tablet:border-b-0">
+    <div class="flex flex-wrap-reverse justify-between mb-[30px] desktop-presta:mb-0 items-center border-0 border-b border-solid border-gray-1000 tablet:border-b-0">
       <button data-checkout-back="#checkout-payment-step" class="text-main-dark bg-transparent border-0 uppercase whitespace-nowrap mb-2 flex items-center justify-between cursor-pointer">
         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" fill="none" class="mr-2"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.25 13.384 0 7.134V6.25L6.25 0l.884.884L1.95 6.067H15v1.25H1.95L7.135 12.5l-.884.884H6.25Z" fill="#181828"/></svg>
         {l s='Go back' d='Shop.Theme.Checkout'}
