@@ -18,7 +18,7 @@
         <div data-swiper-carousel class="swiper">
 
             <div class="swiper-wrapper desktop:justify-between pb-12">
-                {foreach from=$products item="product" as=$product}
+                {foreach from=$products item="product"}
                     <div class="slide relative shrink-0 transition-transform h-full w-[235px] tablet:w-[346px]">
                         {include file='catalog/_partials/miniatures/product.tpl' product=$product}
                     </div>
