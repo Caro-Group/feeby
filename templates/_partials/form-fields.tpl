@@ -32,8 +32,8 @@
 
   {if $field.name == 'company'}
 
-    <div id="company" class="pb-8 ">
-      <a class="block mb-8 border-b text-main-dark w-full desktop-presta:ml-[220px] mx-5 hover:text-main transition text-xs tablet:text-sm collapsed font-body" data-toggle="collapse" href="#collapseCompany" role="button" aria-expanded="false" aria-controls="collapseCompany">
+    <div id="company" class="pt-5 pb-2">
+      <a class="block border-b text-main-dark w-full desktop-presta:ml-[220px] mx-5 hover:text-main transition text-sm collapsed font-body" data-toggle="collapse" href="#collapseCompany" role="button" aria-expanded="false" aria-controls="collapseCompany">
       <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none"><path fill="#181828" d="M0 5h12v1H0z"></path><path fill="#181828" d="M5 0v12H6V0z" class=""></path></svg>
         {l s='Add tax identification number and company name' d='Shop.Theme.Checkout'}
       </a>
@@ -42,7 +42,7 @@
   {/if}
 
   <div class="flex flex-auto {if isset($theme)}flex-col{else}flex-col desktop-presta:flex-row{/if} mb-2 tablet:mb-[15px] {if !empty($field.errors)}has-error{/if}" data-field="{$field.type}">
-    <label class="font-body font-normal ml-5 mt-3 mb-1 tablet-medium:ml-0 desktop-presta:w-[220px] text-base tablet:text-xl text-main-dark text-left {if $field.required && $field.type !== 'checkbox'} required{/if}">
+    <label class="font-body font-normal ml-5 mt-2 mb-1 tablet-medium:ml-0 desktop-presta:w-[220px] text-base tablet:text-xl text-main-dark text-left {if $field.required && $field.type !== 'checkbox'} required{/if}">
       {if $field.type !== 'checkbox'}
         {$field.label}
       {/if}

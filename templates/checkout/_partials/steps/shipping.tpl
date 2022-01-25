@@ -27,7 +27,7 @@
  {block name='step_content'}
  
   <div class="border-0 border-b border-solid border-gray-1000 mb-8 p-5 tablet:p-0">
-    <div class="flex flex-row mb-14">
+    <div class="flex flex-row mb-7 tablet:mb-14 ">
       <h2 class="border-0 border-b-[3px] rounded-b-sm border-main border-solid mb-0 pb-2 tablet:pb-3 font-normal text-xl tablet:text-2xl">
         {l s='Data of the ordering person' d='Shop.Theme.Checkout'}
       </h2>
@@ -38,7 +38,7 @@
 
   <div class="{if !($customer.addresses|count) || $show_delivery_address_form || $show_invoice_address_form } pointer-events-none opacity-5 {/if} p-5 tablet:p-0">
 
-    <div class="flex flex-row mb-14 ">
+    <div class="flex flex-row mb-4 tablet:mb-5 ">
       <h2 class="border-0 border-b-[3px] rounded-b-sm border-main border-solid mb-0 pb-2 tablet:pb-3 font-normal text-xl tablet:text-2xl">
         {l s='Delivery method' d='Shop.Theme.Checkout'}
       </h2>
@@ -57,14 +57,14 @@
           method="post"
           aria-label="{l s='Shipping Address and Method' d='Shop.Theme.Checkout'}"
         >
-          <div class="form-fields mb-14 pb-1">
+          <div class="form-fields mb-7 tablet:mb-9 pb-1">
             {block name='delivery_options'}
               <div class="delivery-options flex flex-col flex-wrap">
                 {assign var="carrier_module" value=''}
                 {foreach from=$delivery_options item=carrier key=carrier_id name=delivery_options_loop}
                     {if isset($carrier.external_module_name) && $carrier.external_module_name != $carrier_module}
-                      <div class="flex flex-row flex-wrap justify-between items-baseline mb-5">
-                        <div class="font-body text-base text-main-dark tablet:text-xl font-normal">
+                      <div class="flex flex-row flex-wrap justify-between items-baseline mb-2 tablet:mb-4 ">
+                        <div class="font-body text-base text-main-dark tablet:text-xl font-normal ml-[15px] tablet:ml-0">
                           {if $carrier.external_module_name === ''}
                             {l s='Courier' d='Shop.Theme.Checkout'}
                           {elseif $carrier.external_module_name === 'gmparcellocker'}
@@ -79,7 +79,7 @@
                       </div>
                       {assign var="carrier_module" value=$carrier.external_module_name}
                     {/if}
-                    <div class="delivery-option bg-gray-1000 delivery-option flex flex-row mx-0 mb-5 px-[15px] tablet:px-5 py-3 tablet:py-4 rounded-md cursor-pointer" {if $carrier.id === 31 || $carrier.id === 32}onclick="gmParcelLockerChoose(this);return false;"{/if}>
+                    <div class="delivery-option bg-gray-1000 delivery-option flex flex-row mx-0 mb-2.5 tablet:mb-5 mt-2 tablet:mt-9 px-[15px] tablet:px-5 py-3 tablet:py-4 rounded-md cursor-pointer" {if $carrier.id === 31 || $carrier.id === 32}onclick="gmParcelLockerChoose(this);return false;"{/if}>
                       <div class="flex items-center justify-center mr-3 tablet:ml-3 tablet:mr-7">
                         <span class=" float-xs-left h-5">
                           <input type="radio" name="delivery_option[{$id_address_delivery}]" id="delivery_option_{$carrier.id}" value="{$carrier_id}"{if ($smarty.foreach.delivery_options_loop.index == 0 && $delivery_option != $carrier_id) || $delivery_option == $carrier_id} checked{/if} class="cursor-pointer after:absolute after:content-[''] after:h-[10px] after:m-[3px] after:rounded-sm after:transition after:w-[10px] appearance-none border-2 border-gray-3000 border-solid checked:after:bg-main checked:bg-white checked:border-main checked:focus:bg-white checked:focus:border-main checked:focus:ring-transparent checked:focus:shadow-none checked:hover:bg-white checked:hover:border-main checked:ring-0 checked:ring-transparent focus:ring-0 focus:ring-offset-0 focus:ring-transparent h-5 outline-none ring-transparent rounded transition transition-all w-5" />
@@ -141,7 +141,7 @@
             </div>
           </div>
   
-          <div class="flex flex-col-reverse flex-wrap items-baseline justify-between tablet:flex-row tablet:items-center mb-10 tablet:mb-[30px]">
+          <div class="flex flex-col-reverse flex-wrap items-baseline justify-between tablet:flex-row tablet:items-center mb-4 tablet:mb-[30px]">
             <button data-checkout-back="#checkout-personal-information-step" class="text-main-dark bg-transparent border-0 uppercase whitespace-nowrap mb-0 flex items-center justify-between cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" fill="none" class="mr-2"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.25 13.384 0 7.134V6.25L6.25 0l.884.884L1.95 6.067H15v1.25H1.95L7.135 12.5l-.884.884H6.25Z" fill="#181828"/></svg>{l s='Go back' d='Shop.Theme.Checkout'}</button>  
             <button type="submit" class="continue w-full text-xs tablet:text-sm tablet:w-auto bg-main hover:bg-main-hover duration-150 border-0 rounded-full text-white p-3 px-4 uppercase whitespace-nowrap mb-8 tablet:mb-0 flex items-center justify-between ml-auto cursor-pointer" name="confirmDeliveryOption" value="1">
               {l s='Continue' d='Shop.Theme.Actions'}
