@@ -22744,7 +22744,6 @@ body#authentication .page-header {
   .leo-fly-cart[data-type="slidebar_bottom"] {
     margin: 20px; } }
 .leo-quicklogin-form .lql-bt {
-  font-weight: 600;
   text-transform: capitalize; }
 .leo-quicklogin-form h3,
 .leo-quicklogin-form .leo-register-title,
