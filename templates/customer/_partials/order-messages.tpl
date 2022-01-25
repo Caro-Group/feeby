@@ -45,9 +45,9 @@
   <section class="order-message-form box">
     <form action="{$urls.pages.order_detail}" method="post">
 
-      <header>
-        <h3>{l s='Add a message' d='Shop.Theme.Customeraccount'}</h3>
-        <p>{l s='If you would like to add a comment about your order, please write it in the field below.' d='Shop.Theme.Customeraccount'}</p>
+      <header class="mb-7">
+        <h3 class="font-body text-main-dark font-medium">{l s='Add a message' d='Shop.Theme.Customeraccount'}</h3>
+        <p class="font-body text-main-dark">{l s='If you would like to add a comment about your order, please write it in the field below.' d='Shop.Theme.Customeraccount'}</p>
       </header>
 
       <section class="form-fields">
@@ -55,7 +55,7 @@
         <div class="form-group row">
           <label class="col-md-3 form-control-label">{l s='Product' d='Shop.Forms.Labels'}</label>
           <div class="col-md-5">
-            <select name="id_product" class="form-control form-control-select">
+            <select name="id_product" class="form-control form-control-select font-body font-medium border border-gray-1000 rounded-full pl-4 bg-gray-1000 w-full focus:border-gray-3000 focus:ring-0 w-full form-control-select font-medium js-country">
               <option value="0">{l s='-- please choose --' d='Shop.Forms.Labels'}</option>
               {foreach from=$order.products item=product}
                 <option value="{$product.id_product}">{$product.name}</option>
@@ -73,9 +73,9 @@
 
       </section>
 
-      <footer class="form-footer text-sm-center">
+      <footer class="form-footer text-sm-center flex">
         <input type="hidden" name="id_order" value="{$order.details.id}">
-        <button type="submit" name="submitMessage" class="btn btn-primary form-control-submit">
+        <button type="submit" name="submitMessage" class="form-control-submit bg-main ml-auto w-full tablet:w-auto hover:bg-main-hover duration-150 border-0 rounded-full text-white p-2 px-4 uppercase whitespace-nowrap mb-8 tablet:mb-2 cursor-pointer">
           {l s='Send' d='Shop.Theme.Actions'}
         </button>
       </footer>
