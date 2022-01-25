@@ -159,7 +159,7 @@
             >
             <span class="input-group-btn group absolute right-0 top-0 w-auto">
               <button
-                class="btn btn-outline"
+                class="btn btn-outline opacity-0 w-12"
                 type="button"
                 data-action="show-password"
                 data-text-show="{l s='Show' d='Shop.Theme.Actions'}"
