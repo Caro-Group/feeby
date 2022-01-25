@@ -16,7 +16,7 @@
         <p class="w-full text-main-dark font-light text-sm tablet:text-base font-body">{l s='Data sheet' d='Shop.Theme.Catalog'}</p>
         <dl class="block data-sheet">
           {foreach from=$product.grouped_features item=feature}
-            <dt class="name mb-[2px] p-5 bg-gray-1000 w-[250px] text-main-dark font-medium text-sm tablet:text-base float-left">{$feature.name}</dt>
+            <dt class="name mb-[2px] p-5 bg-gray-1000 w-auto tablet:w-[250px] text-main-dark font-medium text-sm tablet:text-base float-left">{$feature.name}</dt>
             <dd class="value mb-[2px] p-5 bg-gray-1000 w-full text-main-dark font-light text-sm tablet:text-base">
               {if $feature.id_feature === '3' && $category->id_parent === '582'}
                 <a href="{$link->getCategoryLink($category->id_category, $category->link_rewrite)|escape:'html':'UTF-8'}">
