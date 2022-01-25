@@ -11,7 +11,7 @@
 		    {if $product.description}
 		    	<li class="nav-item mr-[79px]">
 				   <a
-					 class="font-header text-[25px] text-gray-3000 border-0 border-b-[3px] border-solid rounded-b-[3px] nav-link font-italic{if $product.description} active{/if}"
+					 class="font-header text-base tablet:text-[25px] text-gray-3000 border-0 border-b-[3px] border-solid rounded-b-[3px] nav-link font-italic{if $product.description} active{/if}"
 					 data-toggle="tab"
 					 href="#description"
 					 role="tab"
@@ -21,7 +21,7 @@
 	    	{/if}
 		    <li class="nav-item mr-[79px]">
 				<a
-				  class="font-header text-[25px] text-gray-3000 border-0 border-b-[3px] border-solid rounded-b-[3px] nav-link font-italic{if !$product.description} active{/if}"
+				  class="font-header text-base tablet:text-[25px] text-gray-3000 border-0 border-b-[3px] border-solid rounded-b-[3px] nav-link font-italic{if !$product.description} active{/if}"
 				  data-toggle="tab"
 				  href="#product-details"
 				  role="tab"
@@ -31,7 +31,7 @@
 		    {if $product.attachments}
 				<li class="nav-item mr-[79px]">
 				  <a
-					class="font-header text-[25px] text-gray-3000 border-0 border-b-[3px] border-solid rounded-b-[3px] nav-link font-italic"
+					class="font-header text-base tablet:text-[25px] text-gray-3000 border-0 border-b-[3px] border-solid rounded-b-[3px] nav-link font-italic"
 					data-toggle="tab"
 					href="#attachments"
 					role="tab"
@@ -41,7 +41,7 @@
 		    {foreach from=$product.extraContent item=extra key=extraKey}
 			    <li class="nav-item mr-[79px]">
 				  <a
-					class="font-header text-[25px] text-gray-3000 border-0 border-b-[3px] border-solid rounded-b-[3px] nav-link font-italic"
+					class="font-header text-base tablet:text-[25px] text-gray-3000 border-0 border-b-[3px] border-solid rounded-b-[3px] nav-link font-italic"
 					data-toggle="tab"
 					href="#extra-{$extraKey}"
 					role="tab"

@@ -17,7 +17,7 @@
   </div>
 {else}
 	<li class="nav-item">
-	  <a class="font-header text-[25px] text-gray-3000 border-0 border-b-[3px] border-solid rounded-b-[3px] nav-link leo-product-show-review-title active font-italic" data-toggle="tab" href="#leo-product-show-review-content">{l s='Reviews' d='Modules.Leofeature.Shop'}</a>
+	  <a class="font-header text-base tablet:text-[25px] text-gray-3000 border-0 border-b-[3px] border-solid rounded-b-[3px] nav-link leo-product-show-review-title active font-italic" data-toggle="tab" href="#leo-product-show-review-content">{l s='Reviews' d='Modules.Leofeature.Shop'}</a>
 	</li>
 {/if}
 
