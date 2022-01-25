@@ -54,7 +54,7 @@
 		   	<div class="tab-pane pt-0 tablet:p-5 tablet:pt-8 fade in{if $product.description} active{/if}" id="description" role="tabpanel">
 		     	{block name='product_description'}
 					<div class="flex flex-wrap product-desc-wrapper">
-		       			<div class="w-full tablet:w-1/2 product-description mb-5">
+		       			<div class="w-full tablet:w-1/2 product-description mb-[60px] tablet:mb-5">
 						   <h2 class="h2 product-title" itemprop="name">{$product.name}</h2>
 						   {$product.description nofilter}
 						</div>
