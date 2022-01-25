@@ -490,3 +490,7 @@ div.star.star_on:before, div.star.star_hover:before{
     @apply ml-auto;
 }
 
+.view-wishlist-product.active i{
+    @apply text-main
+}
+
