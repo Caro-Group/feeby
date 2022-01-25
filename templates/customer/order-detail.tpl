@@ -81,7 +81,7 @@
 
   {block name='order_history'}
     <section id="order-history" class="box">
-      <h3>{l s='Follow your order\'s status step-by-step' d='Shop.Theme.Customeraccount'}</h3>
+      <h3 class="font-body text-main-dark">{l s='Follow your order\'s status step-by-step' d='Shop.Theme.Customeraccount'}</h3>
       <table class="table table-striped table-bordered table-labeled hidden-xs-down">
         <thead class="thead-default">
           <tr>
