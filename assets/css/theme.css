@@ -22255,7 +22255,7 @@ div.slick-arrows .slick-arrow.slick-prev:before {
   content: "\e64a"; }
 
 div.slick-arrows .slick-arrow.slick-next:before {
-  content: "\e649"; }
+  content: "\e649"; font-family: 'themify';}
 
 @media (max-width: 991px) {
   .modal-dialog {
