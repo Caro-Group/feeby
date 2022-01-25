@@ -477,3 +477,11 @@ div.star.star_on:before, div.star.star_hover:before{
     @apply text-main;
 }
 
+.item-link:hover img{
+    filter: invert(17%) sepia(49%) saturate(5868%) hue-rotate(328deg) brightness(101%) contrast(93%);
+}
+
+.item-link img{
+    @apply transition duration-200;
+}
+
