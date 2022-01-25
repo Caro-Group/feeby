@@ -34,7 +34,7 @@
               name="qty"
               id="quantity_wanted"
               value="{$product.quantity_wanted}"
-              class="input-group -mr-5 border border-gray-2000 border-solid float-left focus:ring-0 font-normal h-[50px] pl-1 pr-5 py-3 rounded-md tablet:text-base text-center text-lg text-sm w-[75px]"
+              class="input-group -mr-5 border border-gray-2000 border-solid float-left focus:ring-0 font-normal h-[40px] tablet:h-[50px] pl-1 pr-5 py-3 rounded-md tablet:text-base text-center text-lg text-sm w-[75px]"
               min="{$product.minimal_quantity}"
               aria-label="{l s='Quantity' d='Shop.Theme.Actions'}"
             >
