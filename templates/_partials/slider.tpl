@@ -22,6 +22,13 @@
                     <div class="slide relative shrink-0 transition-transform h-full w-[235px] tablet:w-[346px]">
                         {include file='catalog/_partials/miniatures/product.tpl' product=$product}
                     </div>
+                    {if $item@last}
+                        {if $item@total < 4}
+                            {for $i=1 to (4 - $item@total)}
+                                <div class="slide relative shrink-0 transition-transform h-full w-[235px] tablet:w-[346px] hidden tablet:block"></div>
+                            {/for}
+                        {/if}
+                      {/if}
                 {/foreach}
             </div>
             
