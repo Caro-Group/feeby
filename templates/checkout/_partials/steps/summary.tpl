@@ -75,7 +75,7 @@
     </div>
 
     <div class="flex flex-wrap-reverse justify-between mb-[30px] desktop-presta:mb-0 items-center border-0 border-b border-solid border-gray-1000 tablet:border-b-0">
-      <button data-checkout-back="#checkout-payment-step" class="text-main-dark bg-transparent border-0 uppercase whitespace-nowrap mb-2 flex items-center justify-between cursor-pointer">
+      <button data-checkout-back="#checkout-payment-step" class="text-main-dark bg-transparent border-0 uppercase whitespace-nowrap flex items-center justify-between cursor-pointer">
         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" fill="none" class="mr-2"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.25 13.384 0 7.134V6.25L6.25 0l.884.884L1.95 6.067H15v1.25H1.95L7.135 12.5l-.884.884H6.25Z" fill="#181828"/></svg>
         {l s='Go back' d='Shop.Theme.Checkout'}
       </button>  
@@ -83,8 +83,9 @@
       <div class="ml-auto tablet:w-auto w-full">
         <div id="payment-confirmation">
           <div class="ps-shown-by-js">
-            <button type="submit" disabled="disabled" class="w-full tablet:w-auto text-xs tablet:text-sm btn bg-main hover:bg-main-hover duration-150 border-0 rounded-full text-white p-3 px-4 uppercase whitespace-nowrap mb-8 tablet:mb-2 flex items-center justify-between cursor-pointer">
+            <button type="submit" disabled="disabled" class="w-full tablet:w-auto text-xs tablet:text-sm btn bg-main hover:bg-main-hover duration-150 border-0 rounded-full text-white p-3 px-4 uppercase whitespace-nowrap mb-8 tablet:mb-0 flex items-center justify-between cursor-pointer">
               {l s='Order with an obligation to pay' d='Shop.Theme.Checkout'}
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" fill="none" class="ml-2 flex-0"><path fill-rule="evenodd" clip-rule="evenodd" d="m9.25 14.359 6.25-6.25v-.884L9.25.975l-.884.884 5.183 5.184H.5v1.25h13.05l-5.185 5.182.884.884h.001Z" fill="#fff"></path></svg>
             </button>
           </div>
           <div class="ps-hidden-by-js">
