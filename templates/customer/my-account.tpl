@@ -33,12 +33,6 @@
     <div class="links">
 
       {include file='_partials/my-account-block.tpl' type='identity-link' link={$urls.pages.identity} title={l s='Information' d='Shop.Theme.Customeraccount'} icon="&#xE853;"}
-      <a class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="identity-link" href="{$urls.pages.identity}">
-        <span class="link-item">
-          <i class="material-icons">&#xE853;</i>
-          {l s='Information' d='Shop.Theme.Customeraccount'}
-        </span>
-      </a>
 
       {if $customer.addresses|count}
         {include file='_partials/my-account-block.tpl' type='identity-link' link={$urls.pages.addresses} title={l s='Addresses' d='Shop.Theme.Customeraccount'} icon="&#xE567;"}
