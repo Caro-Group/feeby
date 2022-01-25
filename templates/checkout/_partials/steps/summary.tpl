@@ -20,7 +20,7 @@
   </div>
   
   <div class="mx-[30px] tablet:mx-0">
-    <div id="delivery" class="border-0 border-gray-1000 border-solid border-t mt-20 px-[30px] py-2 tablet:border-b tablet:border-t-0 tablet:mt-0 tablet:pb-5 tablet:py-0">
+    <div id="delivery" class="border-0 border-gray-1000 border-solid border-t mt-[68px] py-2 tablet:border-b tablet:border-t-0 tablet:mt-0 tablet:pb-5 tablet:py-0">
       <a class=" text-black w-full collapsed mb-4 text-main-dark w-full hover:text-main transition text-sm font-body " data-toggle="collapse" href="#collapseDeliveryMessage" role="button" aria-expanded="false" aria-controls="collapseDeliveryMessage">
         <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" fill="none"><path fill="#181828" d="M0 3h7v1H0z"/><path fill="#181828" d="M4 0v7H3V0z"/></svg>
         {l s='Add information for the store' d='Shop.Theme.Checkout'}
@@ -37,7 +37,7 @@
       </form>
     </div>
 
-    <div class="mb-[30px] tablet:mb-10 pb-1">
+    <div class="mb-4 tablet:mb-10 pb-1">
       {if $conditions_to_approve|count}
         <p class="ps-hidden-by-js">
           {* At the moment, we're not showing the checkboxes when JS is disabled
@@ -74,7 +74,7 @@
       {/if}
     </div>
 
-    <div class="flex flex-wrap-reverse justify-between mb-[30px] desktop-presta:mb-0 items-center border-0 border-b border-solid border-gray-1000 tablet:border-b-0">
+    <div class="flex flex-wrap-reverse justify-between pb-[30px] desktop-presta:mb-0 items-center border-0 border-b border-solid border-gray-1000 tablet:border-b-0">
       <button data-checkout-back="#checkout-payment-step" class="text-main-dark bg-transparent border-0 uppercase whitespace-nowrap flex items-center justify-between cursor-pointer">
         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" fill="none" class="mr-2"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.25 13.384 0 7.134V6.25L6.25 0l.884.884L1.95 6.067H15v1.25H1.95L7.135 12.5l-.884.884H6.25Z" fill="#181828"/></svg>
         {l s='Go back' d='Shop.Theme.Checkout'}
