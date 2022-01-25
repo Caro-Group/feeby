@@ -40,7 +40,7 @@
   </section>
 
   {block name='customer_form_footer'}
-    <footer class="clearfix flex flex-col-reverse form-footer items-baseline items-center tablet:flex-row">
+    <footer class="clearfix flex flex-col-reverse form-footer items-baseline items-center tablet:flex-row mb-10 tablet:mb-[30px]">
       <input type="hidden" name="submitCreate" value="1">
       {block "form_buttons"}
         <button class="form-control-submit bg-main-dark border-0 cursor-pointer duration-150 flex font-body hover:text-white hover:bg-black items-center justify-between max-w-[320px] mb-3 px-5 py-3 rounded-full tablet:max-w-[300px] text-white text-xs  tablet:text-sm uppercase w-full whitespace-nowrap" data-link-action="save-customer" type="submit">

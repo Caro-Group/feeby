@@ -1011,8 +1011,6 @@ body#checkout .custom-checkbox em {
 .input-group.focus {
   outline: 0; }
 
-body#checkout section.checkout-step .form-footer {
-  margin: 30px 0 10px; }
   body#checkout section.checkout-step .form-footer button.btn {
     float: none !important;
     min-width: 50%; }
