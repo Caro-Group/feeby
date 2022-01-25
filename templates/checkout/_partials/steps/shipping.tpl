@@ -38,7 +38,7 @@
 
   <div class="{if !($customer.addresses|count) || $show_delivery_address_form || $show_invoice_address_form } pointer-events-none opacity-5 {/if} p-5 tablet:p-0">
 
-    <div class="flex flex-row mb-2.5 tablet:mb-5 ">
+    <div class="flex flex-row mb-2.5 tablet:mb-7 ">
       <h2 class="border-0 border-b-[3px] rounded-b-sm border-main border-solid mb-0 pb-2 tablet:pb-3 font-normal text-xl tablet:text-2xl">
         {l s='Delivery method' d='Shop.Theme.Checkout'}
       </h2>
@@ -63,7 +63,7 @@
                 {assign var="carrier_module" value=''}
                 {foreach from=$delivery_options item=carrier key=carrier_id name=delivery_options_loop}
                     {if isset($carrier.external_module_name) && $carrier.external_module_name != $carrier_module}
-                      <div class="flex flex-row flex-wrap justify-between items-baseline mb-2 tablet:mb-4 mt-4 tablet:mt-9">
+                      <div class="flex flex-row flex-wrap justify-between items-baseline mb-2 tablet:mb-4 mt-4 tablet:mt-7">
                         <div class="font-body text-base text-main-dark tablet:text-xl font-normal ml-[15px] tablet:ml-0">
                           {if $carrier.external_module_name === ''}
                             {l s='Courier' d='Shop.Theme.Checkout'}
