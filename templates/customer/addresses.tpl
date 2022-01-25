@@ -29,9 +29,9 @@
 {/block}
 
 {block name='page_content'}
-  <div class="row">
+  <div class="flex flex-wrap">
     {foreach $customer.addresses as $address}
-      <div class="col-lg-4 col-md-6 col-sm-6">
+      <div class="w-full phablet:w-1/2 tablet-medium:w-1/3 p-2.5">
       {block name='customer_address'}
         {include file='customer/_partials/block-address.tpl' address=$address}
       {/block}

@@ -18663,16 +18663,6 @@ body#checkout #gift_message {
   margin: 0 auto; }
 
 /*** Addresses page ***/
-.page-addresses .address {
-  -moz-box-shadow: 2px 2px 11px 0px rgba(0, 0, 0, 0.1);
-  -webkit-box-shadow: 2px 2px 11px 0px rgba(0, 0, 0, 0.1);
-  -o-box-shadow: 2px 2px 11px 0px rgba(0, 0, 0, 0.1);
-  -ms-box-shadow: 2px 2px 11px 0px rgba(0, 0, 0, 0.1);
-  box-shadow: 2px 2px 11px 0px rgba(0, 0, 0, 0.1);
-  background: white;
-  margin-bottom: 30px;
-  font-size: 13px;
-  color: #414141; }
   .page-addresses .address .address-body {
     padding: 16px; }
     .page-addresses .address .address-body h4 {
