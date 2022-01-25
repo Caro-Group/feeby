@@ -27,7 +27,7 @@
     {if !empty($group.attributes)}
 
       <div class="clearfix product-variants-item flex flex-col items-start mb-5">
-        <span class="block text-sm text-gray-main text-base leading-normal mb-[10px] font-light">
+        <span class="block text-[14px] text-gray-main text-base leading-normal mb-[10px] font-light">
           {if $group.group_name == "Rozmiar"}
             {l s='Choose size' d='Shop.Theme.Actions'}
           {elseif $group.group_name == "Rodzaj fototapety"}
@@ -84,7 +84,7 @@
           
         {/if}
 
-        <span class="block leading-normal text-base text-[#ADAFBA] text-sm">
+        <span class="block leading-normal text-[14px] tablet:text-base text-[#ADAFBA]">
           {if $group.group_name == "Rozmiar"}
 
             {l s='See' d='Shop.Theme.Actions'} <a class="underline font-medium text-[#ADAFBA]" href="/tabela-rozmiarow" target="_blank">{l s='table size' d='Shop.Theme.Actions'}</a>
