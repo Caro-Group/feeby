@@ -9,7 +9,7 @@
 
 {block name='step_content'}
   <div class="p-5 tablet:p-0">
-    <div class="flex flex-row mb-14">
+    <div class="flex flex-row mb-[30px] tablet:mb-14">
       <h2 class="border-0 border-b-[3px] rounded-b-sm border-main border-solid mb-0 pb-2 tablet:pb-3 font-normal text-xl tablet:text-2xl">
         {l s='Payment method' d='Shop.Theme.Checkout'}
       </h2>
@@ -32,7 +32,7 @@
       {foreach from=$payment_options item="module_options"}
         {foreach from=$module_options item="option"}
           <div>
-            <div id="{$option.id}-container" class="bg-gray-1000 flex flex-row mb-5 p-5 payment-option min-h-[55px] tablet:min-h-[80px] rounded-md">
+            <div id="{$option.id}-container" class="bg-gray-1000 flex flex-row mb-2.5 tablet:mb-5 p-5 payment-option min-h-[55px] tablet:min-h-[80px] rounded-md">
               {* This is the way an option should be selected when Javascript is enabled *}
               <span class="flex items-center tablet:ml-[10px]">
                 <input
