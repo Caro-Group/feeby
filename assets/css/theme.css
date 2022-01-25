@@ -18803,36 +18803,6 @@ body#checkout #gift_message {
   content: "";
   display: block;
   clear: both; }
-.page-my-account #content .links a {
-  text-align: center;
-  display: inline-block;
-  font-size: 13px;
-  text-transform: uppercase;
-  color: #878787;
-  padding: 0 10px;
-  margin: 15px 0; }
-  .page-my-account #content .links a span.link-item {
-    display: block;
-    height: 100%;
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
-    -o-box-shadow: none;
-    -ms-box-shadow: none;
-    box-shadow: none;
-    background: white;
-    padding: 16px;
-    border: 0;
-    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.2); }
-  .page-my-account #content .links a i {
-    display: block;
-    font-size: 2.6rem;
-    width: 100%;
-    color: #414141;
-    padding-bottom: 3.4rem; }
-  .page-my-account #content .links a:hover {
-    color: #414141; }
-    .page-my-account #content .links a:hover i {
-      color: #f44d51; }
 
 .page-footer .text-sm-center {
   text-align: center; }

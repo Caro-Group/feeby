@@ -27,6 +27,7 @@
 {block name='head_seo' prepend}
   <link rel="canonical" href="{$product.canonical_url}">
 {/block}
+
 {block name='head' append}
   <meta property="og:type" content="product">
   <meta property="og:url" content="{$urls.current_url}">
@@ -167,97 +168,35 @@
 
 
 
-<aside class="products-aside">
-{hook h='displayApSC' sc_key=sc2585205791}
-</aside>
+      <aside class="products-aside">
+        {hook h='displayApSC' sc_key=sc2585205791}
+      </aside>
 
-
-{block name='product_accessories'}
-  {if $accessories}
-    <section class="product-accessories clearfix">
-      <h3 class="h5 products-section-title">{l s='You might also like' d='Shop.Theme.Catalog'}</h3>
-      <div class="products" itemscope itemtype="http://schema.org/ItemList">
-        <div class="owl-row {if isset($productClassWidget)} {$productClassWidget}{/if}">
-          <div id="category-products2" class="owl-carousel owl-theme owl-loading">
-            {foreach from=$accessories item="product_accessory" key="position"}
-              <div class="item{if $smarty.foreach.mypLoop.index == 0} first{/if}">
-                {block name='product_miniature'}
-                  {if isset($productProfileDefault) && $productProfileDefault}
-                      {* exits THEME_NAME/profiles/profile_name.tpl -> load template*}
-                      {hook h='displayLeoProfileProduct' product=$product_accessory profile=$productProfileDefault}
-                  {else}
-                      {include file='catalog/_partials/miniatures/product.tpl' product=$product_accessory position=$position}
-                  {/if}
-                {/block}
+      {block name='product_accessories'}
+        {if $accessories}
+          <section class="product-accessories clearfix">
+            <h3 class="h5 products-section-title">{l s='You might also like' d='Shop.Theme.Catalog'}</h3>
+            <div class="products" itemscope itemtype="http://schema.org/ItemList">
+              <div class="owl-row {if isset($productClassWidget)} {$productClassWidget}{/if}">
+                <div id="category-products2" class="owl-carousel owl-theme owl-loading">
+                  {foreach from=$accessories item="product_accessory" key="position"}
+                    <div class="item{if $smarty.foreach.mypLoop.index == 0} first{/if}">
+                      {block name='product_miniature'}
+                        {if isset($productProfileDefault) && $productProfileDefault}
+                            {* exits THEME_NAME/profiles/profile_name.tpl -> load template*}
+                            {hook h='displayLeoProfileProduct' product=$product_accessory profile=$productProfileDefault}
+                        {else}
+                            {include file='catalog/_partials/miniatures/product.tpl' product=$product_accessory position=$position}
+                        {/if}
+                      {/block}
+                    </div>
+                  {/foreach}
+                </div>
               </div>
-            {/foreach}
-          </div>
-        </div>
-      </div>
-    </section>
-  {/if}
-{/block}
-
-
-
-<script type="text/javascript">
-  products_list_functions.push(
-    function(){
-      if($('#category-products2').parents('.tab-pane').length)
-      {   
-          if(!$('#category-products2').parents('.tab-pane').hasClass('active'))
-          {
-              var width_owl_active_tab = $('#category-products2').parents('.tab-pane').siblings('.active').find('.owl-carousel').width();   
-              $('#category-products2').width(width_owl_active_tab);
-          }
-      }
-      $('#category-products2').owlCarousel({
-        {if isset($IS_RTL) && $IS_RTL}
-          direction:'rtl',
-        {else}
-          direction:'ltr',
+            </div>
+          </section>
         {/if}
-        items : 4,
-        itemsCustom : false,
-        itemsDesktop : [1200, 4],
-        itemsDesktopSmall : [992, 3],
-        itemsTablet : [768, 2],
-        itemsTabletSmall : false,
-        itemsMobile : [480, 1],
-        singleItem : false,         // true : show only 1 item
-        itemsScaleUp : false,
-        slideSpeed : 200,  //  change speed when drag and drop a item
-        paginationSpeed :800, // change speed when go next page
-
-        autoPlay : false,   // time to show each item
-        stopOnHover : false,
-        navigation : true,
-        navigationText : ["&lsaquo;", "&rsaquo;"],
-
-        scrollPerPage :true,
-        responsive :true,
-        
-        pagination : false,
-        paginationNumbers : false,
-        
-        addClassActive : true,
-        
-        mouseDrag : true,
-        touchDrag : true,
-
-        addClassActive :    true,
-        afterInit: OwlLoaded,
-        afterAction : SetOwlCarouselFirstLast,
-
-      });
-    }
-  );
-  function OwlLoaded(el){
-    el.removeClass('owl-loading').addClass('owl-loaded').parents('.owl-row').addClass('hide-loading');
-    if ($(el).parents('.tab-pane').length && !$(el).parents('.tab-pane').hasClass('active'))
-        el.width('100%');
-  };
-</script>
+      {/block}
 
       {block name='product_footer'}
         {hook h='displayFooterProduct' product=$product category=$category}
