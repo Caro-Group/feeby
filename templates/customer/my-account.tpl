@@ -32,28 +32,28 @@
   <div class="row">
     <div class="links">
 
-      {include file='_partials/my-account-block.tpl' type='identity-link' link={$urls.pages.identity} title={l s='Information' d='Shop.Theme.Customeraccount'} icon="&#xE853;"}
+      {include file='customer/_partials/my-account-block.tpl' type='identity-link' link={$urls.pages.identity} title={l s='Information' d='Shop.Theme.Customeraccount'} icon="&#xE853;"}
 
       {if $customer.addresses|count}
-        {include file='_partials/my-account-block.tpl' type='identity-link' link={$urls.pages.addresses} title={l s='Addresses' d='Shop.Theme.Customeraccount'} icon="&#xE567;"}
+        {include file='customer/_partials/my-account-block.tpl' type='identity-link' link={$urls.pages.addresses} title={l s='Addresses' d='Shop.Theme.Customeraccount'} icon="&#xE567;"}
       {else}
-        {include file='_partials/my-account-block.tpl' type='address-link' link={$urls.pages.address} title={l s='Add first address' d='Shop.Theme.Customeraccount'} icon="&#xE567;"}
+        {include file='customer/_partials/my-account-block.tpl' type='address-link' link={$urls.pages.address} title={l s='Add first address' d='Shop.Theme.Customeraccount'} icon="&#xE567;"}
       {/if}
 
       {if !$configuration.is_catalog}
-        {include file='_partials/my-account-block.tpl' type='history-link' link={$urls.pages.history} title={l s='Order history and details' d='Shop.Theme.Customeraccount'} icon="&#xE916;"}
+        {include file='customer/_partials/my-account-block.tpl' type='history-link' link={$urls.pages.history} title={l s='Order history and details' d='Shop.Theme.Customeraccount'} icon="&#xE916;"}
       {/if}
 
       {if !$configuration.is_catalog}
-        {include file='_partials/my-account-block.tpl' type='order-slips-link' link={$urls.pages.order_slip} title={l s='Credit slips' d='Shop.Theme.Customeraccount'} icon="&#xE8B0;"}
+        {include file='customer/_partials/my-account-block.tpl' type='order-slips-link' link={$urls.pages.order_slip} title={l s='Credit slips' d='Shop.Theme.Customeraccount'} icon="&#xE8B0;"}
       {/if}
 
       {if $configuration.voucher_enabled && !$configuration.is_catalog}
-        {include file='_partials/my-account-block.tpl' type='discounts-link' link={$urls.pages.discount} title={l s='Vouchers' d='Shop.Theme.Customeraccount'} icon="&#xE54E;"}
+        {include file='customer/_partials/my-account-block.tpl' type='discounts-link' link={$urls.pages.discount} title={l s='Vouchers' d='Shop.Theme.Customeraccount'} icon="&#xE54E;"}
       {/if}
 
       {if $configuration.return_enabled && !$configuration.is_catalog}
-        {include file='_partials/my-account-block.tpl' type='returns-link' link={$urls.pages.order_follow} title={l s='Merchandise returns' d='Shop.Theme.Customeraccount'} icon="&#xE860;"}
+        {include file='customer/_partials/my-account-block.tpl' type='returns-link' link={$urls.pages.order_follow} title={l s='Merchandise returns' d='Shop.Theme.Customeraccount'} icon="&#xE860;"}
       {/if}
 
       {block name='display_customer_account'}
