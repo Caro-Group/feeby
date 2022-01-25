@@ -39,7 +39,7 @@
 			<div class="form-group row lql-form-content-element">				
 				<div class="col-xs-6">
 					{if $leo_check_cookie}
-						<input type="checkbox" class="lql-rememberme" name="lql-rememberme">
+						<input type="checkbox" class="lql-rememberme cursor-pointer bg-white border-2 border-gray-3000 border-solid checked:bg-main-dark checked:focus:bg-main-dark checked:hover:bg-main-dark focus:ring-0 focus:ring-transparent form-checkbox opacity-100 outline-none rounded transition" name="lql-rememberme">
 						<label class="form-control-label"><span>{l s='Remember Me' d='Modules.Leoquicklogin.Shop'}</span></label>
 					{/if}
 				</div>				
