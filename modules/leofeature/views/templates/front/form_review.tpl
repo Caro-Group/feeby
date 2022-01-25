@@ -8,8 +8,8 @@
 
 <div class="bg-gray-default flex flex-col tablet-wide:flex-row flex-wrap p-5 py-3 tablet:p-12 tablet-wide:p-[80px] mt-2 mb-[100px] rounded-[5px]">
 	<div class="flex flex-col pr-10 text-main-dark flex-auto justify-center mb-[20px]">
-		<span class="font-italic text-[25px] font-header">{l s='Do you have this product?' d='Modules.Leofeature.Shop'}</span>
-		<span class="text-[20px] font-body">{l s='Tell others how you rate it!' d='Modules.Leofeature.Shop'}</span>
+		<span class="font-italic text-[20px] tablet:text-[25px] font-header">{l s='Do you have this product?' d='Modules.Leofeature.Shop'}</span>
+		<span class="text-base tablet:text-[20px] font-body">{l s='Tell others how you rate it!' d='Modules.Leofeature.Shop'}</span>
 	</div>
 	<div class="new_review_form_content p-0 flex-[1_1_50%] tablet:mb-[20px]">
 		{if $criterions|@count > 0}
@@ -17,7 +17,7 @@
 			{foreach from=$criterions item='criterion'}
 				<li class="flex items-center">
 					{if isset($criterion.name) && $criterion.name != ''}
-						<label class="mb-0 mr-auto tablet:mr-[18px] px-[20px] text-[20px] text-main-dark">{$criterion.name|escape:'html':'UTF-8'}:</label>
+						<label class="mb-0 mr-auto tablet:mr-[18px] px-[20px] text-base tablet:text-[20px] text-main-dark">{$criterion.name|escape:'html':'UTF-8'}:</label>
 					{/if}
 					<div class="star_content">
 						<input class="star not_uniform" type="radio" name="criterion[{$criterion.id_product_review_criterion|round}]" value="1" />
@@ -33,23 +33,23 @@
 		{/if}				
 		<form class="form-new-review flex flex-row flex-wrap" action="#" method="post">
 			<div class="flex flex-col flex-wrap w-full tablet:w-1/2 tablet:pr-[20px] mb-[15px]">
-				<label class="text-main-dark text-[20px] px-[20px]" for="new_review_title">{l s='Your title' d='Modules.Leofeature.Shop'}</label>
-				<input type="text" class="border border-solid border-gray-2000 font-italic form-input px-[20px] rounded-[23px] text-[#6B7280] placeholder:text-gray-3000 text-[14px]" id="new_review_title" required="required" name="new_review_title"  placeholder="{l s='Your title here' d='Modules.Leofeature.Shop'}">					  
+				<label class="text-main-dark text-base tablet:text-[20px] px-[20px]" for="new_review_title">{l s='Your title' d='Modules.Leofeature.Shop'}</label>
+				<input type="text" class="border border-solid border-gray-2000 font-italic form-input px-[20px] rounded-[23px] text-[#6B7280] placeholder:text-gray-3000 text-[12px] tablet:text-[14px]" id="new_review_title" required="required" name="new_review_title"  placeholder="{l s='Your title here' d='Modules.Leofeature.Shop'}">					  
 			</div>
 			<div class="flex flex-col flex-wrap w-full tablet:w-1/2 mb-[15px]">
-				<label class="text-main-dark text-[20px] px-[20px]" for="new_review_customer_name">{l s='Your pseudonim' d='Modules.Leofeature.Shop'}</label>
-				<input type="text" class="border border-solid border-gray-2000 font-italic form-input px-[20px] rounded-[23px] text-[#6B7280] placeholder:text-gray-3000 text-[14px]" id="new_review_customer_name" required="required" name="new_review_customer_name" placeholder="{l s='Your pseudonim here' d='Modules.Leofeature.Shop'}">					  
+				<label class="text-main-dark text-base tablet:text-[20px] px-[20px]" for="new_review_customer_name">{l s='Your pseudonim' d='Modules.Leofeature.Shop'}</label>
+				<input type="text" class="border border-solid border-gray-2000 font-italic form-input px-[20px] rounded-[23px] text-[#6B7280] placeholder:text-gray-3000 text-[12px] tablet:text-[14px]" id="new_review_customer_name" required="required" name="new_review_customer_name" placeholder="{l s='Your pseudonim here' d='Modules.Leofeature.Shop'}">					  
 			</div>
 			<div class="flex flex-col flex-wrap w-full mb-[15px]">
-				<label class="text-main-dark text-[20px] px-[20px]" for="new_review_content">{l s='Your comment' d='Modules.Leofeature.Shop'}</label>
-				<textarea type="text" rows="5" class="form-textarea border border-solid border-gray-2000 font-italic px-[20px] rounded-[23px] text-[14px] text-[#6B7280] placeholder:text-gray-3000 resize-none" id="new_review_content" required="required" name="new_review_content" placeholder="{l s='Your comment here' d='Modules.Leofeature.Shop'}"></textarea>				  
+				<label class="text-main-dark text-base tablet:text-[20px] px-[20px]" for="new_review_content">{l s='Your comment' d='Modules.Leofeature.Shop'}</label>
+				<textarea type="text" rows="5" class="form-textarea border border-solid border-gray-2000 font-italic px-[20px] rounded-[23px] text-[12px] tablet:text-[14px] text-[#6B7280] placeholder:text-gray-3000 resize-none" id="new_review_content" required="required" name="new_review_content" placeholder="{l s='Your comment here' d='Modules.Leofeature.Shop'}"></textarea>				  
 			</div>
 
 			{hook h='displayGDPRConsent' id_module='leofeature'}
 			
 			<input id="id_product_review" name="id_product_review" type="hidden" value='{$product_modal_review->id}' />
 			<div class="flex flex-row-revert justify-between items-start pt-[10px] ml-auto">
-				<button class="leo-fake-button leo-modal-review-bt bg-main hover:bg-main-hover font-me text-white py-2 px-4 text-[14px] uppercase text-center border-0 rounded-full font-medium cursor-pointer" type="submit">
+				<button class="leo-fake-button leo-modal-review-bt bg-main hover:bg-main-hover font-me text-white py-2 px-4 text-[12px] tablet:text-[14px] uppercase text-center border-0 rounded-full font-medium cursor-pointer" type="submit">
 					<span class="leo-modal-review-loading cssload-speeding-wheel"></span>
 					<span class="leo-modal-review-bt-text">
 						{l s='Add review' d='Modules.Leofeature.Shop'}

@@ -14,7 +14,7 @@
             {/if}
             <div class="flex flex-col items-start">
                 {if empty($block['description'])}
-                    <p class="text-base text-main-dark font-body">{$block['title']}</p>
+                    <p class="text-base text-main-dark font-body text-center">{$block['title']}</p>
                 {else}
                     <span class="block-title" style="color:{$textColor};">{$block['title']}</span>
                     <p class="text-main-dark">{$block['description'] nofilter}</p>

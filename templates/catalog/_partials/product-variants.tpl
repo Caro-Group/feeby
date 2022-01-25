@@ -76,7 +76,7 @@
               <li class="mb-2 mr-2">
                 <label class="mb-0">
                   <input class="form-radio sr-only peer" type="radio" data-product-attribute="{$id_attribute_group}" name="group[{$id_attribute_group}]" value="{$id_attribute}" title="{$group_attribute.name}"{if $group_attribute.selected} checked="checked"{/if}>
-                  <span class="bg-gray-default block border-2 border-solid cursor-pointer p-3 peer-checked:border-main peer-checked:text-gray-main rounded text-[#BABABA] transition text-[20px]">{$group_attribute.name}</span>
+                  <span class="bg-gray-default block border-2 border-solid cursor-pointer p-3 peer-checked:border-main peer-checked:text-gray-main rounded text-[#BABABA] transition text-base tablet:text-[20px]">{$group_attribute.name}</span>
                 </label>
               </li>
             {/foreach}
