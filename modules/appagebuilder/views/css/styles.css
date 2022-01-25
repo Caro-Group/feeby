@@ -2542,6 +2542,8 @@ button.btn.btn-primary.center-block,
   margin: 15px 0 25px; }
 
 @media (max-width: 767px) {
+  .product-detail .product-prices {
+    margin: 15px 0 20px; }
   .leo-modal-review .new_review_form_content {
     text-align: left; }
     .rtl .leo-modal-review .new_review_form_content {
