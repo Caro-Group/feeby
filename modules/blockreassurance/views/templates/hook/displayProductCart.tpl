@@ -1,5 +1,5 @@
 
-<div class="flex flex-wrap pb-11 tablet:pb-0">
+<div class="flex flex-wrap pb-11 tablet:pb-0 -mx-5 tablet:mx-0">
 {foreach from=$blocks item=$block key=$key}
     <div class="flex items-center justify-center mt-7 tablet:mt-0 mx-auto w-1/2 w-full" {if $block['type_link'] !== $LINK_TYPE_NONE && !empty($block['link'])} style="cursor:pointer;" onclick="window.open('{$block['link']}')"{/if}>
         <div class="flex flex-col tablet:flex-row items-center justify-start w-[200px] max-w-full">
