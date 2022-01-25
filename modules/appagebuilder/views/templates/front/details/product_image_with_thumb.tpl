@@ -12,6 +12,7 @@
       <div class="images-container">
         {block name='product_cover_thumbnails'}
         {if $isMobile && $dmobile_swipe}
+        <div class="relative">
           <div class="list-images-mobile">
             {foreach from=$product.images item=image}
               <div>
@@ -27,6 +28,13 @@
               </div>
             {/foreach}
           </div>
+          {if $product.images|@count > 1}
+            <div class="arrows-product-fake slick-arrows">
+              <button class="slick-prev slick-arrow" aria-label="Previous" type="button" >{l s='Previous' d='Shop.Theme.Catalog'}</button>
+              <button class="slick-next slick-arrow" aria-label="Next" type="button">{l s='Next' d='Shop.Theme.Catalog'}</button>
+            </div>
+          {/if}
+        </div>
         {else}
           {block name='product_cover'}
             <div class="product-cover">
@@ -82,13 +90,6 @@
                 </div>
               {/if}
             </div>
-            
-            {if $product.images|@count > 1}
-              <div class="arrows-product-fake slick-arrows">
-                <button class="slick-prev slick-arrow" aria-label="Previous" type="button" >{l s='Previous' d='Shop.Theme.Catalog'}</button>
-                <button class="slick-next slick-arrow" aria-label="Next" type="button">{l s='Next' d='Shop.Theme.Catalog'}</button>
-              </div>
-            {/if}
           {/block}
         {/if}
         {/block}
