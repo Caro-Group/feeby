@@ -18,13 +18,13 @@
         <div data-swiper-carousel class="swiper">
 
             <div class="swiper-wrapper desktop:justify-between pb-12">
-                {foreach from=$products item="product"}
+                {foreach from=$products item="product" as=$product}
                     <div class="slide relative shrink-0 transition-transform h-full w-[235px] tablet:w-[346px]">
                         {include file='catalog/_partials/miniatures/product.tpl' product=$product}
                     </div>
-                    {if $item@last}
-                        {if $item@total < 4}
-                            {for $i=1 to (4 - $item@total)}
+                    {if $product@last}
+                        {if $product@total < 4}
+                            {for $i=1 to (4 - $product@total)}
                                 <div class="slide relative shrink-0 transition-transform h-full w-[235px] tablet:w-[346px] hidden tablet:block"></div>
                             {/for}
                         {/if}
