@@ -29,6 +29,9 @@ global_settings:
       - name: displayProductThumbEndCustom
         title: Product Custom Thubnail on End
         description: Add custom image on end
+      - name: displayCatalogBottom
+        title: Catalog Bottom List
+        description: Catalog after list hook display
 
 #    product:
 #      - id: product-style

@@ -47,6 +47,6 @@
     </script>
 <style>
 div[id*="trustbadge-container"] {
-    z-index: auto!important;
+    z-index: 990!important;
 }
 </style>
