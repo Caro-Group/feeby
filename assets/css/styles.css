@@ -464,3 +464,6 @@ div.star.star_on:before, div.star.star_hover:before{
     @apply text-main
 }
 
+.title-on-image{
+    @apply transform group-hover:scale-110;
+}
