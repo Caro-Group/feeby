@@ -120,7 +120,7 @@
                     {/if}
                   {/block}
 
-                  <hr class="border-gray-1000 block w-full content-max:w-[1760px]"/>
+                  <hr class="border-gray-1000 block w-full"/>
                   
                   {block name='product_prices'}
                     {include file='catalog/_partials/product-prices.tpl'}
