@@ -45,3 +45,8 @@
             __ts.parentNode.insertBefore(_ts, __ts);
         })();
     </script>
+<style>
+div[id*="trustbadge-container"] {
+    z-index: auto!important;
+}
+</style>
