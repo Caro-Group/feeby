@@ -18,10 +18,10 @@
  *}
 {if $displayedFacets|count}
   <div id="search_filters" class="flex flex-wrap tablet:pr-5 py-2.5">
-    <div class="swiper-filters tablet:pl-5 w-full">
-      <div class="swiper-wrapper flex-col tablet:flex-row">
+    <div class="tablet:pl-5 w-full">
+      <div class="flex-col tablet:flex-row">
       {foreach from=$displayedFacets item="facet"}
-        <div class="swiper-slide">
+        <div class="">
           <section class="facet clearfix">
             {assign var=_expand_id value=10|mt_rand:100000}
             {assign var=_collapse value=true}
