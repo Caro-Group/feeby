@@ -69,11 +69,13 @@
             {include file='_partials/breadcrumb.tpl'}
           {/block}
           
-          {block name="displayTopBothColumn"}{/block}
+          {block name="displayTopContent"}{/block}
          
           {if isset($fullwidth_hook.displayHome) AND $fullwidth_hook.displayHome == 0}
             <div class="row">
           {/if}
+
+            {block name="displayTopBothColumn"}{/block}
 
             {block name="left_column"}
               <div id="left-column" class="sidebar col-xs-12 col-sm-12 col-md-4 col-lg-3">
@@ -86,7 +88,7 @@
             {/block}
 
             {block name="content_wrapper"}
-              <div id="content-wrapper" class="left-column right-column col-sm-4 col-md-6">
+              <div id="content-wrapper" class="left-column right-column float-right col-sm-4 col-md-6">
 		            {block name="displayContentWrapperTop"}{/block}
 
                 {block name="content"}{/block}
@@ -105,6 +107,8 @@
               </div>
             {/block}
 
+            {block name="displayBottomBothColumn"}{/block}
+
           {if isset($fullwidth_hook.displayHome) AND $fullwidth_hook.displayHome == 0}
             </div>
           {/if}
@@ -114,7 +118,7 @@
         {/if}
 	      
         
-        {block name="displayBottomBothColumn"}{/block}
+        {block name="displayBottomContent"}{/block}
       </main>
 
       <footer id="footer" class="footer-container">
