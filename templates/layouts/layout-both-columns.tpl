@@ -70,8 +70,11 @@
           {/block}
           
           {block name="displayTopBothColumn"}{/block}
-          
-          <div class="row">
+         
+          {if isset($fullwidth_hook.displayHome) AND $fullwidth_hook.displayHome == 0}
+            <div class="row">
+          {/if}
+
             {block name="left_column"}
               <div id="left-column" class="sidebar col-xs-12 col-sm-12 col-md-4 col-lg-3">
                 {if $page.page_name == 'product'}
@@ -101,7 +104,10 @@
                 {/if}
               </div>
             {/block}
-          </div>
+
+          {if isset($fullwidth_hook.displayHome) AND $fullwidth_hook.displayHome == 0}
+            </div>
+          {/if}
 
         {if isset($fullwidth_hook.displayHome) AND $fullwidth_hook.displayHome == 0}
           </div>
