@@ -107,7 +107,10 @@
               </div>
             {/block}
 
-            {block name="displayBottomBothColumn"}{/block}
+            {block name="displayBottomBothColumn"}
+              {hook h='displayCatalogBottom'}
+            {/block}
+              
 
           {if isset($fullwidth_hook.displayHome) AND $fullwidth_hook.displayHome == 0}
             </div>
