@@ -14,7 +14,7 @@
     {($apLiveEdit)?$apLiveEdit:'' nofilter}{* HTML form , no escape necessary *}
 
     {if isset($products) && !empty($products)}
-        {if isset($formAtts.title)&&!empty($formAtts.title)}
+        {if isset($formAtts.title) && !empty($formAtts.title) && $page_name === 'product'}
             {include file='_partials/slider.tpl' type='products-exclusive' products=$products title={$formAtts.title|rtrim|escape:'html':'UTF-8'}}
         {else}
             {include file='_partials/slider.tpl' type='products-exclusive' products=$products title=""}

@@ -58,7 +58,7 @@
 				{include file='catalog/_partials/product-flags.tpl'}
 			{/block}
 			
-			<div>
+			<div class="absolute right-0 top-0">
 				{hook h='displayLeoCartButton' product=$product}
 				{hook h='displayLeoWishlistButton' product=$product}
 			</div>
