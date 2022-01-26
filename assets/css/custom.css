@@ -760,13 +760,17 @@ color:#DF1A5B!important;
 
 .title-on-image.ApImage .title_block{
  position: relative;
+ font-size: 16px;
+ font-weight: 300;
 }
 
-@media(max-width: 600px){
+
+@media(min-width: 768){
  .title-on-image.ApImage .title_block{
-  font-size: 12px;
+  font-size: 25px;
  }
 }
+
 
 
 
