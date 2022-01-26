@@ -1,0 +1,11 @@
+.bootstrap .page-head.with-tabs {
+  height: 100px;
+}
+
+#content.bootstrap.with-tabs {
+  padding-top: 120px;
+}
+
+.page-head-tabs {
+  display: none !important;
+}

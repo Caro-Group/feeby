@@ -1,0 +1,13 @@
+
+/* If PS version > 1.7, hide auto generated controller menu (in the top bar). */
+.bootstrap .page-head.with-tabs {
+  height: 100px;
+}
+
+#content.bootstrap.with-tabs {
+  padding: 120px 10px 0;
+}
+
+.page-head-tabs {
+  display: none !important;
+}

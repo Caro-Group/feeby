@@ -29,7 +29,7 @@
 	</div>
 {/block}
 
-{block name='displayBottomBothColumn'}
+{block name='displayBottomContent'}
   <div class="container">
     {include file='catalog/_partials/category-header.tpl' listing=$listing category=$category}
     {if isset($LEO_SUBCATEGORY) && $LEO_SUBCATEGORY && isset($subcategories) && count($subcategories) > 0}
