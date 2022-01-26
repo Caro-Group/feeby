@@ -765,7 +765,7 @@ color:#DF1A5B!important;
 }
 
 
-@media(min-width: 768){
+@media(min-width: 768px){
  .title-on-image.ApImage .title_block{
   font-size: 25px;
  }
