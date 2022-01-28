@@ -15249,8 +15249,6 @@ button:focus, button:hover {
       opacity: 1;
       visibility: visible;
       transform: translateY(0px); }
-    .leo-megamenu .dropdown:hover > a {
-      color: #000; }
       .leo-megamenu .dropdown:hover > a .fa {
         color: #000; } }
   .leo-megamenu .dropdown-submenu {
