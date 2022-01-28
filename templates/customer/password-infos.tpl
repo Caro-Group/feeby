@@ -31,13 +31,13 @@
 {block name='page_content'}
   <ul class="ps-alert-success">
     {foreach $successes as $success}
-      <li class="item">
+      <li class="item flex justify-center ">
         <i>
           <svg viewBox="0 0 24 24">
             <path fill="#fff" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
           </svg>
         </i>
-        <p>{$success}</p>
+        <p class="text-main-dark text-sm tablet:text-base font-body">{$success}</p>
       </li>
     {/foreach}
   </ul>
@@ -45,6 +45,6 @@
 
 {block name='page_footer'}
   <ul>
-    <li><a href="{$urls.pages.authentication}">{l s='Back to Login' d='Shop.Theme.Actions'}</a></li>
+    <li><a class="flex items-center text-main-dark bg-transparent border-0 uppercase whitespace-nowrap mb-0 cursor-pointer" href="{$urls.pages.authentication}"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" fill="none" class="mr-2"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.25 13.384 0 7.134V6.25L6.25 0l.884.884L1.95 6.067H15v1.25H1.95L7.135 12.5l-.884.884H6.25Z" fill="#181828"></path></svg>{l s='Back to Login' d='Shop.Theme.Actions'}</a></li>
   </ul>
 {/block}
