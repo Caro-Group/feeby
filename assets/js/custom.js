@@ -1261,22 +1261,23 @@ $(document).ready(function () {
 		  },
 	});
 
-});
+	const swiperAbout = new Swiper('[data-about-swiper]',{
+		speed: 300,
+		slidesPerView: 1,
+		breakpoints: {
+			560: {
+				slidesPerView: 2,
+			},
+			922: {
+				slidesPerView: 1,
+			},
+			grid:{
+				rows: 2,
+			},
+	  	}
 
+	});
 
-
-
-$(document).ready(function () {
-
-	$('.owl-customized .owl-theme').on('resize.owl.carousel', checkWidth)
-	
-	function checkWidth() {
-		if($(window).width() > 768){
-			$(".owl-customized").find('.owl-wrapper-outer').addClass("owl-disabled");
-			$(".owl-customized .owl-carousel").removeClass('owl-carousel owl-loaded');
-			$(".owl-customized").find('.owl-wrapper').children().unwrap();
-		}
-	}
 });
 
 
