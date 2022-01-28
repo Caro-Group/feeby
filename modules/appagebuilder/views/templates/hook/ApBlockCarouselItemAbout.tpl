@@ -36,7 +36,6 @@
 						{/if}
 					{/if}
 					</div>
-				<div class="p-5 bg-white flex flex-col justify-between h-3/6 phablet:h-1/5 ">
 				
 					{if isset($slider.title) && !empty($slider.title)}
 						<h2 class="mb-6 font-normal">{$slider.title|escape:'html':'UTF-8' nofilter}</h2>
@@ -44,9 +43,8 @@
 					{if isset($slider.sub_title) && !empty($slider.sub_title)}
 						<p class="uppercase hover:text-main transition font-body font-normal text-[10px] tablet:text-sm">{$slider.sub_title|escape:'html':'UTF-8' nofilter}<i class="ti-arrow-right ml-2"></i></p>
 					{/if}
-				</div>
 				{if isset($slider.descript) && !empty($slider.descript)}
-					<div class="text-main-dark text-sm tablet:text-base font-light font-body">{$slider.descript nofilter}{* HTML form , no escape necessary *}</div>
+					<div><p class="text-main-dark text-sm tablet:text-base font-light font-body">{$slider.descript nofilter}{* HTML form , no escape necessary *}</p></div>
 				{/if}
 
 
