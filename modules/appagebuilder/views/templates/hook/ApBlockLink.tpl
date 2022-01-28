@@ -120,7 +120,7 @@
                         {foreach from=$formAtts.links item=item}
                             {if $item.title && $item.link}
                                 <li
-                                    class="border-0 border-b-2 border-solid border-white tablet:border-b-0 flex h-14 tablet:h-10 items-center px-6">
+                                    class="-mx-[10px] tablet:-mx-0 border-0 border-b-2 border-solid border-white tablet:border-b-0 flex h-14 tablet:h-10 items-center px-6">
                                     <a class="text-main-dark text-sm tablet:text-base font-light" href="{$item.link}" target="{$item.target_type}">{$item.title|escape:'html':'UTF-8'}</a>
                                 </li>
                             {/if}
