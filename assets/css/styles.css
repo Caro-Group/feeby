@@ -68,7 +68,6 @@ p{
     .swiper-about .swiper-slide img{
         filter: invert(17%) sepia(49%) saturate(5868%) hue-rotate(328deg) brightness(101%) contrast(93%) grayscale(100%);
         transition: 150ms;
-        @apply
     }
 
     .swiper-about .swiper-slide:hover img{
