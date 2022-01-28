@@ -63,7 +63,7 @@
 			</div>
 		</form>
 		<div class="leo-resetpass-form">
-			<span>{l s='Reset Password' d='Modules.Leoquicklogin.Shop'}</span>
+			<span class="text-main-dark text-main-dark text-sm">{l s='Reset Password' d='Modules.Leoquicklogin.Shop'}</span>
 			<form class="lql-form-content leo-resetpass-form-content" action="#" method="post">
 				<div class="form-group lql-form-mesg has-success">					
 				</div>			
@@ -73,12 +73,13 @@
 					<input type="email" class="form-control lql-email-reset font-body text-sm placeholder:italic border-gray-2000 border-solid border flex rounded-full pl-4 bg-white w-full focus:border-gray-3000 focus:ring-0" name="lql-email-reset" required="" placeholder="{l s='Email Address' d='Modules.Leoquicklogin.Shop'}">
 				</div>
 				<div class="form-group">					
-					<button type="submit" class="form-control-submit lql-form-bt leoquicklogin-reset-pass-bt btn btn-primary">			
+					<button type="submit" class="form-control-submit lql-form-bt leoquicklogin-reset-pass-bt bg-main-dark border-0 cursor-pointer duration-150 font-body hover:text-white hover:bg-black max-w-[320px] mb-3 px-5 py-3 rounded-full tablet:max-w-[300px] text-white text-xs  tablet:text-sm uppercase w-full whitespace-nowrap">			
 						<span class="leoquicklogin-loading leoquicklogin-cssload-speeding-wheel"></span>
 						<i class="leoquicklogin-icon leoquicklogin-success-icon material-icons">&#xE876;</i>
 						<i class="leoquicklogin-icon leoquicklogin-fail-icon material-icons">&#xE033;</i>
-						<span class="lql-bt-txt">					
+						<span class="lql-bt-txt w-full flex justify-between items-center">					
 							{l s='Reset Password' d='Modules.Leoquicklogin.Shop'}
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" fill="none" class="ml-2 flex-0"><path fill-rule="evenodd" clip-rule="evenodd" d="m9.25 14.359 6.25-6.25v-.884L9.25.975l-.884.884 5.183 5.184H.5v1.25h13.05l-5.185 5.182.884.884h.001Z" fill="#fff"></path></svg>
 						</span>
 					</button>
 				</div>

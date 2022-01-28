@@ -54,7 +54,7 @@
         </div>
       {/block}
       {block name='product_images'}
-        <div id="thumb-gallery relative" class="product-thumb-images flex">
+        <div id="thumb-gallery" class="product-thumb-images flex relative">
           <div class="swiper overflow-hidden" data-swiper-product>
             <div class="swiper-wrapper">
               {foreach from=$product.images item=image}
