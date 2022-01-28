@@ -16,11 +16,11 @@
         <div class="block_content">
             {if !empty($formAtts.slides)}
                 {if $formAtts.carousel_type == "slickcarousel"}
-                    {assign var=leo_include_file value=$leo_helper->getTplTemplate('ApBlockSlickCarouselItemAbout.tpl', $formAtts['override_folder'])}
+                    {assign var=leo_include_file value=$leo_helper->getTplTemplate('ApBlockSlickCarouselItem.tpl', $formAtts['override_folder'])}
                     {include file=$leo_include_file}
                 {else}
                     {if $formAtts.carousel_type == 'boostrap'}
-                        {assign var=leo_include_file value=$leo_helper->getTplTemplate('ApBlockCarouselItem.tpl', $formAtts['override_folder'])}
+                        {assign var=leo_include_file value=$leo_helper->getTplTemplate('ApBlockCarouselItemAbout.tpl', $formAtts['override_folder'])}
                         {include file=$leo_include_file}
                     {else}
                         {assign var=leo_include_file value=$leo_helper->getTplTemplate('ApBlockOwlCarouselItem.tpl', $formAtts['override_folder'])}
