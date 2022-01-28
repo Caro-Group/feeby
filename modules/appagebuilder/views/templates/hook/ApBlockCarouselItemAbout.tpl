@@ -26,16 +26,16 @@
 
 			<div class="swiper-slide">
 			{foreach from=$sliders item=slider key=i name="sliders"}
-				{if $i == 1}{assign var="lazyImg" value="lazy"}{else}{assign var="lazyImg" value="lazy"}{/if}
+				{if $i == 1}{assign var="lazyImg" value="lazy"}{/if}
 					<div class="w-[50px] tablet:w-[70px] aspect-square mb-6 bg-gray-1000 rounded-md ">
 					{if isset($slider.image) && !empty($slider.image)}
 						<img loading="{$lazyImg}" src="{$slider.image|escape:'html':'UTF-8'}" alt="{if isset($slider.title)}{$slider.title|escape:'html':'UTF-8'}{/if}"/>
 					{else}
-					{if isset($slider.image_link) && !empty($slider.image_link)}
-						<img loading="{$lazyImg}" src="{$slider.image_link|escape:'html':'UTF-8'}" alt="{if isset($slider.title)}{$slider.title|escape:'html':'UTF-8'}{/if}"/>
+						{if isset($slider.image_link) && !empty($slider.image_link)}
+							<img loading="{$lazyImg}" src="{$slider.image_link|escape:'html':'UTF-8'}" alt="{if isset($slider.title)}{$slider.title|escape:'html':'UTF-8'}{/if}"/>
+						{/if}
 					{/if}
 					</div>
-				{/if}
 				<div class="p-5 bg-white flex flex-col justify-between h-3/6 phablet:h-1/5 ">
 				
 					{if isset($slider.title) && !empty($slider.title)}
@@ -57,11 +57,6 @@
 		</div>
 	</div>
 
-	<style>
-		.slide-content{
-			aspect-ratio: 1;
-		}
-	</style>
 
 
 
