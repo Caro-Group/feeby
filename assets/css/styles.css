@@ -38,51 +38,40 @@ p{
         float: none !important;
         @apply mx-auto;
     }
-
-    .owl-customized .owl-carousel .owl-wrapper-outer{
-        overflow: visible;
-    }
-
-    .owl-customized .owl-item .block-carousel-image-container{
-        @apply relative;
-    }
     
-    .owl-customized .owl-item .block-carousel-image-container img{
+    .swiper-about .swiper-slide.swiper-slide-active img{
         filter: invert(17%) sepia(49%) saturate(5868%) hue-rotate(328deg) brightness(101%) contrast(93%);
-        @apply p-1 tablet:p-2 select-none;
+    }
+    .swiper-about .swiper-slide.swiper-slide-next img{
+        filter: invert(17%) sepia(49%) saturate(5868%) hue-rotate(328deg) brightness(101%) contrast(93%);
     }
 
-    .owl-customized .owl-item{
-        @apply filter grayscale transition duration-150;
-    }
-    .owl-customized .owl-item.active{
-        @apply filter grayscale-0 ;
+    .swiper-about .swiper-slide{
+        @apply filter grayscale tablet:grayscale-0 transition duration-150;
     }
 
-    .owl-customized .owl-loaded .owl-item{
-        @apply opacity-50; 
+    .swiper-about .swiper-slide.swiper-slide-active{
+        @apply filter grayscale-0 opacity-100 tablet:grayscale tablet:hover:grayscale-0 ;
+    }
+    .swiper-about .swiper-slide.swiper-slide-next{
+        @apply filter phablet:grayscale-0 phablet:opacity-100 tablet:grayscale tablet:hover:grayscale-0  ;
     }
 
-    .owl-customized .owl-loaded .owl-item.active{
-        @apply opacity-100;
+    .swiper-about .swiper-slide{
+        @apply opacity-50 tablet:opacity-100; 
     }
 
-    .owl-customized .owl-disabled{
-        @apply flex flex-wrap justify-between;
+    .swiper-about .swiper-slide{
+        @apply tablet-wide:pb-10 px-5 pb-5 tablet-wide:px-12 box-border ;
     }
 
-    .owl-customized .owl-disabled .owl-item{
-        min-width: 150px;
-        flex-basis: 30%;
-        @apply flex-grow mb-10 mx-2 tablet-wide:px-10 ;
-    }
-
-    .owl-customized .owl-disabled .owl-item img{
+    .swiper-about .swiper-slide img{
         filter: invert(17%) sepia(49%) saturate(5868%) hue-rotate(328deg) brightness(101%) contrast(93%) grayscale(100%);
         transition: 150ms;
+        @apply
     }
 
-    .owl-customized .owl-disabled .owl-item:hover img{
+    .swiper-about .swiper-slide:hover img{
         filter: invert(17%) sepia(49%) saturate(5868%) hue-rotate(328deg) brightness(101%) contrast(93%);
     }
 

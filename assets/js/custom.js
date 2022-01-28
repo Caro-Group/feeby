@@ -1264,6 +1264,7 @@ $(document).ready(function () {
 	const swiperAbout = new Swiper('[data-about-swiper]',{
 		speed: 300,
 		slidesPerView: 1,
+		resistanceRatio: 0.5,
 		breakpoints: {
 			560: {
 				slidesPerView: 2,
