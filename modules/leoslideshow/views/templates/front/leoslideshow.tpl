@@ -5,7 +5,7 @@
 * @copyright  Leotheme
 *}
 
-<div class=" tablet:-mx-4 swiper-banner">
+<div class="swiper-banner overflow-hidden tablet-medium:rounded-md -mx-[10px] tablet-medium:mx-0">
 	<div class="swiper-wrapper max-h-tablet">
 	{if $sliders}
 		{foreach from=$sliders item=slider key=i name="sliders"}
