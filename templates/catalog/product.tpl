@@ -90,7 +90,7 @@
            <div class="product-information">
  
              {if isset($category) && $category->id_parent == 582} {* CATEGORY: ARTIST *}
-               {capture name=cat_thumb}{$smarty.const._THEME_CAT_DIR_}{$category->id_parent}_thumb.jpg{/capture}
+               {capture name=cat_thumb}{$smarty.const._THEME_CAT_DIR_}{$category->id}_thumb.jpg{/capture}
  
                <a href="{$link->getCategoryLink($category->id)}" class="flex flex-row flex-wrap border-2 border-solid border-gray-default p-[10px] rounded-[5px] max-w-[240px] mb-[40px] hover:border-main group transition">
                  {if file_exists($link->getMediaLink($smarty.capture.cat_thumb))}
