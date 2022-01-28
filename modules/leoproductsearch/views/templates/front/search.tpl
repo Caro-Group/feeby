@@ -64,7 +64,8 @@
 			{/block}
 			<div id="">
 				{block name='product_list'}
-					{include file='catalog/_partials/product-list.tpl' listing=$search_products}
+					{include file='catalog/_partials/products.tpl' listing=$search_products}
+
 				{/block}
 			</div>
 		</section>
