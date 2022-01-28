@@ -246,18 +246,6 @@ form#searchbox input#search_button {
 .leoproductsearch-result .ac_results {
   padding-bottom: 0; }
 
-.search-in-cat li a {
-  display: block;
-  padding: 5px 10px; }
-
-.ac_results .search-in-cat ul {
-  padding: 8px 0;
-  font-size: 12px; }
-
-.ac_results .search-in-cat li {
-  display: block !important;
-  padding: 0 !important; }
-
 .leoproductsearch-result .ac_results .no-products {
   padding: 10px 15px; }
 

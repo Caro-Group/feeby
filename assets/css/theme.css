@@ -22184,7 +22184,7 @@ div.iview-controlNav div.iview-items {
 @media (max-width: 767px) {
   #module-leoproductsearch-productsearch .product_list.grid > .row > .ajax_block_product {
     width: 50%; } }
-@media (max-width: 400px) {
+@media (max-width: 319px) {
   #module-leoproductsearch-productsearch .product_list.grid > .row > .ajax_block_product {
     width: 100%; } }
 .instagram-block .owl-item a:after, .instagram-block .owl-item a:before {

@@ -19,7 +19,7 @@
 {/if}
 
 {*define numbers of product per line in other page for desktop*}
-{if (isset($page.page_name) && $page.page_name == 'category') || (isset($leo_page) && $leo_page=='category')}
+{if (isset($page.page_name) && $page.page_name == 'category') || (isset($leo_page) && $leo_page=='category') ||  (isset($page.page_name) && $page.page_name == 'productsearch') || (isset($leo_page) && $leo_page=='productsearch')}
     {assign var='nbItemsPerLine' value=$LISTING_PRODUCT_COLUMN}
 
     {if $LISTING_PRODUCT_COLUMN=="5"}       {assign var="col_cat_product_xl" value="col-xl-2-4"}{else}{assign var="col_cat_product_xl" value="col-xl-{12/$LISTING_PRODUCT_COLUMN}"}{/if}
