@@ -45,21 +45,23 @@
     </ul>
 
     <header>
-      <p class="send-renew-password-link">{l s='Please enter the email address you used to register. You will receive a temporary link to reset your password.' d='Shop.Theme.Customeraccount'}</p>
+      <p class="send-renew-password-link text-sm tablet:text-base font-body text-main-dark text-center pb-5 tablet:pb-[30px]">{l s='Please enter the email address you used to register. You will receive a temporary link to reset your password.' d='Shop.Theme.Customeraccount'}</p>
     </header>
 
     <section class="form-fields">
       <div class="form-group center-email-fields row">
-        <label class="col-md-3 form-control-label required">{l s='Email address' d='Shop.Forms.Labels'}</label>
-        <div class="col-md-5 email">
-          <input type="email" name="email" id="email" value="{if isset($smarty.post.email)}{$smarty.post.email|stripslashes}{/if}" class="form-control" required>
-        </div>
-        <button class="form-control-submit btn btn-primary hidden-xs-down" name="submit" type="submit">
-          {l s='Send reset link' d='Shop.Theme.Actions'}
-        </button>
-        <button class="form-control-submit btn btn-primary hidden-sm-up" name="submit" type="submit">
-          {l s='Send' d='Shop.Theme.Actions'}
-        </button>
+        <div class="flex w-full items-center flex-wrap tablet:flex-nowrap">
+          <input type="email" name="email" id="email" class="tablet:mr-5 mb-5 tablet:mb-0" placeholder="{l s='Email address' d='Shop.Forms.Labels'}" value="{if isset($smarty.post.email)}{$smarty.post.email|stripslashes}{/if}" class="form-control" required>
+          <button class="form-control-submit hidden tablet:flex w-full text-xs tablet:text-sm tablet:w-auto bg-main hover:bg-main-hover duration-150 border-0 rounded-full text-white p-3 px-4 uppercase whitespace-nowrap mb-8 tablet:mb-0 items-center justify-between ml-auto cursor-pointer" name="submit" type="submit">
+            {l s='Send reset link' d='Shop.Theme.Actions'}
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" fill="none" class="ml-2 flex-0"><path fill-rule="evenodd" clip-rule="evenodd" d="m9.25 14.359 6.25-6.25v-.884L9.25.975l-.884.884 5.183 5.184H.5v1.25h13.05l-5.185 5.182.884.884h.001Z" fill="#fff"></path></svg>
+          </button>
+          <button class="form-control-submit tablet:hidden w-full text-xs tablet:text-sm tablet:w-auto bg-main hover:bg-main-hover duration-150 border-0 rounded-full text-white p-3 px-4 uppercase whitespace-nowrap mb-8 tablet:mb-0 flex items-center justify-between ml-auto cursor-pointer" name="submit" type="submit">
+            {l s='Send' d='Shop.Theme.Actions'}
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" fill="none" class="ml-2 flex-0"><path fill-rule="evenodd" clip-rule="evenodd" d="m9.25 14.359 6.25-6.25v-.884L9.25.975l-.884.884 5.183 5.184H.5v1.25h13.05l-5.185 5.182.884.884h.001Z" fill="#fff"></path></svg>
+          </button>
+  
+          </div>
       </div>
     </section>
 
@@ -67,8 +69,8 @@
 {/block}
 
 {block name='page_footer'}
-  <a href="{$urls.pages.my_account}" class="account-link">
-    <i class="material-icons">&#xE5CB;</i>
+  <a href="{$urls.pages.my_account}" class="flex items-center text-main-dark bg-transparent border-0 uppercase whitespace-nowrap mb-0 cursor-pointer">
+  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" fill="none" class="mr-2"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.25 13.384 0 7.134V6.25L6.25 0l.884.884L1.95 6.067H15v1.25H1.95L7.135 12.5l-.884.884H6.25Z" fill="#181828"></path></svg>
     <span>{l s='Back to Login' d='Shop.Theme.Actions'}</span>
   </a>
 {/block}

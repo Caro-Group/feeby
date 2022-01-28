@@ -29,10 +29,10 @@
 				
 					<div class="w-[50px] tablet:w-[70px] aspect-square mb-6 bg-gray-1000 rounded-md ">
 					{if isset($slider.image) && !empty($slider.image)}
-						<img class="p-1 tablet:p-2" src="{$slider.image|escape:'html':'UTF-8'}" alt="{if isset($slider.title)}{$slider.title|escape:'html':'UTF-8'}{/if}"/>
+						<img class="p-1 tablet:p-2 select-none" src="{$slider.image|escape:'html':'UTF-8'}" alt="{if isset($slider.title)}{$slider.title|escape:'html':'UTF-8'}{/if}"/>
 					{else}
 						{if isset($slider.image_link) && !empty($slider.image_link)}
-							<img class="p-1 tablet:p-2" src="{$slider.image_link|escape:'html':'UTF-8'}" alt="{if isset($slider.title)}{$slider.title|escape:'html':'UTF-8'}{/if}"/>
+							<img class="p-1 tablet:p-2  select-none" src="{$slider.image_link|escape:'html':'UTF-8'}" alt="{if isset($slider.title)}{$slider.title|escape:'html':'UTF-8'}{/if}"/>
 						{/if}
 					{/if}
 					</div>
