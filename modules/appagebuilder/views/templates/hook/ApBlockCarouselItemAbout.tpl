@@ -29,14 +29,13 @@
 				
 					<div class="w-[50px] tablet:w-[70px] aspect-square mb-6 bg-gray-1000 rounded-md ">
 					{if isset($slider.image) && !empty($slider.image)}
-						<img  src="{$slider.image|escape:'html':'UTF-8'}" alt="{if isset($slider.title)}{$slider.title|escape:'html':'UTF-8'}{/if}"/>
+						<img class="p-1 tablet:p-2" src="{$slider.image|escape:'html':'UTF-8'}" alt="{if isset($slider.title)}{$slider.title|escape:'html':'UTF-8'}{/if}"/>
 					{else}
 						{if isset($slider.image_link) && !empty($slider.image_link)}
-							<img  src="{$slider.image_link|escape:'html':'UTF-8'}" alt="{if isset($slider.title)}{$slider.title|escape:'html':'UTF-8'}{/if}"/>
+							<img class="p-1 tablet:p-2" src="{$slider.image_link|escape:'html':'UTF-8'}" alt="{if isset($slider.title)}{$slider.title|escape:'html':'UTF-8'}{/if}"/>
 						{/if}
 					{/if}
 					</div>
-				<div class="p-5 bg-white flex flex-col justify-between h-3/6 phablet:h-1/5 ">
 				
 					{if isset($slider.title) && !empty($slider.title)}
 						<h2 class="mb-6 font-normal">{$slider.title|escape:'html':'UTF-8' nofilter}</h2>
@@ -44,9 +43,8 @@
 					{if isset($slider.sub_title) && !empty($slider.sub_title)}
 						<p class="uppercase hover:text-main transition font-body font-normal text-[10px] tablet:text-sm">{$slider.sub_title|escape:'html':'UTF-8' nofilter}<i class="ti-arrow-right ml-2"></i></p>
 					{/if}
-				</div>
 				{if isset($slider.descript) && !empty($slider.descript)}
-					<div class="text-main-dark text-sm tablet:text-base font-light font-body">{$slider.descript nofilter}{* HTML form , no escape necessary *}</div>
+					<div><p class="text-main-dark text-sm tablet:text-base font-light font-body">{$slider.descript nofilter}{* HTML form , no escape necessary *}</p></div>
 				{/if}
 
 
