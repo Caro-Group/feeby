@@ -31,33 +31,6 @@
 		{/if}
 	</h1>
 	
-	{if $search_products.suggest || $search_products.category}
-		<div class="head-leosearch-product">
-			{if $search_products.suggest}
-				<div class="search-in-suggest">
-					<div class="search-value-title">{l s='Suggestion' mod='leoproductsearch'}</div>
-					<ul>
-					{foreach from=$search_products.suggest item=suggest}
-					    <li><a class="suggest-item" href="{$suggest.link}">{$suggest.word}</a></li>
-					{/foreach}
-					</ul>
-				</div>
-			{/if}
-
-			{if $search_products.category}
-				<div class="search-in-cat">
-					<div class="search-value-title">{l s='Search in category' mod='leoproductsearch'}</div>
-					<ul>
-					{foreach from=$search_products.category item=category}
-					    <li><a href="{$category.link}">{l s='in category' mod='leoproductsearch'}: <strong>{$category.name}</strong> ({$category.count})</a></li>
-					{/foreach}
-					</ul>
-				</div>
-			{/if}
-
-		</div>
-	{/if}
-
 	{if !$nbProducts}
 		<p class="alert alert-warning">
 			{if isset($search_query) && $search_query}
