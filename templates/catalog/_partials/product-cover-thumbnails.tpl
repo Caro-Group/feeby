@@ -43,13 +43,6 @@
     {else}
       {block name='product_cover'}
         <div class="product-cover border-2 border-solid rounded-[5px] border-gray-default">
-          {block name='product_flags'}
-            <ul class="product-flags">
-              {foreach from=$product.flags item=flag}
-                <li class="product-flag {$flag.type}">{$flag.label}</li>
-              {/foreach}
-            </ul>
-          {/block}
         {if $product.default_image}
           <img id="zoom_product" data-type-zoom="" class="js-qv-product-cover img-fluid" src="{$product.default_image.bySize.large_default.url}" alt="{$product.default_image.legend}" title="{$product.default_image.legend}" itemprop="image">
           <div class="layer hidden-sm-down" data-toggle="modal" data-target="#product-modal">
