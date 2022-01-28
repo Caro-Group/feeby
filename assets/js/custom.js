@@ -1267,12 +1267,15 @@ $(document).ready(function () {
 		breakpoints: {
 			560: {
 				slidesPerView: 2,
+              	slidesPerGroup: 1,
+              	slidesPerColumn: 1,
+				slidesPerColumnFill : 'column',
 			},
-			922: {
-				slidesPerView: 1,
-			},
-			grid:{
-				rows: 2,
+			768: {
+				slidesPerView: 3,
+              	slidesPerGroup: 3,
+              	slidesPerColumn: 2,
+				slidesPerColumnFill: 'row',
 			},
 	  	}
 
