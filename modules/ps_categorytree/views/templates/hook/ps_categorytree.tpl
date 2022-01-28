@@ -60,9 +60,8 @@
   {/strip}
 {/function}
 
-<h2 class="title_block title_block text-2xl tablet:text-4xl mt-5 tablet:mt-10 "><a class="font-light text-main-dark" href="{$categories.link nofilter}">{$categories.name}</a></h2>
-<div class="hidden-sm-down pt-16 pr-10">
-<h4 class="text-2xl font-light text-main-dark mb-3" >Kategorie</h4>
+<div class="hidden-sm-down pt-3 pr-10">
+  <h4 class="text-2xl font-light text-main-dark mb-3">{l s='Categories' d='Shop.Theme.Catalog'}</h4>
   <div class="block_content">
     <ul class="category-top-menu">
       <li data-id="">{categories nodes=$categories.children}</li>
