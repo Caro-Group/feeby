@@ -80,6 +80,19 @@
             {/block}
           {/block}
 
+          {if isset($category) && $category->id_parent == 582} {* CATEGORY: ARTIST *}
+            {capture name=cat_thumb}{$smarty.const._THEME_CAT_DIR_}{$category->id_parent}-thumb.jpg{/capture}
+
+            <a href="{$link->getCategoryLink($category->id)}" class="flex flex-row flex-wrap border-2 border-solid border-gray-default p-[10px] rounded-[5px]">
+              <img src="{$link->getMediaLink($smarty.capture.cat_thumb)}" class="rounded-full" width="55px" height="55px"/>
+              <span class="flex flex-col flex-wrap">
+                <span class="block text-base text-gray-3000 mb-[5px]">{l s='Designer' d='Shop.Theme.Catalog'}</span>
+                <span class="font-header text-main-dark italic font-light">{$category->name}</span>
+              </span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="7" height="14" fill="none"><path d="M7 6.175.868 0H.867L0 .873l5.782 5.739-5.78 5.737.866.873L7 7.048v-.873Z" fill="#232322"/></svg>
+            </a>
+          {/if}
+
           <div class="leo-compare-wishlist-button absolute top-0 right-0">
             {hook h='displayLeoWishlistButton' product=$product}
             {hook h='displayLeoCompareButton' product=$product}
