@@ -24,7 +24,7 @@
 {extends file='catalog/listing/product-list.tpl'}
 
 {block name='displayTopBothColumn'}
-  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mb-[40px] tablet:mb-[60px]">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mb-[10px] desktop-presta:mb-[60px]">
     <h1 class="title_block title_block text-2xl tablet:text-4xl mt-5 tablet:mt-10 font-light text-main-dark">{$category.meta_keywords}</h1>
   </div>
 {/block}
