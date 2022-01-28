@@ -22039,9 +22039,6 @@ a.label i {
     text-shadow: none;
     font-weight: normal; }
 
-.forgotten-password p.send-renew-password-link {
-  text-align: center;
-  margin: 0 0 35px; }
 .forgotten-password .center-email-fields {
   display: flex;
   flex-wrap: wrap;
