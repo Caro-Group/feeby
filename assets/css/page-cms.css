@@ -1,0 +1,39 @@
+.page-cms-4, .page-cms-7, .page-cms-8, .page-cms-7, .page-cms-9, .page-cms-20{
+    @apply desktop-presta:mx-32
+}
+
+.page-cms .page-content img{
+    @apply object-contain;
+}
+
+.page-cms .page-content.page-cms-4   img{
+    @apply object-cover rounded-md;
+}
+
+.page-cms .page-cms-4.page-cms-4  img{
+    @apply h-auto tablet:h-[700px];
+}
+
+.page-cms .page-content p{
+    @apply font-body text-sm tablet:text-base text-main-dark;
+}
+
+.page-cms .page-content ol{
+    @apply mb-[30px];
+}
+
+.page-cms .page-content ol li{
+    @apply font-body text-sm tablet:text-base text-main-dark;
+}
+
+.page-cms .page-content a{
+    @apply hover:text-main hover:decoration-solid transition;
+}
+
+.page-cms .page-cms h2{
+    @apply font-normal border-0 border-t border-solid border-gray-1000 pt-5 mt-6 first:border-t-0 first:pt-0 ;
+}
+
+.page-cms .page-cms-9 p, .page-cms .page-cms-9 h2{
+    @apply tablet:px-5;
+}
