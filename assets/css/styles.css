@@ -1,6 +1,7 @@
 @import "fonts.css";
 @import "seo-description.css";
 @import "checkout-step.css";
+@import "page-cms.css";
 
 @tailwind base;
 
@@ -466,4 +467,12 @@ div.star.star_on:before, div.star.star_hover:before{
 
 .title-on-image{
     @apply transform group-hover:scale-110;
+}
+
+.page-product .product-description ul{
+    @apply mt-5;
+}
+
+.page-product .product-description ul li{
+    @apply marker:text-main text-sm tablet:text-base text-main-dark font-light mb-3;
 }
