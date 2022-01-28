@@ -28,8 +28,10 @@
     <h1 class="title_block title_block text-2xl tablet:text-4xl mt-5 tablet:mt-10 font-light text-main-dark">
       {if $category.meta_keywords !== ''}
         {$category.meta_keywords}
-      {else}
+      {elseif isset($categories) }
         {$categories.name}
+      {else}
+        {$page.title}
       {/if}
     </h1>
   </div>
