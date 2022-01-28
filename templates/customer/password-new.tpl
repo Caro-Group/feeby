@@ -25,11 +25,13 @@
 {extends file='page.tpl'}
 
 {block name='page_title'}
-  {l s='Reset your password' d='Shop.Theme.Customeraccount'}
-{/block}
+  <div class="text-center">
+    {l s='Reset your password' d='Shop.Theme.Customeraccount'}
+  </div>
+  {/block}
 
 {block name='page_content'}
-    <form action="{$urls.pages.password}" method="post">
+    <form action="{$urls.pages.password}" method="post" class=" text-main-dark font-body text-sm tablet:text-base flex justify-center">
     <ul class="ps-alert-error">
       {foreach $errors as $error}
         <li class="item">
@@ -44,7 +46,7 @@
     </ul>
       <section class="form-fields renew-password">
 
-        <div class="email">
+        <div class="email text-center mb-5">
           {l
             s='Email address: %email%'
             d='Shop.Theme.Customeraccount'
@@ -52,18 +54,14 @@
         </div>
 
         <div class="container-fluid">
-          <div class="row form-group">
-            <label class="form-control-label col-md-3 offset-md-2">{l s='New password' d='Shop.Forms.Labels'}</label>
-            <div class="col-md-4">
-              <input class="form-control" type="password" data-validate="isPasswd" name="passwd" value="">
-            </div>
+          <div class=" form-group">
+            <label class="form-control-label">{l s='New password' d='Shop.Forms.Labels'}</label>
+            <input class="form-control form-input font-body text-sm placeholder:italic border-gray-2000 border-solid border flex rounded-full pl-4 bg-white w-full focus:border-gray-3000 focus:ring-0" type="password" data-validate="isPasswd" name="passwd" value="">
           </div>
 
           <div class="row form-group">
-            <label class="form-control-label col-md-3 offset-md-2">{l s='Confirmation' d='Shop.Forms.Labels'}</label>
-            <div class="col-md-4">
-              <input class="form-control" type="password" data-validate="isPasswd" name="confirmation" value="">
-            </div>
+            <label class="form-control-label">{l s='Confirmation' d='Shop.Forms.Labels'}</label>
+            <input class="form-control form-input font-body text-sm placeholder:italic border-gray-2000 border-solid border flex rounded-full pl-4 bg-white w-full focus:border-gray-3000 focus:ring-0" type="password" data-validate="isPasswd" name="confirmation" value="">
           </div>
 
           <input type="hidden" name="token" id="token" value="{$customer_token}">
@@ -72,8 +70,9 @@
 
           <div class="row form-group">
             <div class="offset-md-5">
-              <button class="btn btn-outline" type="submit" name="submit">
+              <button class="tablet:flex w-full text-xs tablet:text-sm tablet:w-auto bg-main hover:bg-main-hover duration-150 border-0 rounded-full text-white p-3 px-4 uppercase whitespace-nowrap mb-8 tablet:mb-0 items-center justify-between ml-auto cursor-pointer" type="submit" name="submit">
                 {l s='Change Password' d='Shop.Theme.Actions'}
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" fill="none" class="ml-2 flex-0"><path fill-rule="evenodd" clip-rule="evenodd" d="m9.25 14.359 6.25-6.25v-.884L9.25.975l-.884.884 5.183 5.184H.5v1.25h13.05l-5.185 5.182.884.884h.001Z" fill="#fff"></path></svg>
               </button>
             </div>
           </div>
@@ -85,6 +84,6 @@
 
 {block name='page_footer'}
   <ul>
-    <li><a href="{$urls.pages.authentication}">{l s='Back to Login' d='Shop.Theme.Actions'}</a></li>
+    <li><a class="flex items-center text-main-dark bg-transparent border-0 uppercase whitespace-nowrap mb-0 cursor-pointer" href="{$urls.pages.authentication}"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" fill="none" class="mr-2"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.25 13.384 0 7.134V6.25L6.25 0l.884.884L1.95 6.067H15v1.25H1.95L7.135 12.5l-.884.884H6.25Z" fill="#181828"></path></svg>{l s='Back to Login' d='Shop.Theme.Actions'}</a></li>
   </ul>
 {/block}
