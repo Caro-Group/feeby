@@ -49,7 +49,7 @@
           {/block}
 
           {block name='product_images'}
-            <div id="thumb-gallery relative" class="product-thumb-images">
+            <div id="thumb-gallery" class="product-thumb-images relative">
               {if $product.default_image}
                 {foreach from=$product.images item=image}
                   <div class="thumb-container {if $image.id_image == $product.default_image.id_image} active {/if}">
