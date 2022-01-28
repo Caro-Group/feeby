@@ -11,7 +11,7 @@
 {$Num=array_chunk($formAtts.slides, $itemsperpage)}
 
 {if count($Num) > 0}
-	<div class="swiper" data-top-bar-swiper>
+	<div class="swiper overflow-hidden" data-top-bar-swiper>
 		<div class="swiper-wrapper h-5 tablet:h-10  select-none py-1 tablet:py-0" style="transition-timing-function: linear !important;" >
 			{foreach from=$Num item=sliders name=val}
 				{foreach from=$sliders item=slider key=i name="sliders"}

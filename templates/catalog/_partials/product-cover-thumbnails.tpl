@@ -54,8 +54,8 @@
         </div>
       {/block}
       {block name='product_images'}
-        <div id="thumb-gallery" class="product-thumb-images flex">
-          <div class="swiper" data-swiper-product>
+        <div id="thumb-gallery relative" class="product-thumb-images flex">
+          <div class="swiper overflow-hidden" data-swiper-product>
             <div class="swiper-wrapper">
               {foreach from=$product.images item=image}
                 <div class="swiper-custom-slide w-auto h-full relative thumb-container {if $image.id_image == $product.default_image.id_image} active {/if}" style="    flex-shrink: 0;
