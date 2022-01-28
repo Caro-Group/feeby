@@ -102,7 +102,7 @@
                    <span class="block text-base text-gray-3000 leading-none font-normal">{l s='Designer' d='Shop.Theme.Catalog'}</span>
                    <span class="font-header text-main-dark italic font-light text-base leading-normal">{$category->name}</span>
                  </span>
-                 <svg class="ml-auto my-auto mr-3 group-hover:mr-1 transition" xmlns="http://www.w3.org/2000/svg" width="7" height="14" fill="none"><path d="M7 6.175.868 0H.867L0 .873l5.782 5.739-5.78 5.737.866.873L7 7.048v-.873Z" fill="#232322"/></svg>
+                 <svg class="ml-auto my-auto mr-3 group-hover:mr-1 transition-all" xmlns="http://www.w3.org/2000/svg" width="7" height="14" fill="none"><path d="M7 6.175.868 0H.867L0 .873l5.782 5.739-5.78 5.737.866.873L7 7.048v-.873Z" fill="#232322"/></svg>
                </a>
              {/if}
              
