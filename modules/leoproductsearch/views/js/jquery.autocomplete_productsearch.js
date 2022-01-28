@@ -385,37 +385,7 @@ $.Autocompleter = function(input, options) {
 				}, extraParams),
 				success: function(data) {
 					var str = '<div>';
-
-					if(data.suggest.length){
-						str += '<div class="search-in-suggest">';
-						str += '<div class="search-value-title">'+$("#leosearchtopbox").data('label-suggestion')+'</div>';
-						str += '<ul>';
-						for(i=0;i<data.suggest.length;i++){
-							str += '<li><a class="suggest-item" href="'+ data.suggest[i]['word'] +'">' + data.suggest[i]['word'] + '</a></li>';
-						}
-						str += '</ul>';
-						str += '</div>';
-					}
-					if(data.category.length){
-						str += '<div class="search-in-cat">';
-						str += '<div class="search-value-title">'+$("#leosearchtopbox").data('search-for')+' "'+ $("#leo_search_query_top").val() +'"</div>';
-						if(data.category.length){
-							str += '<ul>';
-							for(i=0;i<data.category.length;i++){
-								str += '<li><a href="'+ data.category[i]['link'] +'">'+$("#leosearchtopbox").data('in-category')+': <strong>'+ data.category[i]['name'] +'</strong> ('+ data.category[i]['count'] +' results)</a></li>';
-							}
-							str += '</ul>';
-						}
-						// if(data.manufacturer.length){
-						// 	str += '<ul>';
-						// 	for(i=0;i<data.manufacturer.length;i++){
-						// 		str += '<li><a href="'+ data.manufacturer[i]['link'] +'">in Manufacturer: <strong>'+ data.manufacturer[i]['name'] +'</strong> ('+ data.manufacturer[i]['count'] +' results)</a></li>';
-						// 	}
-						// 	str += '</ul>';
-						// }
-						str += '</div>';
-					}
-
+					
 					if(data.products.length){
 						str += '<div class="search-in-product">';
 						str += '<div class="search-value-title">'+$("#leosearchtopbox").data('products-for')+' "'+ $("#leo_search_query_top").val() +'"</div>';
