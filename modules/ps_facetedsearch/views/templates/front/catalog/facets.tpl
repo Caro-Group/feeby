@@ -133,6 +133,12 @@
                               {elseif $filter.value == 51}
                                 background-color: #000000;
                                 border-color: #000000;
+                              {elseif $filter.value == 180}
+                                background: #FFFFFF;
+                                border-color: #ADAFBA;
+                              {elseif $filter.value == 253}
+                                background: #000000;
+                                border-color: #000000;
                               {/if}"
                               ></div>
                             {/if}
