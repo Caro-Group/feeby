@@ -344,11 +344,12 @@ function activeEventFormReview()
 								if(object_result.result){
 									$('.new_review_form_content > *').fadeOut('slow', function(){
 										$(this).remove();
+										$('[data-review-messages]').children().remove();
 									});
-									$('.new_review_form_content').first().append('<div class="form-group has-success"><label class="form-control-label">'+object_result.sucess_mess+'</label></div>');
+									$('[data-review-messages]').append('<div class="alert alert-success bg-opacity-10 bg-green-600 border-green-600 max-w-lg mx-auto text-green-600 font-body font-normal"><label class="form-control-label m-auto p-0">'+object_result.sucess_mess+'</label></div>');
 								} else {
 									$.each(object_result.errors, function(key, val){
-										$('.new_review_form_content').append('<div class="form-group has-danger text-center"><label class="form-control-label">'+val+'</label></div>');
+										$('[data-review-messages]').append('<div class="alert alert-danger bg-opacity-10 bg-red-600 border-red-600 font-body font-normal max-w-lg mr-2 mx-auto text-red-600"><label class="form-control-label m-auto p-0">'+val+'</label></div>');
 									});
 									$('[data-review-form] .leo-modal-review-bt').removeClass('active');
 								}
