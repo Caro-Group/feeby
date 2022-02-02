@@ -7,7 +7,7 @@
 *}
 {if !$cookie_setted}
 <div id="lddw-cookie-modal-box" class="bg-gray-1000 bottom-0 fixed left-0 p-2 rounded text-center w-[300px] m-[10px] border border-solid z-30">
-    <span class="absolute font-body leading-none px-2 py-1 right-0 text-[#6B7280] text-[14px] top-0 z-10 cursor-pointer">✕</span>
+    <span class="absolute font-body leading-none px-2 py-1 right-0 text-[#6B7280] text-[14px] top-0 z-10 cursor-pointer hover:color-black">✕</span>
     <div class="font-header font-light italic mb-2 text-[20px] text-main">{$title|escape:'html':'UTF-8'}</div>
     <p class="font-body font-light leading-normal mb-5 text-[#232322] text-[14px]">{$message}</p>
     <p class="flex justify-between">
