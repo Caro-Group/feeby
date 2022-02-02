@@ -8,7 +8,7 @@
 
 setCookieNotice = function(element, options) {
     this.box = element;
-    this.close_button = element.find('.lddw-cookie-close');
+    this.close_button = element.find('#lddw-cookie-close');
     this.agree_button = element.find('#lddw-cookie-agree');
 
     // Manage options
