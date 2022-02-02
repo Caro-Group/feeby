@@ -84,35 +84,55 @@
 
                           {if $facet.type == 'feature'}
                             {if $facet.properties.id_feature == '4'}
-                              <div class="bg-gray-2000 clearfix float-left w-6 h-6 mr-6 rounded"
+                              <div class="bg-gray-2000 clearfix float-left w-6 h-6 mr-6 rounded border border-solid"
                               style="{if $filter_key == "0"}
-                                background-color: #C2B280;
+                                background-color: #FEF3DE;
+                                border-color: #FEF3DE;
                               {elseif $filter_key == "1"}
-                                background-color: #964B00;
+                                background-color: #AA6D12;
+                                border-color: #AA6D12;
                               {elseif $filter_key == "2"}
-                                background-color: #000000;
+                                background: linear-gradient(270deg, #000000 50.51%, #FFFFFF 50.52%);
+                                border-color: #ADAFBA;
                               {elseif $filter_key == "3"}
-                                background-color: #ff0000;
+                                background-color: #ED0000;
+                                border-color: #ED0000;
                               {elseif $filter_key == "4"}
-                                background-color: #B803FF;
+                                background-color: #C23D85;
+                                border-color: #C23D85;
                               {elseif $filter_key == "5"}
                                 background: linear-gradient( 90deg, rgba(255, 0, 0, 1) 0%, rgba(255, 154, 0, 1) 10%, rgba(208, 222, 33, 1) 20%, rgba(79, 220, 74, 1) 30%, rgba(63, 218, 216, 1) 40%, rgba(47, 201, 226, 1) 50%, rgba(28, 127, 238, 1) 60%, rgba(95, 21, 242, 1) 70%, rgba(186, 12, 248, 1) 80%, rgba(251, 7, 217, 1) 90%, rgba(255, 0, 0, 1) 100% );
+                                border-color: #ADAFBA;
                               {elseif $filter_key == "6"}
-                                background-color: #0000ff;
+                                background-color: #005FB1;
+                                border-color: #005FB1;
                               {elseif $filter_key == "7"}
-                                background-color: #FFA500;
+                                background-color: #FF9A02;
+                                border-color: #FF9A02;
                               {elseif $filter_key == "8"}
-                                background-color: #FFCCDD;
+                                background-color: #FFB6C1;
+                                border-color: #FFB6C1;
                               {elseif $filter_key == "9"}
-                                background-color: #C0C0C0;
+                                background-color: #EAEAEA;
+                                border-color: #EAEAEA;
                               {elseif $filter_key == "10"}
-                                background-color: #505050;
+                                background-color: #848484;
+                                border-color: #848484;
                               {elseif $filter_key == "11"}
-                                background-color: #00ff00;
+                                background-color: #46932A;
+                                border-color: #46932A;
                               {elseif $filter_key == "12"}
-                                background-color: #FFD700;
+                                background-color: #DFCA80;
+                                border-color: #DFCA80;
                               {elseif $filter_key == "13"}
-                                background-color: #FFFF00;
+                                background-color: #FFE233;
+                                border-color: #FFE233;
+                              {elseif $filter_key == "14"}
+                                background: #FFFFFF;
+                                border-color: #ADAFBA;
+                              {elseif $filter_key == "15"}
+                                background-color: #000000;
+                                border-color: #000000;
                               {/if}"
                               ></div>
                             {/if}
