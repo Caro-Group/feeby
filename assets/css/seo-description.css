@@ -22,6 +22,10 @@
     @apply text-main-dark font-body text-sm tablet:text-base text-justify;
 }
 
+.seo-description strong{
+    @apply font-medium;
+}
+
 .seo-description > div{
     @apply mb-8;
 }
