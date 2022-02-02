@@ -81,6 +81,39 @@
                           class="text-main-dark text-base font-light search-link js-search-link"
                           rel="nofollow"
                         >
+                          {if $_expand_id == 37325}
+                            <div class="bg-gray-2000 clearfix float-left w-6 h-6 mr-2 rounded"
+                            style="{if $filter_key == 0}
+                              background-color: #C2B280;
+                            {elseif $filter_key == 1}
+                              background-color: #964B00;
+                            {elseif $filter_key == 2}
+                              background-color: #000000;
+                            {elseif $filter_key == 3}
+                              background-color: #ff0000;
+                            {elseif $filter_key == 4}
+                              background-color: #B803FF;
+                            {elseif $filter_key == 5}
+                              background: radial-gradient( rgba(255, 0, 0, 1) 0%, rgba(255, 154, 0, 1) 10%, rgba(208, 222, 33, 1) 20%, rgba(79, 220, 74, 1) 30%, rgba(63, 218, 216, 1) 40%, rgba(47, 201, 226, 1) 50%, rgba(28, 127, 238, 1) 60%, rgba(95, 21, 242, 1) 70%, rgba(186, 12, 248, 1) 80%, rgba(251, 7, 217, 1) 90%, rgba(255, 0, 0, 1) 100% );
+                            {elseif $filter_key == 6}
+                              background-color: #0000ff;
+                            {elseif $filter_key == 7}
+                              background-color: #FFA500;
+                            {elseif $filter_key == 8}
+                              background-color: #FFCCDD;
+                            {elseif $filter_key == 9}
+                              background-color: #C0C0C0;
+                            {elseif $filter_key == 10}
+                              background-color: #505050;
+                            {elseif $filter_key == 11}
+                              background-color: #00ff00;
+                            {elseif $filter_key == 12}
+                              background-color: #FFD700;
+                            {elseif $filter_key == 13}
+                              background-color: #FFFF00;
+                            {/if}"
+                            ></div>
+                          {/if}
                           {$filter.label}
                           {if $filter.magnitude and $show_quantities}
                             <span class="magnitude text-sm">({$filter.magnitude})</span>
