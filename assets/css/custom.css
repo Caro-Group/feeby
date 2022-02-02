@@ -621,6 +621,7 @@ body#category #content.page-not-found .image-404:after {
 @media (min-width: 992px) and (max-width: 1199px){
 .leo-megamenu .navbar-nav>li>a {
     padding: 30px 8px;
+    white-space: nowrap;
 }
 }
 
