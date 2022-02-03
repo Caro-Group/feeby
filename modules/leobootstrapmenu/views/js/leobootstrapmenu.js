@@ -488,6 +488,9 @@ function off_canvas_active()
 	// console.log($(window).height());
 	if($('body').hasClass('off-canvas-active'))
 	{
+		if($('.off-canvas-nav-megamenu').find('.open-sub').length){
+			$('.off-canvas-nav-megamenu').find('.open-sub').children('.dropdown-toggle').click();
+		}
 		$("body").removeClass("off-canvas-active").addClass("off-canvas-inactive");
 	}
 	else if($('body').hasClass('off-canvas-inactive'))
