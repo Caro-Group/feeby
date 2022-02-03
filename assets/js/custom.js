@@ -1341,7 +1341,10 @@ function openMenuWithCategory(id)
 			$(menu_el).next('.caret').removeClass('text-main-dark').addClass('text-main');
 		}
 
+		
 		if($(menu_el).parent().hasClass('level3')){
+			$(menu_el).removeClass('text-main-dark').addClass('text-main');			
+
 			if($(menu_el).parent().parent().hasClass('level2')){
 				$(menu_el).parent().parent().children('a').removeClass('text-main-dark').addClass('text-main');
 			}
