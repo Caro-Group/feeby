@@ -1284,6 +1284,23 @@ $(document).ready(function () {
 
 });
 
+if( $('[data-current-category-id]').length){
+$(document).ready(function () {
+	var currentCatId = $('[data-current-category-id]').data('CurrentCategoryId');
+	var menu_el = $('.off-canvas-nav-megamenu').find('[data-category-id=' + currentCatId + ']').first().addClass('text-main');
+	if($(menu_el).parent().hasClass('level2')){
+		$(menu_el).next('.caret').addClass('text-main');
+	}
+
+	if($(menu_el).parent().hasClass('level3')){
+		if($(menu_el).parent().parent().hasClass('level2')){
+			$(menu_el).parent().parent().addClass('text-main');
+		}
+		if($(menu_el).parent().parent().parent().hasClass('level2')){
+			$(menu_el).parent().parent().parent().addClass('text-main');
+		}
+	}
+});
 
 function openMenuWithCategory(id)
 {
@@ -1318,6 +1335,7 @@ function openMenuWithCategory(id)
 	
  $('[data-target="\.megamenu-off-canvas-' + menu_id + '"]').first().click();
 }
+};
 
 $(document).ready(function () {
 

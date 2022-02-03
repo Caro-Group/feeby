@@ -31,7 +31,7 @@
 
 <div id="js-product-list-top" class="pb-7 tablet:pb-3 products-selection">
   {if $page.page_name == 'category'}
-    <div class="bg-main-dark mb-5 p-2 rounded-full tablet:hidden text-base text-center text-white" {if $page.page_name == 'category'}onclick="openMenuWithCategory({$smarty.get.id_category})"{/if}>
+    <div class="bg-main-dark mb-5 p-2 rounded-full tablet:hidden text-base text-center text-white" data-current-category-id="{$smarty.get.id_category}" onclick="openMenuWithCategory({$smarty.get.id_category})">
       {l s='Categories' d='Shop.Theme.Global'}
     </div>
   {/if}
