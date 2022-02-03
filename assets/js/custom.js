@@ -1286,7 +1286,7 @@ $(document).ready(function () {
 
 if( $('[data-current-category-id]').length){
 $(document).ready(function () {
-	var currentCatId = $('[data-current-category-id]').data('CurrentCategoryId');
+	var currentCatId = $('[data-current-category-id]').first().data('currentCategoryId');
 	var menu_el = $('.off-canvas-nav-megamenu').find('[data-category-id=' + currentCatId + ']').first().addClass('text-main');
 	if($(menu_el).parent().hasClass('level2')){
 		$(menu_el).next('.caret').addClass('text-main');
@@ -1294,10 +1294,10 @@ $(document).ready(function () {
 
 	if($(menu_el).parent().hasClass('level3')){
 		if($(menu_el).parent().parent().hasClass('level2')){
-			$(menu_el).parent().parent().addClass('text-main');
+			$(menu_el).parent().parent().children('a').addClass('text-main');
 		}
 		if($(menu_el).parent().parent().parent().hasClass('level2')){
-			$(menu_el).parent().parent().parent().addClass('text-main');
+			$(menu_el).parent().parent().parent().children('a').addClass('text-main');
 		}
 	}
 });
