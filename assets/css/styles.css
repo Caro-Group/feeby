@@ -101,6 +101,18 @@ p{
     @apply bg-white
 }
 
+.wishlist .btn-primary.btn-primary:focus{
+    @apply bg-gray-1000;
+}
+
+.wishlist .btn-primary.btn-primary:active:focus{
+    @apply bg-gray-1000;
+}
+
+.wishlist .open .btn-primary.btn-primary{
+    @apply bg-gray-1000;
+}
+
 .leo-wishlist-bt-content{
     @apply flex;
 }
@@ -111,6 +123,15 @@ p{
 
 .wishlist-svg path{
     @apply transition;
+}
+
+.dropdown.leo-wishlist-button-dropdown .dropdown-menu{
+    @apply opacity-0 transform translate-x-5 transition block z-10 duration-200;
+} 
+
+
+.dropdown.leo-wishlist-button-dropdown.open .dropdown-menu{
+    @apply opacity-100 translate-x-0;
 }
 
 .swiper-pagination.swiper-pagination-bullets-dynamic{

@@ -469,16 +469,12 @@ div.star:before {
     top: 60px;
     right: 0;
     left: auto;
-    border-bottom: 1px solid #ddd;
     bottom: auto;
-
     font-size: 13px;
     max-height: 125px;
     overflow-y: auto;
-    border-radius: 0;
     width: 100%; }
   .leo-wishlist-button-dropdown .move-wishlist-item, .leo-wishlist-button-dropdown .wishlist-item {
-    border-radius: 0;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
@@ -486,18 +482,10 @@ div.star:before {
     text-align: left;
     padding: 5px 15px !important;
     text-transform: capitalize;
-    font-size: 12px;
-    border-bottom: 1px solid #eee; }
+    font-size: 12px;}
     .rtl .leo-wishlist-button-dropdown .move-wishlist-item, .rtl .leo-wishlist-button-dropdown .wishlist-item {
       text-align: right; }
-    .leo-wishlist-button-dropdown .move-wishlist-item:last-child, .leo-wishlist-button-dropdown .wishlist-item:last-child {
-      border-bottom: 0; }
-    .leo-wishlist-button-dropdown .move-wishlist-item:hover, .leo-wishlist-button-dropdown .wishlist-item:hover {
-      color: #000;
-      background: none; }
-    .leo-wishlist-button-dropdown .move-wishlist-item.added, .leo-wishlist-button-dropdown .wishlist-item.added {
-      color: #000;
-      background: none; }
+
       .leo-wishlist-button-dropdown .move-wishlist-item.added:before, .leo-wishlist-button-dropdown .wishlist-item.added:before {
         content: "\f00c";
         font-family: "FontAwesome";
