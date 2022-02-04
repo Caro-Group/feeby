@@ -48,12 +48,12 @@
                     <img class="lazy" data-src="{$field.image.small.url}">
                     <a class="remove-image" href="{$field.remove_image_url}" rel="nofollow">{l s='Remove Image' d='Shop.Theme.Actions'}</a>
                   {/if}
-                  <span class="border-gray-2000 border-solid border flex rounded-full bg-white ">
-                    <span class="js-file-name  pl-4">{l s='No selected file' d='Shop.Forms.Help'}</span>
-                    <input class="js-file-input absolute cursor-pointer file:absolute file:bg-main file:border-0 file:cursor-pointer file:duration-150 file:font-body file:m-0 file:px-4 file:py-3 file:right-0 file:rounded-full file:text-white file:uppercase file:whitespace-nowrap focus:outline focus:outline-gray-3000 focus:rounded-full h-full hover:file:bg-main-hover left-0 text-transparent w-full z-20" {if $field.required} required {/if} type="file" name="{$field.input_name}">
+                  <span class="border-gray-2000 border-solid border flex rounded-full bg-white relative ">
+                    <span class="js-file-name pl-4 py-3 ">{l s='No selected file' d='Shop.Forms.Help'}</span>
+                    <input class="js-file-input absolute cursor-pointer file:absolute file:bg-main file:border-0 file:cursor-pointer file:duration-150 file:font-body file:m-0 file:px-4 file:py-3 file:right-0 file:rounded-full file:text-white file:uppercase file:whitespace-nowrap focus:outline focus:outline-1 focus:outline-gray-3000 focus:rounded-full h-full hover:file:bg-main-hover left-0 text-transparent w-full z-20" {if $field.required} required {/if} type="file" name="{$field.input_name}">
                     {* <button class="btn btn-primary">{l s='Choose file' d='Shop.Theme.Actions'}</button> *}
                   </span>
-                  <small class="float-xs-right">{l s='.png .jpg .gif' d='Shop.Forms.Help'}</small>
+                  <small class="float-right font-body text-gray-300- text-[10px]">{l s='.png .jpg .gif' d='Shop.Forms.Help'}</small>
                 {/if}
               </li>
             {/foreach}
