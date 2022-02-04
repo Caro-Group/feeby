@@ -63,9 +63,9 @@
 				{if isset($wishlists) && count($wishlists) > 0}					
 					<div class="dropdown leo-wishlist-button-dropdown">					 
 					  <button class="leo-wishlist-button dropdown-toggle btn btn-primary show-list" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{l s='Move' d='Modules.Leofeature.Shop'}</button>
-					  <div class="dropdown-menu leo-list-wishlist leo-list-wishlist-{$product.id_product}">				
+					  <div class="dropdown-menu leo-list-wishlist leo-list-wishlist-{$product.id_product}  mt-[2px] bg-gray-1000 rounded-md ">				
 						{foreach from=$wishlists item=wishlists_item}							
-							<a href="#" class="dropdown-item list-group-item list-group-item-action move-wishlist-item" data-id-wishlist="{$wishlists_item.id_wishlist}" data-id-wishlist-product="{$wishlist.id_wishlist_product}" data-id-product="{$product.id_product}" data-id-product-attribute="{$product.id_product_attribute}" title="{$wishlists_item.name}">{$wishlists_item.name}</a>			
+							<a href="#" class="dropdown-item list-group-item list-group-item-action move-wishlist-item border-b border-0 border-solid border-white hover:bg-[#F5F5F5] hover:text-main-dark text-main-dark transition last:border-b-0 " data-id-wishlist="{$wishlists_item.id_wishlist}" data-id-wishlist-product="{$wishlist.id_wishlist_product}" data-id-product="{$product.id_product}" data-id-product-attribute="{$product.id_product_attribute}" title="{$wishlists_item.name}">{$wishlists_item.name}</a>			
 						{/foreach}
 					  </div>
 					</div>
