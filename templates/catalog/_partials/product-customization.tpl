@@ -66,7 +66,7 @@
             {/foreach}
           </ul>
           <div class="clearfix">
-            <button class="bg-transparent border-2 border-main-dark border-solid cursor-pointer flex font-body font-normal hover:bg-main-dark hover:text-white items-center justify-between ml-auto px-6 py-3 rounded-full text-main-dark text-sm transition uppercase" type="submit" name="submitCustomizedData">{l s='Save Customization' d='Shop.Theme.Actions'}</button>
+            <button class="bg-transparent border-2 border-main-dark border-solid cursor-pointer flex font-body font-normal hover:bg-main-dark hover:text-white items-center justify-between mx-auto tablet:mx-0 tablet:ml-auto px-6 py-3 rounded-full text-main-dark text-sm transition uppercase" type="submit" name="submitCustomizedData">{l s='Save Customization' d='Shop.Theme.Actions'}</button>
           </div>
         </form>
       {/block}
