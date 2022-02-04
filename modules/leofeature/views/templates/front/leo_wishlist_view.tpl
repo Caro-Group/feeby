@@ -55,20 +55,22 @@
 											{hook h='displayLeoCartQuantity' product=$product}
 											{hook h='displayLeoCartButton' product=$product}
 											{block name='product_name'}
-												<h1 class="h3 product-title" itemprop="name"><a href="{$product.url}" target="_blank">{$product.name|truncate:30:'...'}</a></h1>
+												<h1 class="text-main-dark font-body font-light not-italic 
+												text-sm tablet:text-base text-left" itemprop="name"><a class="text-main-dark" href="{$product.url}" target="_blank">{$product.name|truncate:30:'...'}</a></h1>
 											{/block}
 											{block name='product_price_and_shipping'}
 												{if $product.show_price}
 													<div class="product-price-and-shipping">
-														{if $product.has_discount}
-															{hook h='displayProductPriceBlock' product=$product type="old_price"}
-															<span class="regular-price">{$product.regular_price}</span>
-															{if $product.discount_type === 'percentage'}
-																<span class="discount-percentage">{$product.discount_percentage}</span>
-															{/if}
+													{hook h='displayProductPriceBlock' product=$product type="before_price"}
+													<span itemprop="price" class="text-left font-body font-medium text-main-dark 
+													text-base tablet:text-xl">{$product.price}</span>												
+													{if $product.has_discount}
+														{hook h='displayProductPriceBlock' product=$product type="old_price"}
+														<span class="regular-price pl-2">{$product.regular_price}</span>
+														{if $product.discount_type === 'percentage'}
+															<span class="px-2 py-0.5 bg-main rounded-full {if $product.has_discount} text-main {else} text-white {/if}">{$product.discount_percentage}</span>
 														{/if}
-														{hook h='displayProductPriceBlock' product=$product type="before_price"}
-														<span itemprop="price" class="price">{$product.price}</span>												
+													{/if}
 														{hook h='displayProductPriceBlock' product=$product type='unit_price'}
 														{hook h='displayProductPriceBlock' product=$product type='weight'}
 													</div>	  
