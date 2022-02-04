@@ -23,9 +23,9 @@
 			</span>
 			
 		  </button>
-		  <div class="dropdown-menu leo-list-wishlist leo-list-wishlist-{$leo_wishlist_id_product}">
+		  <div class="dropdown-menu leo-list-wishlist leo-list-wishlist-{$leo_wishlist_id_product} mt-[2px] bg-gray-1000 rounded-l-md">
 			{foreach from=$wishlists item=wishlists_item}
-				<a href="javascript:void(0)" class="dropdown-item list-group-item list-group-item-action wishlist-item{if in_array($wishlists_item.id_wishlist, $wishlists_added)} added {/if}" data-id-wishlist="{$wishlists_item.id_wishlist}" data-id-product="{$leo_wishlist_id_product}" data-id-product-attribute="{$leo_wishlist_id_product_attribute}" title="{if in_array($wishlists_item.id_wishlist, $wishlists_added)}{l s='Remove from Wishlist' d='Modules.Leofeature.Shop'}{else}{l s='Add to Wishlist' d='Modules.Leofeature.Shop'}{/if}">{$wishlists_item.name}</a>			
+				<a href="javascript:void(0)" class="dropdown-item list-group-item list-group-item-action wishlist-item border-b border-0 border-solid border-white hover:bg-[#F5F5F5] hover:text-main-dark text-main-dark transition last:border-b-0{if in_array($wishlists_item.id_wishlist, $wishlists_added)} added {/if}" data-id-wishlist="{$wishlists_item.id_wishlist}" data-id-product="{$leo_wishlist_id_product}" data-id-product-attribute="{$leo_wishlist_id_product_attribute}" title="{if in_array($wishlists_item.id_wishlist, $wishlists_added)}{l s='Remove from Wishlist' d='Modules.Leofeature.Shop'}{else}{l s='Add to Wishlist' d='Modules.Leofeature.Shop'}{/if}">{$wishlists_item.name}</a>			
 			{/foreach}
 		  </div>
 		</div>
