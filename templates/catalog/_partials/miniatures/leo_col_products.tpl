@@ -67,9 +67,11 @@
             {if $totModuloTablet == 0}{assign var='totModuloTablet' value=$nbItemsPerLineTablet}{/if}
             {if $totModuloMobile == 0}{assign var='totModuloMobile' value=$nbItemsPerLineMobile}{/if}
 
-            {if !$smarty.server.REQUEST_URI|strstr:'?page=' && $product@index eq 9}
+            {if !$smarty.server.REQUEST_URI|strstr:'?page=' && $product@index eq 9 && $category['id_parent'] != 582}
                 {assign var="img_baner" value="`$link->getMediaLink($smarty.const._THEME_CAT_DIR_)``$smarty.get.id_category`_thumb.jpg"}
-                {if file_exists($img_baner)}
+                {assign var="img_baner_file" value="`$smarty.const._PS_CAT_IMG_DIR_``$smarty.get.id_category`_thumb.jpg"}
+
+                {if file_exists($img_baner_file)}
                     <div class="col-xs-12">
                     <img class="img-fluid" src="{$link->getMediaLink($smarty.const._THEME_CAT_DIR_)}{$smarty.get.id_category}_thumb.jpg" />
                 </div>
