@@ -14828,8 +14828,6 @@ input[type=number]::-webkit-outer-spin-button {
 input[type=number] {
   -moz-appearance: textfield; }
 
-input[type="file"] {
-  height: auto; }
 
 .btn-inverse {
   color: #FFFFFF;
