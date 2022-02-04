@@ -25,6 +25,15 @@
 
 {block name='displayTopBothColumn'}
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mb-[10px] desktop-presta:mb-[60px]">
+  {if $breadcrumb.count < 3}
+    <a style="display: block;margin-bottom: 20px;" class="hidden-xl-up" href="{$breadcrumb.links[0]['url']}" title="{$breadcrumb.links[0]['title']}">
+     <i style="font-size: 25px;" class="material-icons">&#xE408;</i>
+    </a>
+   {else}
+    <a style="display: block;margin-bottom: 20px;" class="hidden-xl-up" href="{$breadcrumb.links[count($breadcrumb)-1]['url']}" title="{$breadcrumb.links[count($breadcrumb)-1]['title']}">
+     <i style="font-size: 25px;" class="material-icons">&#xE408;</i>
+    </a>
+   {/if}  
     <h1 class="title_block title_block text-2xl tablet:text-4xl mt-5 tablet:mt-10 font-light text-main-dark">
       {if $category.meta_keywords !== ''}
         {$category.meta_keywords}
