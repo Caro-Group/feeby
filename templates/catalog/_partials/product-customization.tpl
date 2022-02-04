@@ -45,16 +45,18 @@
                 {elseif $field.type == 'image'}
                   {if $field.is_customized}
                     <br>
-                    <img class="lazy ml-5" data-src="{$field.image.small.url}">
-                    <a class="remove-image ml-2 text-sm text-main-dark group hover:text-main" href="{$field.remove_image_url}" rel="nofollow">
-                      <span>
-                        {l s='Remove Image' d='Shop.Theme.Actions'}
-                        <i class="material-icons"></i>
-                      </span>
-                    </a>
+                    <div class="mb-3">
+                      <img class="lazy ml-5" data-src="{$field.image.small.url}">
+                      <a class="remove-image ml-2 text-sm text-main-dark group hover:text-main" href="{$field.remove_image_url}" rel="nofollow">
+                        <span>
+                          {l s='Remove Image' d='Shop.Theme.Actions'}
+                          <i class="material-icons"></i>
+                        </span>
+                      </a>
+                    </div>
                   {/if}
-                  <span class="border-gray-2000 border-solid border flex rounded-full bg-white relative mt-5">
-                    <span class="js-file-name pl-5 py-3 ">{l s='No selected file' d='Shop.Forms.Help'}</span>
+                  <span class="border-gray-2000 border-solid border flex rounded-full bg-white relative">
+                    <span class="js-file-name pl-5 py-3 text-gray-3000 text-sm italic font-medium font-body ">{l s='No selected file' d='Shop.Forms.Help'}</span>
                     <input class="js-file-input absolute cursor-pointer file:absolute file:bg-main file:border-0 file:cursor-pointer file:duration-150 file:font-body file:m-0 file:px-4 file:py-3 file:right-0 file:rounded-full file:text-white file:uppercase file:whitespace-nowrap focus:outline focus:outline-1 focus:outline-gray-3000 focus:rounded-full h-full hover:file:bg-main-hover left-0 text-transparent w-full z-20" {if $field.required} required {/if} type="file" name="{$field.input_name}">
                     {* <button class="btn btn-primary">{l s='Choose file' d='Shop.Theme.Actions'}</button> *}
                   </span>
