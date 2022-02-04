@@ -28,11 +28,6 @@
             {* previous header *}
 	
             <div class="block-category-inner">
-                {if $category.image.large.url && false}
-                    <div class="category-cover">
-                        <img class="lazy" data-src="{$category.image.large.url}" alt="{if !empty($category.image.legend)}{$category.image.legend}{else}{$category.name}{/if}">
-                    </div>
-                {/if}
                 {if $category.description}
                     <div id="category-description" class="text-muted">{$category.description nofilter}</div>
                 {/if}

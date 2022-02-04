@@ -24,8 +24,14 @@
 {extends file='catalog/listing/product-list.tpl'}
 
 {block name='displayTopBothColumn'}
+  {if isset($category) && $category.image.large.url}
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mb-[10px] desktop-presta:mb-[60px]">
+        <img class="w-full h-auto max-h-[400px] object-cover" src="{$category.image.large.url}" alt="{if !empty($category.image.legend)}{$category.image.legend}{else}{$category.name}{/if}">
+    </div>
+  {/if}
+
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mb-[10px] desktop-presta:mb-[60px]">
-    <h1 class="title_block title_block text-2xl tablet:text-4xl mt-5 tablet:mt-10 font-light text-main-dark">
+    <h1 class="title_block title_block text-2xl tablet:text-4xl font-light text-main-dark">
       {if $category.meta_keywords !== ''}
         {$category.meta_keywords}
       {elseif isset($categories) }
