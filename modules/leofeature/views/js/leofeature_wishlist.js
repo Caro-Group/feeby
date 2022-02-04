@@ -428,7 +428,7 @@ function LeoWishlistButtonAction()
 					var parents_e = object_e.parents('.leo-wishlist-button-dropdown');
 					parents_e.find('.leo-wishlist-button').addClass('active');
 					parents_e.find('.leo-wishlist-bt-loading').css({'display':'block'});
-					parents_e.find('.leo-wishlist-bt-content').hide();
+					// parents_e.find('.leo-wishlist-bt-content').hide();
 					if ($(this).hasClass('added') || $(this).hasClass('delete'))
 					{
 						//DONGND:: remove product form wishlist				
