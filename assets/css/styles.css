@@ -101,6 +101,18 @@ p{
     @apply bg-white
 }
 
+.wishlist .btn-primary.btn-primary:focus{
+    @apply bg-gray-1000;
+}
+
+.wishlist .btn-primary.btn-primary:active:focus{
+    @apply bg-gray-1000;
+}
+
+.wishlist .open .btn-primary.btn-primary{
+    @apply bg-gray-1000;
+}
+
 .leo-wishlist-bt-content{
     @apply flex;
 }
