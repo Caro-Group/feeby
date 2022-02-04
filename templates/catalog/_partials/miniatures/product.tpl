@@ -63,7 +63,7 @@
 				{hook h='displayLeoWishlistButton' product=$product}
 			</div>
 		</div>
-		<div class="product-meta px-3 tablet:px-6 pt-0 pb-3 tablet:pb-5 mb-[10px] tablet:mb-5"> 
+		<div class="product-meta px-3 tablet:px-6 pt-0 pb-3 tablet:pb-5 mb-[10px] tablet:mb-[16px]"> 
 
 			{hook h='displayLeoCartAttribute' product=$product}
 			{hook h='displayLeoCartQuantity' product=$product}
