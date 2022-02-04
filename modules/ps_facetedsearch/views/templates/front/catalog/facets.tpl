@@ -16,7 +16,7 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
-{if $displayedFacets|count}
+ {if $displayedFacets|count}
   <div id="search_filters" class="flex flex-wrap">
     <div class="tablet:pl-5 w-full whitespace-nowrap">
       <div class="flex flex-col tablet:flex-wrap tablet:flex-row w-full">
@@ -81,6 +81,68 @@
                           class="text-main-dark text-base font-light search-link js-search-link"
                           rel="nofollow"
                         >
+                          {if $facet.type == 'feature'}
+                            {if $facet.properties.id_feature == '4'}
+
+                              <div class="bg-gray-2000 clearfix float-left w-6 h-6 mr-6 rounded border border-solid"
+                              style="{if $filter.value == 36}
+                                background-color: #FEF3DE;
+                                border-color: #FEF3DE;
+                              {elseif $filter.value == 37}
+                                background-color: #AA6D12;
+                                border-color: #AA6D12;
+                              {elseif $filter.value == 38}
+                                background: linear-gradient(270deg, #000000 50.51%, #FFFFFF 50.52%);
+                                border-color: #ADAFBA;
+                              {elseif $filter.value == 39}
+                                background-color: #ED0000;
+                                border-color: #ED0000;
+                              {elseif $filter.value == 40}
+                                background-color: #C23D85;
+                                border-color: #C23D85;
+                              {elseif $filter.value == 41}
+                                background: linear-gradient( 90deg, rgba(255, 0, 0, 1) 0%, rgba(255, 154, 0, 1) 10%, rgba(208, 222, 33, 1) 20%, rgba(79, 220, 74, 1) 30%, rgba(63, 218, 216, 1) 40%, rgba(47, 201, 226, 1) 50%, rgba(28, 127, 238, 1) 60%, rgba(95, 21, 242, 1) 70%, rgba(186, 12, 248, 1) 80%, rgba(251, 7, 217, 1) 90%, rgba(255, 0, 0, 1) 100% );
+                                border-color: #ADAFBA;
+                              {elseif $filter.value == 42}
+                                background-color: #005FB1;
+                                border-color: #005FB1;
+                              {elseif $filter.value == 43}
+                                background-color: #FF9A02;
+                                border-color: #FF9A02;
+                              {elseif $filter.value == 44}
+                                background-color: #FFB6C1;
+                                border-color: #FFB6C1;
+                              {elseif $filter.value == 45}
+                                background-color: #EAEAEA;
+                                border-color: #EAEAEA;
+                              {elseif $filter.value == 46}
+                                background-color: #848484;
+                                border-color: #848484;
+                              {elseif $filter.value == 47}
+                                background-color: #46932A;
+                                border-color: #46932A;
+                              {elseif $filter.value == 48}
+                                background-color: #DFCA80;
+                                border-color: #DFCA80;
+                              {elseif $filter.value == 49}
+                                background-color: #FFE233;
+                                border-color: #FFE233;
+                              {elseif $filter.value == 50}
+                                background: #FFFFFF;
+                                border-color: #ADAFBA;
+                              {elseif $filter.value == 51}
+                                background-color: #000000;
+                                border-color: #000000;
+                              {elseif $filter.value == 180}
+                                background: #FFFFFF;
+                                border-color: #ADAFBA;
+                              {elseif $filter.value == 253}
+                                background: #000000;
+                                border-color: #000000;
+                              {/if}"
+                              ></div>
+                            {/if}
+                          {/if}
                           {$filter.label}
                           {if $filter.magnitude and $show_quantities}
                             <span class="magnitude text-sm">({$filter.magnitude})</span>

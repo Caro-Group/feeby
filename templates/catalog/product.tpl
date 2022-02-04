@@ -215,7 +215,7 @@
            </section>
          {/if}
        {/block}
- 
+
        {block name='product_footer'}
          {hook h='displayFooterProduct' product=$product category=$category}
        {/block}
@@ -224,6 +224,10 @@
          {include file='catalog/_partials/product-images-modal.tpl'}
        {/block}
  
+       <aside class="instagram">
+       {hook h='displayApSC' sc_key=sc2039205557}
+      </aside>
+      
        {block name='page_footer_container'}
          <footer class="page-footer">
            {block name='page_footer'}
