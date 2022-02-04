@@ -478,7 +478,7 @@ div.star:before {
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
-    width: 100%;
+    width: auto;
     text-align: left;
     padding: 5px 15px !important;
     text-transform: capitalize;
@@ -495,9 +495,7 @@ div.star:before {
       .leo-wishlist-button-dropdown .move-wishlist-item.added:hover, .leo-wishlist-button-dropdown .wishlist-item.added:hover {
         color: #000;
         background: none; }
-        .leo-wishlist-button-dropdown.open > .btn-primary.dropdown-toggle:hover{
-          background-color: transparent;
-        }
+
 
 .leo-modal-wishlist .modal-footer {
   display: none; }
@@ -511,7 +509,6 @@ div.star:before {
 .leo-list-wishlist {
   z-index: 999;
   padding: 0px;
-  margin: 0px;
   border: 0px; }
 
 .leo-wishlist-button.dropdown-toggle::after {
@@ -523,9 +520,6 @@ div.star:before {
 .wishlist-item.added, .wishlist-item.added:hover {
   background-color: #2fb5d2;
   color: #fff; }
-
-.wishlist-item:hover, .move-wishlist-item:hover {
-  background-color: #f7f7f9; }
 
 .view-wishlist-product {
   float: left; }
