@@ -24,6 +24,13 @@
 {extends file='catalog/listing/product-list.tpl'}
 
 {block name='displayTopBothColumn'}
+  
+  {if isset($category) && $category.image.large.url}
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mb-[10px] desktop-presta:mb-[60px]">
+        <img class="w-full h-auto max-h-[400px] object-cover" src="{$category.image.large.url}" alt="{if !empty($category.image.legend)}{$category.image.legend}{else}{$category.name}{/if}">
+    </div>
+  {/if}
+
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mb-[10px] desktop-presta:mb-[40px]">
   {if $breadcrumb.count < 3}
     <a class="tablet:hidden block mt-6 mb-5" href="{$breadcrumb.links[0]['url']}" title="{$breadcrumb.links[0]['title']}">
