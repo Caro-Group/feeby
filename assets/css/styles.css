@@ -137,6 +137,10 @@ p{
     @apply text-main;
 }
 
+.list-wishlist tr.new.new, .list-wishlist tr.active.active, .list-wishlist tr.show.active.active{
+    @apply bg-main bg-opacity-10;
+}
+
 .swiper-pagination.swiper-pagination-bullets-dynamic{
     @apply hidden tablet:block h-4;
 }
