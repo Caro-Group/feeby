@@ -126,12 +126,15 @@ p{
 }
 
 .dropdown.leo-wishlist-button-dropdown .dropdown-menu{
-    @apply opacity-0 transform translate-x-5 transition block z-10 duration-200;
+    @apply opacity-0 transform translate-x-5 transition block duration-200;
 } 
-
 
 .dropdown.leo-wishlist-button-dropdown.open .dropdown-menu{
     @apply opacity-100 translate-x-0;
+}
+
+.dropdown.leo-wishlist-button-dropdown .dropdown-menu .dropdown-item{
+    @apply text-main;
 }
 
 .swiper-pagination.swiper-pagination-bullets-dynamic{

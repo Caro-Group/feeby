@@ -517,10 +517,6 @@ div.star:before {
 .leo-wishlist-button-dropdown {
   display: block; }
 
-.wishlist-item.added, .wishlist-item.added:hover {
-  background-color: #2fb5d2;
-  color: #fff; }
-
 .view-wishlist-product {
   float: left; }
   .rtl .view-wishlist-product {
