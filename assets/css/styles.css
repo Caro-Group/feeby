@@ -102,7 +102,7 @@ p{
 }
 
 .wishlist .btn-primary.btn-primary:focus{
-    @apply bg-gray-1000;
+    @apply bg-white;
 }
 
 .wishlist .btn-primary.btn-primary:active:focus{
@@ -133,7 +133,7 @@ p{
     @apply opacity-100 translate-x-0;
 }
 
-.dropdown.leo-wishlist-button-dropdown .dropdown-menu .dropdown-item{
+.dropdown.leo-wishlist-button-dropdown .dropdown-menu .dropdown-item.added{
     @apply text-main;
 }
 
