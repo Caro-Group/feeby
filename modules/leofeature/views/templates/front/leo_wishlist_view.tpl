@@ -11,7 +11,7 @@
 	<section id="main">
 		<div id="view_wishlist">
 			{if isset($current_wishlist)}
-				<h2>{l s='Wishlist' d='Modules.Leofeature.Shop'} "{$current_wishlist.name}"</h2>
+				<h2 class="mb-5">{l s='Wishlist' d='Modules.Leofeature.Shop'} "{$current_wishlist.name}"</h2>
 				{if $wishlists}
 				<p>
 					{l s='Other wishlists of ' d='Modules.Leofeature.Shop'}{$current_wishlist.firstname} {$current_wishlist.lastname} :
@@ -55,20 +55,20 @@
 											{hook h='displayLeoCartQuantity' product=$product}
 											{hook h='displayLeoCartButton' product=$product}
 											{block name='product_name'}
-												<h1 class="text-main-dark font-body font-light not-italic 
+												<h1 class="text-main-dark mt-3 font-body font-light not-italic 
 												text-sm tablet:text-base text-left" itemprop="name"><a class="text-main-dark" href="{$product.url}" target="_blank">{$product.name|truncate:30:'...'}</a></h1>
 											{/block}
 											{block name='product_price_and_shipping'}
 												{if $product.show_price}
 													<div class="product-price-and-shipping">
 													{hook h='displayProductPriceBlock' product=$product type="before_price"}
-													<span itemprop="price" class="text-left font-body font-medium text-main-dark 
+													<span itemprop="price" class="text-left font-body font-medium {if $product.has_discount} text-main {else} text-main-dark {/if}
 													text-base tablet:text-xl">{$product.price}</span>												
 													{if $product.has_discount}
 														{hook h='displayProductPriceBlock' product=$product type="old_price"}
 														<span class="regular-price pl-2">{$product.regular_price}</span>
 														{if $product.discount_type === 'percentage'}
-															<span class="px-2 py-0.5 bg-main rounded-full {if $product.has_discount} text-main {else} text-white {/if}">{$product.discount_percentage}</span>
+															<span class="px-2 py-0.5 bg-main rounded-full text-white">{$product.discount_percentage}</span>
 														{/if}
 													{/if}
 														{hook h='displayProductPriceBlock' product=$product type='unit_price'}
