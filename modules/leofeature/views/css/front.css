@@ -431,9 +431,6 @@ div.star:before {
   -o-transition: background-color 1.5s;
   transition: background-color 1.5s; }
 
-.list-wishlist tr.new, .list-wishlist tr.active, .list-wishlist tr.show.active {
-  background-color: #4880D2 !important; }
-
 .leo-wishlistproduct-item {
   text-align: center;
   margin-bottom: 50px; }
