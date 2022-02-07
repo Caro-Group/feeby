@@ -177,7 +177,7 @@
 						{l s='View Cart' d='Modules.Leofeature.Shop'}
 						<i class="ti-arrow-right ml-2"></i>
 					</a>
-					<a class="bg-main mt-5 border-0 cursor-pointer duration-150 flex font-body hover:text-white hover:bg-main-hover items-center justify-between max-w-[320px] mb-3 px-5 py-3 rounded-full tablet:max-w-[300px] text-white text-xs  tablet:text-sm uppercase w-full whitespace-nowrap items-center" href="{$order_url}">
+					<a class="bg-main mt-5 border-0 cursor-pointer duration-150 flex font-body hover:text-white hover:bg-main-hover items-center justify-between max-w-[320px] mb-3 px-5 py-3 rounded-full tablet:max-w-[300px] text-white text-sm uppercase w-full whitespace-nowrap items-center" href="{$order_url}">
 						{l s='Check Out' d='Modules.Leofeature.Shop'}
 						<i class="ti-arrow-right ml-2"></i>
 					</a>
