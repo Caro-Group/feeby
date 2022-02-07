@@ -74,7 +74,7 @@ p{
     }
 
     .swiper-about .swiper-slide{
-        @apply tablet-wide:pb-10 mr-6 tablet:mr-0 pb-5 tablet:px-7 tablet-wide:px-12 box-border w-[205px] tablet:w-[346px] ;
+        @apply tablet-wide:pb-10 mr-6 tablet:mr-0 pb-5 tablet:px-7 tablet-wide:px-16 box-border w-[205px] tablet:w-[346px] ;
     }
 
     .swiper-about .swiper-slide img{
