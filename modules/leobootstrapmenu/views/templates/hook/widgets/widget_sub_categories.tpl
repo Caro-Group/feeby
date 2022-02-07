@@ -17,24 +17,27 @@
             {if $cat->id_category != ''}
                 <ul class="col-count-mob-one text-base" style="{if $id_widget == '1638828508'}column-count:3;{/if}{if $id_widget == '1638828714'}column-count:3;{/if}{if $id_widget == '1638836284'}column-count:3;{/if}{if $id_widget == '1638836384' || $id_widget == '1643878774' || $id_widget == '1643879539' || $id_widget == '1643880292'}column-count:2;{/if}">
                 {foreach from=$subcategories item=subcategory name=subcategory}
-                    <li class="clearfix {if isset($subcategory.subsubcategories)}level2 dropdown mb-2{/if} {if $id_widget == '1643877669' && $smarty.foreach.subcategory.iteration > 6}tablet-wide:hidden{/if}">
-                        <a href="{$link->getCategoryLink($subcategory.id_category, $subcategory.link_rewrite)|escape:'htmlall':'UTF-8'}" title="{$subcategory.name|escape:'htmlall':'UTF-8'}" class="img font-normal mr-2 transition hover:text-main text-main-dark {if $id_widget == '1642608476'}pointer-events-none{/if}" {if isset($subcategory.id_category)}data-category-id="{$subcategory.id_category}"{/if}>
-                                {$subcategory.name|escape:'htmlall':'UTF-8'}
-                        </a>
-                        {if isset($subcategory.subsubcategories) && $subcategory.subsubcategories}
-                            <b class="caret {if $level3_only_mobile}hidden-lg-up{/if}"></b>
-                            <ul class="dropdown-sub dropdown-menu {if $level3_only_mobile}hidden-lg-up{/if}" style="display:none;">
-                                {foreach from=$subcategory.subsubcategories item=subsubcategory name=subsubcategory}
-                                    <li class="clearfix level3 text-base {if $id_widget == '1643877669' && $smarty.foreach.subsubcategory.iteration > 6}tablet-wide:hidden{/if}" {if $show_widget_bo == 'admin'}style="margin-left: 20px;"{/if}>
-                                        <a href="{$link->getCategoryLink($subsubcategory.id_category, $subsubcategory.link_rewrite)|escape:'htmlall':'UTF-8'}" title="{$subsubcategory.name|escape:'htmlall':'UTF-8'}" class="img font-light text-main-dark {if $id_widget == '1642608476'}pointer-events-none{/if}" {if isset($subsubcategory.id_category)}data-category-id="{$subsubcategory.id_category}"{/if}>
-                                            {$subsubcategory.name|escape:'htmlall':'UTF-8'} 
-                                        </a>
-                                    </li>
-                                {/foreach}
-                                
-                            </ul>
-                        {/if}
-                    </li>
+                    {if $subcategory.description|strstr:"<!-- ARTYSTA -->" !== "<!-- ARTYSTA -->"}
+                        <li class="clearfix {if isset($subcategory.subsubcategories)}level2 dropdown mb-2{/if} {if $id_widget == '1643877669' && $smarty.foreach.subcategory.iteration > 6}tablet-wide:hidden{/if}">
+                            <a href="{$link->getCategoryLink($subcategory.id_category, $subcategory.link_rewrite)|escape:'htmlall':'UTF-8'}" title="{$subcategory.name|escape:'htmlall':'UTF-8'}" class="img font-normal mr-2 transition hover:text-main text-main-dark {if $id_widget == '1642608476'}pointer-events-none{/if}" {if isset($subcategory.id_category)}data-category-id="{$subcategory.id_category}"{/if}>
+                                    {$subcategory.name|escape:'htmlall':'UTF-8'}
+                            </a>
+                            {if isset($subcategory.subsubcategories) && $subcategory.subsubcategories}
+                                <b class="caret {if $level3_only_mobile}hidden-lg-up{/if}"></b>
+                                <ul class="dropdown-sub dropdown-menu {if $level3_only_mobile}hidden-lg-up{/if}" style="display:none;">
+                                    {foreach from=$subcategory.subsubcategories item=subsubcategory name=subsubcategory}
+                                        {if $subsubcategory.description|strstr:"<!-- ARTYSTA -->" !== "<!-- ARTYSTA -->"}
+                                            <li class="clearfix level3 text-base {if $id_widget == '1643877669' && $smarty.foreach.subsubcategory.iteration > 6}tablet-wide:hidden{/if}" {if $show_widget_bo == 'admin'}style="margin-left: 20px;"{/if}>
+                                                <a href="{$link->getCategoryLink($subsubcategory.id_category, $subsubcategory.link_rewrite)|escape:'htmlall':'UTF-8'}" title="{$subsubcategory.name|escape:'htmlall':'UTF-8'}" class="img font-light text-main-dark {if $id_widget == '1642608476'}pointer-events-none{/if}" {if isset($subsubcategory.id_category)}data-category-id="{$subsubcategory.id_category}"{/if}>
+                                                    {$subsubcategory.name|escape:'htmlall':'UTF-8'} 
+                                                </a>
+                                            </li>
+                                        {/if}
+                                    {/foreach}
+                                </ul>
+                            {/if}
+                        </li>
+                    {/if}
                 {/foreach}
                 </ul>
             {else}
