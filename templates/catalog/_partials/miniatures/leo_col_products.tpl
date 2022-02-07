@@ -70,8 +70,10 @@
             {if !$smarty.server.REQUEST_URI|strstr:'?page=' && $product@index eq 9}
                 {assign var="img_baner" value="`$link->getMediaLink($smarty.const._THEME_CAT_DIR_)``$smarty.get.id_category`_thumb.jpg"}
                 {if file_exists($img_baner)}
-                    <div class="col-xs-12">
-                    <img class="img-fluid" src="{$link->getMediaLink($smarty.const._THEME_CAT_DIR_)}{$smarty.get.id_category}_thumb.jpg" />
+                <div class="mb-[30px] w-full">
+                    <div class="-mx-[10px] tablet:mx-0">
+                        <img class="img-fluid tablet:rounded-md" src="{$link->getMediaLink($smarty.const._THEME_CAT_DIR_)}{$smarty.get.id_category}_thumb.jpg" />
+                    </div>
                 </div>
                 {/if}
             {/if}
