@@ -206,12 +206,9 @@ li[data-menu-type="url"] a{
     @apply hidden;
 } 
 
-#search_filters .title.collapsed p,#search_filters .title.collapsed i{
-    @apply text-main-dark;
-}
-
-#search_filters .title p,#search_filters .title i{
-    @apply text-main transition;
+#search_filters .title:not(.collapsed) p,
+#search_filters .title:not(.collapsed) i{
+    @apply text-main;
 }
 
 /* .swiper-filters .swiper-wrapper .swiper-slide{

@@ -73,7 +73,7 @@
 
                 {if file_exists($img_baner_file)}
                     <div class="col-xs-12">
-                    <img class="img-fluid" src="{$link->getMediaLink($smarty.const._THEME_CAT_DIR_)}{$smarty.get.id_category}_thumb.jpg" />
+                    <img class="img-fluid" src="{$img_baner}" />
                 </div>
                 {/if}
             {/if}
