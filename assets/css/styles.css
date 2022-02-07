@@ -464,3 +464,7 @@ div.star.star_on:before, div.star.star_hover:before{
 .page-product .product-description ul li{
     @apply marker:text-main text-sm tablet:text-base text-main-dark font-light mb-3;
 }
+
+.page-category .container > .row{
+    @apply border-0 border-b border-solid border-gray-1000 tablet:mb-5;
+}
