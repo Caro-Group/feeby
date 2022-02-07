@@ -72,9 +72,11 @@
                 {assign var="img_baner_file" value="`$smarty.const._PS_CAT_IMG_DIR_``$smarty.get.id_category`_thumb.jpg"}
 
                 {if file_exists($img_baner_file)}
-                    <div class="col-xs-12">
-                    <img class="img-fluid" src="{$img_baner}" />
-                </div>
+                    <div class="mb-[30px] w-full">
+                        <div class="-mx-[10px] tablet:mx-0">
+                            <img class="img-fluid tablet:rounded-md" src="{$img_baner}" />
+                        </div>
+                    </div>
                 {/if}
             {/if}
 

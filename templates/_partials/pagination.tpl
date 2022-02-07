@@ -31,7 +31,7 @@
     {/block}
   </div> *}
 
-  <div class="col-xs-12 col-md-6 col-lg-8 my-8 tablet:my-16 mx-auto">
+  <div class="col-xs-12 col-md-6 col-lg-8 mt-8 mb-[53px] tablet:mt-16 tablet:mb-[90px] mx-auto">
     {block name='pagination_page_list'}
      {if $pagination.should_be_displayed}
       <ul class="page-list clearfix text-md-right text-xs-center flex justify-center">
