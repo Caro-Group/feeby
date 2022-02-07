@@ -1263,25 +1263,24 @@ $(document).ready(function () {
 
 	const swiperAbout = new Swiper('[data-about-swiper]',{
 		speed: 300,
-		slidesPerView: 1,
+		slidesPerView: 'auto',
 		resistanceRatio: 0.5,
 		breakpoints: {
-			560: {
-				slidesPerView: 2,
-              	slidesPerGroup: 1,
-              	slidesPerColumn: 1,
-				slidesPerColumnFill : 'column',
-			},
 			768: {
 				slidesPerView: 3,
               	slidesPerGroup: 3,
               	slidesPerColumn: 2,
 				slidesPerColumnFill: 'row',
+				allowTouchMove: false,
 			},
-	  	}
+	  	},
+		on: {
+			reachEnd: function() {
+			  this.snapGrid = [...this.slidesGrid];
+			},
+		}
 
 	});
-
 });
 
 function openMenuWithCategory(id)

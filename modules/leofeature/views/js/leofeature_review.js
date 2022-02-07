@@ -229,14 +229,13 @@ function activeEventModalReview()
 							if (result != '')
 							{
 								var object_result = $.parseJSON(result);
-								// console.log(object_result);
+								$('[data-review-messages]').children().remove();
 								$('.leo-modal-review-bt').fadeOut('slow', function(){
 									$(this).remove();
 								});
 								
 								$('.new_review_form_content > *').fadeOut('slow', function(){
 									$(this).remove();
-									$('[data-review-messages]').children().remove();
 									if (object_result.result)
 									{
 										$('[data-review-messages]').append('<div class="alert alert-success bg-opacity-10 bg-green-600 border-green-600 max-w-lg mx-auto text-green-600 font-body font-normal"><label class="form-control-label m-auto p-0">'+object_result.sucess_mess+'</label></div>');
@@ -246,7 +245,7 @@ function activeEventModalReview()
 										// $('.leo-modal-review .modal-body').append('<div class="form-group has-danger text-center"></div>');
 										$.each(object_result.errors, function(key, val){
 											$('[data-review-messages]').append('<div class="alert alert-danger bg-opacity-10 bg-red-600 border-red-600 font-body font-normal max-w-lg mr-2 mx-auto text-red-600"><label class="form-control-label m-auto p-0">'+val+'</label></div>');
-										});
+										}); 
 									}
 								});
 							}
@@ -340,11 +339,10 @@ function activeEventFormReview()
 							if (result != '')
 							{
 								var object_result = $.parseJSON(result);
-								// console.log(object_result);
+								$('[data-review-messages]').children().remove();
 								if(object_result.result){
 									$('.new_review_form_content > *').fadeOut('slow', function(){
 										$(this).remove();
-										$('[data-review-messages]').children().remove();
 									});
 									$('[data-review-messages]').append('<div class="alert alert-success bg-opacity-10 bg-green-600 border-green-600 max-w-lg mx-auto text-green-600 font-body font-normal"><label class="form-control-label m-auto p-0">'+object_result.sucess_mess+'</label></div>');
 								} else {
