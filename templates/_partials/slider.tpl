@@ -1,8 +1,8 @@
 {if isset($products) && $products}
-    <div id="{$type}">
+    <div id="{$type}" class="overflow-hidden">
 
         {if !empty($title)}
-            <div class="flex justify-between mb-[30px]">
+            <div class="flex justify-between px-[30px] tablet-medium:px-[20px] tablet:mb-8">
                 <h2 class="flex-shrink-0 font-light text-2xl tablet:text-4xl">
                     {$title}                
                 </h2>
@@ -13,7 +13,7 @@
             </div>
         {/if}
 
-        <div data-swiper-carousel class="swiper overflow-hidden">
+        <div data-swiper-carousel class="swiper ml-5 tablet:ml-0">
 
             <div class="swiper-wrapper desktop:justify-between pb-12">
                 {foreach from=$products item="product"}
