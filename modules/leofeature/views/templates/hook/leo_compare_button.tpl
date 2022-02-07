@@ -10,7 +10,7 @@
 		<span class="leo-compare-bt-loading cssload-speeding-wheel"></span>
 		<span class="leo-compare-bt-content">
 			<i class="icon-btn-product icon-compare material-icons">&#xE915;</i>
-			<span class="name-btn-product">{l s='Add to Compare' d='Modules.Leofeature.Shop'}</span>
+			<span class="name-btn-product bg-main">{l s='Add to Compare' d='Modules.Leofeature.Shop'}</span>
 		</span>
 	</a>
 </div>
