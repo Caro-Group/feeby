@@ -21,7 +21,7 @@
     <div class="tablet:pl-5 w-full whitespace-nowrap">
       <div class="flex flex-col tablet:flex-wrap tablet:flex-row w-full">
       {foreach from=$displayedFacets item="facet"}
-        <div class="tablet:pr-5 py-2.5">
+        <div class="tablet:pr-5 tablet:py-2.5">
           <section class="facet clearfix">
             {assign var=_expand_id value=10|mt_rand:100000}
             {assign var=_collapse value=true}
@@ -29,7 +29,7 @@
               {if $filter.active}{assign var=_collapse value=false}{/if}
             {/foreach}
 
-            <div class="title cursor-pointer px-5 tablet:px-0 border-0 border-b-2 tablet:border-b-0 border-gray-1000 border-solid py-3 tablet:py-0 justify-between tablet:justify-start {if $_collapse}collapsed{/if}" data-parent="#search_filters" data-target="#facet_{$_expand_id}" data-toggle="collapse"{if !$_collapse} aria-expanded="true"{/if}>
+            <div class="title cursor-pointer px-5 tablet:px-0 border-0 border-b-2 tablet:border-b-0 border-gray-1000 border-solid py-4 tablet:py-0 justify-between tablet:justify-start {if $_collapse}collapsed{/if}" data-parent="#search_filters" data-target="#facet_{$_expand_id}" data-toggle="collapse"{if !$_collapse} aria-expanded="true"{/if}>
               <p class="facet-title m-0 text-base font-body font-normal">{$facet.label}</p>
               <span class="pl-4 -top-1 relative">
                 <i class="material-icons text-xl ">add</i>
