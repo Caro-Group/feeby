@@ -13,7 +13,7 @@
             </div>
         {/if}
 
-        <div data-swiper-carousel class="swiper ml-5 tablet:ml-0">
+        <div data-swiper-carousel class="swiper ml-5 ">
 
             <div class="swiper-wrapper desktop:justify-between pb-12">
                 {foreach from=$products item="product"}
