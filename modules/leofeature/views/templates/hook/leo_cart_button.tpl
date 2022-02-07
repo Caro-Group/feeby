@@ -20,7 +20,7 @@
 			<span class="leo-loading cssload-speeding-wheel"></span>
 			<span class="leo-bt-cart-content">
 				<i class="icon-btn-product icon-cart material-icons shopping-cart">&#xE547;</i>
-				<span class="name-btn-product">{l s='Add to cart' d='Modules.Leofeature.Shop'}</span>
+				<span class="name-btn-product bg-main">{l s='Add to cart' d='Modules.Leofeature.Shop'}</span>
 			</span>
 		  </button>
 	</form>
