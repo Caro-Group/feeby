@@ -46,7 +46,7 @@
                 <div class="navbar-toggler collapse-icons float-right p-3 pr-5 collapsed" data-toggle="collapse" data-target="#exCollapsingNavbar{$node.id}">
                   <i class="material-icons select-none text-3xl text-main-dark transition transform rotate-180"></i>
                 </div>
-                <div class="collapse bg-gray-2000" id="exCollapsingNavbar{$node.id}">
+                <div class="collapse bg-white bg-opacity-50" id="exCollapsingNavbar{$node.id}">
                   {categories nodes=$node.children depth=$depth+1}
                 </div>
               {/if}
