@@ -170,7 +170,7 @@
  
  
  
-       <aside class="products-aside">
+       <aside class="products-aside -mx-[30px] overflow-hidden">
          {hook h='displayApSC' sc_key=sc2585205791}
        </aside>
  
