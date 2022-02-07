@@ -42,7 +42,7 @@
 
           <div class="add flex-1">
             <button
-              class="bg-main hover:bg-main-hover font-me text-white py-3 px-4 text-base phone-wide:text-base tablet:text-xl uppercase text-center border-0 rounded-full font-medium w-full cursor-pointer w-full transition"
+              class="bg-main hover:bg-main-hover text-white py-3 px-4 text-base phone-wide:text-base tablet:text-xl uppercase text-center border-0 rounded-full font-medium w-full cursor-pointer w-full transition"
               data-button-action="add-to-cart"
               type="submit"
               {if !$product.add_to_cart_url}
