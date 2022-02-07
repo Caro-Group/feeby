@@ -14,7 +14,7 @@
     <div class="block products_block cus-nocarousel">
         {($apLiveEdit)?$apLiveEdit:'' nofilter}{* HTML form , no escape necessary *}
         {if isset($formAtts.title)&&!empty($formAtts.title)}
-            <div class="flex justify-between">
+            <div class="flex justify-between px-[30px] tablet-medium:px-[20px] tablet:mb-8">
                 <h2 class="flex-shrink-0 font-light text-2xl tablet:text-4xl">
                     {$formAtts.title|rtrim|escape:'html':'UTF-8'}
                 </h2>
