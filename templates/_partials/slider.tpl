@@ -1,5 +1,5 @@
 {if isset($products) && $products}
-    <div id="{$type}" class="overflow-hidden {if $type == "products-crossell" || $type = "products-releated-footer"} -mx-[30px] overflow-hidden {/if}">
+    <div id="{$type}" class="overflow-hidden {if $type == "products-crossell" || $type == "products-releated-footer"} -mx-[30px] overflow-hidden {/if}">
 
         {if !empty($title)}
             <div class="flex justify-between px-[30px] tablet-medium:px-[20px] tablet:mb-8">
