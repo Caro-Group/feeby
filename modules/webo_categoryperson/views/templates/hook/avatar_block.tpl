@@ -1,5 +1,5 @@
 
-<a href="{$avatarLink}" class="flex flex-row flex-wrap border-2 border-solid border-gray-default p-[10px] rounded-[5px] mb-[40px] hover:border-main group transition">
+<a href="{$avatarLink}" class="flex flex-row flex-wrap border-2 border-solid border-gray-default p-[10px] rounded-[5px] mb-[40px] hover:border-main group transition float-left">
     <img src="{$avatarImage}" class="rounded-full mr-[10px]" width="55px" height="55px"/>
 
     <span class="flex flex-col flex-wrap justify-center">
