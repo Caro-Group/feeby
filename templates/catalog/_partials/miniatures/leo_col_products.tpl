@@ -67,7 +67,7 @@
             {if $totModuloTablet == 0}{assign var='totModuloTablet' value=$nbItemsPerLineTablet}{/if}
             {if $totModuloMobile == 0}{assign var='totModuloMobile' value=$nbItemsPerLineMobile}{/if}
 
-                {hook h='displayCatalogListProduct'}
+                {hook h='displayCatalogListProduct' product=$product index=$product@index}
 
             <div class="ajax_block_product {$colValue}
                 {if $smarty.foreach.products.iteration%$nbItemsPerLine == 0} last-in-line
