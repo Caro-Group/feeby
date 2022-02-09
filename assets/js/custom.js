@@ -1253,7 +1253,7 @@ $(document).ready(function () {
 	const swiperBlog = new Swiper('[data-swiper-blog]', {
 		speed: 300,
 		slidesPerView: 'auto',
-		spaceBetween: 20,
+		spaceBetween: 0,
 		loop: true,
 		navigation: {
 			nextEl: '[data-swiper-blog-next]',
