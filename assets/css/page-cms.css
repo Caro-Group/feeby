@@ -2,7 +2,7 @@
     @apply desktop-presta:mx-32
 }
 
-.page-cms .page-content img{
+.page-cms .page-content img:not(.object-cover){
     @apply object-contain;
 }
 
@@ -31,7 +31,11 @@
 }
 
 .page-cms .page-cms h2{
-    @apply font-normal border-0 border-t border-solid border-gray-1000 pt-5 mt-6 first:border-t-0 first:pt-0 ;
+    @apply font-normal border-0 border-t border-solid border-gray-1000 pt-5 first:border-t-0 first:pt-0;
+}
+
+.page-cms .page-cms h2:not(.mt-0){
+    @apply mt-6;
 }
 
 .page-cms .page-cms-9 p, .page-cms .page-cms-9 h2{

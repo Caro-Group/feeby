@@ -1250,14 +1250,14 @@ $(document).ready(function () {
 		allowTouchMove: false,
 	  });
 	  
-	const swiperBlog = new Swiper('.swiper-blog', {
+	const swiperBlog = new Swiper('[data-swiper-blog]', {
 		speed: 300,
-		slidesPerView: 2,
-		spaceBetween: 20,
+		slidesPerView: 'auto',
+		spaceBetween: 0,
 		loop: true,
 		navigation: {
-			nextEl: '.swiper_blog-button-next',
-			prevEl: '.swiper_blog-button-prev',
+			nextEl: '[data-swiper-blog-next]',
+			prevEl: '[data-swiper-blog-prev]',
 		  },
 	});
 
