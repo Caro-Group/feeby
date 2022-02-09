@@ -24,7 +24,7 @@
 		{$Num=array_chunk($formAtts.slides, $itemsperpage)}
 		{foreach from=$Num item=sliders name=val}
 
-			<div class="swiper-slide max-w-[235px] desktop-presta:max-w-[468px] desktop-presta:w-1/2 pr-[20px]">
+			<div class="swiper-slide max-w-[235px] desktop-presta:max-w-[468px] mr-[20px]">
 			{foreach from=$sliders item=slider key=i name="sliders"}
 				{if $i == 1}{if $hookName == 'displayNav' || $hookName == 'displayNav1' || $hookName == 'displayNav2' || $hookName == 'displayNavFullWidth'}{assign var="lazyImg" value="eager"}{else}{assign var="lazyImg" value="lazy"}{/if}{else}{assign var="lazyImg" value="lazy"}{/if}
 				{if $slider.link}
