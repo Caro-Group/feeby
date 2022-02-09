@@ -19,7 +19,7 @@
 		<div>{$formAtts.descript|escape:'html':'UTF-8'}</div>
 	{/if}
 
-	<div class="swiper-blog overflow-hidden">
+	<div class="swiper-blog overflow-hidden" data-swiper-blog>
 		<div class="swiper-wrapper ml-4">
 		{$Num=array_chunk($formAtts.slides, $itemsperpage)}
 		{foreach from=$Num item=sliders name=val}
