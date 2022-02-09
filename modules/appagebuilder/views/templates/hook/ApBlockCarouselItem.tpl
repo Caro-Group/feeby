@@ -38,7 +38,7 @@
 						<img class="object-cover w-full h-full max-h-[170px] tablet:max-h-[347px]" loading="{$lazyImg}" src="{$slider.image_link|escape:'html':'UTF-8'}" alt="{if isset($slider.title)}{$slider.title|escape:'html':'UTF-8'}{/if}"/>
 					{/if}
 				{/if}
-				<div class="p-5 bg-white flex flex-col justify-between h-auto max-h-[148px] h-full">
+				<div class="p-5 bg-white flex flex-col justify-between min-h-[148px] h-auto">
 				
 					{if isset($slider.title) && !empty($slider.title)}
 						<h2 class="font-normal tablet:text-base italic desktop-presta:text-2xl line-clamp-2 phablet:line-clamp-1 desktop-wide:line-clamp-2">{$slider.title|escape:'html':'UTF-8' nofilter}</h2>
