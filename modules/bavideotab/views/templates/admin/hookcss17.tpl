@@ -1,4 +1,4 @@
-/**
+{*
 * 2007-2019 PrestaShop
 *
 * NOTICE OF LICENSE
@@ -21,17 +21,6 @@
 * @copyright 2007-2019 Buy-addons
 * @license   http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
-*/
+*}
 
-jQuery(document).ready(function(){
-    $( ".list-group-item" ).each(function(index, el) {
-        $(this).removeClass('selected active');
-    });
-    $( ".product-tab-content" ).each(function(index, el) {
-        $(this).css('display', 'none');
-    });
-    $('#link-ModuleBavideotab').addClass('selected active');
-    $('#product-tab-content-ModuleBavideotab').css('display', 'block');
-    
-  
-});
+<link href="/modules/bavideotab/views/css/hookcss17.css" rel="stylesheet" type="text/css"/>
