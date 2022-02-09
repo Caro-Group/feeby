@@ -20,6 +20,7 @@
 		"git.autoStash": true,
 		"git.branchValidationRegex": "[FEEB-*] *",
 		"git.enableSmartCommit": true,
-		"git.supportCancellation": true
+		"git.supportCancellation": true,
+		"intelephense.environment.phpVersion": "7.3.33"
 	}
 }
