@@ -82,7 +82,9 @@ module.exports = {
         '2000': '2000ms',
       },
       padding: {
-        '10px':'10px;'
+        '10px':'10px;',
+        '60px': '60px',
+        '80px': '80px'
       },
       fontFamily: {
         'header': [
