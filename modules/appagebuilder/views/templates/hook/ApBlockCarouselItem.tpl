@@ -24,7 +24,7 @@
 		{$Num=array_chunk($formAtts.slides, $itemsperpage)}
 		{foreach from=$Num item=sliders name=val}
 
-			<div class="swiper-slide max-w-[235px] desktop-presta:max-w-[468px]">
+			<div class="swiper-slide max-w-[235px] desktop-presta:max-w-[468px] desktop-presta:w-1/2">
 			{foreach from=$sliders item=slider key=i name="sliders"}
 				{if $i == 1}{if $hookName == 'displayNav' || $hookName == 'displayNav1' || $hookName == 'displayNav2' || $hookName == 'displayNavFullWidth'}{assign var="lazyImg" value="eager"}{else}{assign var="lazyImg" value="lazy"}{/if}{else}{assign var="lazyImg" value="lazy"}{/if}
 				{if $slider.link}
@@ -38,7 +38,7 @@
 						<img class="object-cover w-full h-full max-h-[182px] tablet:max-h-[367px]" loading="{$lazyImg}" src="{$slider.image_link|escape:'html':'UTF-8'}" alt="{if isset($slider.title)}{$slider.title|escape:'html':'UTF-8'}{/if}"/>
 					{/if}
 				{/if}
-				<div class="p-5 bg-white flex flex-col justify-between max-h-[50px] tablet:max-h-[108px] h-full">
+				<div class="p-5 bg-white flex flex-col justify-between max-h-[90px] tablet:max-h-[108px] h-full">
 				
 					{if isset($slider.title) && !empty($slider.title)}
 						<h2 class="font-normal tablet:text-base italic desktop-presta:text-2xl line-clamp-2 phablet:line-clamp-1 desktop-wide:line-clamp-2">{$slider.title|escape:'html':'UTF-8' nofilter}</h2>
@@ -62,15 +62,8 @@
 		</div>
 	</div>
 
-	<style>
-		.slide-content{
-			aspect-ratio: 1;
-		}
-	</style>
-
-
-
-
-
-
-
+<style>
+	.slide-content{
+		aspect-ratio: 1;
+	}
+</style>
