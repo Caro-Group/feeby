@@ -51,6 +51,7 @@
         {else}
           <img class="lazy" data-src="{$urls.no_picture_image.bySize.large_default.url}" style="width:100%;">
         {/if}
+         {hook h='displayProductCoverPlacement'}
         </div>
       {/block}
       {block name='product_images'}
@@ -74,6 +75,15 @@
                     />
                   </a>
                 </div>
+                {if $image@last}
+                  {assign var='displayProductThumbEndCustom' value={hook h='displayProductThumbEndCustom'} }
+                  {if $displayProductThumbEndCustom}
+                    <div class="swiper-custom-slide w-auto h-full relative thumb-container {if $image.id_image == $product.default_image.id_image} active {/if}" style="    flex-shrink: 0;
+                      transition-property: transform;">
+                      {hook h='displayProductThumbEndCustom'}
+                    </div>
+                  {/if}
+                {/if}
               {/foreach}
             </div>
             {if $product.images|@count > 1}
