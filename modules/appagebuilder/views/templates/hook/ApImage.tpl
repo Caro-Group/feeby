@@ -13,13 +13,6 @@
     <div id="image-{$formAtts.form_id|escape:'html':'UTF-8'}" class="flex flex-col {(isset($formAtts.class)) ? $formAtts.class : ''|escape:'html':'UTF-8'}">
         {($apLiveEdit)?$apLiveEdit:'' nofilter}{* HTML form , no escape necessary *}
     
-        {if isset($formAtts.title) && $formAtts.title}
-            <h4 class="title_block">{$formAtts.title nofilter}{* HTML form , no escape necessary *}</h4>
-        {/if}
-        {if isset($formAtts.sub_title) && $formAtts.sub_title}
-            <div class="sub-title-widget">{$formAtts.sub_title nofilter}</div>
-        {/if}
-        
         {if (isset($formAtts.image) && $formAtts.image) || (isset($formAtts.image_link) && $formAtts.image_link)}
         
             {if isset($formAtts.url) && $formAtts.url}
