@@ -1,4 +1,8 @@
-.page-cms-4, .page-cms-7, .page-cms-8, .page-cms-7, .page-cms-9, .page-cms-20{
+.page-cms-4,
+.page-cms-7,
+.page-cms-8,
+.page-cms-9,
+.page-cms-20{
     @apply desktop-presta:mx-32
 }
 
