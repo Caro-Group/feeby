@@ -985,3 +985,8 @@ border: none;
     visibility: visible;
     transform: translateY(0)
 }
+
+
+.page-cms .page-content .ApBlockCarousel img.object-cover{
+    object-fit: cover;
+}
