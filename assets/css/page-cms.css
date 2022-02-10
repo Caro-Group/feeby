@@ -2,11 +2,15 @@
     @apply desktop-presta:mx-32
 }
 
-.page-cms .page-content img:not(.object-cover){
+.page-cms .page-content img{
     @apply object-contain;
 }
 
-.page-cms .page-content.page-cms-4   img{
+.page-cms .page-content img.object-cover{
+    @apply object-cover;
+}
+
+.page-cms .page-content.page-cms-4 img{
     @apply object-cover rounded-md;
 }
 
