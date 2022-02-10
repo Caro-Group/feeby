@@ -27,6 +27,11 @@ p{
     margin-right: 0px !important;
 }
 
+@media(min-width: 1514px){
+    .pl-55-1514{
+        padding-left: 55px;
+    }
+}
 
 @layer components{
 
