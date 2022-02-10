@@ -6,7 +6,7 @@
     @apply desktop-presta:mx-32
 }
 
-.page-cms .page-content img:not(.object-cover){
+.page-cms .page-content img{
     @apply object-contain;
 }
 
@@ -42,6 +42,7 @@
     margin-top: 0;
 }
 
-.page-cms .page-cms-9 p, .page-cms .page-cms-9 h2{
+.page-cms .page-cms-9 p,
+.page-cms .page-cms-9 h2{
     @apply tablet:px-5;
 }
