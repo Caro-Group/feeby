@@ -510,3 +510,4 @@ tr.show .view-wishlist-product i{
 .page-category .container > .row{
     @apply border-0 border-b border-solid border-gray-1000 tablet:mb-5;
 }
+
