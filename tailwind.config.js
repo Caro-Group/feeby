@@ -47,6 +47,7 @@ module.exports = {
       margin: {
         'miniature': '102px',
         'form': '20px',
+        'row': '30px'
       },
       backgroundImage: {
         'newsletter-plane': "url('../img/newsletter1.svg')",
