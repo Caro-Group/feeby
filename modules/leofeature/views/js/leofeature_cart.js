@@ -62,9 +62,12 @@ $(document).ready(function(){
 	// $('.blockcart.cart-preview').data('refresh-url','');
 	// $('.blockcart.cart-preview').removeAttr('refresh-url');
 	// $('.blockcart.cart-preview').wrap('<div class="leo-blockcart-wapper"></div>');
-	prestashop.on('updateCart', function (event) {
 
-		$('.product-add-to-cart button').addClass('adding');
+	$('.product-add-to-cart button').click(function(){
+		$(this).addClass('adding');
+	});
+
+	prestashop.on('updateCart', function (event) {
 		
 		// console.log('aaa');
 		// console.log(event);
