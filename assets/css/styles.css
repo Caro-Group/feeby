@@ -526,7 +526,7 @@ tr.show .view-wishlist-product i{
     @apply -translate-y-full
 }
 .product-add-to-cart .add button.adding svg{
-    @apply translate-y-12
+    @apply translate-y-16
 }
 
 .product-add-to-cart .add button.added span{
