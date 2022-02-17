@@ -513,7 +513,7 @@ tr.show .view-wishlist-product i{
     @apply top-1/4 left-1/2 -ml-[14px] opacity-0 transition duration-200 transform
 }
 .product-add-to-cart .add button span{
-    @apply block duration-200 elo py-3 top-0 transition w-full transform
+    @apply block duration-200 py-3 top-0 transition w-full transform
 }
 
 .product-add-to-cart .add button.adding{
