@@ -1,4 +1,8 @@
-.page-cms-4, .page-cms-7, .page-cms-8, .page-cms-7, .page-cms-9, .page-cms-20{
+.page-cms-4,
+.page-cms-7,
+.page-cms-8,
+.page-cms-9,
+.page-cms-20{
     @apply desktop-presta:mx-32
 }
 
@@ -6,7 +10,7 @@
     @apply object-contain;
 }
 
-.page-cms .page-content.page-cms-4   img{
+.page-cms .page-content.page-cms-4 img{
     @apply object-cover rounded-md;
 }
 
@@ -31,9 +35,14 @@
 }
 
 .page-cms .page-cms h2{
-    @apply font-normal border-0 border-t border-solid border-gray-1000 pt-5 mt-6 first:border-t-0 first:pt-0 ;
+    @apply font-normal border-0 border-t border-solid border-gray-1000 pt-5 mt-6 first:border-t-0 first:pt-0;
 }
 
-.page-cms .page-cms-9 p, .page-cms .page-cms-9 h2{
+.page-cms h2.mt-0{
+    margin-top: 0;
+}
+
+.page-cms .page-cms-9 p,
+.page-cms .page-cms-9 h2{
     @apply tablet:px-5;
 }

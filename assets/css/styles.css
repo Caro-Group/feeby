@@ -27,6 +27,11 @@ p{
     margin-right: 0px !important;
 }
 
+@media(min-width: 1514px){
+    .pl-77-1514{
+        padding-left: 77px;
+    }
+}
 
 @layer components{
 
@@ -505,3 +510,4 @@ tr.show .view-wishlist-product i{
 .page-category .container > .row{
     @apply border-0 border-b border-solid border-gray-1000 tablet:mb-5;
 }
+

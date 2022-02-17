@@ -53,9 +53,13 @@
      {hook h='displayLeoProfileProduct' product=$product typeProduct='detail'}
    {else}
  
-     <section id="main" class="product-detail pt-[20px]" itemscope itemtype="https://schema.org/Product">
+     <section id="main" class="product-detail tablet:pt-[20px]" itemscope itemtype="https://schema.org/Product">
        <meta itemprop="url" content="{$product.url}">
- 
+
+       {block name='breadcrumb_arrow'}
+          {include file='_partials/breadcrumb_arrow.tpl'}
+       {/block}
+
        <div class="flex flex-wrap flex-row">
          <div class="w-full tablet:w-3/5 tablet:pr-10">
            {block name='page_content_container'}
@@ -88,23 +92,7 @@
            {hook h='displayLeoProductReviewExtra' product=$product}
  
            <div class="product-information">
- 
-            {if isset($category) && $category->id_parent == 582} {* CATEGORY: ARTIST *}
-              {capture name=cat_thumb}{$smarty.const._THEME_CAT_DIR_}{$category->id}_thumb.jpg{/capture}
-              {capture name=cat_thumb_file}{$smarty.const._PS_CAT_IMG_DIR_}{$category->id}_thumb.jpg{/capture}
-              <a href="{$link->getCategoryLink($category->id)}" class="flex flex-row flex-wrap border-2 border-solid border-gray-default p-[10px] rounded-[5px] max-w-[240px] mb-[40px] hover:border-main group transition">
-                {if file_exists($smarty.capture.cat_thumb_file)}
-                  <img src="{$link->getMediaLink($smarty.capture.cat_thumb)}" class="rounded-full mr-[10px]" width="55px" height="55px"/>
-                {else}
-                  <img src="{$urls.img_url}cat_artist_thumb.jpg" class="rounded-full mr-[10px]" width="55px" height="55px"/>
-                {/if}
-                <span class="flex flex-col flex-wrap justify-center">
-                  <span class="block text-base text-gray-3000 leading-none font-normal">{l s='Designer' d='Shop.Theme.Catalog'}</span>
-                  <span class="font-header text-main-dark italic font-light text-base leading-normal">{$category->name}</span>
-                </span>
-                <svg class="ml-auto my-auto mr-3 group-hover:mr-1 transition-all" xmlns="http://www.w3.org/2000/svg" width="7" height="14" fill="none"><path d="M7 6.175.868 0H.867L0 .873l5.782 5.739-5.78 5.737.866.873L7 7.048v-.873Z" fill="#232322"/></svg>
-              </a>
-            {/if}
+             {hook h='displayProductInformationTop'}
              
              {block name='product_description_short'}{/block}
  

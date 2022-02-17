@@ -13,20 +13,13 @@
     <div id="image-{$formAtts.form_id|escape:'html':'UTF-8'}" class="flex flex-col {(isset($formAtts.class)) ? $formAtts.class : ''|escape:'html':'UTF-8'}">
         {($apLiveEdit)?$apLiveEdit:'' nofilter}{* HTML form , no escape necessary *}
     
-        {if isset($formAtts.title) && $formAtts.title}
-            <h4 class="title_block">{$formAtts.title nofilter}{* HTML form , no escape necessary *}</h4>
-        {/if}
-        {if isset($formAtts.sub_title) && $formAtts.sub_title}
-            <div class="sub-title-widget">{$formAtts.sub_title nofilter}</div>
-        {/if}
-        
         {if (isset($formAtts.image) && $formAtts.image) || (isset($formAtts.image_link) && $formAtts.image_link)}
         
             {if isset($formAtts.url) && $formAtts.url}
             <a href="{$formAtts.url}{*full url can not escape*}" class="flex flex-col h-full group" {(isset($formAtts.is_open) && $formAtts.is_open) ? 'target="_blank"' : ''|escape:'html':'UTF-8'}>
             {/if}
             <div class="overflow-hidden rounded-md h-full">
-            <img class="object-cover transform group-hover:scale-110 duration-2000 w-full h-full" {if $aplazyload}loading="lazy"{/if} src="{if isset($formAtts.image) && $formAtts.image}{$path|escape:'html':'UTF-8'}{$formAtts.image|escape:'html':'UTF-8'}{else}{if isset($formAtts.image_link)}{$formAtts.image_link|escape:'html':'UTF-8'}{/if}{/if}" class="{(isset($formAtts.animation) && $formAtts.animation != 'none') ? 'has-animation' : ''|escape:'html':'UTF-8'}"
+            <img data-pagespeed-no-transform class="object-cover transform group-hover:scale-110 duration-2000 w-full h-full" {if $aplazyload}loading="lazy"{/if} src="{if isset($formAtts.image) && $formAtts.image}{$path|escape:'html':'UTF-8'}{$formAtts.image|escape:'html':'UTF-8'}{else}{if isset($formAtts.image_link)}{$formAtts.image_link|escape:'html':'UTF-8'}{/if}{/if}" class="{(isset($formAtts.animation) && $formAtts.animation != 'none') ? 'has-animation' : ''|escape:'html':'UTF-8'}"
                 {if isset($formAtts.animation) && $formAtts.animation != 'none'} data-animation="{$formAtts.animation|escape:'html':'UTF-8'}" {/if}
                 {if $formAtts.animation_delay != ''} data-animation-delay="{$formAtts.animation_delay|escape:'html':'UTF-8'}" {/if}
                 title="{((isset($formAtts.title) && $formAtts.title) ? $formAtts.title : '')|escape:'html':'UTF-8'}"

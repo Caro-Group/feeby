@@ -32,6 +32,13 @@ global_settings:
       - name: displayCatalogBottom
         title: Catalog Bottom List
         description: Catalog after list hook display
+      - name: displayInformationTop
+        title: Catalog Product Top Information
+        description: Catalog Product Top Information display hook
+      - name: displayCatalogListProduct
+        title: Category Product List
+        description: Category Product List display hook
+        
 
 #    product:
 #      - id: product-style

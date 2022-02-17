@@ -6,6 +6,9 @@
 * @description: ApPageBuilder is module help you can build content for your shop
 *}
 
+{*
+* row  mx-auto max-w-screen-desktop-wide flex flex-col tablet:flex-row items-center pt-60px desktop:pt-80px -mx-row
+*}
 {if $hookName == 'displayNav1'}
 
 
