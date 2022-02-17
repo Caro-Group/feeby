@@ -63,6 +63,8 @@ $(document).ready(function(){
 	// $('.blockcart.cart-preview').removeAttr('refresh-url');
 	// $('.blockcart.cart-preview').wrap('<div class="leo-blockcart-wapper"></div>');
 	prestashop.on('updateCart', function (event) {
+
+		$('.product-add-to-cart button').addClass('adding');
 		
 		// console.log('aaa');
 		// console.log(event);
@@ -97,6 +99,7 @@ $(document).ready(function(){
 					}
 				},
 				error: function (XMLHttpRequest, textStatus, errorThrown) {
+					$('.product-add-to-cart button').removeClass('adding');
 					console.log("TECHNICAL ERROR: \n\nDetails:\nError thrown: " + XMLHttpRequest + "\n" + 'Text status: ' + textStatus);
 				}
 			});
@@ -104,7 +107,11 @@ $(document).ready(function(){
 		//DONGND:: show notification if add cart success
 		if (event.reason.linkAction == 'add-to-cart' && event.resp.success)
 		{		
-			// console.log($('.leo-bt-cart.active'));		
+			// console.log($('.leo-bt-cart.active'));
+			$('.product-add-to-cart button').switchClass('adding','added');
+			setTimeout(function () {
+				$('.product-add-to-cart button').removeClass('added');						
+			},500);		
 			
 			//DONGND:: run fly cart
 			if (typeof enable_flycart_effect != 'undefined' && enable_flycart_effect)
