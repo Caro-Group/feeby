@@ -111,7 +111,7 @@ $(document).ready(function(){
 			$('.product-add-to-cart button').switchClass('adding','added');
 			setTimeout(function () {
 				$('.product-add-to-cart button').removeClass('added');						
-			},500);		
+			},2000);		
 			
 			//DONGND:: run fly cart
 			if (typeof enable_flycart_effect != 'undefined' && enable_flycart_effect)
