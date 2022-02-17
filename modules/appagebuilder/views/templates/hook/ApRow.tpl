@@ -7,7 +7,7 @@
 *}
 
 {*
-* row  mx-auto max-w-screen-desktop-wide flex flex-col tablet:flex-row items-center pt-60px desktop:pt-80px -mx-row
+* row  mx-auto max-w-screen-desktop-wide flex flex-col tablet:flex-row items-center pt-60px desktop:pt-80px
 *}
 {if $hookName == 'displayNav1'}
 
