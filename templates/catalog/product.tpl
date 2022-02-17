@@ -53,9 +53,13 @@
      {hook h='displayLeoProfileProduct' product=$product typeProduct='detail'}
    {else}
  
-     <section id="main" class="product-detail pt-[20px]" itemscope itemtype="https://schema.org/Product">
+     <section id="main" class="product-detail tablet:pt-[20px]" itemscope itemtype="https://schema.org/Product">
        <meta itemprop="url" content="{$product.url}">
- 
+
+       {block name='breadcrumb_arrow'}
+          {include file='_partials/breadcrumb_arrow.tpl'}
+       {/block}
+
        <div class="flex flex-wrap flex-row">
          <div class="w-full tablet:w-3/5 tablet:pr-10">
            {block name='page_content_container'}
