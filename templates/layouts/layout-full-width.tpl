@@ -29,6 +29,13 @@
 
 {block name='content_wrapper'}
   <div id="content-wrapper" class="w-full px-5">
+
+    {if $page.page_name == "cms"}
+      {block name='breadcrumb_arrow'}
+        {include file='_partials/breadcrumb_arrow.tpl'}
+      {/block}
+    {/if}
+
     {hook h="displayContentWrapperTop"}
     {block name='content'}
       <p>Hello world! This is HTML5 Boilerplate.</p>

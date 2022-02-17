@@ -68,7 +68,7 @@
           {block name='breadcrumb'}
             {include file='_partials/breadcrumb.tpl'}
           {/block}
-          
+                    
           {block name="displayTopContent"}{/block}
          
           {if isset($fullwidth_hook.displayHome) AND $fullwidth_hook.displayHome == 0}
