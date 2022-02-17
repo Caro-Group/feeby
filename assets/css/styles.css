@@ -510,7 +510,7 @@ tr.show .view-wishlist-product i{
 
 
 .product-add-to-cart .add button svg{
-    @apply top-1/4 left-1/2 -ml-[14px] transition duration-200 transform absolute
+    @apply top-1/4 left-1/2 -ml-[14px] transition duration-200 transform translate-y-12 absolute
 }
 .product-add-to-cart .add button span{
     @apply block duration-200 py-3 top-0 transition w-full transform
