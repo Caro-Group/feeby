@@ -23,7 +23,7 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
  <div id="blockcart-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-        <span class=" w-[75px] h-[75px] block border-[2px] border-white border-opacity-60 border-t-main border-solid rounded-full" ></span>
+    <div class="modal-dialog absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center">
+        <span class=" w-[75px] h-[75px] block border-[2px] border-white border-opacity-60 border-t-main border-solid rounded-full animate-spin" ></span>
     </div>
  </div>
