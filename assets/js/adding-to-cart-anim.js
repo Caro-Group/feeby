@@ -28,10 +28,11 @@ $(document).ready(function(){
     })
 
     // HIDING POPUP
+    // HIDING POPUP
     $('body').on('shown.bs.modal', '#blockcart-modal',function(){
-        $('#blockcart-modal').modal('hide');
-        $('.modal-backdrop').fadeOut();
-        return false;
+      
+        $('.modal').modal('hide').fadeOut();
+        $('.modal-backdrop').fadeOut(); 
     })
 
 })
