@@ -517,7 +517,7 @@ tr.show .view-wishlist-product i{
 }
 
 .product-add-to-cart .add button.adding{
-    @apply bg-main-hover
+    @apply bg-main-hover animate-pulse
 }
 .product-add-to-cart .add button.adding span{
     @apply -translate-y-full
