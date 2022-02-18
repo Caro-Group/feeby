@@ -563,6 +563,7 @@ tr.show .view-wishlist-product i{
 
 body .loader{
 animation: fadeIn 0.5s ease-in-out  forwards;
+z-index: 9999;
 }
 
 
