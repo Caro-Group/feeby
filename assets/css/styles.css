@@ -16,6 +16,11 @@ p{
     @apply font-header;
 }
 
+@keyframes fadeIn {
+    from{ opacity: 0; }
+    to { opacity: 1; }
+}
+
 /* FOR BOOTSTRAP  */
 .px-0-important{
     padding-left: 0px !important;
@@ -510,4 +515,55 @@ tr.show .view-wishlist-product i{
 .page-category .container > .row{
     @apply border-0 border-b border-solid border-gray-1000 tablet:mb-5;
 }
+
+
+.product-add-to-cart .add button span{
+    @apply block duration-200 py-3 top-0 transition w-full transform
+}
+.product-add-to-cart .add button .success{
+    @apply top-1/4 left-1/2 -ml-[14px] transition duration-200 transform translate-y-16 absolute
+}
+.product-add-to-cart .add button .error{
+    @apply top-1/4 left-1/2 -ml-[14px] transition duration-150 transform translate-y-16 absolute
+}
+
+.product-add-to-cart .add button.adding{
+    @apply bg-main-hover
+}
+.product-add-to-cart .add button.adding span{
+    @apply -translate-y-full
+}
+.product-add-to-cart .add button.adding .success{
+    @apply translate-y-16
+}
+.product-add-to-cart .add button.adding .error{
+    @apply translate-y-16
+}
+
+.product-add-to-cart .add button.added span{
+    @apply -translate-y-full
+}
+.product-add-to-cart .add button.added .success{
+    @apply opacity-100 translate-y-0
+}
+
+.product-add-to-cart .add button.failed {
+    @apply bg-require
+}
+.product-add-to-cart .add button.failed span{
+    @apply -translate-y-full
+}
+.product-add-to-cart .add button.failed .error{
+    @apply opacity-100 translate-y-0
+}
+
+.page-product #blockcart-modal.modal.fade .modal-dialog{
+    @apply translate-y-0
+}
+
+body .loader{
+animation: fadeIn 0.5s ease-in-out  forwards;
+}
+
+
 
