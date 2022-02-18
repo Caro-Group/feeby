@@ -30,6 +30,7 @@ $(document).ready(function(){
     // HIDING POPUP
     $('body').on('shown.bs.modal', '#blockcart-modal',function(){
         $('#blockcart-modal').modal('hide');
+        $('.modal-backdrop').fadeOut();
         return false;
     })
 
