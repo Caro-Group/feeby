@@ -515,10 +515,10 @@ tr.show .view-wishlist-product i{
 .product-add-to-cart .add button span{
     @apply block duration-200 py-3 top-0 transition w-full transform
 }
-.product-add-to-cart .add button success{
+.product-add-to-cart .add button .success{
     @apply top-1/4 left-1/2 -ml-[14px] transition duration-200 transform translate-y-12 absolute hidden
 }
-.product-add-to-cart .add button error{
+.product-add-to-cart .add button .error{
     @apply top-1/4 left-1/2 -ml-[14px] transition duration-150 transform translate-y-12 absolute hidden
 }
 
@@ -528,17 +528,17 @@ tr.show .view-wishlist-product i{
 .product-add-to-cart .add button.adding span{
     @apply -translate-y-full
 }
-.product-add-to-cart .add button.adding success{
+.product-add-to-cart .add button.adding .success{
     @apply translate-y-16
 }
-.product-add-to-cart .add button.adding error{
+.product-add-to-cart .add button.adding .error{
     @apply translate-y-16
 }
 
 .product-add-to-cart .add button.added span{
     @apply -translate-y-full
 }
-.product-add-to-cart .add button.added success{
+.product-add-to-cart .add button.added .success{
     @apply opacity-100 translate-y-0
 }
 
@@ -548,7 +548,7 @@ tr.show .view-wishlist-product i{
 .product-add-to-cart .add button.failed span{
     @apply -translate-y-full
 }
-.product-add-to-cart .add button.failed error{
+.product-add-to-cart .add button.failed .error{
     @apply opacity-100 translate-y-0
 }
 
