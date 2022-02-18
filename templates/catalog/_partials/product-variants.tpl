@@ -40,7 +40,7 @@
         {elseif $group.group_type == 'select'}
 
           <select
-            class="form-select bg-gray-default rounded border-none w-full mb-[10px]"
+            class="form-select taxt-base tablet:text-xl py-[18px] tablet:py-4 pl-[30px] bg-[center_right_30px] bg-gray-default rounded border-none w-full mb-[10px] focus:ring-main transition"
             id="group_{$id_attribute_group}"
             data-product-attribute="{$id_attribute_group}"
             name="group[{$id_attribute_group}]">
