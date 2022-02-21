@@ -57,9 +57,9 @@
        <meta itemprop="url" content="{$product.url}">
  
        {if Tag::getProductTags(Tools::getValue('id_product')) != ''}
-        <div class="flex flex-row flex-wrap text-gray-3000 text-xs">
-        {l s='Tags' d='Shop.Theme.Catalog'}:
-          <ul class="producttags">
+        <div class="flex flex-row text-gray-3000 text-xs">
+          {l s='Tags' d='Shop.Theme.Catalog'}:
+          <ul class="flex flex-wrap float-left">
             {foreach from=Tag::getProductTags(Tools::getValue('id_product')) key=k item=v}
               {foreach from=$v item=value}
                 <li class="ml-1 mb-1">
