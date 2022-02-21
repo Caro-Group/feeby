@@ -55,10 +55,21 @@
  
      <section id="main" class="product-detail tablet:pt-[20px]" itemscope itemtype="https://schema.org/Product">
        <meta itemprop="url" content="{$product.url}">
-
-       {block name='breadcrumb_arrow'}
-          {include file='_partials/breadcrumb_arrow.tpl'}
-       {/block}
+ 
+       {if Tag::getProductTags(Tools::getValue('id_product')) != ''}
+        <div class="flex flex-row flex-wrap text-gray-3000 text-xs">
+        {l s='Tags' d='Shop.Theme.Catalog'}:
+          <ul class="producttags">
+            {foreach from=Tag::getProductTags(Tools::getValue('id_product')) key=k item=v}
+              {foreach from=$v item=value}
+                <li class="ml-1 mb-1">
+                  <a href="{$link->getPageLink('search', true, NULL, "tag={$value|urlencode}")}" class="hover:text-main border-0 border-b border-transparent hover:border-b-main text-gray-3000 text-xs transition">#{$value|escape:html:'UTF-8'}</a>
+                </li>
+              {/foreach}
+            {/foreach}
+          </ul>
+        </div>
+      {/if}
 
        <div class="flex flex-wrap flex-row">
          <div class="w-full tablet:w-3/5 tablet:pr-10">
