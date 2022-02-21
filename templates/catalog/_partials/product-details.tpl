@@ -27,7 +27,7 @@
                   {$feature.value|escape:'htmlall'|nl2br nofilter}
                 {/if}
               </dd>
-            <div>
+            </div>
           {/foreach}
         </dl>
       </section>
