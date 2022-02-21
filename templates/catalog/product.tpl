@@ -53,9 +53,13 @@
      {hook h='displayLeoProfileProduct' product=$product typeProduct='detail'}
    {else}
  
-     <section id="main" class="product-detail tablet:pt-[20px]" itemscope itemtype="https://schema.org/Product">
-       <meta itemprop="url" content="{$product.url}">
- 
+    <section id="main" class="product-detail tablet:pt-[20px]" itemscope itemtype="https://schema.org/Product">
+      <meta itemprop="url" content="{$product.url}">
+
+      {block name='breadcrumb_arrow'}
+        {include file='_partials/breadcrumb_arrow.tpl'}
+      {/block}
+      
        {if Tag::getProductTags(Tools::getValue('id_product')) != ''}
         <div class="flex flex-row flex-wrap text-gray-3000 text-xs">
         {l s='Tags' d='Shop.Theme.Catalog'}:
