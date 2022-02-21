@@ -40,6 +40,7 @@
 							data-full-size-image-url = "{$product.cover.large.url}"
 							loading="lazy"
 						/> 
+						<span class="absolute opacity-0 inset-0 product-additional z-10 hover:opacity-100 transition" data-idproduct="{$product.id_product}"></span>
 					</a>
 				{else}
 					<a href="{$product.canonical_url}">
