@@ -67,7 +67,7 @@
             {foreach from=Tag::getProductTags(Tools::getValue('id_product')) key=k item=v}
               {foreach from=$v item=value}
                 <li class="ml-1 mb-1">
-                  <a href="{$link->getPageLink('search', true, NULL, "tag={$value|urlencode}")}" class="hover:text-main border-0 border-b border-transparent hover:border-b-main text-gray-3000 text-xs transition">#{$value|escape:html:'UTF-8'}</a>
+                  <a href="{$link->getPageLink('search', true, NULL, "tag={$value|urlencode}")}" class="hover:text-main text-gray-3000 text-xs transition">#{$value|escape:html:'UTF-8'}</a>
                 </li>
               {/foreach}
             {/foreach}
