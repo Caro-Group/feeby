@@ -24,23 +24,6 @@
  *}
 <div class="images-container">
   {block name='product_cover_thumbnails'}
-    {if $isMobile && $dmobile_swipe}
-      <div class="list-images-mobile">
-        {foreach from=$product.images item=image}
-          <div>
-            <img
-              class="thumb js-thumb {if $image.id_image == $product.default_image.id_image} selected {/if}"
-              data-image-medium-src="{$image.bySize.medium_default.url}"
-              data-image-large-src="{$image.bySize.large_default.url}"
-              src="{$image.bySize.large_default.url}"
-              alt="{$image.legend}"
-              title="{$image.legend}"
-              itemprop="image"
-            >
-          </div>
-        {/foreach}
-      </div>
-    {else}
       {block name='product_cover'}
         <div class="product-cover border-2 border-solid rounded-[5px] border-gray-default">
         {if $product.default_image}
@@ -63,7 +46,7 @@
                   transition-property: transform;">
                   <a href="javascript:void(0)" data-image="{$image.bySize.large_default.url}" data-zoom-image="{$image.bySize.large_default.url}"> 
                     <img
-                      class="object-cover h-[200px] w-[200px] thumb js-thumb border border-solid rounded-lg mr-[18px] {if $image.id_image == $product.default_image.id_image} selected {/if}"
+                      class="object-cover h-[50px] w-[50px] tablet:h-[200px] tablet:w-[200px] thumb js-thumb border border-solid rounded-lg mr-[18px] {if $image.id_image == $product.default_image.id_image} selected {/if}"
                       data-image-medium-src="{$image.bySize.medium_default.url}"
                       data-image-large-src="{$image.bySize.large_default.url}"
                       src="{$image.bySize.home_default.url}"
@@ -101,7 +84,6 @@
           </div>
         </div> 
       {/block}
-    {/if}
   {/block}
   {hook h='displayAfterProductThumbs'}
 </div>
