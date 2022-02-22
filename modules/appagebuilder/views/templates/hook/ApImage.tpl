@@ -8,7 +8,7 @@
 <!-- @file modules\appagebuilder\views\templates\hook\ApImage -->
 
 {* desktop-presta:h-96 desktop-wide:h-100 text-md tablet:text-xl not-italic *}
-{if $page_name == 'index'}
+{if $page_name == 'index' || $page_name == 'cms' }
 
     <div id="image-{$formAtts.form_id|escape:'html':'UTF-8'}" class="flex flex-col {(isset($formAtts.class)) ? $formAtts.class : ''|escape:'html':'UTF-8'}">
         {($apLiveEdit)?$apLiveEdit:'' nofilter}{* HTML form , no escape necessary *}
@@ -67,6 +67,12 @@
             {/if}
     
             </div>
+            {if isset($formAtts.title) && $formAtts.title}
+                <div class='h-4 min-h-8 tablet:min-h-8 mt-3 ml-2 tablet:ml-8 tablet:mt-4 tablet:mr-5 tablet:mb-8 flex'>
+                        <span class="text-base tablet:text-2xl text-main-dark font-body not-italic font-light">{($formAtts.title) ? $formAtts.title:'' nofilter}{* HTML form , no escape necessary *} </span>
+                        <i class="mt-1 duration-150 opacity-0 group-hover:opacity-100 group-hover:text-main group-hover:translate-x-4 hidden desktop-presta:inline-block relative text-lg text-main-dark ti-arrow-right transform transition"></i>
+                </div>
+            {/if}
             {if isset($formAtts.description) && $formAtts.description}
                 <div class='image_description h-4 min-h-8 tablet:min-h-8 mt-3 ml-2 tablet:ml-8 tablet:mt-4 tablet:mr-5 tablet:mb-8 flex'>
                         {($formAtts.description) ? $formAtts.description:'' nofilter}{* HTML form , no escape necessary *} 
