@@ -207,21 +207,17 @@
        {block name='product_images_modal'}
          {include file='catalog/_partials/product-images-modal.tpl'}
        {/block}
- 
-       <aside class="instagram">
-       {hook h='displayApSC' sc_key=sc2039205557}
-      </aside>
-      
-       {block name='page_footer_container'}
-         <footer class="page-footer">
-           {block name='page_footer'}
-             <!-- Footer content -->
-           {/block}
-         </footer>
-       {/block}
- 
      </section>
    {/if}
  
+ {/block}
+
+ {block name='hook_footer_before' prepend}
+  <div class="conteiner max-w-screen-full-hd w-full">
+    <div class="border-0 border-b border-gray-2000 border-solid mx-auto w-full tablet:mb-6 tablet:mt-1"></div>
+  </div>
+  <aside class="instagram">
+  {hook h='displayApSC' sc_key=sc2039205557}
+  </aside>
  {/block}
  
