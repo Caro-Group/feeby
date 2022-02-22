@@ -1827,13 +1827,10 @@ textarea.form-control {
     transform: rotate(90deg); }
 
 .box-instagram .ApInstagram {
-  border-bottom: 1px solid #eaeaea;
-  padding-bottom: 70px;
-  margin-bottom: 70px; }
+  margin-bottom: 40px; }
   @media (max-width: 991px) {
     .box-instagram .ApInstagram {
-      padding-bottom: 40px;
-      margin-bottom: 40px; } }
+      margin-bottom: 120px; } }
   .box-instagram .ApInstagram p.link-instagram {
     margin: 0; }
 
@@ -4847,8 +4844,6 @@ div.box-banner2h6 {
 
 .box-instagram .ApInstagram .block_content {
   margin: 0; }
-.box-instagram .owl-carousel .owl-item {
-  padding: 0; }
 
 .language-selector img {
   margin: 0 5px 0 0;
