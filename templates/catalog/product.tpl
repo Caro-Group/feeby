@@ -232,10 +232,10 @@
  {/block}
 
  {block name='hook_footer_before' prepend}
-  <div class="conteiner max-w-screen-full-hd w-full">
+  <div class="container max-w-screen-full-hd w-full">
     <div class="border-0 border-b border-gray-2000 border-solid mx-auto w-full tablet:mb-6 tablet:mt-1"></div>
   </div>
-  <aside class="instagram">
+  <aside class="container instagram">
   {hook h='displayApSC' sc_key=sc2039205557}
   </aside>
  {/block}
