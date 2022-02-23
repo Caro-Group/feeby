@@ -10,7 +10,7 @@
 {* desktop-presta:h-96 desktop-wide:h-100 text-md tablet:text-xl not-italic *}
 
 <div id="image-{$formAtts.form_id|escape:'html':'UTF-8'}"
-    class="block {(isset($formAtts.class)) ? $formAtts.class : ''|escape:'html':'UTF-8'}">
+    class="{(isset($formAtts.class)) ? $formAtts.class : ''|escape:'html':'UTF-8'}">
     {($apLiveEdit)?$apLiveEdit:'' nofilter}{* HTML form , no escape necessary *}
 
     {if isset($formAtts.title) && $formAtts.title}
