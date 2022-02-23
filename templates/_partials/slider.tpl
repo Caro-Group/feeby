@@ -2,7 +2,7 @@
     <div id="{$type}" class="overflow-hidden {if $type == "products-crossell" || $type == "products-releated-footer"} -mx-[30px] overflow-hidden {/if}">
 
         {if !empty($title)}
-            <div class="flex justify-between px-[30px] {if $type == "products-crossell" || $type == "products-releated-footer"} tablet-medium:px-[20px] {/if} mb-[25px] tablet:mb-6">
+            <div class="flex justify-between px-[30px] {if $type == "products-crossell" || $type == "products-releated-footer"} tablet-medium:px-[20px] {/if} {if $type == "products-releated-footer"} mt-8 tablet:mt-20 {/if} mb-[25px] tablet:mb-6">
                 <h2 class="font-light text-2xl tablet:text-4xl">
                     {$title}                
                 </h2>
