@@ -70,7 +70,7 @@
 
 Classes used in builder: 
 
-tablet-medium:mr-20 tablet-wide:mr-8 desktop:mr-0 tablet-medium:top-auto tablet-medium:w-3/5 tablet-medium:absolute tablet-medium:-bottom-12 mx-4 desktop-presta:mx-0
+tablet-medium:mr-20 tablet-wide:mr-8 desktop:mr-0 tablet-medium:top-auto tablet-medium:w-3/5 tablet-medium:absolute tablet-medium:-bottom-12 tablet:mx-4 desktop-presta:mx-0
 
 *}
 
