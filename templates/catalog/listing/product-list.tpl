@@ -32,7 +32,7 @@
   <i style="font-size: 25px;" class="material-icons">&#xE408;</i>
  </a>
 {else}
- <a style="display: block;margin-bottom: 20px;" class="hidden-xl-up" href="{$breadcrumb.links[count($breadcrumb)-1]['url']}" title="{$breadcrumb.links[count($breadcrumb)-1]['title']}">
+ <a style="display: block;margin-bottom: 20px;" class="hidden-xl-up" href="{$breadcrumb.links[count($breadcrumb.links)-2]['url']}" title="{$breadcrumb.links[count($breadcrumb.links)-2]['title']}">
   <i style="font-size: 25px;" class="material-icons">&#xE408;</i>
  </a>
 {/if}
