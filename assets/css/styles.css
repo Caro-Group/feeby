@@ -16,6 +16,11 @@ p{
     @apply font-header;
 }
 
+@keyframes fadeIn {
+    from{ opacity: 0; }
+    to { opacity: 1; }
+}
+
 /* FOR BOOTSTRAP  */
 .px-0-important{
     padding-left: 0px !important;
@@ -519,6 +524,17 @@ tr.show .view-wishlist-product i{
     @apply top-1/4 left-1/2 -ml-[14px] transition duration-150 transform translate-y-16 absolute
 }
 
+
+.product-add-to-cart .add button span{
+    @apply block duration-200 py-3 top-0 transition w-full transform
+}
+.product-add-to-cart .add button .success{
+    @apply top-1/4 left-1/2 -ml-[14px] transition duration-200 transform translate-y-16 absolute
+}
+.product-add-to-cart .add button .error{
+    @apply top-1/4 left-1/2 -ml-[14px] transition duration-150 transform translate-y-16 absolute
+}
+
 .product-add-to-cart .add button.adding{
     @apply bg-main-hover
 }
@@ -553,7 +569,10 @@ tr.show .view-wishlist-product i{
     @apply translate-y-0
 }
 
-
+body .loader{
+animation: fadeIn 0.5s ease-in-out  forwards;
+z-index: 9999;
+}
 
 
 

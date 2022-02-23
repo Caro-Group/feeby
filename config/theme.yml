@@ -22,6 +22,8 @@ assets:
     all:
      - id: swiper-js
        path: assets/js/swiper.js
+     - id: loader-js
+       path: assets/js/loader.js
 
 global_settings:
   hooks:
