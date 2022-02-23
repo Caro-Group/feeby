@@ -28,7 +28,7 @@ var clicks1 = 0;
 		window.playerReady = false;
 
         document.addEventListener("DOMContentLoaded", function(event) {
-            if(videoID){
+            if(typeof videoID != 'undefined'){
                 document.querySelectorAll('[data-yt-thumb]')[0].src = `https://img.youtube.com/vi/${videoID}/mqdefault.jpg`;
             }
         });
