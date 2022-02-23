@@ -18,27 +18,28 @@
         {if isset($formAtts.url) && $formAtts.url}
             <a href="{$formAtts.url}{*full url can not escape*}" class="flex flex-col h-full group"
                 {(isset($formAtts.is_open) && $formAtts.is_open) ? 'target="_blank"' : ''|escape:'html':'UTF-8'}>
-        {else}
-            <div class="flex flex-col h-full group">
-        {/if}
-            <div class="overflow-hidden rounded-md h-full">
-                <img data-pagespeed-no-transform
-                    class="object-cover transform group-hover:scale-110 duration-2000 w-full h-full"
-                    {if $aplazyload}loading="lazy" {/if}
-                    src="{if isset($formAtts.image) && $formAtts.image}{$path|escape:'html':'UTF-8'}{$formAtts.image|escape:'html':'UTF-8'}{else}{if isset($formAtts.image_link)}{$formAtts.image_link|escape:'html':'UTF-8'}{/if}{/if}"
-                    class="{(isset($formAtts.animation) && $formAtts.animation != 'none') ? 'has-animation' : ''|escape:'html':'UTF-8'}"
-                    {if isset($formAtts.animation) && $formAtts.animation != 'none'}
-                        data-animation="{$formAtts.animation|escape:'html':'UTF-8'}" {/if} {if $formAtts.animation_delay != ''}
-                    data-animation-delay="{$formAtts.animation_delay|escape:'html':'UTF-8'}" {/if}
-                    title="{((isset($formAtts.title) && $formAtts.title) ? $formAtts.title : '')|escape:'html':'UTF-8'}"
-                    alt="{((isset($formAtts.alt) && $formAtts.alt) ? $formAtts.alt : '')|escape:'html':'UTF-8'}"
-                    width="{((isset($formAtts.width) && $formAtts.width) ? $formAtts.width : '100%')|escape:'html':'UTF-8'}"
-                    height="{((isset($formAtts.height) && $formAtts.height) ? $formAtts.height : '100%')|escape:'html':'UTF-8'}" />
+            {else}
+                <div class="flex flex-col h-full group">
+                {/if}
+                <div class="overflow-hidden rounded-md h-full">
+                    <img data-pagespeed-no-transform
+                        class="object-cover transform group-hover:scale-110 duration-2000 w-full h-full"
+                        {if $aplazyload}loading="lazy" {/if}
+                        src="{if isset($formAtts.image) && $formAtts.image}{$path|escape:'html':'UTF-8'}{$formAtts.image|escape:'html':'UTF-8'}{else}{if isset($formAtts.image_link)}{$formAtts.image_link|escape:'html':'UTF-8'}{/if}{/if}"
+                        class="{(isset($formAtts.animation) && $formAtts.animation != 'none') ? 'has-animation' : ''|escape:'html':'UTF-8'}"
+                        {if isset($formAtts.animation) && $formAtts.animation != 'none'}
+                        data-animation="{$formAtts.animation|escape:'html':'UTF-8'}" {/if}
+                        {if $formAtts.animation_delay != ''}
+                        data-animation-delay="{$formAtts.animation_delay|escape:'html':'UTF-8'}" {/if}
+                        title="{((isset($formAtts.title) && $formAtts.title) ? $formAtts.title : '')|escape:'html':'UTF-8'}"
+                        alt="{((isset($formAtts.alt) && $formAtts.alt) ? $formAtts.alt : '')|escape:'html':'UTF-8'}"
+                        width="{((isset($formAtts.width) && $formAtts.width) ? $formAtts.width : '100%')|escape:'html':'UTF-8'}"
+                        height="{((isset($formAtts.height) && $formAtts.height) ? $formAtts.height : '100%')|escape:'html':'UTF-8'}" />
 
 
-                {* add any 'dot' class in panel in order to create one and set it's position  *}
-                {if $formAtts.class|strstr:"dot"}
-                    <div class="hidden desktop-presta:block absolute bg-white group-hover:bg-main w-3 h-3 rounded-full shadow-md transition
+                    {* add any 'dot' class in panel in order to create one and set it's position  *}
+                    {if $formAtts.class|strstr:"dot"}
+                        <div class="hidden desktop-presta:block absolute bg-white group-hover:bg-main w-3 h-3 rounded-full shadow-md transition
                 {if $formAtts.class|strstr:"dot-top"}
                      top-1/3
                 {/if}
@@ -70,34 +71,34 @@
                     inset-y-2/4
                 {/if}
                 ">
+                        </div>
+                    {/if}
+
+                </div>
+                {if isset($formAtts.title) && $formAtts.title}
+                    <div class='h-4 min-h-8 tablet:min-h-8 mt-3 ml-2 tablet:ml-8 tablet:mt-4 tablet:mr-5 tablet:mb-8 flex'>
+                        <span
+                            class="text-base tablet:text-2xl text-main-dark font-body not-italic font-light">{($formAtts.title) ? $formAtts.title:'' nofilter}{* HTML form , no escape necessary *}
+                        </span>
+                        {if isset($formAtts.url) && $formAtts.url} <i
+                            class="mt-1 duration-150 opacity-0 group-hover:opacity-100 group-hover:text-main group-hover:translate-x-4 hidden desktop-presta:inline-block relative text-lg text-main-dark ti-arrow-right transform transition"></i>{/if}
                     </div>
                 {/if}
-
-            </div>
-            {if isset($formAtts.title) && $formAtts.title}
-                <div class='h-4 min-h-8 tablet:min-h-8 mt-3 ml-2 tablet:ml-8 tablet:mt-4 tablet:mr-5 tablet:mb-8 flex'>
-                    <span
-                        class="text-base tablet:text-2xl text-main-dark font-body not-italic font-light">{($formAtts.title) ? $formAtts.title:'' nofilter}{* HTML form , no escape necessary *}
-                    </span>
-                    <i
-                        class="mt-1 duration-150 opacity-0 group-hover:opacity-100 group-hover:text-main group-hover:translate-x-4 hidden desktop-presta:inline-block relative text-lg text-main-dark ti-arrow-right transform transition"></i>
-                </div>
-            {/if}
-            {if isset($formAtts.description) && $formAtts.description}
-                <div
-                    class='image_description h-4 min-h-8 tablet:min-h-8 mt-3 ml-2 tablet:ml-8 tablet:mt-4 tablet:mr-5 tablet:mb-8 flex'>
-                    {($formAtts.description) ? $formAtts.description:'' nofilter}{* HTML form , no escape necessary *}
-                    <i
-                        class="mt-1 duration-150 opacity-0 group-hover:opacity-100 group-hover:text-main group-hover:translate-x-4 hidden desktop-presta:inline-block relative text-lg text-main-dark ti-arrow-right transform transition"></i>
-                </div>
-            {/if}
-        {if isset($formAtts.url) && $formAtts.url}
+                {if isset($formAtts.description) && $formAtts.description}
+                    <div
+                        class='image_description h-4 min-h-8 tablet:min-h-8 mt-3 ml-2 tablet:ml-8 tablet:mt-4 tablet:mr-5 tablet:mb-8 flex'>
+                        {($formAtts.description) ? $formAtts.description:'' nofilter}{* HTML form , no escape necessary *}
+                        {if isset($formAtts.url) && $formAtts.url} <i
+                            class="mt-1 duration-150 opacity-0 group-hover:opacity-100 group-hover:text-main group-hover:translate-x-4 hidden desktop-presta:inline-block relative text-lg text-main-dark ti-arrow-right transform transition"></i>{/if}
+                    </div>
+                {/if}
+                {if isset($formAtts.url) && $formAtts.url}
             </a>
         {else}
-            </div>        
-        {/if}
-
+        </div>
     {/if}
-    {($apLiveEditEnd)?$apLiveEditEnd:'' nofilter}{* HTML form , no escape necessary *}
+
+{/if}
+{($apLiveEditEnd)?$apLiveEditEnd:'' nofilter}{* HTML form , no escape necessary *}
 
 </div>
