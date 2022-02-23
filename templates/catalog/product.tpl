@@ -49,6 +49,8 @@
  
  {block name='content'}  
  
+    {include file="catalog/_partials/product-configure.tpl" product=$product}
+
    {if isset($product.productLayout) && $product.productLayout != ''}
      {hook h='displayLeoProfileProduct' product=$product typeProduct='detail'}
    {else}
