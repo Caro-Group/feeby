@@ -62,6 +62,7 @@ $(document).ready(function(){
 	// $('.blockcart.cart-preview').data('refresh-url','');
 	// $('.blockcart.cart-preview').removeAttr('refresh-url');
 	// $('.blockcart.cart-preview').wrap('<div class="leo-blockcart-wapper"></div>');
+
 	prestashop.on('updateCart', function (event) {
 		
 		// console.log('aaa');
@@ -104,8 +105,7 @@ $(document).ready(function(){
 		//DONGND:: show notification if add cart success
 		if (event.reason.linkAction == 'add-to-cart' && event.resp.success)
 		{		
-			// console.log($('.leo-bt-cart.active'));		
-			
+			// console.log($('.leo-bt-cart.active'));			
 			//DONGND:: run fly cart
 			if (typeof enable_flycart_effect != 'undefined' && enable_flycart_effect)
 			{
@@ -121,23 +121,23 @@ $(document).ready(function(){
 				}
 			}
 			
-			if ($('.leo-notification').length && typeof enable_notification != 'undefined' && enable_notification)
-			{
-				//DONGND:: show notification
-				var id_product = event.resp.id_product;
-				var product_name = false;
-				$.each(event.resp.cart.products, function(key, value){
-					// console.log(value);
-					// console.log(value.id_product);			
-					// console.log(value.name);
-					if (id_product == value.id_product)
-					{
-						product_name = value.name;
-						return false;
-					}
-				})				
-				showLeoNotification('success', 'add', product_name);				
-			}
+			// if ($('.leo-notification').length && typeof enable_notification != 'undefined' && enable_notification)
+			// {
+			// 	//DONGND:: show notification
+			// 	var id_product = event.resp.id_product;
+			// 	var product_name = false;
+			// 	$.each(event.resp.cart.products, function(key, value){
+			// 		// console.log(value);
+			// 		// console.log(value.id_product);			
+			// 		// console.log(value.name);
+			// 		if (id_product == value.id_product)
+			// 		{
+			// 			product_name = value.name;
+			// 			return false;
+			// 		}
+			// 	})				
+			// 	showLeoNotification('success', 'add', product_name);				
+			// }
 		}
 		
 		//DONGND:: hide cart item has been deleted from page cart
@@ -201,23 +201,23 @@ $(document).ready(function(){
 		// }
 		
 		// console.log('test1');
-		if (typeof show_popup != 'undefined' && show_popup)
-		{
-			// console.log('test');
-			check_active_modal_cart = setInterval(function(){
+		// if (typeof show_popup != 'undefined' && show_popup)
+		// {
+		// 	// console.log('test');
+		// 	check_active_modal_cart = setInterval(function(){
 				
-				if ($('.leo-bt-cart.active').length && $('#blockcart-modal').length && $('#blockcart-modal').hasClass('modal fade in'))
-				{
+		// 		if ($('.leo-bt-cart.active').length && $('#blockcart-modal').length && $('#blockcart-modal').hasClass('modal fade in'))
+		// 		{
 					
-					$('.leo-bt-cart.active').find('.leo-bt-cart-content').fadeIn('fast');
-					$('.leo-bt-cart.active').find('.leo-loading').hide();
-					$('.leo-bt-cart.active').removeClass('active reset');
+		// 			$('.leo-bt-cart.active').find('.leo-bt-cart-content').fadeIn('fast');
+		// 			$('.leo-bt-cart.active').find('.leo-loading').hide();
+		// 			$('.leo-bt-cart.active').removeClass('active reset');
 					
-					clearInterval(check_active_modal_cart);
-				}
+		// 			clearInterval(check_active_modal_cart);
+		// 		}
 				
-			}, 200);
-		}
+		// 	}, 200);
+		// }
 		
 		if (typeof show_popup != 'undefined' && !show_popup)
 		{
