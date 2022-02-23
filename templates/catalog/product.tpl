@@ -49,31 +49,32 @@
  
  {block name='content'}  
  
+  {foreach from=$product->features item=$feature}
+    {if $feature.name == 'Konfigurowalny' && $feature.value == 'Tak'}
+      {include file="catalog/_partials/product-configure.tpl" product=$product}  
+    {/if}
+  {/foreach}
+  
    {if isset($product.productLayout) && $product.productLayout != ''}
      {hook h='displayLeoProfileProduct' product=$product typeProduct='detail'}
    {else}
  
-    <section id="main" class="product-detail tablet:pt-[20px]" itemscope itemtype="https://schema.org/Product">
-      <meta itemprop="url" content="{$product.url}">
-
-      {block name='breadcrumb_arrow'}
-        {include file='_partials/breadcrumb_arrow.tpl'}
-      {/block}
-      
-       {if Tag::getProductTags(Tools::getValue('id_product')) != ''}
-        <div class="flex flex-row text-gray-3000 text-xs">
-          {l s='Tags' d='Shop.Theme.Catalog'}:
-          <ul class="flex flex-wrap float-left">
-            {foreach from=Tag::getProductTags(Tools::getValue('id_product')) key=k item=v}
-              {foreach from=$v item=value}
+     <section id="main" class="product-detail pt-[20px]" itemscope itemtype="https://schema.org/Product">
+       <meta itemprop="url" content="{$product.url}">
+ 
+       {assign var="tags" value=Tag::getProductTags(Tools::getValue('id_product'))}
+        {if $tags[$language.id] != ''}
+          <div class="flex flex-row text-gray-3000 text-xs w-full tablet:w-3/5 tablet:pr-10">
+            {l s='Tags' d='Shop.Theme.Catalog'}:
+            <ul class="flex flex-wrap float-left">
+              {foreach from=$tags[$language.id] key=k item=value}
                 <li class="ml-1 mb-1">
                   <a href="{$link->getPageLink('search', true, NULL, "tag={$value|urlencode}")}" class="hover:text-main text-gray-3000 text-xs transition">#{$value|escape:html:'UTF-8'}</a>
                 </li>
               {/foreach}
-            {/foreach}
-          </ul>
-        </div>
-      {/if}
+            </ul>
+          </div>
+        {/if}
 
        <div class="flex flex-wrap flex-row">
          <div class="w-full tablet:w-3/5 tablet:pr-10">
