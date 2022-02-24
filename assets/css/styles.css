@@ -569,15 +569,15 @@ body .loader{
 }
 
 [data-swiper-configure] .swiper-slide:hover img{
-    @apply outline-2 outline-main border-solid border-opacity-40 rounded-[5px] transition duration-200
+    @apply outline-2 outline-[rgb(223,26,91.0.3)] outline-offset-0 rounded-[5px] transition duration-200
 }
 
 [data-swiper-configure] .swiper-slide.selected img{
-    @apply outline-2 outline-main border-solid border-opacity-100 rounded-[5px]
+    @apply outline-2 outline-main outline-offset-0 rounded-[5px]
 }
 
 [data-swiper-configure] .swiper-slide.selected:hover img{
-    @apply outline-2 outline-main order-solid border-opacity-100 rounded-[5px]
+    @apply outline-2 outline-main outline-offset-0 rounded-[5px]
 }
 
 [data-swiper-configure] .swiper-wrapper .swiper-slide{
