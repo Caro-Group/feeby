@@ -1,13 +1,15 @@
 $(document).ready(function () {
 	if($('[data-swiper-configure]').length != 0) {
 		new Swiper('[data-swiper-configure]', {
-			slidesPerView: 'auto',
+			slidesPerView: 3,
 			spaceBetween: 10,
 			breakpoints: {
 				520: {
-					slidesPerView: 5,
-					allowTouchMove: false,
+					slidesPerView: 6,
 				},
+				768: {
+					allowTouchMove: false,
+				}
 			  }
 		});
 	};

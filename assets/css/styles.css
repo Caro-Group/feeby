@@ -512,16 +512,21 @@ tr.show .view-wishlist-product i{
 }
 
 
+[data-swiper-configure] .swiper-slide img{
+    @apply border-2 border-transparent border-solid rounded-[5px] transition duration-200;
+    -webkit-user-drag: none;
+}
+
 [data-swiper-configure] .swiper-slide:hover img{
-    @apply border-2 border-transparent border-solid border-opacity-60 rounded-[5px] transition duration-200
+    @apply border-2 border-transparent border-solid border-opacity-40 rounded-[5px] transition duration-200
 }
 
 [data-swiper-configure] .swiper-slide.selected img{
-    @apply border-2 border-main border-solid border-opacity-60 rounded-[5px]
+    @apply border-2 border-main border-solid border-opacity-100 rounded-[5px]
 }
 
 [data-swiper-configure] .swiper-slide.selected:hover img{
-    @apply border-2 border-main border-solid border-opacity-60 rounded-[5px]
+    @apply border-2 border-main border-solid border-opacity-100 rounded-[5px]
 }
 
 

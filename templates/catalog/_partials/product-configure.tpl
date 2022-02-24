@@ -6,7 +6,7 @@
             <i class=" material-icons text-main-dark hover:text-main text-4xl transition select-none"></i>
         </span>
         
-        <div class="flex items-center justify-between flex-col bg-gray-1000 rounded-[5px] flex-auto max-w-screen-tablet-wide relative mt-12 desktop-presta:mt-0">
+        <div class="flex justify-between flex-col bg-gray-1000 rounded-[5px] flex-auto max-w-screen-tablet-wide relative mt-12 desktop-presta:mt-0">
             <div class="w-full pt-5 px-5">
                 <span class="group flex items-center w-8 h-8 desktop-presta:w-10 desktop-presta:h-10 text-gray-3000 hover:text-main">
                     <svg class="fill-current transition" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -17,14 +17,14 @@
                     </div>
                 </span>
             </div>
-            <div class="max-w-[600px] desktop-wide:max-w-[780px] py-5">
-                <div class="swiper mx-8 " data-swiper-configure>
+            <div class="max-w-[600px] desktop-wide:max-w-[780px] py-5 overflow-hidden">
+                <div class="swiper mx-auto" data-swiper-configure>
                     <div class="swiper-wrapper items-center">
                             <div class="swiper-slide flex-1">
-                                <span class="font-body tablet:text-base font-light transform -rotate-90"> 300m </span>
+                                <span class="font-body tablet:text-base font-light transform -rotate-90 block"> 300m </span>
                             </div>  
                         {for $part=1 to 5}
-                            <div class="swiper-slide group w-[100px] phablet:w-[150px] overflow-hidden " data-configure-part={$part}>
+                            <div class="swiper-slide w-[100px] phablet:w-[150px] overflow-hidden " data-configure-part={$part}>
                                 <img class=" select-none w-[500%] max-w-none {if $part> 1 } -translate-x-{$part - 1}/5 {/if}" src="{$product.cover.large.url}" alt="{$product.name} part {$part}">
                                     <div class="text-center">
                                         <span class="my-2.5 font-body tablet:text-base font-normal">Panel A</span>
