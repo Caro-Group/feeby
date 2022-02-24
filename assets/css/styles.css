@@ -563,21 +563,20 @@ body .loader{
     z-index: 9999;
 }
 
-[data-swiper-configure] .swiper-slide .part-image{
+[data-swiper-configure] .swiper-slide .part-img{
     @apply border-2 border-transparent border-opacity-30 border-solid rounded-[5px] transition duration-200;
     -webkit-user-drag: none;
 }
 
-[data-swiper-configure] .swiper-slide:hover .part-image{
+[data-swiper-configure] .swiper-slide:hover .part-img{
     @apply border-2 border-main border-opacity-30 border-solid transition duration-200;
-    outline-color: rgb(223,26,91.0.3);
 }
 
-[data-swiper-configure] .swiper-wrapper .swiper-slide.selected .part-image{
+[data-swiper-configure] .swiper-wrapper .swiper-slide.selected .part-img{
     @apply border-2 border-main border-opacity-100 border-solid rounded-[5px]
 }
 
-[data-swiper-configure] .swiper-wrapper .swiper-slide.selected:hover .part-image{
+[data-swiper-configure] .swiper-wrapper .swiper-slide.selected:hover .part-img{
     @apply border-2 border-main border-opacity-100 border-solid rounded-[5px]
 }
 
@@ -585,7 +584,7 @@ body .loader{
     @apply w-[100px] phablet:w-[150px]
 }
 
-[data-swiper-configure] .swiper-wrapper .swiper-slide.size{
+[data-swiper-configure] .swiper-wrapper .swiper-slide .size{
     @apply w-8;
 }
 
