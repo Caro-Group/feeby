@@ -17,8 +17,8 @@
                     </div>
                 </span>
             </div>
-            <div class="max-w-[600px] desktop-wide:max-w-[780px] py-5 overflow-hidden">
-                <div class="swiper mx-auto" data-swiper-configure>
+            <div class="max-w-[600px] full-hd:max-w-[800px] py-5 mx-auto overflow-hidden">
+                <div class="swiper" data-swiper-configure>
                     <div class="swiper-wrapper items-center">
                             <div class="swiper-slide flex-1">
                                 <span class="font-body tablet:text-base font-light transform -rotate-90 block"> 300m </span>
