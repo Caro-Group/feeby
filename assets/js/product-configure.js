@@ -64,6 +64,11 @@ $(document).ready(function () {
                 if(firstIndex!=$(this).attr('data-configure-part')){
                     $(this).addClass('selected');
                     lastIndex =  $(this).attr('data-configure-part');
+                }else{
+                    firstIndex = undefined;
+                    lastIndex= undefined;
+                    $(this).removeClass('selected');
+
                 }
             }else if(firstIndex!= undefined && lastIndex!= undefined){
                 firstIndex =  $(this).attr('data-configure-part');
