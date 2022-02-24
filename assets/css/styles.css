@@ -569,7 +569,8 @@ body .loader{
 }
 
 [data-swiper-configure] .swiper-slide:hover img{
-    @apply outline-2 outline-[rgb(223,26,91.0.3)] outline-offset-0 rounded-[5px] transition duration-200
+    @apply outline-2 outline-offset-0 rounded-[5px] transition duration-200;
+    outline-color: rgb(223,26,91.0.3);
 }
 
 [data-swiper-configure] .swiper-slide.selected img{
