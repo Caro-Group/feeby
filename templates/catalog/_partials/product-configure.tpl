@@ -6,14 +6,14 @@
         
         <div class="flex justify-between flex-col bg-gray-1000 rounded-[5px] flex-auto max-w-screen-tablet-wide relative mt-4 desktop-presta:mt-0">
             <div class="w-full pt-5 px-5">
-                <span class="flex peer items-center w-8 h-8 desktop-presta:w-10 desktop-presta:h-10">
-                    <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <span class="flex peer items-center w-8 h-8 desktop-presta:w-10 desktop-presta:h-10 text-gray-3000 hover:text-main">
+                    <svg class="fill-current" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M25 3.125C12.9199 3.125 3.125 12.9199 3.125 25C3.125 37.0801 12.9199 46.875 25 46.875C37.0801 46.875 46.875 37.0801 46.875 25C46.875 12.9199 37.0801 3.125 25 3.125ZM25 43.1641C14.9707 43.1641 6.83594 35.0293 6.83594 25C6.83594 14.9707 14.9707 6.83594 25 6.83594C35.0293 6.83594 43.1641 14.9707 43.1641 25C43.1641 35.0293 35.0293 43.1641 25 43.1641Z"/>
                     <path d="M22.6562 16.4062C22.6563 17.0279 22.9032 17.624 23.3427 18.0635C23.7823 18.5031 24.3784 18.75 25 18.75C25.6216 18.75 26.2177 18.5031 26.6573 18.0635C27.0968 17.624 27.3438 17.0279 27.3438 16.4062C27.3438 15.7846 27.0968 15.1885 26.6573 14.749C26.2177 14.3094 25.6216 14.0625 25 14.0625C24.3784 14.0625 23.7823 14.3094 23.3427 14.749C22.9032 15.1885 22.6563 15.7846 22.6562 16.4062V16.4062ZM26.1719 21.875H23.8281C23.6133 21.875 23.4375 22.0508 23.4375 22.2656V35.5469C23.4375 35.7617 23.6133 35.9375 23.8281 35.9375H26.1719C26.3867 35.9375 26.5625 35.7617 26.5625 35.5469V22.2656C26.5625 22.0508 26.3867 21.875 26.1719 21.875Z"/>
                 </svg>
+                    <div class=" absolute bg-main duration-300 h-full inset-0 opacity-0 group-hover:opacity-50 z-0 group-hover:z-40 pointer-events-none transition w-full">
+                    </div>
                 </span>
-                <div class=" opacity-0 peer-hover:opacity-1 transition duration-300">
-                </div>
             </div>
             <div class=" flex justify-between items-center w-full pb-5 px-5">
                 <div>
@@ -26,7 +26,7 @@
                     </p>
                     
                     </div>
-                    <a class="focus:text-gray-3000 focus:hover:text-main flex-[0_0_auto] flex items-center text-sm text-gray-3000 hover:text-main transition font-body font-normal tablet:text-base">
+                    <a href="#" class="focus:text-gray-3000 focus:hover:text-main flex-[0_0_auto] flex items-center text-sm text-gray-3000 hover:text-main transition font-body font-normal tablet:text-base">
                         {l s='Pobierz PDF' d='Shop.Theme.Catalog'}
                         <svg class="ml-2 fill-current " width="20" height="26" viewBox="0 0 20 26"  xmlns="http://www.w3.org/2000/svg">
                         <path d="M18.2734 23.5622C18.5822 23.5623 18.8795 23.6796 19.1052 23.8904C19.3308 24.1013 19.4681 24.3899 19.4891 24.698C19.5102 25.0061 19.4135 25.3107 19.2186 25.5503C19.0237 25.7899 18.7451 25.9465 18.4392 25.9886L18.2734 26H1.21853C0.909704 25.9999 0.612426 25.8826 0.386765 25.6718C0.161104 25.4609 0.0238862 25.1723 0.0028366 24.8642C-0.018213 24.5561 0.0784758 24.2515 0.273366 24.0119C0.468255 23.7723 0.746815 23.6157 1.05276 23.5736L1.21853 23.5622H18.2734ZM9.75735 0.00162528C10.0516 0.00203008 10.3358 0.108877 10.5574 0.302443C10.7791 0.496008 10.9232 0.763223 10.9632 1.05476L10.9746 1.22053V17.7862L15.795 12.9594C16.0012 12.7527 16.2747 12.6269 16.5658 12.6048C16.8568 12.5827 17.1462 12.6659 17.3812 12.8391L17.5193 12.9561C17.7262 13.1626 17.852 13.4365 17.8737 13.728C17.8955 14.0194 17.8118 14.309 17.638 14.5439L17.5209 14.6805L10.6252 21.5876L10.5114 21.69L10.3619 21.7858L10.3034 21.82L10.1555 21.8817L9.9605 21.9305L9.84673 21.9435L9.74922 21.9467C9.66674 21.9466 9.58449 21.9379 9.50382 21.9207L9.3738 21.8834C9.21933 21.8337 9.07665 21.7529 8.9545 21.6461L1.98238 14.6821C1.76372 14.4649 1.63548 14.1729 1.62346 13.8649C1.61143 13.5569 1.71653 13.2558 1.91758 13.0222C2.11864 12.7886 2.40072 12.6399 2.70705 12.6059C3.01339 12.5719 3.32121 12.6552 3.56857 12.8391L3.70509 12.9577L8.53682 17.7797V1.2189C8.53682 0.89563 8.66524 0.585597 8.89383 0.357008C9.12242 0.12842 9.43245 0 9.75572 0L9.75735 0.00162528Z"/>
@@ -38,7 +38,7 @@
 
         <div class="flex flex-col desktop-presta:flex-[0_0_320px] desktop-wide:flex-[0_0_610px] pl-5 desktop-wide:pl-[50px] overflow-y-auto">
             <h1 class=" flex-shrink-0 font-header product-detail-name text-[20px] tablet:text-[35px] tablet:leading-[45px] leading-24px mb-5 pr-[46px]" itemprop="name">{block name='page_title'}{$product.name}{/block}</h1>
-            <div class=" overflow-y-auto overflow-x-hidden min-h-14 mr-2">
+            <div class=" overflow-y-auto overflow-x-hidden min-h-12 mr-2">
                 {hook h='displayApSC' sc_key=sc3078189027}
             </div>  
             <div class=" flex-shrink-0 ">
