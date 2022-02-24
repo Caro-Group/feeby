@@ -27,10 +27,10 @@
                             <div class="swiper-slide w-[100px] phablet:w-[150px] " data-configure-part={$part}>
                                 <div class="part-img overflow-hidden">
                                     <img class=" select-none w-[500%] max-w-none {if $part> 1 } -translate-x-{$part - 1}/5 {/if}" src="{$product.cover.large.url}" alt="{$product.name} part {$part}">
-                                    <div class="text-center flex flex-col py-2">
-                                        <span class="font-body tablet:text-base font-normal">Panel A</span>
-                                        <span class="font-body tablet:text-base font-light">100cm</span>
-                                    </div>
+                                </div>
+                                <div class="text-center flex flex-col py-2">
+                                    <span class="font-body tablet:text-base font-normal">Panel A</span>
+                                    <span class="font-body tablet:text-base font-light">100cm</span>
                                 </div>
                             </div>        
                         {/for}
