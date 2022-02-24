@@ -16,11 +16,12 @@ $(document).ready(function () {
 		});
 	};
 
-    var partsArray = $('[data-swiper-configure] [data-configure-part].swiper-slide').each(function () {
     
     var firstIndex = undefined;
     var lastIndex = undefined;
     var tempIndex = undefined;
+    
+    var partsArray = $('[data-swiper-configure] [data-configure-part].swiper-slide').each(function () {
 
         $(this).mouseenter(function(){
             if(firstIndex!= undefined && lastIndex == undefined){
