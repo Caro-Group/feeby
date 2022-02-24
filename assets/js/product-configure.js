@@ -1,15 +1,15 @@
 $(document).ready(function () {
 	if($('[data-swiper-configure]').length != 0) {
 		new Swiper('[data-swiper-configure]', {
-			slidesPerView: 'auto',
-			spaceBetween: 0,
-			slideClass: 'slide-parts',
-            // freeMode: true,
+			slidesPerView: 3,
+			spaceBetween: 10,
 			breakpoints: {
-				768: {
-					slidesPerView: 5,
-					allowTouchMove: false,
+				520: {
+					slidesPerView: 6,
 				},
+				768: {
+					allowTouchMove: false,
+				}
 			  }
 		});
 	};
