@@ -19,6 +19,9 @@ assets:
     all:
      - id: swiper-js
        path: assets/js/swiper.js
+    product:
+     - id: product-configure-js
+       path: assets/js/product-configure.js
 
 global_settings:
   hooks:
