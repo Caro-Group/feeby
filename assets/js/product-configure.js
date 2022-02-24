@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
 	if($('[data-swiper-configure]').length != 0) {
 		new Swiper('[data-swiper-configure]', {
 			slidesPerView: 4,
@@ -15,10 +16,10 @@ $(document).ready(function () {
 		});
 	};
 
+    var partsArray = $('[data-swiper-configure] [data-configure-part].swiper-slide').each(function () {
+    
     var firstIndex = undefined;
     var lastIndex = undefined;
-
-    var partsArray = $('[data-swiper-configure] [data-configure-part].swiper-slide').each(function () {
     var tempIndex = undefined;
 
         $(this).mouseenter(function(){
@@ -83,4 +84,5 @@ $(document).ready(function () {
                 } 
             }
     });
+    
 });
