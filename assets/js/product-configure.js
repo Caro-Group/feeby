@@ -1,14 +1,14 @@
 $(document).ready(function () {
 	if($('[data-swiper-configure]').length != 0) {
 		new Swiper('[data-swiper-configure]', {
-			speed: 400,
-			spaceBetween: 10,
 			slidesPerView: 'auto',
-            freeMode: true,
+			spaceBetween: 0,
+			slideClass: 'slide-parts',
+            // freeMode: true,
 			breakpoints: {
 				768: {
 					slidesPerView: 5,
-                    resistance: 1
+					allowTouchMove: false,
 				},
 			  }
 		});
