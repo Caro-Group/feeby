@@ -17,10 +17,10 @@
                     </div>
                 </span>
             </div>
-            <div class="max-w-[600px] full-hd:max-w-[800px] py-5 mx-auto overflow-hidden">
+            <div class="max-w-[600px] full-hd:max-w-[800px] py-5 mx-auto ">
                 <div class="swiper" data-swiper-configure>
                     <div class="swiper-wrapper items-center">
-                            <div class="swiper-slide flex-1">
+                            <div class="swiper-slide size flex-1">
                                 <span class="font-body tablet:text-base font-light transform -rotate-90 block"> 300m </span>
                             </div>  
                         {for $part=1 to 5}
