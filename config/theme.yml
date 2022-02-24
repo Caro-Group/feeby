@@ -19,6 +19,8 @@ assets:
     product:
      - id: adding-to-cart-anim-js
        path: assets/js/adding-to-cart-anim.js
+     - id: product-configure-js
+       path: assets/js/product-configure.js
     all:
      - id: swiper-js
        path: assets/js/swiper.js

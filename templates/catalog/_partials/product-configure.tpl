@@ -1,6 +1,6 @@
 <div class="fixed inset-0 bg-main-dark bg-opacity-50 z-30 p-5 desktop-presta:p-12">
-    <div class="relative flex flex-col desktop-presta:flex-row bg-white h-full w-full content-max:mx-auto content-max:max-w-screen-content-max rounded-[5px] p-5 desktop-presta:p-[50px] ">
-        <span class=" absolute top-5 right-5 desktop-presta:top-[50px] desktop-presta:right-[50px] ">
+    <div class="relative flex flex-col desktop-presta:flex-row bg-white desktop-presta:h-full overflow-y-auto desktop-presta:overflow-hidden w-full content-max:mx-auto content-max:max-w-screen-content-max rounded-[5px] p-5 desktop-presta:p-[50px] ">
+        <span class=" absolute top-5 right-5 desktop-presta:top-[50px] desktop-presta:right-[50px] transform hover:rotate-90 transition ">
             <i class=" material-icons text-main-dark hover:text-main text-4xl transition select-none"></i>
         </span>
         
@@ -11,9 +11,22 @@
                     <path d="M25 3.125C12.9199 3.125 3.125 12.9199 3.125 25C3.125 37.0801 12.9199 46.875 25 46.875C37.0801 46.875 46.875 37.0801 46.875 25C46.875 12.9199 37.0801 3.125 25 3.125ZM25 43.1641C14.9707 43.1641 6.83594 35.0293 6.83594 25C6.83594 14.9707 14.9707 6.83594 25 6.83594C35.0293 6.83594 43.1641 14.9707 43.1641 25C43.1641 35.0293 35.0293 43.1641 25 43.1641Z"/>
                     <path d="M22.6562 16.4062C22.6563 17.0279 22.9032 17.624 23.3427 18.0635C23.7823 18.5031 24.3784 18.75 25 18.75C25.6216 18.75 26.2177 18.5031 26.6573 18.0635C27.0968 17.624 27.3438 17.0279 27.3438 16.4062C27.3438 15.7846 27.0968 15.1885 26.6573 14.749C26.2177 14.3094 25.6216 14.0625 25 14.0625C24.3784 14.0625 23.7823 14.3094 23.3427 14.749C22.9032 15.1885 22.6563 15.7846 22.6562 16.4062V16.4062ZM26.1719 21.875H23.8281C23.6133 21.875 23.4375 22.0508 23.4375 22.2656V35.5469C23.4375 35.7617 23.6133 35.9375 23.8281 35.9375H26.1719C26.3867 35.9375 26.5625 35.7617 26.5625 35.5469V22.2656C26.5625 22.0508 26.3867 21.875 26.1719 21.875Z"/>
                 </svg>
-                    <div class=" rounded-[5px] absolute bg-main duration-300 h-full inset-0 opacity-0 group-hover:opacity-50 z-0 group-hover:z-40 pointer-events-none transition w-full">
+                    <div class=" rounded-[5px] absolute bg-main duration-300 h-full inset-0 opacity-0 group-hover:opacity-20 z-0 group-hover:z-40 pointer-events-none transition w-full">
                     </div>
                 </span>
+            </div>
+            <div class="w-full py-5">
+            
+            <div class="swiper" data-swiper-configure>
+                <div class="swiper-wrapper">
+                    {for $part=1 to $allParts=5}
+                        <div class="swiper-slide w-[150px] phablet:w-[200px] overflow-hidden " data-configure-part={$part}>
+                            <img class=" w-[500%] max-w-none " src="{$product.cover.large.url}" alt="{$product.name} part {$part}">
+                        </div>        
+                    {/for}
+                </div>
+            </div>
+                
             </div>
             <div class=" flex justify-between items-center w-full pb-5 px-5">
                 <div>
@@ -33,12 +46,15 @@
                         </svg>
                     </a>
             </div>
-
         </div>
 
-        <div class="flex flex-col desktop-presta:flex-[0_0_320px] desktop-wide:flex-[0_0_610px] pl-5 desktop-wide:pl-[50px] overflow-y-auto">
-            <h1 class=" flex-shrink-0 font-header product-detail-name text-[20px] tablet:text-[35px] tablet:leading-[45px] leading-24px mb-5 pr-[46px]" itemprop="name">{block name='page_title'}{$product.name}{/block}</h1>
-            <div class=" overflow-y-auto overflow-x-hidden min-h-12 mr-2">
+        <div class="flex flex-col desktop-presta:flex-[0_0_320px] desktop-wide:flex-[0_0_610px] pl-5 desktop-wide:pl-[50px]">
+            <h1 class=" mt-5 desktop-presta:mt-0 flex-shrink-0 font-header product-detail-name text-[20px] tablet:text-[35px] tablet:leading-[45px] leading-24px mb-5 pr-[46px]" itemprop="name">
+                {block name='page_title'}
+                    {$product.name}
+                {/block}
+            </h1>
+            <div class="desktop-presta:min-h-12 desktop-presta:mr-2 desktop-presta:overflow-x-hidden desktop-presta:overflow-y-auto">
                 {hook h='displayApSC' sc_key=sc3078189027}
             </div>  
             <div class=" flex-shrink-0 ">
