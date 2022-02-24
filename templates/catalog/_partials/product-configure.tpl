@@ -6,7 +6,7 @@
             <i class=" material-icons text-main-dark hover:text-main text-4xl transition select-none"></i>
         </span>
         
-        <div class="flex justify-between flex-col bg-gray-1000 rounded-[5px] flex-auto max-w-screen-tablet-wide relative mt-12 desktop-presta:mt-0">
+        <div class="flex justify-between flex-col bg-gray-1000 rounded-[5px] flex-auto max-w-screen-tablet-wide relative mt-12 desktop-presta:mt-0 overflow-hidden">
             <div class="w-full pt-5 px-5">
                 <span class="group flex items-center w-8 h-8 desktop-presta:w-10 desktop-presta:h-10 text-gray-3000 hover:text-main">
                     <svg class="fill-current transition" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
