@@ -511,3 +511,19 @@ tr.show .view-wishlist-product i{
     @apply border-0 border-b border-solid border-gray-1000 tablet:mb-5;
 }
 
+
+[data-swiper-configure] .swiper-slide:hover img{
+    @apply border-2 border-transparent border-solid border-opacity-60 rounded-[5px] transition duration-200
+}
+
+[data-swiper-configure] .swiper-slide.selected img{
+    @apply border-2 border-main border-solid border-opacity-60 rounded-[5px]
+}
+
+[data-swiper-configure] .swiper-slide.selected:hover img{
+    @apply border-2 border-main border-solid border-opacity-60 rounded-[5px]
+}
+
+
+
+
