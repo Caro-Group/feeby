@@ -2,7 +2,7 @@
 
 <div class="fixed inset-0 bg-main-dark bg-opacity-50 z-30 p-5 desktop-presta:p-12 overflow-y-auto">
     <div class="relative flex flex-col desktop-presta:flex-row bg-white desktop-presta:h-full overflow-y-auto desktop-presta:overflow-hidden w-full content-max:mx-auto content-max:max-w-screen-content-max rounded-[5px] p-5 desktop-presta:p-[50px] ">
-        <span class=" absolute top-5 right-5 desktop-presta:top-[50px] desktop-presta:right-[50px] transform hover:rotate-90 transition ">
+        <span class=" absolute top-5 right-5 desktop-presta:top-[50px] desktop-presta:right-[50px] transform hover:-rotate-90 transition ">
             <i class=" material-icons text-main-dark hover:text-main text-4xl transition select-none"></i>
         </span>
         
@@ -19,10 +19,10 @@
             </div>
             <div class="w-full py-5">
             
-            <div class="swiper" data-swiper-configure>
+            <div class="swiper mx-8 " data-swiper-configure>
                 <div class="swiper-wrapper">
                     {for $part=1 to 5}
-                        <div class="swiper-slide w-[150px] phablet:w-[200px] overflow-hidden " data-configure-part={$part}>
+                        <div class="swiper-slide w-[100px] phablet:w-[150px] overflow-hidden " data-configure-part={$part}>
                     <img class=" w-[500%] max-w-none {if $part> 1 } -translate-x-{$part - 1}/5 {/if}" src="{$product.cover.large.url}" alt="{$product.name} part {$part}">
                         </div>        
                     {/for}
