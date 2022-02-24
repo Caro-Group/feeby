@@ -20,7 +20,7 @@ $(document).ready(function () {
     var firstIndex = undefined;
     var lastIndex = undefined;
     var tempIndex = undefined;
-    
+
     var partsArray = $('[data-swiper-configure] [data-configure-part].swiper-slide').each(function () {
 
         $(this).mouseenter(function(){
@@ -61,8 +61,10 @@ $(document).ready(function () {
                 $(this).addClass('selected');
                 firstIndex =  $(this).attr('data-configure-part');
             }else if( lastIndex==undefined){
-                $(this).addClass('selected');
-                lastIndex =  $(this).attr('data-configure-part');
+                if(firstIndex!=$(this).attr('data-configure-part')){
+                    $(this).addClass('selected');
+                    lastIndex =  $(this).attr('data-configure-part');
+                }
             }else if(firstIndex!= undefined && lastIndex!= undefined){
                 firstIndex =  $(this).attr('data-configure-part');
                 lastIndex = undefined;
