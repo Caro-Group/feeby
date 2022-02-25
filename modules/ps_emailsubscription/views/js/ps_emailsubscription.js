@@ -39,7 +39,8 @@ $(document).ready(function () {
                 if (data.nw_error) {
                     psemailsubscriptionForm.find("[data-newsletter-alert]").prepend(data.msg).addClass("alert alert-danger bg-opacity-10 bg-red-600 border-red-600 max-w-lg mx-auto text-red-600 font-body font-normal");
                 } else {
-                    psemailsubscriptionForm.find("[data-newsletter-alert]").prepend(data.msg).addClass("alert alert-success bg-opacity-10 bg-green-600 border-green-600 max-w-lg mx-auto text-green-600 font-body font-normal");
+                    window.location = prestashop.urls.base_url + 'dziekujemy-za-zainteresowanie-naszym-newsletterem';
+                    //psemailsubscriptionForm.find("[data-newsletter-alert]").prepend(data.msg).addClass("alert alert-success bg-opacity-10 bg-green-600 border-green-600 max-w-lg mx-auto text-green-600 font-body font-normal");
                 }
             },
             error: function (err) {
