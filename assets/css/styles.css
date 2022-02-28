@@ -616,6 +616,10 @@ body .loader{
     @apply w-8;
 }
 
+[data-swiper-configure] .swiper-wrapper .swiper-slide.selected .part-name{
+    @apply text-main;
+}
+
 
 
 

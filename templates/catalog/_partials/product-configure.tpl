@@ -1,7 +1,7 @@
 {* -translate-x-1/5 -translate-x-2/5 -translate-x-3/5 -translate-x-4/5  *}
 
 <div class="fixed inset-0 bg-main-dark bg-opacity-50 z-30 p-5 desktop-presta:p-12 overflow-y-auto">
-    <div class="relative flex flex-col desktop-presta:flex-row bg-white desktop-presta:h-full overflow-y-auto desktop-presta:overflow-auto w-full content-max:mx-auto content-max:max-w-screen-content-max rounded-[5px] p-5 desktop-presta:p-[50px] ">
+    <div class="relative flex flex-col desktop-presta:flex-row bg-white desktop-presta:h-full overflow-y-auto desktop-presta:overflow-auto w-full content-max:mx-auto content-max:max-w-screen-content-max rounded-[5px] p-5 desktop-presta:p-[50px] min-h-[600px] ">
         <span class=" absolute top-5 right-5 desktop-presta:top-[50px] desktop-presta:right-[50px] transform hover:-rotate-90 transition ">
             <i class=" material-icons text-main-dark hover:text-main text-4xl transition select-none"></i>
         </span>
@@ -21,14 +21,14 @@
                 <div class="swiper" data-swiper-configure>
                     <div class="swiper-wrapper items-center">
                             <div class="swiper-slide size flex-1 phone-wide:flex-[0_1_30px]">
-                                <span class="font-body tablet:text-base font-light transform -rotate-90 block"> 300m </span>
+                                <span class="font-body text-main-dark tablet:text-base font-light transform -rotate-90 block"> 300m </span>
                             </div>  
                         {for $part=1 to 5}
                             <div class="swiper-slide w-[100px] phablet:w-[150px] overflow-hidden " data-configure-part={$part}>
-                                <img class=" select-none w-[500%] max-w-none {if $part> 1 } -translate-x-{$part - 1}/5 {/if}" src="{$product.cover.large.url}" alt="{$product.name} part {$part}">
+                                <img class=" select-none w-[500%] max-w-none tablet:max-h-[300px] tablet:object-cover object-cover {if $part> 1 } -translate-x-{$part - 1}/5 {/if}" src="{$product.cover.large.url}" alt="{$product.name} part {$part}">
                                 <div class="text-center flex flex-col py-2">
-                                    <span class="font-body tablet:text-base font-normal">Panel A</span>
-                                    <span class="font-body tablet:text-base font-light">100cm</span>
+                                    <span class="part-name text-main-dark font-body tablet:text-base font-normal transition">Panel A</span>
+                                    <span class=" text-main-dark font-body tablet:text-base font-light">100cm</span>
                                 </div>
                             </div>        
                         {/for}
