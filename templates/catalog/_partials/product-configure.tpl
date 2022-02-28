@@ -20,7 +20,7 @@
             <div class="max-w-[600px] full-hd:max-w-[800px] w-full py-5 mx-auto ">
                 <div class="swiper" data-swiper-configure>
                     <div class="swiper-wrapper items-center">
-                            <div class="swiper-slide size flex-1 tablet:flex-[0_1_30px]">
+                            <div class="swiper-slide size flex-1 phone-wide:flex-[0_1_30px]">
                                 <span class="font-body tablet:text-base font-light transform -rotate-90 block"> 300m </span>
                             </div>  
                         {for $part=1 to 5}

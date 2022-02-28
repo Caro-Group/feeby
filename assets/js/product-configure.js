@@ -5,7 +5,7 @@ $(document).ready(function () {
 			slidesPerView: 4,
 			spaceBetween: 10,
 			breakpoints: {
-				520: {
+				480: {
 					slidesPerView: 6,
 				},
 				768: {
