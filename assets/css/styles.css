@@ -559,6 +559,34 @@ tr.show .view-wishlist-product i{
 }
 
 body .loader{
+animation: fadeIn 0.5s ease-in-out  forwards;
+z-index: 9999;
+}
+
+
+
+.product-add-to-cart .add button.added span{
+    @apply -translate-y-full
+}
+.product-add-to-cart .add button.added .success{
+    @apply opacity-100 translate-y-0
+}
+
+.product-add-to-cart .add button.failed {
+    @apply bg-require
+}
+.product-add-to-cart .add button.failed span{
+    @apply -translate-y-full
+}
+.product-add-to-cart .add button.failed .error{
+    @apply opacity-100 translate-y-0
+}
+
+.page-product #blockcart-modal.modal.fade .modal-dialog{
+    @apply translate-y-0
+}
+
+body .loader{
     animation: fadeIn 0.5s ease-in-out  forwards;
     z-index: 9999;
 }
