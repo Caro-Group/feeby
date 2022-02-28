@@ -1,9 +1,9 @@
 {* -translate-x-1/5 -translate-x-2/5 -translate-x-3/5 -translate-x-4/5  *}
 
-<div class="fixed inset-0 bg-main-dark bg-opacity-50 z-30 p-5 desktop-presta:p-12 overflow-y-auto">
+<div data-product-configurable="modal" class="fixed inset-0 bg-main-dark bg-opacity-50 z-30 p-5 desktop-presta:p-12 overflow-y-auto">
     <div class="relative flex flex-col desktop-presta:flex-row bg-white desktop-presta:h-full overflow-y-auto desktop-presta:overflow-auto w-full content-max:mx-auto content-max:max-w-screen-content-max rounded-[5px] p-5 desktop-presta:p-[50px] min-h-[600px] ">
         <span class=" absolute top-5 right-5 desktop-presta:top-[50px] desktop-presta:right-[50px] transform hover:-rotate-90 transition ">
-            <i class=" material-icons text-main-dark hover:text-main text-4xl transition select-none"></i>
+            <i data-product-configurable="close" class=" material-icons text-main-dark hover:text-main text-4xl transition select-none"></i>
         </span>
         
         <div class="flex justify-between flex-col bg-gray-1000 rounded-[5px] flex-auto max-w-screen-tablet-wide relative mt-12 desktop-presta:mt-0 overflow-hidden">
@@ -18,13 +18,13 @@
                 </span>
             </div>
             <div class="max-w-[600px] full-hd:max-w-[800px] w-full py-5 mx-auto ">
-                <div class="swiper" data-swiper-configure>
+                <div class="swiper" data-product-configurable="swiper">
                     <div class="swiper-wrapper items-center">
                             <div class="swiper-slide size flex-1 phone-wide:flex-[0_1_30px]">
                                 <span class="font-body text-main-dark tablet:text-base font-light transform -rotate-90 block"> 300m </span>
                             </div>  
                         {for $part=1 to 5}
-                            <div class="swiper-slide w-[100px] phablet:w-[150px] overflow-hidden " data-configure-part={$part}>
+                            <div class="swiper-slide w-[100px] phablet:w-[150px] overflow-hidden " data-product-configurable="part-{$part}">
                                 <img class=" select-none w-[500%] max-w-none tablet:max-h-[300px] tablet:object-cover object-cover {if $part> 1 } -translate-x-{$part - 1}/5 {/if}" src="{$product.cover.large.url}" alt="{$product.name} part {$part}">
                                 <div class="text-center flex flex-col py-2">
                                     <span class="part-name text-main-dark font-body tablet:text-base font-normal transition">Panel A</span>
@@ -46,7 +46,7 @@
                     </p>
                     
                     </div>
-                    <a href="#" class=" p-1 focus:text-gray-3000 focus:hover:text-main flex-[0_0_auto] flex items-center text-sm text-gray-3000 hover:text-main transition font-body font-normal tablet:text-base">
+                    <a href="#" data-product-configurable="pdf" class=" p-1 focus:text-gray-3000 focus:hover:text-main flex-[0_0_auto] flex items-center text-sm text-gray-3000 hover:text-main transition font-body font-normal tablet:text-base">
                         {l s='Pobierz PDF' d='Shop.Theme.Catalog'}
                         <svg class="ml-2 fill-current " width="20" height="26" viewBox="0 0 20 26"  xmlns="http://www.w3.org/2000/svg">
                             <path d="M18.2734 23.5622C18.5822 23.5623 18.8795 23.6796 19.1052 23.8904C19.3308 24.1013 19.4681 24.3899 19.4891 24.698C19.5102 25.0061 19.4135 25.3107 19.2186 25.5503C19.0237 25.7899 18.7451 25.9465 18.4392 25.9886L18.2734 26H1.21853C0.909704 25.9999 0.612426 25.8826 0.386765 25.6718C0.161104 25.4609 0.0238862 25.1723 0.0028366 24.8642C-0.018213 24.5561 0.0784758 24.2515 0.273366 24.0119C0.468255 23.7723 0.746815 23.6157 1.05276 23.5736L1.21853 23.5622H18.2734ZM9.75735 0.00162528C10.0516 0.00203008 10.3358 0.108877 10.5574 0.302443C10.7791 0.496008 10.9232 0.763223 10.9632 1.05476L10.9746 1.22053V17.7862L15.795 12.9594C16.0012 12.7527 16.2747 12.6269 16.5658 12.6048C16.8568 12.5827 17.1462 12.6659 17.3812 12.8391L17.5193 12.9561C17.7262 13.1626 17.852 13.4365 17.8737 13.728C17.8955 14.0194 17.8118 14.309 17.638 14.5439L17.5209 14.6805L10.6252 21.5876L10.5114 21.69L10.3619 21.7858L10.3034 21.82L10.1555 21.8817L9.9605 21.9305L9.84673 21.9435L9.74922 21.9467C9.66674 21.9466 9.58449 21.9379 9.50382 21.9207L9.3738 21.8834C9.21933 21.8337 9.07665 21.7529 8.9545 21.6461L1.98238 14.6821C1.76372 14.4649 1.63548 14.1729 1.62346 13.8649C1.61143 13.5569 1.71653 13.2558 1.91758 13.0222C2.11864 12.7886 2.40072 12.6399 2.70705 12.6059C3.01339 12.5719 3.32121 12.6552 3.56857 12.8391L3.70509 12.9577L8.53682 17.7797V1.2189C8.53682 0.89563 8.66524 0.585597 8.89383 0.357008C9.12242 0.12842 9.43245 0 9.75572 0L9.75735 0.00162528Z"/>
@@ -70,7 +70,7 @@
                 </div>
 
                 <div class="flex justify-center ">
-                        <button class="bg-main h-12 max-w-[320px] border-0 cursor-pointer font-medium h-full hover:bg-main-hover overflow-hidden phone-wide:text-base px-4 relative rounded-full tablet:text-xl text-base text-center text-white transition uppercase w-full" data-button-action="add-to-cart" type="submit">
+                        <button class="bg-main h-12 max-w-[320px] border-0 cursor-pointer font-medium h-full hover:bg-main-hover overflow-hidden phone-wide:text-base px-4 relative rounded-full tablet:text-xl text-base text-center text-white transition uppercase w-full" data-product-configurable="add" type="submit">
                             <span>{l s='Dodaj do koszyka' d='Shop.Theme.Catalog'}</span>
                             <svg class="success" width="27" height="20" viewBox="0 0 27 20" fill="none" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" clip-rule="evenodd" d="M26.2442 0.487161C26.8949 1.13717 26.8954 2.19156 26.2454 2.84222L9.59263 19.5117C9.28039 19.8242 8.85673 19.9999 8.41493 20C7.97312 20.0001 7.54938 19.8247 7.23698 19.5123L0.487813 12.7631C-0.162518 12.1127 -0.162518 11.0583 0.487813 10.408C1.13815 9.75766 2.19254 9.75766 2.84287 10.408L8.41392 15.9791L23.8892 0.488338C24.5392 -0.162319 25.5936 -0.162846 26.2442 0.487161Z" fill="white"></path>
                             </svg>

@@ -1,6 +1,8 @@
 $(document).ready(function () {
+    $congurableElements = $('[data-product-configurable]');
 
-	if($('[data-swiper-configure]').length != 0) {
+
+	if($('[data-product-configurable="swiper"]').length != 0) {
 		new Swiper('[data-swiper-configure]', {
 			slidesPerView: 4,
 			spaceBetween: 10,
@@ -21,7 +23,7 @@ $(document).ready(function () {
     var lastIndex = undefined;
     var tempIndex = undefined;
 
-    var partsArray = $('[data-swiper-configure] [data-configure-part].swiper-slide').each(function () {
+    var partsArray = $('[data-product-configurable="swiper"] [data-product-configurable].swiper-slide').each(function () {
 
         $(this).mouseenter(function(){
             if(firstIndex!= undefined && lastIndex == undefined){
@@ -84,7 +86,7 @@ $(document).ready(function () {
 
     $('body').on("click", function(e){ 
 
-            if($(e.target).has('[data-configure-part].swiper-slide').length == 1 ){
+            if($(e.target).has('[data-product-configurable="swiper"] [data-product-configurable].swiper-slide').length == 1 ){
                 for( i = 0 ; i < partsArray.length ; i++ ){
                     $(partsArray[i]).removeClass('selected');
                     firstIndex = undefined;
