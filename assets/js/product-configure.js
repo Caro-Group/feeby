@@ -104,7 +104,7 @@ $(document).ready(function () {
 
 
 function productConfigurableSwiper() {
-    return new Swiper($(this), {
+    return new Swiper(this, {
         slidesPerView: 4,
         spaceBetween: 10,
         preventClicks: false,
