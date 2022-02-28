@@ -1,7 +1,7 @@
 {* -translate-x-1/5 -translate-x-2/5 -translate-x-3/5 -translate-x-4/5  *}
 {assign var="imageOriginal" value="{$link->getImageLink($product->link_rewrite, $product.cover.id_image)}"}
 
-<div class="modal fade" id="productConfigurable" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal" id="productConfigurable" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-body">
