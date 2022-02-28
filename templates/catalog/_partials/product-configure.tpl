@@ -28,7 +28,7 @@
                             </div>  
                         {for $part=1 to 5}
                             <div class="swiper-slide w-[100px] phablet:w-[150px] overflow-hidden " data-product-configurable="{$part}">
-                                <img class=" select-none w-[500%] max-w-none tablet:max-h-[300px] tablet:object-cover object-cover {if $part> 1 } -translate-x-{$part - 1}/5 {/if}" src="{$imageOriginal}" alt="{$product.name} part {$part}">
+                                <img class=" select-none w-[500%] max-w-none tablet:object-cover object-cover {if $part> 1 } -translate-x-{$part - 1}/5 {/if}" src="{$imageOriginal}" alt="{$product.name} part {$part}">
                                 <div class="text-center flex flex-col py-2">
                                     <span class="part-name text-main-dark font-body tablet:text-base font-normal transition">Panel A</span>
                                     <span class=" text-main-dark font-body tablet:text-base font-light">100cm</span>
