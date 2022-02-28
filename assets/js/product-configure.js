@@ -1,10 +1,17 @@
 $(document).ready(function () {
     // Cache
-    $confElements = $('[data-product-configurable]');
-    $confModal = $('#productConfigurable');
+    var $configurableSelected = [];
+    var $configurableElements = $('[data-product-configurable]');
+    var $configurableModal = $('#productConfigurable');
+
+    var $configurableProducts = $configurableElements.filter(function () {
+        return parseInt($(this).data('productConfigurable'));
+    }).each(function(element){
+        element.data('productPart', parseInt($(this).data('productConfigurable')));
+    });
 
     // Swiper carousel initiation
-    var swiperElement = $confElements.filter(function () {
+    var swiperElement = $configurableElements.filter(function () {
         return $(this).data('productConfigurable') == 'swiper';
     })
 
@@ -14,76 +21,51 @@ $(document).ready(function () {
     
 
         swiper.on('click', function(){
-            
-            if(firstIndex==undefined){
-                $(this).addClass('selected');
-                firstIndex =  $(this).attr('data-product-configurable');
-            }else if( lastIndex==undefined){
-                if(firstIndex!=$(this).attr('data-product-configurable')){
-                    $(this).addClass('selected');
-                    lastIndex =  $(this).attr('data-product-configurable');
-                }else{
-                    firstIndex = undefined;
-                    lastIndex= undefined;
-                    $(this).removeClass('selected');
-
-                }
-            }else if(firstIndex!= undefined && lastIndex!= undefined){
-                firstIndex =  $(this).attr('data-product-configurable');
-                lastIndex = undefined;
-                for( i = 0 ; i < partsArray.length ; i++ ){
-                    if(i!=firstIndex-1){
-                        $(partsArray[i]).removeClass('selected');
-                    }
-                }   
-            }
-            
+            productConfigurableSelect(swiper.clickedSlide + 1);
         });
 
-        $confModal.on('shown.bs.modal', function () {
+        $configurableModal.on('shown.bs.modal', function () {
             swiper.update();
         });
     };
 
+    // var firstIndex = undefined;
+    // var lastIndex = undefined;
+    // var tempIndex = undefined;
 
+    // var partsArray = $('[data-product-configurable="swiper"] [data-product-configurable]').each(function () {
 
-    var firstIndex = undefined;
-    var lastIndex = undefined;
-    var tempIndex = undefined;
-
-    var partsArray = $('[data-product-configurable="swiper"] [data-product-configurable]').each(function () {
-
-        $(this).mouseenter(function(){
-            if(firstIndex!= undefined && lastIndex == undefined){
-                tempIndex = $(this).attr('data-product-configurable');
-                if (firstIndex<tempIndex) {
-                    for( i = firstIndex ; i < tempIndex ; i++ ){
-                        $(partsArray[i-1]).addClass('selected');
-                    }
-                    for( i = tempIndex ; i < partsArray.length ; i++ ){
-                        $(partsArray[i-1]).removeClass('selected');
-                    }
-                } else {
-                    for( i = firstIndex ; i >= 0 ; i-- ){
-                        $(partsArray[i-1]).addClass('selected');
-                    }
-                    for( i = 0 ; i < tempIndex ; i++ ){
-                        $(partsArray[i-1]).removeClass('selected');
-                    }
+    //     $(this).mouseenter(function(){
+    //         if(firstIndex!= undefined && lastIndex == undefined){
+    //             tempIndex = $(this).attr('data-product-configurable');
+    //             if (firstIndex<tempIndex) {
+    //                 for( i = firstIndex ; i < tempIndex ; i++ ){
+    //                     $(partsArray[i-1]).addClass('selected');
+    //                 }
+    //                 for( i = tempIndex ; i < partsArray.length ; i++ ){
+    //                     $(partsArray[i-1]).removeClass('selected');
+    //                 }
+    //             } else {
+    //                 for( i = firstIndex ; i >= 0 ; i-- ){
+    //                     $(partsArray[i-1]).addClass('selected');
+    //                 }
+    //                 for( i = 0 ; i < tempIndex ; i++ ){
+    //                     $(partsArray[i-1]).removeClass('selected');
+    //                 }
                     
-                }
-            }
-        })
+    //             }
+    //         }
+    //     })
 
-        $(this).mouseleave(function(){
-            if(firstIndex!=undefined){
-                for( i = 0 ; i < partsArray.length ; i++ ){
-                    if(i!=firstIndex-1 && lastIndex==undefined){
-                        $(partsArray[i]).removeClass('selected');
-                    }
-                }
-            }
-        })
+    //     $(this).mouseleave(function(){
+    //         if(firstIndex!=undefined){
+    //             for( i = 0 ; i < partsArray.length ; i++ ){
+    //                 if(i!=firstIndex-1 && lastIndex==undefined){
+    //                     $(partsArray[i]).removeClass('selected');
+    //                 }
+    //             }
+    //         }
+    //     })
 
 	// 	$(this).click(() => {
 
@@ -110,7 +92,7 @@ $(document).ready(function () {
     //             }   
     //         }
     //     })
-	})
+	// })
 
     // $('body').on("click", function(e){ 
 
@@ -140,4 +122,32 @@ function productConfigurableSwiper() {
             }
         },
     });
+}
+
+function productConfigurableSelect(htmlElement){
+    configurableSelected.push({"id": htmlElement.data('productPart'), "el": htmlElement});
+    console.log(configurableSelected);
+
+    // if(firstIndex==undefined){
+    //     $(this).addClass('selected');
+    //     firstIndex =  $(this).attr('data-product-configurable');
+    // }else if( lastIndex==undefined){
+    //     if(firstIndex!=$(this).attr('data-product-configurable')){
+    //         $(this).addClass('selected');
+    //         lastIndex =  $(this).attr('data-product-configurable');
+    //     }else{
+    //         firstIndex = undefined;
+    //         lastIndex= undefined;
+    //         $(this).removeClass('selected');
+
+    //     }
+    // }else if(firstIndex!= undefined && lastIndex!= undefined){
+    //     firstIndex =  $(this).attr('data-product-configurable');
+    //     lastIndex = undefined;
+    //     for( i = 0 ; i < partsArray.length ; i++ ){
+    //         if(i!=firstIndex-1){
+    //             $(partsArray[i]).removeClass('selected');
+    //         }
+    //     }   
+    // }
 }
