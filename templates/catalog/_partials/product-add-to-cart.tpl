@@ -22,12 +22,6 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
-
-
- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#productConfigurable">
-  productConfigurable
-</button>
-
 <div class="product-add-to-cart">
   {if !$configuration.is_catalog}
     {block name='product_quantity'}

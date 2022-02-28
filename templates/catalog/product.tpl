@@ -116,6 +116,12 @@
              
              {block name='product_description_short'}{/block}
  
+              {if $product.is_customizable && count($product.customizations.fields)}
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#productConfigurable">
+                  productConfigurable
+                </button>
+              {/if}
+              
              {if $product.is_customizable && count($product.customizations.fields)}
                {block name='product_customization'}
                  {include file="catalog/_partials/product-customization.tpl" customizations=$product.customizations}
