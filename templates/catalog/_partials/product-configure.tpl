@@ -1,5 +1,5 @@
 {* -translate-x-1/5 -translate-x-2/5 -translate-x-3/5 -translate-x-4/5  *}
-
+{assign var="imageOriginal" value="{$link->getImageLink($product->link_rewrite, $product.cover.id_image)}"}
 <div data-product-configurable="modal" class="fixed inset-0 bg-main-dark bg-opacity-50 z-30 p-5 desktop-presta:p-12 overflow-y-auto">
     <div class="relative flex flex-col desktop-presta:flex-row bg-white desktop-presta:h-full overflow-y-auto desktop-presta:overflow-auto w-full content-max:mx-auto content-max:max-w-screen-content-max rounded-[5px] p-5 desktop-presta:p-[50px] min-h-[600px] ">
         <span class=" absolute top-5 right-5 desktop-presta:top-[50px] desktop-presta:right-[50px] transform hover:-rotate-90 transition ">
@@ -25,7 +25,7 @@
                             </div>  
                         {for $part=1 to 5}
                             <div class="swiper-slide w-[100px] phablet:w-[150px] overflow-hidden " data-product-configurable="part-{$part}">
-                                <img class=" select-none w-[500%] max-w-none tablet:max-h-[300px] tablet:object-cover object-cover {if $part> 1 } -translate-x-{$part - 1}/5 {/if}" src="{$product.cover.large.url}" alt="{$product.name} part {$part}">
+                                <img class=" select-none w-[500%] max-w-none tablet:max-h-[300px] tablet:object-cover object-cover {if $part> 1 } -translate-x-{$part - 1}/5 {/if}" src="{$imageOriginal}" alt="{$product.name} part {$part}">
                                 <div class="text-center flex flex-col py-2">
                                     <span class="part-name text-main-dark font-body tablet:text-base font-normal transition">Panel A</span>
                                     <span class=" text-main-dark font-body tablet:text-base font-light">100cm</span>
