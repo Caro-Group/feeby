@@ -41,9 +41,23 @@ $(document).ready(function () {
     var configurableCartAdd = $configurableElements.filter(function () {
         return $(this).data('productConfigurable') == 'add';
     }).on('click', function(){
-        var countConfigurableSelected = configurableSelected.filter(product => product.selected === true).length
-        console.log(countConfigurableSelected);
+        var countConfigurableSelected = configurableSelected.filter(product => product.selected === true).length;
+        $('[data-product-attribute]').eq( countConfigurableSelected - 1 ).trigger('click');
     });
+
+    if (typeof prestashop !== 'undefined') {
+        prestashop.on(
+            'updatedProduct' ,
+            function (event) {
+                var countConfigurableSelected = configurableSelected.filter(product => product.selected === true).length;
+                if(countConfigurableSelected){
+                    $('[data-button-action="add-to-cart"]').trigger('click');
+                }
+            }
+        );
+    }
+      
+    
     
     // var firstIndex = undefined;
     // var lastIndex = undefined;
@@ -140,41 +154,45 @@ function productConfigurableSwiper() {
     });
 }
 
-
 function productConfigurableSelect(productId){
+    
+    if (configurableSelected[productId - 1].selected == false ) {
+        configurableSelected[productId - 1].selected = true;
 
-    configurableSelected.filter(product => product.id === productId).forEach(product => {
-        product['selected'] = true;
-    });
-
-    //console.log(configurableSelected);
-
-    // if(firstIndex==undefined){
-    //     $(this).addClass('selected');
-    //     firstIndex =  $(this).attr('data-product-configurable');
-    // }else if( lastIndex==undefined){
-    //     if(firstIndex!=$(this).attr('data-product-configurable')){
-    //         $(this).addClass('selected');
-    //         lastIndex =  $(this).attr('data-product-configurable');
-    //     }else{
-    //         firstIndex = undefined;
-    //         lastIndex= undefined;
-    //         $(this).removeClass('selected');
-
-    //     }
-    // }else if(firstIndex!= undefined && lastIndex!= undefined){
-    //     firstIndex =  $(this).attr('data-product-configurable');
-    //     lastIndex = undefined;
-    //     for( i = 0 ; i < partsArray.length ; i++ ){
-    //         if(i!=firstIndex-1){
-    //             $(partsArray[i]).removeClass('selected');
-    //         }
-    //     }   
-    // }
+        var configurableSelectedTemp = configurableSelected.filter(product => product.selected === true)
+        
+        if(configurableSelectedTemp.length == 2 ){
+            var firstId = configurableSelectedTemp[0].id;
+            var lastId = configurableSelectedTemp[configurableSelectedTemp.length - 1].id; 
+            for(i = firstId; i < lastId ; i++){
+                configurableSelected[i-1].selected = true;
+            }
+        }
+        else if(configurableSelectedTemp.length > 2 ){
+            productConfigurableUnSelectAll();
+            configurableSelected[productId - 1].selected = true;
+        }
+    }
+    else{
+        productConfigurableUnSelectAll();
+    }
+    
+    productConfigurableSetState();
 }
 
 function productConfigurableUnSelectAll(){
     configurableSelected.forEach(product => {
         product['selected'] = false;
+    });
+}
+
+function productConfigurableSetState(){
+    configurableSelected.forEach(product => {
+        if (product.selected) {     
+            $(product.el).addClass('selected');
+        }
+        else{
+            $(product.el).removeClass('selected');
+        }
     });
 }
