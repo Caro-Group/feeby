@@ -1,6 +1,7 @@
 $(document).ready(function () {
     // Cache
     $confElements = $('[data-product-configurable]');
+    $confModal = $('#productConfigurable');
 
     // Swiper carousel initiation
     var swiperElement = $confElements.filter(function () {
@@ -39,9 +40,7 @@ $(document).ready(function () {
             
         });
 
-        $('#productConfigurable').on('show.bs.modal', function () {
-            swiper.update();
-        }).on('shown.bs.modal', function () {
+        $confModal.on('shown.bs.modal', function () {
             swiper.update();
         });
     };
