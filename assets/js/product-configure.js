@@ -41,22 +41,24 @@ $(document).ready(function () {
     // Swiper carousel initiation
     var configurableCartAdd = $configurableElements.filter(function () {
         return $(this).data('productConfigurable') == 'add';
-    }).on('click', function(e){
-        var idEvent = Math.floor(e.timeStamp);
-        if (typeof prestashop !== 'undefined') {
-            prestashop.on(
-              'updateCart.onClickConfigureProduct_' + idEvent ,
-              function (event) {
-                // Check if all events of update configured product updated succesfull
-                $('[data-button-action="add-to-cart"]').trigger('click');
-                prestashop.off('updateCart.onClickConfigureProduct_' + idEvent);
-              }
-            );
-          }
-
+    }).on('click', function(){
         var countConfigurableSelected = configurableSelected.filter(product => product.selected === true).length;
         $('[data-product-attribute]').eq( countConfigurableSelected - 1 ).trigger('click');
     });
+
+    if (typeof prestashop !== 'undefined') {
+        prestashop.on(
+            'updatedProduct' ,
+            function (event) {
+                var countConfigurableSelected = configurableSelected.filter(product => product.selected === true).length;
+                if(countConfigurableSelected){
+                    $('[data-button-action="add-to-cart"]').trigger('click');
+                }
+            }
+        );
+    }
+      
+    
     
     // var firstIndex = undefined;
     // var lastIndex = undefined;
