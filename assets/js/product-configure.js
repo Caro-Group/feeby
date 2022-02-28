@@ -4,10 +4,17 @@ $(document).ready(function () {
     var $configurableElements = $('[data-product-configurable]');
     var $configurableModal = $('#productConfigurable');
 
-    var $configurableProducts = $configurableElements.filter(function () {
+    $configurableElements.filter(function () {
         return parseInt($(this).data('productConfigurable'));
-    }).each(function(element){
-        element.data('productPart', parseInt($(this).data('productConfigurable')));
+    }).each(function(){
+        $(this).data('productConfigurableId', parseInt($(this).data('productConfigurable')));
+        $configurableSelected.push(
+            {
+                "id": parseInt($(this).data('productConfigurable')),
+                "selected": false,
+                "el": $(this)
+            }
+        );
     });
 
     // Swiper carousel initiation
@@ -125,7 +132,8 @@ function productConfigurableSwiper() {
 }
 
 function productConfigurableSelect(htmlElement){
-    configurableSelected.push({"id": htmlElement.data('productPart'), "el": htmlElement});
+
+    configurableSelected.filter(product => product.id === htmlElement.data('productConfigurableId'));
     console.log(configurableSelected);
 
     // if(firstIndex==undefined){
