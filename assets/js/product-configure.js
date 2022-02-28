@@ -29,7 +29,7 @@ $(document).ready(function () {
     
 
         swiper.on('click', function(){
-            productConfigurableSelect(swiper.clickedSlide + 1);
+            productConfigurableSelect($(swiper.clickedSlide).data('productConfigurable'));
         });
 
         $configurableModal.on('shown.bs.modal', function () {
@@ -132,10 +132,13 @@ function productConfigurableSwiper() {
     });
 }
 
-function productConfigurableSelect(htmlElement){
+function productConfigurableSelect(productId){
 
-    configurableSelected.filter(product => product.id === htmlElement.data('productConfigurableId'));
-    console.log(configurableSelected);
+    configurableSelected.filter(product => product.id === productId).forEach(product => {
+        product['selected'] = true;
+    });
+
+    //console.log(configurableSelected);
 
     // if(firstIndex==undefined){
     //     $(this).addClass('selected');
