@@ -9,7 +9,7 @@ $(document).ready(function () {
 
     var swiper = null;
     if(swiperElement.length != 0) {
-        swiper = productConfigurableSwiper.call(swiperElement);
+        swiper = productConfigurableSwiper.call(swiperElement[0]);
     
 
         swiper.on('click', function(){
@@ -107,8 +107,6 @@ function productConfigurableSwiper() {
     return new Swiper(this, {
         slidesPerView: 4,
         spaceBetween: 10,
-        preventClicks: false,
-        preventClicksPropagation: false,
         breakpoints: {
             480: {
                 slidesPerView: 6,
