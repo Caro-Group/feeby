@@ -8,25 +8,25 @@
       
         <div data-product-configurable="modal" class="transition fixed inset-0 bg-main-dark bg-opacity-50 z-30 p-5 desktop-presta:p-12 overflow-y-auto"  aria-labelledby="modal-title" role="dialog" aria-modal="true">
             <div class="relative flex flex-col desktop-presta:flex-row bg-white desktop-presta:h-full overflow-y-auto desktop-presta:overflow-auto w-full content-max:mx-auto content-max:max-w-screen-content-max rounded-[5px] p-5 desktop-presta:p-[50px] min-h-[640px] ">
-                <button data-dismiss="modal" aria-label="Close" class=" absolute top-5 right-5 desktop-presta:top-[50px] desktop-presta:right-[50px] transform hover:-rotate-90 transition ">
+                <button data-dismiss="modal" aria-label="Close" class=" absolute top-5 right-5 desktop-presta:top-[50px] desktop-presta:right-[50px] transition cursor-pointer bg-transparent border-0 ">
                     <i class=" material-icons text-main-dark hover:text-main text-4xl transition select-none"></i>
                 </button>
                 
                 <div class="flex justify-between flex-col bg-gray-1000 rounded-[5px] flex-auto max-w-screen-tablet-wide relative mt-12 desktop-presta:mt-0 overflow-hidden">
                     <div class="w-full pt-5 px-5">
-                        <span class="group flex items-center w-8 h-8 desktop-presta:w-10 desktop-presta:h-10 text-gray-3000 hover:text-main z-50">
-                            <svg class="fill-current transition" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <span class="group flex items-center w-8 h-8 desktop-presta:w-10 desktop-presta:h-10 text-gray-3000 hover:text-main">
+                            <svg class="fill-current transition z-50" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M25 3.125C12.9199 3.125 3.125 12.9199 3.125 25C3.125 37.0801 12.9199 46.875 25 46.875C37.0801 46.875 46.875 37.0801 46.875 25C46.875 12.9199 37.0801 3.125 25 3.125ZM25 43.1641C14.9707 43.1641 6.83594 35.0293 6.83594 25C6.83594 14.9707 14.9707 6.83594 25 6.83594C35.0293 6.83594 43.1641 14.9707 43.1641 25C43.1641 35.0293 35.0293 43.1641 25 43.1641Z"/>
                             <path d="M22.6562 16.4062C22.6563 17.0279 22.9032 17.624 23.3427 18.0635C23.7823 18.5031 24.3784 18.75 25 18.75C25.6216 18.75 26.2177 18.5031 26.6573 18.0635C27.0968 17.624 27.3438 17.0279 27.3438 16.4062C27.3438 15.7846 27.0968 15.1885 26.6573 14.749C26.2177 14.3094 25.6216 14.0625 25 14.0625C24.3784 14.0625 23.7823 14.3094 23.3427 14.749C22.9032 15.1885 22.6563 15.7846 22.6562 16.4062V16.4062ZM26.1719 21.875H23.8281C23.6133 21.875 23.4375 22.0508 23.4375 22.2656V35.5469C23.4375 35.7617 23.6133 35.9375 23.8281 35.9375H26.1719C26.3867 35.9375 26.5625 35.7617 26.5625 35.5469V22.2656C26.5625 22.0508 26.3867 21.875 26.1719 21.875Z"/>
                         </svg>
                             <div class="flex justify-center items-center rounded-[5px] absolute bg-gray-1000/90 duration-200 h-full inset-0 opacity-0 group-hover:opacity-100 hover:opacity-100 z-0 group-hover:z-40 hover:z-40 pointer-events-none transition w-full">
-                                <div class="p-5 tablet-medium:p-12">
+                                <div class="p-5 tablet-medium:p-12 py-[47px] tablet-medium:py-12">
                                     {hook h='displayApSC' sc_key=sc2244738648}
                                 </div>
                             </div>
                         </span>
                     </div>
-                    <div class="max-w-[600px] full-hd:max-w-[800px] w-full py-5 mx-auto ">
+                    <div class="max-w-[600px] full-hd:max-w-[800px] w-full py-5 mx-auto z-10 ">
                         <div class="swiper" data-product-configurable="swiper">
                             <div class="swiper-wrapper items-center">
                                     <div class="swiper-slide size flex-1 phone-wide:flex-[0_1_30px]">
@@ -44,7 +44,7 @@
                             </div>
                         </div>   
                     </div>
-                    <div class=" flex justify-between items-center w-full pb-5 px-5">
+                    <div class=" flex justify-between items-center w-full pb-5 px-5 z-10 ">
                         <div>
                             <p class="text-[10px] tablet:text-xs text-gray-3000 font-body font-normal mb-1">
                                 {l s='1. Rekomendujemy zamówienie próbki' d='Shop.Theme.Catalog'}
