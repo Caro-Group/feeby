@@ -12,7 +12,7 @@ $(document).ready(function () {
         swiper = productConfigurableSwiper.call(swiperElement);
     
 
-        swiper.on('clickedSlide', function(){
+        swiper.on('click', function(){
             console.log(this);
         });
 
@@ -113,7 +113,7 @@ function productConfigurableSwiper() {
             },
             768: {
                 slidesPerView: 6,
-                allowTouchMove: false,
+                //allowTouchMove: false,
             }
         },
     });
