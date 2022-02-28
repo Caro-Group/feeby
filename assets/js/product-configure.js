@@ -4,6 +4,7 @@ $(document).ready(function () {
     // Cache
     var $configurableElements = $('[data-product-configurable]');
     var $configurableModal = $('#productConfigurable');
+    var $productConfigurableOptions = $('[data-product-attribute]');
 
     $configurableElements.filter(function () {
         return parseInt($(this).data('productConfigurable'));
