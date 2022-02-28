@@ -3,7 +3,7 @@ $(document).ready(function () {
 
 
 	if($('[data-product-configurable="swiper"]').length != 0) {
-		new Swiper('[data-swiper-configure]', {
+		new Swiper('[data-product-configurable="swiper"]', {
 			slidesPerView: 4,
 			spaceBetween: 10,
 			breakpoints: {
