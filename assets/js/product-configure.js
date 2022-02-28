@@ -1,6 +1,7 @@
+var configurableSelected = [];
+
 $(document).ready(function () {
     // Cache
-    var $configurableSelected = [];
     var $configurableElements = $('[data-product-configurable]');
     var $configurableModal = $('#productConfigurable');
 
