@@ -49,6 +49,12 @@
  
  {block name='content'}  
  
+  {foreach from=$product->features item=$feature}
+    {if $feature.name == 'Konfigurowalny' && $feature.value == 'Tak'}
+      {include file="catalog/_partials/product-configure.tpl" product=$product}  
+    {/if}
+  {/foreach}
+  
    {if isset($product.productLayout) && $product.productLayout != ''}
      {hook h='displayLeoProfileProduct' product=$product typeProduct='detail'}
    {else}
