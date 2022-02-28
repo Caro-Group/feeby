@@ -37,6 +37,14 @@ $(document).ready(function () {
         });
     };
 
+    // Swiper carousel initiation
+    var configurableCartAdd = $configurableElements.filter(function () {
+        return $(this).data('productConfigurable') == 'add';
+    }).on('click', function(){
+        var countConfigurableSelected = configurableSelected.filter(product => product.selected === true).length
+        console.log(countConfigurableSelected);
+    });
+    
     // var firstIndex = undefined;
     // var lastIndex = undefined;
     // var tempIndex = undefined;
@@ -132,6 +140,7 @@ function productConfigurableSwiper() {
     });
 }
 
+
 function productConfigurableSelect(productId){
 
     configurableSelected.filter(product => product.id === productId).forEach(product => {
@@ -162,4 +171,10 @@ function productConfigurableSelect(productId){
     //         }
     //     }   
     // }
+}
+
+function productConfigurableUnSelectAll(){
+    configurableSelected.forEach(product => {
+        product['selected'] = false;
+    });
 }
