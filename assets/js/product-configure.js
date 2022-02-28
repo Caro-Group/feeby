@@ -4,7 +4,6 @@ $(document).ready(function () {
     // Cache
     var $configurableElements = $('[data-product-configurable]');
     var $configurableModal = $('#productConfigurable');
-    var $productConfigurableOptions = $('[data-product-attribute]');
 
     $configurableElements.filter(function () {
         return parseInt($(this).data('productConfigurable'));
@@ -55,7 +54,7 @@ $(document).ready(function () {
           }
 
         var countConfigurableSelected = configurableSelected.filter(product => product.selected === true).length;
-        $productConfigurableOptions.eq( countConfigurableSelected - 1 ).trigger('click');
+        $('[data-product-attribute]').eq( countConfigurableSelected - 1 ).trigger('click');
     });
     
     // var firstIndex = undefined;
