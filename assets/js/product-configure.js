@@ -9,7 +9,7 @@ $(document).ready(function () {
         return parseInt($(this).data('productConfigurable'));
     }).each(function(){
         $(this).data('productConfigurableId', parseInt($(this).data('productConfigurable')));
-        $configurableSelected.push(
+        configurableSelected.push(
             {
                 "id": parseInt($(this).data('productConfigurable')),
                 "selected": false,
