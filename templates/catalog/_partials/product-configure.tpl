@@ -1,9 +1,11 @@
 {* -translate-x-1/5 -translate-x-2/5 -translate-x-3/5 -translate-x-4/5  *}
 {assign var="imageOriginal" value="{$link->getImageLink($product->link_rewrite, $product.cover.id_image)}"}
 
-<div class="modal fade" id="productConfigurable" tabindex="-1" role="dialog" aria-hidden="true">
-  <div role="document">
-
+<div class="modal" id="productConfigurable" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+      
         <div data-product-configurable="modal" class="transition fixed inset-0 bg-main-dark bg-opacity-50 z-30 p-5 desktop-presta:p-12 overflow-y-auto"  aria-labelledby="modal-title" role="dialog" aria-modal="true">
             <div class="relative flex flex-col desktop-presta:flex-row bg-white desktop-presta:h-full overflow-y-auto desktop-presta:overflow-auto w-full content-max:mx-auto content-max:max-w-screen-content-max rounded-[5px] p-5 desktop-presta:p-[50px] min-h-[640px] ">
                 <button data-dismiss="modal" aria-label="Close" class=" absolute top-5 right-5 desktop-presta:top-[50px] desktop-presta:right-[50px] transition cursor-pointer bg-transparent border-0 ">
