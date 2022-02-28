@@ -55,7 +55,7 @@
             </div>
         </div>
 
-        <div class="flex flex-col desktop-presta:flex-[0_0_320px] desktop-wide:flex-[0_0_610px] pl-5 desktop-wide:pl-[50px]">
+        <div class="flex flex-col desktop-presta:flex-[0_0_320px] desktop-wide:flex-[0_0_610px] desktop-presta:pl-5 desktop-wide:pl-[50px]">
             <h1 class=" mt-5 desktop-presta:mt-0 flex-shrink-0 font-header product-detail-name text-[20px] tablet:text-[35px] tablet:leading-[45px] leading-24px mb-5 pr-[46px]" itemprop="name">
                 {block name='page_title'}
                     {$product.name}
