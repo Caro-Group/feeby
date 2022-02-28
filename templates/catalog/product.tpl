@@ -181,7 +181,7 @@
              {hook h='displayProductButtons' product=$product}
 
              {if $product.is_customizable && count($product.customizations.fields)}
-              <div class="hidden">
+              </div>
              {/if}
  
              {block name='hook_display_reassurance'}
