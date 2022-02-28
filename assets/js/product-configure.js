@@ -13,7 +13,30 @@ $(document).ready(function () {
     
 
         swiper.on('click', function(){
-            console.log(this);
+            
+            if(firstIndex==undefined){
+                $(this).addClass('selected');
+                firstIndex =  $(this).attr('data-product-configurable');
+            }else if( lastIndex==undefined){
+                if(firstIndex!=$(this).attr('data-product-configurable')){
+                    $(this).addClass('selected');
+                    lastIndex =  $(this).attr('data-product-configurable');
+                }else{
+                    firstIndex = undefined;
+                    lastIndex= undefined;
+                    $(this).removeClass('selected');
+
+                }
+            }else if(firstIndex!= undefined && lastIndex!= undefined){
+                firstIndex =  $(this).attr('data-product-configurable');
+                lastIndex = undefined;
+                for( i = 0 ; i < partsArray.length ; i++ ){
+                    if(i!=firstIndex-1){
+                        $(partsArray[i]).removeClass('selected');
+                    }
+                }   
+            }
+            
         });
 
     };
@@ -24,43 +47,43 @@ $(document).ready(function () {
 
 
 
-    // var firstIndex = undefined;
-    // var lastIndex = undefined;
-    // var tempIndex = undefined;
+    var firstIndex = undefined;
+    var lastIndex = undefined;
+    var tempIndex = undefined;
 
-    // var partsArray = $('[data-product-configurable="swiper"] [data-product-configurable].swiper-slide').each(function () {
+    var partsArray = $('[data-product-configurable="swiper"] [data-product-configurable]').each(function () {
 
-    //     $(this).mouseenter(function(){
-    //         if(firstIndex!= undefined && lastIndex == undefined){
-    //             tempIndex = $(this).attr('data-product-configurable');
-    //             if (firstIndex<tempIndex) {
-    //                 for( i = firstIndex ; i < tempIndex ; i++ ){
-    //                     $(partsArray[i-1]).addClass('selected');
-    //                 }
-    //                 for( i = tempIndex ; i < partsArray.length ; i++ ){
-    //                     $(partsArray[i-1]).removeClass('selected');
-    //                 }
-    //             } else {
-    //                 for( i = firstIndex ; i >= 0 ; i-- ){
-    //                     $(partsArray[i-1]).addClass('selected');
-    //                 }
-    //                 for( i = 0 ; i < tempIndex ; i++ ){
-    //                     $(partsArray[i-1]).removeClass('selected');
-    //                 }
+        $(this).mouseenter(function(){
+            if(firstIndex!= undefined && lastIndex == undefined){
+                tempIndex = $(this).attr('data-product-configurable');
+                if (firstIndex<tempIndex) {
+                    for( i = firstIndex ; i < tempIndex ; i++ ){
+                        $(partsArray[i-1]).addClass('selected');
+                    }
+                    for( i = tempIndex ; i < partsArray.length ; i++ ){
+                        $(partsArray[i-1]).removeClass('selected');
+                    }
+                } else {
+                    for( i = firstIndex ; i >= 0 ; i-- ){
+                        $(partsArray[i-1]).addClass('selected');
+                    }
+                    for( i = 0 ; i < tempIndex ; i++ ){
+                        $(partsArray[i-1]).removeClass('selected');
+                    }
                     
-    //             }
-    //         }
-    //     })
+                }
+            }
+        })
 
-    //     $(this).mouseleave(function(){
-    //         if(firstIndex!=undefined){
-    //             for( i = 0 ; i < partsArray.length ; i++ ){
-    //                 if(i!=firstIndex-1 && lastIndex==undefined){
-    //                     $(partsArray[i]).removeClass('selected');
-    //                 }
-    //             }
-    //         }
-    //     })
+        $(this).mouseleave(function(){
+            if(firstIndex!=undefined){
+                for( i = 0 ; i < partsArray.length ; i++ ){
+                    if(i!=firstIndex-1 && lastIndex==undefined){
+                        $(partsArray[i]).removeClass('selected');
+                    }
+                }
+            }
+        })
 
 	// 	$(this).click(() => {
 
@@ -87,7 +110,7 @@ $(document).ready(function () {
     //             }   
     //         }
     //     })
-	// })
+	})
 
     // $('body').on("click", function(e){ 
 
