@@ -107,13 +107,15 @@ function productConfigurableSwiper() {
     return new Swiper($(this), {
         slidesPerView: 4,
         spaceBetween: 10,
+        preventClicks: false,
+        preventClicksPropagation: false,
         breakpoints: {
             480: {
                 slidesPerView: 6,
             },
             768: {
                 slidesPerView: 6,
-                //allowTouchMove: false,
+                allowTouchMove: false,
             }
         },
     });
