@@ -577,32 +577,32 @@ z-index: 9999;
 
 
 
-[data-swiper-configure] .swiper-slide img{
+[data-product-configurable="swiper"] .swiper-slide img{
     @apply  opacity-40 transition duration-200;
     -webkit-user-drag: none;
 }
 
-[data-swiper-configure] .swiper-slide:hover img{
+[data-product-configurable="swiper"] .swiper-slide:hover img{
     @apply opacity-100 transition duration-200;
 }
 
-[data-swiper-configure] .swiper-wrapper .swiper-slide.selected img{
+[data-product-configurable="swiper"] .swiper-wrapper .swiper-slide.selected img{
     @apply opacity-100 rounded-[5px]
 }
 
-[data-swiper-configure] .swiper-wrapper .swiper-slide.selected:hover img{
+[data-product-configurable="swiper"] .swiper-wrapper .swiper-slide.selected:hover img{
     @apply opacity-100 rounded-[5px]
 }
 
-[data-swiper-configure] .swiper-wrapper .swiper-slide{
+[data-product-configurable="swiper"] .swiper-wrapper .swiper-slide{
     @apply w-[100px] phablet:w-[150px]
 }
 
-[data-swiper-configure] .swiper-wrapper .swiper-slide .size{
+[data-product-configurable="swiper"] .swiper-wrapper .swiper-slide .size{
     @apply w-8;
 }
 
-[data-swiper-configure] .swiper-wrapper .swiper-slide.selected .part-name{
+[data-product-configurable="swiper"] .swiper-wrapper .swiper-slide.selected .part-name{
     @apply text-main;
 }
 
