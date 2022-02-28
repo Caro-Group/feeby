@@ -39,11 +39,12 @@ $(document).ready(function () {
             
         });
 
+        $('#productConfigurable').on('show.bs.modal', function () {
+            swiper.update();
+        }).on('shonw.bs.modal', function () {
+            swiper.update();
+        });
     };
-
-
-
-
 
 
 
