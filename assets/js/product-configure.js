@@ -54,7 +54,7 @@ $(document).ready(function () {
           }
 
         var countConfigurableSelected = configurableSelected.filter(product => product.selected === true).length;
-        $('[data-product-attribute]').eq( countConfigurableSelected - 1 ).trigger('click');
+        $('[data-product-attribute]').eq( countConfigurableSelected - 1 )[0].dispatchEvent(new Event('click'));
     });
     
     // var firstIndex = undefined;
