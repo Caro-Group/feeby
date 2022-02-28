@@ -117,8 +117,8 @@
              {block name='product_description_short'}{/block}
  
             {if $product.is_customizable && count($product.customizations.fields)}
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#productConfigurable">
-                {l s='Order photo wallpaper' d='Shop.Theme.Actions'}
+              <button type="button" class="bg-main block border-0 cursor-pointer font-medium h-full hover:bg-main-hover overflow-hidden phone-wide:text-base px-4 py-3 relative rounded-full tablet:text-xl text-base text-center text-white transition uppercase w-full tablet:mb-6" data-toggle="modal" data-target="#productConfigurable">
+                {l s='Zamów fototapetę' d='Shop.Theme.Actions'}
               </button>
 
               <div class="hidden">
