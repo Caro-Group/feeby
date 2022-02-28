@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $congurableElements = $('[data-product-configurable]');
+    $confElements = $('[data-product-configurable]');
 
 
 	if($('[data-product-configurable="swiper"]').length != 0) {
