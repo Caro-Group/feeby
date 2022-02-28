@@ -41,7 +41,7 @@ $(document).ready(function () {
 
         $('#productConfigurable').on('show.bs.modal', function () {
             swiper.update();
-        }).on('shonw.bs.modal', function () {
+        }).on('shown.bs.modal', function () {
             swiper.update();
         });
     };
