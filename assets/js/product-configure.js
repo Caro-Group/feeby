@@ -164,7 +164,6 @@ function productConfigurableSelect(productId){
     var configurableSelectedTemp = configurableSelected.filter(product => product.selected === true)
 
     var index = productId -1;
-    console.log(index);
 
     if (configurableSelectedTemp.length == 0 ) {
         configurableSelected[index].selected = true;
@@ -201,12 +200,12 @@ function productConfigurableSelect(productId){
                     var tempIndex = configurableSelectedTemp.findIndex(product => product.id == productId  )
     
                     if (tempIndex < Math.trunc(configurableSelectedTemp.length/2 )) {
-                        for(i = tempIndex - 1 ; i >= configurableSelectedTemp[0].id - 1 ; i--){
+                        for(i = index - 1 ; i >= configurableSelectedTemp[0].id - 1 ; i--){
                             configurableSelected[i].selected = false;
                         }   
                     }
                     else{
-                        for(i = tempIndex + 1 ; i < configurableSelectedTemp.length ; i++){
+                        for(i = index + 1 ; i < configurableSelectedTemp[configurableSelectedTemp.length - 1].id ; i++){
                             configurableSelected[i].selected = false;
                         }   
      
@@ -279,7 +278,6 @@ function productConfigurableUpdatePage() {
 function productConfigurableSetButtonState(selectedArray) {
     if (selectedArray != undefined) {
         $('.modal .product-add-to-cart .add button').removeProp('disabled');
-        console.log(selectedArray);
     }
     else{
         $('.modal .product-add-to-cart .add button').prop('disabled','true');
