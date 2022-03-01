@@ -583,7 +583,7 @@ z-index: 9999;
 }
 
 [data-product-configurable="swiper"] .swiper-slide:hover img{
-    @apply opacity-100 transition duration-200;
+    @apply opacity-70 transition duration-200;
 }
 
 [data-product-configurable="swiper"] .swiper-wrapper .swiper-slide.selected img{
