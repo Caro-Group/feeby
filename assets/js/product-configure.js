@@ -38,25 +38,29 @@ $(document).ready(function () {
         });
     };
 
-    // Swiper carousel initiation
     var configurableCartAdd = $configurableElements.filter(function () {
         return $(this).data('productConfigurable') == 'add';
-    }).on('click', function(){
+    });
+    $('body').on('click','.modal [data-button-action="add-to-cart"]', function(){
         var countConfigurableSelected = configurableSelected.filter(product => product.selected === true).length;
-        $('[data-product-attribute]').eq( countConfigurableSelected - 1 ).trigger('click');
+        console.log(countConfigurableSelected);
+        if(countConfigurableSelected){
+            productConfigurableUnSelectAll();
+            productConfigurableSetState();
+            $('.hidden [data-button-action="add-to-cart"]').trigger('click');
+            window.location.reload();   //ajax minicart reload
+        }
     });
 
     if (typeof prestashop !== 'undefined') {
         prestashop.on(
             'updatedProduct' ,
             function (event) {
-                var countConfigurableSelected = configurableSelected.filter(product => product.selected === true).length;
-                if(countConfigurableSelected){
-                    $('[data-button-action="add-to-cart"]').trigger('click');
-                }
+                //blokada przycisku
             }
         );
     }
+      
       
     
     
@@ -178,7 +182,12 @@ function productConfigurableSelect(productId){
         productConfigurableUnSelectAll();
     }
     
+    //button set state 
+
     productConfigurableSetState();
+    productConfigurableWriteState();
+    productConfigurableSaveState();
+    productConfigurableUpdatePage();
 }
 
 function productConfigurableUnSelectAll(){
@@ -196,4 +205,39 @@ function productConfigurableSetState(){
             $(product.el).removeClass('selected');
         }
     });
+}
+
+function productConfigurableWriteState(){
+    $messageField = $(".product-customization-item").first().find(".product-message");
+    $messageField.val('');
+    configurableSelected.forEach(product => {
+        if (product.selected) {     
+            $messageField.val(product.id + ',' + $messageField.val())
+        }
+    });
+    $messageField.val($messageField.val().substring(0, $messageField.val().length - 1));
+}
+
+function productConfigurableSaveState(){
+    var customizationContainers = $(".product-customization-item");
+    customizationContainers.each(function() {
+
+        var formActionAttribute_url = $(".product-customization form").attr('action');
+        var formActionAttribute_name_field = $(this).find(".product-message").attr("name");
+        var data = {};
+        data[formActionAttribute_name_field] =  $(this).find(".product-message").val();
+        data['submitCustomizedData'] = 1;
+        data['ajax'] = 1;
+
+        $.post(formActionAttribute_url, data, null, 'json').done(function(data) {
+            console.log(data);
+            $(".product-actions #product_customization_id").val(data.id_customization);
+        });
+        return false;
+    })
+}
+
+function productConfigurableUpdatePage() {
+    var countConfigurableSelected = configurableSelected.filter(product => product.selected === true).length;
+    $('[data-product-attribute]').eq( countConfigurableSelected - 1 ).trigger('click');
 }
