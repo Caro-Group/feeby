@@ -167,7 +167,6 @@ function productConfigurableSelect(productId){
 
     if (configurableSelectedTemp.length == 0 ) {
         configurableSelected[index].selected = true;
-        console.log('first');
     }
     else{
         if(configurableSelectedTemp.length > 0){
@@ -277,10 +276,10 @@ function productConfigurableUpdatePage() {
 
 function productConfigurableSetButtonState(selectedArray) {
     if (selectedArray != undefined) {
-        $('.modal .product-add-to-cart .add button').removeProp('disabled');
+        $('.modal .product-add-to-cart .add button').prop('disabled',false);
     }
     else{
-        $('.modal .product-add-to-cart .add button').prop('disabled','true');
+        $('.modal .product-add-to-cart .add button').prop('disabled',true);
         console.log('disabled');
     }
 }
