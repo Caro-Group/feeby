@@ -38,27 +38,29 @@ $(document).ready(function () {
         });
     };
 
-    // Swiper carousel initiation
     var configurableCartAdd = $configurableElements.filter(function () {
         return $(this).data('productConfigurable') == 'add';
-    }).on('click', function(){
+    });
+    $('body').on('click','.modal [data-button-action="add-to-cart"]', function(){
         var countConfigurableSelected = configurableSelected.filter(product => product.selected === true).length;
-        //There disable button for any more actions
-        $('[data-product-attribute]').eq( countConfigurableSelected - 1 ).trigger('click');
+        console.log(countConfigurableSelected);
+        if(countConfigurableSelected){
+            productConfigurableUnSelectAll();
+            productConfigurableSetState();
+            $('.hidden [data-button-action="add-to-cart"]').trigger('click');
+            window.location.reload();   //ajax minicart reload
+        }
     });
 
     if (typeof prestashop !== 'undefined') {
         prestashop.on(
             'updatedProduct' ,
             function (event) {
-                var countConfigurableSelected = configurableSelected.filter(product => product.selected === true).length;
-                if(countConfigurableSelected){
-                    //There unselect all option
-                    $('[data-button-action="add-to-cart"]').trigger('click');
-                }
+                //blokada przycisku
             }
         );
     }
+      
       
     
     
@@ -180,9 +182,12 @@ function productConfigurableSelect(productId){
         productConfigurableUnSelectAll();
     }
     
+    //button set state 
+
     productConfigurableSetState();
     productConfigurableWriteState();
     productConfigurableSaveState();
+    productConfigurableUpdatePage();
 }
 
 function productConfigurableUnSelectAll(){
@@ -230,4 +235,9 @@ function productConfigurableSaveState(){
         });
         return false;
     })
+}
+
+function productConfigurableUpdatePage() {
+    var countConfigurableSelected = configurableSelected.filter(product => product.selected === true).length;
+    $('[data-product-attribute]').eq( countConfigurableSelected - 1 ).trigger('click');
 }
