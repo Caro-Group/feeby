@@ -620,6 +620,10 @@ body .loader{
     @apply text-main;
 }
 
+.modal .add-product-to-cart .add button[disabled="true"]{
+    @apply cursor-not-allowed;
+}
+
 
 
 

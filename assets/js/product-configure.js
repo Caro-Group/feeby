@@ -182,8 +182,7 @@ function productConfigurableSelect(productId){
         productConfigurableUnSelectAll();
     }
     
-    //button set state 
-
+    productConfigurableSetButtonState(configurableSelectedTemp);
     productConfigurableSetState();
     productConfigurableWriteState();
     productConfigurableSaveState();
@@ -240,4 +239,15 @@ function productConfigurableSaveState(){
 function productConfigurableUpdatePage() {
     var countConfigurableSelected = configurableSelected.filter(product => product.selected === true).length;
     $('[data-product-attribute]').eq( countConfigurableSelected - 1 ).trigger('click');
+}
+
+function productConfigurableSetButtonState(selectedArray) {
+    if (selectedArray != undefined) {
+        $('.modal .product-add-to-cart .add button').removeProp('disabled');
+        console.log(selectedArray);
+    }
+    else{
+        $('.modal .product-add-to-cart .add button').prop('disabled','true');
+        console.log('disabled');
+    }
 }
