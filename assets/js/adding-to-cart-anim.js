@@ -9,7 +9,7 @@ $(document).ready(function(){
     prestashop.on('updateCart', function (event) {
         if (event.reason.linkAction == "add-to-cart") {            
             waiting--;
-            if (waiting == 0 ) {
+            if (waiting <= 0 ) {
                 $('body').find('.product-add-to-cart .add button').switchClass('adding','added');
                 setTimeout(function () {
                     $('body').find('.product-add-to-cart .add button').removeClass('added');						
