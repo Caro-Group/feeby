@@ -202,6 +202,7 @@ function productConfigurableSelect(productId){
     
                     if (tempIndex < Math.trunc(configurableSelectedTemp.length/2 )) {
                         for(i = tempIndex - 1 ; i >= configurableSelectedTemp[0].id - 1 ; i--){
+                            configurableSelected[i].selected = false;
                         }   
                     }
                     else{
