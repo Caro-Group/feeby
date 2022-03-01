@@ -606,7 +606,7 @@ z-index: 9999;
     @apply text-main;
 }
 
-.modal .product-add-to-cart .add button[disabled="true"]{
+.modal .product-add-to-cart .add button[disabled]{
     @apply cursor-not-allowed;
 }
 
