@@ -160,28 +160,62 @@ function productConfigurableSwiper() {
 }
 
 function productConfigurableSelect(productId){
-    
-    if (configurableSelected[productId - 1].selected == false ) {
-        configurableSelected[productId - 1].selected = true;
 
-        var configurableSelectedTemp = configurableSelected.filter(product => product.selected === true)
-        
-        if(configurableSelectedTemp.length == 2 ){
-            var firstId = configurableSelectedTemp[0].id;
-            var lastId = configurableSelectedTemp[configurableSelectedTemp.length - 1].id; 
-            for(i = firstId; i < lastId ; i++){
-                configurableSelected[i-1].selected = true;
-            }
-        }
-        else if(configurableSelectedTemp.length > 2 ){
-            productConfigurableUnSelectAll();
-            configurableSelected[productId - 1].selected = true;
-        }
+    var configurableSelectedTemp = configurableSelected.filter(product => product.selected === true)
+
+    var index = productId -1;
+    console.log(index);
+
+    if (configurableSelectedTemp.length == 0 ) {
+        configurableSelected[index].selected = true;
+        console.log('first');
     }
     else{
-        productConfigurableUnSelectAll();
-    }
+        if(configurableSelectedTemp.length > 0){
+            if (configurableSelected[index].selected == false) {
+                
+                // check surrounding from right 
+                if (index < configurableSelectedTemp[0].id - 1) {
+                    for(i = index ; i < configurableSelectedTemp[0].id -1 ; i++){
+                        configurableSelected[i].selected = true;
+                    }                
+                }
+
+                // check surrounding from left 
+                else if (index > configurableSelectedTemp[0].id - 1) {
+                    for(i = index ; i > configurableSelectedTemp[configurableSelectedTemp.length - 1].id -1 ; i--){
+                        configurableSelected[i].selected = true;
+                    }                
+                }
+            }
+
+            else if(configurableSelectedTemp.length !== 1 && configurableSelected[index].selected == true){          
+                
+                // disabling one when clicked on selected edge
+                if(configurableSelected[index].selected == true && ( configurableSelected[index].id == configurableSelectedTemp[0].id || configurableSelectedTemp[configurableSelectedTemp.length - 1].id == configurableSelected[index].id ) ){
+                    configurableSelected[index].selected = false;
+                }
+
+                // disabling to sides from inside of selected group 
+                else{
+                    var tempIndex = configurableSelectedTemp.findIndex(product => product.id == productId  )
     
+                    if (tempIndex < Math.trunc(configurableSelectedTemp.length/2 )) {
+                        for(i = tempIndex - 1 ; i >= configurableSelectedTemp[0].id - 1 ; i--){
+                        }   
+                    }
+                    else{
+                        for(i = tempIndex + 1 ; i < configurableSelectedTemp.length ; i++){
+                            configurableSelected[i].selected = false;
+                        }   
+     
+                    }
+                }
+            }
+        }
+    }
+
+
     productConfigurableSetButtonState(configurableSelectedTemp);
     productConfigurableSetState();
     productConfigurableWriteState();
