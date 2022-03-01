@@ -4,6 +4,7 @@ $(document).ready(function () {
     // Cache
     var $configurableElements = $('[data-product-configurable]');
     var $configurableModal = $('#productConfigurable');
+    var $productConfigurableOptions = $('[data-product-attribute]');
 
     $configurableElements.filter(function () {
         return parseInt($(this).data('productConfigurable'));
@@ -42,6 +43,7 @@ $(document).ready(function () {
         return $(this).data('productConfigurable') == 'add';
     }).on('click', function(){
         var countConfigurableSelected = configurableSelected.filter(product => product.selected === true).length;
+        //There disable button for any more actions
         $('[data-product-attribute]').eq( countConfigurableSelected - 1 ).trigger('click');
     });
 
@@ -51,6 +53,7 @@ $(document).ready(function () {
             function (event) {
                 var countConfigurableSelected = configurableSelected.filter(product => product.selected === true).length;
                 if(countConfigurableSelected){
+                    //There unselect all option
                     $('[data-button-action="add-to-cart"]').trigger('click');
                 }
             }
@@ -178,6 +181,8 @@ function productConfigurableSelect(productId){
     }
     
     productConfigurableSetState();
+    productConfigurableWriteState();
+    productConfigurableSaveState();
 }
 
 function productConfigurableUnSelectAll(){
@@ -195,4 +200,34 @@ function productConfigurableSetState(){
             $(product.el).removeClass('selected');
         }
     });
+}
+
+function productConfigurableWriteState(){
+    $messageField = $(".product-customization-item").first().find(".product-message");
+    $messageField.val('');
+    configurableSelected.forEach(product => {
+        if (product.selected) {     
+            $messageField.val(product.id + ',' + $messageField.val())
+        }
+    });
+    $messageField.val($messageField.val().substring(0, $messageField.val().length - 1));
+}
+
+function productConfigurableSaveState(){
+    var customizationContainers = $(".product-customization-item");
+    customizationContainers.each(function() {
+
+        var formActionAttribute_url = $(".product-customization form").attr('action');
+        var formActionAttribute_name_field = $(this).find(".product-message").attr("name");
+        var data = {};
+        data[formActionAttribute_name_field] =  $(this).find(".product-message").val();
+        data['submitCustomizedData'] = 1;
+        data['ajax'] = 1;
+
+        $.post(formActionAttribute_url, data, null, 'json').done(function(data) {
+            console.log(data);
+            $(".product-actions #product_customization_id").val(data.id_customization);
+        });
+        return false;
+    })
 }
