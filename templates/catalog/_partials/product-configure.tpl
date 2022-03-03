@@ -26,7 +26,7 @@
                             </div>
                         </span>
                     </div>
-                    <div class="max-w-[500px] desktop-wide:max-w-[650px] full-hd:max-w-max w-full py-5 mx-auto z-10 ">
+                    <div class="max-w-[500px] desktop-wide:max-w-[650px] full-hd:max-w-[800px] w-full py-5 mx-auto z-10 ">
                         <div class="swiper" data-product-configurable="swiper">
                             <div class="swiper-wrapper items-center">
                                     <div class="swiper-slide size flex-1 phone-wide:flex-[0_1_30px]">
