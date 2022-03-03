@@ -67,6 +67,7 @@ function productConfigurableSwiper() {
     return new Swiper(this, {
         slidesPerView: 4,
         spaceBetween: 1,
+        watchOverflow: true,
         breakpoints: {
             480: {
                 spaceBetween: 1,
@@ -75,12 +76,10 @@ function productConfigurableSwiper() {
             768: {
                 spaceBetween: 1,
                 slidesPerView: 6,
-                allowTouchMove: false,
             },
             1200: {
                 spaceBetween: 3,
                 slidesPerView: 6,
-                allowTouchMove: false,
             }
         },
     });

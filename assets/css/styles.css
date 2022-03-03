@@ -605,7 +605,7 @@ body .loader{
 }
 
 [data-product-configurable="swiper"] .swiper-wrapper .swiper-slide.selected:hover img{
-    @apply opacity-100 ;
+    @apply opacity-100;
 }
 
 [data-product-configurable="swiper"] .swiper-wrapper .swiper-slide{
