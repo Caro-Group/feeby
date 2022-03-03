@@ -115,22 +115,9 @@
              {hook h='displayProductInformationTop'}
              
              {block name='product_description_short'}{/block}
- 
+              
             {if $product.is_customizable && count($product.customizations.fields)}
-              <button type="button" class="bg-main block border-0 cursor-pointer font-medium h-full hover:bg-main-hover overflow-hidden phone-wide:text-base px-4 py-3 relative rounded-full tablet:text-xl text-base text-center text-white transition uppercase w-full tablet:mb-6" data-toggle="modal" data-target="#productConfigurable">
-                {l s='Zamów fototapetę' d='Shop.Theme.Actions'}
-              </button>
-
-              <div class="hidden">
-            {/if}
-            
-             {if $product.is_customizable && count($product.customizations.fields)}
-               {block name='product_customization'}
-                 {include file="catalog/_partials/product-customization.tpl" customizations=$product.customizations}
-               {/block}
-             {/if}
- 
-             <div class="product-actions">
+                           <div class="product-actions">
                {block name='product_buy'}
                  <form action="{$urls.pages.cart}" method="post" id="add-to-cart-or-refresh">
                    <input type="hidden" name="token" value="{$static_token}">
@@ -163,26 +150,46 @@
                    {block name='product_discounts'}
                      {include file='catalog/_partials/product-discounts.tpl'}
                    {/block}
- 
-                   {block name='product_add_to_cart'}
-                     {include file='catalog/_partials/product-add-to-cart.tpl'}
-                   {/block}
- 
-                   {block name='product_additional_info'}
-                     {include file='catalog/_partials/product-additional-info.tpl'}
-                   {/block}
- 
+
+                   <div class="hidden">
+                   
+                    {block name='product_add_to_cart'}
+                      {include file='catalog/_partials/product-add-to-cart.tpl'}
+                    {/block}
+  
+                    {block name='product_additional_info'}
+                      {include file='catalog/_partials/product-additional-info.tpl'}
+                    {/block}
+  
+                   </div>
+                   
                    {* Input to refresh product HTML removed, block kept for compatibility with themes *}
                    {block name='product_refresh'}{/block}
                  </form>
                {/block}
              </div>
  
-             {hook h='displayProductButtons' product=$product}
-
-             {if $product.is_customizable && count($product.customizations.fields)}
-              </div>
+             
+            {/if}
+            
+            {if $product.is_customizable && count($product.customizations.fields)}
+              <button type="button" class="bg-main block border-0 cursor-pointer font-medium h-full hover:bg-main-hover overflow-hidden phone-wide:text-base px-4 py-3 relative rounded-full tablet:text-xl text-base text-center text-white transition uppercase w-full tablet:mb-6" data-toggle="modal" data-target="#productConfigurable">
+              {l s='Zamów fototapetę' d='Shop.Theme.Actions'}
+              </button>
+              
+            {/if}
+            
+            {if $product.is_customizable && count($product.customizations.fields)}
+              <div class="hidden">
+              {block name='product_customization'}
+                {include file="catalog/_partials/product-customization.tpl" customizations=$product.customizations}
+              {/block}
+              
+              {hook h='displayProductButtons' product=$product}
+               </div>
              {/if}
+ 
+
  
              {block name='hook_display_reassurance'}
                {hook h='displayReassurance'}
