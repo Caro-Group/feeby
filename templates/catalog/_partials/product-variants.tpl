@@ -58,7 +58,7 @@
                   <input class="input-color peer" type="radio" data-product-attribute="{$id_attribute_group}" name="group[{$id_attribute_group}]" value="{$id_attribute}" title="{$group_attribute.name}"{if $group_attribute.selected} checked="checked"{/if}>
                   <span
                     {if $group_attribute.texture}
-                      class="color texture w-24 tablet:w-[166px] h-20 tablet:h-[120px] bg-no-repeat bg-cover rounded-[5px] border-2 border-solid border-white hover:border-white peer-checked:border-main opacity-50 peer-checked:opacity-100 transition shadow-none" style="background-image: url({$group_attribute.texture})"
+                      class="color texture w-24 tablet:w-full tablet:max-w-[166px] h-20 tablet:h-[120px] bg-no-repeat bg-cover rounded-[5px] border-2 border-solid border-white hover:border-white peer-checked:border-main opacity-50 peer-checked:opacity-100 transition shadow-none" style="background-image: url({$group_attribute.texture})"
                     {elseif $group_attribute.html_color_code}
                       class="color w-10 h-10 rounded-[5px]" style="background-color: {$group_attribute.html_color_code}" 
                     {/if}
