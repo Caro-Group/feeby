@@ -69,9 +69,11 @@ function productConfigurableSwiper() {
         spaceBetween: 1,
         breakpoints: {
             480: {
+                spaceBetween: 1,
                 slidesPerView: 6,
             },
             768: {
+                spaceBetween: 1,
                 slidesPerView: 6,
                 allowTouchMove: false,
             },
