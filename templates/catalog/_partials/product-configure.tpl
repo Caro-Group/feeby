@@ -7,12 +7,12 @@
       <div class="modal-body p-0">
       
         <div data-product-configurable="modal" class="transition fixed inset-0 bg-main-dark bg-opacity-50 z-30 p-0 desktop-presta:p-12 overflow-y-auto"  aria-labelledby="modal-title" role="dialog" aria-modal="true">
-            <div class="relative flex flex-col desktop-presta:flex-row bg-white desktop-presta:h-full overflow-y-auto desktop-presta:overflow-auto w-full content-max:mx-auto content-max:max-w-screen-content-max desktop-presta:rounded-[5px] p-5 desktop-presta:p-[50px] min-h-[640px] full-hd:min-h-[860px] ">
+            <div class="relative flex flex-col desktop-presta:flex-row bg-white desktop-presta:h-full overflow-y-auto desktop-presta:overflow-auto w-full content-max:mx-auto content-max:max-w-screen-content-max desktop-presta:rounded-[5px] p-5 desktop-presta:p-[50px] min-h-[700px] full-hd:min-h-[860px] ">
                 <button data-dismiss="modal" aria-label="Close" class=" absolute top-5 right-5 desktop-presta:top-[50px] desktop-presta:right-[50px] transition cursor-pointer bg-transparent border-0 ">
                     <i class=" material-icons text-main-dark hover:text-main text-4xl transition select-none"></i>
                 </button>
                 
-                <div class="flex justify-between flex-col bg-gray-1000 rounded-[5px] flex-auto max-w-screen-tablet-wide relative mt-12 desktop-presta:mt-0 overflow-hidden">
+                <div class="flex justify-between flex-col bg-gray-1000 rounded-[5px] flex-auto w-full mx-auto max-w-screen-tablet-wide relative mt-12 desktop-presta:mt-0 overflow-hidden">
                     <div class="w-full pt-5 px-5">
                         <span class="group inline-flex items-center w-8 h-8 desktop-presta:w-10 desktop-presta:h-10 text-gray-3000 hover:text-main">
                             <svg class="fill-current transition z-50" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -26,7 +26,7 @@
                             </div>
                         </span>
                     </div>
-                    <div class="max-w-[500px] desktop-wide:max-w-[800px] full-hd:max-w-max w-full py-5 mx-auto z-10 ">
+                    <div class="max-w-[500px] desktop-wide:max-w-[650px] full-hd:max-w-max w-full py-5 mx-auto z-10 ">
                         <div class="swiper" data-product-configurable="swiper">
                             <div class="swiper-wrapper items-center">
                                     <div class="swiper-slide size flex-1 phone-wide:flex-[0_1_30px]">
