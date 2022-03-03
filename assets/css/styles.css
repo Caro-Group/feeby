@@ -587,15 +587,15 @@ z-index: 9999;
 }
 
 [data-product-configurable="swiper"] .swiper-wrapper .swiper-slide.selected img{
-    @apply opacity-100
+    @apply opacity-100;
 }
 
 [data-product-configurable="swiper"] .swiper-wrapper .swiper-slide.selected:hover img{
-    @apply opacity-100 
+    @apply opacity-100 ;
 }
 
 [data-product-configurable="swiper"] .swiper-wrapper .swiper-slide{
-    @apply w-[100px] phablet:w-[150px]
+    @apply w-[100px] phablet:w-[150px];
 }
 
 [data-product-configurable="swiper"] .swiper-wrapper .swiper-slide .size{

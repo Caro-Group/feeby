@@ -79,6 +79,8 @@ function productConfigurableSwiper() {
             },
             1200: {
                 spaceBetween: 3,
+                slidesPerView: 6,
+                allowTouchMove: false,
             }
         },
     });
