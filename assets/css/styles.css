@@ -601,11 +601,11 @@ body .loader{
 }
 
 [data-product-configurable="swiper"] .swiper-wrapper .swiper-slide.selected img{
-    @apply opacity-100 rounded-[5px]
+    @apply opacity-100
 }
 
 [data-product-configurable="swiper"] .swiper-wrapper .swiper-slide.selected:hover img{
-    @apply opacity-100 rounded-[5px]
+    @apply opacity-100 
 }
 
 [data-product-configurable="swiper"] .swiper-wrapper .swiper-slide{

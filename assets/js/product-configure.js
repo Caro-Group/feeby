@@ -66,15 +66,17 @@ $(document).ready(function () {
 function productConfigurableSwiper() {
     return new Swiper(this, {
         slidesPerView: 4,
-        spaceBetween: 3,
+        spaceBetween: 1,
         breakpoints: {
             480: {
                 slidesPerView: 6,
             },
             768: {
                 slidesPerView: 6,
-                spaceBetween: 6,
                 allowTouchMove: false,
+            },
+            1200: {
+                spaceBetween: 3,
             }
         },
     });
