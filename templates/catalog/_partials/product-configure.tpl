@@ -6,8 +6,8 @@
     <div class="modal-content">
       <div class="modal-body p-0">
       
-        <div data-product-configurable="modal" class="transition fixed inset-0 bg-main-dark bg-opacity-50 z-30 p-5 desktop-presta:p-12 overflow-y-auto"  aria-labelledby="modal-title" role="dialog" aria-modal="true">
-            <div class="relative flex flex-col desktop-presta:flex-row bg-white desktop-presta:h-full overflow-y-auto desktop-presta:overflow-auto w-full content-max:mx-auto content-max:max-w-screen-content-max rounded-[5px] p-5 desktop-presta:p-[50px] min-h-[640px] full-hd:min-h-[860px] ">
+        <div data-product-configurable="modal" class="transition fixed inset-0 bg-main-dark bg-opacity-50 z-30 p-0 desktop-presta:p-12 overflow-y-auto"  aria-labelledby="modal-title" role="dialog" aria-modal="true">
+            <div class="relative flex flex-col desktop-presta:flex-row bg-white desktop-presta:h-full overflow-y-auto desktop-presta:overflow-auto w-full content-max:mx-auto content-max:max-w-screen-content-max desktop-presta:rounded-[5px] p-5 desktop-presta:p-[50px] min-h-[640px] full-hd:min-h-[860px] ">
                 <button data-dismiss="modal" aria-label="Close" class=" absolute top-5 right-5 desktop-presta:top-[50px] desktop-presta:right-[50px] transition cursor-pointer bg-transparent border-0 ">
                     <i class=" material-icons text-main-dark hover:text-main text-4xl transition select-none"></i>
                 </button>
