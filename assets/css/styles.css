@@ -610,6 +610,14 @@ z-index: 9999;
     @apply cursor-not-allowed;
 }
 
+.floating-bar .product-prices .div{
+    @apply flex-col
+}
+
+.floating-bar .product-prices .product-price{
+    @apply text-2xl tablet:text-4xl
+}
+
 
 
 
