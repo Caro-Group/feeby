@@ -610,7 +610,7 @@ z-index: 9999;
     @apply cursor-not-allowed;
 }
 
-.floating-bar .product-prices .div{
+.floating-bar .product-prices div{
     @apply flex-col
 }
 
