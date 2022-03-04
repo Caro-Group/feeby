@@ -75,7 +75,9 @@
                     </div>  
                     <div class=" flex-shrink-0 ">
                         <div class="py-6 quickview">
-                            <span class="font-medium leading-none product-prices text-[25px] tablet:text-[35px] mr-[10px] text-[#232322] ">100 zł</span> 
+                            {block name='product_prices'}
+                                {include file='catalog/_partials/product-prices.tpl'}
+                            {/block}
                         </div>
 
                         <div class="flex justify-center">
