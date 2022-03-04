@@ -624,7 +624,7 @@ body .loader{
     @apply cursor-not-allowed;
 }
 
-.floating-bar .product-prices .div{
+.floating-bar .product-prices div{
     @apply flex-col
 }
 
