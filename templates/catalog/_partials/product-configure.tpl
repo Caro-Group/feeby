@@ -70,17 +70,19 @@
                             {$product.name}
                         {/block}
                     </h1>
-                    <div class="desktop-presta:min-h-12 desktop-presta:mr-2 desktop-presta:overflow-x-hidden desktop-presta:overflow-y-auto">
+                    <div class="desktop-presta:min-h-12 desktop-presta:mr-2 desktop-presta:overflow-x-hidden desktop-presta:overflow-y-auto mb-100 desktop-presta:mb-0">
                         {hook h='displayApSC' sc_key=sc3078189027}
                     </div>  
-                    <div class=" flex-shrink-0 ">
-                        <div class="py-6 quickview">
-                            <span class="font-medium leading-none product-prices text-[25px] tablet:text-[35px] mr-[10px] text-[#232322] ">100 zł</span> 
+                    <div class="floating-bar bg-white bottom-0 desktop-presta:block fixed flex flex-shrink-0 items-center justify-between left-0 px-5 w-full flex-shrink-0 border-0 border-t border-solid border-gray-3000 desktop-presta:border-t-0">
+                        <div class="py-2 desktop-presta:py-6 quickview">
+                            {block name='product_prices'}
+                                {include file='catalog/_partials/product-prices.tpl'}
+                            {/block}
                         </div>
 
                         <div class="flex justify-center">
-                            <div class="w-full max-w-[320px]">
-                                <div class="product-add-to-cart">
+                            <div class="w-full desktop-presta:max-w-[320px]">
+                                <div class="py-2 desktop-presta:py-0 desktop-presta:pb-6 product-add-to-cart">
                                     <div class="add flex-1">
                                         <button class="bg-main border-0 cursor-pointer font-medium h-full hover:bg-main-hover overflow-hidden phone-wide:text-base px-4 relative rounded-full tablet:text-xl text-base text-center text-white transition uppercase w-full" data-product-configurable="add" disabled type="submit">
                                             <span>{l s='Dodaj do koszyka' d='Shop.Theme.Catalog'}</span>

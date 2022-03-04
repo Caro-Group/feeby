@@ -19,7 +19,6 @@ $(document).ready(function () {
         );
     });
 
-    // Swiper carousel initiation
     var swiperElement = $configurableElements.filter(function () {
         return $(this).data('productConfigurable') == 'swiper';
     })
@@ -38,9 +37,12 @@ $(document).ready(function () {
         });
     };
 
+    productConfigurableSelect(1);    //default select
+
     var configurableCartAdd = $configurableElements.filter(function () {
         return $(this).data('productConfigurable') == 'add';
     });
+
     $('body').on('click','.modal [data-button-action="add-to-cart"]', function(){
         var countConfigurableSelected = configurableSelected.filter(product => product.selected === true).length;
         console.log(countConfigurableSelected);
