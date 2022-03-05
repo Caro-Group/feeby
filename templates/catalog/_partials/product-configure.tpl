@@ -70,10 +70,10 @@
                             {$product.name}
                         {/block}
                     </h1>
-                    <div class="desktop-presta:min-h-12 desktop-presta:mr-2 desktop-presta:overflow-x-hidden desktop-presta:overflow-y-auto mb-100 desktop-presta:mb-0">
+                    <div class="desktop-presta:min-h-12 desktop-presta:mr-2 desktop-presta:overflow-x-hidden desktop-presta:overflow-y-auto mb-[100px] desktop-presta:mb-0">
                         {hook h='displayApSC' sc_key=sc3078189027}
                     </div>  
-                    <div class="floating-bar bg-white bottom-0 desktop-presta:block fixed desktop-presta:static flex flex-shrink-0 items-center justify-between left-0 px-5 desktop-presta:px-0  w-full flex-shrink-0 border-0 border-t border-solid border-gray-2000 desktop-presta:border-t-0">
+                    <div class="floating-bar bg-white bottom-0 desktop-presta:block fixed desktop-presta:static flex flex-shrink-0 items-center justify-between left-0 px-5 desktop-presta:px-0  w-full flex-shrink-0 border-0 border-t border-solid border-gray-2000 desktop-presta:border-t-0 z-10">
                         <div class="py-2 desktop-presta:py-6 quickview">
                             {block name='product_prices'}
                                 {include file='catalog/_partials/product-prices.tpl'}
