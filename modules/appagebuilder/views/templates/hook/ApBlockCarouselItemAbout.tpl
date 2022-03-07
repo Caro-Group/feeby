@@ -32,7 +32,7 @@
 						<img class="p-1 tablet:p-2 select-none h-auto" src="{$slider.image|escape:'html':'UTF-8'}" alt="{if isset($slider.title)}{$slider.title|escape:'html':'UTF-8'}{/if}" width="70" height="70"/>
 					{else}
 						{if isset($slider.image_link) && !empty($slider.image_link)}
-							<img class="p-1 tablet:p-2 h-auto select-none" src="{$slider.image_link|escape:'html':'UTF-8'}" alt="{if isset($slider.title)}{$slider.title|escape:'html':'UTF-8'}{/if}" width="70" height="70/>
+							<img class="p-1 tablet:p-2 h-auto select-none" src="{$slider.image_link|escape:'html':'UTF-8'}" alt="{if isset($slider.title)}{$slider.title|escape:'html':'UTF-8'}{/if}" width="70" height="70"/>
 						{/if}
 					{/if}
 					</div>
