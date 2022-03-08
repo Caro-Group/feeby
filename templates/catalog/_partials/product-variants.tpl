@@ -63,7 +63,7 @@
                       class="color w-10 h-10 rounded-[5px]" style="background-color: {$group_attribute.html_color_code}" 
                     {/if}
                   ></span>
-                  <span class="text-black p-0 pt-[10px]">{$group_attribute.name}</span>
+                  <span class="text-main-dark text-base tablet:text-2xl p-0 pt-[10px]">{$group_attribute.name}</span>
                 </label>
               </li>
             {/foreach}
