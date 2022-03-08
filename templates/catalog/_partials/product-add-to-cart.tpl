@@ -40,9 +40,9 @@
             >
           </div>
 
-          <div class="add flex-1">
+          <div class="add-to-cart-anim add flex-1">
             <button
-              class="bg-main border-0 cursor-pointer font-medium h-full hover:bg-main-hover overflow-hidden phone-wide:text-base px-4 relative rounded-full tablet:text-xl text-base text-center text-white transition uppercase w-full"
+              class="bg-main border-0 cursor-pointer font-medium h-full hover:bg-main-hover overflow-hidden phone-wide:text-base px-4 relative rounded-full tablet:text-xl text-base text-center text-white transition uppercase w-full duration-200"
               data-button-action="add-to-cart"
               type="submit"
               {if !$product.add_to_cart_url}

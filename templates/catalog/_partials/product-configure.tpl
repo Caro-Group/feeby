@@ -70,7 +70,7 @@
                             {$product.name}
                         {/block}
                     </h1>
-                    <div class="desktop-presta:min-h-12 desktop-presta:mr-2 desktop-presta:overflow-x-hidden desktop-presta:overflow-y-auto mb-[100px] desktop-presta:mb-0">
+                    <div class="desktop-presta:min-h-12 desktop-presta:mr-2 desktop-presta:overflow-x-hidden desktop-presta:overflow-y-auto">
                         {hook h='displayApSC' sc_key=sc3078189027}
                     </div>  
                     <div class="floating-bar bg-white bottom-0 desktop-presta:block fixed desktop-presta:static flex flex-shrink-0 items-center justify-between left-0 px-5 desktop-presta:px-0  w-full flex-shrink-0 border-0 border-t border-solid border-gray-2000 desktop-presta:border-t-0 z-10">
@@ -83,8 +83,8 @@
                         <div class="flex justify-center">
                             <div class="w-full">
                                 <div class="py-2 desktop-presta:py-0 desktop-presta:pb-6 product-add-to-cart">
-                                    <div class="add flex-1">
-                                        <button class="bg-main border-0 cursor-pointer font-medium h-full hover:bg-main-hover overflow-hidden phone-wide:text-base px-4 relative rounded-full tablet:text-xl text-base text-center text-white transition uppercase w-full" data-button-action="add-to-cart" disabled type="submit">
+                                    <div class="add-to-cart-anim add flex-1">
+                                        <button class="bg-main border-0 cursor-pointer font-medium h-full hover:bg-main-hover overflow-hidden phone-wide:text-base px-4 relative rounded-full tablet:text-xl text-base text-center text-white transition uppercase duration-200 w-full" data-button-action="add-to-cart" disabled type="submit">
                                             <span>{l s='Dodaj do koszyka' d='Shop.Theme.Catalog'}</span>
                                             <svg class="success" width="27" height="20" viewBox="0 0 27 20" fill="none" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" clip-rule="evenodd" d="M26.2442 0.487161C26.8949 1.13717 26.8954 2.19156 26.2454 2.84222L9.59263 19.5117C9.28039 19.8242 8.85673 19.9999 8.41493 20C7.97312 20.0001 7.54938 19.8247 7.23698 19.5123L0.487813 12.7631C-0.162518 12.1127 -0.162518 11.0583 0.487813 10.408C1.13815 9.75766 2.19254 9.75766 2.84287 10.408L8.41392 15.9791L23.8892 0.488338C24.5392 -0.162319 25.5936 -0.162846 26.2442 0.487161Z" fill="white"></path>
                                             </svg>
@@ -98,9 +98,9 @@
                         
                     </div>
                     <div>
-                        <div class="py-2 desktop-presta:py-0 desktop-presta:pb-6 product-add-sample">
+                        <div class="py-2 desktop-presta:py-0 desktop-presta:pb-6 product-add-sample mb-[100px] desktop-presta:mb-0">
                             <div class="add flex-1">
-                                <button class="bg-transparent hover:bg-main-dark border-2 border-main-dark hover:border-main-dark cursor-pointer font-medium h-full overflow-hidden phone-wide:text-base px-4 relative rounded-full tablet:text-xl text-base text-center text-main-dark hover:text-white transition uppercase w-full" data-button-action="add-sample-to-cart" type="button">
+                                <button class="bg-transparent hover:bg-main-dark border-2 border-main-dark hover:border-main-dark cursor-pointer font-medium h-full overflow-hidden phone-wide:text-base px-4 relative rounded-full tablet:text-xl text-base text-center text-main-dark hover:text-white transition uppercase duration-200 w-full" data-button-action="add-sample-to-cart" type="button">
                                     <span class="transition duration-150">{l s='Dodaj do koszyka' d='Shop.Theme.Catalog'}</span>
                                     <svg class="success" width="27" height="20" viewBox="0 0 27 20" fill="none" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" clip-rule="evenodd" d="M26.2442 0.487161C26.8949 1.13717 26.8954 2.19156 26.2454 2.84222L9.59263 19.5117C9.28039 19.8242 8.85673 19.9999 8.41493 20C7.97312 20.0001 7.54938 19.8247 7.23698 19.5123L0.487813 12.7631C-0.162518 12.1127 -0.162518 11.0583 0.487813 10.408C1.13815 9.75766 2.19254 9.75766 2.84287 10.408L8.41392 15.9791L23.8892 0.488338C24.5392 -0.162319 25.5936 -0.162846 26.2442 0.487161Z" fill="white"></path>
                                     </svg>

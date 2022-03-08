@@ -1,8 +1,8 @@
 $(document).ready(function(){
 
     var waiting=0;
-    $('body').on('click','.product-add-to-cart .add button',function(){
-        $('.product-add-to-cart .add button').addClass('adding');
+    $('body').on('click','.add-to-cart-anim.add button',function(){
+        $(this).addClass('adding');
         waiting++;
     });
     
@@ -10,9 +10,9 @@ $(document).ready(function(){
         if (event.reason.linkAction == "add-to-cart") {            
             waiting--;
             if (waiting <= 0 ) {
-                $('body').find('.product-add-to-cart .add button').switchClass('adding','added');
+                $('body').find('.add-to-cart-anim.add button.adding').switchClass('adding','added');
                 setTimeout(function () {
-                    $('body').find('.product-add-to-cart .add button').removeClass('added');						
+                    $('body').find('.add-to-cart-anim.add button.adding').removeClass('added');						
                 },1500);		
             }
         }
@@ -20,9 +20,9 @@ $(document).ready(function(){
     
     prestashop.on('handleError',function (event) {
         if (event.eventType == "updateProductInCart") {
-            $('body').find('.product-add-to-cart .add button').switchClass('adding','failed');
+            $('body').find('.add-to-cart-anim.add button.adding').switchClass('adding','failed');
             setTimeout(function () {
-                $('body').find('.product-add-to-cart .add button').removeClass('failed');						
+                $('body').find('.add-to-cart-anim.add button.failed').removeClass('failed');						
             },3000);
         }
         waiting = 0;

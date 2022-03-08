@@ -206,10 +206,10 @@ function productConfigurableUpdatePage() {
 
 function productConfigurableSetButtonState(selectedArray) {
     if (selectedArray != undefined) {
-        $('.modal .product-add-to-cart .add button').prop('disabled',false);
+        $('.modal .add-to-cart-anim.add button').prop('disabled',false);
     }
     else{
-        $('.modal .product-add-to-cart .add button').prop('disabled',true);
+        $('.modal .add-to-cart-anim.add button').prop('disabled',true);
         console.log('disabled');
     }
 }
