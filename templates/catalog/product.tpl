@@ -116,8 +116,7 @@
              
              {block name='product_description_short'}{/block}
               
-            {if $product.is_customizable && count($product.customizations.fields)}
-                           <div class="product-actions">
+              <div class="product-actions">
                {block name='product_buy'}
                  <form action="{$urls.pages.cart}" method="post" id="add-to-cart-or-refresh">
                    <input type="hidden" name="token" value="{$static_token}">
@@ -151,7 +150,7 @@
                      {include file='catalog/_partials/product-discounts.tpl'}
                    {/block}
 
-                   <div class="hidden">
+                   <div class="{if $product.is_customizable && count($product.customizations.fields)}hidden{/if}">
                    
                     {block name='product_add_to_cart'}
                       {include file='catalog/_partials/product-add-to-cart.tpl'}
@@ -169,8 +168,7 @@
                {/block}
              </div>
  
-             
-            {/if}
+            
             
             {if $product.is_customizable && count($product.customizations.fields)}
               <button type="button" class="bg-main block border-0 cursor-pointer font-medium h-full hover:bg-main-hover overflow-hidden phone-wide:text-base px-4 py-3 relative rounded-full tablet:text-xl text-base text-center text-white transition uppercase w-full tablet:mb-6" data-toggle="modal" data-target="#productConfigurable">
