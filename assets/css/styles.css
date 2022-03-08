@@ -530,10 +530,10 @@ tr.show .view-wishlist-product i{
     @apply -translate-y-full
 }
 .add-to-cart-anim.add button.adding .success{
-    @apply translate-y-16
+    @apply translate-y-16 bg-main-dark
 }
 .add-to-cart-anim.add button.adding .error{
-    @apply translate-y-16
+    @apply translate-y-16 bg-main-dark
 }
 
 .add-to-cart-anim.add button.added span{
@@ -551,10 +551,10 @@ tr.show .view-wishlist-product i{
 }
 
 .add-to-cart-anim.add button.failed span{
-    @apply -translate-y-full
+    @apply -translate-y-full bg-main-dark
 }
 .add-to-cart-anim.add button.failed .error{
-    @apply opacity-100 translate-y-0
+    @apply opacity-100 translate-y-0 bg-main-dark
 }
 
 .page-product #blockcart-modal.modal.fade .modal-dialog{
