@@ -527,13 +527,13 @@ tr.show .view-wishlist-product i{
     @apply brightness-75
 }
 .add-to-cart-anim.add button.adding span{
-    @apply -translate-y-full
+    @apply -translate-y-full 
 }
 .add-to-cart-anim.add button.adding .success{
-    @apply translate-y-16
+    @apply translate-y-16 
 }
 .add-to-cart-anim.add button.adding .error{
-    @apply translate-y-16
+    @apply translate-y-16 
 }
 
 .add-to-cart-anim.add button.added span{
@@ -547,14 +547,20 @@ tr.show .view-wishlist-product i{
     @apply bg-require
 }
 .product-add-sample .add button.failed {
-    @apply bg-main-dark/50
+    @apply bg-main-dark/50 animate-pulse
 }
 
 .add-to-cart-anim.add button.failed span{
-    @apply -translate-y-full
+    @apply -translate-y-full bg-main-dark
 }
 .add-to-cart-anim.add button.failed .error{
-    @apply opacity-100 translate-y-0
+    @apply opacity-100 translate-y-0 
+}
+
+.product-add-sample .add-to-cart-anim.add button.added,
+.product-add-sample .add-to-cart-anim.add button.success,
+.product-add-sample .add-to-cart-anim.add button.adding{
+    @apply bg-main-dark
 }
 
 .page-product #blockcart-modal.modal.fade .modal-dialog{
