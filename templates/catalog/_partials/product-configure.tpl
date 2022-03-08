@@ -81,7 +81,7 @@
                         </div>
 
                         <div class="flex justify-center">
-                            <div class="w-full desktop-presta:max-w-[320px]">
+                            <div class="w-full">
                                 <div class="py-2 desktop-presta:py-0 desktop-presta:pb-6 product-add-to-cart">
                                     <div class="add flex-1">
                                         <button class="bg-main border-0 cursor-pointer font-medium h-full hover:bg-main-hover overflow-hidden phone-wide:text-base px-4 relative rounded-full tablet:text-xl text-base text-center text-white transition uppercase w-full" data-button-action="add-to-cart" disabled type="submit">
@@ -96,6 +96,19 @@
                             </div>
                         </div>
                         
+                    </div>
+                    <div>
+                        <div class="py-2 desktop-presta:py-0 desktop-presta:pb-6 product-add-sample">
+                            <div class="add flex-1">
+                                <button class="bg-transparent hover:bg-main-dark border-2 border-main-dark hover:border-main-dark cursor-pointer font-medium h-full overflow-hidden phone-wide:text-base px-4 relative rounded-full tablet:text-xl text-base text-center text-main-dark hover:text-white transition uppercase w-full" data-button-action="add-sample-to-cart" type="button">
+                                    <span class="transition duration-150">{l s='Dodaj do koszyka' d='Shop.Theme.Catalog'}</span>
+                                    <svg class="success" width="27" height="20" viewBox="0 0 27 20" fill="none" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" clip-rule="evenodd" d="M26.2442 0.487161C26.8949 1.13717 26.8954 2.19156 26.2454 2.84222L9.59263 19.5117C9.28039 19.8242 8.85673 19.9999 8.41493 20C7.97312 20.0001 7.54938 19.8247 7.23698 19.5123L0.487813 12.7631C-0.162518 12.1127 -0.162518 11.0583 0.487813 10.408C1.13815 9.75766 2.19254 9.75766 2.84287 10.408L8.41392 15.9791L23.8892 0.488338C24.5392 -0.162319 25.5936 -0.162846 26.2442 0.487161Z" fill="white"></path>
+                                    </svg>
+                                    <svg class="error" width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2.12109" y="0.000244141" width="29" height="3" rx="1" transform="rotate(45 2.12109 0.000244141)" fill="#fff"></rect> <rect y="20.5061" width="29" height="3" rx="1" transform="rotate(-45 0 20.5061)" fill="#fff"></rect>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
