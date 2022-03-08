@@ -12,13 +12,13 @@
                     <i class=" material-icons text-main-dark hover:text-main text-4xl transition select-none"></i>
                 </button>
                 
-                <h1 class="desktop-presta:hidden mt-5 desktop-presta:mt-0 flex-shrink-0 font-header product-detail-name text-[20px] tablet:text-[35px] tablet:leading-[45px] leading-24px mb-5 pr-[46px]" itemprop="name">
+                <h1 class="desktop-presta:hidden mt-5 desktop-presta:mt-0 flex-shrink-0 font-header product-detail-name text-2xl leading-24px mb-5 pr-[46px]" itemprop="name">
                     {block name='page_title'}
                         {$product.name}
                     {/block}
                 </h1>
 
-                <div class="flex justify-between flex-col bg-gray-1000 rounded-[5px] flex-auto w-full mx-auto max-w-screen-tablet-wide relative mt-12 desktop-presta:mt-0 overflow-hidden">
+                <div class="flex justify-between flex-col bg-gray-1000 rounded-[5px] flex-auto w-full mx-auto max-w-screen-tablet-wide relative mt-5 desktop-presta:mt-0 overflow-hidden">
                     <div class="w-full pt-5 px-5">
                         <span class="group inline-flex items-center w-8 h-8 desktop-presta:w-10 desktop-presta:h-10 text-gray-3000 hover:text-main">
                             <svg class="fill-current transition z-50" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
