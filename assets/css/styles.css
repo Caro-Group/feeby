@@ -512,49 +512,34 @@ tr.show .view-wishlist-product i{
     @apply marker:text-main text-sm tablet:text-base text-main-dark font-light mb-3;
 }
 
-
-
-.product-add-to-cart .add button span,
-.product-add-sample .add button span{
+.add-to-cart-anim.add button span{
     @apply block duration-200 py-3 top-0 transition w-full transform
 }
-.product-add-to-cart .add button .success,
-.product-add-sample .add button .success{
+.add-to-cart-anim.add button .success{
     @apply top-1/4 left-1/2 -ml-[14px] transition duration-200 transform translate-y-16 absolute
 }
-.product-add-to-cart .add button .error,
-.product-add-sample .add button .error{
+.add-to-cart-anim.add button .error{
     @apply top-1/4 left-1/2 -ml-[14px] transition duration-150 transform translate-y-16 absolute
 }
 
 
-.product-add-to-cart .add button.adding{
-    @apply bg-main-hover
-
+.add-to-cart-anim.add button.adding{
+    @apply brightness-75
 }
-.product-add-sample .add button.adding{
-    @apply bg-main-dark/50
-}
-
-.product-add-to-cart .add button.adding span,
-.product-add-sample .add button.adding span{
+.add-to-cart-anim.add button.adding span{
     @apply -translate-y-full
 }
-.product-add-to-cart .add button.adding .success,
-.product-add-sample .add button.adding .success{
+.add-to-cart-anim.add button.adding .success{
     @apply translate-y-16
 }
-.product-add-to-cart .add button.adding .error,
-.product-add-sample .add button.adding .error{
+.add-to-cart-anim.add button.adding .error{
     @apply translate-y-16
 }
 
-.product-add-to-cart .add button.added span,
-.product-add-sample .add button.added span{
+.add-to-cart-anim.add button.added span{
     @apply -translate-y-full
 }
-.product-add-to-cart .add button.added .success,
-.product-add-sample .add button.added .success{
+.add-to-cart-anim.add button.added .success{
     @apply opacity-100 translate-y-0
 }
 
@@ -565,12 +550,10 @@ tr.show .view-wishlist-product i{
     @apply bg-main-dark/50
 }
 
-.product-add-to-cart .add button.failed span,
-.product-add-sample .add button.failed span{
+.add-to-cart-anim.add button.failed span{
     @apply -translate-y-full
 }
-.product-add-to-cart .add button.failed .error,
-.product-add-sample .add button.failed .error{
+.add-to-cart-anim.add button.failed .error{
     @apply opacity-100 translate-y-0
 }
 
@@ -640,7 +623,7 @@ body .loader{
     @apply text-main;
 }
 
-.modal .product-add-to-cart .add button[disabled]{
+.modal .add-to-cart-anim.add button[disabled]{
     @apply cursor-not-allowed;
 }
 
