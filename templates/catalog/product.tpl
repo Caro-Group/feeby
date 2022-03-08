@@ -126,6 +126,10 @@
                    {block name='product_variants'}
                      {include file='catalog/_partials/product-variants.tpl'}
                    {/block}
+                   {if $product.is_customizable && count($product.customizations.fields)}
+                      <p class="font-body font-medium text-sm tablet:text-base text-gray-3000">{l s='Wypróbuj fototapetę przed zamówieniem ' d='Shop.Theme.Actions'}
+                      <button type="button" class="bg-transparent text-gray-3000 border-0 px-0 underline hover:text-main cursor-pointer transition " data-button-action="add-sample-to-cart" >{l s='zamów próbkę' d='Shop.Theme.Actions'}</button>.</p>
+                   {/if}
  
                    {block name='product_pack'}
                      {if $packItems}
@@ -172,7 +176,7 @@
             
             {if $product.is_customizable && count($product.customizations.fields)}
               <button type="button" class="bg-main block border-0 cursor-pointer font-medium h-full hover:bg-main-hover overflow-hidden phone-wide:text-base px-4 py-3 relative rounded-full tablet:text-xl text-base text-center text-white transition uppercase w-full tablet:mb-6" data-toggle="modal" data-target="#productConfigurable">
-              {l s='Zamów fototapetę' d='Shop.Theme.Actions'}
+                {l s='Zamów fototapetę' d='Shop.Theme.Actions'}
               </button>
               
             {/if}
