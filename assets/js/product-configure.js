@@ -54,6 +54,16 @@ $(document).ready(function () {
         }
     });
 
+    $('body').on('click','[data-button-action="add-sample-to-cart"]', function(){
+        productConfigurableUnSelectAll();
+        productConfigurableSetState();
+        productConfigurableWriteState();
+        productConfigurableSaveState();
+        $('[data-product-attribute]').eq( 5 ).trigger('click');
+        $('.hidden [data-button-action="add-to-cart"]').trigger('click');
+        window.location.reload();
+    });
+
     if (typeof prestashop !== 'undefined') {
         prestashop.on(
             'updatedProduct' ,
