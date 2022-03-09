@@ -20,8 +20,11 @@
                 {foreach from=$subcategories item=subcategory name=subcategory}
                     {if $subcategory.description|strstr:"<!-- ARTYSTA -->" !== "<!-- ARTYSTA -->"}
 					   {$count_sub = $count_sub + 1}
-                        <li class="clearfix {if isset($subcategory.subsubcategories)}level2 dropdown mb-2{/if} {if $id_widget == '1643877669' && $count_sub > 6}tablet-wide:hidden{/if}">
-                            <a href="{$link->getCategoryLink($subcategory.id_category, $subcategory.link_rewrite)|escape:'htmlall':'UTF-8'}" title="{$subcategory.name|escape:'htmlall':'UTF-8'}" class="img font-normal mr-2 transition hover:text-main text-main-dark {if $id_widget == '1642608476'}pointer-events-none{/if}" {if isset($subcategory.id_category)}data-category-id="{$subcategory.id_category}"{/if}>
+                        <li class="{if $id_widget == '1638828714' && isset($subcategory.id_category) && $subcategory.id_category == 194}hidden{/if} clearfix {if isset($subcategory.subsubcategories)}level2 dropdown mb-2{/if} {if $id_widget == '1643877669' && $count_sub > 6}tablet-wide:hidden{/if}">
+                            <a href="{$link->getCategoryLink($subcategory.id_category, $subcategory.link_rewrite)|escape:'htmlall':'UTF-8'}" title="{$subcategory.name|escape:'htmlall':'UTF-8'}" class="img font-normal mr-2 transition hover:text-main text-main-dark {if $id_widget == '1642608476'}pointer-events-none{/if}" {if $id_widget == '1638828714' && isset($subcategory.id_category) && ($subcategory.id_category == 389 || $subcategory.id_category == 59 || $subcategory.id_category == 617)}style="
+                                text-transform: uppercase;
+                                font-weight: 400;
+                            "{/if} {if isset($subcategory.id_category)}data-category-id="{$subcategory.id_category}"{/if}>
                                     {$subcategory.name|escape:'htmlall':'UTF-8'}
                             </a>
                             {if isset($subcategory.subsubcategories) && $subcategory.subsubcategories}
