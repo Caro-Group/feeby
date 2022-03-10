@@ -114,7 +114,11 @@
            <div class="product-information">
              {hook h='displayProductInformationTop'}
              
-             {block name='product_description_short'}{/block}
+             {block name='product_description_short'}
+              {if $product.description_short}
+                <div class="text-sm tablet:text-base text-main-dark font-body font-light" itemprop="description">{$product.description_short|strip_tags nofilter}</div>
+              {/if}
+             {/block}
               
               <div class="product-actions">
                {block name='product_buy'}
