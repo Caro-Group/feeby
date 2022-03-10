@@ -1,0 +1,138 @@
+<mjml>
+  <mj-head>
+    <mj-title>Feeby verify newsletter</mj-title>
+    <mj-font name="nomada didone" href="https://feeby.pl/themes/feeby/assets/css/fonts.css" />
+    <mj-style>
+      .main-text div{
+      font-size:35px !important;
+      }
+      .main-image * {
+      object-fit: cover !important;
+      }
+      .sub-text div{
+      padding: 0 100px !important;
+      }
+
+      @media (max-width: 600px){
+      .header table{
+      background-position: -10px 32% !important;
+      background-size:35% !important;
+      }
+
+      .main-text div{
+      font-size:25px !important;
+      text-align: center !important;
+      }
+
+      .main-image * {
+      width: 100% !important;
+      height:200px !important;
+      object-position: top;
+      }
+
+      .body-text {
+      padding: 40px !important;
+      line-height: 18px !important;
+      font-size: 14px !important;
+      }
+
+      .sub-text div{
+      padding: 0 20px !important;
+      }
+
+      .row .desc * {
+      text-align: center !important;
+      }
+
+      .row .desc td{
+      padding:10px 20px !important;
+      }
+
+      }
+    </mj-style>
+  </mj-head>
+  <mj-body>
+    <mj-section background-color="#fff" padding="0px">
+      <mj-group>
+        <mj-column vertical-align="middle">
+          <mj-image width="66px" href="{shop_url}" src="{shop_logo}" align="left" alt="Logo Feeby"></mj-image>
+        </mj-column>
+        <mj-column vertical-align="middle">
+          <mj-social align="right">
+            <mj-social-element background-color="#000" icon-size="30px" name="facebook"></mj-social-element>
+            <mj-social-element background-color="#000" icon-size="30px" name="instagram"></mj-social-element>
+          </mj-social>
+        </mj-column>
+      </mj-group>
+    </mj-section>
+
+    <mj-section css-class="header" background-color="#F8F8F8" background-url="{shop_url}/themes/feeby/assets/img/newsletter1.png" background-repeat="no-repeat" background-position="-20px 100%" background-size="20%" padding="0px">
+      <mj-column vertical-align="middle" width="60%">
+        <mj-text padding="80px 40px" css-class="main-text" color="#232322" font-family="nomada didone,sans" font-weight="300" font-style="italic">Aby odebrać zniżkę, potwierdź zapis do <span style="text-decoration:underline">newslettera!</span></mj-text>
+      </mj-column>
+      <mj-column vertical-align="middle" css-class="main-image" padding="0px" width="40%">
+        <mj-image height="350px" alt="main image" src="{shop_url}/themes/feeby/assets/img/mail_newsletter_header.png" padding="0px"></mj-image>
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#fff" padding="0">
+      <mj-column vertical-align="middle" padding="0px">
+        <mj-text css-class="body-text" font-family="Roboto,arial" font-size="15px" align="center" color="#232322" padding="40px 60px" font-weight="300" line-height="22px"> Potwierdź swój adres email aby otrzymywać porady dekoracyjne, inspiracje i nowości. Jeżeli zgadzasz się, abyśmy wysyłali newsletter na podany przez Ciebie adres e-mail, kliknij w poniższy komunikat:</mj-text>
+        <mj-button align="center" padding-bottom="50px" padding-left="0px" padding-right="0px" font-family="Roboto,arial" background-color="#DF1A5B" inner-padding="15px 15px" border-radius="9999px" text-transform="uppercase" font-size="14px" href="#">Potwierdź zapis do newsletter<img width="15px" src="{shop_url}/themes/feeby/assets/img/icons/ArrowRight.png" style="vertical-align: middle; padding-left:7px;"></mj-button>
+        <mj-text align="center" padding-bottom="0px" font-family="Roboto,arial" color="#232322" font-size="15px" font-weight="500"> Dziękujemy za zaufanie!</mj-text>
+        <mj-text align="center" padding-top="8px" padding-bottom="30px" font-family="Roboto,arial" color="#232322" font-size="15px" font-weight="300" font-style="italic" text-decoration="underline"> Zespół Feeby</mj-text>
+        <mj-text css-class="sub-text" align="center" padding-top="0" padding-bottom="50px" font-family="Roboto,Arial" color="#232322" font-size="10px" font-weight="300"> Właścicielem marki Feeby jest Caro sp. z o. o. sp. komandytowa, ul. Krośnieńska 12, 65-625 Zielona Góra, Polska</mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section css-class="row" padding="27px 10px" background-color="#F8F8F8">
+      <mj-column width="30%" vertical-align="middle">
+        <mj-image height="80px" src="{shop_url}/themes/feeby/assets/img/icons/mail_newsletter_icon1.png" padding="0px"></mj-image>
+      </mj-column>
+      <mj-column css-class="desc" padding-right="30px" width="70%" vertical-align="middle">
+        <mj-text padding="10px 0px" color="#232322" font-family="Roboto,arial" font-size="20px" font-weight="300">Twoje dane są bezpieczne</mj-text>
+        <mj-text padding="10px 0px" color="#232322" font-family="Roboto,arial" font-size="10px" line-height="16px" font-weight="300" align="justify">Potwierdzając zapis wyrażasz zgodę na przetwarzanie danych osobowych przez firmę Caro sp. z o. o. sp. komandytowa i otrzymywanie od nas informacji handlowych drogą elektroniczną. Twoje dane będą u nas bezpieczne. Wykorzystujemy je wyłącznie w celu wysyłki newslettera. Przysługuje Ci prawo dostępu do treści swoich danych oraz ich poprawiania. Zapoznaj się z naszą Polityką Prywatności.</mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section css-class="row" padding="27px 10px" background-color="#fff">
+      <mj-column width="30%" vertical-align="middle">
+        <mj-image align="center" height="80px" src="{shop_url}/themes/feeby/assets/img/icons/mail_newsletter_icon2.png" padding="0px"></mj-image>
+      </mj-column>
+      <mj-column css-class="desc" padding-right="30px" width="70%" vertical-align="middle">
+        <mj-text padding="10px 0px" color="#232322" font-family="Roboto,arial" font-size="20px" font-weight="300">Jesteśmy firmą godną zaufania</mj-text>
+        <mj-text padding="0px" color="#232322" font-family="Roboto,arial" font-size="10px" line-height="16px" font-weight="300" align="justify">Spółka zarejestrowana w Krajowym Rejestrze Sądowym pod numerem:</mj-text>
+        <mj-text padding="0px" color="#232322" font-family="Roboto,arial" font-size="10px" line-height="16px" font-weight="300">KRS 0000319417</mj-text>
+        <mj-text padding="0px" color="#232322" font-family="Roboto,arial" font-size="10px" line-height="16px" font-weight="300">REGON 080303534</mj-text>
+        <mj-text padding="0px" color="#232322" font-family="Roboto,arial" font-size="10px" line-height="16px" font-weight="300">VAT UE PL 9291807679</mj-text>
+        <mj-text padding="10px 0px" color="#232322" font-family="Roboto,arial" font-size="10px" line-height="16px" font-weight="300">
+          <a href="tel:+48696403333" style="text-decoration: none; color:#232322;font-family=Roboto,arial;"><span style="font-weight: 500;">Tel: </span>(+48) 696 403 333 </a>
+          <a href="mailto:sklep@feeby.pl" style="text-decoration: none; color:#232322;font-family=Roboto,arial;padding-left: 10px;"><span style="font-weight: 500;">E-mail: </span>sklep@feeby.pl</a>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section css-class="row" padding="27px 10px" background-color="#F8F8F8">
+      <mj-column width="30%" vertical-align="middle">
+        <mj-image height="80px" width="62px" src="{shop_url}/themes/feeby/assets/img/icons/mail_newsletter_icon3.png" padding="0px"></mj-image>
+      </mj-column>
+      <mj-column css-class="desc" padding-right="30px" width="70%" vertical-align="middle">
+        <mj-text padding="10px 0px" color="#232322" font-family="Roboto,arial" font-size="20px" font-weight="300">Zawsze możesz zmienić zdanie</mj-text>
+        <mj-text padding="10px 0px" color="#232322" font-family="Roboto,arial" font-size="10px" line-height="16px" font-weight="300" align="justify">W każdej chwili możesz wycofać swoją zgodę, klikając w link rezygnacji zamieszczony w każdej wiadomości, którą od nas otrzymasz. Jeśli nie chcesz otrzymywać od nas maili, prosimy o zignorowanie tej wiadomości. Twój adres nie zostanie aktywowany i nie będziesz otrzymywać naszych newsletterów.</mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section padding="0px" background-color="#fff">
+      <mj-column padding="0px" width="55%" vertical-align="middle" border-bottom="1px solid #F8F8F8">
+        <mj-text padding="21px 0" color="#232322" font-family="Roboto,arial" font-size="10px" font-weight="400" align="center">
+          <a href="https://feeby.pl/" style="margin:0 7px 0 0px; text-decoration:none; color:#232322"><img height="20px" width="20px" src="{shop_url}/themes/feeby/assets/img/icons/akar-icons_web.png" style="vertical-align: middle;">feeby.pl</a>
+          <a href="tel:+48696403333" style="margin:0 7px 0 15px; text-decoration:none; color:#232322"><img height="20px" width="20px" src="{shop_url}/themes/feeby/assets/img/icons/akar-icons_phone.png" style="vertical-align: middle;">+ 48 696 403 333</a>
+          <a href="mailto:sklep@feeby.pl" style="margin:0 0 0 15px; text-decoration:none; color:#232322"><img  height="20px" width="20px" src="{shop_url}/themes/feeby/assets/img/icons/fluent_mail-20-regular.png" style="vertical-align: middle; margin-right: 5px;">sklep@feeby.pl</a>
+        </mj-text>
+      </mj-column>
+      <mj-column width="45%" vertical-align="middle" border-bottom="1px solid #F8F8F8">
+        <mj-text padding="20px" padding="0" color="#232322" font-family="Roboto,arial" font-size="10px" font-weight="300" align="center">Feeby.pl, Krośnieńska 12, 65-625 Zielona Góra</mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>

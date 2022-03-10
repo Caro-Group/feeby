@@ -1,0 +1,122 @@
+<mjml>
+  <mj-head>
+    <mj-title>Feeby voucher</mj-title>
+    <mj-font name="nomada didone" href="{shop_url}/themes/feeby/assets/css/fonts.css" />
+    <mj-style>
+      .main-text div{
+      font-size:35px !important;
+      }
+      .main-image * {
+      object-fit: cover !important;
+      }
+      .sub-text div{
+      padding: 0 100px !important;
+      }
+      .contact{
+      padding: 40px 0 !important;
+      }
+      .contact-links{
+      padding-top: 30px !important;
+      }
+
+      @media (max-width: 600px){
+      .header table{
+      background-position: -10px 32% !important;
+      background-size:35% !important;
+      }
+
+      .main-text div{
+      font-size:25px !important;
+      text-align: center !important;
+      }
+
+      .main-image * {
+      width: 100% !important;
+      height:auto !important;
+      }
+
+      .body-text {
+      padding: 40px !important;
+      line-height: 18px !important;
+      font-size: 14px !important;
+      }
+
+      .sub-text div{
+      padding: 0 20px !important;
+      }
+
+      .row .desc * {
+      text-align: center !important;
+      }
+
+      .row .desc td{
+      padding:10px 20px !important;
+      }
+      
+      .narrow{
+      padding: 0px 20px 30px 20px !important;
+      }
+      
+      .contact{
+      padding: 30px 0 !important;
+      }
+      .contact-links{
+      padding-top: 20px !important;
+      }
+
+      }
+    </mj-style>
+  </mj-head>
+  <mj-body>
+    <mj-section background-color="#fff" padding="0px">
+      <mj-group>
+        <mj-column vertical-align="middle">
+          <mj-image width="66px" href="{shop_url}" src="{shop_logo}" align="left" alt="Logo Feeby"></mj-image>
+        </mj-column>
+        <mj-column vertical-align="middle">
+          <mj-social align="right">
+            <mj-social-element background-color="#000" icon-size="30px" name="facebook"></mj-social-element>
+            <mj-social-element background-color="#000" icon-size="30px" name="instagram"></mj-social-element>
+          </mj-social>
+        </mj-column>
+      </mj-group>
+    </mj-section>
+
+    <mj-section css-class="header" background-color="#F8F8F8" background-url="{shop_url}/themes/feeby/assets/img/newsletter1.png" background-repeat="no-repeat" background-position="-20px 100%" background-size="20%" padding="0px">
+      <mj-column vertical-align="middle" width="60%">
+        <mj-text padding="80px 40px" css-class="main-text" color="#232322" font-family="nomada didone,sans" font-weight="300" font-style="italic">Cieszymy się, </br> <span style="text-decoration:underline">że jesteś!</span></mj-text>
+      </mj-column>
+      <mj-column vertical-align="middle" css-class="main-image" padding="0px" width="40%">
+        <mj-image height="350px" alt="main image" src="{shop_url}/themes/feeby/assets/img/main_newsletter_header2.png" padding="0px"></mj-image>
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#fff" padding="0">
+      <mj-column vertical-align="middle" padding="10px 0px 0 0">
+        <mj-text css-class="body-text" font-family="Roboto,arial" font-size="15px" align="center" color="#232322" padding="30px 60px" font-weight="300" line-height="22px"> Teraz dowiesz się o nowych kolekcjach, ekskluzywnych ofertach i przeczytasz najnowsze artykuły w naszym magazynie przed innymi! </mj-text>
+                <mj-text css-class="narrow" align="center" padding="0 90px 30px 90px" font-family="Roboto,arial" color="#232322" font-size="15px" font-weight="500"> Oto Twój kod rabatowy, który daje 40 zł zniżki na wszystkie produkty przy następnym zakupie:</mj-text>
+        <mj-text align="center" padding="0 40px 30px 40px" font-family="Roboto,arial" color="#DF1A5B" font-size="35px" font-weight="500">SBG9Y7B2</mj-text>
+        <mj-text css-class="sub-text" align="center" padding-top="0" padding-bottom="50px" font-family="Roboto,Arial" color="#232322" font-size="10px" font-weight="300">*Twój kod Obowiązuje przy zamówieniach powyżej 200 zł. </br> Kod nie łączy się z innymi ofertami i zniżkami.</mj-text>
+      </mj-column>
+    </mj-section>
+<mj-section css-class="contact" background-color="#F8F8F8" padding="0">
+	<mj-column padding="0" >
+        <mj-text align="center" font-family="Roboto,arial" color="#232322" font-size="20px" font-weight="300" >Bądźmy w kontakcie!</mj-text>
+     <mj-text css-class="contact-links" padding="0" color="#232322" font-family="Roboto,arial" font-size="14px" font-weight="400" align="center">
+      <a href="mailto:sklep@feeby.pl" style="margin:0 20px 0 0px; text-decoration:none; color:#232322"><img height="30px" width="30px" src="{shop_url}/themes/feeby/assets/img/icons/fluent_mail-20-regular-main.png" style="vertical-align: middle;">sklep@feeby.pl</a>
+
+      <a href="tel:+48696403333" style="margin:0px; text-decoration:none; color:#232322"><img height="30px" width="30px" src="{shop_url}/themes/feeby/assets/img/icons/akar-icons_phone-main.png" style="vertical-align: middle;">+ 48 696 403 333</a>
+    </mj-text>
+
+  </mj-column>
+</mj-section>
+<mj-section padding="0px">
+	<mj-column padding="0px">     
+     <mj-text  align="center" padding="20px" font-family="Roboto,Arial" color="#232322" font-size="10px" font-weight="300"> Właścicielem marki Feeby jest Caro sp. z o. o. sp. komandytowa, ul. Krośnieńska 12, 65-625 Zielona Góra, Polska. Otrzymujesz ten newsletter, ponieważ subskrybujesz go na sklepie feeby.pl. Aby wypisać się z newslettera i usunąć swoje dane wypisz się z biuletynu.</mj-text>
+  </mj-column>
+</mj-section>
+
+
+
+  </mj-body>
+</mjml>
