@@ -26,7 +26,7 @@
   {foreach from=$groups key=id_attribute_group item=group}
     {if !empty($group.attributes)}
 
-      <div class="clearfix product-variants-item flex flex-col items-start mb-[40px] tablet:mb-5">
+      <div class="clearfix product-variants-item flex flex-col items-start mb-5">
         <span class="block text-[14px] text-gray-main text-base leading-normal mb-[10px] font-light">
           {if $group.group_name == "Rozmiar"}
             {l s='Choose size' d='Shop.Theme.Actions'}

@@ -20075,9 +20075,6 @@ body #search_filters .clear-all-wrapper {
   .product-quantity .add .btn:not(.add-to-cart) i {
     display: none; }
 
-.product-actions .product-variants {
-  margin: 0 0 30px; }
-
 .product-add-to-cart {
   padding-bottom: 25px; }
   .product-add-to-cart .control-label {
