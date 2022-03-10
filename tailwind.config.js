@@ -18,6 +18,7 @@ module.exports = {
       'phone-wide': '480px',
       'phablet': '560px',
       'tablet-small': '640px',
+      'trusted-breakpoint':'649px',
       'tablet': '768px',
       'tablet-medium': '992px',
       'tablet-wide': '1024px',
