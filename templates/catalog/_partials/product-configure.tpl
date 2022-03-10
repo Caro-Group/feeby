@@ -7,18 +7,18 @@
       <div class="modal-body p-0">
       
         <div data-product-configurable="modal" class="transition fixed inset-0 bg-main-dark bg-opacity-50 z-30 p-0 desktop-presta:px-12  desktop-presta:py-5 overflow-y-auto"  aria-labelledby="modal-title" role="dialog" aria-modal="true">
-            <div class="relative flex flex-col desktop-presta:flex-row bg-white desktop-presta:h-full overflow-y-auto desktop-presta:overflow-auto w-full content-max:mx-auto content-max:max-w-screen-content-max desktop-presta:rounded-[5px] p-5 desktop-presta:p-[50px] min-h-[640px] full-hd:min-h-[860px] ">
+            <div class="relative flex flex-col desktop-presta:flex-row bg-white h-full overflow-y-auto desktop-presta:overflow-auto w-full content-max:mx-auto content-max:max-w-screen-content-max desktop-presta:rounded-[5px] p-5 desktop-presta:p-[50px] min-h-[640px] full-hd:min-h-[860px] ">
                 <button data-dismiss="modal" aria-label="Close" class=" absolute top-5 right-5 desktop-presta:top-[50px] desktop-presta:right-[50px] transition cursor-pointer bg-transparent border-0 ">
                     <i class=" material-icons text-main-dark hover:text-main text-4xl transition select-none"></i>
                 </button>
                 
-                <h1 class="desktop-presta:hidden mt-5 desktop-presta:mt-0 flex-shrink-0 font-header product-detail-name text-xl leading-24px mb-5 pr-[46px]" itemprop="name">
+                <h1 class="max-w-screen-tablet-wide mx-auto w-full desktop-presta:hidden mt-5 desktop-presta:mt-0 flex-shrink-0 font-header product-detail-name text-xl leading-24px mb-5 pr-[46px]" itemprop="name">
                     {block name='page_title'}
                         {$product.name}
                     {/block}
                 </h1>
 
-                <div class="flex justify-between flex-col bg-gray-1000 rounded-[5px] flex-auto w-full mx-auto max-w-screen-tablet-wide relative mb-10 desktop-presta:mb-0 overflow-hidden">
+                <div class="flex justify-between flex-col flex-shrink-0 desktop-presta:flex-shrink bg-gray-1000 rounded-[5px] flex-auto w-full min-h-inherit mx-auto max-w-screen-tablet-wide relative mb-10 desktop-presta:mb-0 overflow-hidden">
                     <div class="w-full pt-5 px-5">
                         <span class="group inline-flex items-center w-8 h-8 desktop-presta:w-10 desktop-presta:h-10 text-gray-3000 hover:text-main">
                             <svg class="fill-current transition z-50" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -32,7 +32,7 @@
                             </div>
                         </span>
                     </div>
-                    <div class="max-w-[500px] desktop-wide:max-w-[650px] full-hd:max-w-[800px] w-full py-5 mx-auto z-10 ">
+                    <div class="max-w-[700px] desktop-wide:max-w-[650px] full-hd:max-w-[800px] w-full py-5 mx-auto z-10 ">
                         <div class="swiper" data-product-configurable="swiper">
                             <div class="swiper-wrapper items-center">
                                     <div class="swiper-slide size flex-1 phone-wide:flex-[0_1_30px]">
@@ -70,38 +70,39 @@
                     </div>
                 </div>
 
-                <div class="flex flex-col desktop-presta:flex-[0_0_320px] desktop-wide:flex-[0_0_610px] desktop-presta:pl-5 desktop-wide:pl-[50px]">
+                <div class="flex flex-col desktop-presta:flex-[0_0_320px] desktop-wide:flex-[0_0_610px] max-w-screen-tablet-wide mx-auto w-full desktop-presta:pl-5 desktop-wide:pl-[50px]">
                     <h1 class="hidden desktop-presta:block mt-5 desktop-presta:mt-0 flex-shrink-0 font-header product-detail-name text-[35px] leading-24px mb-5 pr-[46px]" itemprop="name">
                         {block name='page_title'}
                             {$product.name}
                         {/block}
                     </h1>
-                    <div class="desktop-presta:min-h-12 flex-1 desktop-presta:mr-2 desktop-presta:overflow-x-hidden desktop-presta:overflow-y-auto">
+                    <div class="min-h-12 flex-1 desktop-presta:mr-2 desktop-presta:overflow-x-hidden desktop-presta:overflow-y-auto">
                         {hook h='displayApSC' sc_key=sc3078189027}
                     </div>  
                     <div class="floating-bar bg-white bottom-0 desktop-presta:block fixed desktop-presta:static flex flex-shrink-0 items-center justify-between left-0 px-5 desktop-presta:px-0  w-full flex-shrink-0 border-0 border-t border-solid border-gray-2000 desktop-presta:border-t-0 z-10">
-                        <div class="py-2 desktop-presta:py-6 quickview">
-                            {block name='product_prices'}
-                                {include file='catalog/_partials/product-prices.tpl'}
-                            {/block}
-                        </div>
+                        <div class="max-w-screen-tablet-wide mx-auto">
+                            <div class="py-2 desktop-presta:py-6 quickview">
+                                {block name='product_prices'}
+                                    {include file='catalog/_partials/product-prices.tpl'}
+                                {/block}
+                            </div>
 
-                        <div class="flex justify-center">
-                            <div class="w-full">
-                                <div class="py-2 desktop-presta:py-0 desktop-presta:pb-6 product-add-to-cart">
-                                    <div class="add-to-cart-anim add flex-1">
-                                        <button class="bg-main border-0 cursor-pointer font-medium h-full hover:bg-main-hover overflow-hidden phone-wide:text-base px-4 relative rounded-full tablet:text-xl text-base text-center text-white transition uppercase duration-200 w-full" data-button-action="add-to-cart" disabled type="submit">
-                                            <span>{l s='Dodaj do koszyka' d='Shop.Theme.Catalog'}</span>
-                                            <svg class="success" width="27" height="20" viewBox="0 0 27 20" fill="none" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" clip-rule="evenodd" d="M26.2442 0.487161C26.8949 1.13717 26.8954 2.19156 26.2454 2.84222L9.59263 19.5117C9.28039 19.8242 8.85673 19.9999 8.41493 20C7.97312 20.0001 7.54938 19.8247 7.23698 19.5123L0.487813 12.7631C-0.162518 12.1127 -0.162518 11.0583 0.487813 10.408C1.13815 9.75766 2.19254 9.75766 2.84287 10.408L8.41392 15.9791L23.8892 0.488338C24.5392 -0.162319 25.5936 -0.162846 26.2442 0.487161Z" fill="white"></path>
-                                            </svg>
-                                            <svg class="error" width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2.12109" y="0.000244141" width="29" height="3" rx="1" transform="rotate(45 2.12109 0.000244141)" fill="#fff"></rect> <rect y="20.5061" width="29" height="3" rx="1" transform="rotate(-45 0 20.5061)" fill="#fff"></rect>
-                                            </svg>
-                                        </button>
+                            <div class="flex justify-center">
+                                <div class="w-full">
+                                    <div class="py-2 desktop-presta:py-0 desktop-presta:pb-6 product-add-to-cart">
+                                        <div class="add-to-cart-anim add flex-1">
+                                            <button class="bg-main border-0 cursor-pointer font-medium h-full hover:bg-main-hover overflow-hidden phone-wide:text-base px-4 relative rounded-full tablet:text-xl text-base text-center text-white transition uppercase duration-200 w-full" data-button-action="add-to-cart" disabled type="submit">
+                                                <span>{l s='Dodaj do koszyka' d='Shop.Theme.Catalog'}</span>
+                                                <svg class="success" width="27" height="20" viewBox="0 0 27 20" fill="none" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" clip-rule="evenodd" d="M26.2442 0.487161C26.8949 1.13717 26.8954 2.19156 26.2454 2.84222L9.59263 19.5117C9.28039 19.8242 8.85673 19.9999 8.41493 20C7.97312 20.0001 7.54938 19.8247 7.23698 19.5123L0.487813 12.7631C-0.162518 12.1127 -0.162518 11.0583 0.487813 10.408C1.13815 9.75766 2.19254 9.75766 2.84287 10.408L8.41392 15.9791L23.8892 0.488338C24.5392 -0.162319 25.5936 -0.162846 26.2442 0.487161Z" fill="white"></path>
+                                                </svg>
+                                                <svg class="error" width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2.12109" y="0.000244141" width="29" height="3" rx="1" transform="rotate(45 2.12109 0.000244141)" fill="#fff"></rect> <rect y="20.5061" width="29" height="3" rx="1" transform="rotate(-45 0 20.5061)" fill="#fff"></rect>
+                                                </svg>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        
+                        </div>           
                     </div>
                     <div>
                         <div class="py-2 desktop-presta:py-0 desktop-presta:pb-6 product-add-sample mb-16 desktop-presta:mb-0 mt-2 desktop-presta:mt-0 ">
