@@ -79,15 +79,15 @@
                     <div class="min-h-12 flex-1 desktop-presta:mr-2 desktop-presta:overflow-x-hidden desktop-presta:overflow-y-auto">
                         {hook h='displayApSC' sc_key=sc3078189027}
                     </div>  
-                    <div class="floating-bar bg-white bottom-0 desktop-presta:block fixed desktop-presta:static flex flex-shrink-0 items-center justify-between left-0 px-5 desktop-presta:px-0  w-full flex-shrink-0 border-0 border-t border-solid border-gray-2000 desktop-presta:border-t-0 z-10">
-                        <div class="max-w-screen-tablet-wide mx-auto">
+                    <div class="floating-bar bg-white bottom-0 fixed desktop-presta:static left-0 px-5 desktop-presta:px-0  w-full border-0 border-t border-solid border-gray-2000 desktop-presta:border-t-0 z-10">
+                        <div class=" flex desktop-presta:block flex-shrink-0 items-center justify-between max-w-screen-tablet-wide mx-auto w-full">
                             <div class="py-2 desktop-presta:py-6 quickview">
                                 {block name='product_prices'}
                                     {include file='catalog/_partials/product-prices.tpl'}
                                 {/block}
                             </div>
 
-                            <div class="flex justify-center">
+                            <div class="flex justify-center w-full max-w-[350px] desktop-presta:max-w-none">
                                 <div class="w-full">
                                     <div class="py-2 desktop-presta:py-0 desktop-presta:pb-6 product-add-to-cart">
                                         <div class="add-to-cart-anim add flex-1">
@@ -105,7 +105,7 @@
                         </div>           
                     </div>
                     <div>
-                        <div class="py-2 desktop-presta:py-0 desktop-presta:pb-6 product-add-sample mb-16 desktop-presta:mb-0 mt-2 desktop-presta:mt-0 ">
+                        <div class="w-full tablet-wide:max-w-[350px] desktop-presta:max-w-none desktop py-2 desktop-presta:py-0 desktop-presta:pb-6 product-add-sample mb-16 desktop-presta:mb-0 mt-2 desktop-presta:mt-0 ">
                             <div class="add-to-cart-anim add flex-1">
                                 <button class="bg-transparent hover:bg-main-dark border-2 border-main-dark hover:border-main-dark cursor-pointer font-medium h-full overflow-hidden phone-wide:text-base px-4 relative rounded-full tablet:text-xl text-base text-center text-main-dark hover:text-white transition uppercase duration-200 w-full" data-button-action="add-sample-to-cart" type="button">
                                     <span class="transition duration-150">{l s='Zamów próbkę' d='Shop.Theme.Catalog'}</span>
