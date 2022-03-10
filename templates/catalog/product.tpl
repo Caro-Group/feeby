@@ -67,7 +67,7 @@
             <ul class="flex flex-wrap float-left">
               {foreach from=$tags[$language.id] key=k item=value}
                 <li class="ml-1 mb-1">
-                  <a href="{$link->getPageLink('search', true, NULL, "tag={$value|urlencode}")}" class="hover:text-main text-gray-3000 text-xs transition">#{$value|escape:html:'UTF-8'}</a>
+                  <a href="{$link->getPageLink('search', true, NULL, "tag={$value|urlencode}")}" class="hover:text-main text-gray-3000 text-sm transition">#{$value|escape:html:'UTF-8'}</a>
                 </li>
               {/foreach}
             </ul>
