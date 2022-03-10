@@ -12,13 +12,13 @@
                     <i class=" material-icons text-main-dark hover:text-main text-4xl transition select-none"></i>
                 </button>
                 
-                <h1 class="desktop-presta:hidden mt-5 desktop-presta:mt-0 flex-shrink-0 font-header product-detail-name text-2xl leading-24px mb-5 pr-[46px]" itemprop="name">
+                <h1 class="desktop-presta:hidden mt-5 desktop-presta:mt-0 flex-shrink-0 font-header product-detail-name text-xl leading-24px mb-5 pr-[46px]" itemprop="name">
                     {block name='page_title'}
                         {$product.name}
                     {/block}
                 </h1>
 
-                <div class="flex justify-between flex-col bg-gray-1000 rounded-[5px] flex-auto w-full mx-auto max-w-screen-tablet-wide relative mt-5 desktop-presta:mt-0 mb-10 desktop-presta:mb-0 overflow-hidden">
+                <div class="flex justify-between flex-col bg-gray-1000 rounded-[5px] flex-auto w-full mx-auto max-w-screen-tablet-wide relative mb-10 desktop-presta:mb-0 overflow-hidden">
                     <div class="w-full pt-5 px-5">
                         <span class="group inline-flex items-center w-8 h-8 desktop-presta:w-10 desktop-presta:h-10 text-gray-3000 hover:text-main">
                             <svg class="fill-current transition z-50" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -50,7 +50,7 @@
                             </div>
                         </div>   
                     </div>
-                    <div class=" flex justify-between items-center flex-wrap gap-y-2.5 w-full pb-5 px-5 z-10 ">
+                    <div class=" flex justify-between items-center flex-wrap-reverse gap-y-2.5 w-full pb-5 px-5 z-10 ">
                         <div>
                             <p class="text-[10px] tablet:text-xs text-gray-3000 font-body font-normal mb-1">
                                 {l s='1. Rekomendujemy zamówienie próbki' d='Shop.Theme.Catalog'}
@@ -61,7 +61,7 @@
                             </p>
                             
                         </div>
-                        <a href="#" data-product-configurable="pdf" class="ml-auto p-1 focus:text-gray-3000 focus:hover:text-main flex-[0_0_auto] flex items-center text-sm text-gray-3000 hover:text-main transition font-body font-normal tablet:text-base">
+                        <a href="#" data-product-configurable="pdf" class="p-1 focus:text-gray-3000 focus:hover:text-main flex-[0_0_auto] flex items-center text-sm text-gray-3000 hover:text-main transition font-body font-normal tablet:text-base">
                             {l s='Pobierz PDF' d='Shop.Theme.Catalog'}
                             <svg class="ml-2 fill-current " width="20" height="26" viewBox="0 0 20 26"  xmlns="http://www.w3.org/2000/svg">
                                 <path d="M18.2734 23.5622C18.5822 23.5623 18.8795 23.6796 19.1052 23.8904C19.3308 24.1013 19.4681 24.3899 19.4891 24.698C19.5102 25.0061 19.4135 25.3107 19.2186 25.5503C19.0237 25.7899 18.7451 25.9465 18.4392 25.9886L18.2734 26H1.21853C0.909704 25.9999 0.612426 25.8826 0.386765 25.6718C0.161104 25.4609 0.0238862 25.1723 0.0028366 24.8642C-0.018213 24.5561 0.0784758 24.2515 0.273366 24.0119C0.468255 23.7723 0.746815 23.6157 1.05276 23.5736L1.21853 23.5622H18.2734ZM9.75735 0.00162528C10.0516 0.00203008 10.3358 0.108877 10.5574 0.302443C10.7791 0.496008 10.9232 0.763223 10.9632 1.05476L10.9746 1.22053V17.7862L15.795 12.9594C16.0012 12.7527 16.2747 12.6269 16.5658 12.6048C16.8568 12.5827 17.1462 12.6659 17.3812 12.8391L17.5193 12.9561C17.7262 13.1626 17.852 13.4365 17.8737 13.728C17.8955 14.0194 17.8118 14.309 17.638 14.5439L17.5209 14.6805L10.6252 21.5876L10.5114 21.69L10.3619 21.7858L10.3034 21.82L10.1555 21.8817L9.9605 21.9305L9.84673 21.9435L9.74922 21.9467C9.66674 21.9466 9.58449 21.9379 9.50382 21.9207L9.3738 21.8834C9.21933 21.8337 9.07665 21.7529 8.9545 21.6461L1.98238 14.6821C1.76372 14.4649 1.63548 14.1729 1.62346 13.8649C1.61143 13.5569 1.71653 13.2558 1.91758 13.0222C2.11864 12.7886 2.40072 12.6399 2.70705 12.6059C3.01339 12.5719 3.32121 12.6552 3.56857 12.8391L3.70509 12.9577L8.53682 17.7797V1.2189C8.53682 0.89563 8.66524 0.585597 8.89383 0.357008C9.12242 0.12842 9.43245 0 9.75572 0L9.75735 0.00162528Z"/>
@@ -71,12 +71,12 @@
                 </div>
 
                 <div class="flex flex-col desktop-presta:flex-[0_0_320px] desktop-wide:flex-[0_0_610px] desktop-presta:pl-5 desktop-wide:pl-[50px]">
-                    <h1 class="hidden desktop-presta:block mt-5 desktop-presta:mt-0 flex-shrink-0 font-header product-detail-name text-2xl  leading-24px mb-5 pr-[46px]" itemprop="name">
+                    <h1 class="hidden desktop-presta:block mt-5 desktop-presta:mt-0 flex-shrink-0 font-header product-detail-name text-xl  leading-24px mb-5 pr-[46px]" itemprop="name">
                         {block name='page_title'}
                             {$product.name}
                         {/block}
                     </h1>
-                    <div class="desktop-presta:min-h-12 desktop-presta:mr-2 desktop-presta:overflow-x-hidden desktop-presta:overflow-y-auto">
+                    <div class="desktop-presta:min-h-12 flex-1 desktop-presta:mr-2 desktop-presta:overflow-x-hidden desktop-presta:overflow-y-auto">
                         {hook h='displayApSC' sc_key=sc3078189027}
                     </div>  
                     <div class="floating-bar bg-white bottom-0 desktop-presta:block fixed desktop-presta:static flex flex-shrink-0 items-center justify-between left-0 px-5 desktop-presta:px-0  w-full flex-shrink-0 border-0 border-t border-solid border-gray-2000 desktop-presta:border-t-0 z-10">
@@ -104,7 +104,7 @@
                         
                     </div>
                     <div>
-                        <div class="py-2 desktop-presta:py-0 desktop-presta:pb-6 product-add-sample mb-[100px] desktop-presta:mb-0 mt-2 desktop-presta:mt-0 ">
+                        <div class="py-2 desktop-presta:py-0 desktop-presta:pb-6 product-add-sample mb-16 desktop-presta:mb-0 mt-2 desktop-presta:mt-0 ">
                             <div class="add-to-cart-anim add flex-1">
                                 <button class="bg-transparent hover:bg-main-dark border-2 border-main-dark hover:border-main-dark cursor-pointer font-medium h-full overflow-hidden phone-wide:text-base px-4 relative rounded-full tablet:text-xl text-base text-center text-main-dark hover:text-white transition uppercase duration-200 w-full" data-button-action="add-sample-to-cart" type="button">
                                     <span class="transition duration-150">{l s='Zamów próbkę' d='Shop.Theme.Catalog'}</span>
