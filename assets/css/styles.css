@@ -634,11 +634,11 @@ body .loader{
 }
 
 .floating-bar .product-prices div{
-    @apply flex-col
+    @apply flex-wrap;
 }
 
 .floating-bar .product-prices .product-price{
-    @apply text-2xl tablet:text-4xl
+    @apply text-2xl tablet:text-4xl;
 }
 
 
