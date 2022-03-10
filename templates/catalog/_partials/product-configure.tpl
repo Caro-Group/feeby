@@ -71,7 +71,7 @@
                 </div>
 
                 <div class="flex flex-col desktop-presta:flex-[0_0_320px] desktop-wide:flex-[0_0_610px] desktop-presta:pl-5 desktop-wide:pl-[50px]">
-                    <h1 class="hidden desktop-presta:block mt-5 desktop-presta:mt-0 flex-shrink-0 font-header product-detail-name text-xl  leading-24px mb-5 pr-[46px]" itemprop="name">
+                    <h1 class="hidden desktop-presta:block mt-5 desktop-presta:mt-0 flex-shrink-0 font-header product-detail-name text-[35px] leading-24px mb-5 pr-[46px]" itemprop="name">
                         {block name='page_title'}
                             {$product.name}
                         {/block}
