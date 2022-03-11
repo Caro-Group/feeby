@@ -194,12 +194,12 @@
               {hook h='displayProductButtons' product=$product}
                </div>
              {/if}
- 
 
- 
-             {block name='hook_display_reassurance'}
-               {hook h='displayReassurance'}
-             {/block}
+             <div {if !($product.is_customizable && count($product.customizations.fields))} class="tablet:pl-[95px]" {/if}>
+                {block name='hook_display_reassurance'}
+                  {hook h='displayReassurance'}
+                {/block}
+             </div>
  
            </div>
  

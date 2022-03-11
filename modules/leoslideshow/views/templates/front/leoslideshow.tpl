@@ -36,6 +36,8 @@
 					<img
 						class=" min-h-banner max-h-tablet min-w-full desktop-wide:h-banner-final object-left object-cover"
 						loading="{$lazyImg}"
+						width="1650"
+						height="750"
 						src="{$slider.main_image|escape:'html':'UTF-8'}">
 				</a>
 
