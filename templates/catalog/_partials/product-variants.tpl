@@ -73,10 +73,10 @@
 
           <ul id="group_{$id_attribute_group}" class="{if $group.name == "Rozmiar fototapety"} hidden {/if} flex flex-row flex-wrap">
             {foreach from=$group.attributes key=id_attribute item=group_attribute}
-              <li class="mb-2 w-auto">
-                <label class="mb-0 mr-2">
+              <li class="flex-1 mb-2">
+                <label class="mb-0 mr-2 h-full">
                   <input class="form-radio sr-only peer" type="radio" data-product-attribute="{$id_attribute_group}" name="group[{$id_attribute_group}]" value="{$id_attribute}" title="{$group_attribute.name}"{if $group_attribute.selected} checked="checked"{/if}>
-                  <span class="bg-gray-default block border-2 border-solid cursor-pointer p-3 peer-checked:border-main peer-checked:text-gray-main rounded text-[#BABABA] transition text-base tablet:text-[20px]">{$group_attribute.name}</span>
+                  <span class="bg-gray-default flex items-center text-center h-full border-2 border-solid cursor-pointer p-3 peer-checked:border-main peer-checked:text-gray-main rounded text-[#BABABA] transition text-base tablet:text-[20px]">{$group_attribute.name}</span>
                 </label>
               </li>
             {/foreach}
