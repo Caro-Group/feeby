@@ -62,12 +62,12 @@
 
        {assign var="tags" value=Tag::getProductTags(Tools::getValue('id_product'))}
         {if $tags[$language.id] != ''}
-          <div class="flex flex-row text-gray-3000 text-xs w-full tablet:w-3/5 tablet:pr-10">
+          <div class="flex flex-row text-gray-3000 text-xs w-full tablet:w-3/5 tablet:pr-10 text-sm">
             {l s='Tags' d='Shop.Theme.Catalog'}:
             <ul class="flex flex-wrap float-left">
               {foreach from=$tags[$language.id] key=k item=value}
                 <li class="ml-1 mb-1">
-                  <a href="{$link->getPageLink('search', true, NULL, "tag={$value|urlencode}")}" class="hover:text-main text-gray-3000 text-xs transition">#{$value|escape:html:'UTF-8'}</a>
+                  <a href="{$link->getPageLink('search', true, NULL, "tag={$value|urlencode}")}" class="hover:text-main text-gray-3000 text-sm transition">#{$value|escape:html:'UTF-8'}</a>
                 </li>
               {/foreach}
             </ul>
