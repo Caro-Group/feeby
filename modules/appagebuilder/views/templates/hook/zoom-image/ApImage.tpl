@@ -22,7 +22,7 @@
                 <div class="flex flex-col h-full group">
                 {/if}
                 <div class="overflow-hidden rounded-md h-full">
-                    <img data-pagespeed-no-transform
+                    <img
                         class="object-cover transform group-hover:scale-110 duration-2000 w-full h-full"
                         {if $aplazyload}loading="lazy" {/if}
                         src="{if isset($formAtts.image) && $formAtts.image}{$path|escape:'html':'UTF-8'}{$formAtts.image|escape:'html':'UTF-8'}{else}{if isset($formAtts.image_link)}{$formAtts.image_link|escape:'html':'UTF-8'}{/if}{/if}"

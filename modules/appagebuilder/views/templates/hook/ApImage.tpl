@@ -25,7 +25,7 @@
             <a href="{$formAtts.url}{*full url can not escape*}"
                 {(isset($formAtts.is_open) && $formAtts.is_open) ? 'target="_blank"' : ''|escape:'html':'UTF-8'}>
             {/if}
-            <img class="{if $aplazyload}lazy{/if} rounded-[5px]"
+            <img class="{if $aplazyload}lazy{/if} rounded-[5px] h-auto" {($formAtts.form_id|escape:'html':'UTF-8' == "form_18561261627433088") ? '' : 'data-pagespeed-no-transform'}
                 src="{if isset($formAtts.image) && $formAtts.image}{$path|escape:'html':'UTF-8'}{$formAtts.image|escape:'html':'UTF-8'}{else}{if isset($formAtts.image_link)}{$formAtts.image_link|escape:'html':'UTF-8'}{/if}{/if}"
                 class="{(isset($formAtts.animation) && $formAtts.animation != 'none') ? 'has-animation' : ''|escape:'html':'UTF-8'}"
                 {if isset($formAtts.animation) && $formAtts.animation != 'none'}
@@ -33,8 +33,9 @@
                 data-animation-delay="{$formAtts.animation_delay|escape:'html':'UTF-8'}" {/if}
                 title="{((isset($formAtts.title) && $formAtts.title) ? $formAtts.title : '')|escape:'html':'UTF-8'}"
                 alt="{((isset($formAtts.alt) && $formAtts.alt) ? $formAtts.alt : '')|escape:'html':'UTF-8'}"
-                style=" width:{((isset($formAtts.width) && $formAtts.width) ? $formAtts.width : 'auto')|escape:'html':'UTF-8'}; 
-                height:{((isset($formAtts.height) && $formAtts.height) ? $formAtts.height : 'auto')|escape:'html':'UTF-8'}" />
+                width="{((isset($formAtts.width) && $formAtts.width) ? $formAtts.width : 'auto')|escape:'html':'UTF-8'}"
+                height="{((isset($formAtts.height) && $formAtts.height) ? $formAtts.height : 'auto')|escape:'html':'UTF-8'}"
+                />
 
             {if isset($formAtts.url) && $formAtts.url}
             </a>
