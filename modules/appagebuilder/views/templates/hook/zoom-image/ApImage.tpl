@@ -23,7 +23,7 @@
                 {/if}
                 <div class="overflow-hidden rounded-md h-full">
                     <img
-                        class="object-cover transform group-hover:scale-110 duration-2000 w-full h-[170px] tablet:h-[460px] desktop:h-full"
+                        class="object-cover transform group-hover:scale-110 duration-2000 w-full h-[170px] desktop-presta:h-[460px] desktop:h-full"
                         {if $aplazyload}loading="lazy" {/if}
                         src="{if isset($formAtts.image) && $formAtts.image}{$path|escape:'html':'UTF-8'}{$formAtts.image|escape:'html':'UTF-8'}{else}{if isset($formAtts.image_link)}{$formAtts.image_link|escape:'html':'UTF-8'}{/if}{/if}"
                         class="{(isset($formAtts.animation) && $formAtts.animation != 'none') ? 'has-animation' : ''|escape:'html':'UTF-8'}"
