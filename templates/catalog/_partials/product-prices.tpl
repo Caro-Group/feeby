@@ -23,9 +23,6 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 {if $product.show_price}
-  {if isset($modalConfigurator)}
-    <span class="mr-2 text-2xl text-[#232322]">{$product.quantity} m² / </span>
-  {/if}
   <div class="product-prices">
     {block name='product_discount'}
       {if $product.has_discount}
