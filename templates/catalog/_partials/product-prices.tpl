@@ -22,12 +22,8 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
-{if $product.show_price}
+ {if $product.show_price}
   <div class="product-prices">
-    {if $displayUnitPrice }
-      <span class="mr-2 text-2xl text-[#232322]">{$product.minimal_quantity}</span><span class="mr-2 text-2xl text-[#232322]"> m² / </span>
-    {/if}
-    
     {block name='product_discount'}
       {if $product.has_discount}
         <div class="leading-none mb-1 product-discount text-[#BABABA] text-base line-through">
@@ -50,10 +46,12 @@
           <meta itemprop="priceCurrency" content="{$currency.iso_code}">
 
           <div class="current-price">
-            {if !$displayUnitPrice }
-              <span itemprop="price" content="{if $product.rounded_display_price}{$product.rounded_display_price}{else}{$product.price}{/if}">{$product.price}</span>  
+          {if isset($modalConfigurator)}
+              {assign var=currency value=Context::getContext()->currency}
+              <span class="mr-2 text-2xl text-[#232322]">{$product.minimal_quantity}</span><span class="mr-2 text-2xl text-[#232322]">m² / </span>
+              <span itemprop="price" content="{if $product.rounded_display_price}{$product.rounded_display_price}{else}{Context::getContext()->currentLocale->formatPrice($product.price_amount*$product.minimal_quantity,$currency->iso_code)}{/if}">{Context::getContext()->currentLocale->formatPrice($product.price_amount*$product.minimal_quantity,$currency->iso_code)}</span>  
             {else}
-              <span itemprop="price" content="{if $product.rounded_display_price}{$product.rounded_display_price}{else}{$product.price_amount*$product.minimal_quantity}{/if}">{$product.price_amount*$product.minimal_quantity}</span>  
+              <span itemprop="price" content="{if $product.rounded_display_price}{$product.rounded_display_price}{else}{$product.price}{/if}">{$product.price}</span>  
             {/if}
           </div>
         </div>
