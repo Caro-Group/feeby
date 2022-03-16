@@ -59,7 +59,6 @@ $(document).ready(function () {
         productConfigurableUnSelectAll()
         productConfigurableSetState()
         $('.hidden [data-button-action="add-to-cart"]').trigger('click')
-        window.location.reload() //ajax minicart reload
       }
     },
   )
@@ -73,14 +72,17 @@ $(document).ready(function () {
       productConfigurableWriteState('')
       productConfigurableSaveState()
       $('[data-product-attribute]').eq(5).trigger('click')
-      $('#quantity_wanted').val(1)
-      $('.hidden [data-button-action="add-to-cart"]').trigger('click')
-      window.location.reload()
     },
   )
 
   if (typeof prestashop !== 'undefined') {
     prestashop.on('updatedProduct', function (event) {
+      if ($('[data-product-attribute]').eq(5).is(':checked')) {
+        $('#quantity_wanted').val(1)
+        $('.hidden [data-button-action="add-to-cart"]').trigger('click')
+        productConfigurableUnSelectAll()
+      }
+
       $configurableElements
         .filter(function () {
           return $(this).data('productConfigurable') == 'modal'
