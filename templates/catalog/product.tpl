@@ -151,6 +151,7 @@
                    <hr class="border-gray-1000 block w-full"/>
                    
                    {block name='product_prices'}
+                      {assign var="perM" value=true}
                      {include file='catalog/_partials/product-prices.tpl'}
                    {/block}
                    

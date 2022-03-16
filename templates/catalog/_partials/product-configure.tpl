@@ -89,6 +89,7 @@
                         <div class=" flex desktop-presta:block flex-shrink-0 items-center justify-between max-w-screen-tablet-wide mx-auto w-full">
                             <div class="py-2 desktop-presta:py-6 quickview">                                
                                 {block name='product_prices'}
+                                    {assign var="modalConfigurator" value=false}
                                     {include file='catalog/_partials/product-prices.tpl'}
                                 {/block}
                             </div>
