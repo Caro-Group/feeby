@@ -49,8 +49,7 @@
           {if $displayUnitPrice}
               {assign var=currency value=Context::getContext()->currency}
               {if isset($perM) && $perM}
-                  <span class="mr-2 text-2xl text-[#232322]">1</span><span class="mr-2 text-2xl text-[#232322]">m² / </span>
-                <span itemprop="price" content="{if $product.rounded_display_price}{$product.rounded_display_price}{else}{$product.price}{/if}">{$product.price}</span>  
+                  <span itemprop="price" content="{if $product.rounded_display_price}{$product.rounded_display_price}{else}{$product.price}{/if}">{$product.price}</span> <span class="mr-2 text-2xl text-[#232322]">/ m²</span>
                 {else}
                   <span class="mr-2 text-2xl text-[#232322]">{$product.minimal_quantity}</span><span class="mr-2 text-2xl text-[#232322]">m² / </span>
                   <span itemprop="price" content="{if $product.rounded_display_price}{$product.rounded_display_price}{else}{Context::getContext()->currentLocale->formatPrice($product.price_amount*$product.minimal_quantity,$currency->iso_code)}{/if}">{Context::getContext()->currentLocale->formatPrice($product.price_amount*$product.minimal_quantity,$currency->iso_code)}</span>  
