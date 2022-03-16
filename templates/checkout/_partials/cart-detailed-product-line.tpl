@@ -48,38 +48,23 @@
       {if is_array($product.customizations) && $product.customizations|count}
         {block name='cart_detailed_product_line_customization'}
           {foreach from=$product.customizations item="customization"}
-            <a href="#" data-toggle="modal" data-target="#product-customizations-modal-{$customization.id_customization}">{l s='Product customization' d='Shop.Theme.Catalog'}</a>
-            <div class="modal fade customization-modal" id="product-customizations-modal-{$customization.id_customization}" tabindex="-1" role="dialog" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="{l s='Close' d='Shop.Theme.Global'}">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                    <h4 class="modal-title">{l s='Product customization' d='Shop.Theme.Catalog'}</h4>
-                  </div>
-                  <div class="modal-body">
-                    {foreach from=$customization.fields item="field"}
-                      <div class="product-customization-line row">
-                        <div class="col-sm-3 col-xs-4 label">
-                          {$field.label}
-                        </div>
-                        <div class="col-sm-9 col-xs-8 value">
-                          {if $field.type == 'text'}
-                            {if (int)$field.id_module}
-                              {$field.text nofilter}
-                            {else}
-                              {$field.text}
-                            {/if}
-                          {elseif $field.type == 'image'}
-                            <img src="{$field.image.small.url}">
-                          {/if}
-                        </div>
-                      </div>
-                    {/foreach}
-                  </div>
-                </div>
-              </div>
+            <div class="flex flex-row">
+            {foreach from=$customization.fields item="field"}
+              <span class="font-light mr-1 text-base text-main-dark">
+                {$field.label}:
+              </span>
+              <span class="font-light text-base text-main-dark">
+                {if $field.type == 'text'}
+                  {if (int)$field.id_module}
+                    {$field.text nofilter}
+                  {else}
+                    {$field.text|replace:'1':'A'|replace:'2':'B'|replace:'3':'C'|replace:'4':'D'|replace:'5':'E'|replace:',':', '}
+                  {/if}
+                {elseif $field.type == 'image'}
+                  <img src="{$field.image.small.url}">
+                {/if}
+              </span>
+            {/foreach}
             </div>
           {/foreach}
         {/block}
@@ -107,9 +92,10 @@
           </div>
         {/if}
         <div class="current-price text-right desktop-presta:text-left">
-      <span class="price text-base tablet:text-lg {if $product.has_discount} text-main {else} text-main-dark {/if} font-medium">{$product.price}</span>
           {if $product.unit_price_full}
-            <div class="unit-price-cart">{$product.unit_price_full}</div>
+           <span class="price text-base tablet:text-lg {if $product.has_discount} text-main {else} text-main-dark {/if} font-medium">{$product.unit_price_full}</span>
+          {else}
+            <span class="price text-base tablet:text-lg {if $product.has_discount} text-main {else} text-main-dark {/if} font-medium">{$product.price}</span>
           {/if}
         </div>
       </div>
@@ -125,17 +111,21 @@
         {if isset($product.is_gift) && $product.is_gift}
           <span class="gift-quantity">{$product.quantity}</span>
         {else}
-          <input
-            class="js-cart-line-product-quantity  -mr-5 border border-gray-2000 border-solid float-left focus:ring-0 font-normal h-[50px] pl-1 pr-5 py-3 rounded-md text-center text-lg w-[75px] "
-            data-down-url="{$product.down_quantity_url}"
-            data-up-url="{$product.up_quantity_url}"
-            data-update-url="{$product.update_quantity_url}"
-            data-product-id="{$product.id_product}"
-            type="number"
-            value="{$product.quantity}"
-            name="product-quantity-spin"
-            min="1"
-          />
+          {if is_array($product.customizations) && $product.customizations|count}
+            <span class="js-cart-line-product-quantity -mr-5 border border-gray-2000 border-solid float-left focus:ring-0 font-normal h-[50px] pl-2 pr-2 py-3 rounded-md text-center text-lg w-[75px] form-control">{$product.quantity}</span>
+          {else}
+            <input
+              class="js-cart-line-product-quantity  -mr-5 border border-gray-2000 border-solid float-left focus:ring-0 font-normal h-[50px] pl-1 pr-5 py-3 rounded-md text-center text-lg w-[75px] "
+              data-down-url="{$product.down_quantity_url}"
+              data-up-url="{$product.up_quantity_url}"
+              data-update-url="{$product.update_quantity_url}"
+              data-product-id="{$product.id_product}"
+              type="number"
+              value="{$product.quantity}"
+              name="product-quantity-spin"
+              min="1"
+            />
+          {/if}
         {/if}
       </div>
     </div>
