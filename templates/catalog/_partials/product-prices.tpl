@@ -46,7 +46,7 @@
           <meta itemprop="priceCurrency" content="{$currency.iso_code}">
 
           <div class="current-price">
-          {if isset($modalConfigurator)}
+          {if $displayUnitPrice}
               {assign var=currency value=Context::getContext()->currency}
               <span class="mr-2 text-2xl text-[#232322]">{$product.minimal_quantity}</span><span class="mr-2 text-2xl text-[#232322]">m² / </span>
               <span itemprop="price" content="{if $product.rounded_display_price}{$product.rounded_display_price}{else}{Context::getContext()->currentLocale->formatPrice($product.price_amount*$product.minimal_quantity,$currency->iso_code)}{/if}">{Context::getContext()->currentLocale->formatPrice($product.price_amount*$product.minimal_quantity,$currency->iso_code)}</span>  
