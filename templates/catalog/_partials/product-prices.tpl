@@ -55,12 +55,6 @@
               <span itemprop="price" content="{if $product.rounded_display_price}{$product.rounded_display_price}{else}{$product.price}{/if}">{$product.price}</span>
             {/if}
           </div>
-
-          {block name='product_unit_price'}
-            {if $displayUnitPrice}
-              <span itemprop="price">{l s='(%unit_price%)' d='Shop.Theme.Catalog' sprintf=['%unit_price%' => $product.unit_price_full]}</span>
-            {/if}
-          {/block}
         </div>
       {/block}
 
