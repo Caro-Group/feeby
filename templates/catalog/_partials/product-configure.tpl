@@ -88,8 +88,9 @@
                     <div class="floating-bar bg-white bottom-0 fixed desktop-presta:static left-0 px-5 desktop-presta:px-0  w-full border-0 border-t border-solid border-gray-2000 desktop-presta:border-t-0 z-10">
                         <div class=" flex desktop-presta:block flex-shrink-0 items-center justify-between max-w-screen-tablet-wide mx-auto w-full">
                             <div class="py-2 desktop-presta:py-6 quickview">
+                                <span class="mr-2 text-2xl text-[#232322]" data-product-configurable="quantity">{$product.quantity}</span><span class="mr-2 text-2xl text-[#232322]"> m² / </span>
+                                
                                 {block name='product_prices'}
-                                    {assign var="modalConfigurator" value=true}
                                     {include file='catalog/_partials/product-prices.tpl'}
                                 {/block}
                             </div>

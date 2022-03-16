@@ -80,7 +80,11 @@ $(document).ready(function () {
 
   if (typeof prestashop !== 'undefined') {
     prestashop.on('updatedProduct', function (event) {
-      //blokada przycisku
+      $configurableElements
+        .filter(function () {
+          return $(this).data('productConfigurable') == 'quantity'
+        })
+        .text(event.product_minimal_quantity)
     })
   }
 })
