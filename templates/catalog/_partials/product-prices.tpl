@@ -24,7 +24,7 @@
  *}
 {if $product.show_price}
   {if $displayUnitPrice }
-    <span class="mr-2 text-2xl text-[#232322]" data-product-configurable="quantity">{$product.quantity}</span><span class="mr-2 text-2xl text-[#232322]"> m² / </span>
+    <span class="mr-2 text-2xl text-[#232322]">{$product.minimal_quantity}</span><span class="mr-2 text-2xl text-[#232322]"> m² / </span>
   {/if}
   <div class="product-prices">
     {block name='product_discount'}
