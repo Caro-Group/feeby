@@ -64,7 +64,6 @@ $(document).ready(function () {
     },
   )
 
-  var sampleAddToCart = false
   $('body').on(
     'click',
     '[data-button-action="add-sample-to-cart"]',
@@ -74,16 +73,14 @@ $(document).ready(function () {
       productConfigurableWriteState()
       productConfigurableSaveState()
       $('[data-product-attribute]').eq(5).trigger('click')
-      sampleAddToCart = true
+      $('.hidden [data-button-action="add-to-cart"]').trigger('click')
+      window.location.reload()
     },
   )
 
   if (typeof prestashop !== 'undefined') {
     prestashop.on('updatedProduct', function (event) {
-      if (sampleAddToCart) {
-        $('.hidden [data-button-action="add-to-cart"]').trigger('click')
-        window.location.reload()
-      }
+      //blokada przycisku
     })
   }
 })
