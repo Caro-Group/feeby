@@ -70,7 +70,7 @@ $(document).ready(function () {
     function () {
       productConfigurableUnSelectAll()
       productConfigurableSetState()
-      productConfigurableWriteState()
+      productConfigurableWriteState('')
       productConfigurableSaveState()
       $('[data-product-attribute]').eq(5).trigger('click')
       $('#quantity_wanted').val(1)
@@ -201,11 +201,11 @@ function productConfigurableSetState() {
   })
 }
 
-function productConfigurableWriteState() {
+function productConfigurableWriteState($message) {
   $messageField = $('.product-customization-item')
     .first()
     .find('.product-message')
-  $messageField.val('')
+  $messageField.val($message ? $message : '')
   configurableSelected.forEach((product) => {
     if (product.selected) {
       $messageField.val(product.id + ',' + $messageField.val())
