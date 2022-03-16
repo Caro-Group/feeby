@@ -73,6 +73,7 @@ $(document).ready(function () {
       productConfigurableWriteState()
       productConfigurableSaveState()
       $('[data-product-attribute]').eq(5).trigger('click')
+      $('#quantity_wanted').val(1)
       $('.hidden [data-button-action="add-to-cart"]').trigger('click')
       window.location.reload()
     },
@@ -86,7 +87,7 @@ $(document).ready(function () {
         })
         .find('.product-prices')
         .first()
-        .replaceWith(data.product_prices)
+        .replaceWith(event.product_prices)
     })
   }
 })
