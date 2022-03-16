@@ -91,8 +91,7 @@
                                 <span class="mr-2 text-2xl text-[#232322]" data-product-configurable="quantity">{$product.quantity}</span><span class="mr-2 text-2xl text-[#232322]"> m² / </span>
                                 
                                 {block name='product_prices'}
-                                    {assign var="modalConfigurator" value=true}
-                                    {include file='catalog/_partials/product-prices.tpl'}
+                                    {include file='catalog/_partials/product-prices-configure.tpl'}
                                 {/block}
                             </div>
 
