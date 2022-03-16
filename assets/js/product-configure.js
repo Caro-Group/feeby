@@ -80,7 +80,7 @@ $(document).ready(function () {
       if ($('[data-product-attribute]').eq(5).is(':checked')) {
         $('#quantity_wanted').val(1)
         $('.hidden [data-button-action="add-to-cart"]').trigger('click')
-        productConfigurableUnSelectAll()
+        $('[data-product-attribute]').eq(1).trigger('click')
       }
 
       $configurableElements
