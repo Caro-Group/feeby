@@ -24,10 +24,6 @@
  *}
  {if $product.show_price}
   <div class="product-prices">
-    {if $displayUnitPrice }
-      <span class="mr-2 text-2xl text-[#232322]">{$product.minimal_quantity}</span><span class="mr-2 text-2xl text-[#232322]"> m² / </span>
-    {/if}
-    
     {block name='product_discount'}
       {if $product.has_discount}
         <div class="leading-none mb-1 product-discount text-[#BABABA] text-base line-through">
