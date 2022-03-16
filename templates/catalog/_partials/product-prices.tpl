@@ -23,6 +23,9 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 {if $product.show_price}
+  {if $displayUnitPrice }
+    <span class="mr-2 text-2xl text-[#232322]" data-product-configurable="quantity">{$product.quantity}</span><span class="mr-2 text-2xl text-[#232322]"> m² / </span>
+  {/if}
   <div class="product-prices">
     {block name='product_discount'}
       {if $product.has_discount}
@@ -46,12 +49,16 @@
           <meta itemprop="priceCurrency" content="{$currency.iso_code}">
 
           <div class="current-price">
-            <span itemprop="price" content="{if $product.rounded_display_price}{$product.rounded_display_price}{else}{$product.price}{/if}">{$product.price}</span>
+            {if !$displayUnitPrice }
+              <span itemprop="price" content="{if $product.rounded_display_price}{$product.rounded_display_price}{else}{$product.price_amount*$product.minimal_quantity}{/if}">{$product.price_amount*$product.minimal_quantity}</span>
+            {/else}
+              <span itemprop="price" content="{if $product.rounded_display_price}{$product.rounded_display_price}{else}{$product.price}{/if}">{$product.price}</span>
+            {/if}
           </div>
 
           {block name='product_unit_price'}
             {if $displayUnitPrice}
-              <p class="product-unit-price sub">{l s='(%unit_price%)' d='Shop.Theme.Catalog' sprintf=['%unit_price%' => $product.unit_price_full]}</p>
+              <span itemprop="price">{l s='(%unit_price%)' d='Shop.Theme.Catalog' sprintf=['%unit_price%' => $product.unit_price_full]}</span>
             {/if}
           {/block}
         </div>
