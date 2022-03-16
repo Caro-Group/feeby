@@ -82,9 +82,11 @@ $(document).ready(function () {
     prestashop.on('updatedProduct', function (event) {
       $configurableElements
         .filter(function () {
-          return $(this).data('productConfigurable') == 'quantity'
+          return $(this).data('productConfigurable') == 'modal'
         })
-        .text(event.product_minimal_quantity)
+        .find('.product-prices')
+        .first()
+        .replaceWith(data.product_prices)
     })
   }
 })
