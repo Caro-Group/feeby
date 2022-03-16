@@ -51,7 +51,7 @@
           <div class="current-price">
             {if !$displayUnitPrice }
               <span itemprop="price" content="{if $product.rounded_display_price}{$product.rounded_display_price}{else}{$product.price_amount*$product.minimal_quantity}{/if}">{$product.price_amount*$product.minimal_quantity}</span>
-            {/else}
+            {else}
               <span itemprop="price" content="{if $product.rounded_display_price}{$product.rounded_display_price}{else}{$product.price}{/if}">{$product.price}</span>
             {/if}
           </div>
