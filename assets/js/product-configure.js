@@ -96,9 +96,9 @@ $(document).ready(function () {
   if (typeof prestashop !== 'undefined') {
     prestashop.on('updatedProduct', function (event) {
       var imageVariant = $(event.product_images_modal)
-        .find('img.selected')
+        .find('img.js-modal-product-cover')
         .first()
-        .data().imageLargeSrc
+        .attr('src')
 
       $configurableElements
         .filter(function () {
