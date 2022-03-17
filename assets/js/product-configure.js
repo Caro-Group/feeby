@@ -95,8 +95,8 @@ $(document).ready(function () {
 
   if (typeof prestashop !== 'undefined') {
     prestashop.on('updatedProduct', function (event) {
-      var imageVariant = $(event.product_images_modal)
-        .find('img.js-modal-product-cover')
+      var imageVariant = $(event.product_cover_thumbnails)
+        .find('img.js-qv-product-cover')
         .first()
         .attr('src')
 
