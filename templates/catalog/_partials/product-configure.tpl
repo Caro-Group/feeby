@@ -18,7 +18,7 @@
                     {/block}
                 </h1>
 
-                <div class="flex justify-between flex-col flex-shrink-0 desktop-presta:flex-shrink bg-gray-1000 rounded-[5px] flex-auto w-full min-h-inherit mx-auto max-w-screen-tablet-wide relative mb-10 desktop-presta:mb-0 overflow-hidden">
+                <div class="flex justify-between flex-col flex-shrink-0 desktop-presta:flex-shrink bg-gray-1000 rounded-[5px] flex-auto w-full min-h-inherit mx-auto max-w-screen-tablet-wide relative mb-10 desktop-presta:mb-0 overflow-auto">
                     <div class="w-full pt-5 px-5">
                         <span class="group inline-flex items-center w-8 h-8 desktop-presta:w-10 desktop-presta:h-10 text-gray-3000 hover:text-main">
                             <svg class="fill-current transition z-50" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
