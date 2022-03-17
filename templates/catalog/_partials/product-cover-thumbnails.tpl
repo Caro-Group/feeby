@@ -27,7 +27,7 @@
       {block name='product_cover'}
         <div class="product-cover border-2 border-solid rounded-[5px] border-gray-default">
         {if $product.default_image}
-          <img id="zoom_product" data-type-zoom="" class="js-qv-product-cover img-fluid" src="{$product.default_image.bySize.large_default.url}" alt="{$product.default_image.legend}" title="{$product.default_image.legend}" itemprop="image">
+          <img id="zoom_product" data-type-zoom="" class="js-qv-product-cover img-fluid" src="{$product.default_image.bySize.large_default.width}" src="{$link->getImageLink($product->link_rewrite, $product.cover.id_image)}" alt="{$product.default_image.legend}" title="{$product.default_image.legend}" itemprop="image">
           <div class="layer hidden-sm-down" data-toggle="modal" data-target="#product-modal">
             <i class="material-icons zoom-in">&#xE8FF;</i>
           </div>
