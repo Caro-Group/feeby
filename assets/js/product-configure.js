@@ -92,6 +92,22 @@ $(document).ready(function () {
         .replaceWith(event.product_prices)
     })
   }
+
+  if (typeof prestashop !== 'undefined') {
+    prestashop.on('updatedProduct', function (event) {
+      var imageVariant = $(event.product_images_modal)
+        .find('img.selected')
+        .first()
+        .data().imageLargeSrc
+
+      $configurableElements
+        .filter(function () {
+          return $(this).data('productConfigurable') == 'swiper'
+        })
+        .find('img')
+        .attr('src', imageVariant)
+    })
+  }
 })
 
 function productConfigurableSwiper() {
