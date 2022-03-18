@@ -1,4 +1,5 @@
 var configurableSelected = []
+var tempSelectedIds = []
 
 $(document).ready(function () {
   // Cache
@@ -59,6 +60,7 @@ $(document).ready(function () {
         productConfigurableUnSelectAll()
         productConfigurableSetState()
         $('.hidden [data-button-action="add-to-cart"]').trigger('click')
+        productConfigurableSelect(1)
       }
     },
   )
@@ -67,21 +69,28 @@ $(document).ready(function () {
     'click',
     '[data-button-action="add-sample-to-cart"]',
     function () {
+      tempSelectedIds = configurableSelected.filter(
+        (product) => product.selected === true,
+      )
       productConfigurableUnSelectAll()
       productConfigurableSetState()
       productConfigurableWriteState('')
       productConfigurableSaveState()
       $('[data-product-attribute]').eq(5).trigger('click')
     },
-  )
+    )
+    
+    if (typeof prestashop !== 'undefined') {
+      prestashop.on('updatedProduct', function (event) {
+        if ($('[data-product-attribute]').eq(5).is(':checked')) {
+          $('#quantity_wanted').val(1)
+          $('.hidden [data-button-action="add-to-cart"]').trigger('click')
 
-  if (typeof prestashop !== 'undefined') {
-    prestashop.on('updatedProduct', function (event) {
-      if ($('[data-product-attribute]').eq(5).is(':checked')) {
-        $('#quantity_wanted').val(1)
-        $('.hidden [data-button-action="add-to-cart"]').trigger('click')
-        $('[data-product-attribute]').eq(1).trigger('click')
-      }
+          tempSelectedIds.forEach(product => {
+            productConfigurableSelect(product.id);
+          })
+        }
+        
 
       $configurableElements
         .filter(function () {
@@ -204,7 +213,6 @@ function productConfigurableSelect(productId) {
 }
 
 function productConfigurableUnSelectAll() {
-  $('[data-product-attribute]').eq(1).trigger('click')
   configurableSelected.forEach((product) => {
     product['selected'] = false
   })
