@@ -4,6 +4,9 @@ $(document).ready(function(){
     $('body').on('click','.add-to-cart-anim.add button',function(){
         $(this).addClass('adding');
         waiting++;
+        if ($(this).data('buttonAction')=="add-sample-to-cart"){
+            waiting--;
+        }
     });
     
     prestashop.on('updateCart', function (event) {
@@ -12,7 +15,7 @@ $(document).ready(function(){
             if (waiting <= 0 ) {
                 $('body').find('.add-to-cart-anim.add button.adding').switchClass('adding','added');
                 setTimeout(function () {
-                    $('body').find('.add-to-cart-anim.add button.adding').removeClass('added');						
+                    $('body').find('.add-to-cart-anim.add button.added').removeClass('added');						
                 },1500);		
             }
         }
@@ -31,7 +34,7 @@ $(document).ready(function(){
     // HIDING POPUP
     $('body').on('shown.bs.modal', '#blockcart-modal',function(){
       
-        $('.modal').modal('hide').fadeOut();
+        $('.modal#blockcart-modal').modal('hide').fadeOut();
         $('.modal-backdrop').fadeOut(); 
     })
 
