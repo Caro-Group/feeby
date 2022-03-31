@@ -68,10 +68,11 @@
 {block name="setting"}
   {include file="layouts/setting.tpl"}
 {/block}
-{block name='stylesheets'}
-  {include file="_partials/stylesheets.tpl" stylesheets=$stylesheets}
+{block name='hook_before_body_closing_tag' append}
+  {block name='stylesheets'}
+    {include file="_partials/stylesheets.tpl" stylesheets=$stylesheets}
+  {/block}
 {/block}
-
 {*
 
 Classes used in builder: 
