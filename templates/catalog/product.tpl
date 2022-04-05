@@ -49,6 +49,12 @@
  
  {block name='content'}  
  
+  {foreach from=$product->features item=$feature}
+    {if $feature.name == 'Konfigurowalny' && $feature.value == 'Tak'}
+      {include file="catalog/_partials/product-configure.tpl" product=$product}  
+    {/if}
+  {/foreach}
+  
    {if isset($product.productLayout) && $product.productLayout != ''}
      {hook h='displayLeoProfileProduct' product=$product typeProduct='detail'}
    {else}
@@ -108,15 +114,13 @@
            <div class="product-information">
              {hook h='displayProductInformationTop'}
              
-             {block name='product_description_short'}{/block}
- 
-             {if $product.is_customizable && count($product.customizations.fields)}
-               {block name='product_customization'}
-                 {include file="catalog/_partials/product-customization.tpl" customizations=$product.customizations}
-               {/block}
-             {/if}
- 
-             <div class="product-actions">
+             {block name='product_description_short'}
+              {if $product.description_short}
+                <div class="text-sm tablet:text-base text-main-dark font-body font-light" itemprop="description">{$product.description_short|strip_tags nofilter}</div>
+              {/if}
+             {/block}
+              
+              <div class="product-actions">
                {block name='product_buy'}
                  <form action="{$urls.pages.cart}" method="post" id="add-to-cart-or-refresh">
                    <input type="hidden" name="token" value="{$static_token}">
@@ -126,6 +130,10 @@
                    {block name='product_variants'}
                      {include file='catalog/_partials/product-variants.tpl'}
                    {/block}
+                   {if $product.is_customizable && count($product.customizations.fields)}
+                      <p class="font-body font-medium text-sm tablet:text-base text-gray-3000">{l s='Wypróbuj fototapetę przed zamówieniem ' d='Shop.Theme.Actions'}
+                      <button type="button" class="bg-transparent text-gray-3000 border-0 px-0 underline hover:text-main cursor-pointer transition " data-button-action="add-sample-to-cart" >{l s='zamów próbkę' d='Shop.Theme.Actions'}</button>.</p>
+                   {/if}
  
                    {block name='product_pack'}
                      {if $packItems}
@@ -143,34 +151,56 @@
                    <hr class="border-gray-1000 block w-full"/>
                    
                    {block name='product_prices'}
+                      {assign var="perM" value=true}
                      {include file='catalog/_partials/product-prices.tpl'}
                    {/block}
                    
                    {block name='product_discounts'}
                      {include file='catalog/_partials/product-discounts.tpl'}
                    {/block}
- 
-                   {block name='product_add_to_cart'}
-                     {include file='catalog/_partials/product-add-to-cart.tpl'}
-                   {/block}
- 
-                   {block name='product_additional_info'}
-                     {include file='catalog/_partials/product-additional-info.tpl'}
-                   {/block}
- 
+
+                   <div class="{if $product.is_customizable && count($product.customizations.fields)}hidden{/if}">
+                   
+                    {block name='product_add_to_cart'}
+                      {include file='catalog/_partials/product-add-to-cart.tpl'}
+                    {/block}
+  
+                    {block name='product_additional_info'}
+                      {include file='catalog/_partials/product-additional-info.tpl'}
+                    {/block}
+  
+                   </div>
+                   
                    {* Input to refresh product HTML removed, block kept for compatibility with themes *}
                    {block name='product_refresh'}{/block}
                  </form>
                {/block}
              </div>
  
-             {hook h='displayProductButtons' product=$product}
-               
-             <div {if !($product.is_customizable && count($product.customizations.fields))} class="tablet:pl-[95px]" {/if}>
-                {block name='hook_display_reassurance'}
-                  {hook h='displayReassurance'}
-                {/block}
-             </div>
+            
+            
+            {if $product.is_customizable && count($product.customizations.fields)}
+              <button type="button" class="bg-main block border-0 cursor-pointer font-medium h-full hover:bg-main-hover overflow-hidden phone-wide:text-base px-4 py-3 relative rounded-full tablet:text-xl text-base text-center text-white transition uppercase w-full tablet:mb-6" data-toggle="modal" data-target="#productConfigurable">
+                {l s='Zamów fototapetę' d='Shop.Theme.Actions'}
+              </button>
+              
+            {/if}
+            
+            {if $product.is_customizable && count($product.customizations.fields)}
+              <div class="hidden">
+              {block name='product_customization'}
+                {include file="catalog/_partials/product-customization.tpl" customizations=$product.customizations}
+              {/block}
+              
+              {hook h='displayProductButtons' product=$product}
+               </div>
+             {/if}
+ 
+
+ 
+             {block name='hook_display_reassurance'}
+               {hook h='displayReassurance'}
+             {/block}
  
            </div>
  

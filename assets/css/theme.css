@@ -3513,9 +3513,6 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
   background-color: transparent;
   border: 0; }
 
-.invisible {
-  visibility: hidden !important; }
-
 .hidden-xs-up {
   display: none !important; }
 
@@ -20077,9 +20074,6 @@ body #search_filters .clear-all-wrapper {
       font-size: 9px; } }
   .product-quantity .add .btn:not(.add-to-cart) i {
     display: none; }
-
-.product-actions .product-variants {
-  margin: 0 0 30px; }
 
 .product-add-to-cart {
   padding-bottom: 25px; }

@@ -26,12 +26,12 @@
   {foreach from=$groups key=id_attribute_group item=group}
     {if !empty($group.attributes)}
 
-      <div class="clearfix product-variants-item flex flex-col items-start mb-[40px] tablet:mb-5">
+      <div class="clearfix product-variants-item flex flex-col items-start mb-5">
         <span class="block text-[14px] text-gray-main text-base leading-normal mb-[10px] font-light">
           {if $group.group_name == "Rozmiar"}
             {l s='Choose size' d='Shop.Theme.Actions'}
+          {elseif $group.name != "Rozmiar fototapety"}
           {elseif $group.group_name == "Rodzaj fototapety"}
-          {else}
             {$group.name}
           {/if}
         </span>
@@ -51,19 +51,19 @@
 
         {elseif $group.group_type == 'color'}
 
-          <ul id="group_{$id_attribute_group}">
+          <ul id="group_{$id_attribute_group}" class="flex w-full">
             {foreach from=$group.attributes key=id_attribute item=group_attribute}
-              <li class="float-xs-left input-container">
+              <li class="input-container w-24  tablet:max-w-[166px] tablet:w-full mr-5">
                 <label aria-label="{$group_attribute.name}" class="flex flex-col">
-                  <input class="input-color" type="radio" data-product-attribute="{$id_attribute_group}" name="group[{$id_attribute_group}]" value="{$id_attribute}" title="{$group_attribute.name}"{if $group_attribute.selected} checked="checked"{/if}>
+                  <input class="input-color peer" type="radio" data-product-attribute="{$id_attribute_group}" name="group[{$id_attribute_group}]" value="{$id_attribute}" title="{$group_attribute.name}"{if $group_attribute.selected} checked="checked"{/if}>
                   <span
                     {if $group_attribute.texture}
-                      class="color texture" style="background-image: url({$group_attribute.texture})"
+                      class="color texture w-full h-20 tablet:h-[120px] bg-no-repeat bg-cover rounded-[5px] border-2 border-solid border-white hover:border-white peer-checked:border-main opacity-50 peer-checked:opacity-100 transition shadow-none" style="background-image: url({$group_attribute.texture})"
                     {elseif $group_attribute.html_color_code}
-                      class="color" style="background-color: {$group_attribute.html_color_code}" 
+                      class="color w-10 h-10 rounded-[5px]" style="background-color: {$group_attribute.html_color_code}" 
                     {/if}
                   ></span>
-                  <span class="text-black text-center p-0 pt-[10px]">{$group_attribute.name}</span>
+                  <span class="text-main-dark text-base tablet-medium:text-2xl p-0 pt-[10px] text-center">{$group_attribute.name}</span>
                 </label>
               </li>
             {/foreach}
@@ -71,7 +71,7 @@
 
         {elseif $group.group_type == 'radio'}
 
-          <ul id="group_{$id_attribute_group}" class="flex flex-row flex-wrap">
+          <ul id="group_{$id_attribute_group}" class="{if $group.name == "Rozmiar fototapety"} hidden {/if} flex flex-row flex-wrap">
             {foreach from=$group.attributes key=id_attribute item=group_attribute}
               <li class="flex-1 mb-2">
                 <label class="mb-0 mr-2 h-full">

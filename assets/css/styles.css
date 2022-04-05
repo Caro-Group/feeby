@@ -512,57 +512,55 @@ tr.show .view-wishlist-product i{
     @apply marker:text-main text-sm tablet:text-base text-main-dark font-light mb-3;
 }
 
-
-
-.product-add-to-cart .add button span{
+.add-to-cart-anim.add button span{
     @apply block duration-200 py-3 top-0 transition w-full transform
 }
-.product-add-to-cart .add button .success{
+.add-to-cart-anim.add button .success{
     @apply top-1/4 left-1/2 -ml-[14px] transition duration-200 transform translate-y-16 absolute
 }
-.product-add-to-cart .add button .error{
+.add-to-cart-anim.add button .error{
     @apply top-1/4 left-1/2 -ml-[14px] transition duration-150 transform translate-y-16 absolute
 }
 
 
-.product-add-to-cart .add button span{
-    @apply block duration-200 py-3 top-0 transition w-full transform
+.add-to-cart-anim.add button.adding{
+    @apply brightness-75
 }
-.product-add-to-cart .add button .success{
-    @apply top-1/4 left-1/2 -ml-[14px] transition duration-200 transform translate-y-16 absolute
+.add-to-cart-anim.add button.adding span{
+    @apply -translate-y-full 
 }
-.product-add-to-cart .add button .error{
-    @apply top-1/4 left-1/2 -ml-[14px] transition duration-150 transform translate-y-16 absolute
+.add-to-cart-anim.add button.adding .success{
+    @apply translate-y-16 
 }
-
-.product-add-to-cart .add button.adding{
-    @apply bg-main-hover
-}
-.product-add-to-cart .add button.adding span{
-    @apply -translate-y-full
-}
-.product-add-to-cart .add button.adding .success{
-    @apply translate-y-16
-}
-.product-add-to-cart .add button.adding .error{
-    @apply translate-y-16
+.add-to-cart-anim.add button.adding .error{
+    @apply translate-y-16 
 }
 
-.product-add-to-cart .add button.added span{
+.add-to-cart-anim.add button.added span{
     @apply -translate-y-full
 }
-.product-add-to-cart .add button.added .success{
+.add-to-cart-anim.add button.added .success{
     @apply opacity-100 translate-y-0
 }
 
 .product-add-to-cart .add button.failed {
     @apply bg-require
 }
-.product-add-to-cart .add button.failed span{
-    @apply -translate-y-full
+.product-add-sample .add button.failed {
+    @apply bg-main-dark/50 animate-pulse
 }
-.product-add-to-cart .add button.failed .error{
-    @apply opacity-100 translate-y-0
+
+.add-to-cart-anim.add button.failed span{
+    @apply -translate-y-full bg-main-dark
+}
+.add-to-cart-anim.add button.failed .error{
+    @apply opacity-100 translate-y-0 
+}
+
+.product-add-sample .add-to-cart-anim.add button.added,
+.product-add-sample .add-to-cart-anim.add button.success,
+.product-add-sample .add-to-cart-anim.add button.adding{
+    @apply bg-main-dark
 }
 
 .page-product #blockcart-modal.modal.fade .modal-dialog{
@@ -578,6 +576,51 @@ z-index: 9999;
 .page-cms.cms-id-26 .page-header h1{
     @apply max-w-lg mx-auto text-center
 }
+
+
+
+
+[data-product-configurable="swiper"] .swiper-slide img{
+    @apply  opacity-40 transition duration-200;
+    -webkit-user-drag: none;
+}
+
+[data-product-configurable="swiper"] .swiper-slide:hover img{
+    @apply desktop-presta:opacity-70 transition duration-200;
+}
+
+[data-product-configurable="swiper"] .swiper-wrapper .swiper-slide.selected img{
+    @apply opacity-100;
+}
+
+[data-product-configurable="swiper"] .swiper-wrapper .swiper-slide.selected:hover img{
+    @apply opacity-100;
+}
+
+[data-product-configurable="swiper"] .swiper-wrapper .swiper-slide{
+    @apply w-[100px] phablet:w-[150px];
+}
+
+[data-product-configurable="swiper"] .swiper-wrapper .swiper-slide .size{
+    @apply w-8;
+}
+
+[data-product-configurable="swiper"] .swiper-wrapper .swiper-slide.selected .part-name{
+    @apply text-main;
+}
+
+.modal .add-to-cart-anim.add button[disabled]{
+    @apply cursor-not-allowed;
+}
+
+.floating-bar .product-prices div{
+    @apply flex-wrap;
+}
+
+.floating-bar .product-prices .product-price{
+    @apply text-2xl tablet:text-4xl;
+}
+
 
 
 
