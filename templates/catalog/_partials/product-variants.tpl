@@ -36,7 +36,7 @@
           {/if}
         </span>
         
-        {if $group.group_name == "Rodzaj fototapety" || $id_attribute_group == 'group_21'}
+        {if $group.group_name == "Rodzaj fototapety"}
         {elseif $group.group_type == 'select'}
 
           <select
@@ -71,7 +71,7 @@
 
         {elseif $group.group_type == 'radio'}
 
-          <ul id="group_{$id_attribute_group}" class="{if $group.name == "Rozmiar fototapety"} hidden {/if} flex flex-row flex-wrap">
+          <ul id="group_{$id_attribute_group}" class="{if $group.name == "Rozmiar fototapety" || $id_attribute_group == "group_21"} hidden {/if} flex flex-row flex-wrap">
             {foreach from=$group.attributes key=id_attribute item=group_attribute}
               <li class="flex-1 mb-2">
                 <label class="mb-0 mr-2 h-full">
