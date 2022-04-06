@@ -208,6 +208,7 @@ function productConfigurableUnSelectAll() {
   configurableSelected.forEach((product) => {
     product['selected'] = false
   })
+  configurableSelected[0]['selected'] = true
 }
 
 function productConfigurableSetState() {
