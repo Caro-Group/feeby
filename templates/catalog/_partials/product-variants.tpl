@@ -36,7 +36,7 @@
           {/if}
         </span>
         
-        {if $group.group_name == "Rodzaj fototapety"}
+        {if $group.group_name == "Rodzaj fototapety" || $id_attribute_group == 'group_21'}
         {elseif $group.group_type == 'select'}
 
           <select
