@@ -204,7 +204,7 @@ function productConfigurableSelect(productId) {
 }
 
 function productConfigurableUnSelectAll() {
-  $('[data-product-attribute]').eq(1).trigger('click')
+  $('[data-product-attribute]').eq(0).trigger('click')
   configurableSelected.forEach((product) => {
     product['selected'] = false
   })
