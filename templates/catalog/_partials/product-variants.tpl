@@ -31,12 +31,12 @@
           {if $group.group_name == "Rozmiar"}
             {l s='Choose size' d='Shop.Theme.Actions'}
           {elseif $group.name != "Rozmiar fototapety"}
-          {elseif $group.group_name == "Rodzaj fototapety" || $group.group_name == "Kolorystyka"}
+          {elseif $group.group_name == "Rodzaj fototapety"}
             {$group.name}
           {/if}
         </span>
         
-        {if $group.group_name == "Rodzaj fototapety" || $group.group_name == "Kolorystyka"}
+        {if $group.group_name == "Rodzaj fototapety"}
         {elseif $group.group_type == 'select'}
 
           <select
