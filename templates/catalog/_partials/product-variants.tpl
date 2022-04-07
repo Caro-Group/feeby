@@ -53,7 +53,7 @@
 
           <ul id="group_{$id_attribute_group}" class="flex w-full flex-wrap justify-center tablet:justify-start">
             {foreach from=$group.attributes key=id_attribute item=group_attribute}
-              <li class="input-container w-full mr-5 phone:max-w-[24px] tablet:max-w-none tablet:mr-5 desktop:max-w-[29%] ">
+              <li class="input-container w-full mr-5 phone:max-w-[40%] tablet:max-w-[121px] tablet:aspect-ratio-[4/3] tablet:mr-5 desktop:max-w-[29%] ">
                 <label aria-label="{$group_attribute.name}" class="flex flex-col">
                   <input class="input-color peer" type="radio" data-product-attribute="{$id_attribute_group}" name="group[{$id_attribute_group}]" value="{$id_attribute}" title="{$group_attribute.name}"{if $group_attribute.selected} checked="checked"{/if}>
                   <span
