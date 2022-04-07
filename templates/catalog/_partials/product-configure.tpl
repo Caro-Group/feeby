@@ -39,7 +39,7 @@
                                         <span class="font-body text-main-dark tablet:text-base font-light transform -rotate-90 block"> 300m </span>
                                     </div>  
                                 {for $part=1 to 5}
-                                    <div class="swiper-slide w-[100px] phablet:w-[150px] overflow-hidden" data-product-configurable="{$part}">
+                                    <div class="swiper-slide w-[100px] overflow-hidden" data-product-configurable="{$part}">
                                         <img class=" select-none w-[500%] max-w-none tablet:object-cover object-cover {if $part> 1 } -translate-x-{$part - 1}/5 {/if}" src="{$imageOriginal}" alt="{$product.name} part {$part}">
                                         <div class="text-center flex flex-col py-2">
                                             <span class="part-name text-main-dark font-body tablet:text-base font-normal transition">

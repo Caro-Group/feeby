@@ -112,21 +112,18 @@ $(document).ready(function () {
 
 function productConfigurableSwiper() {
   return new Swiper(this, {
-    slidesPerView: 4,
+    slidesPerView: 'auto',
     spaceBetween: 1,
     watchOverflow: true,
     breakpoints: {
       480: {
         spaceBetween: 1,
-        slidesPerView: 6,
       },
       768: {
         spaceBetween: 1,
-        slidesPerView: 6,
       },
       1200: {
         spaceBetween: 3,
-        slidesPerView: 6,
       },
     },
   })
