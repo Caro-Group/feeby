@@ -96,7 +96,7 @@ $(document).ready(function () {
   if (typeof prestashop !== 'undefined') {
     prestashop.on('updatedProduct', function (event) {
       var imageVariant = $(event.product_cover_thumbnails)
-        .find('img.js-qv-product-cover')
+        .find('img.#zoom_product')
         .first()
         .attr('src')
 
