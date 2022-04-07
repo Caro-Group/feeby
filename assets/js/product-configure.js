@@ -96,7 +96,7 @@ $(document).ready(function () {
   if (typeof prestashop !== 'undefined') {
     prestashop.on('updatedProduct', function (event) {
       var imageVariant = $(event.product_cover_thumbnails)
-        .find('img.#product_original_img')
+        .find('img#product_original_img')
         .first()
         .attr('src')
 
