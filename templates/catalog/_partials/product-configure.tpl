@@ -32,12 +32,12 @@
                             </div>
                         </span>
                     </div>
-                    <div class="max-w-[700px] desktop-wide:max-w-[650px] full-hd:max-w-[800px] w-auto py-5 mx-auto z-10 ">
+                    <div class="w-auto py-5 mx-auto z-10 flex items-center justify-center">
+                        <div class="size flex-1 phone-wide:flex-[0_1_30px]">
+                            <span class="font-body text-main-dark tablet:text-base font-light transform -rotate-90 block"> 300cm </span>
+                        </div>  
                         <div class="swiper" data-product-configurable="swiper">
                             <div class="swiper-wrapper items-center">
-                                    <div class="swiper-slide size flex-1 phone-wide:flex-[0_1_30px]">
-                                        <span class="font-body text-main-dark tablet:text-base font-light transform -rotate-90 block"> 300m </span>
-                                    </div>  
                                 {for $part=1 to 5}
                                     <div class="swiper-slide w-[100px] overflow-hidden" data-product-configurable="{$part}">
                                         <img class=" select-none w-[500%] max-w-none tablet:object-cover object-cover {if $part> 1 } -translate-x-{$part - 1}/5 {/if}" src="{$imageOriginal}" alt="{$product.name} part {$part}">
