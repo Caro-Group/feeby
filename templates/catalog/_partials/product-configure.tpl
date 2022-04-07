@@ -18,7 +18,7 @@
                     {/block}
                 </h1>
 
-                <div class="flex justify-between flex-col flex-shrink-0 desktop-presta:flex-shrink bg-gray-1000 rounded-[5px] flex-auto w-full min-h-inherit mx-auto max-w-screen-tablet-wide relative mb-10 desktop-presta:mb-0 overflow-auto">
+                <div class="flex justify-between flex-col flex-shrink-0 desktop-presta:flex-shrink bg-gray-1000 rounded-[5px] flex-auto w-full min-h-inherit mx-auto max-w-screen-tablet-wide relative mb-10 desktop-presta:mb-0">
                     <div class="w-full pt-5 px-5">
                         <span class="group inline-flex items-center w-8 h-8 desktop-presta:w-10 desktop-presta:h-10 text-gray-3000 hover:text-main">
                             <svg class="fill-current transition z-50" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -32,11 +32,11 @@
                             </div>
                         </span>
                     </div>
-                    <div class="w-auto py-5 mx-auto z-10 flex items-center justify-center">
-                        <div class="size flex-1 phone-wide:flex-[0_1_30px]">
+                    <div class="w-full py-5 mx-auto z-10 flex items-center justify-center">
+                        <div class="flex-0 m-0">
                             <span class="font-body text-main-dark tablet:text-base font-light transform -rotate-90 block"> 300cm </span>
                         </div>  
-                        <div class="swiper" data-product-configurable="swiper">
+                        <div class="flex-0 mr-[25px] swiper overflow-hidden max-w-full full-hd:scale-[1.3]" data-product-configurable="swiper">
                             <div class="swiper-wrapper items-center">
                                 {for $part=1 to 5}
                                     <div class="swiper-slide w-[100px] overflow-hidden" data-product-configurable="{$part}">
