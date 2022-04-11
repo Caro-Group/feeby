@@ -56,6 +56,7 @@
                       itemprop="image"
                       width="200"
                       height="200"
+                      loading="lazy"
                     />
                   </a>
                 </div>

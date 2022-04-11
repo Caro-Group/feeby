@@ -40,7 +40,7 @@
             <div class="product-images product-images-{$product.id_product}">
               {foreach from=$product.images item=image}
                 <div class="thumb-container">
-                  <img data-image-large-src="{$image.large.url}" class="thumb img-fluid js-modal-thumb{if $image.id_image == $product.default_image.id_image} selected {/if}" src="{$image.medium.url}" alt="{$image.legend}" title="{$image.legend}" width="{$image.medium.width}" itemprop="image">
+                  <img loading="lazy" data-image-large-src="{$image.large.url}" class="thumb img-fluid js-modal-thumb{if $image.id_image == $product.default_image.id_image} selected {/if}" src="{$image.medium.url}" alt="{$image.legend}" title="{$image.legend}" width="{$image.medium.width}" itemprop="image">
                 </div>
               {/foreach} 
             </div>
