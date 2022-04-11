@@ -25,21 +25,16 @@
 {* tablet:mt-12 tablet:mb-8 *}
 
 {if $elements}
-
-
   <div class="flex justify-center tablet:justify-start desktop:justify-center font-light  text-xs tablet:text-base tablet:mx-0 text-main-dark flex-wrap">
       {foreach from=$elements item=$block key=$key name=blocks}
-  {if $smarty.foreach.blocks.iteration < 3}
-  
-  <p class="{if $block@first}mb-0 mr-4 phone-wide:mr-0{/if} phone-wide:px-3 font-body">
-                      {if $block.image}
-                          <img class="h-6 tablet:h-10" src="{$block.image}">
-                      {/if}
-  {$block.title}
-  </p>
-  {/if}
+        {if $smarty.foreach.blocks.iteration < 3}
+            <p class="{if $block@first}mb-0 mr-4 phone-wide:mr-0{/if} phone-wide:px-3 font-body">
+                {if $block.image}
+                    <img class="h-6 tablet:h-10" width="40" height="40" src="{$block.image}">
+                {/if}
+                {$block.title}
+            </p>
+        {/if}
       {/foreach}
   </div>
-  
-  {/if}
-  
+{/if}
