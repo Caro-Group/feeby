@@ -111,7 +111,7 @@
                             </div>
                         </div>           
                     </div>
-                    <div class="hidden">
+                    <div>
                         <div class="w-full tablet-wide:max-w-[350px] desktop-presta:max-w-none desktop py-2 desktop-presta:py-0 desktop-presta:pb-6 product-add-sample mb-16 desktop-presta:mb-0 mt-2 desktop-presta:mt-0 ">
                             <div class="add-to-cart-anim add flex-1">
                                 <button class="bg-transparent hover:bg-main-dark border-2 border-main-dark hover:border-main-dark cursor-pointer font-medium h-full overflow-hidden phone-wide:text-base px-4 relative rounded-full tablet:text-xl text-base text-center text-main-dark hover:text-white transition uppercase duration-200 w-full" data-button-action="add-sample-to-cart" type="button">
