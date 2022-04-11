@@ -20,7 +20,7 @@
                 {foreach from=$subcategories item=subcategory name=subcategory}
                     {if $subcategory.description|strstr:"<!-- ARTYSTA -->" !== "<!-- ARTYSTA -->"}
 					   {$count_sub = $count_sub + 1}
-                        <li class="{if $id_widget == '1638828714' && isset($subcategory.id_category) && $subcategory.id_category == 194}hidden{/if} clearfix {if isset($subcategory.subsubcategories)}level2 dropdown mb-2{/if} {if $id_widget == '1643877669' && $count_sub > 6}tablet-wide:hidden{/if}">
+                        <li class="{if $id_widget == '1638828714' && isset($subcategory.id_category) && $subcategory.id_category == 194 && $subcategory.id_category == 312 && $subcategory.id_category == 413}hidden{/if} clearfix {if isset($subcategory.subsubcategories)}level2 dropdown mb-2{/if} {if $id_widget == '1643877669' && $count_sub > 6}tablet-wide:hidden{/if}">
                             <a href="{$link->getCategoryLink($subcategory.id_category, $subcategory.link_rewrite)|escape:'htmlall':'UTF-8'}" title="{$subcategory.name|escape:'htmlall':'UTF-8'}" class="img font-normal mr-2 transition hover:text-main text-main-dark {if $id_widget == '1642608476'}pointer-events-none{/if}" {if $id_widget == '1638828714' && isset($subcategory.id_category) && ($subcategory.id_category == 389 || $subcategory.id_category == 59 || $subcategory.id_category == 617)}style="
                                 text-transform: uppercase;
                                 font-weight: 400;
