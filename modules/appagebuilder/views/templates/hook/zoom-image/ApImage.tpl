@@ -33,8 +33,9 @@
                         data-animation-delay="{$formAtts.animation_delay|escape:'html':'UTF-8'}" {/if}
                         title="{((isset($formAtts.title) && $formAtts.title) ? $formAtts.title : '')|escape:'html':'UTF-8'}"
                         alt="{((isset($formAtts.alt) && $formAtts.alt) ? $formAtts.alt : '')|escape:'html':'UTF-8'}"
-                        width="{((isset($formAtts.width) && $formAtts.width) ? $formAtts.width : '100%')|escape:'html':'UTF-8'}"
-                        height="{((isset($formAtts.height) && $formAtts.height) ? $formAtts.height : '100%')|escape:'html':'UTF-8'}" />
+                        width="{((isset($formAtts.width) && $formAtts.width) ? ($formAtts.width|replace:"px":"") : '100%')|escape:'html':'UTF-8'}"
+                        height="{((isset($formAtts.height) && $formAtts.height) ? ($formAtts.height|replace:"px":"") : '100%')|escape:'html':'UTF-8'}" 
+                        />
 
 
                     {* add any 'dot' class in panel in order to create one and set it's position  *}
