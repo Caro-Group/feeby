@@ -33,11 +33,11 @@
                         </span>
                     </div>
                     <div class="mx-auto py-5 max-w-full">
-                        <div class="w-full mx-auto z-10 flex items-center justify-center">
+                        <div class="w-full mx-auto z-10 flex items-center justify-center full-hd:scale-[1.3]">
                             <div class="flex-0 m-0">
                                 <span class="font-body text-main-dark tablet:text-base font-light transform -rotate-90 block"> 300cm </span>
                             </div>
-                            <div class="flex-0 mr-[25px] swiper overflow-hidden max-w-full full-hd:scale-[1.3]" data-product-configurable="swiper">
+                            <div class="flex-0 mr-[25px] swiper overflow-hidden max-w-full " data-product-configurable="swiper">
                                 <div class="swiper-wrapper items-center">
                                     {for $part=1 to 5}
                                         <div class="swiper-slide w-[100px] overflow-hidden" data-product-configurable="{$part}">
