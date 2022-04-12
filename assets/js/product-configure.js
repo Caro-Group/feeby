@@ -105,7 +105,7 @@ $(document).ready(function () {
   if (typeof prestashop !== 'undefined') {
     prestashop.on('updatedProduct', function (event) {
       var imageVariant = $(event.product_cover_thumbnails)
-        .find('img.js-qv-product-cover')
+        .find('img#product_original_img')
         .first()
         .attr('src')
 
@@ -121,21 +121,18 @@ $(document).ready(function () {
 
 function productConfigurableSwiper() {
   return new Swiper(this, {
-    slidesPerView: 4,
+    slidesPerView: 'auto',
     spaceBetween: 1,
     watchOverflow: true,
     breakpoints: {
       480: {
         spaceBetween: 1,
-        slidesPerView: 6,
       },
       768: {
         spaceBetween: 1,
-        slidesPerView: 6,
       },
       1200: {
         spaceBetween: 3,
-        slidesPerView: 6,
       },
     },
   })
@@ -213,9 +210,11 @@ function productConfigurableSelect(productId) {
 }
 
 function productConfigurableUnSelectAll() {
+  $('[data-product-attribute]').eq(0).trigger('click')
   configurableSelected.forEach((product) => {
     product['selected'] = false
   })
+  configurableSelected[0]['selected'] = true
 }
 
 function productConfigurableSetState() {

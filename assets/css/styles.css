@@ -585,30 +585,9 @@ body .loader {
   z-index: 9999;
 }
 
-.product-add-to-cart .add button.added span {
-  @apply -translate-y-full;
-}
-.product-add-to-cart .add button.added .success {
-  @apply opacity-100 translate-y-0;
-}
-
-.product-add-to-cart .add button.failed {
-  @apply bg-require;
-}
-.product-add-to-cart .add button.failed span {
-  @apply -translate-y-full;
-}
-.product-add-to-cart .add button.failed .error {
-  @apply opacity-100 translate-y-0;
-}
-
-.page-product #blockcart-modal.modal.fade .modal-dialog {
-  @apply translate-y-0;
-}
-
-body .loader {
-  animation: fadeIn 0.5s ease-in-out forwards;
-  z-index: 9999;
+.page-cms.cms-id-25 .page-header h1,
+.page-cms.cms-id-26 .page-header h1 {
+  @apply max-w-lg mx-auto text-center;
 }
 
 [data-product-configurable='swiper'] .swiper-slide img {
@@ -635,7 +614,7 @@ body .loader {
 }
 
 [data-product-configurable='swiper'] .swiper-wrapper .swiper-slide {
-  @apply w-[100px] phablet:w-[150px];
+  @apply w-[100px];
 }
 
 [data-product-configurable='swiper'] .swiper-wrapper .swiper-slide .size {
@@ -659,9 +638,4 @@ body .loader {
 
 .floating-bar .product-prices .product-price {
   @apply text-2xl tablet:text-4xl;
-}
-
-.page-cms.cms-id-25 .page-header h1,
-.page-cms.cms-id-26 .page-header h1 {
-  @apply max-w-lg mx-auto text-center;
 }

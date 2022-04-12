@@ -51,14 +51,14 @@
 
         {elseif $group.group_type == 'color'}
 
-          <ul id="group_{$id_attribute_group}" class="flex w-full">
+          <ul id="group_{$id_attribute_group}" class="flex w-full flex-wrap justify-center tablet:justify-start">
             {foreach from=$group.attributes key=id_attribute item=group_attribute}
-              <li class="input-container w-24  tablet:max-w-[166px] tablet:w-full mr-5">
+              <li class="input-container w-full mr-5 phone:max-w-[40%] tablet:max-w-[121px] tablet:aspect-ratio-[4/3] tablet:mr-5 desktop:max-w-[29%] ">
                 <label aria-label="{$group_attribute.name}" class="flex flex-col">
                   <input class="input-color peer" type="radio" data-product-attribute="{$id_attribute_group}" name="group[{$id_attribute_group}]" value="{$id_attribute}" title="{$group_attribute.name}"{if $group_attribute.selected} checked="checked"{/if}>
                   <span
                     {if $group_attribute.texture}
-                      class="color texture w-full h-20 tablet:h-[120px] bg-no-repeat bg-cover rounded-[5px] border-2 border-solid border-white hover:border-white peer-checked:border-main opacity-50 peer-checked:opacity-100 transition shadow-none" style="background-image: url({$group_attribute.texture})"
+                      class="color texture w-full h-20 tablet:h-[120px] mx-auto tablet:mx-0 bg-no-repeat bg-cover rounded-[5px] border-2 border-solid border-white hover:border-white peer-checked:border-main opacity-50 peer-checked:opacity-100 transition shadow-none aspect-[4/3]" style="background-image: url({$group_attribute.texture})"
                     {elseif $group_attribute.html_color_code}
                       class="color w-10 h-10 rounded-[5px]" style="background-color: {$group_attribute.html_color_code}" 
                     {/if}
@@ -71,7 +71,7 @@
 
         {elseif $group.group_type == 'radio'}
 
-          <ul id="group_{$id_attribute_group}" class="{if $group.name == "Rozmiar fototapety"} hidden {/if} flex flex-row flex-wrap">
+          <ul id="group_{$id_attribute_group}" class="{if $group.name == "Rozmiar fototapety" || $id_attribute_group == '21'} hidden {/if} flex flex-row flex-wrap">
             {foreach from=$group.attributes key=id_attribute item=group_attribute}
               <li class="flex-1 mb-2">
                 <label class="mb-0 mr-2 h-full">

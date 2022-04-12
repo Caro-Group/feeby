@@ -27,7 +27,8 @@
       {block name='product_cover'}
         <div class="product-cover border-2 border-solid rounded-[5px] border-gray-default">
         {if $product.default_image}
-          <img id="zoom_product" data-type-zoom="" class="js-qv-product-cover img-fluid" src="{$link->getImageLink($product->link_rewrite, $product.default_image.id_image)}"  alt="{$product.default_image.legend}" title="{$product.default_image.legend}" itemprop="image">
+          <img id="zoom_product" loading="lazy" data-type-zoom="" class="js-qv-product-cover img-fluid" src="{$product.default_image.bySize.large_default.url}" alt="{$product.default_image.legend}" title="{$product.default_image.legend}" itemprop="image" width="{$product.default_image.bySize.large_default.width}" height="{$product.default_image.bySize.large_default.height}"> 
+          <img id="product_original_img" class="hidden" loading="lazy" src="{$link->getImageLink($product->link_rewrite, $product.default_image.id_image)}"  alt="{$product.default_image.legend}" title="{$product.default_image.legend}" itemprop="image" data-pagespeed-no-transform>
           <div class="layer hidden-sm-down" data-toggle="modal" data-target="#product-modal">
             <i class="material-icons zoom-in">&#xE8FF;</i>
           </div>
@@ -55,6 +56,7 @@
                       itemprop="image"
                       width="200"
                       height="200"
+                      loading="lazy"
                     />
                   </a>
                 </div>

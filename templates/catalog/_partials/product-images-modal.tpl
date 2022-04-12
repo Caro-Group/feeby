@@ -28,7 +28,7 @@
       <div class="modal-body">
         {assign var=imagesCount value=$product.images|count}
         <figure>
-          <img class="js-modal-product-cover product-cover-modal" width="{$product.default_image.bySize.large_default.width}" src="{$link->getImageLink($product->link_rewrite, $product.cover.id_image)}" alt="{$product.default_image.legend}" title="{$product.default_image.legend}" itemprop="image">
+          <img loading="lazy" class="js-modal-product-cover product-cover-modal" width="{$product.default_image.bySize.large_default.width}" src="{$link->getImageLink($product->link_rewrite, $product.cover.id_image)}" alt="{$product.default_image.legend}" title="{$product.default_image.legend}" itemprop="image">
           <figcaption class="image-caption">
             {block name='product_description_short'}
               <div id="product-description-short" itemprop="description">{$product.description_short nofilter}</div>
@@ -40,7 +40,7 @@
             <div class="product-images product-images-{$product.id_product}">
               {foreach from=$product.images item=image}
                 <div class="thumb-container">
-                  <img data-image-large-src="{$image.large.url}" class="thumb img-fluid js-modal-thumb{if $image.id_image == $product.default_image.id_image} selected {/if}" src="{$image.medium.url}" alt="{$image.legend}" title="{$image.legend}" width="{$image.medium.width}" itemprop="image">
+                  <img loading="lazy" data-image-large-src="{$image.large.url}" class="thumb img-fluid js-modal-thumb{if $image.id_image == $product.default_image.id_image} selected {/if}" src="{$image.medium.url}" alt="{$image.legend}" title="{$image.legend}" width="{$image.medium.width}" itemprop="image">
                 </div>
               {/foreach} 
             </div>
