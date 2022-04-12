@@ -639,3 +639,7 @@ body .loader {
 .floating-bar .product-prices .product-price {
   @apply text-2xl tablet:text-4xl;
 }
+
+#productConfigurable .regular-price {
+  display: none;
+}
