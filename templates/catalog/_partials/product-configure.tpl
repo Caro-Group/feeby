@@ -54,6 +54,9 @@
                                     </div>        
                                 {/for}
                             </div>
+                            <div>
+                                <span class="font-body text-main-dark tablet:text-base font-light" data-product-total-length> 100cm</span>
+                            </div>
                         </div>   
                     </div>
                     <div class=" flex justify-between items-center flex-wrap-reverse gap-y-2.5 w-full pb-5 px-5 z-10 ">
