@@ -6,6 +6,7 @@ $(document).ready(function () {
   var $configurableElements = $('[data-product-configurable]')
   var $configurableModal = $('#productConfigurable')
   var $productConfigurableOptions = $('[data-product-attribute]')
+  var $selectedLengthElement = $('[data-product-total-length]')
 
   $configurableElements
     .filter(function () {
@@ -225,6 +226,10 @@ function productConfigurableSetState() {
       $(product.el).removeClass('selected')
     }
   })
+  let selectedLength = configurableSelected.filter(
+    (product) => product.selected === true,
+  ).length * 100;
+  selectedLength > 0 ? $selectedLengthElement.text(selectedLength + '') : $selectedLengthElement.text('')  
 }
 
 function productConfigurableWriteState($message) {

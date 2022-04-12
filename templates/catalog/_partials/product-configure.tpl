@@ -40,7 +40,6 @@
                             <div class="swiper-wrapper items-center">
                                 {for $part=1 to 5}
                                     <div class="swiper-slide w-[100px] overflow-hidden" data-product-configurable="{$part}">
-                                        <img class=" select-none w-[500%] max-w-none tablet:object-cover object-cover {if $part> 1 } -translate-x-{$part - 1}/5 {/if}" src="{$imageOriginal}" alt="{$product.name} part {$part}">
                                         <div class="text-center flex flex-col py-2">
                                             <span class="part-name text-main-dark font-body tablet:text-base font-normal transition">
                                                 {if $part == 1}{l s='Panel A' d='Shop.Theme.Catalog'}{/if}
@@ -51,8 +50,12 @@
                                             </span>
                                             <span class=" text-main-dark font-body tablet:text-base font-light">{l s='100cm' d='Shop.Theme.Catalog'}</span>
                                         </div>
+                                        <img class=" select-none w-[500%] max-w-none tablet:object-cover object-cover {if $part> 1 } -translate-x-{$part - 1}/5 {/if}" src="{$imageOriginal}" alt="{$product.name} part {$part}">
                                     </div>        
                                 {/for}
+                            </div>
+                            <div>
+                                <span class="font-body text-main-dark tablet:text-base font-light" data-product-total-length> 100cm</span>
                             </div>
                         </div>   
                     </div>
