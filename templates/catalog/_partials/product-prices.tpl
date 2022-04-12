@@ -30,8 +30,8 @@
           {hook h='displayProductPriceBlock' product=$product type="old_price"}
           {if isset($perM) && $perM && $displayUnitPrice}
             <span class="regular-price">{$product.regular_price}</span>
-            {else}
-            {* <span class="regular-price">{$product.regular_price}</span> *}
+          {else}
+            <span class="regular-price">{$product.regular_price}</span>
             {* <span class="regular-price" content="{if $product.rounded_display_price}{$product.rounded_display_price}{else}{Context::getContext()->currentLocale->formatPrice($product.price_amount*$product.minimal_quantity,$currency->iso_code)}{/if}">{Context::getContext()->currentLocale->formatPrice($product.price_amount*$product.minimal_quantity,$currency->iso_code)}</span>   *}
           {/if}
         </div>
