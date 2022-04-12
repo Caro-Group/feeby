@@ -32,33 +32,35 @@
                             </div>
                         </span>
                     </div>
-                    <div class="w-full py-5 mx-auto z-10 flex items-center justify-center">
-                        <div class="flex-0 m-0">
-                            <span class="font-body text-main-dark tablet:text-base font-light transform -rotate-90 block"> 300cm </span>
-                        </div>  
-                        <div class="flex-0 mr-[25px] swiper overflow-hidden max-w-full full-hd:scale-[1.3]" data-product-configurable="swiper">
-                            <div class="swiper-wrapper items-center">
-                                {for $part=1 to 5}
-                                    <div class="swiper-slide w-[100px] overflow-hidden" data-product-configurable="{$part}">
-                                        <div class="text-center flex flex-col py-2">
-                                            <span class="part-name text-main-dark font-body tablet:text-base font-normal transition">
-                                                {if $part == 1}{l s='Panel A' d='Shop.Theme.Catalog'}{/if}
-                                                {if $part == 2}{l s='Panel B' d='Shop.Theme.Catalog'}{/if}
-                                                {if $part == 3}{l s='Panel C' d='Shop.Theme.Catalog'}{/if}
-                                                {if $part == 4}{l s='Panel D' d='Shop.Theme.Catalog'}{/if}
-                                                {if $part == 5}{l s='Panel E' d='Shop.Theme.Catalog'}{/if}
-                                            </span>
-                                            <span class=" text-main-dark font-body tablet:text-base font-light">{l s='100cm' d='Shop.Theme.Catalog'}</span>
-                                        </div>
-                                        <img class=" select-none w-[500%] max-w-none tablet:object-cover object-cover {if $part> 1 } -translate-x-{$part - 1}/5 {/if}" src="{$imageOriginal}" alt="{$product.name} part {$part}">
-                                    </div>        
-                                {/for}
+                    <div class="mx-auto py-5 max-w-full">
+                        <div class="w-full mx-auto z-10 flex items-center justify-center">
+                            <div class="flex-0 m-0">
+                                <span class="font-body text-main-dark tablet:text-base font-light transform -rotate-90 block"> 300cm </span>
                             </div>
-                            <div>
-                                <span class="font-body text-main-dark tablet:text-base font-light" data-product-total-length> 100cm</span>
+                            <div class="flex-0 mr-[25px] swiper overflow-hidden max-w-full full-hd:scale-[1.3]" data-product-configurable="swiper">
+                                <div class="swiper-wrapper items-center">
+                                    {for $part=1 to 5}
+                                        <div class="swiper-slide w-[100px] overflow-hidden" data-product-configurable="{$part}">
+                                            <div class="text-center flex flex-col py-2">
+                                                <span class="part-name text-main-dark font-body tablet:text-base font-normal transition">
+                                                    {if $part == 1}{l s='Panel A' d='Shop.Theme.Catalog'}{/if}
+                                                    {if $part == 2}{l s='Panel B' d='Shop.Theme.Catalog'}{/if}
+                                                    {if $part == 3}{l s='Panel C' d='Shop.Theme.Catalog'}{/if}
+                                                    {if $part == 4}{l s='Panel D' d='Shop.Theme.Catalog'}{/if}
+                                                    {if $part == 5}{l s='Panel E' d='Shop.Theme.Catalog'}{/if}
+                                                </span>
+                                                <span class=" text-main-dark font-body tablet:text-base font-light">{l s='100cm' d='Shop.Theme.Catalog'}</span>
+                                            </div>
+                                            <img class=" select-none w-[500%] max-w-none tablet:object-cover object-cover {if $part> 1 } -translate-x-{$part - 1}/5 {/if}" src="{$imageOriginal}" alt="{$product.name} part {$part}">
+                                        </div>        
+                                    {/for}
+                                </div>
                             </div>
-                        </div>   
-                    </div>
+                        </div>
+                        <div class="ml-[50px] mt-4">
+                            <span class="font-body text-main-dark tablet:text-base font-light" data-product-total-length>100cm</span>
+                        </div>
+                    </div>  
                     <div class=" flex justify-between items-center flex-wrap-reverse gap-y-2.5 w-full pb-5 px-5 z-10 ">
                         <div>
                             <p class="text-[10px] tablet:text-xs text-gray-3000 font-body font-normal mb-1">

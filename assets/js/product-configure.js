@@ -59,6 +59,7 @@ $(document).ready(function () {
       if (countConfigurableSelected) {
         productConfigurableUnSelectAll()
         productConfigurableSetState()
+        productConfigurableDisplayLength($selectedLengthElement)
         $('.hidden [data-button-action="add-to-cart"]').trigger('click')
       }
     },
@@ -70,6 +71,7 @@ $(document).ready(function () {
     function () {
       productConfigurableUnSelectAll()
       productConfigurableSetState()
+      productConfigurableDisplayLength($selectedLengthElement)
       productConfigurableWriteState('')
       productConfigurableSaveState()
       $('[data-product-attribute]').eq(5).trigger('click')
@@ -196,6 +198,7 @@ function productConfigurableSelect(productId) {
 
   productConfigurableSetButtonState(configurableSelectedTemp)
   productConfigurableSetState()
+  productConfigurableDisplayLength($selectedLengthElement)
   productConfigurableWriteState()
   productConfigurableSaveState()
   productConfigurableUpdatePage()
@@ -217,10 +220,13 @@ function productConfigurableSetState() {
       $(product.el).removeClass('selected')
     }
   })
+}
+
+function productConfigurableDisplayLength(element){
   let selectedLength = configurableSelected.filter(
     (product) => product.selected === true,
   ).length * 100;
-  selectedLength > 0 ? $selectedLengthElement.text(selectedLength + '') : $selectedLengthElement.text('')  
+  selectedLength > 0 ? element.text(selectedLength + '') : element.text('')  
 }
 
 function productConfigurableWriteState($message) {
