@@ -42,7 +42,7 @@
                                     <div class="swiper-slide w-[100px] overflow-hidden" data-product-configurable="{$part}">
                                         <img class=" select-none w-[500%] max-w-none tablet:object-cover object-cover {if $part> 1 } -translate-x-{$part - 1}/5 {/if}" src="{$imageOriginal}" alt="{$product.name} part {$part}">
                                         <div class="text-center flex flex-col py-2">
-                                            <span class="part-name text-main-dark font-body tablet:text-base font-normal transition">
+                                            <span class="part-name text-main-dark font-body tablet:text-base font-normal opacity-40 transition">
                                                 {if $part == 1}{l s='Panel A' d='Shop.Theme.Catalog'}{/if}
                                                 {if $part == 2}{l s='Panel B' d='Shop.Theme.Catalog'}{/if}
                                                 {if $part == 3}{l s='Panel C' d='Shop.Theme.Catalog'}{/if}
