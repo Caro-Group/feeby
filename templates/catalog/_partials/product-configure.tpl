@@ -32,8 +32,8 @@
                             </div>
                         </span>
                     </div>
-                    <div class="mx-auto py-5 max-w-full">
-                        <div class="w-full mx-auto z-10 flex items-center justify-center full-hd:scale-[1.3]">
+                    <div class="mx-auto py-5 max-w-full full-hd:scale-[1.3]">
+                        <div class="w-full mx-auto z-10 flex items-center justify-center">
                             <div class="flex-0 m-0">
                                 <span class="font-body text-main-dark tablet:text-base font-light transform -rotate-90 block"> 300cm </span>
                             </div>
