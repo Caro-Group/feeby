@@ -625,7 +625,7 @@ body .loader {
   .swiper-wrapper
   .swiper-slide.selected
   .part-name {
-  @apply text-main;
+  @apply opacity-100;
 }
 
 .modal .add-to-cart-anim.add button[disabled] {

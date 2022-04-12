@@ -42,7 +42,7 @@
                                     {for $part=1 to 5}
                                         <div class="swiper-slide w-[100px] overflow-hidden" data-product-configurable="{$part}">
                                             <div class="text-center flex flex-col py-2">
-                                                <span class="part-name text-main-dark font-body tablet:text-base font-normal transition">
+                                                <span class="part-name text-main-dark font-body tablet:text-base font-normal opacity-40 transition">
                                                     {if $part == 1}{l s='Panel A' d='Shop.Theme.Catalog'}{/if}
                                                     {if $part == 2}{l s='Panel B' d='Shop.Theme.Catalog'}{/if}
                                                     {if $part == 3}{l s='Panel C' d='Shop.Theme.Catalog'}{/if}
