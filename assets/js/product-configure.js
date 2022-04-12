@@ -71,9 +71,9 @@ $(document).ready(function () {
     '[data-button-action="add-sample-to-cart"]',
     function () {
       productConfigurableUnSelectAll()
-      productConfigurableSetState()
       productConfigurableWriteState('')
       productConfigurableSaveState()
+      productConfigurableSetState()
       $('[data-product-attribute]').eq(5).trigger('click')
     },
   )
@@ -238,6 +238,8 @@ function productConfigurableWriteState($message) {
   }
   else{
     let configurableSelectedTemp = [...configurableSelected]
+    $messageField.val('');
+    
     configurableSelectedTemp.reverse().forEach((product) => {
       if (product.selected) {
         $messageField.val(product.id + ',' + $messageField.val())
