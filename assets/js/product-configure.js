@@ -59,12 +59,11 @@ $(document).ready(function () {
       ).length
       console.log(countConfigurableSelected)
       if (countConfigurableSelected) {
+        $('.hidden [data-button-action="add-to-cart"]').trigger('click')
         productConfigurableUnSelectAll()
         productConfigurableSetState()
-        $('.hidden [data-button-action="add-to-cart"]').trigger('click')
-        productConfigurableSelect(1)
       }
-    },
+    }
   )
 
   $('body').on(
