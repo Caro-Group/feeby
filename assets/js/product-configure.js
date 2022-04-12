@@ -74,9 +74,9 @@ $(document).ready(function () {
         (product) => product.selected === true,
       )
       productConfigurableUnSelectAll()
-      productConfigurableSetState()
       productConfigurableWriteState('')
       productConfigurableSaveState()
+      productConfigurableSetState()
       $('[data-product-attribute]').eq(5).trigger('click')
     },
     )
@@ -240,15 +240,22 @@ function productConfigurableWriteState($message) {
   $messageField = $('.product-customization-item')
     .first()
     .find('.product-message')
-  $messageField.val($message ? $message : '')
-  configurableSelected.forEach((product) => {
-    if (product.selected) {
-      $messageField.val(product.id + ',' + $messageField.val())
-    }
-  })
-  $messageField.val(
-    $messageField.val().substring(0, $messageField.val().length - 1),
-  )
+  if (typeof $message === "string") {
+    $messageField.val($message);
+  }
+  else{
+    let configurableSelectedTemp = [...configurableSelected]
+    $messageField.val('');
+    
+    configurableSelectedTemp.reverse().forEach((product) => {
+      if (product.selected) {
+        $messageField.val(product.id + ',' + $messageField.val())
+      }
+    })
+    $messageField.val(
+      $messageField.val().substring(0, $messageField.val().length - 1),
+    )
+  }
 }
 
 function productConfigurableSaveState() {
