@@ -54,7 +54,7 @@ jobs:
       - name: Deploy to Server
         uses: burnett01/rsync-deployments@5.2
         with:
-          switches: --dry-run --verbose --itemize-changes -azr --relative --cvs-exclude --exclude='node_modules' --exclude='cache' --exclude='assets/img/modules' --exclude='*.code-workspace' --exclude='.*' --exclude='*.sh'  --delete
+          switches: --verbose --itemize-changes -azr --relative --cvs-exclude --exclude='node_modules' --exclude='cache' --exclude='assets/img/modules' --exclude='*.code-workspace' --exclude='.*' --exclude='*.sh'  --delete
           remote_path: /home/prestashop/share/themes/feeby #${{ secrets.REMOTE_PATH }}
           remote_host: ${{ secrets.REMOTE_HOST }}
           remote_port: 9922 #${{ secrets.REMOTE_PORT }}
