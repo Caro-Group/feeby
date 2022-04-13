@@ -624,8 +624,12 @@ body .loader {
 [data-product-configurable='swiper']
   .swiper-wrapper
   .swiper-slide.selected
-  .part-name {
-  @apply text-main;
+  .part-name,
+[data-product-configurable='swiper']
+  .swiper-wrapper
+  .swiper-slide.selected
+  .part-size {
+  @apply opacity-100;
 }
 
 .modal .add-to-cart-anim.add button[disabled] {
