@@ -624,7 +624,11 @@ body .loader {
 [data-product-configurable='swiper']
   .swiper-wrapper
   .swiper-slide.selected
-  .part-name {
+  .part-name,
+[data-product-configurable='swiper']
+  .swiper-wrapper
+  .swiper-slide.selected
+  .part-size {
   @apply opacity-100;
 }
 
