@@ -35,7 +35,10 @@
                     <div class="mx-auto py-5 max-w-full full-hd:scale-[1.3]">
                         <div class="w-full mx-auto z-10 flex items-center justify-center">
                             <div class="flex-0 m-0">
-                                <span class="font-body text-main-dark tablet:text-base font-light transform -rotate-90 block"> 300cm </span>
+                                <span class="font-body text-main-dark tablet:text-base font-light transform -rotate-90 block"> 
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 6" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2"><clipPath id="a"><path d="M.03.068h13.606v5.669H.03z"/></clipPath><g clip-path="url(#a)"><path d="M2.879 4.877 1.48 3.474h10.706l-1.399 1.399.6.599 2.126-2.126c.165-.165.165-.433 0-.599L11.387.621l-.6.6 1.399 1.403H1.48l1.399-1.399-.599-.6L.154 2.751c-.165.166-.165.434 0 .6L2.28 5.477l.599-.6Z" style="fill:#adafba;fill-rule:nonzero"/></g></svg>
+                                    300cm 
+                                </span>
                             </div>
                             <div class="flex-0 mr-[25px] swiper overflow-hidden max-w-full " data-product-configurable="swiper">
                                 <div class="swiper-wrapper items-center">
@@ -58,7 +61,10 @@
                             </div>
                         </div>
                         <div class="ml-[50px] mt-4">
-                            <span class="font-body text-main-dark tablet:text-base font-light" data-product-total-length>100cm</span>
+                            <span class="font-body text-main-dark tablet:text-base font-light" data-product-total-length>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 6" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2"><clipPath id="a"><path d="M.03.068h13.606v5.669H.03z"/></clipPath><g clip-path="url(#a)"><path d="M2.879 4.877 1.48 3.474h10.706l-1.399 1.399.6.599 2.126-2.126c.165-.165.165-.433 0-.599L11.387.621l-.6.6 1.399 1.403H1.48l1.399-1.399-.599-.6L.154 2.751c-.165.166-.165.434 0 .6L2.28 5.477l.599-.6Z" style="fill:#adafba;fill-rule:nonzero"/></g></svg>
+                                100cm
+                            </span>
                         </div>
                     </div>  
                     <div class=" flex justify-between items-center flex-wrap-reverse gap-y-2.5 w-full pb-5 px-5 z-10 ">
