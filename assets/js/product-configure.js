@@ -61,6 +61,7 @@ $(document).ready(function () {
         $('.hidden [data-button-action="add-to-cart"]').trigger('click')
         productConfigurableUnSelectAll()
         productConfigurableSetState()
+        window.location.assign(prestashop.urls.pages.cart)
       }
     },
   )
