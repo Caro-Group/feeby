@@ -70,6 +70,9 @@ $(document).ready(function () {
     'click',
     '[data-button-action="add-sample-to-cart"]',
     function () {
+      tempSelectedIds = configurableSelected.filter(
+        (product) => product.selected === true,
+      )
       productConfigurableUnSelectAll()
       productConfigurableWriteState('')
       productConfigurableSaveState()
@@ -83,7 +86,10 @@ $(document).ready(function () {
       if ($('[data-product-attribute]').eq(5).is(':checked')) {
         $('#quantity_wanted').val(1)
         $('.hidden [data-button-action="add-to-cart"]').trigger('click')
-        $('[data-product-attribute]').eq(1).trigger('click')
+
+        tempSelectedIds.forEach((product) => {
+          productConfigurableSelect(product.id)
+        })
       }
 
       $configurableElements
@@ -222,24 +228,25 @@ function productConfigurableSetState() {
   productConfigurableDisplayLength()
 }
 
-function productConfigurableDisplayLength(){
-  let selectedLength = configurableSelected.filter(
-    (product) => product.selected === true,
-  ).length * 100;
-  selectedLength > 0 ? selectedLengthElement.text(selectedLength + 'cm') : selectedLengthElement.text('')  
+function productConfigurableDisplayLength() {
+  let selectedLength =
+    configurableSelected.filter((product) => product.selected === true).length *
+    100
+  selectedLength > 0
+    ? selectedLengthElement.text(selectedLength + 'cm')
+    : selectedLengthElement.text('')
 }
 
 function productConfigurableWriteState($message) {
   $messageField = $('.product-customization-item')
     .first()
     .find('.product-message')
-  if (typeof $message === "string") {
-    $messageField.val($message);
-  }
-  else{
+  if (typeof $message === 'string') {
+    $messageField.val($message)
+  } else {
     let configurableSelectedTemp = [...configurableSelected]
-    $messageField.val('');
-    
+    $messageField.val('')
+
     configurableSelectedTemp.reverse().forEach((product) => {
       if (product.selected) {
         $messageField.val(product.id + ',' + $messageField.val())
@@ -276,11 +283,11 @@ function productConfigurableSaveState() {
 }
 
 function productConfigurableUpdatePage() {
-  var countConfigurableSelected = configurableSelected.filter(
-    (product) => product.selected === true,
-  ).length
+  var selected = configurableSelected
+    .filter((product) => product.selected === true)
+    .at(-1)
   $('[data-product-attribute]')
-    .eq(countConfigurableSelected - 1)
+    .eq(selected.id - 1)
     .trigger('click')
 }
 
