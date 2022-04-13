@@ -57,7 +57,6 @@ $(document).ready(function () {
       var countConfigurableSelected = configurableSelected.filter(
         (product) => product.selected === true,
       ).length
-      console.log(countConfigurableSelected)
       if (countConfigurableSelected) {
         $('.hidden [data-button-action="add-to-cart"]').trigger('click')
         productConfigurableUnSelectAll()
@@ -275,7 +274,6 @@ function productConfigurableSaveState() {
     data['ajax'] = 1
 
     $.post(formActionAttribute_url, data, null, 'json').done(function (data) {
-      console.log(data)
       $('.product-actions #product_customization_id').val(data.id_customization)
     })
     return false
@@ -296,6 +294,5 @@ function productConfigurableSetButtonState(selectedArray) {
     $('.modal .add-to-cart-anim.add button').prop('disabled', false)
   } else {
     $('.modal .add-to-cart-anim.add button').prop('disabled', true)
-    console.log('disabled')
   }
 }
