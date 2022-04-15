@@ -87,13 +87,13 @@
                     </div>
                 </div>
 
-                <div class="flex flex-col desktop-presta:flex-[0_0_320px] desktop-wide:flex-[0_0_610px] max-w-screen-tablet-wide mx-auto w-full desktop-presta:pl-5 desktop-wide:pl-[50px]">
+                <div class="flex flex-col phone:mb-[100px] desktop-presta:mb-0 desktop-presta:flex-[0_0_320px] desktop-wide:flex-[0_0_610px] max-w-screen-tablet-wide mx-auto w-full desktop-presta:pl-5 desktop-wide:pl-[50px]">
                     <h1 class="hidden desktop-presta:block mt-5 desktop-presta:mt-0 flex-shrink-0 font-header product-detail-name text-[35px] leading-24px mb-5 pr-[46px]" itemprop="name">
                         {block name='page_title'}
                             {$product.name}
                         {/block}
                     </h1>
-                    <div class="min-h-12 flex-1 phone:mb-[100px] desktop-presta:mb-0 desktop-presta:mr-2 desktop-presta:overflow-x-hidden desktop-presta:overflow-y-auto">
+                    <div class="min-h-12 flex-1 desktop-presta:mr-2 desktop-presta:overflow-x-hidden desktop-presta:overflow-y-auto">
                         {hook h='displayApSC' sc_key=sc3078189027}
                     </div>  
                     <div class="floating-bar bg-white bottom-0 phone:fixed desktop-presta:static left-0 px-5 desktop-presta:px-0  w-full border-0 border-t border-solid border-gray-2000 desktop-presta:border-t-0 z-10">
