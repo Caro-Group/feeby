@@ -26,9 +26,15 @@
   <!--  product line left content: image-->
   <div class="flex-none h-[65px] mr-5 phone-wide:h-[102px] phone-wide:w-miniature w-[65px]">
     {if $product.cover}
-      <img class="border border-gray-1000 border-solid rounded-md object-contain h-full" src="{$product.cover.bySize.cart_default.url}" alt="{$product.name|escape:'quotes'}" width="102px" height="102px">
+      <img class="border border-gray-1000 border-solid rounded-md object-contain h-full"
+        width="{$product.cover.bySize.cart_default.width}"
+        height="{$product.cover.bySize.cart_default.height}" 
+        src="{$product.cover.bySize.cart_default.url}" alt="{$product.name|escape:'quotes'}">
     {else} 
-      <img class="border border-gray-1000 border-solid rounded-md object-contain h-full" src="{$urls.no_picture_image.bySize.cart_default.url}" alt="{l s='Placeholder' d='Shop.Theme.Checkout'}" width="102px" height="102px"/>
+      <img class="border border-gray-1000 border-solid rounded-md object-contain h-full" 
+        width="{$urls.no_picture_image.bySize.cart_default.width}"
+        height="{$urls.no_picture_image.bySize.cart_default.height}" 
+        src="{$urls.no_picture_image.bySize.cart_default.url}" alt="{l s='Placeholder' d='Shop.Theme.Checkout'}"/>
     {/if}
   </div>
 

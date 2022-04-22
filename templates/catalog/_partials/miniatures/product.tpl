@@ -34,7 +34,8 @@
 					<a href="{$product.canonical_url}">
 						<img
 							class="img-fluid object-cover w-full max-w-sm h-full"
-							width="235" height="303"
+							width="{$product.cover.bySize.category_default.width}"
+							height="{$product.cover.bySize.category_default.height}"
 							src="{$product.cover.bySize.category_default_x2.url}"
 							srcset="{$product.cover.bySize.category_default.url},
 							{$product.cover.bySize.category_default_x2.url} 2x"
@@ -48,7 +49,8 @@
 					<a href="{$product.canonical_url}">
 				            <img
 							class="object-cover w-full max-w-sm h-full"
-							width="235" height="303"  
+							width="{$urls.no_picture_image.bySize.category_default.width}"
+							height="{$urls.no_picture_image.bySize.category_default.height}"
 							src="{$urls.no_picture_image.bySize.category_default.url}"
 							alt="{l s='No image available' d='Shop.Theme.Catalog'}"
 							loading="lazy" 
