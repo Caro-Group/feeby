@@ -35,7 +35,9 @@
 						<img
 							class="img-fluid object-cover w-full max-w-sm h-full"
 							width="235" height="303"
-							src = "{$product.cover.bySize.home_default.url}"
+							src="{$product.cover.bySize.category_default_x2.url}"
+							srcset="{$product.cover.bySize.category_default.url},
+							{$product.cover.bySize.category_default_x2.url} 2x"
 							alt = "{if !empty($product.cover.legend)}{$product.cover.legend}{else}{$product.name|truncate:30:'...'}{/if}"
 							data-full-size-image-url = "{$product.cover.large.url}"
 							loading="lazy"
@@ -47,7 +49,7 @@
 				            <img
 							class="object-cover w-full max-w-sm h-full"
 							width="235" height="303"  
-							src="{$urls.no_picture_image.bySize.home_default.url}" 
+							src="{$urls.no_picture_image.bySize.category_default.url}"
 							alt="{l s='No image available' d='Shop.Theme.Catalog'}"
 							loading="lazy" 
 							/>
