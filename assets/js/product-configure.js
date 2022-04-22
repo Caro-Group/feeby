@@ -7,6 +7,17 @@ $(document).ready(function () {
   var $configurableModal = $('#productConfigurable')
   var $productConfigurableOptions = $('[data-product-attribute]')
 
+      var imageVariant = $('#main')
+        .find('img#product_original_img')
+        .first()
+        .attr('src');
+      $configurableElements
+        .filter(function () {
+          return $(this).data('productConfigurable') == 'swiper'
+        })
+        .find('img')
+        .attr('src', imageVariant);
+
   selectedLengthElement = $('[data-product-total-length]')
 
   $configurableElements
