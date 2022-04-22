@@ -284,11 +284,11 @@ function productConfigurableSaveState() {
 }
 
 function productConfigurableUpdatePage() {
-  var selected = configurableSelected
-    .filter((product) => product.selected === true)
-    .at(-1)
+  var countConfigurableSelected = configurableSelected.filter(
+    (product) => product.selected === true,
+  ).length
   $('[data-product-attribute]')
-    .eq(selected.id - 1)
+    .eq(countConfigurableSelected - 1)
     .trigger('click')
 }
 
