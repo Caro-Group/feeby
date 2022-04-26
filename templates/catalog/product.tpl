@@ -53,6 +53,7 @@
   {foreach from=$product->features item=$feature}
     {if $feature.name == 'Konfigurowalny' && $feature.value == 'Tak'}
   	  {assign var="productConfigurable" value="true"}
+      {include file="catalog/_partials/product-configure.tpl" product=$product} 
     {/if}
   {/foreach}
 
