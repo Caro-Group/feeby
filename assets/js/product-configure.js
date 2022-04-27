@@ -100,10 +100,7 @@ $(document).ready(function () {
     prestashop.on('updatedProduct', function (event) {
       if ($('[data-product-attribute]').eq(5).is(':checked')) {
         $('#quantity_wanted').val(1)
-        productConfigurableWriteState('')
-        setTimeout(function () {
-          $('.hidden [data-button-action="add-to-cart"]').trigger('click')
-        }, 300)
+        $('.hidden [data-button-action="add-to-cart"]').trigger('click')
 
         tempSelectedIds.forEach((product) => {
           productConfigurableSelect(product.id)
