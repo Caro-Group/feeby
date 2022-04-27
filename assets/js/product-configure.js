@@ -74,7 +74,9 @@ $(document).ready(function () {
         $('.hidden [data-button-action="add-to-cart"]').trigger('click')
         productConfigurableUnSelectAll()
         productConfigurableSetState()
-        window.location.assign(prestashop.urls.pages.cart)
+        setTimeout(function () {
+          window.location.replace(prestashop.urls.pages.cart)
+        }, 300)
       }
     },
   )
