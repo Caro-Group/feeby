@@ -75,7 +75,7 @@ $(document).ready(function () {
         productConfigurableUnSelectAll()
         productConfigurableSetState()
         setTimeout(function () {
-          window.location.replace(prestashop.urls.pages.cart)
+          window.location.assign(prestashop.urls.pages.cart)
         }, 300)
       }
     },
