@@ -275,8 +275,13 @@ function productConfigurableSaveState() {
     data['submitCustomizedData'] = 1
     data['ajax'] = 1
 
+    $('[data-button-action="add-to-cart"]')
+      .attr('disabled', 'disabled')
+      .addClass('adding')
     $.post(formActionAttribute_url, data, null, 'json').done(function (data) {
-      console.log(data)
+      $('[data-button-action="add-to-cart"]')
+        .attr('disabled', false)
+        .removeClass('adding')
       $('.product-actions #product_customization_id').val(data.id_customization)
     })
     return false
