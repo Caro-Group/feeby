@@ -49,7 +49,6 @@
  
  {block name='content'}  
  
-  {assign var="productConfigurable" value="false"}
   {foreach from=$product->features item=$feature}
     {if $feature.name == 'Konfigurowalny' && $feature.value == 'Tak'}
   	  {assign var="productConfigurable" value="true"}
@@ -133,7 +132,7 @@
                    {block name='product_variants'}
                      {include file='catalog/_partials/product-variants.tpl'}
                    {/block}
-                   {if $productConfigurable}
+                   {if isset($productConfigurable)}
                       <p class="font-body font-medium text-sm tablet:text-base text-gray-3000">{l s='Wypróbuj fototapetę przed zamówieniem ' d='Shop.Theme.Actions'}
                       <button type="button" class="bg-transparent text-gray-3000 border-0 px-0 underline hover:text-main cursor-pointer transition " data-button-action="add-sample-to-cart" >{l s='zamów próbkę' d='Shop.Theme.Actions'}</button>.</p>
                    {/if}
@@ -162,7 +161,7 @@
                      {include file='catalog/_partials/product-discounts.tpl'}
                    {/block}
 
-                   <div class="{if $productConfigurable}hidden{/if}">
+                   <div class="{if isset($productConfigurable)}hidden{/if}">
                    
                     {block name='product_add_to_cart'}
                       {include file='catalog/_partials/product-add-to-cart.tpl'}
@@ -182,7 +181,7 @@
  
             
             
-            {if $productConfigurable}
+            {if isset($productConfigurable)}
               <button type="button" class="bg-main block border-0 cursor-pointer font-medium h-full hover:bg-main-hover overflow-hidden phone-wide:text-base px-4 py-3 relative rounded-full tablet:text-xl text-base text-center text-white transition uppercase w-full tablet:mb-6" data-toggle="modal" data-target="#productConfigurable">
                 {l s='Zamów fototapetę' d='Shop.Theme.Actions'}
               </button>
@@ -190,7 +189,7 @@
             {/if}
             
             {if $product.is_customizable && count($product.customizations.fields)}
-              <div class="{if $productConfigurable}hidden{/if}">
+              <div class="{if isset($productConfigurable)}hidden{/if}">
               {block name='product_customization'}
                 {include file="catalog/_partials/product-customization.tpl" customizations=$product.customizations}
               {/block}
