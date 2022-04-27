@@ -44,7 +44,9 @@ $(document).ready(function () {
     })
   }
 
-  productConfigurableSelect(1) //default select
+  if ($configurableElements.length > 0) {
+    productConfigurableSelect(1) //default select
+  }
 
   var configurableCartAdd = $configurableElements.filter(function () {
     return $(this).data('productConfigurable') == 'add'
