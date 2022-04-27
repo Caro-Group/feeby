@@ -7,16 +7,16 @@ $(document).ready(function () {
   var $configurableModal = $('#productConfigurable')
   var $productConfigurableOptions = $('[data-product-attribute]')
 
-      var imageVariant = $('#main')
-        .find('img#product_original_img')
-        .first()
-        .attr('src');
-      $configurableElements
-        .filter(function () {
-          return $(this).data('productConfigurable') == 'swiper'
-        })
-        .find('img')
-        .attr('src', imageVariant);
+  var imageVariant = $('#main')
+    .find('img#product_original_img')
+    .first()
+    .attr('src')
+  $configurableElements
+    .filter(function () {
+      return $(this).data('productConfigurable') == 'swiper'
+    })
+    .find('img')
+    .attr('src', imageVariant)
 
   selectedLengthElement = $('[data-product-total-length]')
 
@@ -285,7 +285,13 @@ function productConfigurableSaveState() {
     data['submitCustomizedData'] = 1
     data['ajax'] = 1
 
+    $('[data-button-action="add-to-cart"]')
+      .attr('disabled', 'disabled')
+      .addClass('adding')
     $.post(formActionAttribute_url, data, null, 'json').done(function (data) {
+      $('[data-button-action="add-to-cart"]')
+        .attr('disabled', false)
+        .removeClass('adding')
       $('.product-actions #product_customization_id').val(data.id_customization)
     })
     return false
