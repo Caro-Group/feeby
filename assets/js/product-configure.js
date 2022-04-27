@@ -89,7 +89,7 @@ $(document).ready(function () {
         (product) => product.selected === true,
       )
       productConfigurableUnSelectAll()
-      productConfigurableWriteState('Próbka')
+      productConfigurableWriteState('Próbka') //TODO: Check why not updating
       productConfigurableSaveState()
       productConfigurableSetState()
       $('[data-product-attribute]').eq(5).trigger('click')
@@ -100,7 +100,7 @@ $(document).ready(function () {
     prestashop.on('updatedProduct', function (event) {
       if ($('[data-product-attribute]').eq(5).is(':checked')) {
         $('#quantity_wanted').val(1)
-        productConfigurableWriteState('Próbka')
+        productConfigurableWriteState('Próbka') //TODO: Check why not updating
         $('.hidden [data-button-action="add-to-cart"]').trigger('click')
 
         tempSelectedIds.forEach((product) => {
