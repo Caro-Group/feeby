@@ -89,7 +89,7 @@ $(document).ready(function () {
         (product) => product.selected === true,
       )
       productConfigurableUnSelectAll()
-      productConfigurableWriteState('')
+      productConfigurableWriteState('Próbka')
       productConfigurableSaveState()
       productConfigurableSetState()
       $('[data-product-attribute]').eq(5).trigger('click')
