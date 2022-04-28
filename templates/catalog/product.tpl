@@ -82,7 +82,7 @@
           </div>
         {/if}
 
-       <div class="flex flex-wrap flex-row">
+       <div class="flex flex-wrap flex-row mb-[25px] tablet:mb-0">
          <div class="w-full tablet:w-3/5 tablet:pr-10">
            {block name='page_content_container'}
              <section class="page-content" id="content">
