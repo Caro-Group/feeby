@@ -60,7 +60,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="ml-[100px] ml-[50px] mt-4">
+                        <div class="ml-[100px] tablet:ml-[50px] mt-4">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 6" height="8" width="18" class="mr-[6px] ml-[11px]" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2"><clipPath id="a"><path d="M.03.068h13.606v5.669H.03z"/></clipPath><g clip-path="url(#a)"><path d="M2.879 4.877 1.48 3.474h10.706l-1.399 1.399.6.599 2.126-2.126c.165-.165.165-.433 0-.599L11.387.621l-.6.6 1.399 1.403H1.48l1.399-1.399-.599-.6L.154 2.751c-.165.166-.165.434 0 .6L2.28 5.477l.599-.6Z" style="fill:#adafba;fill-rule:nonzero"/></g></svg>
                             <span class="font-body text-main-dark tablet:text-base font-light" data-product-total-length>
                                 100cm
