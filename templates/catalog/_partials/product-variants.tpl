@@ -28,12 +28,7 @@
 
       <div class="clearfix product-variants-item flex flex-col items-start mb-5">
         <span class="block text-[14px] text-gray-main text-base leading-normal mb-[10px] font-light">
-          {if $group.group_name == "Rozmiar"}
-            {l s='Choose size' d='Shop.Theme.Actions'}
-          {elseif $group.name != "Rozmiar fototapety"}
-          {elseif $group.group_name == "Rodzaj fototapety"}
-            {$group.name}
-          {/if}
+          {$group.name}
         </span>
         
         {if $group.group_name == "Rodzaj fototapety"}
