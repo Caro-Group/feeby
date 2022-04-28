@@ -614,7 +614,13 @@ body .loader {
 }
 
 [data-product-configurable='swiper'] .swiper-wrapper .swiper-slide {
-  @apply w-[100px];
+  @apply w-[88px];
+}
+
+@screen tablet {
+  [data-product-configurable='swiper'] .swiper-wrapper .swiper-slide {
+    @apply w-[100px];
+  }
 }
 
 [data-product-configurable='swiper'] .swiper-wrapper .swiper-slide .size {
