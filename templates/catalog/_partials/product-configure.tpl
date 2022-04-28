@@ -7,12 +7,12 @@
       <div class="modal-body p-0">
       
         <div data-product-configurable="modal" class="transition fixed inset-0 bg-main-dark bg-opacity-50 z-30 p-0 desktop-presta:px-12  desktop-presta:py-5 overflow-y-auto"  aria-labelledby="modal-title" role="dialog" aria-modal="true">
-            <div class="relative flex flex-col desktop-presta:flex-row bg-white h-full overflow-y-auto desktop-presta:overflow-auto w-full content-max:mx-auto content-max:max-w-screen-content-max desktop-presta:rounded-[5px] p-5 desktop-presta:p-[50px] min-h-[640px] full-hd:min-h-[860px] ">
+            <div class="relative flex flex-col desktop-presta:flex-row bg-white h-full overflow-y-auto desktop-presta:overflow-auto w-full content-max:mx-auto content-max:max-w-screen-content-max desktop-presta:rounded-[5px] p-0 tablet:p-5 desktop-presta:p-[50px] min-h-[640px] full-hd:min-h-[860px] ">
                 <button data-dismiss="modal" aria-label="Close" class=" absolute top-5 right-5 desktop-presta:top-[50px] desktop-presta:right-[50px] transition cursor-pointer bg-transparent border-0 ">
                     <i class=" material-icons text-main-dark hover:text-main text-4xl transition select-none"></i>
                 </button>
                 
-                <h1 class="max-w-screen-tablet-wide mx-auto w-full desktop-presta:hidden mt-5 desktop-presta:mt-0 flex-shrink-0 font-header product-detail-name text-xl leading-24px mb-5 pr-[46px]" itemprop="name">
+                <h1 class="max-w-screen-tablet-wide mx-auto w-full desktop-presta:hidden mt-5 desktop-presta:mt-0 flex-shrink-0 font-header product-detail-name text-xl leading-24px mb-5 pr-[70px] pl-5 tablet:pl-0 tablet:pr-[46px]" itemprop="name">
                     {block name='page_title'}
                         {$product.name}
                     {/block}
@@ -32,15 +32,15 @@
                             </div>
                         </span>
                     </div>
-                    <div class="mx-auto py-5 max-w-full full-hd:scale-[1.3]">
+                    <div class="relative mx-auto py-5 max-w-full full-hd:scale-[1.3]">
                         <div class="w-full mx-auto z-10 flex items-center justify-center">
-                            <div class="flex-0 m-0">
-                                <span class="font-body text-main-dark tablet:text-base font-light transform -rotate-90 block"> 
+                            <div class="absolute bottom-0 left-0 mb-[20px] tablet:relative flex-0 tablet:m-0">
+                                <span class="font-body text-main-dark tablet:text-base font-light tablet:transform -rotate-90 block"> 
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 6" class="mx-[6px]" height="8" width="18" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2"><clipPath id="a"><path d="M.03.068h13.606v5.669H.03z"/></clipPath><g clip-path="url(#a)"><path d="M2.879 4.877 1.48 3.474h10.706l-1.399 1.399.6.599 2.126-2.126c.165-.165.165-.433 0-.599L11.387.621l-.6.6 1.399 1.403H1.48l1.399-1.399-.599-.6L.154 2.751c-.165.166-.165.434 0 .6L2.28 5.477l.599-.6Z" style="fill:#adafba;fill-rule:nonzero"/></g></svg>
                                     300cm 
                                 </span>
                             </div>
-                            <div class="flex-0 mr-[25px] swiper overflow-hidden max-w-full " data-product-configurable="swiper">
+                            <div class="flex-0 mr-0 tablet:mr-[25px] swiper overflow-hidden max-w-full " data-product-configurable="swiper">
                                 <div class="swiper-wrapper items-center">
                                     {for $part=1 to 5}
                                         <div class="swiper-slide w-[100px] overflow-hidden" data-product-configurable="{$part}">
@@ -60,7 +60,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="ml-[50px] mt-4">
+                        <div class="ml-[100px] ml-[50px] mt-4">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 6" height="8" width="18" class="mr-[6px] ml-[11px]" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2"><clipPath id="a"><path d="M.03.068h13.606v5.669H.03z"/></clipPath><g clip-path="url(#a)"><path d="M2.879 4.877 1.48 3.474h10.706l-1.399 1.399.6.599 2.126-2.126c.165-.165.165-.433 0-.599L11.387.621l-.6.6 1.399 1.403H1.48l1.399-1.399-.599-.6L.154 2.751c-.165.166-.165.434 0 .6L2.28 5.477l.599-.6Z" style="fill:#adafba;fill-rule:nonzero"/></g></svg>
                             <span class="font-body text-main-dark tablet:text-base font-light" data-product-total-length>
                                 100cm
