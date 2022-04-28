@@ -35,7 +35,7 @@
                     <div class="relative mx-auto py-5 max-w-full full-hd:scale-[1.3]">
                         <div class="w-full mx-auto z-10 flex items-center justify-center">
                             <div class="absolute bottom-0 left-0 mb-[20px] tablet:relative flex-0 tablet:m-0">
-                                <span class="font-body text-main-dark tablet:text-base font-light tablet:transform -rotate-90 block"> 
+                                <span class="font-body text-main-dark tablet:text-base font-light tablet:transform tablet:-rotate-90 block"> 
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 6" class="mx-[6px]" height="8" width="18" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2"><clipPath id="a"><path d="M.03.068h13.606v5.669H.03z"/></clipPath><g clip-path="url(#a)"><path d="M2.879 4.877 1.48 3.474h10.706l-1.399 1.399.6.599 2.126-2.126c.165-.165.165-.433 0-.599L11.387.621l-.6.6 1.399 1.403H1.48l1.399-1.399-.599-.6L.154 2.751c-.165.166-.165.434 0 .6L2.28 5.477l.599-.6Z" style="fill:#adafba;fill-rule:nonzero"/></g></svg>
                                     300cm 
                                 </span>
@@ -87,7 +87,7 @@
                     </div>
                 </div>
 
-                <div class="flex flex-col phone:mb-[100px] desktop-presta:mb-0 desktop-presta:flex-[0_0_320px] desktop-wide:flex-[0_0_610px] max-w-screen-tablet-wide mx-auto w-full desktop-presta:pl-5 desktop-wide:pl-[50px]">
+                <div class="flex flex-col px-5 tablet:px-0 phone:mb-[100px] desktop-presta:mb-0 desktop-presta:flex-[0_0_320px] desktop-wide:flex-[0_0_610px] max-w-screen-tablet-wide mx-auto w-full desktop-presta:pl-5 desktop-wide:pl-[50px]">
                     <h1 class="hidden desktop-presta:block mt-5 desktop-presta:mt-0 flex-shrink-0 font-header product-detail-name text-[35px] leading-24px mb-5 pr-[46px]" itemprop="name">
                         {block name='page_title'}
                             {$product.name}
