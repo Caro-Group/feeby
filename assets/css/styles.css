@@ -614,7 +614,7 @@ body .loader {
 }
 
 [data-product-configurable='swiper'] .swiper-wrapper .swiper-slide {
-  @apply w-[88px];
+  width: 19vw;
 }
 
 @screen tablet {
