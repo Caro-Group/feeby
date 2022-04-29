@@ -50,7 +50,7 @@
                       class="object-cover h-[50px] w-[50px] tablet:h-[200px] tablet:w-[200px] thumb js-thumb border border-solid rounded-lg mr-[18px] {if $image.id_image == $product.default_image.id_image} selected {/if}"
                       data-image-medium-src="{$image.bySize.medium_default.url}"
                       data-image-large-src="{$image.bySize.large_default.url}"
-                      src="{$image.bySize.home_default.url}"
+                      src="{$image.bySize.product_thumbnail.url}"
                       alt="{$image.legend}"
                       title="{$image.legend}"
                       itemprop="image"
