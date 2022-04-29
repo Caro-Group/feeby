@@ -54,7 +54,7 @@
                                                 </span>
                                                 <span class="part-size text-main-dark font-body tablet:text-base font-light opacity-40">{l s='100cm' d='Shop.Theme.Catalog'}</span>
                                             </div>
-                                            <img class="max-h-[300px] select-none w-[500%] max-w-none {if $part> 1 } -translate-x-{$part - 1}/5 {/if}" src="{$imageOriginal}" alt="{$product.name} part {$part}">
+                                            <img class="h-auto aspect-[2000/1333] select-none w-[500%] max-w-none {if $part> 1 } -translate-x-{$part - 1}/5 {/if}" width="2000" height="1333" src="{$imageOriginal}" alt="{$product.name} part {$part}">
                                         </div>        
                                     {/for}
                                 </div>
