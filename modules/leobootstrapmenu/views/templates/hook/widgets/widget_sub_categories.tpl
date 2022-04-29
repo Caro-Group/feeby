@@ -21,7 +21,7 @@
                     {if $subcategory.description|strstr:"<!-- ARTYSTA -->" !== "<!-- ARTYSTA -->"}
 					   {$count_sub = $count_sub + 1}
                         <li class="{if isset($subcategory.id_category) && (($id_widget == '1638828714' && $subcategory.id_category == 194) || ($id_widget == '1638836284' && $subcategory.id_category == 312) || ($id_widget == '1638836384' && $subcategory.id_category == 413))}hidden{/if} clearfix {if isset($subcategory.subsubcategories)}level2 dropdown mb-2{/if} {if $id_widget == '1643877669' && $count_sub > 6}tablet-wide:hidden{/if}">
-                            <a href="{$link->getCategoryLink($subcategory.id_category, $subcategory.link_rewrite)|escape:'htmlall':'UTF-8'}" title="{$subcategory.name|escape:'htmlall':'UTF-8'}" class="img font-normal mr-2 transition hover:text-main text-main-dark {if $id_widget == '1642608476'}pointer-events-none{/if}" {if $id_widget == '1638828714' && isset($subcategory.id_category) && ($subcategory.id_category == 389 || $subcategory.id_category == 59 || $subcategory.id_category == 617)}style="
+                            <a href="{$link->getCategoryLink($subcategory.id_category, $subcategory.link_rewrite)|escape:'htmlall':'UTF-8'}" title="{$subcategory.name|escape:'htmlall':'UTF-8'}" class="img font-normal mr-2 transition hover:text-main text-main-dark" {if $id_widget == '1638828714' && isset($subcategory.id_category) && ($subcategory.id_category == 389 || $subcategory.id_category == 59 || $subcategory.id_category == 617)}style="
                                 text-transform: uppercase;
                                 font-weight: 400;
                             "{/if} {if isset($subcategory.id_category)}data-category-id="{$subcategory.id_category}"{/if}>
@@ -35,7 +35,7 @@
                                         {if $subsubcategory.description|strstr:"<!-- ARTYSTA -->" !== "<!-- ARTYSTA -->"}
 										  {$count_subsub = $count_subsub + 1}
                                             <li class="clearfix level3 text-base {if $id_widget == '1643877669' && $count_subsub > 6}tablet-wide:hidden{/if}" {if $show_widget_bo == 'admin'}style="margin-left: 20px;"{/if}>
-                                                <a href="{$link->getCategoryLink($subsubcategory.id_category, $subsubcategory.link_rewrite)|escape:'htmlall':'UTF-8'}" title="{$subsubcategory.name|escape:'htmlall':'UTF-8'}" class="img font-light text-main-dark {if $id_widget == '1642608476'}pointer-events-none{/if}" {if isset($subsubcategory.id_category)}data-category-id="{$subsubcategory.id_category}"{/if}>
+                                                <a href="{$link->getCategoryLink($subsubcategory.id_category, $subsubcategory.link_rewrite)|escape:'htmlall':'UTF-8'}" title="{$subsubcategory.name|escape:'htmlall':'UTF-8'}" class="img font-light text-main-dark" {if isset($subsubcategory.id_category)}data-category-id="{$subsubcategory.id_category}"{/if}>
                                                     {$subsubcategory.name|escape:'htmlall':'UTF-8'} 
                                                 </a>
                                             </li>
