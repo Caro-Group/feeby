@@ -22,6 +22,14 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
+
+ {foreach from=$product->features item=$feature}
+  {if ($feature.name == 'Typ produktu' && $feature.value == 'Obraz na korku') || $feature.name == 'Typ produktu' && $feature.value == 'Obraz na korku'}
+    {assign var="productHideSomeThumbs" value="true"} 
+  {/if}
+{/foreach}
+
+
 <div class="images-container">
   {block name='product_cover_thumbnails'}
       {block name='product_cover'}
@@ -42,31 +50,33 @@
         <div id="thumb-gallery" class="product-thumb-images flex relative">
           <div class="swiper overflow-hidden" data-swiper-product>
             <div class="swiper-wrapper">
-              {foreach from=$product.images item=image}
-                <div class="swiper-custom-slide w-auto h-full relative thumb-container {if $image.id_image == $product.default_image.id_image} active {/if}" style="    flex-shrink: 0;
-                  transition-property: transform;">
-                  <a href="javascript:void(0)" data-image="{$image.bySize.large_default.url}" data-zoom-image="{$image.bySize.large_default.url}"> 
-                    <img
-                      class="h-[50px] w-[50px] tablet:h-[200px] tablet:w-[200px] thumb js-thumb border border-solid rounded-lg mr-[18px] {if $image.id_image == $product.default_image.id_image} selected {/if}"
-                      data-image-medium-src="{$image.bySize.medium_default.url}"
-                      data-image-large-src="{$image.bySize.large_default.url}"
-                      src="{$image.bySize.product_thumbnail.url}"
-                      alt="{$image.legend}"
-                      title="{$image.legend}"
-                      itemprop="image"
-                      width="200"
-                      height="200"
-                      loading="lazy"
-                    />
-                  </a>
-                </div>
-                {if $image@last}
-                  {assign var='displayProductThumbEndCustom' value={hook h='displayProductThumbEndCustom'} }
-                  {if $displayProductThumbEndCustom}
-                    <div class="swiper-custom-slide w-auto h-full relative thumb-container {if $image.id_image == $product.default_image.id_image} active {/if}" style="    flex-shrink: 0;
-                      transition-property: transform;">
-                      {hook h='displayProductThumbEndCustom'}
-                    </div>
+              {foreach from=$product.images item=image name=pictures}
+                {if !isset($productHideSomeThumbs) && !($smarty.foreach.pictures.iteration == 4 || $smarty.foreach.pictures.iteration == 5 || $smarty.foreach.pictures.iteration == 6 || $smarty.foreach.pictures.iteration == 7)}
+                  <div class="swiper-custom-slide w-auto h-full relative thumb-container {if $image.id_image == $product.default_image.id_image} active {/if}" style="    flex-shrink: 0;
+                    transition-property: transform;">
+                    <a href="javascript:void(0)" data-image="{$image.bySize.large_default.url}" data-zoom-image="{$image.bySize.large_default.url}"> 
+                      <img
+                        class="h-[50px] w-[50px] tablet:h-[200px] tablet:w-[200px] thumb js-thumb border border-solid rounded-lg mr-[18px] {if $image.id_image == $product.default_image.id_image} selected {/if}"
+                        data-image-medium-src="{$image.bySize.medium_default.url}"
+                        data-image-large-src="{$image.bySize.large_default.url}"
+                        src="{$image.bySize.product_thumbnail.url}"
+                        alt="{$image.legend}"
+                        title="{$image.legend}"
+                        itemprop="image"
+                        width="200"
+                        height="200"
+                        loading="lazy"
+                      />
+                    </a>
+                  </div>
+                  {if $image@last}
+                    {assign var='displayProductThumbEndCustom' value={hook h='displayProductThumbEndCustom'} }
+                    {if $displayProductThumbEndCustom}
+                      <div class="swiper-custom-slide w-auto h-full relative thumb-container {if $image.id_image == $product.default_image.id_image} active {/if}" style="    flex-shrink: 0;
+                        transition-property: transform;">
+                        {hook h='displayProductThumbEndCustom'}
+                      </div>
+                    {/if}
                   {/if}
                 {/if}
               {/foreach}
