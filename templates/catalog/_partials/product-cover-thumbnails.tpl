@@ -24,8 +24,11 @@
  *}
 
  {foreach from=$product->features item=$feature}
-  {if ($feature.name == 'Typ produktu' && $feature.value == 'Obraz na korku') || $feature.name == 'Typ produktu' && $feature.value == 'Obraz na korku'}
-    {assign var="productHideSomeThumbs" value="true"} 
+  {if $feature.name == 'Typ produktu' && $feature.value == 'Obraz na płótnie'}
+    {assign var="productHideThreeLastThumbs" value="true"} 
+  {/if}
+  {if $feature.name == 'Typ produktu' && $feature.value == 'Obraz panelowy'}
+    {assign var="productHideLastThumbs" value="true"} 
   {/if}
 {/foreach}
 
@@ -50,8 +53,21 @@
         <div id="thumb-gallery" class="product-thumb-images flex relative">
           <div class="swiper overflow-hidden" data-swiper-product>
             <div class="swiper-wrapper">
-              {foreach from=$product.images item=image name=pictures}
-                {if !isset($productHideSomeThumbs) && !($smarty.foreach.pictures.iteration == 4 || $smarty.foreach.pictures.iteration == 5 || $smarty.foreach.pictures.iteration == 6 || $smarty.foreach.pictures.iteration == 7)}
+              {foreach from=$product.images item=image key=$key name=pictures}
+                {if !((
+                      isset($productHideThreeLastThumbs) && 
+                      (
+					   $key > ($product.images|count - 4) ||
+						$key > ($product.images|count - 3) ||
+                        $key > ($product.images|count - 2) ||
+                        $key > ($product.images|count - 1)
+                      )
+                    ) || (
+                      isset($productHideLastThumbs) &&
+                      (
+                        $key > ($product.images|count - 1)
+                      )
+                    ))}
                   <div class="swiper-custom-slide w-auto h-full relative thumb-container {if $image.id_image == $product.default_image.id_image} active {/if}" style="    flex-shrink: 0;
                     transition-property: transform;">
                     <a href="javascript:void(0)" data-image="{$image.bySize.large_default.url}" data-zoom-image="{$image.bySize.large_default.url}"> 
