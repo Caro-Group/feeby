@@ -57,14 +57,15 @@
                 {if !((
                       isset($productHideThreeLastThumbs) && 
                       (
-					   $key > ($product.images|count - 4) ||
-						$key > ($product.images|count - 3) ||
+                        $key > ($product.images|count - 4) ||
+                        $key > ($product.images|count - 3) ||
                         $key > ($product.images|count - 2) ||
                         $key > ($product.images|count - 1)
                       )
                     ) || (
                       isset($productHideLastThumbs) &&
                       (
+                        $key > ($product.images|count - 2) ||
                         $key > ($product.images|count - 1)
                       )
                     ))}
