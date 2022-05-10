@@ -22,46 +22,42 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
- {if $product.show_price}
+{if $product.show_price}
   <div class="product-prices">
     {block name='product_discount'}
       {if $product.has_discount}
         <div class="leading-none mb-1 product-discount text-[#BABABA] text-base line-through">
           {hook h='displayProductPriceBlock' product=$product type="old_price"}
-          {if isset($perM) && $perM && $displayUnitPrice}
-            <span class="regular-price">{$product.regular_price}</span>
-          {else}
-            <span class="regular-price">{$product.regular_price}</span>
-            {* <span class="regular-price" content="{if $product.rounded_display_price}{$product.rounded_display_price}{else}{Context::getContext()->currentLocale->formatPrice($product.price_amount*$product.minimal_quantity,$currency->iso_code)}{/if}">{Context::getContext()->currentLocale->formatPrice($product.price_amount*$product.minimal_quantity,$currency->iso_code)}</span>   *}
-          {/if}
+          <span class="regular-price">{$product.regular_price}</span>
         </div>
       {/if}
     {/block}
 
-    <div class="flex flex-row items-baseline"> 
+    <div class="flex flex-row items-baseline">
 
       {block name='product_price'}
         <div
           class="font-medium leading-none product-price text-[25px] tablet:text-[35px] mr-[10px] {if $product.has_discount}text-main{else}text-[#232322]{/if} {if $product.has_discount}has-discount{/if}"
-          itemprop="offers"
-          itemscope
-          itemtype="https://schema.org/Offer"
-        >
-          <link itemprop="availability" href="{$product.seo_availability}"/>
+          itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+          <link itemprop="availability" href="{$product.seo_availability}" />
           <meta itemprop="priceCurrency" content="{$currency.iso_code}">
 
           <div class="current-price">
-          {if $displayUnitPrice}
+            {if $displayUnitPrice}
               {assign var=currency value=Context::getContext()->currency}
               {if isset($perM) && $perM}
-                  <span itemprop="price">{l s='%unit_price%' d='Shop.Theme.Catalog' sprintf=['%unit_price%' => $product.unit_price_full]}</span>
-                {else}
-                  <span class="mr-2 text-2xl text-[#232322]">{$product.minimal_quantity}</span><span class="mr-2 text-2xl text-[#232322]">m² / </span>
-                  <span itemprop="price" content="{if $product.rounded_display_price}{$product.rounded_display_price}{else}{Context::getContext()->currentLocale->formatPrice($product.price_amount*$product.minimal_quantity,$currency->iso_code)}{/if}">{Context::getContext()->currentLocale->formatPrice($product.price_amount*$product.minimal_quantity,$currency->iso_code)}</span>  
+                <span
+                  itemprop="price">{l s='%unit_price%' d='Shop.Theme.Catalog' sprintf=['%unit_price%' => $product.unit_price_full]}</span>
+              {else}
+                <span class="mr-2 text-2xl text-[#232322]">{$product.minimal_quantity}</span><span
+                  class="mr-2 text-2xl text-[#232322]">m² / </span>
+                <span itemprop="price"
+                  content="{if $product.rounded_display_price}{$product.rounded_display_price}{else}{Context::getContext()->currentLocale->formatPrice($product.price_amount*$product.minimal_quantity,$currency->iso_code)}{/if}">{Context::getContext()->currentLocale->formatPrice($product.price_amount*$product.minimal_quantity,$currency->iso_code)}</span>
               {/if}
 
             {else}
-              <span itemprop="price" content="{if $product.rounded_display_price}{$product.rounded_display_price}{else}{$product.price}{/if}">{$product.price}</span>  
+              <span itemprop="price"
+                content="{if $product.rounded_display_price}{$product.rounded_display_price}{else}{$product.price}{/if}">{$product.price}</span>
             {/if}
           </div>
         </div>
@@ -69,19 +65,22 @@
 
       {block name='product_without_taxes'}
         {if $priceDisplay == 2}
-          <p class="product-without-taxes">{l s='%price% tax excl.' d='Shop.Theme.Catalog' sprintf=['%price%' => $product.price_tax_exc]}</p>
+          <p class="product-without-taxes">
+            {l s='%price% tax excl.' d='Shop.Theme.Catalog' sprintf=['%price%' => $product.price_tax_exc]}</p>
         {/if}
       {/block}
 
       {block name='product_pack_price'}
         {if $displayPackPrice}
-          <p class="product-pack-price"><span>{l s='Instead of %price%' d='Shop.Theme.Catalog' sprintf=['%price%' => $noPackPrice]}</span></p>
+          <p class="product-pack-price">
+            <span>{l s='Instead of %price%' d='Shop.Theme.Catalog' sprintf=['%price%' => $noPackPrice]}</span></p>
         {/if}
       {/block}
 
       {block name='product_ecotax'}
         {if $product.ecotax.amount > 0}
-          <p class="price-ecotax">{l s='Including %amount% for ecotax' d='Shop.Theme.Catalog' sprintf=['%amount%' => $product.ecotax.value]}
+          <p class="price-ecotax">
+            {l s='Including %amount% for ecotax' d='Shop.Theme.Catalog' sprintf=['%amount%' => $product.ecotax.value]}
             {if $product.has_discount}
               {l s='(not impacted by the discount)' d='Shop.Theme.Catalog'}
             {/if}
@@ -106,7 +105,7 @@
         {elseif $product.additional_delivery_times == 2}
           {if $product.quantity > 0}
             <span class="delivery-information">{$product.delivery_in_stock}</span>
-          {* Out of stock message should not be displayed if customer can't order the product. *}
+            {* Out of stock message should not be displayed if customer can't order the product. *}
           {elseif $product.quantity <= 0 && $product.add_to_cart_url}
             <span class="delivery-information">{$product.delivery_out_stock}</span>
           {/if}

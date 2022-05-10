@@ -7,6 +7,17 @@ $(document).ready(function () {
   var $configurableModal = $('#productConfigurable')
   var $productConfigurableOptions = $('[data-product-attribute]')
 
+  var imageVariant = $('#main')
+    .find('img#product_original_img')
+    .first()
+    .attr('src')
+  $configurableElements
+    .filter(function () {
+      return $(this).data('productConfigurable') == 'swiper'
+    })
+    .find('img')
+    .attr('src', imageVariant)
+
   selectedLengthElement = $('[data-product-total-length]')
 
   $configurableElements
@@ -59,12 +70,13 @@ $(document).ready(function () {
       var countConfigurableSelected = configurableSelected.filter(
         (product) => product.selected === true,
       ).length
-      console.log(countConfigurableSelected)
       if (countConfigurableSelected) {
         $('.hidden [data-button-action="add-to-cart"]').trigger('click')
         productConfigurableUnSelectAll()
         productConfigurableSetState()
-        window.location.assign(prestashop.urls.pages.cart)
+        setTimeout(function () {
+          window.location.assign(prestashop.urls.pages.cart)
+        }, 300)
       }
     },
   )
@@ -77,7 +89,7 @@ $(document).ready(function () {
         (product) => product.selected === true,
       )
       productConfigurableUnSelectAll()
-      productConfigurableWriteState('')
+      productConfigurableWriteState('Próbka') //TODO: Check why not updating
       productConfigurableSaveState()
       productConfigurableSetState()
       $('[data-product-attribute]').eq(5).trigger('click')
@@ -88,6 +100,7 @@ $(document).ready(function () {
     prestashop.on('updatedProduct', function (event) {
       if ($('[data-product-attribute]').eq(5).is(':checked')) {
         $('#quantity_wanted').val(1)
+        productConfigurableWriteState('Próbka') //TODO: Check why not updating
         $('.hidden [data-button-action="add-to-cart"]').trigger('click')
 
         tempSelectedIds.forEach((product) => {
@@ -304,6 +317,5 @@ function productConfigurableSetButtonState(selectedArray) {
     $('.modal .add-to-cart-anim.add button').prop('disabled', false)
   } else {
     $('.modal .add-to-cart-anim.add button').prop('disabled', true)
-    console.log('disabled')
   }
 }

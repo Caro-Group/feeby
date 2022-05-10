@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   deploy:
@@ -12,10 +15,10 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v1
+        uses: actions/checkout@v3
         with:
           fetch-depth: 2
-      
+
       - name: Get Composer Cache Directory
         id: composer-cache
         run: |
@@ -32,7 +35,7 @@ jobs:
         id: npm-cache
         run: |
           echo "::set-output name=dir::$(npm config get cache)"
-          
+
       - uses: actions/cache@v2
         with:
           path: ${{ steps.npm-cache.outputs.dir }}
@@ -49,28 +52,15 @@ jobs:
         run: npm install && npm run deploy
 
       - name: Remove node
-        run: sudo rm -rf node_modules  
+        run: sudo rm -rf node_modules
 
-# TODO: Implement SSH for speed of deployment
-#      - name: Deploy to Server
-#        uses: easingthemes/ssh-deploy@v2.1.5
-#        env:
-#          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY_PROD }}
-#          ARGS: "-rlgoDzvc --delete"
-#          SOURCE: ${{ secrets.SOURCE }}
-#          TARGET: ${{ secrets.TARGET_PROD }}
-#          REMOTE_HOST: ${{ secrets.REMOTE_HOST_PROD }}
-#          REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
-#          REMOTE_USER: ${{ secrets.REMOTE_USER }}
-#          EXCLUDE: "/dist/, /node_modules/, /cache/, /.git/, /.github/"
-
-      - name: Deploy to Server SFTP
-        uses: wlixcc/SFTP-Deploy-Action@v1.0
+      - name: Deploy to Server
+        uses: burnett01/rsync-deployments@5.2
         with:
-          username: ${{ secrets.REMOTE_USER }}
-          server: ${{ secrets.REMOTE_HOST }}
-          port: ${{ secrets.REMOTE_PORT }}
-          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-          local_path: './*'
-          remote_path: ${{ secrets.TARGET }}
-          args: '-o ConnectTimeout=5'
+          switches: -azrv --relative --cvs-exclude --exclude='node_modules' --exclude='cache' --exclude='assets/img/modules' --exclude='*.code-workspace' --exclude='.*' --exclude='*.sh'  --delete
+          remote_path: ${{ secrets.REMOTE_PATH }}
+          remote_host: ${{ secrets.REMOTE_HOST }}
+          remote_port: ${{ secrets.REMOTE_PORT }}
+          remote_user: ${{ secrets.REMOTE_USER }}
+          remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
+          path: './'

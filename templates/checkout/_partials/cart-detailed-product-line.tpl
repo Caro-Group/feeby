@@ -49,9 +49,12 @@
           <span class="font-light mr-1 text-base text-main-dark">{$attribute}:</span>
           <span class="font-light text-base text-main-dark">{$value}</span>
         </div>
+        {if $value eq 'Próbka'}
+          {assign var="productSample" value="true"}
+        {/if}
       {/foreach}
 
-      {if is_array($product.customizations) && $product.customizations|count}
+      {if is_array($product.customizations) && $product.customizations|count && !isset($productSample)}
         {block name='cart_detailed_product_line_customization'}
           {foreach from=$product.customizations item="customization"}
             <div class="flex flex-row">
