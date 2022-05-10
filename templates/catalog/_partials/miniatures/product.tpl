@@ -84,7 +84,7 @@
 							{hook h='displayProductPriceBlock' product=$product type="before_price"}
 
 							<span class="sr-only">{l s='Price' d='Shop.Theme.Catalog'}</span>
-						<span itemprop="price" class=" {if $product.has_discount} text-main {else} text-main-dark {/if} text-base tablet:text-xl font-medium font-body">{$product.price} {if isset($product.unity)}/{$product.unity|escape:'html':'UTF-8'}{/if}</span>
+						<span itemprop="price" class=" {if $product.has_discount} text-main {else} text-main-dark {/if} text-base tablet:text-xl font-medium font-body">{$product.price} {if isset($product.unity)}/{$product.unity|replace:'2':'²'|escape:'html':'UTF-8'}{/if}</span>
 
 							{hook h='displayProductPriceBlock' product=$product type='unit_price'}
 
