@@ -28,7 +28,7 @@
   {if isset($category) && $category.image.large.url}
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 desktop-presta:mb-[10px]">
       <div class="-mx-[20px] tablet:mx-0">
-        <img class="w-full h-auto max-h-[400px] object-cover tablet:rounded-md" src="{$category.image.large.url}?timestamp={$category.date_upd|replace:'-':''|replace:' ':''|replace:':':''}" alt="{if !empty($category.image.legend)}{$category.image.legend}{else}{$category.name}{/if}">
+        <img class="w-full h-auto max-h-[400px] object-cover tablet:rounded-md" src="{$category.image.large.url}?timestamp={$category.date_upd|microtime}" alt="{if !empty($category.image.legend)}{$category.image.legend}{else}{$category.name}{/if}">
       </div>
     </div>
   {/if}
