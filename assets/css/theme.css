@@ -10331,6 +10331,7 @@ div.active-hover ul > li:hover > .dropdown-menu {
       -o-box-shadow: none;
       -ms-box-shadow: none;
       box-shadow: none; }
+    }
 /*** Responsive part ***/
 @media (max-width: 991px) {
   .ApMegamenu > .navbar {
