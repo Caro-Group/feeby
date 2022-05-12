@@ -12,7 +12,7 @@
 
 {if count($Num) > 0}
 	<div class="w-full overflow-hidden" data-top-bar-swiper>
-		<div class="marquee-wrapper flex w-max h-5 tablet:h-10  select-none py-1 tablet:py-0">
+		<div class="marquee-wrapper flex w-max h-5 tablet:h-10  select-none">
 			{foreach from=$Num item=sliders name=val}
 				{foreach from=$sliders item=slider key=i name="sliders"}
 					<div class=" w-max min-w-[100vw] pr-10 h-5 tablet:h-10 flex items-center justify-center whitespace-nowrap">
