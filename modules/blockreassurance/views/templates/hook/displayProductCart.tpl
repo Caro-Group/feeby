@@ -6,9 +6,9 @@
             {if $block['icon'] != 'undefined'}
                 <span class="flex item-product items-center tablet:mr-2">
                     {if $block['icon']}
-                        <img class="w-[45px] h-[45px] tablet:w-[40px] tablet:h-[40px]" src="{$block['icon']}" width="40" height="40">
+                        <img class="w-[45px] h-[45px] tablet:w-[40px] tablet:h-[40px]" src="{$block['icon']}" width="40" height="40" alt="{$block.title}">
                     {elseif $block['custom_icon']}
-                        <img class="w-[45px] h-[45px] tablet:w-[40px] tablet:h-[40px]" src="{$block['custom_icon']}" width="40" height="40">
+                        <img class="w-[45px] h-[45px] tablet:w-[40px] tablet:h-[40px]" src="{$block['custom_icon']}" width="40" height="40" alt="{$block.title}">
                     {/if}
                 </span>
             {/if}

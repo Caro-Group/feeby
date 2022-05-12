@@ -30,7 +30,7 @@
         {if $smarty.foreach.blocks.iteration < 3}
             <p class="{if $block@first}mb-0 mr-4 phone-wide:mr-0{/if} phone-wide:px-3 font-body">
                 {if $block.image}
-                    <img class="h-6 tablet:h-10" width="40" height="40" src="{$block.image}">
+                    <img class="h-6 tablet:h-10" width="40" height="40" src="{$block.image}" alt="{$block.title}">
                 {/if}
                 {$block.title}
             </p>
