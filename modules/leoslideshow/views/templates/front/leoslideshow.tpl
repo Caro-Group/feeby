@@ -35,8 +35,8 @@
 					<img
 						class="min-w-full desktop-wide:h-banner-final object-left h-auto"
 						loading="{if $i == 1}eager{else}lazy{/if}"
-						width="{$slider.main_image_width|escape:'html':'UTF-8'}"
-						height="{$slider.main_image_height|escape:'html':'UTF-8'}"
+						width="{$sliderParams['width']|escape:'html':'UTF-8'}"
+						height="{$sliderParams['height']|escape:'html':'UTF-8'}"
 						src="{$slider.main_image|escape:'html':'UTF-8'}">
 				</a>
 
