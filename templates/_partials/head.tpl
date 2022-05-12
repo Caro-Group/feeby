@@ -68,7 +68,7 @@
 </noscript>
 
 <script type="text/javascript">
-if ('serviceWorker' in navigator && location.search == '?sw=true') {
+if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register("/themes/feeby/assets/js/sw.js?rev=4", { scope: '/' });
   });
