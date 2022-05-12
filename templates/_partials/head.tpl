@@ -40,9 +40,9 @@
     <link rel="canonical" href="{$page.canonical}">
   {/if}
   {block name='head_hreflang'}
-      {foreach from=$urls.alternative_langs item=pageUrl key=code}
-            <link rel="alternate" href="{$pageUrl}" hreflang="{$code}">
-      {/foreach}
+    {foreach from=$urls.alternative_langs item=pageUrl key=code}
+      <link rel="alternate" href="{$pageUrl}" hreflang="{$code}">
+    {/foreach}
   {/block}
 {/block}
 
@@ -57,12 +57,16 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link media="print" onload="this.onload=null;this.removeAttribute('media');" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,400&subset=latin-ext&display=swap" rel="stylesheet">
+<link media="print" onload="this.onload=null;this.removeAttribute('media');"
+  href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,400&subset=latin-ext&display=swap"
+  rel="stylesheet">
 
 
 <!-- no-JS fallback -->
 <noscript>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,400&subset=latin-ext&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,400&subset=latin-ext&display=swap"
+    rel="stylesheet">
 </noscript>
 
 {block name="setting"}
@@ -76,28 +80,29 @@
 
 Classes used in builder: 
 
-tablet-medium:mr-20 tablet-wide:mr-8 desktop:mr-0 tablet-medium:top-auto tablet-medium:w-3/5 tablet-medium:absolute tablet-medium:-bottom-12 tablet:mx-4 desktop-presta:mx-0
+tablet-medium:mr-20 tablet-wide:mr-8 desktop:mr-0 tablet-medium:top-auto tablet-medium:w-3/5 tablet-medium:absolute
+tablet-medium:-bottom-12 tablet:mx-4 desktop-presta:mx-0 tablet-medium:border-b-0 tablet-medium:border-t
 
 *}
 
 {* LEO - Load Css With Prestashop Standard *}
 {if isset($LOAD_CSS_TYPE) && !$LOAD_CSS_TYPE}
-   
-    {if isset($LEO_CSS)}
-        {foreach from=$LEO_CSS key=css_uri item=media}
-          <link rel="stylesheet" href="{$css_uri}" type="text/css" media="{$media}" />
-        {/foreach}
-    {/if}
-    
-    {if isset($LEO_SKIN_CSS)}
-        {foreach from=$LEO_SKIN_CSS item=linkCss}
-            {$linkCss nofilter}
-        {/foreach}
-    {/if}
+
+  {if isset($LEO_CSS)}
+    {foreach from=$LEO_CSS key=css_uri item=media}
+      <link rel="stylesheet" href="{$css_uri}" type="text/css" media="{$media}" />
+    {/foreach}
+  {/if}
+
+  {if isset($LEO_SKIN_CSS)}
+    {foreach from=$LEO_SKIN_CSS item=linkCss}
+      {$linkCss nofilter}
+    {/foreach}
+  {/if}
 {/if}
 {* LEO LAYOUT *}
 {if isset($LAYOUT_WIDTH)}
-    {$LAYOUT_WIDTH nofilter}
+  {$LAYOUT_WIDTH nofilter}
 {/if}
 
 {block name='javascript_head'}
@@ -110,34 +115,35 @@ tablet-medium:mr-20 tablet-wide:mr-8 desktop:mr-0 tablet-medium:top-auto tablet-
 
 {block name='hook_extra'}{/block}
 
-  <!-- Messenger Chat -->
-  <div id="fb-root"></div>
+<!-- Messenger Chat -->
+<div id="fb-root"></div>
 
-  <div id="fb-customer-chat" class="fb-customerchat">
-  </div>
+<div id="fb-customer-chat" class="fb-customerchat">
+</div>
 
-  <script>
-    var chatbox = document.getElementById('fb-customer-chat');
-    chatbox.setAttribute("page_id", "1536148346629830");
-    chatbox.setAttribute("attribution", "biz_inbox");
-  </script>
-  <script>
-    window.fbAsyncInit = function() {
-      FB.init({
-        xfbml            : true,
-        version          : 'v13.0'
-      });
-    };
+<script>
+  var chatbox = document.getElementById('fb-customer-chat');
+  chatbox.setAttribute("page_id", "1536148346629830");
+  chatbox.setAttribute("attribution", "biz_inbox");
+</script>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      xfbml: true,
+      version: 'v13.0'
+    });
+  };
 
-    (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = 'https://connect.facebook.net/pl_PL/sdk/xfbml.customerchat.js';
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-  </script>
-  <!-- /Messenger Chat -->
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = 'https://connect.facebook.net/pl_PL/sdk/xfbml.customerchat.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+<!-- /Messenger Chat -->
 
 {* 
 Classes used in builder:
