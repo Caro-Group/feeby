@@ -11,13 +11,27 @@ workbox.precaching.precacheAndRoute([
 ])
 
 workbox.routing.registerRoute(
-  new RegExp('/themes/feeby/assets/cache/.*\\.(?:js)'),
-  new workbox.strategies.NetworkFirst(),
+  new RegExp('/themes/feeby/assets/cache/.*\\.js)'),
+  new workbox.strategies.CacheFirst({
+    cacheName: 'js-compile-cache',
+    plugins: [
+      new workbox.expiration.ExpirationPlugin({
+        maxEntries: 1,
+      }),
+    ],
+  }),
 )
 
 workbox.routing.registerRoute(
-  new RegExp('/themes/feeby/assets/cache/.*\\.(?:css)'),
-  new workbox.strategies.NetworkFirst(),
+  new RegExp('/themes/feeby/assets/cache/.*\\.css)'),
+  new workbox.strategies.CacheFirst({
+    cacheName: 'css-compile-cache',
+    plugins: [
+      new workbox.expiration.ExpirationPlugin({
+        maxEntries: 1,
+      }),
+    ],
+  }),
 )
 
 workbox.routing.registerRoute(
