@@ -3,7 +3,11 @@ importScripts(
 )
 
 workbox.precaching.precacheAndRoute([
-  'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,400&subset=latin-ext&display=swap',
+  {
+    url:
+      'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,400&subset=latin-ext&display=swap',
+    revision: '1',
+  },
 ])
 
 workbox.routing.registerRoute(
