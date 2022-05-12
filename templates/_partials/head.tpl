@@ -59,7 +59,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link media="print" onload="this.onload=null;this.removeAttribute('media');" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,400&subset=latin-ext&display=swap" rel="stylesheet">
 
-
+<meta name="theme-color" content="#DF1A5B">
+<link rel="manifest" href="/themes/feeby/manifest.webmanifest">
 <!-- no-JS fallback -->
 <noscript>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,400&subset=latin-ext&display=swap" rel="stylesheet">
