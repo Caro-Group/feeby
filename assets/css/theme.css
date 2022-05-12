@@ -1684,8 +1684,6 @@ tbody.collapse.in {
 
 .navbar-nav .nav-item {
   float: left; }
-.navbar-nav .nav-link {
-  display: block;}
   .navbar-nav .nav-link + .nav-link {
     margin-left: 1rem; }
 .navbar-nav .nav-item + .nav-item {
@@ -15320,9 +15318,6 @@ button:focus, button:hover {
   color: #888;
   line-height: 1.5;
   font-size: 13px; }
-  @media (max-width: 991px) {
-    .leo-widget .widget-html {
-      margin: 10px 0; } }
   .leo-widget .widget-html p {
     line-height: 20px;
     margin: 0 0 15px; }
