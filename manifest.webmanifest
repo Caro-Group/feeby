@@ -1,7 +1,7 @@
 {
   "theme_color": "#DF1A5B",
   "background_color": "#FFFFFF",
-  "display": "minimal_ui",
+  "display": "minimal-ui",
   "scope": "/",
   "start_url": "/?source=pwa",
   "name": "Feeby.pl - Sklep z obrazami i dekoracjami \u015bciennymi",
