@@ -37,6 +37,7 @@
 						loading="{if $smarty.foreach.sliders.first}eager{else}lazy{/if}"
 						width="{$sliderParams['width']|escape:'html':'UTF-8'}"
 						height="{$sliderParams['height']|escape:'html':'UTF-8'}"
+						alt="{$slider.title|escape:'html':'UTF-8'}"
 						src="{$slider.main_image|escape:'html':'UTF-8'}">
 				</a>
 
