@@ -37,13 +37,11 @@
 							width="{$product.cover.bySize.category_default.width}"
 							height="{$product.cover.bySize.category_default.height}"
 							src="{$product.cover.bySize.category_default_x2.url}"
-							srcset="{$product.cover.bySize.category_default.url},
-							{$product.cover.bySize.category_default_x2.url} 2x"
 							alt = "{if !empty($product.cover.legend)}{$product.cover.legend}{else}{$product.name|truncate:30:'...'}{/if}"
 							data-full-size-image-url = "{$product.cover.large.url}"
 							loading="lazy"
 						/> 
-						<span class="absolute opacity-0 inset-0 product-additional z-10 hover:opacity-100 transition" data-idproduct="{$product.id_product}"></span>
+						<span class="absolute opacity-0 inset-0 product-additional z-10 hover:opacity-100 transition bottom-auto" data-idproduct="{$product.id_product}"></span>
 					</a>
 				{else}
 					<a href="{$product.canonical_url}">
@@ -84,7 +82,7 @@
 							{hook h='displayProductPriceBlock' product=$product type="before_price"}
 
 							<span class="sr-only">{l s='Price' d='Shop.Theme.Catalog'}</span>
-							<span itemprop="price" class=" {if $product.has_discount} text-main {else} text-main-dark {/if} text-base tablet:text-xl font-medium font-body">{$product.price}</span>
+						<span itemprop="price" class=" {if $product.has_discount} text-main {else} text-main-dark {/if} text-base tablet:text-xl font-medium font-body">{$product.price} {if isset($product.unity) && $product.unity != ''}/{$product.unity|replace:'2':'²'|escape:'html':'UTF-8'}{/if}</span>
 
 							{hook h='displayProductPriceBlock' product=$product type='unit_price'}
 
