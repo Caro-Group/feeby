@@ -8,7 +8,7 @@
 <div class="swiper-banner overflow-hidden tablet-medium:rounded-md -mx-[10px] tablet-medium:mx-0">
 	<div class="swiper-wrapper">
 	{if $sliders}
-		{foreach from=$sliders item=slider key=i name="sliders"}
+		{foreach from=$sliders item=slider name="sliders"}
 		<div class="swiper-slide"
 		data-pausetime="{$slider.data_delay|escape:'html':'UTF-8'}">
 		
@@ -34,7 +34,7 @@
 
 					<img
 						class="min-w-full desktop-wide:h-banner-final object-left h-auto"
-						loading="{if $i == 1}eager{else}lazy{/if}"
+						loading="{if $smarty.foreach.sliders.first}eager{else}lazy{/if}"
 						width="{$sliderParams['width']|escape:'html':'UTF-8'}"
 						height="{$sliderParams['height']|escape:'html':'UTF-8'}"
 						src="{$slider.main_image|escape:'html':'UTF-8'}">
