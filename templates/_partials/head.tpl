@@ -70,7 +70,7 @@
 <script type="text/javascript">
 if ('serviceWorker' in navigator && location.search == '?sw=true') {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register("/themes/feeby/assets/js/sw.js?rev=3", { scope: '/' });
+    navigator.serviceWorker.register("/themes/feeby/assets/js/sw.js?rev=4", { scope: '/' });
   });
 }
 </script>
