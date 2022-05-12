@@ -12,6 +12,10 @@ workbox.precaching.precacheAndRoute([
 
 workbox.routing.registerRoute(
   new RegExp('/themes/feeby/assets/cache/.*\\.(?:js)'),
+  new workbox.strategies.NetworkFirst(),
+)
+
+workbox.routing.registerRoute(
   new RegExp('/themes/feeby/assets/cache/.*\\.(?:css)'),
   new workbox.strategies.NetworkFirst(),
 )
