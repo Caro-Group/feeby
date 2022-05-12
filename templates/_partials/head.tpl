@@ -67,6 +67,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,400&subset=latin-ext&display=swap" rel="stylesheet">
 </noscript>
 
+<script type="text/javascript">
+if ('serviceWorker' in navigator && location.search == '?sw=true') {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register("/themes/feeby/assets/js/sw.js", , { scope: '/' });
+  });
+}
+</script>
+
 {block name="setting"}
   {include file="layouts/setting.tpl"}
 {/block}
