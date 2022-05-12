@@ -53,6 +53,7 @@
 {block name='head_icons'}
   <link rel="icon" type="image/vnd.microsoft.icon" href="{$shop.favicon}?{$shop.favicon_update_time}">
   <link rel="shortcut icon" type="image/x-icon" href="{$shop.favicon}?{$shop.favicon_update_time}">
+  <link rel="apple-touch-icon" href="/themes/feeby/assets/symbol/icon-512x512.png?{$shop.favicon_update_time}">
 {/block}
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
