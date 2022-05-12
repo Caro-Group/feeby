@@ -31,7 +31,7 @@
         <div class="flex flex-col items-center w-1/2 tablet:w-1/4 px-8 mt-7 ">
             <div class="h-12 w-12 tablet:h-16 tablet:w-16">
                     {if $block.image}
-                        <img src="{$block.image}">
+                        <img src="{$block.image}" width="48" height="48">
                     {/if}
             </div>
             <div class="flex flex-col text-center text-main-dark font-body text-base font-light tablet:text-xl">
