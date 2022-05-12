@@ -11,7 +11,7 @@ workbox.precaching.precacheAndRoute([
 ])
 
 workbox.routing.registerRoute(
-  new RegExp('/themes/feeby/assets/cache/.*\\.js)'),
+  new RegExp('/themes/feeby/assets/cache/.*\\.js'),
   new workbox.strategies.CacheFirst({
     cacheName: 'js-compile-cache',
     plugins: [
@@ -23,7 +23,7 @@ workbox.routing.registerRoute(
 )
 
 workbox.routing.registerRoute(
-  new RegExp('/themes/feeby/assets/cache/.*\\.css)'),
+  new RegExp('/themes/feeby/assets/cache/.*\\.css'),
   new workbox.strategies.CacheFirst({
     cacheName: 'css-compile-cache',
     plugins: [
