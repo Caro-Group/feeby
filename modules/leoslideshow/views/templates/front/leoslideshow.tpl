@@ -9,7 +9,6 @@
 	<div class="swiper-wrapper">
 	{if $sliders}
 		{foreach from=$sliders item=slider key=i name="sliders"}
-		{if $i == 1}{assign var="lazyImg" value="eager"}{else}{assign var="lazyImg" value="lazy"}{/if}
 		<div class="swiper-slide"
 		data-pausetime="{$slider.data_delay|escape:'html':'UTF-8'}">
 		
@@ -35,7 +34,7 @@
 
 					<img
 						class="min-w-full desktop-wide:h-banner-final object-left h-auto"
-						loading="{$lazyImg}"
+						loading="{if $i == 1}eager{else}lazy{/if}"
 						width="{$slider.main_image_width|escape:'html':'UTF-8'}"
 						height="{$slider.main_image_height|escape:'html':'UTF-8'}"
 						src="{$slider.main_image|escape:'html':'UTF-8'}">
