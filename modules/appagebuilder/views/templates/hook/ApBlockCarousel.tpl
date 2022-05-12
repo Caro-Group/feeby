@@ -16,17 +16,18 @@
 
         <div class="{(isset($formAtts.class)) ? $formAtts.class : ''|escape:'html':'UTF-8'}">
             {($apLiveEdit)?$apLiveEdit:'' nofilter}{* HTML form , no escape necessary *}
-            
+
             {if !empty($formAtts.slides)}
-                {assign var=leo_include_file value=$leo_helper->getTplTemplate('ApBlockCarouselItemNav1.tpl', $formAtts['override_folder'])}
+                {assign var=leo_include_file value=$leo_helper->getTplTemplate('ApBlockCarouselItemMarquee.tpl', $formAtts['override_folder'])}
                 {include file=$leo_include_file}
             {/if}
-            
+
             {($apLiveEditEnd)?$apLiveEditEnd:'' nofilter}{* HTML form , no escape necessary *}
         </div>
 
     {else}
-        <div class="block block_carousel exclusive appagebuilder {(isset($formAtts.class)) ? $formAtts.class : ''|escape:'html':'UTF-8'}">
+        <div
+            class="block block_carousel exclusive appagebuilder {(isset($formAtts.class)) ? $formAtts.class : ''|escape:'html':'UTF-8'}">
             {($apLiveEdit)?$apLiveEdit:'' nofilter}{* HTML form , no escape necessary *}
             <div class="block_content">
                 {if !empty($formAtts.slides)}
