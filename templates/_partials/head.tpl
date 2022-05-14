@@ -93,7 +93,8 @@ Classes used in builder:
 tablet-medium:mr-20 tablet-wide:mr-8 desktop:mr-0 tablet-medium:top-auto tablet-medium:w-3/5 tablet-medium:absolute
 tablet-medium:-bottom-12 tablet:mx-4 desktop-presta:mx-0 tablet-medium:border-b-0 tablet-medium:border-t
 tablet-medium:pb-0
-
+tablet-wide:mt-4
+tablet-wide:hidden
 *}
 
 {* LEO - Load Css With Prestashop Standard *}
