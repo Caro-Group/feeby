@@ -33,10 +33,14 @@
             title="{$product.default_image.legend}" itemprop="image"
             width="{$product.default_image.bySize.product_cover.width}"
             height="{$product.default_image.bySize.product_cover.height}">
-          <img id="product_original_img" class="hidden" loading="lazy"
-            src="{$link->getImageLink($product->link_rewrite, $product.default_image.id_image)}"
-            alt="{$product.default_image.legend}" title="{$product.default_image.legend}" itemprop="image"
-            data-pagespeed-no-transform>
+
+            {foreach from=$product.images item=image key=$key name=pictures}            
+              <img id="product_original_img" class="hidden" loading="lazy"
+                src="{$link->getImageLink($product->link_rewrite, $image.id_image)}"
+                alt="{$product.default_image.legend}" title="{$product.default_image.legend}" itemprop="image"
+                data-pagespeed-no-transform>
+            {/foreach}
+
           <div class="layer hidden-sm-down" data-toggle="modal" data-target="#product-modal">
             <i class="material-icons zoom-in">&#xE8FF;</i>
           </div>
@@ -61,7 +65,7 @@
         {/if}
       {/foreach}
 
-      <div id="thumb-gallery" class="product-thumb-images flex relative" data-info="{$group.attributes}">
+      <div id="thumb-gallery" class="product-thumb-images flex relative">
         <div class="swiper w-full overflow-hidden" data-swiper-product>
           <div class="swiper-wrapper">
             {foreach from=$product.images item=image key=$key name=pictures}
