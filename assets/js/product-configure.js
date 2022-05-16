@@ -13,7 +13,7 @@ $(document).ready(function () {
     .attr('src')
 
   if (typeof imageVariant === 'undefined' || !imageVariant.length) {
-    imageVariant = $('#main').find('img[data-original]').first().attr('src')
+    imageVariant = $('#main').find('img[data-original]').first().attr('data-original')
   }
 
   $configurableElements
