@@ -35,10 +35,10 @@
             height="{$product.default_image.bySize.product_cover.height}">
 
             {foreach from=$product.images item=image key=$key name=pictures}
-              {if $product.default_image.legend|strstr:"(Konfigurator)"}
+              {if $image.legend|strstr:"(Konfigurator)"}
               <img id="product_original_img" class="hidden" loading="lazy"
                 src="{$link->getImageLink($product->link_rewrite, $image.id_image)}"
-                alt="{$product.default_image.legend}" title="{$product.default_image.legend}" itemprop="image"
+                alt="{$image.legend}" title="{$image.legend}" itemprop="image"
                 data-pagespeed-no-transform>
                 {break}
               {/if}
