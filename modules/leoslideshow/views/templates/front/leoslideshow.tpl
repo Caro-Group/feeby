@@ -38,7 +38,9 @@
 						width="{$sliderParams['width']|escape:'html':'UTF-8'}"
 						height="{$sliderParams['height']|escape:'html':'UTF-8'}"
 						alt="{$slider.title|escape:'html':'UTF-8'}"
-						data-src="{$slider.main_image|escape:'html':'UTF-8'}">
+						data-src="{$slider.main_image|escape:'html':'UTF-8'}"
+						src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAA1JREFUGFdj+PHjx38ACbwD6GURLqcAAAAASUVORK5CYII="
+						>
 				</a>
 
 				<div>
