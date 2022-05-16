@@ -92,7 +92,7 @@
 {else}
   <a href="{$product.url}" class="thumbnail product-thumbnail leo-noimage">
  <img
-   {if $aplazyload}class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAA1JREFUGFdj+PHjx38ACbwD6GURLqcAAAAASUVORK5CYII=" data-src{else}src{/if} = "{$urls.no_picture_image.bySize.home_default.url}"
+   {if $aplazyload}class="lazy" data-src{else}src{/if} = "{$urls.no_picture_image.bySize.home_default.url}"
  >
   </a>
 {/if}

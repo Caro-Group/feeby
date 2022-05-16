@@ -20,8 +20,7 @@
             {/if}
             <img class="mb-5 w-full h-full lazy" {if $aplazyload}loading="lazy" {else}{/if}
                 data-src="{if isset($formAtts.image) && $formAtts.image}{$path|escape:'html':'UTF-8'}{$formAtts.image|escape:'html':'UTF-8'}{else}{if isset($formAtts.image_link)}{$formAtts.image_link|escape:'html':'UTF-8'}{/if}{/if}"
-                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAA1JREFUGFdj+PHjx38ACbwD6GURLqcAAAAASUVORK5CYII="
-                class="lazy {(isset($formAtts.animation) && $formAtts.animation != 'none') ? 'has-animation' : ''|escape:'html':'UTF-8'}"
+                class="{(isset($formAtts.animation) && $formAtts.animation != 'none') ? 'has-animation' : ''|escape:'html':'UTF-8'}"
                 {if isset($formAtts.animation) && $formAtts.animation != 'none'}
                     data-animation="{$formAtts.animation|escape:'html':'UTF-8'}" {/if} {if $formAtts.animation_delay != ''}
                 data-animation-delay="{$formAtts.animation_delay|escape:'html':'UTF-8'}" {/if}
