@@ -11,6 +11,11 @@ $(document).ready(function () {
     .find('img#product_original_img')
     .first()
     .attr('src')
+
+  if (typeof imageVariant === 'undefined' || !imageVariant.length) {
+    imageVariant = $('#main').find('img[data-original]').first().attr('src')
+  }
+
   $configurableElements
     .filter(function () {
       return $(this).data('productConfigurable') == 'swiper'

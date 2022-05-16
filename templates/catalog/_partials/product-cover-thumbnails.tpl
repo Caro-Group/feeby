@@ -32,7 +32,8 @@
             src="{$product.default_image.bySize.product_cover.url}" alt="{$product.default_image.legend}"
             title="{$product.default_image.legend}" itemprop="image"
             width="{$product.default_image.bySize.product_cover.width}"
-            height="{$product.default_image.bySize.product_cover.height}">
+            height="{$product.default_image.bySize.product_cover.height}"
+            data-original="{$link->getImageLink($product->link_rewrite, $product.default_image.id_image)}">
 
             {foreach from=$product.images item=image key=$key name=pictures}
               {if $image.legend|strstr:"(Konfigurator)"}
