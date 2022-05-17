@@ -23,58 +23,66 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 {if !isset($LISTING_GRID_MODE) || !isset($LISTING_PRODUCT_COLUMN) || !isset($LISTING_PRODUCT_COLUMN_MODULE) || !isset($LISTING_PRODUCT_TABLET) || !isset($LISTING_PRODUCT_SMALLDEVICE) || !isset($LISTING_PRODUCT_EXTRASMALLDEVICE) || !isset($LISTING_PRODUCT_MOBILE)}
-    {block name="setting"}
-      {include file="layouts/setting.tpl"}
-    {/block}
+  {block name="setting"}
+    {include file="layouts/setting.tpl"}
+  {/block}
 {/if}
 
 
-<div id="js-product-list-top" class="pb-7 tablet:pb-3 products-selection tablet:mb-[40px]">
-  {if $page.page_name == 'category'}
-    <div class="bg-main-dark mb-5 p-2 rounded-full tablet:hidden text-base text-center text-white" data-current-category-id="{$smarty.get.id_category}" onclick="openMenuWithCategory({$smarty.get.id_category})">
-      {l s='Categories' d='Shop.Theme.Global'}
-    </div>
-  {/if}
+<div id="js-product-list-top" class="pb-7 tablet:pb-3 pt-0 products-selection tablet:mb-[40px]">
+  <ul id="additionallCategoriesFilter" data-container="additional-filters" class="flex flex-wrap pb-7 tablet:pb-3">
+    {if $page.page_name == 'category'}
+      <div class="bg-main-dark mb-5 p-2 rounded-full tablet:hidden text-base text-center text-white"
+        data-current-category-id="{$smarty.get.id_category}" onclick="openMenuWithCategory({$smarty.get.id_category})">
+        {l s='Categories' d='Shop.Theme.Global'}
+      </div>
+    {/if}
 
-  <div class=" flex flex-wrap justify-between " >
-    <div style="flex:0 0 auto;" class="hidden-md-up w-1/2 pr-[10px] order-1 flex justify-center ">
+    <div class=" flex flex-wrap justify-between ">
+      <div style="flex:0 0 auto;" class="hidden-md-up w-1/2 pr-[10px] order-1 flex justify-center ">
         {if !empty($listing.rendered_facets)}
-          
-            <button id="search_filter_toggler_collapse" class="border-0 px-5 text-left text-base text-normal bg-gray-1000 rounded-md text-main-dark text-left w-full" data-toggle="collapse" href="#search_filters_wrapper" aria-expanded="false" aria-controls="search_filters_wrapper">
-              {l s='Filter' d='Shop.Theme.Actions'}{if !empty($activeFilters)} ({$activeFilters|count}){/if}
-              <span class="-top-1 float-right pl-4 relative">
-                <i class="material-icons text-xl ">add</i>
-              </span>
-            </button>
+
+          <button id="search_filter_toggler_collapse"
+            class="border-0 px-5 text-left text-base text-normal bg-gray-1000 rounded-md text-main-dark text-left w-full"
+            data-toggle="collapse" href="#search_filters_wrapper" aria-expanded="false"
+            aria-controls="search_filters_wrapper">
+            {l s='Filter' d='Shop.Theme.Actions'}{if !empty($activeFilters)} ({$activeFilters|count}){/if}
+            <span class="-top-1 float-right pl-4 relative">
+              <i class="material-icons text-xl ">add</i>
+            </span>
+          </button>
         {/if}
-    </div>
+      </div>
 
-    {block name='product_list_active_filters'}
-      {if isset($listing.rendered_facets) && $listing.rendered_facets}
-          <div class="horizontal_filters order-3 tablet:order-2 tablet:rounded-l-md tablet:bg-gray-1000 w-full tablet:w-filter ">
-              
-                  <div id="search_filters_wrapper" class="collapse tablet:block tablet:h-full relative" aria-expanded="false" style="">
-                      {$listing.rendered_facets nofilter}
-                  </div>
-              
+      {block name='product_list_active_filters'}
+        {if isset($listing.rendered_facets) && $listing.rendered_facets}
+          <div
+            class="horizontal_filters order-3 tablet:order-2 tablet:rounded-l-md tablet:bg-gray-1000 w-full tablet:w-filter ">
+
+            <div id="search_filters_wrapper" class="collapse tablet:block tablet:h-full relative" aria-expanded="false"
+              style="">
+              {$listing.rendered_facets nofilter}
+            </div>
+
           </div>
-      {/if}
-    {/block}
-  
+        {/if}
+      {/block}
 
-    <div class="flex justify-center tablet:justify-end order-2 tablet:order-3 rounded-md w-1/2  pl-[10px] tablet:pl-0 z-30 tablet:bg-gray-1000 {if isset($listing.rendered_facets) && $listing.rendered_facets}  tablet:rounded-none tablet:rounded-r-md tablet:w-auto  {else} tablet:w-full {/if} ">
-      <div class="sort-by-row w-full tablet:w-48">
-        {block name='sort_by'}
-          {include file='catalog/_partials/sort-orders.tpl' sort_orders=$listing.sort_orders}
-        {/block}
+
+      <div
+        class="flex justify-center tablet:justify-end order-2 tablet:order-3 rounded-md w-1/2  pl-[10px] tablet:pl-0 z-30 tablet:bg-gray-1000 {if isset($listing.rendered_facets) && $listing.rendered_facets}  tablet:rounded-none tablet:rounded-r-md tablet:w-auto  {else} tablet:w-full {/if} ">
+        <div class="sort-by-row w-full tablet:w-48">
+          {block name='sort_by'}
+            {include file='catalog/_partials/sort-orders.tpl' sort_orders=$listing.sort_orders}
+          {/block}
+        </div>
       </div>
+
+      {block name='product_list_active_filters'}
+        <div style="flex:1 1 auto;" class="hidden-sm-down order-4">
+          {$listing.rendered_active_filters nofilter}
+        </div>
+      {/block}
+
     </div>
-
-    {block name='product_list_active_filters'}
-      <div style="flex:1 1 auto;" class="hidden-sm-down order-4">
-        {$listing.rendered_active_filters nofilter}
-      </div>
-    {/block}
-
-  </div>
 </div>
