@@ -1115,13 +1115,13 @@ function onResize(){
 //Filters custom move
 
 $(document).ready(function(){
-	const additionalFilterContainer = $('[data-container="additional-filters"]')
+	const aboveFiltersContainer = $('[data-container="additional-filters"]')
 	const currentFilterContainer = $('[data-target="#facet_attribute_group_15"]')
-	moveFilters(currentFilterContainer,additionalFilterContainer)
+	moveFilters(currentFilterContainer,aboveFiltersContainer)
 })
 
 function moveFilters(current,target){
-	const elements = current.find('ul').children()
+	const elements = current.next().children()
 	target.append(elements)
 	current.remove()
 };
