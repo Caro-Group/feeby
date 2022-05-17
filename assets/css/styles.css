@@ -644,3 +644,7 @@ body .loader {
 .marquee-wrapper {
   animation: marquee 20s linear infinite;
 }
+
+#search_filters .facet [data-target="#facet_attribute_group_15"]{
+  display: none;
+}
