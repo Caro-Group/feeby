@@ -1113,19 +1113,21 @@ function onResize(){
 
 
 //Filters custom move
-if($(".category-depth-level-2").length){
- var categoryItems = [617,59,389];
- var parent = $('#additionallCategoriesFilter');
 
- for(category of categoryItems){
-  category = $('[data-cat-id="' + category + '"]').hide();
-  /*if(category.length){
-   category.clone();
-   category.children().not(':first').remove();
-   category.appendTo(parent);
-  }*/
- }
-}
+$(document).ready(function(){
+	const additionalFilterContainer = $('[data-container="additional-filters"]')
+	const currentFilterContainer = $('[data-target="#facet_attribute_group_15"]')
+	moveFilters(currentFilterContainer,additionalFilterContainer)
+})
+
+function moveFilters(current,target){
+	const elements = current.find('ul').children()
+	target.append(elements)
+	current.remove()
+};
+
+
+//Filters custom move-end
 
 
 

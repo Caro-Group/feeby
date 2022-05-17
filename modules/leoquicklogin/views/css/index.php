@@ -1,5 +1,6 @@
-{*
-* 2007-2019 PrestaShop
+<?php
+/**
+* 2007-2015 PrestaShop
 *
 * NOTICE OF LICENSE
 *
@@ -18,23 +19,17 @@
 * needs please refer to http://www.prestashop.com for more information.
 *
 *  @author    PrestaShop SA <contact@prestashop.com>
-*  @copyright 2007-2019 PrestaShop SA
+*  @copyright 2007-2015 PrestaShop SA
 *  @license   http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
-*}
-{* tablet:mt-12 tablet:mb-8 *}
+*/
 
-{if $elements}
-  <div class="flex justify-center tablet:justify-start desktop:justify-center font-light  text-xs tablet:text-base tablet:mx-0 text-main-dark flex-wrap">
-      {foreach from=$elements item=$block key=$key name=blocks}
-        {if $smarty.foreach.blocks.iteration < 3}
-            <p class="{if $block@first}mb-0 mr-4 phone-wide:mr-0{/if} phone-wide:px-3 font-body">
-                {if $block.image}
-                    <img class="h-6 tablet:h-10" width="40" height="40" src="{$block.image}" alt="{$block.title}">
-                {/if}
-                {$block.title}
-            </p>
-        {/if}
-      {/foreach}
-  </div>
-{/if}
+header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
+header('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT');
+
+header('Cache-Control: no-store, no-cache, must-revalidate');
+header('Cache-Control: post-check=0, pre-check=0', false);
+header('Pragma: no-cache');
+
+header('Location: ../');
+exit;

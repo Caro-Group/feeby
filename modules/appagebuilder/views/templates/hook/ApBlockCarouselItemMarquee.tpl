@@ -16,7 +16,6 @@
 			{foreach from=$Num item=sliders name=val}
 				{foreach from=$sliders item=slider key=i name="sliders"}
 					<div class=" w-max min-w-[100vw] pr-10 h-5 tablet:h-10 flex items-center justify-center whitespace-nowrap">
-						{if $i == 1}{assign var="lazyImg" value="eager"}{else}{assign var="lazyImg" value="lazy"}{/if}
 						{if $slider.link}
 							<a class="flex justify-center items-center" title="{l s='%s' sprintf=[$slider.title] mod='appagebuilder'}"
 								{if $formAtts.is_open}target="_blank" {/if} href="{$slider.link}{*full link can not escape*}">
@@ -39,7 +38,7 @@
 
 								{if isset($slider.image) && !empty($slider.image)}
 									<div class="h-4 flex-shrink-0 flex justify-center items-center my-auto" style="flex-shrink:0;">
-										<img loading="{$lazyImg}" class="h-full w-auto" src="{$slider.image|escape:'html':'UTF-8'}"
+										<img loading="{if $smarty.foreach.sliders.first}{else}lazy{/if}" class="h-full w-auto" src="{$slider.image|escape:'html':'UTF-8'}"
 											alt="{if isset($slider.title)}{$slider.title|escape:'html':'UTF-8'}{/if}" />
 									</div>
 								{/if}

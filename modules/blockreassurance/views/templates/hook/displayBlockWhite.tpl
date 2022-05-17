@@ -34,9 +34,9 @@
             <div class="h-12 w-12 tablet:h-16 tablet:w-16">
                 {if $block['icon'] != 'undefined'}
                     {if $block['icon']}
-                        <img src="{$block['icon']}">
+                        <img src="{$block['icon']}" width="48" height="48" alt="{$block.title}">
                     {elseif $block['custom_icon']}
-                        <img src="{$block['custom_icon']}">
+                        <img src="{$block['custom_icon']}" width="48" height="48" alt="{$block.title}">
                     {/if}
                 {/if}
             </div>

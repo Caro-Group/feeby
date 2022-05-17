@@ -53,6 +53,7 @@
 {block name='head_icons'}
   <link rel="icon" type="image/vnd.microsoft.icon" href="{$shop.favicon}?{$shop.favicon_update_time}">
   <link rel="shortcut icon" type="image/x-icon" href="{$shop.favicon}?{$shop.favicon_update_time}">
+  <link rel="apple-touch-icon" href="/themes/feeby/assets/symbol/icon-512x512.png?{$shop.favicon_update_time}">
 {/block}
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -61,13 +62,22 @@
   href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,400&subset=latin-ext&display=swap"
   rel="stylesheet">
 
-
+<meta name="theme-color" content="#DF1A5B">
+<link rel="manifest" href="/themes/feeby/manifest.webmanifest">
 <!-- no-JS fallback -->
 <noscript>
   <link
     href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,400&subset=latin-ext&display=swap"
     rel="stylesheet">
 </noscript>
+
+<script type="text/javascript">
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register("/themes/feeby/assets/js/sw.js?rev=4", { scope: '/' });
+  });
+}
+</script>
 
 {block name="setting"}
   {include file="layouts/setting.tpl"}
@@ -83,7 +93,8 @@ Classes used in builder:
 tablet-medium:mr-20 tablet-wide:mr-8 desktop:mr-0 tablet-medium:top-auto tablet-medium:w-3/5 tablet-medium:absolute
 tablet-medium:-bottom-12 tablet:mx-4 desktop-presta:mx-0 tablet-medium:border-b-0 tablet-medium:border-t
 tablet-medium:pb-0
-
+tablet-wide:mt-4
+tablet-wide:hidden
 *}
 
 {* LEO - Load Css With Prestashop Standard *}

@@ -40,9 +40,12 @@ cache/*
 
 # Generated styles
 *.min.css
-
+!modules/leoquicklogin/views/css/font-awesome.min.css
 # ENV variables
 .env
 
 # Node modules
 node_modules
+
+# PWA Enabled
+!assets/js/.htaccess

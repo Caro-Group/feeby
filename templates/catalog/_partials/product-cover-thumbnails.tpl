@@ -32,17 +32,17 @@
             src="{$product.default_image.bySize.product_cover.url}" alt="{$product.default_image.legend}"
             title="{$product.default_image.legend}" itemprop="image"
             width="{$product.default_image.bySize.product_cover.width}"
-            height="{$product.default_image.bySize.product_cover.height}">
+            height="{$product.default_image.bySize.product_cover.height}"
+            data-original="{$link->getImageLink($product->link_rewrite, $product.default_image.id_image)}">
 
-            {foreach from=$product.images item=image key=$key name=pictures}
-              {if $product.default_image.legend|strstr:"(Konfigurator)"}
+          {foreach from=$product.images item=image key=$key name=pictures}
+            {if $image.legend|strstr:"(Konfigurator)"}
               <img id="product_original_img" class="hidden" loading="lazy"
-                src="{$link->getImageLink($product->link_rewrite, $image.id_image)}"
-                alt="{$product.default_image.legend}" title="{$product.default_image.legend}" itemprop="image"
-                data-pagespeed-no-transform>
-                {break}
-              {/if}
-            {/foreach}
+                src="{$link->getImageLink($product->link_rewrite, $image.id_image)}" alt="{$image.legend}" title="{$image.legend}"
+                itemprop="image" data-pagespeed-no-transform>
+              {break}
+            {/if}
+          {/foreach}
 
           <div class="layer hidden-sm-down" data-toggle="modal" data-target="#product-modal">
             <i class="material-icons zoom-in">&#xE8FF;</i>
@@ -74,20 +74,20 @@
             {foreach from=$product.images item=image key=$key name=pictures}
 
               {if !((
-                                 isset($productHideThreeLastThumbs) && 
-                                 (
-                                   $key > ($product.images|count - 4) ||
-                                   $key > ($product.images|count - 3) ||
-                                   $key > ($product.images|count - 2) ||
-                                   $key > ($product.images|count - 1)
-                                 )
-                               ) || (
-                                 isset($productHideLastThumbs) &&
-                                 (
-                                   $key > ($product.images|count - 2) ||
-                                   $key > ($product.images|count - 1)
-                                 )
-                               ))}
+                                       isset($productHideThreeLastThumbs) && 
+                                       (
+                                         $key > ($product.images|count - 4) ||
+                                         $key > ($product.images|count - 3) ||
+                                         $key > ($product.images|count - 2) ||
+                                         $key > ($product.images|count - 1)
+                                       )
+                                     ) || (
+                                       isset($productHideLastThumbs) &&
+                                       (
+                                         $key > ($product.images|count - 2) ||
+                                         $key > ($product.images|count - 1)
+                                       )
+                                     ))}
               <div
                 class="swiper-custom-slide w-auto h-full relative thumb-container {if $image.id_image == $product.default_image.id_image} active {/if}"
                 style="    flex-shrink: 0;
