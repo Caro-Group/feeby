@@ -56,11 +56,12 @@
 
                       {if $_expand_id == 'attribute_group_15'}
                         <li
-                          class="{if $filter.active} active border-main {else} border-transparent {/if} overflow-hidden rounded-md mr-5 border-2 border-solid transition hover:border-main ">
+                          class="{if !$_collapse}opacity-40{/if} {if $filter.active} active {/if} overflow-hidden rounded-md mr-5  ">
                           <a href="{$filter.nextEncodedFacetsURL}" class="flex flex-col" rel="nofollow">
-                            <img class="object-cover w-44 h-28{if $filter.active} border-main {else} border-transparent {/if}"
-                              src="{$filter.properties.texture}" />
-                            <h3 class="text-main-dark text-lg font-regular font-body ml-5 my-3">{$filter.label}</h3>
+                            <img class="object-cover w-44 h-28 " src="{$filter.properties.texture}" />
+                            <h3
+                              class="{if $filter.active} text-main {else} text-main-dark {/if} text-lg font-regular font-body ml-5 my-3">
+                              {$filter.label}</h3>
                           </a>
                         </li>
                       {else}
