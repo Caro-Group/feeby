@@ -37,7 +37,7 @@
 
               <div class="title cursor-pointer px-5 tablet:px-0 border-0 border-b-2 tablet:border-b-0 border-gray-1000
                 border-solid py-5 tablet:py-0 justify-between tablet:justify-start group {if $_collapse}collapsed{/if}
-                {if $_expand_id == 'attribute_group_15'} hidden {/if}" data-parent="#search_filters"
+                {if $_expand_id == 'attribute_group_15'} {else} flex {/if}" data-parent="#search_filters"
                 data-target="#facet_{$_expand_id}" data-toggle="collapse" {if !$_collapse} aria-expanded="true" {/if}>
                 <p class="facet-title m-0 text-base font-body font-normal transition">{$facet.label}</p>
                 <span class="pl-4 -top-1 relative">
@@ -56,11 +56,12 @@
 
                       {if $_expand_id == 'attribute_group_15'}
                         <li
-                          class="{if $filter.active} active border-main {else} border-transparent {/if} rounded-md mr-5 border-2 border-solid transition hover:border-main ">
+                          class="{if !$_collapse}opacity-40{/if} {if $filter.active} active {/if} overflow-hidden rounded-md mr-5  ">
                           <a href="{$filter.nextEncodedFacetsURL}" class="flex flex-col" rel="nofollow">
-                            <img class="object-cover w-44 h-28{if $filter.active} border-main {else} border-transparent {/if}"
-                              src="{$filter.properties.texture}" />
-                            <h3 class="text-main-dark text-lg font-light font-body ml-5 my-3">{$filter.label}</h3>
+                            <img class="object-cover w-44 h-28 " src="{$filter.properties.texture}" />
+                            <h3
+                              class="{if $filter.active} text-main {else} text-main-dark {/if} text-lg font-regular font-body ml-5 my-3">
+                              {$filter.label}</h3>
                           </a>
                         </li>
                       {else}
