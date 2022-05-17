@@ -1118,10 +1118,14 @@ $(document).ready(function(){
 	const aboveFiltersContainer = $('[data-container="additional-filters"]');
 	const currentFilterContainer = $('[data-target="#facet_attribute_group_15"]');
 
-	moveFilters(currentFilterContainer,aboveFiltersContainer);
-	
-	if (typeof prestashop !== 'undefined') {
-		prestashop.on('updateFacets',moveFilters(currentFilterContainer,aboveFiltersContainer));
+	if (currentFilterContainer.length !== 0 ) {
+		moveFilters(currentFilterContainer,aboveFiltersContainer);
+		
+		if (typeof prestashop !== 'undefined') {
+			prestashop.on('updateFacets',function(event){
+				window.location = event
+			});
+		}
 	}
 })
 	
@@ -1130,7 +1134,6 @@ function moveFilters(current,target){
 	target.empty();
 	target.append(elements.clone());
 };
-
 
 //Filters custom move-end
 
@@ -1246,16 +1249,6 @@ $('body').on('click', "[data-checkout-back]",function(e){
 
 //Top bar swiper 
 $(document).ready(function () {
-
-	const swiper = new Swiper('[data-top-bar-swiper]', {
-		speed: 25000,
-		spaceBetween: 50,
-		loop: true,
-		autoplay: {
-			delay: 0,
-		},
-		allowTouchMove: false,
-	  });
 	  
 	const swiperBlog = new Swiper('[data-swiper-blog]', {
 		speed: 300,
