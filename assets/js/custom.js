@@ -1115,20 +1115,20 @@ function onResize(){
 //Filters custom move
 
 $(document).ready(function(){
-	const aboveFiltersContainer = $('[data-container="additional-filters"]')
-	const currentFilterContainer = $('[data-target="#facet_attribute_group_15"]')
+	const aboveFiltersContainer = $('[data-container="additional-filters"]');
+	const currentFilterContainer = $('[data-target="#facet_attribute_group_15"]');
 
-	moveFilters(currentFilterContainer,aboveFiltersContainer)
+	moveFilters(currentFilterContainer,aboveFiltersContainer);
 	
 	if (typeof prestashop !== 'undefined') {
-		prestashop.on('updateFacets',moveFilters(currentFilterContainer,aboveFiltersContainer))
+		prestashop.on('updateFacets',moveFilters(currentFilterContainer,aboveFiltersContainer));
 	}
 })
 	
 function moveFilters(current,target){
-	const elements = current.next().children()
-	target.append(elements)
-	current.remove()
+	const elements = current.next().children();
+	target.empty();
+	target.append(elements.clone());
 };
 
 
