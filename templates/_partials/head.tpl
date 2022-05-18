@@ -72,11 +72,11 @@
 </noscript>
 
 <script type="text/javascript">
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register("/themes/feeby/assets/js/sw.js?rev=4", { scope: '/' });
-  });
-}
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register("/themes/feeby/assets/js/sw.js?rev=4", { scope: '/' });
+    });
+  }
 </script>
 
 {block name="setting"}
@@ -95,6 +95,7 @@ tablet-medium:-bottom-12 tablet:mx-4 desktop-presta:mx-0 tablet-medium:border-b-
 tablet-medium:pb-0
 tablet-wide:mt-4
 tablet-wide:hidden
+tablet-medium:hidden
 *}
 
 {* LEO - Load Css With Prestashop Standard *}
