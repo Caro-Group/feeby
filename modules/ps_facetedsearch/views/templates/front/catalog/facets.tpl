@@ -39,7 +39,8 @@
                 border-solid py-5 tablet:py-0 justify-between tablet:justify-start group {if $_collapse}collapsed{/if}"
                 data-parent="#search_filters" data-target="#facet_{$_expand_id}" data-toggle="collapse" {if !$_collapse}
                   aria-expanded="true" {/if} {if $_expand_id == 'attribute_group_15'}style="display: none;" {/if}>
-                  <p class="facet-title m-0 text-base font-body font-normal transition">{$facet.label}</p>
+                  <p class="facet-title m-0 text-base font-body font-normal group-hover:text-main transition">{$facet.label}
+                  </p>
                   <span class="pl-4 -top-1 relative">
                     <i class="material-icons text-xl text-main-dark group-hover:text-main transition">add</i>
                   </span>
@@ -56,7 +57,7 @@
 
                         {if $_expand_id == 'attribute_group_15'}
                           <li class="group {if !$_collapse && !$filter.active}opacity-40 hover:opacity-100{/if}
-                          {if $filter.active} active {/if} transition duration-200 overflow-hidden rounded-md mr-5  ">
+                          {if $filter.active} active {/if} transition duration-200 overflow-hidden rounded-md  ">
                             <a href="{$filter.nextEncodedFacetsURL}" class="flex flex-col" rel="nofollow">
                               <img class="object-cover w-[150px] h-24 tablet:w-44 tablet:h-28 " src="{$filter.properties.texture}" />
                               <h3
