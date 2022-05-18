@@ -1449,15 +1449,26 @@ $(document).ready(function () {
 		prestashop.on(
 		  'updatedProduct',
 		  function (event) {
-			new Swiper("[data-swiper-product-thumb]", {
+			let thumbSwiper = new Swiper("[data-swiper-product-thumb]", {
 				slidesPerView: "auto",
 				spaceBetween: 0,
 				slideClass: 'swiper-custom-slide',
 				navigation: {
-				  nextEl: "[data-swiper-product-thumb-next]",
-				  prevEl: "[data-swiper-product-thumb-prev]",
+				nextEl: "[data-swiper-product-thumb-next]",
+				prevEl: "[data-swiper-product-thumb-prev]",
 				},
-			  });
+			});
+
+			new Swiper("[data-swiper-product]", {
+				slidesPerView: 1,
+				spaceBetween: 20,
+				freeMode: true,
+				watchSlidesProgress: true,
+				thumbs:{
+					swiper: thumbSwiper
+				}
+			});
+
 		  }
 		);
 	  }

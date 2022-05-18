@@ -26,10 +26,10 @@
 <div class="images-container">
   {block name='product_cover_thumbnails'}
     {block name='product_cover'}
-      <div class="swiper product-cover border-2 border-solid rounded-[5px] border-gray-default overflow-hidden "
-        data-swiper-product>
-        <div class="swiper-wrapper h-full">
-          {if $product.default_image}
+      {if $product.default_image}
+        <div class="swiper product-cover border-2 border-solid rounded-[5px] border-gray-default overflow-hidden "
+          data-swiper-product>
+          <div class="swiper-wrapper h-full">
             {foreach from=$product.images item=image key=$key name=pictures}
               <div class="swiper-slide h-full">
                 <img id="zoom_product" loading="lazy" data-type-zoom="" class="img-fluid"
@@ -47,16 +47,15 @@
                 {/if}
               </div>
             {/foreach}
-
-            <div class="layer hidden-sm-down" data-toggle="modal" data-target="#product-modal">
-              <i class="material-icons zoom-in">&#xE8FF;</i>
-            </div>
-          {else}
-            <img class="lazy" data-src="{$urls.no_picture_image.bySize.large_default.url}" style="width:100%;">
-          {/if}
+          </div>
         </div>
-        {hook h='displayProductCoverPlacement'}
-      </div>
+        <div class="layer hidden-sm-down" data-toggle="modal" data-target="#product-modal">
+          <i class="material-icons zoom-in">&#xE8FF;</i>
+        </div>
+      {else}
+        <img class="lazy" data-src="{$urls.no_picture_image.bySize.large_default.url}" style="width:100%;">
+      {/if}
+      {hook h='displayProductCoverPlacement'}
     {/block}
     {block name='product_images'}
 
@@ -79,20 +78,20 @@
             {foreach from=$product.images item=image key=$key name=pictures}
 
               {if !((
-                                                                     isset($productHideThreeLastThumbs) && 
-                                                                     (
-                                                                       $key > ($product.images|count - 4) ||
-                                                                       $key > ($product.images|count - 3) ||
-                                                                       $key > ($product.images|count - 2) ||
-                                                                       $key > ($product.images|count - 1)
-                                                                     )
-                                                                   ) || (
-                                                                     isset($productHideLastThumbs) &&
-                                                                     (
-                                                                       $key > ($product.images|count - 2) ||
-                                                                       $key > ($product.images|count - 1)
-                                                                     )
-                                                                   ))}
+                                                                                 isset($productHideThreeLastThumbs) && 
+                                                                                 (
+                                                                                   $key > ($product.images|count - 4) ||
+                                                                                   $key > ($product.images|count - 3) ||
+                                                                                   $key > ($product.images|count - 2) ||
+                                                                                   $key > ($product.images|count - 1)
+                                                                                 )
+                                                                               ) || (
+                                                                                 isset($productHideLastThumbs) &&
+                                                                                 (
+                                                                                   $key > ($product.images|count - 2) ||
+                                                                                   $key > ($product.images|count - 1)
+                                                                                 )
+                                                                               ))}
               <div
                 class="swiper-custom-slide w-auto h-full relative thumb-container {if $image.id_image == $product.default_image.id_image} active {/if}"
                 style="    flex-shrink: 0;
