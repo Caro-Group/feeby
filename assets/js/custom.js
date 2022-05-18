@@ -652,18 +652,16 @@ function applyElevateZoom() {
 	}
 	else {
 		if ($.fn.elevateZoom !== undefined) {
-			$("[id=zoom_product]").each(function () {
-				$(this).elevateZoom(zoom_config);
-			});
+			$("[data-zoom-container]").elevateZoom();
 
 			//pass the images to Fancybox
-			$("#zoom_product").bind("click", function (e) {
-				$('[id=zoom_product]').each(function () {
-					var ez = $(this).data('elevateZoom');
-					$.fancybox(ez.getGalleryList());
-				});
-				return false;
-			});
+			// $('[id=zoom_product]').bind("click", function (e) {
+			// 	$('[id=zoom_product]').each(function () {
+			// 		var ez = $(this).data('elevateZoom');
+			// 		$.fancybox(ez.getGalleryList());
+			// 	});
+			// 	return false;
+			// });
 		}
 
 	}
@@ -1440,7 +1438,7 @@ $(document).ready(function () {
         },
       });
 
-	new Swiper("[data-swiper-product]", {
+	let productSwiper = new Swiper("[data-swiper-product]", {
         slidesPerView: 1,
         spaceBetween: 20,
 		navigation: {
@@ -1452,6 +1450,7 @@ $(document).ready(function () {
 		}
       });
 
+	  updateZoomImage(productSwiper)
 
 	  if (typeof prestashop !== 'undefined') {
 		prestashop.on(
@@ -1469,7 +1468,7 @@ $(document).ready(function () {
 				},
 			});
 
-			new Swiper("[data-swiper-product]", {
+			let productSwiper = new Swiper("[data-swiper-product]", {
 				slidesPerView: 1,
 				spaceBetween: 20,
 				navigation: {
@@ -1481,10 +1480,22 @@ $(document).ready(function () {
 				}
 			});
 
+			updateZoomImage(productSwiper)
+
+		
 		  }
 		);
 	  }
 });
+
+function updateZoomImage(swiperElement){
+	swiperElement.on('activeIndexChange',function () {
+		let activeElement = $(this.wrapperEl).find('img').eq(this.activeIndex)
+		let activeImageUrl = activeElement.attr('src')
+		$('.zoomWindowContainer div').css('background-image',`url(${activeImageUrl})`)
+	})
+}
+
 
 function paginationGoTop() {
 	$('.page-list a').click(function(){
