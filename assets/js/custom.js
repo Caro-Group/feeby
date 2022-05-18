@@ -652,12 +652,16 @@ function applyElevateZoom() {
 	}
 	else {
 		if ($.fn.elevateZoom !== undefined) {
-			$("#zoom_product").elevateZoom(zoom_config);
+			$("[id=zoom_product]").each(function () {
+				$(this).elevateZoom(zoom_config);
+			});
 
 			//pass the images to Fancybox
 			$("#zoom_product").bind("click", function (e) {
-				var ez = $('#zoom_product').data('elevateZoom');
-				$.fancybox(ez.getGalleryList());
+				$('[id=zoom_product]').each(function () {
+					var ez = $(this).data('elevateZoom');
+					$.fancybox(ez.getGalleryList());
+				});
 				return false;
 			});
 		}

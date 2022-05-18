@@ -52,9 +52,9 @@
             <i class="material-icons zoom-in">&#xE8FF;</i>
           </div>
           <div class="absolute left-4 bottom-10 z-50 hidden tablet:flex">
-            <i class="ti-arrow-left p-3 ml-6 border-2 border-gray-2000 text-gray-2000 bg-gray-2000/30 hover:bg-gray-2000 hover:text-main-dark rounded-full border-solid transition cursor-pointer"
+            <i class="ti-arrow-left p-3 ml-6 border-2 border-main-dark text-main-dark  hover:bg-main-dark hover:text-white rounded-full border-solid transition cursor-pointer"
               data-swiper-product-prev> </i>
-            <i class="ti-arrow-right p-3 ml-6 border-2 border-gray-2000 text-gray-2000 bg-gray-2000/30 hover:bg-gray-2000 hover:text-main-dark rounded-full border-solid transition cursor-pointer"
+            <i class="ti-arrow-right p-3 ml-6 border-2 border-main-dark text-main-dark hover:bg-main-dark hover:text-white rounded-full border-solid transition cursor-pointer"
               data-swiper-product-next> </i>
           </div>
         </div>
@@ -78,9 +78,9 @@
         {/if}
       {/foreach}
 
-      <div id="thumb-gallery" class="product-thumb-images flex relative">
+      <div class="product-thumb-images flex relative">
         <div class="swiper w-full overflow-hidden" data-swiper-product-thumb>
-          <div class="swiper-wrapper">
+          <div id="thumb-gallery" class="swiper-wrapper">
             {foreach from=$product.images item=image key=$key name=pictures}
 
               {if !((
