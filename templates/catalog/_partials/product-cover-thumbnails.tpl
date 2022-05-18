@@ -84,20 +84,20 @@
             {foreach from=$product.images item=image key=$key name=pictures}
 
               {if !((
-                                                                                                                                       isset($productHideThreeLastThumbs) && 
-                                                                                                                                       (
-                                                                                                                                         $key > ($product.images|count - 4) ||
-                                                                                                                                         $key > ($product.images|count - 3) ||
-                                                                                                                                         $key > ($product.images|count - 2) ||
-                                                                                                                                         $key > ($product.images|count - 1)
-                                                                                                                                       )
-                                                                                                                                     ) || (
-                                                                                                                                       isset($productHideLastThumbs) &&
-                                                                                                                                       (
-                                                                                                                                         $key > ($product.images|count - 2) ||
-                                                                                                                                         $key > ($product.images|count - 1)
-                                                                                                                                       )
-                                                                                                                                     ))}
+                isset($productHideThreeLastThumbs) && 
+                (
+                  $key > ($product.images|count - 4) ||
+                  $key > ($product.images|count - 3) ||
+                  $key > ($product.images|count - 2) ||
+                  $key > ($product.images|count - 1)
+                )
+              ) || (
+                isset($productHideLastThumbs) &&
+                (
+                  $key > ($product.images|count - 2) ||
+                  $key > ($product.images|count - 1)
+                )
+              ))}
               <div
                 class="swiper-custom-slide w-auto h-full relative thumb-container {if $image.id_image == $product.default_image.id_image} active {/if}"
                 style="    flex-shrink: 0;
@@ -105,7 +105,7 @@
                 <a href="javascript:void(0)" data-image="{$image.bySize.large_default.url}"
                   data-zoom-image="{$image.bySize.large_default.url}">
                   <img
-                    class="h-[100px] w-[100px] tablet:h-[200px] tablet:w-[200px] thumb js-thumb border border-solid rounded-lg mr-[18px] {if $image.id_image == $product.default_image.id_image} selected {/if}"
+                    class="h-[100px] w-[100px] tablet:h-[200px] tablet:w-[200px] thumb border border-solid rounded-lg mr-[18px] {if $image.id_image == $product.default_image.id_image} selected {/if}"
                     data-image-medium-src="{$image.bySize.medium_default.url}"
                     data-image-large-src="{$image.bySize.large_default.url}" src="{$image.bySize.product_thumbnail.url}"
                     alt="{$image.legend}" title="{$image.legend}" itemprop="image" width="200" height="200" loading="lazy" />
