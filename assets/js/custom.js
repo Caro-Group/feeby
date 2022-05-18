@@ -1428,8 +1428,6 @@ $(document).ready(function () {
         slidesPerView: "auto",
         spaceBetween: 0,
 		slideClass: 'swiper-custom-slide',
-		freeMode: true,
-		watchSlidesProgress: true,
         navigation: {
           nextEl: "[data-swiper-product-thumb-next]",
           prevEl: "[data-swiper-product-thumb-prev]",
@@ -1441,10 +1439,6 @@ $(document).ready(function () {
         spaceBetween: 20,
 		freeMode: true,
         watchSlidesProgress: true,
-		navigation: {
-          nextEl: "[data-swiper-product-next]",
-          prevEl: "[data-swiper-product-prev]",
-        },
 		thumbs:{
 			swiper: thumbSwiper
 		}
@@ -1459,21 +1453,17 @@ $(document).ready(function () {
 				slidesPerView: "auto",
 				spaceBetween: 0,
 				slideClass: 'swiper-custom-slide',
-				freeMode: true,
-				watchSlidesProgress: true,
 				navigation: {
-					nextEl: "[data-swiper-product-thumb-next]",
-					prevEl: "[data-swiper-product-thumb-prev]",
+				nextEl: "[data-swiper-product-thumb-next]",
+				prevEl: "[data-swiper-product-thumb-prev]",
 				},
 			});
 
 			new Swiper("[data-swiper-product]", {
 				slidesPerView: 1,
 				spaceBetween: 20,
-				navigation: {
-					nextEl: "[data-swiper-product-next]",
-					prevEl: "[data-swiper-product-prev]",
-				},
+				freeMode: true,
+				watchSlidesProgress: true,
 				thumbs:{
 					swiper: thumbSwiper
 				}
