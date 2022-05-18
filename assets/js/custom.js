@@ -1484,21 +1484,18 @@ $(document).ready(function () {
 		);
 	  }
 	window.addEventListener('resize', () => {
-		updateZoomImage(productSwiper)
+		productSwiper.slideTo(0, 300, false)
 	})
 });
 
 function handleUpdateZoom(swiperElement){
 	swiperElement.on('activeIndexChange',function () {	
-		updateZoomImage(this)
+		let activeElement = $(swiperElement.wrapperEl).find('img').eq(swiperElement.activeIndex)
+		let activeImageUrl = activeElement.attr('src')
+		$('.zoomWindowContainer div').css('background-image',`url(${activeImageUrl})`)
 	})
 }
 
-function updateZoomImage(swiperElement) {
-	let activeElement = $(swiperElement.wrapperEl).find('img').eq(swiperElement.activeIndex)
-	let activeImageUrl = activeElement.attr('src')
-	$('.zoomWindowContainer div').css('background-image',`url(${activeImageUrl})`)
-}
 
 
 function paginationGoTop() {
