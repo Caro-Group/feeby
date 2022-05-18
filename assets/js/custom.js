@@ -1439,8 +1439,6 @@ $(document).ready(function () {
 	new Swiper("[data-swiper-product]", {
         slidesPerView: 1,
         spaceBetween: 20,
-		freeMode: true,
-        watchSlidesProgress: true,
 		navigation: {
           nextEl: "[data-swiper-product-next]",
           prevEl: "[data-swiper-product-prev]",
