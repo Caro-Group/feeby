@@ -32,7 +32,7 @@
           <div class="swiper-wrapper h-full">
             {foreach from=$product.images item=image key=$key name=pictures}
               <div class="swiper-slide h-full">
-                <img id="zoom_product" loading="lazy" data-type-zoom="" class="img-fluid"
+                <img id="zoom_product" loading="lazy" data-type-zoom="" class="img-fluid object-contain"
                   src="{$image.bySize.large_default.url}" alt="{$product.default_image.legend}"
                   title="{$product.default_image.legend}" itemprop="image"
                   width="{$product.default_image.bySize.large_default.width}"
@@ -52,9 +52,9 @@
             <i class="material-icons zoom-in">&#xE8FF;</i>
           </div>
           <div class="absolute left-4 bottom-10 z-50 hidden tablet:flex">
-            <i class="ti-arrow-left p-3 ml-6 border-2 border-gray-2000 text-gray-2000 hover:bg-gray-2000 hover:text-main-dark rounded-full border-solid transition cursor-pointer"
+            <i class="ti-arrow-left p-3 ml-6 border-2 border-gray-2000 text-gray-2000 bg-gray-2000/30 hover:bg-gray-2000 hover:text-main-dark rounded-full border-solid transition cursor-pointer"
               data-swiper-product-prev> </i>
-            <i class="ti-arrow-right p-3 ml-6 border-2 border-gray-2000 text-gray-2000 hover:bg-gray-2000 hover:text-main-dark rounded-full border-solid transition cursor-pointer"
+            <i class="ti-arrow-right p-3 ml-6 border-2 border-gray-2000 text-gray-2000 bg-gray-2000/30 hover:bg-gray-2000 hover:text-main-dark rounded-full border-solid transition cursor-pointer"
               data-swiper-product-next> </i>
           </div>
         </div>
@@ -105,7 +105,7 @@
                 <a href="javascript:void(0)" data-image="{$image.bySize.large_default.url}"
                   data-zoom-image="{$image.bySize.large_default.url}">
                   <img
-                    class="h-[100px] w-[100px] tablet:h-[200px] tablet:w-[200px] thumb border border-solid rounded-lg mr-[18px] {if $image.id_image == $product.default_image.id_image} selected {/if}"
+                    class="h-[100px] w-[100px] tablet:h-[200px] tablet:w-[200px] border border-solid rounded-lg mr-[18px] {if $image.id_image == $product.default_image.id_image} selected {/if}"
                     data-image-medium-src="{$image.bySize.medium_default.url}"
                     data-image-large-src="{$image.bySize.large_default.url}" src="{$image.bySize.product_thumbnail.url}"
                     alt="{$image.legend}" title="{$image.legend}" itemprop="image" width="200" height="200" loading="lazy" />
