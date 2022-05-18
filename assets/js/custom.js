@@ -1424,29 +1424,51 @@ $(document).ready(function () {
 	// 	enableSwiperFilter();
 	// })
 
-	new Swiper("[data-swiper-product]", {
+	let thumbSwiper = new Swiper("[data-swiper-product-thumb]", {
         slidesPerView: "auto",
         spaceBetween: 0,
 		slideClass: 'swiper-custom-slide',
         navigation: {
-          nextEl: "[data-swiper-product-next]",
-          prevEl: "[data-swiper-product-prev]",
+          nextEl: "[data-swiper-product-thumb-next]",
+          prevEl: "[data-swiper-product-thumb-prev]",
         },
       });
+
+	new Swiper("[data-swiper-product]", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+		freeMode: true,
+        watchSlidesProgress: true,
+		thumbs:{
+			swiper: thumbSwiper
+		}
+      });
+
 
 	  if (typeof prestashop !== 'undefined') {
 		prestashop.on(
 		  'updatedProduct',
 		  function (event) {
-			new Swiper("[data-swiper-product]", {
+			let thumbSwiper = new Swiper("[data-swiper-product-thumb]", {
 				slidesPerView: "auto",
 				spaceBetween: 0,
 				slideClass: 'swiper-custom-slide',
 				navigation: {
-				  nextEl: "[data-swiper-product-next]",
-				  prevEl: "[data-swiper-product-prev]",
+				nextEl: "[data-swiper-product-thumb-next]",
+				prevEl: "[data-swiper-product-thumb-prev]",
 				},
-			  });
+			});
+
+			new Swiper("[data-swiper-product]", {
+				slidesPerView: 1,
+				spaceBetween: 20,
+				freeMode: true,
+				watchSlidesProgress: true,
+				thumbs:{
+					swiper: thumbSwiper
+				}
+			});
+
 		  }
 		);
 	  }
