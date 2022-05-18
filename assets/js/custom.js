@@ -1450,7 +1450,7 @@ $(document).ready(function () {
 		}
       });
 
-	  updateZoomImage(productSwiper)
+	  handleUpdateZoom(productSwiper)
 
 	  if (typeof prestashop !== 'undefined') {
 		prestashop.on(
@@ -1479,21 +1479,25 @@ $(document).ready(function () {
 					swiper: thumbSwiper
 				}
 			});
-
-			updateZoomImage(productSwiper)
-
-		
+			handleUpdateZoom(productSwiper)
 		  }
 		);
 	  }
+	window.addEventListener('resize', () => {
+		updateZoomImage(productSwiper)
+	})
 });
 
-function updateZoomImage(swiperElement){
-	swiperElement.on('activeIndexChange',function () {
-		let activeElement = $(this.wrapperEl).find('img').eq(this.activeIndex)
-		let activeImageUrl = activeElement.attr('src')
-		$('.zoomWindowContainer div').css('background-image',`url(${activeImageUrl})`)
+function handleUpdateZoom(swiperElement){
+	swiperElement.on('activeIndexChange',function () {	
+		updateZoomImage(this)
 	})
+}
+
+function updateZoomImage(swiperElement) {
+	let activeElement = $(swiperElement.wrapperEl).find('img').eq(swiperElement.activeIndex)
+	let activeImageUrl = activeElement.attr('src')
+	$('.zoomWindowContainer div').css('background-image',`url(${activeImageUrl})`)
 }
 
 
