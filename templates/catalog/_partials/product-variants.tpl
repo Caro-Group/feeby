@@ -26,7 +26,7 @@
   {foreach from=$groups key=id_attribute_group item=group}
     {if !empty($group.attributes)}
 
-      <div class="{if $id_attribute_group neq 21}hidden{/if} clearfix product-variants-item flex flex-col items-start mb-5">
+      <div class="{if $group.group_name|strstr:"Rodzaj fototapety"}hidden{/if} clearfix product-variants-item flex flex-col items-start mb-5">
         <span class="block text-[14px] text-gray-main text-base leading-normal mb-[10px] font-light">
           {if $id_attribute_group neq 21}
             {$group.name}
