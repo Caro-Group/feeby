@@ -13,7 +13,10 @@ $(document).ready(function () {
     .attr('src')
 
   if (typeof imageVariant === 'undefined' || !imageVariant.length) {
-    imageVariant = $('#main').find('img[data-original]').first().attr('data-original')
+    imageVariant = $('#main')
+      .find('img[data-original]')
+      .first()
+      .attr('data-original')
   }
 
   $configurableElements
@@ -312,8 +315,8 @@ function productConfigurableUpdatePage() {
   var countConfigurableSelected = configurableSelected.filter(
     (product) => product.selected === true,
   ).length
-  $('[data-product-attribute]')
-    .eq(countConfigurableSelected - 1)
+  $('[data-product-attribute="21"]')
+    .eq(countConfigurableSelected)
     .trigger('click')
 }
 
