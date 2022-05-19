@@ -316,7 +316,7 @@ function productConfigurableUpdatePage() {
     (product) => product.selected === true,
   ).length
   $('[data-product-attribute="21"]')
-    .eq(countConfigurableSelected)
+    .eq(countConfigurableSelected - 1)
     .trigger('click')
 }
 
