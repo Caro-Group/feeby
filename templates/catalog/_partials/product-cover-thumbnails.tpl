@@ -57,9 +57,9 @@
             <i class="material-icons zoom-in">&#xE8FF;</i>
           </div>
           <div class="absolute left-4 bottom-10 z-50 hidden tablet:flex">
-            <i class="ti-arrow-left p-3 ml-6 border-2 border-main-dark text-main-dark  hover:bg-main-dark hover:text-white rounded-full border-solid transition cursor-pointer"
+            <i class="ti-arrow-left justify-center items-center flex ml-6 w-10 h-10 text-main-dark bg-gray-1000 hover:bg-main-dark hover:text-white rounded-full transition cursor-pointer"
               data-swiper-product-prev> </i>
-            <i class="ti-arrow-right p-3 ml-6 border-2 border-main-dark text-main-dark hover:bg-main-dark hover:text-white rounded-full border-solid transition cursor-pointer"
+            <i class="ti-arrow-right justify-center items-center flex ml-6 w-10 h-10 text-main-dark bg-gray-1000 hover:bg-main-dark hover:text-white rounded-full transition cursor-pointer"
               data-swiper-product-next> </i>
           </div>
         </div>
