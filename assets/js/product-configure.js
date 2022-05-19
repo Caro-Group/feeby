@@ -100,13 +100,13 @@ $(document).ready(function () {
       productConfigurableWriteState('Próbka') //TODO: Check why not updating
       productConfigurableSaveState()
       productConfigurableSetState()
-      $('[data-product-attribute]').eq(5).trigger('click')
+      $('[data-product-attribute]').eq(6).trigger('click')
     },
   )
 
   if (typeof prestashop !== 'undefined') {
     prestashop.on('updatedProduct', function (event) {
-      if ($('[data-product-attribute]').eq(5).is(':checked')) {
+      if ($('[data-product-attribute]').eq(6).is(':checked')) {
         $('#quantity_wanted').val(1)
         productConfigurableWriteState('Próbka') //TODO: Check why not updating
         $('.hidden [data-button-action="add-to-cart"]').trigger('click')
