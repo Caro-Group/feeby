@@ -25,19 +25,24 @@
 
 {block name='topBothColumn'}
 
- <img class="img-fluid" src="{$link->getMediaLink($smarty.const._THEME_CAT_DIR_)}{$smarty.get.id_category}.jpg" width="{$category.image.large.width}" height="{$category.image.large.height}" alt="{$category.image.legend}" style="margin-bottom: 30px;width: 100%;"/>
+  <img class="img-fluid" src="{$link->getMediaLink($smarty.const._THEME_CAT_DIR_)}{$smarty.get.id_category}.jpg"
+    width="{$category.image.large.width}" height="{$category.image.large.height}" alt="{$category.image.legend}"
+    style="margin-bottom: 30px;width: 100%;" />
 
-{if $breadcrumb.count < 3}
- <a style="display: block;margin-bottom: 20px;" class="hidden-xl-up" href="{$breadcrumb.links[0]['url']}" title="{$breadcrumb.links[0]['title']}">
-  <i style="font-size: 25px;" class="material-icons">&#xE408;</i>
- </a>
-{else}
- <a style="display: block;margin-bottom: 20px;" class="hidden-xl-up" href="{$breadcrumb.links[count($breadcrumb.links)-2]['url']}" title="{$breadcrumb.links[count($breadcrumb.links)-2]['title']}">
-  <i style="font-size: 25px;" class="material-icons">&#xE408;</i>
- </a>
-{/if}
+  {if $breadcrumb.count < 3}
+    <a style="display: block;margin-bottom: 20px;" class="hidden-xl-up" href="{$breadcrumb.links[0]['url']}"
+      title="{$breadcrumb.links[0]['title']}">
+      <i style="font-size: 25px;" class="material-icons">&#xE408;</i>
+    </a>
+  {else}
+    <a style="display: block;margin-bottom: 20px;" class="hidden-xl-up"
+      href="{$breadcrumb.links[count($breadcrumb.links)-2]['url']}"
+      title="{$breadcrumb.links[count($breadcrumb.links)-2]['title']}">
+      <i style="font-size: 25px;" class="material-icons">&#xE408;</i>
+    </a>
+  {/if}
 
- <h1 class="h1">{$page.meta.keywords}</h1>
+  <h1 class="h1">{$page.meta.keywords}</h1>
 
 {/block}
 
@@ -48,19 +53,21 @@
       <h2 id="js-product-list-header" class="h2">{$listing.label}</h2>
     {/block}
 
-    <ul id="additionallCategoriesFilter"></ul>
+    <ul id="additionallCategoriesFilter" data-container="additional-filters"
+      class="flex flex-wrap gap-5 border-0 border-b border-gray-1000 border-solid tablet-border-b-0 pb-1 mb-5 tablet:mb-0 tablet:pb-3">
+    </ul>
 
     <section id="products">
       {if $listing.products|count}
 
         <div class="row row-md-revert">
 
-         <div class="col-xs-12 col-md-pull-12">
-          {block name='product_list_top'}
-            {include file='catalog/_partials/products-top.tpl' listing=$listing}
-            {block name='product_list_active_filters'}{/block}
-          {/block}
-         </div>
+          <div class="col-xs-12 col-md-pull-12">
+            {block name='product_list_top'}
+              {include file='catalog/_partials/products-top.tpl' listing=$listing}
+              {block name='product_list_active_filters'}{/block}
+            {/block}
+          </div>
         </div>
 
         <div>
