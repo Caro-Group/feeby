@@ -1439,6 +1439,7 @@ $(document).ready(function () {
 	let productSwiper = new Swiper("[data-swiper-product]", {
         slidesPerView: 1,
         spaceBetween: 20,
+		loop: true,
 		navigation: {
           nextEl: "[data-swiper-product-next]",
           prevEl: "[data-swiper-product-prev]",
@@ -1469,6 +1470,7 @@ $(document).ready(function () {
 			let productSwiper = new Swiper("[data-swiper-product]", {
 				slidesPerView: 1,
 				spaceBetween: 20,
+				loop: true,
 				navigation: {
 					nextEl: "[data-swiper-product-next]",
 					prevEl: "[data-swiper-product-prev]",
@@ -1486,15 +1488,16 @@ $(document).ready(function () {
 	})
 });
 
-function handleUpdateZoom(swiperElement){
-	swiperElement.on('activeIndexChange',function () {	
-		// replace zoom image
-		let activeElement = $(swiperElement.wrapperEl).find('img').eq(swiperElement.activeIndex)
+function handleUpdateZoom(mainSwiper){
+	mainSwiper.on('activeIndexChange',function () {	
+
+		// replace zoom realIndex
+		let activeElement = $(mainSwiper.wrapperEl).find('img').eq(mainSwiper.realIndex)
 		let activeImageUrl = activeElement.attr('src')
 		$('.zoomWindowContainer div').css('background-image',`url(${activeImageUrl})`)
 
 		//set zoomGallery active slide
-		$("#thumb-gallery").find('.swiper-custom-slide a').eq(swiperElement.activeIndex).trigger("click")
+		$("#thumb-gallery").find('.swiper-custom-slide a').eq(mainSwiper.realIndex).trigger("click")
 		
 	})
 }
