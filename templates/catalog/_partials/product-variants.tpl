@@ -34,7 +34,7 @@
         </span>
         
         {if $group.id_attribute_group neq 21}
-        {if $group.group_type == 'select'}
+        {else $group.group_type == 'select'}
 
           <select
             class="form-select taxt-base tablet:text-xl py-[18px] tablet:py-4 pl-[30px] bg-[center_right_30px] bg-gray-default rounded border-none w-full mb-[10px] focus:ring-main transition"
