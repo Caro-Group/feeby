@@ -652,16 +652,14 @@ function applyElevateZoom() {
 	}
 	else {
 		if ($.fn.elevateZoom !== undefined) {
-			$("[data-zoom-container]").elevateZoom();
+			$("[data-zoom-container]").elevateZoom({gallery: 'thumb-gallery',});
 
 			//pass the images to Fancybox
-			// $('[id=zoom_product]').bind("click", function (e) {
-			// 	$('[id=zoom_product]').each(function () {
-			// 		var ez = $(this).data('elevateZoom');
-			// 		$.fancybox(ez.getGalleryList());
-			// 	});
-			// 	return false;
-			// });
+			$("[data-zoom-container]").bind("click", function (e) {
+				var ez = $(this).data('elevateZoom');
+				$.fancybox(ez.getGalleryList());
+				return false;
+			});
 		}
 
 	}
@@ -1490,9 +1488,14 @@ $(document).ready(function () {
 
 function handleUpdateZoom(swiperElement){
 	swiperElement.on('activeIndexChange',function () {	
+		// replace zoom image
 		let activeElement = $(swiperElement.wrapperEl).find('img').eq(swiperElement.activeIndex)
 		let activeImageUrl = activeElement.attr('src')
 		$('.zoomWindowContainer div').css('background-image',`url(${activeImageUrl})`)
+
+		//set zoomGallery active slide
+		$("#thumb-gallery").find('.swiper-custom-slide a').eq(swiperElement.activeIndex).trigger("click")
+		
 	})
 }
 
