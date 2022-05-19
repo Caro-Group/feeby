@@ -33,7 +33,7 @@
           {/if}
         </span>
         
-        {if $group.id_attribute_group neq 21}
+        {if $id_attribute_group neq 21}
         {else $group.group_type == 'select'}
 
           <select
