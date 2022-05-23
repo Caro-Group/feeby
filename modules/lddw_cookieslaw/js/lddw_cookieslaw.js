@@ -81,8 +81,6 @@ setCookieNotice.prototype = {
     var self = this,
       distance
 
-    self.set_cookie('false')
-
     if (this.options.direction == 'left') {
       distance = -1.1 * this.box.data('width')
       this.box.animate({ left: distance }, 300, function () {
