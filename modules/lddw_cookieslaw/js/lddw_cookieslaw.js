@@ -37,7 +37,7 @@ setCookieNotice = function (element, options) {
   })
 
   if (document.cookie.indexOf('cookie_notice_accepted=')) {
-    self.close()
+    self.box.remove()
   }
 }
 setCookieNotice.prototype = {
