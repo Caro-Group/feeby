@@ -96,9 +96,11 @@ setCookieNotice.prototype = {
 }
 
 jQuery(function () {
-  new setCookieNotice(jQuery('#lddw-cookie-modal-box'), {
-    expire: window.lddw_cookieslaw.expire,
-    domain: window.lddw_cookieslaw.domain,
-    direction: window.lddw_cookieslaw.direction,
-  })
+  if (!document.cookie.indexOf('cookie_notice_accepted=')) {
+    new setCookieNotice(jQuery('#lddw-cookie-modal-box'), {
+      expire: window.lddw_cookieslaw.expire,
+      domain: window.lddw_cookieslaw.domain,
+      direction: window.lddw_cookieslaw.direction,
+    })
+  }
 })
