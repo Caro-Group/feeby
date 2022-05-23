@@ -1135,7 +1135,7 @@ function onResize() {
     })
 
     if ($(currentFilterContainer).length !== 0) {
-      moveFilters(currentFilterContainer, aboveFiltersContainer)
+      moveFilters($(currentFilterContainer), $(aboveFiltersContainer))
     }
 
     $(aboveFiltersContainer).on('click', 'a', function (e) {
