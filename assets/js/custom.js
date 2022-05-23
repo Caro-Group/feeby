@@ -656,11 +656,11 @@ function applyElevateZoom() {
     }
   } else {
     if ($.fn.elevateZoom !== undefined) {
-      $('#zoom_product').elevateZoom(zoom_config)
+      $('[data-zoom-container]').elevateZoom({ gallery: 'thumb-gallery' })
 
       //pass the images to Fancybox
-      $('#zoom_product').bind('click', function (e) {
-        var ez = $('#zoom_product').data('elevateZoom')
+      $('[data-zoom-container]').bind('click', function (e) {
+        var ez = $(this).data('elevateZoom')
         $.fancybox(ez.getGalleryList())
         return false
       })
@@ -1124,18 +1124,18 @@ function onResize() {
     }
   })
 
-  //Filters custom move
-
   $(document).ready(function () {
     const aboveFiltersContainer = '[data-container="additional-filters"]'
     const currentFilterContainer = '[data-target="#facet_attribute_group_18"]'
 
     $(document).ajaxComplete(function () {
-      moveFilters($(currentFilterContainer), $(aboveFiltersContainer))
+      if (currentFilterContainer.length !== 0) {
+        moveFilters($(currentFilterContainer), $(aboveFiltersContainer))
+      }
     })
 
     if (currentFilterContainer.length !== 0) {
-      moveFilters($(currentFilterContainer), $(aboveFiltersContainer))
+      moveFilters(currentFilterContainer, aboveFiltersContainer)
 
       if (typeof prestashop !== 'undefined') {
         prestashop.on('updateFacets', function (event) {
@@ -1500,30 +1500,86 @@ $(document).ready(function () {
   // 	enableSwiperFilter();
   // })
 
-  new Swiper('[data-swiper-product]', {
+  let thumbSwiper = new Swiper('[data-swiper-product-thumb]', {
     slidesPerView: 'auto',
     spaceBetween: 0,
     slideClass: 'swiper-custom-slide',
+    freeMode: true,
+    watchSlidesProgress: true,
+    navigation: {
+      nextEl: '[data-swiper-product-thumb-next]',
+      prevEl: '[data-swiper-product-thumb-prev]',
+    },
+  })
+
+  let productSwiper = new Swiper('[data-swiper-product]', {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
     navigation: {
       nextEl: '[data-swiper-product-next]',
       prevEl: '[data-swiper-product-prev]',
     },
+    thumbs: {
+      swiper: thumbSwiper,
+    },
   })
+
+  handleUpdateZoom(productSwiper)
 
   if (typeof prestashop !== 'undefined') {
     prestashop.on('updatedProduct', function (event) {
-      new Swiper('[data-swiper-product]', {
+      let thumbSwiper = new Swiper('[data-swiper-product-thumb]', {
         slidesPerView: 'auto',
         spaceBetween: 0,
         slideClass: 'swiper-custom-slide',
+        freeMode: true,
+        watchSlidesProgress: true,
+        navigation: {
+          nextEl: '[data-swiper-product-thumb-next]',
+          prevEl: '[data-swiper-product-thumb-prev]',
+        },
+      })
+
+      let productSwiper = new Swiper('[data-swiper-product]', {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: true,
         navigation: {
           nextEl: '[data-swiper-product-next]',
           prevEl: '[data-swiper-product-prev]',
         },
+        thumbs: {
+          swiper: thumbSwiper,
+        },
       })
+      handleUpdateZoom(productSwiper)
     })
   }
+  window.addEventListener('resize', () => {
+    productSwiper.slideTo(0, 300, false)
+  })
 })
+
+function handleUpdateZoom(mainSwiper) {
+  mainSwiper.on('activeIndexChange', function () {
+    // replace zoom realIndex
+    let activeElement = $(mainSwiper.wrapperEl)
+      .find('img')
+      .eq(mainSwiper.realIndex)
+    let activeImageUrl = activeElement.attr('src')
+    $('.zoomWindowContainer div').css(
+      'background-image',
+      `url(${activeImageUrl})`,
+    )
+
+    //set zoomGallery active slide
+    $('#thumb-gallery')
+      .find('.swiper-custom-slide a')
+      .eq(mainSwiper.realIndex)
+      .trigger('click')
+  })
+}
 
 function paginationGoTop() {
   $('.page-list a').click(function () {
