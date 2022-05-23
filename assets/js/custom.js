@@ -1129,19 +1129,13 @@ function onResize() {
     const currentFilterContainer = '[data-target="#facet_attribute_group_18"]'
 
     $(document).ajaxComplete(function () {
-      if (currentFilterContainer.length !== 0) {
+      if ($(currentFilterContainer).length !== 0) {
         moveFilters($(currentFilterContainer), $(aboveFiltersContainer))
       }
     })
 
-    if (currentFilterContainer.length !== 0) {
+    if ($(currentFilterContainer).length !== 0) {
       moveFilters(currentFilterContainer, aboveFiltersContainer)
-
-      if (typeof prestashop !== 'undefined') {
-        prestashop.on('updateFacets', function (event) {
-          window.location = event
-        })
-      }
     }
   })
 
