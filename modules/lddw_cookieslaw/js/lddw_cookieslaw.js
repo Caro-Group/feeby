@@ -35,6 +35,10 @@ setCookieNotice = function (element, options) {
   this.agree_button.on('click', function () {
     self.set_cookie('accept')
   })
+
+  if (document.cookie.indexOf('cookie_notice_accepted=')) {
+    self.close()
+  }
 }
 setCookieNotice.prototype = {
   set_cookie: function (cookie_value) {
@@ -96,11 +100,9 @@ setCookieNotice.prototype = {
 }
 
 jQuery(function () {
-  if (!document.cookie.indexOf('cookie_notice_accepted=')) {
-    new setCookieNotice(jQuery('#lddw-cookie-modal-box'), {
-      expire: window.lddw_cookieslaw.expire,
-      domain: window.lddw_cookieslaw.domain,
-      direction: window.lddw_cookieslaw.direction,
-    })
-  }
+  new setCookieNotice(jQuery('#lddw-cookie-modal-box'), {
+    expire: window.lddw_cookieslaw.expire,
+    domain: window.lddw_cookieslaw.domain,
+    direction: window.lddw_cookieslaw.direction,
+  })
 })
