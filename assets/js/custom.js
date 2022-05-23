@@ -1022,19 +1022,21 @@ $().ready(function () {
 	}
 	*/
 
-  $('.list-images-mobile').slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: true,
-    dots: true,
-    infinite: true,
-    //centerMode: true,
-    //fade: true,
-    customPaging: function (slick, index) {
-      var targetImage = slick.$slides.eq(index).find('img').attr('src')
-      return '<span><img src=" ' + targetImage + ' "/></span>'
-    },
-  })
+  if ($('.list-images-mobile').length != 0) {
+    $('.list-images-mobile').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: true,
+      dots: true,
+      infinite: true,
+      //centerMode: true,
+      //fade: true,
+      customPaging: function (slick, index) {
+        var targetImage = slick.$slides.eq(index).find('img').attr('src')
+        return '<span><img src=" ' + targetImage + ' "/></span>'
+      },
+    })
+  }
 
   $(document).ajaxComplete(function (event, xhr, settings) {
     if (settings.url.indexOf('controller=product') > 0) {
@@ -1125,13 +1127,15 @@ function onResize() {
   //Filters custom move
 
   $(document).ready(function () {
-    const aboveFiltersContainer = $('[data-container="additional-filters"]')
-    const currentFilterContainer = $(
-      '[data-target="#facet_attribute_group_18"]',
-    )
+    const aboveFiltersContainer = '[data-container="additional-filters"]'
+    const currentFilterContainer = '[data-target="#facet_attribute_group_18"]'
+
+    $(document).ajaxComplete(function () {
+      moveFilters($(currentFilterContainer), $(aboveFiltersContainer))
+    })
 
     if (currentFilterContainer.length !== 0) {
-      moveFilters(currentFilterContainer, aboveFiltersContainer)
+      moveFilters($(currentFilterContainer), $(aboveFiltersContainer))
 
       if (typeof prestashop !== 'undefined') {
         prestashop.on('updateFacets', function (event) {
