@@ -1014,46 +1014,51 @@ $().ready(function () {
 	}
 	*/
 
-	$('.list-images-mobile').slick({
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		arrows: true,
-		dots: true,
-		infinite: true,
-		//centerMode: true,
-		//fade: true,
-		customPaging: function (slick, index) {
-			var targetImage = slick.$slides.eq(index).find('img').attr('src');
-			return '<span><img src=" ' + targetImage + ' "/></span>';
-		}
-	});
+  if ($('.list-images-mobile').length != 0) {
+    $('.list-images-mobile').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: true,
+      dots: true,
+      infinite: true,
+      //centerMode: true,
+      //fade: true,
+      customPaging: function (slick, index) {
+        var targetImage = slick.$slides.eq(index).find('img').attr('src')
+        return '<span><img src=" ' + targetImage + ' "/></span>'
+      },
+    })
+  }
 
-	$(document).ajaxComplete(function (event, xhr, settings) {
-		if (settings.url.indexOf('controller=product') > 0) {
-			$('.list-images-mobile').slick({
-				slidesToShow: 1,
-				slidesToScroll: 1,
-				arrows: true,
-				dots: true,
-				infinite: true,
-				//centerMode: true,
-				//fade: true,
-				customPaging: function (slick, index) {
-					var targetImage = slick.$slides.eq(index).find('img').attr('src');
-					return '<span><img src=" ' + targetImage + ' "/></span>';
-				}
-			});
-		}
-	});
+  $(document).ajaxComplete(function (event, xhr, settings) {
+    if (settings.url.indexOf('controller=product') > 0) {
+      $('.list-images-mobile').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        dots: true,
+        infinite: true,
+        //centerMode: true,
+        //fade: true,
+        customPaging: function (slick, index) {
+          var targetImage = slick.$slides.eq(index).find('img').attr('src')
+          return '<span><img src=" ' + targetImage + ' "/></span>'
+        },
+      })
+    }
+  })
 
-	//customSticky();
+  //customSticky();
 
-	$(document).ajaxComplete(function () {
-		$('.p-reference .product-reference').html($("#product-details .product-reference").clone());
-		$('.p-reference .product-quantities').html($("#product-details .product-quantities").clone());
-	});
-
-});
+  $(document).ajaxComplete(function () {
+    $('.p-reference .product-reference').html(
+      $('#product-details .product-reference').clone(),
+    )
+    $('.p-reference .product-quantities').html(
+      $('#product-details .product-quantities').clone(),
+    )
+  })
+})
 
 function customSticky() {
 	var s = $(".header-top > .inner");
@@ -1112,11 +1117,16 @@ function onResize(){
   });
 
 
-//Filters custom move
+  $(document).ready(function () {
+    const aboveFiltersContainer = '[data-container="additional-filters"]'
+    const currentFilterContainer = '[data-target="#facet_attribute_group_18"]'
 
-$(document).ready(function(){
-	const aboveFiltersContainer = $('[data-container="additional-filters"]');
-	const currentFilterContainer = $('[data-target="#facet_attribute_group_15"]');
+    $(document).ajaxComplete(function () {
+      moveFilters($(currentFilterContainer), $(aboveFiltersContainer))
+    })
+
+    if (currentFilterContainer.length !== 0) {
+      moveFilters($(currentFilterContainer), $(aboveFiltersContainer))
 
 	if (currentFilterContainer.length !== 0 ) {
 		moveFilters(currentFilterContainer,aboveFiltersContainer);
