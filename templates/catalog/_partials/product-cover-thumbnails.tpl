@@ -48,20 +48,21 @@
               </div>
             {/foreach}
           </div>
-          {foreach from=$product.images item=image key=$key name=pictures}
-          <div data-zoom-container class="absolute top-0 left-0 w-full h-full" data-zoom-image="{$image.bySize.large_default.url}">
-          </div>
-          {break}
-          {/foreach}
-          <div class="layer hidden-sm-down" data-toggle="modal" data-target="#product-modal">
-            <i class="material-icons zoom-in">&#xE8FF;</i>
-          </div>
-          <div class="absolute left-4 bottom-10 z-50 hidden tablet:flex">
-            <i class="ti-arrow-left justify-center items-center flex ml-6 w-10 h-10 text-main-dark bg-gray-1000 hover:bg-main-dark hover:text-white rounded-full transition cursor-pointer"
-              data-swiper-product-prev> </i>
-            <i class="ti-arrow-right justify-center items-center flex ml-6 w-10 h-10 text-main-dark bg-gray-1000 hover:bg-main-dark hover:text-white rounded-full transition cursor-pointer"
-              data-swiper-product-next> </i>
-          </div>
+        </div>
+
+        {foreach from=$product.images item=image key=$key name=pictures}
+        <div data-zoom-container class="absolute top-0 left-0 w-full h-full" data-zoom-image="{$image.bySize.large_default.url}">
+        </div>
+        {break}
+        {/foreach}
+        <div class="layer hidden-sm-down" data-toggle="modal" data-target="#product-modal">
+          <i class="material-icons zoom-in">&#xE8FF;</i>
+        </div>
+        <div class="absolute left-4 bottom-10 z-50 hidden tablet:flex">
+          <i class="ti-arrow-left justify-center items-center flex ml-6 w-10 h-10 text-main-dark bg-gray-1000 hover:bg-main-dark hover:text-white rounded-full transition cursor-pointer"
+            data-swiper-product-prev> </i>
+          <i class="ti-arrow-right justify-center items-center flex ml-6 w-10 h-10 text-main-dark bg-gray-1000 hover:bg-main-dark hover:text-white rounded-full transition cursor-pointer"
+            data-swiper-product-next> </i>
         </div>
       {else}
         <img class="lazy" data-src="{$urls.no_picture_image.bySize.large_default.url}" style="width:100%;">
