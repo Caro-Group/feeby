@@ -658,14 +658,29 @@ function applyElevateZoom() {
     if ($.fn.elevateZoom !== undefined) {
       $('[data-zoom-container]').elevateZoom({ gallery: 'thumb-gallery' })
 
-      //pass the images to Fancybox
-      $('[data-zoom-container]').bind('click', function (e) {
-        var ez = $(this).data('elevateZoom')
-        $.fancybox(ez.getGalleryList())
-        return false
-      })
-    }
-  }
+		if ($.fn.elevateZoom !== undefined) {
+			$('img.js-thumb').elevateZoom(zoom_config);
+			//DONGND:: fix click a thumb replace all image and add fancybox
+			$('img.js-thumb').bind("click", function (e) {
+				var ez = $(this).data('elevateZoom');
+				$.fancybox(ez.getGalleryList());
+				return false;
+			});
+		}
+	}
+	else {
+		if ($.fn.elevateZoom !== undefined) {
+			$("[data-zoom-container]").elevateZoom({gallery: 'thumb-gallery',});
+
+			//pass the images to Fancybox
+			$("[data-zoom-container]").bind("click", function (e) {
+				var ez = $(this).data('elevateZoom');
+				$.fancybox(ez.getGalleryList());
+				return false;
+			});
+		}
+
+	}
 }
 
 function initSlickProductThumb(
@@ -1514,86 +1529,85 @@ $(document).ready(function () {
   // 	enableSwiperFilter();
   // })
 
-  let thumbSwiper = new Swiper('[data-swiper-product-thumb]', {
-    slidesPerView: 'auto',
-    spaceBetween: 0,
-    slideClass: 'swiper-custom-slide',
-    freeMode: true,
-    watchSlidesProgress: true,
-    navigation: {
-      nextEl: '[data-swiper-product-thumb-next]',
-      prevEl: '[data-swiper-product-thumb-prev]',
-    },
-  })
-
-  let productSwiper = new Swiper('[data-swiper-product]', {
-    slidesPerView: 1,
-    spaceBetween: 20,
-    loop: true,
-    navigation: {
-      nextEl: '[data-swiper-product-next]',
-      prevEl: '[data-swiper-product-prev]',
-    },
-    thumbs: {
-      swiper: thumbSwiper,
-    },
-  })
-
-  handleUpdateZoom(productSwiper)
-
-  if (typeof prestashop !== 'undefined') {
-    prestashop.on('updatedProduct', function (event) {
-      let thumbSwiper = new Swiper('[data-swiper-product-thumb]', {
-        slidesPerView: 'auto',
+	let thumbSwiper = new Swiper("[data-swiper-product-thumb]", {
+        slidesPerView: "auto",
         spaceBetween: 0,
-        slideClass: 'swiper-custom-slide',
-        freeMode: true,
-        watchSlidesProgress: true,
+		slideClass: 'swiper-custom-slide',
+		freeMode: true,
+		watchSlidesProgress: true,
         navigation: {
-          nextEl: '[data-swiper-product-thumb-next]',
-          prevEl: '[data-swiper-product-thumb-prev]',
+          nextEl: "[data-swiper-product-thumb-next]",
+          prevEl: "[data-swiper-product-thumb-prev]",
         },
-      })
+      });
 
-      let productSwiper = new Swiper('[data-swiper-product]', {
+	let productSwiper = new Swiper("[data-swiper-product]", {
         slidesPerView: 1,
         spaceBetween: 20,
-        loop: true,
-        navigation: {
-          nextEl: '[data-swiper-product-next]',
-          prevEl: '[data-swiper-product-prev]',
+		loop: true,
+		navigation: {
+          nextEl: "[data-swiper-product-next]",
+          prevEl: "[data-swiper-product-prev]",
         },
-        thumbs: {
-          swiper: thumbSwiper,
-        },
-      })
-      handleUpdateZoom(productSwiper)
-    })
-  }
-  window.addEventListener('resize', () => {
-    productSwiper.slideTo(0, 300, false)
-  })
-})
+		thumbs:{
+			swiper: thumbSwiper
+		}
+      });
 
-function handleUpdateZoom(mainSwiper) {
-  mainSwiper.on('activeIndexChange', function () {
-    // replace zoom realIndex
-    let activeElement = $(mainSwiper.wrapperEl)
-      .find('img')
-      .eq(mainSwiper.realIndex)
-    let activeImageUrl = activeElement.attr('src')
-    $('.zoomWindowContainer div').css(
-      'background-image',
-      `url(${activeImageUrl})`,
-    )
+	  handleUpdateZoom(productSwiper)
 
-    //set zoomGallery active slide
-    $('#thumb-gallery')
-      .find('.swiper-custom-slide a')
-      .eq(mainSwiper.realIndex)
-      .trigger('click')
-  })
+	  if (typeof prestashop !== 'undefined') {
+		prestashop.on(
+		  'updatedProduct',
+		  function (event) {
+			let thumbSwiper = new Swiper("[data-swiper-product-thumb]", {
+				slidesPerView: "auto",
+				spaceBetween: 0,
+				slideClass: 'swiper-custom-slide',
+				freeMode: true,
+				watchSlidesProgress: true,
+				navigation: {
+					nextEl: "[data-swiper-product-thumb-next]",
+					prevEl: "[data-swiper-product-thumb-prev]",
+				},
+			});
+
+			let productSwiper = new Swiper("[data-swiper-product]", {
+				slidesPerView: 1,
+				spaceBetween: 20,
+				loop: true,
+				navigation: {
+					nextEl: "[data-swiper-product-next]",
+					prevEl: "[data-swiper-product-prev]",
+				},
+				thumbs:{
+					swiper: thumbSwiper
+				}
+			});
+			handleUpdateZoom(productSwiper)
+		  }
+		);
+	  }
+	window.addEventListener('resize', () => {
+		productSwiper.slideTo(0, 300, false)
+	})
+});
+
+function handleUpdateZoom(mainSwiper){
+	mainSwiper.on('activeIndexChange',function () {	
+
+		// replace zoom realIndex
+		let activeElement = $(mainSwiper.wrapperEl).find('img').eq(mainSwiper.realIndex)
+		let activeImageUrl = activeElement.attr('src')
+		$('.zoomWindowContainer div').css('background-image',`url(${activeImageUrl})`)
+
+		//set zoomGallery active slide
+		$("#thumb-gallery").find('.swiper-custom-slide a').eq(mainSwiper.realIndex).trigger("click")
+		
+	})
 }
+
+
 
 function paginationGoTop() {
   $('.page-list a').click(function () {

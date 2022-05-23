@@ -335,7 +335,7 @@ li[data-menu-type='url'] a {
 #left-column {
   z-index: 26;
 }
-.thumb.selected {
+.swiper-slide-thumb-active img{
   @apply border-main;
 }
 
