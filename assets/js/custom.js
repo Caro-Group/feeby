@@ -1135,14 +1135,17 @@ function onResize() {
     })
 
     if ($(currentFilterContainer).length !== 0) {
-      moveFilters(currentFilterContainer, aboveFiltersContainer)
+      moveFilters($(currentFilterContainer), $(aboveFiltersContainer))
     }
 
-	$(aboveFiltersContainer).on('click', 'a', function(e){
-		e.preventDefault();
-		$(document).find('#search_filters').find('a[href^="' + e.currentTarget.href + '"]').parents('.facet-label')
-		debugger;
-	});
+    $(aboveFiltersContainer).on('click', 'a', function (e) {
+      e.preventDefault()
+      $(document)
+        .find('#search_filters')
+        .find('a[href^="' + e.currentTarget.href + '"]')
+        .parents('.facet-label')
+      debugger
+    })
   })
 
   function moveFilters(current, target) {
