@@ -38,7 +38,7 @@
               <div class="title cursor-pointer px-5 tablet:px-0 border-0 border-b-2 tablet:border-b-0 border-gray-1000
                 border-solid py-5 tablet:py-0 justify-between tablet:justify-start group {if $_collapse}collapsed{/if}"
                 data-parent="#search_filters" data-target="#facet_{$_expand_id}" data-toggle="collapse" {if !$_collapse}
-                  aria-expanded="true" {/if} {if $_expand_id == 'attribute_group_18'}style="display: none;" {/if}>
+                  aria-expanded="true" {/if} {if $_expand_id == 'attribute_group_15'}style="display: none;" {/if}>
                   <p class="facet-title m-0 text-base font-body font-normal group-hover:text-main transition">{$facet.label}
                   </p>
                   <span class="pl-4 -top-1 relative">
@@ -55,7 +55,7 @@
                           {continue}
                         {/if}
 
-                        {if $_expand_id == 'attribute_group_18'}
+                        {if $_expand_id == 'attribute_group_15'}
                           <li class="group {if !$_collapse && !$filter.active}opacity-40 hover:opacity-100{/if}
                           {if $filter.active} active {/if} transition duration-200 overflow-hidden rounded-md  ">
                             <label class="facet-label"
