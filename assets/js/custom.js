@@ -1145,7 +1145,8 @@ function onResize() {
         e.preventDefault()
         $(document)
           .find(
-            '#search_filters a[href^="' +
+            currentFilterContainer +
+              ' a[href^="' +
               e.currentTarget.href +
               '"].js-search-link',
           )
