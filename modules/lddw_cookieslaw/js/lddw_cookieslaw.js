@@ -28,7 +28,7 @@ setCookieNotice = function (element, options) {
   // Close action
   var self = this
   this.close_button.on('click', function () {
-    self.set_cookie('accept')
+    self.set_cookie('false')
   })
 
   // Agree action
@@ -79,23 +79,9 @@ setCookieNotice.prototype = {
 
   close: function () {
     var self = this,
-      cnTime = new Date(),
-      cnLater = new Date(),
       distance
 
-    // Set expiry time in seconds
-    cnLater.setTime(parseInt(cnTime.getTime()) + cookie_duration * 1000)
-
-    // Set cookie
-    cookie_value = 'false'
-    document.cookie =
-      'cookie_notice_accepted=' +
-      cookie_value +
-      ';expires=' +
-      cnLater.toGMTString() +
-      ';domain=' +
-      this.options.domain +
-      ';path=/;secure;'
+    self.set_cookie('false')
 
     if (this.options.direction == 'left') {
       distance = -1.1 * this.box.data('width')
