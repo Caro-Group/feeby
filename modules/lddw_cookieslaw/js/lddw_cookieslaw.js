@@ -36,7 +36,7 @@ setCookieNotice = function (element, options) {
     self.set_cookie('accept')
   })
 
-  if (document.cookie.indexOf('cookie_notice_accepted=')) {
+  if (!document.cookie.indexOf('cookie_notice_accepted=')) {
     self.box.remove()
   }
 }
