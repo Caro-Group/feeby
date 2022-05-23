@@ -69,7 +69,7 @@
        {/block}
 
        {assign var="tags" value=Tag::getProductTags(Tools::getValue('id_product'))}
-        {if $tags[$language.id] != ''}
+       {if isset($tags) && isset($tags[$language.id]) && $tags[$language.id] != ''}
           <div class="flex flex-row text-gray-3000 text-xs w-full tablet:w-3/5 tablet:pr-10 text-sm">
             {l s='Tags' d='Shop.Theme.Catalog'}:
             <ul class="flex flex-wrap float-left">

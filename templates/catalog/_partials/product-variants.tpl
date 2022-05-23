@@ -26,15 +26,14 @@
   {foreach from=$groups key=id_attribute_group item=group}
     {if !empty($group.attributes)}
 
-      <div class="clearfix product-variants-item flex flex-col items-start mb-5">
+      <div class="{if $group.group_name|strstr:"Rodzaj fototapety"}hidden{/if} clearfix product-variants-item flex flex-col items-start mb-5">
         <span class="block text-[14px] text-gray-main text-base leading-normal mb-[10px] font-light">
           {if $id_attribute_group neq 21}
             {$group.name}
           {/if}
         </span>
-
-        {if $group.group_name == "Rodzaj fototapety"}
-        {elseif $group.group_type == 'select'}
+        
+        {if $group.group_type == 'select'}
 
           <select
             class="form-select taxt-base tablet:text-xl py-[18px] tablet:py-4 pl-[30px] bg-[center_right_30px] bg-gray-default rounded border-none w-full mb-[10px] focus:ring-main transition"

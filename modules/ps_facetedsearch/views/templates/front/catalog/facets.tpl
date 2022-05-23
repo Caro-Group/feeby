@@ -38,7 +38,7 @@
               <div class="title cursor-pointer px-5 tablet:px-0 border-0 border-b-2 tablet:border-b-0 border-gray-1000
                 border-solid py-5 tablet:py-0 justify-between tablet:justify-start group {if $_collapse}collapsed{/if}"
                 data-parent="#search_filters" data-target="#facet_{$_expand_id}" data-toggle="collapse" {if !$_collapse}
-                  aria-expanded="true" {/if} {if $_expand_id == 'attribute_group_15'}style="display: none;" {/if}>
+                  aria-expanded="true" {/if} {if $_expand_id == 'attribute_group_18'}style="display: none;" {/if}>
                   <p class="facet-title m-0 text-base font-body font-normal group-hover:text-main transition">{$facet.label}
                   </p>
                   <span class="pl-4 -top-1 relative">
@@ -55,15 +55,20 @@
                           {continue}
                         {/if}
 
-                        {if $_expand_id == 'attribute_group_15'}
+                        {if $_expand_id == 'attribute_group_18'}
                           <li class="group {if !$_collapse && !$filter.active}opacity-40 hover:opacity-100{/if}
                           {if $filter.active} active {/if} transition duration-200 overflow-hidden rounded-md  ">
-                            <a href="{$filter.nextEncodedFacetsURL}" class="flex flex-col" rel="nofollow">
-                              <img class="object-cover w-[150px] h-24 tablet:w-44 tablet:h-28 " src="{$filter.properties.texture}" />
-                              <h3
-                                class="{if $filter.active} text-main {else} text-main-dark {/if} group-hover:text-main transition duration-200 text-base tablet:text-lg font-normal font-body ml-[10px] tablet:ml-5 my-3">
-                                {$filter.label}</h3>
-                            </a>
+                            <label class="facet-label"
+                              for="facet_input_{$_expand_id}_{$filter_key}">
+                              <input id="facet_input_{$_expand_id}_{$filter_key}" data-search-url="{$filter.nextEncodedFacetsURL}"
+                            type="checkbox" {if $filter.active }checked{/if} class="hidden">
+                              <a href="{$filter.nextEncodedFacetsURL}" class="flex flex-col" rel="nofollow">
+                                <img class="object-cover w-[150px] h-24 tablet:w-44 tablet:h-28 " src="{$filter.properties.texture}" />
+                                <h3
+                                  class="{if $filter.active} text-main {else} text-main-dark {/if} group-hover:text-main transition duration-200 text-base tablet:text-lg font-normal font-body ml-[10px] tablet:ml-5 my-3">
+                                  {$filter.label}</h3>
+                              </a>
+                            </label>
                           </li>
                         {else}
                           <li class="border-0 border-b border-solid border-white px-5 py-2">
