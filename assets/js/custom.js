@@ -1138,16 +1138,20 @@ function onResize() {
       moveFilters($(currentFilterContainer), $(aboveFiltersContainer))
     }
 
-    $(aboveFiltersContainer).on('click', 'a', function (e) {
-      e.preventDefault()
-      $(document)
-        .find(
-          '#search_filters a[href^="' +
-            e.currentTarget.href +
-            '"].js-search-link',
-        )
-        .trigger('click')
-    })
+    $(document).on(
+      'click',
+      aboveFiltersContainer + ' a.js-search-link',
+      function (e) {
+        e.preventDefault()
+        $(document)
+          .find(
+            '#search_filters a[href^="' +
+              e.currentTarget.href +
+              '"].js-search-link',
+          )
+          .trigger('click')
+      },
+    )
   })
 
   function moveFilters(current, target) {
