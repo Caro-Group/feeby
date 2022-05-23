@@ -62,7 +62,7 @@
                               for="facet_input_{$_expand_id}_{$filter_key}">
                               <input id="facet_input_{$_expand_id}_{$filter_key}" data-search-url="{$filter.nextEncodedFacetsURL}"
                             type="checkbox" {if $filter.active }checked{/if} class="hidden">
-                              <a href="{$filter.nextEncodedFacetsURL}" class="flex flex-col" rel="nofollow">
+                              <a href="{$filter.nextEncodedFacetsURL}" class="flex flex-col js-search-link" rel="nofollow">
                                 <img class="object-cover w-[150px] h-24 tablet:w-44 tablet:h-28 " src="{$filter.properties.texture}" />
                                 <h3
                                   class="{if $filter.active} text-main {else} text-main-dark {/if} group-hover:text-main transition duration-200 text-base tablet:text-lg font-normal font-body ml-[10px] tablet:ml-5 my-3">
