@@ -1141,8 +1141,11 @@ function onResize() {
     $(aboveFiltersContainer).on('click', 'a', function (e) {
       e.preventDefault()
       $(document)
-        .find('#search_filters')
-        .find('a[href^="' + e.currentTarget.href + '"].js-search-link')
+        .find(
+          '#search_filters a[href^="' +
+            e.currentTarget.href +
+            '"].js-search-link',
+        )
         .trigger('click')
     })
   })
