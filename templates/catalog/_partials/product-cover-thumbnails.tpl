@@ -28,6 +28,7 @@
     {block name='product_cover'}
       {if $product.default_image}
         <div class="swiper product-cover overflow-hidden " data-swiper-product>
+          
           <div class="swiper-wrapper h-full border-2 border-solid rounded-[5px] border-gray-default">
             {foreach from=$product.images item=image key=$key name=pictures}
               <div class="swiper-slide h-full">
@@ -42,14 +43,13 @@
                   <img id="product_original_img" class="hidden" loading="lazy"
                     src="{$link->getImageLink($product->link_rewrite, $image.id_image)}" alt="{$image.legend}"
                     title="{$image.legend}" itemprop="image" data-pagespeed-no-transform />
-                  {break}
                 {/if}
               </div>
             {/foreach}
           </div>
+
           {foreach from=$product.images item=image key=$key name=pictures}
-          <div data-zoom-container class="absolute top-0 left-0 w-full h-full" data-zoom-image="{$image.bySize.large_default.url}">
-          </div>
+          <div data-zoom-container class="absolute top-0 left-0 w-full h-full" data-zoom-image="{$image.bySize.large_default.url}"></div>
           {break}
           {/foreach}
           <div class="layer hidden-sm-down" data-toggle="modal" data-target="#product-modal">
@@ -61,12 +61,14 @@
             <i class="ti-arrow-right justify-center items-center flex ml-6 w-10 h-10 text-main-dark bg-gray-1000 hover:bg-main-dark hover:text-white rounded-full transition cursor-pointer"
               data-swiper-product-next> </i>
           </div>
+
         </div>
       {else}
-        <img class="lazy" data-src="{$urls.no_picture_image.bySize.large_default.url}" style="width:100%;">
+        <img class="lazy" data-src="{$urls.no_picture_image.bySize.large_default.url}" style="width:100%;" />
       {/if}
       {hook h='displayProductCoverPlacement'}
     {/block}
+
     {block name='product_images'}
 
       {foreach from=$groups item=$attribute}
@@ -102,50 +104,53 @@
                   $key > ($product.images|count - 1)
                 )
               ))}
-              <div
-                class="swiper-custom-slide w-auto h-full relative thumb-container {if $image.id_image == $product.default_image.id_image} active {/if}"
-                style="    flex-shrink: 0;
-                   transition-property: transform;">
-                <a href="javascript:void(0)" data-image="{$image.bySize.large_default.url}"
-                  data-zoom-image="{$image.bySize.large_default.url}">
-                  <img
-                    class="h-[100px] w-[100px] tablet:h-[200px] tablet:w-[200px] border border-solid rounded-lg mr-[18px] {if $image.id_image == $product.default_image.id_image} selected {/if}"
-                    data-image-medium-src="{$image.bySize.medium_default.url}"
-                    data-image-large-src="{$image.bySize.large_default.url}" src="{$image.bySize.product_thumbnail.url}"
-                    alt="{$image.legend}" title="{$image.legend}" itemprop="image" width="200" height="200" loading="lazy" />
-                </a>
-              </div>
-              {if $image@last}
-                {assign var='displayProductThumbEndCustom' value={hook h='displayProductThumbEndCustom'} }
-                {if $displayProductThumbEndCustom}
-                  <div
-                    class="swiper-custom-slide w-auto h-full relative thumb-container {if $image.id_image == $product.default_image.id_image} active {/if}"
-                    style="    flex-shrink: 0;
-                       transition-property: transform;">
-                    {hook h='displayProductThumbEndCustom'}
-                  </div>
+                <div
+                  class="swiper-custom-slide w-auto h-full relative thumb-container {if $image.id_image == $product.default_image.id_image} active {/if}"
+                  style="    flex-shrink: 0;
+                    transition-property: transform;">
+                  <a href="javascript:void(0)" data-image="{$image.bySize.large_default.url}"
+                    data-zoom-image="{$image.bySize.large_default.url}">
+                    <img
+                      class="h-[100px] w-[100px] tablet:h-[200px] tablet:w-[200px] border border-solid rounded-lg mr-[18px] {if $image.id_image == $product.default_image.id_image} selected {/if}"
+                      data-image-medium-src="{$image.bySize.medium_default.url}"
+                      data-image-large-src="{$image.bySize.large_default.url}" src="{$image.bySize.product_thumbnail.url}"
+                      alt="{$image.legend}" title="{$image.legend}" itemprop="image" width="200" height="200" loading="lazy" />
+                  </a>
+                </div>
+                {if $image@last}
+                  {assign var='displayProductThumbEndCustom' value={hook h='displayProductThumbEndCustom'} }
+                  {if $displayProductThumbEndCustom}
+                    <div
+                      class="swiper-custom-slide w-auto h-full relative thumb-container {if $image.id_image == $product.default_image.id_image} active {/if}"
+                      style="    flex-shrink: 0;
+                        transition-property: transform;">
+                      {hook h='displayProductThumbEndCustom'}
+                    </div>
+                  {/if}
                 {/if}
               {/if}
-            {/if}
-          {/foreach}
+            {/foreach}
+          </div>
+
+          {if $product.images|@count > 1}
+            <div data-swiper-product-thumb-prev
+              class="absolute bg-gray-default bottom-0 flex items-center justify-center left-0 m-auto rounded-r-[5px] swiper-button-disabled top-0 w-[24px] h-[40px] z-10">
+              <svg xmlns="http://www.w3.org/2000/svg" width="7" height="14" fill="none">
+                <path d="M0 6.175 6.132 0h.001L7 .873 1.218 6.612l5.78 5.737-.866.873L0 7.048v-.873Z" fill="#181828" />
+              </svg>
+            </div>
+            <div data-swiper-product-thumb-next
+              class="absolute bg-gray-default bottom-0 flex items-center justify-center right-0 m-auto rounded-l-[5px] swiper-button-disabled top-0 w-[24px] h-[40px] z-10">
+              <svg xmlns="http://www.w3.org/2000/svg" width="7" height="14" fill="none">
+                <path d="M7 6.175.868 0H.867L0 .873l5.782 5.739-5.78 5.737.866.873L7 7.048v-.873Z" fill="#181828" />
+              </svg>
+            </div>
+          {/if}
+
         </div>
-        {if $product.images|@count > 1}
-          <div data-swiper-product-thumb-prev
-            class="absolute bg-gray-default bottom-0 flex items-center justify-center left-0 m-auto rounded-r-[5px] swiper-button-disabled top-0 w-[24px] h-[40px] z-10">
-            <svg xmlns="http://www.w3.org/2000/svg" width="7" height="14" fill="none">
-              <path d="M0 6.175 6.132 0h.001L7 .873 1.218 6.612l5.78 5.737-.866.873L0 7.048v-.873Z" fill="#181828" />
-            </svg>
-          </div>
-          <div data-swiper-product-thumb-next
-            class="absolute bg-gray-default bottom-0 flex items-center justify-center right-0 m-auto rounded-l-[5px] swiper-button-disabled top-0 w-[24px] h-[40px] z-10">
-            <svg xmlns="http://www.w3.org/2000/svg" width="7" height="14" fill="none">
-              <path d="M7 6.175.868 0H.867L0 .873l5.782 5.739-5.78 5.737.866.873L7 7.048v-.873Z" fill="#181828" />
-            </svg>
-          </div>
-        {/if}
       </div>
-    </div>
-  {/block}
+    
+    {/block}
   {/block}
   {hook h='displayAfterProductThumbs'}
 </div>
