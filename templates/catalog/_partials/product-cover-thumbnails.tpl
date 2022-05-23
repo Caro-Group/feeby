@@ -39,10 +39,11 @@
                   height="{$product.default_image.bySize.large_default.height}"
                   data-original="{$link->getImageLink($product->link_rewrite, $product.default_image.id_image)}" />
 
-                {if $image.legend|strstr:"(Konfigurator)"}
+                {if $image.legend|strstr:"(Konfigurator)" && !isset($selectedOriginalImage)}
                   <img id="product_original_img" class="hidden" loading="lazy"
                     src="{$link->getImageLink($product->link_rewrite, $image.id_image)}" alt="{$image.legend}"
                     title="{$image.legend}" itemprop="image" data-pagespeed-no-transform />
+                    {assign var="selectedOriginalImage" value="true"}
                 {/if}
               </div>
             {/foreach}
