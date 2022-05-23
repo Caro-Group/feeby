@@ -1144,7 +1144,7 @@ function onResize() {
         .find('#search_filters')
         .find('a[href^="' + e.currentTarget.href + '"]')
         .parents('.facet-label')
-      debugger
+        .trigger('click')
     })
   })
 
