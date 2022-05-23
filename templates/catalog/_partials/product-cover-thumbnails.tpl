@@ -27,8 +27,7 @@
   {block name='product_cover_thumbnails'}
     {block name='product_cover'}
       {if $product.default_image}
-        <div class="swiper product-cover border-2 border-solid rounded-[5px] border-gray-default overflow-hidden "
-          data-swiper-product>
+        <div class="swiper product-cover border-2 border-solid rounded-[5px] border-gray-default overflow-hidden " data-swiper-product>
           <div class="swiper-wrapper h-full">
             {foreach from=$product.images item=image key=$key name=pictures}
               <div class="swiper-slide h-full">
@@ -37,12 +36,12 @@
                   title="{$product.default_image.legend}" itemprop="image"
                   width="{$product.default_image.bySize.large_default.width}"
                   height="{$product.default_image.bySize.large_default.height}"
-                  data-original="{$link->getImageLink($product->link_rewrite, $product.default_image.id_image)}">
+                  data-original="{$link->getImageLink($product->link_rewrite, $product.default_image.id_image)}" />
 
                 {if $image.legend|strstr:"(Konfigurator)"}
                   <img id="product_original_img" class="hidden" loading="lazy"
                     src="{$link->getImageLink($product->link_rewrite, $image.id_image)}" alt="{$image.legend}"
-                    title="{$image.legend}" itemprop="image" data-pagespeed-no-transform>
+                    title="{$image.legend}" itemprop="image" data-pagespeed-no-transform />
                   {break}
                 {/if}
               </div>
@@ -51,9 +50,9 @@
         </div>
 
         {foreach from=$product.images item=image key=$key name=pictures}
-        <div data-zoom-container class="absolute top-0 left-0 w-full h-full" data-zoom-image="{$image.bySize.large_default.url}">
-        </div>
-        {break}
+          <div data-zoom-container class="absolute top-0 left-0 w-full h-full" data-zoom-image="{$image.bySize.large_default.url}">
+          </div>
+          {break}
         {/foreach}
         <div class="layer hidden-sm-down" data-toggle="modal" data-target="#product-modal">
           <i class="material-icons zoom-in">&#xE8FF;</i>
