@@ -82,7 +82,7 @@ setCookieNotice.prototype = {
       distance
 
     // Set cookie
-    cookie_value = cookie_value === 'false'
+    cookie_value = 'false'
     document.cookie =
       'cookie_notice_accepted=' +
       cookie_value +
