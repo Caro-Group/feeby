@@ -1131,11 +1131,15 @@ function onResize() {
     $(document).ajaxComplete(function () {
       if ($(currentFilterContainer).length !== 0) {
         moveFilters($(currentFilterContainer), $(aboveFiltersContainer))
+      } else {
+        $(aboveFiltersContainer).empty()
       }
     })
 
     if ($(currentFilterContainer).length !== 0) {
       moveFilters($(currentFilterContainer), $(aboveFiltersContainer))
+    } else {
+      $(aboveFiltersContainer).empty()
     }
 
     $(document).on(
