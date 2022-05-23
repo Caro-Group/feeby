@@ -79,7 +79,11 @@ setCookieNotice.prototype = {
 
   close: function () {
     var self = this,
+      cnLater = new Date(),
       distance
+
+    // Set expiry time in seconds
+    cnLater.setTime(parseInt(cnTime.getTime()) + cookie_duration * 1000)
 
     // Set cookie
     cookie_value = 'false'
