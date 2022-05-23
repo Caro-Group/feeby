@@ -79,6 +79,7 @@ setCookieNotice.prototype = {
 
   close: function () {
     var self = this,
+      cnTime = new Date(),
       cnLater = new Date(),
       distance
 
