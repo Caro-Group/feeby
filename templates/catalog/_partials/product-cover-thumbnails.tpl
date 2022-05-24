@@ -117,7 +117,7 @@
 
       <div class="product-thumb-images flex relative">
         <div class="swiper w-full overflow-hidden" data-swiper-product-thumb>
-          <div id="thumb-gallery" class="swiper-wrapper">
+          <div id="thumb-gallery" class="swiper-wrapper desktop:mx-4">
             {foreach from=$product.images item=image key=$key name=pictures}
 
               {if !((
@@ -139,21 +139,10 @@
                   class="swiper-custom-slide w-auto h-full relative thumb-container {if $image.id_image == $product.default_image.id_image} active {/if}"
                   style="    flex-shrink: 0;
                     transition-property: transform;">
-                  <a href="javascript:void(0)" class="w-2 h-2 rounded-full bg-black"
+                  <a href="javascript:void(0)" class="block w-2 h-2 rounded-full bg-black mx-2"
                     data-zoom-image="{$image.bySize.large_default.url}">
                   </a>
                 </div>
-                {if $image@last}
-                  {assign var='displayProductThumbEndCustom' value={hook h='displayProductThumbEndCustom'} }
-                  {if $displayProductThumbEndCustom}
-                    <div
-                      class="swiper-custom-slide w-auto h-full relative thumb-container {if $image.id_image == $product.default_image.id_image} active {/if}"
-                      style="    flex-shrink: 0;
-                        transition-property: transform;">
-                      {hook h='displayProductThumbEndCustom'}
-                    </div>
-                  {/if}
-                {/if}
               {/if}
             {/foreach}
           </div>
