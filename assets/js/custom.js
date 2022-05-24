@@ -1562,17 +1562,12 @@ $(document).ready(function () {
       handleUpdateZoom(productSwiper)
     })
   }
-  window.addEventListener('resize', () => {
-    productSwiper.slideTo(0, 300, false)
-  })
 })
 
 function handleUpdateZoom(mainSwiper) {
   mainSwiper.on('activeIndexChange', function () {
     // replace zoom realIndex
-    let activeElement = $(mainSwiper.wrapperEl)
-      .find('img')
-      .eq(mainSwiper.realIndex)
+    let activeElement = $(mainSwiper.wrapperEl).find(`[data-swiper-slide-index=${mainSwiper.realIndex}]`).eq(0)
     let activeImageUrl = activeElement.attr('src')
     $('.zoomWindowContainer div').css(
       'background-image',
