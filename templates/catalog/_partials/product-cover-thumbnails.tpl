@@ -27,7 +27,7 @@
   {block name='product_cover_thumbnails'}
     {block name='product_cover'}
       {if $product.default_image}
-        <div class="swiper product-cover mb-0 overflow-hidden " data-swiper-product>
+        <div class="border-2 border-solid rounded-[5px] swiper product-cover mb-0 overflow-hidden " data-swiper-product>
         {foreach from=$groups item=$attribute}
           {if $attribute["group_name"] == "Typ"}
             {foreach from=$attribute["attributes"] item=$item}
