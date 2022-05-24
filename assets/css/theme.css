@@ -13480,7 +13480,6 @@ body #search_filters .clear-all-wrapper {
 
 .zoomContainer {
   z-index: 9;
-  pointer-events: none;
 }
 
 #product #content[data-templateview="right"] .product-flags {
