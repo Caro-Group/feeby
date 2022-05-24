@@ -1514,18 +1514,6 @@ $(document).ready(function () {
   // 	enableSwiperFilter();
   // })
 
-  let thumbSwiper = new Swiper('[data-swiper-product-thumb]', {
-    slidesPerView: 'auto',
-    spaceBetween: 0,
-    slideClass: 'swiper-custom-slide',
-    freeMode: true,
-    watchSlidesProgress: true,
-    navigation: {
-      nextEl: '[data-swiper-product-thumb-next]',
-      prevEl: '[data-swiper-product-thumb-prev]',
-    },
-  })
-
   let productSwiper = new Swiper('[data-swiper-product]', {
     slidesPerView: 1,
     spaceBetween: 20,
@@ -1535,7 +1523,7 @@ $(document).ready(function () {
       prevEl: '[data-swiper-product-prev]',
     },
     pagination: {
-      el: '.swiper-pagination',
+      el: '.product-thumb-images',
       clickable: true,
       dynamicBullets: true,
       dynamicMainBullets: 1,
