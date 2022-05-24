@@ -102,7 +102,7 @@
    {/block}
 
    {block name='product_images'}
-     <div class="swiper-container-horizontal relative h-10"><div class="product-thumb-images swiper-pagination"></div></div>
+     <div class="swiper-container-horizontal relative h-10"><div class="product-thumb-images-pag swiper-pagination"></div></div>
 
      <div class="hidden">
 
