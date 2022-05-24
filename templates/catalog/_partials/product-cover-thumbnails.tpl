@@ -41,7 +41,7 @@
           {/if}
         {/foreach}
 
-          <div class="swiper-wrapper h-full border-2 border-solid rounded-[5px] border-gray-default">
+          <div class="swiper-wrapper border-gray-default">
             {foreach from=$product.images item=image key=$key name=pictures}
               {if !((
                 isset($productHideThreeLastThumbs) && 
