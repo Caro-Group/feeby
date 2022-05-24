@@ -1524,7 +1524,7 @@ $(document).ready(function () {
       prevEl: '[data-swiper-product-prev]',
     },
     pagination: {
-      el: '.product-thumb-images-pag',
+      el: '.product-thumb-images',
       clickable: true,
       dynamicBullets: true,
       dynamicMainBullets: 1,
@@ -1533,11 +1533,11 @@ $(document).ready(function () {
 
   handleUpdateZoom(productSwiper)
 
-  window.addEventListener('resize', () => {
-    productSwiper.slideTo(1, 300, false)
-  })
-
   if (typeof prestashop !== 'undefined') {
+    window.addEventListener('resize', () => {
+      productSwiper.slideTo(1, 300, false)
+    })
+
     prestashop.on('updatedProduct', function (event) {
       let thumbSwiper = new Swiper('[data-swiper-product-thumb]', {
         slidesPerView: 'auto',
@@ -1569,6 +1569,10 @@ $(document).ready(function () {
 })
 
 function handleUpdateZoom(mainSwiper) {
+  window.addEventListener('resize', () => {
+    mainSwiper.slideTo(1, 300, false)
+  })
+
   mainSwiper.on('activeIndexChange', function () {
     // replace zoom realIndex
     let activeElement = $(mainSwiper.wrapperEl)
