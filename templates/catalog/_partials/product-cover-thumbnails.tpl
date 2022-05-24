@@ -65,6 +65,7 @@
                   title="{$product.default_image.legend}" itemprop="image"
                   width="{$product.default_image.bySize.large_default.width}"
                   height="{$product.default_image.bySize.large_default.height}"
+                  data-zoom-image="{$image.bySize.large_default.url}"
                   data-original="{$link->getImageLink($product->link_rewrite, $product.default_image.id_image)}" />
 
                 {if $image.legend|strstr:"(Konfigurator)" && !isset($selectedOriginalImage)}
@@ -115,55 +116,7 @@
         {/if}
       {/foreach}
 
-      <div class="product-thumb-images flex relative">
-        <div class="swiper w-full overflow-hidden" data-swiper-product-thumb>
-          <div id="thumb-gallery" class="swiper-wrapper desktop:mx-4">
-            {foreach from=$product.images item=image key=$key name=pictures}
-
-              {if !((
-                isset($productHideThreeLastThumbs) && 
-                (
-                  $key > ($product.images|count - 4) ||
-                  $key > ($product.images|count - 3) ||
-                  $key > ($product.images|count - 2) ||
-                  $key > ($product.images|count - 1)
-                )
-              ) || (
-                isset($productHideLastThumbs) &&
-                (
-                  $key > ($product.images|count - 2) ||
-                  $key > ($product.images|count - 1)
-                )
-              ))}
-                <div
-                  class="swiper-custom-slide w-auto h-full relative thumb-container {if $image.id_image == $product.default_image.id_image} active {/if}"
-                  style="    flex-shrink: 0;
-                    transition-property: transform;">
-                  <a href="javascript:void(0)" class="block w-2 h-2 rounded-full bg-black mx-2"
-                    data-zoom-image="{$image.bySize.large_default.url}">
-                  </a>
-                </div>
-              {/if}
-            {/foreach}
-          </div>
-
-          {if $product.images|@count > 1}
-            <div data-swiper-product-thumb-prev
-              class="absolute bg-gray-default bottom-0 flex items-center justify-center left-0 m-auto rounded-r-[5px] swiper-button-disabled top-0 w-[24px] h-[40px] z-10">
-              <svg xmlns="http://www.w3.org/2000/svg" width="7" height="14" fill="none">
-                <path d="M0 6.175 6.132 0h.001L7 .873 1.218 6.612l5.78 5.737-.866.873L0 7.048v-.873Z" fill="#181828" />
-              </svg>
-            </div>
-            <div data-swiper-product-thumb-next
-              class="absolute bg-gray-default bottom-0 flex items-center justify-center right-0 m-auto rounded-l-[5px] swiper-button-disabled top-0 w-[24px] h-[40px] z-10">
-              <svg xmlns="http://www.w3.org/2000/svg" width="7" height="14" fill="none">
-                <path d="M7 6.175.868 0H.867L0 .873l5.782 5.739-5.78 5.737.866.873L7 7.048v-.873Z" fill="#181828" />
-              </svg>
-            </div>
-          {/if}
-
-        </div>
-      </div>
+      <div class="product-thumb-images swiper-pagination"></div>
     
     {/block}
   {/block}
