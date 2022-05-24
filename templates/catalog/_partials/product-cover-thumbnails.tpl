@@ -40,7 +40,7 @@
             {/foreach}
           {/if}
         {/foreach}
-        
+
           <div class="swiper-wrapper h-full border-2 border-solid rounded-[5px] border-gray-default">
             {foreach from=$product.images item=image key=$key name=pictures}
               {if !((
@@ -139,13 +139,8 @@
                   class="swiper-custom-slide w-auto h-full relative thumb-container {if $image.id_image == $product.default_image.id_image} active {/if}"
                   style="    flex-shrink: 0;
                     transition-property: transform;">
-                  <a href="javascript:void(0)" data-image="{$image.bySize.large_default.url}"
+                  <a href="javascript:void(0)" class="w-2 h-2 rounded-full bg-black"
                     data-zoom-image="{$image.bySize.large_default.url}">
-                    <img
-                      class="h-[100px] w-[100px] tablet:h-[200px] tablet:w-[200px] border border-solid rounded-lg mr-[18px] {if $image.id_image == $product.default_image.id_image} selected {/if}"
-                      data-image-medium-src="{$image.bySize.medium_default.url}"
-                      data-image-large-src="{$image.bySize.large_default.url}" src="{$image.bySize.product_thumbnail.url}"
-                      alt="{$image.legend}" title="{$image.legend}" itemprop="image" width="200" height="200" loading="lazy" />
                   </a>
                 </div>
                 {if $image@last}
