@@ -618,6 +618,7 @@ function applyElevateZoom() {
 
   var zoom_config = {
     responsive: true,
+    zoomResponsive: true,
     cursor: zoom_cursor,
     scrollZoom: scroll_zoom,
     scrollZoomIncrement: 0.1,
@@ -1126,7 +1127,7 @@ function onResize() {
 
   $(document).ready(function () {
     const aboveFiltersContainer = '[data-container="additional-filters"]'
-    const currentFilterContainer = '[data-target="#facet_attribute_group_18"]'
+    const currentFilterContainer = '[data-target="#facet_attribute_group_15"]'
 
     $(document).ajaxComplete(function () {
       if ($(currentFilterContainer).length !== 0) {
@@ -1532,6 +1533,10 @@ $(document).ready(function () {
 
   handleUpdateZoom(productSwiper)
 
+  window.addEventListener('resize', () => {
+    productSwiper.slideTo(1, 300, false)
+  })
+
   if (typeof prestashop !== 'undefined') {
     prestashop.on('updatedProduct', function (event) {
       let thumbSwiper = new Swiper('[data-swiper-product-thumb]', {
@@ -1561,17 +1566,14 @@ $(document).ready(function () {
       handleUpdateZoom(productSwiper)
     })
   }
-  window.addEventListener('resize', () => {
-    productSwiper.slideTo(0, 300, false)
-  })
 })
 
 function handleUpdateZoom(mainSwiper) {
   mainSwiper.on('activeIndexChange', function () {
     // replace zoom realIndex
     let activeElement = $(mainSwiper.wrapperEl)
-      .find('img')
-      .eq(mainSwiper.realIndex)
+      .find(`[data-swiper-slide-index=${mainSwiper.realIndex}]`)
+      .eq(0)
     let activeImageUrl = activeElement.attr('src')
     $('.zoomWindowContainer div').css(
       'background-image',
