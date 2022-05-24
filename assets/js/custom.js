@@ -1534,8 +1534,11 @@ $(document).ready(function () {
       nextEl: '[data-swiper-product-next]',
       prevEl: '[data-swiper-product-prev]',
     },
-    thumbs: {
-      swiper: thumbSwiper,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+      dynamicBullets: true,
+      dynamicMainBullets: 1,
     },
   })
 

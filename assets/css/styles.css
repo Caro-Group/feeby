@@ -335,7 +335,7 @@ li[data-menu-type='url'] a {
 #left-column {
   z-index: 26;
 }
-.swiper-slide-thumb-active img{
+.swiper-slide-thumb-active img {
   @apply border-main;
 }
 
@@ -674,5 +674,9 @@ body .loader {
 }
 
 #search_filters .facet [data-target='#facet_attribute_group_18'] {
+  display: none;
+}
+
+.product-thumb-images .swiper-button-disabled {
   display: none;
 }
