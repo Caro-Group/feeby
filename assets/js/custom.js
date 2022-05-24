@@ -514,7 +514,7 @@ function innitSlickandZoom() {
     initSlickProductModal()
   }
   //call action zoom
-  applyElevateZoom()
+  restartElevateZoom()
 }
 
 function restartElevateZoom() {
@@ -1539,18 +1539,6 @@ $(document).ready(function () {
     })
 
     prestashop.on('updatedProduct', function (event) {
-      let thumbSwiper = new Swiper('[data-swiper-product-thumb]', {
-        slidesPerView: 'auto',
-        spaceBetween: 0,
-        slideClass: 'swiper-custom-slide',
-        freeMode: true,
-        watchSlidesProgress: true,
-        navigation: {
-          nextEl: '[data-swiper-product-thumb-next]',
-          prevEl: '[data-swiper-product-thumb-prev]',
-        },
-      })
-
       let productSwiper = new Swiper('[data-swiper-product]', {
         slidesPerView: 1,
         spaceBetween: 20,
@@ -1559,8 +1547,11 @@ $(document).ready(function () {
           nextEl: '[data-swiper-product-next]',
           prevEl: '[data-swiper-product-prev]',
         },
-        thumbs: {
-          swiper: thumbSwiper,
+        pagination: {
+          el: '.product-thumb-images-pag',
+          clickable: true,
+          dynamicBullets: true,
+          dynamicMainBullets: 1,
         },
       })
       handleUpdateZoom(productSwiper)
