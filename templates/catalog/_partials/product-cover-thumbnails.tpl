@@ -27,7 +27,7 @@
   {block name='product_cover_thumbnails'}
     {block name='product_cover'}
       {if $product.default_image}
-        <div class="swiper product-cover overflow-hidden " data-swiper-product>
+        <div class="swiper product-cover mb-0 overflow-hidden " data-swiper-product>
         {foreach from=$groups item=$attribute}
           {if $attribute["group_name"] == "Typ"}
             {foreach from=$attribute["attributes"] item=$item}
@@ -81,7 +81,7 @@
           </div>
 
           {foreach from=$product.images item=image key=$key name=pictures}
-          <div data-zoom-container class="absolute top-0 left-0 w-full h-full" data-zoom-image="{$image.bySize.large_default.url}"></div>
+          <div data-zoom-container class="absolute top-0 left-0 w-full h-full z-1" data-zoom-image="{$image.bySize.large_default.url}"></div>
           {break}
           {/foreach}
           <div class="layer hidden-sm-down" data-toggle="modal" data-target="#product-modal">
@@ -102,22 +102,7 @@
     {/block}
 
     {block name='product_images'}
-
-      {foreach from=$groups item=$attribute}
-        {if $attribute["group_name"] == "Typ"}
-          {foreach from=$attribute["attributes"] item=$item}
-            {if $item["name"] == 'Obraz na płótnie' && $item["selected"]}
-              {assign var="productHideThreeLastThumbs" value="true"}
-            {/if}
-            {if $item["name"] == 'Obraz panelowy' && $item["selected"]}
-              {assign var="productHideLastThumbs" value="true"}
-            {/if}
-          {/foreach}
-        {/if}
-      {/foreach}
-
-      <div class="swiper-container-horizontal relative h-4"><div class="product-thumb-images swiper-pagination"></div></div>
-    
+      <div class="swiper-container-horizontal relative h-10"><div class="product-thumb-images swiper-pagination"></div></div>
     {/block}
   {/block}
   {hook h='displayAfterProductThumbs'}

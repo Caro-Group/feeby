@@ -680,3 +680,7 @@ body .loader {
 .product-thumb-images .swiper-button-disabled {
   display: none;
 }
+
+.product-thumb-images.swiper-pagination.swiper-pagination-bullets-dynamic {
+  display: block;
+}
