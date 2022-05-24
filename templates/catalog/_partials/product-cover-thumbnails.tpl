@@ -116,7 +116,7 @@
         {/if}
       {/foreach}
 
-      <div class="product-thumb-images swiper-pagination"></div>
+      <div class="swiper-container-horizontal relative h-4"><div class="product-thumb-images swiper-pagination"></div></div>
     
     {/block}
   {/block}
