@@ -618,6 +618,7 @@ function applyElevateZoom() {
 
   var zoom_config = {
     responsive: true,
+    zoomResponsive: true,
     cursor: zoom_cursor,
     scrollZoom: scroll_zoom,
     scrollZoomIncrement: 0.1,
