@@ -1524,7 +1524,7 @@ $(document).ready(function () {
       prevEl: '[data-swiper-product-prev]',
     },
     pagination: {
-      el: '.product-thumb-images',
+      el: '.product-thumb-images-pag',
       clickable: true,
       dynamicBullets: true,
       dynamicMainBullets: 1,
