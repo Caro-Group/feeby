@@ -31,6 +31,22 @@
           
           <div class="swiper-wrapper h-full border-2 border-solid rounded-[5px] border-gray-default">
             {foreach from=$product.images item=image key=$key name=pictures}
+              {if !((
+                isset($productHideThreeLastThumbs) && 
+                (
+                  $key > ($product.images|count - 4) ||
+                  $key > ($product.images|count - 3) ||
+                  $key > ($product.images|count - 2) ||
+                  $key > ($product.images|count - 1)
+                )
+              ) || (
+                isset($productHideLastThumbs) &&
+                (
+                  $key > ($product.images|count - 2) ||
+                  $key > ($product.images|count - 1)
+                )
+              ))}
+
               <div class="swiper-slide h-full">
                 <img id="zoom_product" loading="lazy" data-type-zoom="" class="img-fluid object-contain"
                   src="{$image.bySize.large_default.url}" alt="{$product.default_image.legend}"
@@ -46,6 +62,8 @@
                     {assign var="selectedOriginalImage" value="true"}
                 {/if}
               </div>
+
+              {/if}
             {/foreach}
           </div>
 
