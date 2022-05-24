@@ -638,8 +638,12 @@ function applyElevateZoom() {
     tint: zoom_tint,
   }
 
-  if ($.fn.elevateZoom !== undefined) {
-    $('[data-zoom-container]').elevateZoom({ gallery: 'thumb-gallery' })
+  if ($('#main').hasClass('product-image-gallery')) {
+    $('img.js-thumb').each(function () {
+      var parent_e = $(this).parent()
+      $(this).attr('src', parent_e.data('image'))
+      $(this).data('type-zoom', parent_e.data('zoom-image'))
+    })
 
     if ($.fn.elevateZoom !== undefined) {
       $('img.js-thumb').elevateZoom(zoom_config)
