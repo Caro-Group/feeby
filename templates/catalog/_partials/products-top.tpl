@@ -58,7 +58,7 @@
         <div
           class="horizontal_filters order-3 tablet:order-2 tablet:rounded-l-md tablet:bg-gray-1000 w-full tablet:w-filter ">
 
-          <div id="search_filters_wrapper" class="collapse tablet:block tablet:h-full relative" aria-expanded="false"
+          <div id="search_filters_wrapper" class="collapse tablet:block tablet:h-full relative tablet:block" aria-expanded="false"
             style="">
             {$listing.rendered_facets nofilter}
           </div>

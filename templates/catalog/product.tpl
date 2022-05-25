@@ -93,9 +93,6 @@
                  {/block}
                {/block}
              </section>
-             {block name='product_images_modal'}
-               {include file='catalog/_partials/product-images-modal.tpl'}
-             {/block}
            {/block}
          </div>
  
@@ -253,10 +250,6 @@
 
        {block name='product_footer'}
          {hook h='displayFooterProduct' product=$product category=$category}
-       {/block}
- 
-       {block name='product_images_modal'}
-         {include file='catalog/_partials/product-images-modal.tpl'}
        {/block}
      </section>
    {/if}

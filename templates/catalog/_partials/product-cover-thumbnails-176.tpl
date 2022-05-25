@@ -52,9 +52,6 @@
         {/block}
       {if $product.cover}
         <img id="zoom_product" data-type-zoom="" class="js-qv-product-cover img-fluid" src="{$product.cover.bySize.large_default.url}" alt="{$product.cover.legend}" title="{$product.cover.legend}" itemprop="image">
-        <div class="layer hidden-sm-down" data-toggle="modal" data-target="#product-modal">
-          <i class="material-icons zoom-in">&#xE8FF;</i>
-        </div>
       {else}
         <img class="lazy" data-src="{$urls.no_picture_image.bySize.large_default.url}" style="width:100%;">
       {/if}
