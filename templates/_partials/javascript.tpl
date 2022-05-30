@@ -34,7 +34,7 @@
 
 {foreach $javascript.inline as $js}
   <script defer type="text/javascript" src="data:text/javascript,
-    {$js.content|escape:'url'}
+    {$js.content|escape:'html'}
   "></script>
 {/foreach}
 
