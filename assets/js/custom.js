@@ -1316,6 +1316,7 @@ $(document).ready(function () {
   const swiperBlog = new Swiper('[data-swiper-blog]', {
     preloadImages: false,
     lazy: true,
+    loadOnTransitionStart: true,
     speed: 300,
     slidesPerView: 'auto',
     spaceBetween: 0,
@@ -1329,6 +1330,7 @@ $(document).ready(function () {
   const swiperAbout = new Swiper('[data-about-swiper]', {
     preloadImages: false,
     lazy: true,
+    loadOnTransitionStart: true,
     speed: 300,
     slidesPerView: 'auto',
     resistanceRatio: 0.5,
@@ -1444,6 +1446,7 @@ $(document).ready(function () {
   const swiperBanner = new Swiper('.swiper-banner', {
     preloadImages: false,
     lazy: true,
+    loadOnTransitionStart: true,
     speed: 800,
     slidesPerView: 1,
     spaceBetween: 0,
@@ -1466,6 +1469,7 @@ $(document).ready(function () {
   const swiperPopular = new Swiper('.swiper-popular', {
     preloadImages: false,
     lazy: true,
+    loadOnTransitionStart: true,
     speed: 300,
     slidesPerView: 2,
     spaceBetween: 20,
@@ -1526,6 +1530,7 @@ $(document).ready(function () {
   let productSwiper = new Swiper('[data-swiper-product]', {
     preloadImages: false,
     lazy: true,
+    loadOnTransitionStart: true,
     slidesPerView: 1,
     spaceBetween: 20,
     loop: true,
@@ -1645,6 +1650,7 @@ $(document).ready(function () {
     new Swiper('[data-swiper-carousel]', {
       preloadImages: false,
       lazy: true,
+      loadOnTransitionStart: true,
       speed: 400,
       spaceBetween: 20,
       slidesPerView: 'auto',
