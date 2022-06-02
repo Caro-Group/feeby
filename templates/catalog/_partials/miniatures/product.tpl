@@ -33,7 +33,7 @@
 				{if $product.cover}
 					<a href="{$product.canonical_url}">
 						<img
-							class="block img-fluid object-cover w-full max-w-sm h-full {if isset($lazy_load)}swiper-lazy min-h-[600px]{/if}"
+							class="block img-fluid object-cover w-full max-w-sm h-full {if isset($lazy_load)}swiper-lazy{/if}"
 							width="{$product.cover.bySize.category_default.width}"
 							height="{$product.cover.bySize.category_default.height}"
 							{if isset($lazy_load)}
