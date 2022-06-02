@@ -1516,6 +1516,8 @@ $(document).ready(function () {
   // })
 
   let productSwiper = new Swiper('[data-swiper-product]', {
+    preloadImages: false,
+    lazy: true,
     slidesPerView: 1,
     spaceBetween: 20,
     loop: true,
@@ -1634,6 +1636,8 @@ $(document).ready(function () {
 $(document).ready(function () {
   if ($('[data-swiper-carousel]').length != 0) {
     new Swiper('[data-swiper-carousel]', {
+      preloadImages: false,
+      lazy: true,
       speed: 400,
       spaceBetween: 20,
       slidesPerView: 'auto',

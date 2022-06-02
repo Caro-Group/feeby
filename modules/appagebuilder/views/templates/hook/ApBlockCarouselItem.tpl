@@ -32,13 +32,11 @@
 					<div class=" aspect-square ">
 				{/if}
 				{if isset($slider.image) && !empty($slider.image)}
-					<img class="object-cover w-full h-full max-h-[182px] tablet:max-h-[367px]" loading="{$lazyImg}"                 src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-					data-lazy
+					<img class="swiper-lazy object-cover w-full h-full max-h-[182px] tablet:max-h-[367px]" loading="{$lazyImg}"                 src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
 					data-src="{$slider.image|escape:'html':'UTF-8'}" alt="{if isset($slider.title)}{$slider.title|escape:'html':'UTF-8'}{/if}"/>
 				{else}
 					{if isset($slider.image_link) && !empty($slider.image_link)}
-						<img class="object-cover w-full h-full max-h-[182px] tablet:max-h-[367px]" loading="{$lazyImg}"                 src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-						data-lazy
+						<img class="swiper-lazy object-cover w-full h-full max-h-[182px] tablet:max-h-[367px]" loading="{$lazyImg}"                 src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
 						data-src="{$slider.image_link|escape:'html':'UTF-8'}" alt="{if isset($slider.title)}{$slider.title|escape:'html':'UTF-8'}{/if}"/>
 					{/if}
 				{/if}

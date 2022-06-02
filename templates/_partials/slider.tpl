@@ -16,6 +16,7 @@
         <div data-swiper-carousel class="swiper ml-5 ">
 
             <div class="swiper-wrapper desktop:justify-between pb-12">
+                {assign var="lazy_load" value='true'}
                 {foreach from=$products item="product"}
                     <div class="slide relative shrink-0 transition-transform h-full w-[235px] tablet:w-[346px]">
                         {include file='catalog/_partials/miniatures/product.tpl' product=$product}
