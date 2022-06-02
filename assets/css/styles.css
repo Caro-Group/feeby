@@ -684,3 +684,8 @@ body .loader {
 .product-thumb-images-pag.swiper-pagination.swiper-pagination-bullets-dynamic {
   display: block;
 }
+
+img[src=''],
+img:not([src]) {
+  visibility: hidden;
+}
