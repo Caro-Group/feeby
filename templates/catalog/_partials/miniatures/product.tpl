@@ -38,7 +38,8 @@
 							height="{$product.cover.bySize.category_default.height}"
 							src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
 							data-lazy
-							data-src="{$product.cover.bySize.category_default_x2.url}"
+							data-src="{$product.cover.bySize.category_default.url}"
+							data-retina="{$product.cover.bySize.category_default_x2.url}"
 							alt = "{if !empty($product.cover.legend)}{$product.cover.legend}{else}{$product.name|truncate:30:'...'}{/if}"
 							data-full-size-image-url = "{$product.cover.large.url}"
 							loading="lazy"
