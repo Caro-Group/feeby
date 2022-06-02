@@ -33,7 +33,7 @@
 					>		
 
 					<img
-						class="swiper-lazy min-w-full desktop-wide:h-banner-final object-left h-auto"
+						class="block swiper-lazy min-w-full desktop-wide:h-banner-final object-left h-auto"
 						loading="{if $smarty.foreach.sliders.first}{else}lazy{/if}"
 						width="{$sliderParams['width']|escape:'html':'UTF-8'}"
 						height="{$sliderParams['height']|escape:'html':'UTF-8'}"
