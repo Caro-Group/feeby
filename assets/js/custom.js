@@ -1555,7 +1555,6 @@ $(document).ready(function () {
         },
       })
       handleUpdateZoom(productSwiper)
-	  
     })
   }
 })
@@ -1576,21 +1575,11 @@ function handleUpdateZoom(mainSwiper) {
       `url(${activeImageUrl})`,
     )
 
-  mainSwiper.on('activeIndexChange', function () {
-	  
-		  // replace zoom realIndex
-		let activeElement = $(mainSwiper.wrapperEl).find(`[data-swiper-slide-index=${mainSwiper.realIndex}]`).eq(0)
-		let activeImageUrl = activeElement.attr('src')
-		$('.zoomWindowContainer div').css(
-		  'background-image',
-		  `url(${activeImageUrl})`,
-		)
-	  
-		//set zoomGallery active slide
-		$('#thumb-gallery')
-		  .find('.swiper-custom-slide a')
-		  .eq(mainSwiper.realIndex)
-		  .trigger('click')
+    //set zoomGallery active slide
+    $('#thumb-gallery')
+      .find('.swiper-custom-slide a')
+      .eq(mainSwiper.realIndex)
+      .trigger('click')
   })
 }
 
@@ -1602,7 +1591,6 @@ function paginationGoTop() {
     })
   })
 }
-
 $(document).ready(function () {
   paginationGoTop()
   prestashop.on('updateProductList', paginationGoTop)
