@@ -70,8 +70,10 @@
 
                {if $image.legend|strstr:"(Konfigurator)" && !isset($selectedOriginalImage)}
                  <img id="product_original_img" class="hidden js-thumb" loading="lazy"
-                   src="{$link->getImageLink($product->link_rewrite, $image.id_image)}" alt="{$image.legend}"
-                   title="{$image.legend}" itemprop="image" data-pagespeed-no-transform />
+                 src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                 data-lazy
+                 data-src="{$link->getImageLink($product->link_rewrite, $image.id_image)}" alt="{$image.legend}"
+                   title="{$image.legend}" itemprop="image" />
                    {assign var="selectedOriginalImage" value="true"}
                {/if}
              </div>
@@ -148,7 +150,10 @@
                      <img
                        class="h-[100px] w-[100px] tablet:h-[200px] tablet:w-[200px] border border-solid rounded-lg mr-[18px] {if $image.id_image == $product.default_image.id_image} selected {/if}"
                        data-image-medium-src="{$image.bySize.medium_default.url}"
-                       data-image-large-src="{$image.bySize.large_default.url}" src="{$image.bySize.product_thumbnail.url}"
+                       data-image-large-src="{$image.bySize.large_default.url}"                 
+                       src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                       data-lazy
+                       data-src="{$image.bySize.product_thumbnail.url}"
                        alt="{$image.legend}" title="{$image.legend}" itemprop="image" width="200" height="200" loading="lazy" />
                    </a>
                  </div>
