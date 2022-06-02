@@ -1442,6 +1442,8 @@ $(document).ready(function () {
   }
 
   const swiperBanner = new Swiper('.swiper-banner', {
+    preloadImages: false,
+    lazy: true,
     speed: 800,
     slidesPerView: 1,
     spaceBetween: 0,
@@ -1462,6 +1464,8 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   const swiperPopular = new Swiper('.swiper-popular', {
+    preloadImages: false,
+    lazy: true,
     speed: 300,
     slidesPerView: 2,
     spaceBetween: 20,
