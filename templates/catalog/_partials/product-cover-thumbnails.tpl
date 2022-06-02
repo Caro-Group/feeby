@@ -60,8 +60,9 @@
              ))}
 
              <div class="swiper-slide h-full">
-               <img id="zoom_product" loading="lazy" data-type-zoom="" class="img-fluid object-contain"
-                 src="{$image.bySize.large_default.url}" alt="{$product.default_image.legend}"
+               <img id="zoom_product" data-type-zoom="" class="img-fluid object-contain swiper-lazy"
+                 src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                 data-src="{$image.bySize.large_default.url}" alt="{$product.default_image.legend}"
                  title="{$product.default_image.legend}" itemprop="image"
                  width="{$product.default_image.bySize.large_default.width}"
                  height="{$product.default_image.bySize.large_default.height}"
@@ -71,7 +72,6 @@
                {if $image.legend|strstr:"(Konfigurator)" && !isset($selectedOriginalImage)}
                  <img id="product_original_img" class="hidden js-thumb" loading="lazy"
                  src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-                 data-lazy
                  data-src="{$link->getImageLink($product->link_rewrite, $image.id_image)}" alt="{$image.legend}"
                    title="{$image.legend}" itemprop="image" />
                    {assign var="selectedOriginalImage" value="true"}
