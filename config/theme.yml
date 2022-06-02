@@ -26,6 +26,8 @@ assets:
         path: assets/js/swiper.js
       - id: loader-js
         path: assets/js/loader.js
+      - id: lazy-js
+        path: assets/js/lazy.js
 
 global_settings:
   hooks:

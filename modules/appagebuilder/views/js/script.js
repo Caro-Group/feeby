@@ -1461,18 +1461,6 @@ $(document).ready(function () {
     $('#sitemap .sitemap').prepend(leo_site_map)
   }
 
-  if ($('.lazy').length) {
-    $(function () {
-      $('.lazy').lazy({ effect: 'fadeIn' })
-    })
-
-    $(document).ajaxComplete(function () {
-      if ($('.lazy').length) {
-        $('.lazy').lazy({ effect: 'fadeIn' })
-      }
-    })
-  }
-
   // REPLACE URL IN BLOCKLANGUAGES
   if (typeof approfile_multilang_url != 'undefined') {
     $.each(approfile_multilang_url, function (index, profile) {
@@ -1555,45 +1543,6 @@ $(document).ready(function () {
       leoCustomAjax.processAjax()
     }
   })
-
-  // auto get link product and add to demo link on megamenu to show multi product detail
-  if (
-    $('.demo-product-detail[data-menu-type=url] a').length &&
-    prestashop.page.page_name != 'product'
-  ) {
-    $.ajax({
-      type: 'POST',
-      headers: { 'cache-control': 'no-cache' },
-      url:
-        prestashop.urls.base_url +
-        'modules/appagebuilder/apajax.php' +
-        '?rand=' +
-        new Date().getTime(),
-      async: true,
-      cache: false,
-      dataType: 'json',
-      data: { action: 'get-product-link' },
-      success: function (jsonData) {
-        if (jsonData) {
-          $('.demo-product-detail[data-menu-type=url] a').each(function () {
-            var original_url = $(this).attr('href')
-            var layout_key = original_url.substring(
-              original_url.indexOf('?layout='),
-            )
-
-            var new_url = jsonData.replace('.html', '.html' + layout_key)
-            $(this).attr('href', new_url).addClass('updated')
-          })
-          if ($('.lazy').length) {
-            if (lazyLoadInstance) {
-              lazyLoadInstance.update()
-            }
-          }
-        }
-      },
-      error: function () {},
-    })
-  }
 })
 
 function removeParamFromURL(key, sourceURL) {

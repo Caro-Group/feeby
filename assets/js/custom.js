@@ -514,7 +514,7 @@ function innitSlickandZoom() {
     initSlickProductModal()
   }
   //call action zoom
-  applyElevateZoom()
+  restartElevateZoom()
 }
 
 function restartElevateZoom() {
@@ -1524,7 +1524,7 @@ $(document).ready(function () {
       prevEl: '[data-swiper-product-prev]',
     },
     pagination: {
-      el: '.product-thumb-images',
+      el: '.product-thumb-images-pag',
       clickable: true,
       dynamicBullets: true,
       dynamicMainBullets: 1,
@@ -1534,23 +1534,11 @@ $(document).ready(function () {
   handleUpdateZoom(productSwiper)
 
   if (typeof prestashop !== 'undefined') {
-	window.addEventListener('resize', () => {
-		productSwiper.slideTo(1, 300, false)
-	})
+    window.addEventListener('resize', () => {
+      productSwiper.slideTo(1, 300, false)
+    })
 
     prestashop.on('updatedProduct', function (event) {
-      let thumbSwiper = new Swiper('[data-swiper-product-thumb]', {
-        slidesPerView: 'auto',
-        spaceBetween: 0,
-        slideClass: 'swiper-custom-slide',
-        freeMode: true,
-        watchSlidesProgress: true,
-        navigation: {
-          nextEl: '[data-swiper-product-thumb-next]',
-          prevEl: '[data-swiper-product-thumb-prev]',
-        },
-      })
-
       let productSwiper = new Swiper('[data-swiper-product]', {
         slidesPerView: 1,
         spaceBetween: 20,
@@ -1559,8 +1547,11 @@ $(document).ready(function () {
           nextEl: '[data-swiper-product-next]',
           prevEl: '[data-swiper-product-prev]',
         },
-        thumbs: {
-          swiper: thumbSwiper,
+        pagination: {
+          el: '.product-thumb-images-pag',
+          clickable: true,
+          dynamicBullets: true,
+          dynamicMainBullets: 1,
         },
       })
       handleUpdateZoom(productSwiper)
@@ -1570,9 +1561,20 @@ $(document).ready(function () {
 })
 
 function handleUpdateZoom(mainSwiper) {
-	window.addEventListener('resize', () => {
-		mainSwiper.slideTo(1, 300, false)
-	})
+  window.addEventListener('resize', () => {
+    mainSwiper.slideTo(1, 300, false)
+  })
+
+  mainSwiper.on('activeIndexChange', function () {
+    // replace zoom realIndex
+    let activeElement = $(mainSwiper.wrapperEl)
+      .find(`[data-swiper-slide-index=${mainSwiper.realIndex}]`)
+      .eq(0)
+    let activeImageUrl = activeElement.attr('src')
+    $('.zoomWindowContainer div').css(
+      'background-image',
+      `url(${activeImageUrl})`,
+    )
 
   mainSwiper.on('activeIndexChange', function () {
 	  
@@ -1591,7 +1593,6 @@ function handleUpdateZoom(mainSwiper) {
 		  .trigger('click')
   })
 }
-
 
 function paginationGoTop() {
   $('.page-list a').click(function () {

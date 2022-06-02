@@ -22,9 +22,12 @@
                 <div class="flex flex-col h-full group">
                 {/if}
                 <div class="overflow-hidden rounded-md h-full">
-                    <img class="object-cover {(isset($formAtts.class) && $formAtts.class|strstr:"object-center") ? 'object-center' : 'object-top'|escape:'html':'UTF-8'} aspect-square tablet:aspect-auto transform group-hover:scale-110 duration-2000 w-full h-auto tablet:h-[325px] desktop-presta:h-[460px] desktop:h-full"
-                        {if $aplazyload}loading="lazy" {/if}
-                        src="{if isset($formAtts.image) && $formAtts.image}{$path|escape:'html':'UTF-8'}{$formAtts.image|escape:'html':'UTF-8'}{else}{if isset($formAtts.image_link)}{$formAtts.image_link|escape:'html':'UTF-8'}{/if}{/if}"
+                    <img
+                        class="object-cover {(isset($formAtts.class) && $formAtts.class|strstr:"object-center") ? 'object-center' : 'object-top'|escape:'html':'UTF-8'} aspect-square tablet:aspect-auto transform group-hover:scale-110 duration-2000 w-full h-auto tablet:h-[325px] desktop-presta:h-[460px] desktop:h-full"
+                        loading="lazy"
+                        src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                        data-lazy
+                        data-src="{if isset($formAtts.image) && $formAtts.image}{$path|escape:'html':'UTF-8'}{$formAtts.image|escape:'html':'UTF-8'}{else}{if isset($formAtts.image_link)}{$formAtts.image_link|escape:'html':'UTF-8'}{/if}{/if}"
                         class="{(isset($formAtts.animation) && $formAtts.animation != 'none') ? 'has-animation' : ''|escape:'html':'UTF-8'}"
                         {if isset($formAtts.animation) && $formAtts.animation != 'none'}
                         data-animation="{$formAtts.animation|escape:'html':'UTF-8'}" {/if}
