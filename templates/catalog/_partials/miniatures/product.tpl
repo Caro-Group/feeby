@@ -37,7 +37,6 @@
 							width="{$product.cover.bySize.category_default.width}"
 							height="{$product.cover.bySize.category_default.height}"
 							{if isset($lazy_load)}
-								src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
 								data-src="{$product.cover.bySize.category_default_x2.url}"
 							{else}
 								src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
@@ -58,9 +57,13 @@
 							class="object-cover w-full max-w-sm h-full"
 							width="{$urls.no_picture_image.bySize.category_default.width}"
 							height="{$urls.no_picture_image.bySize.category_default.height}"
-							src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-							data-lazy
-							data-src="{$urls.no_picture_image.bySize.category_default.url}"
+							{if isset($lazy_load)}
+								data-src="{$urls.no_picture_image.bySize.category_default.url}"
+							{else}
+								src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+								data-lazy
+								data-src="{$urls.no_picture_image.bySize.category_default.url}"
+							{/if}
 							alt="{l s='No image available' d='Shop.Theme.Catalog'}"
 							loading="lazy" 
 							/>

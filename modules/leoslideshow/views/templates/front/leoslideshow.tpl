@@ -38,7 +38,6 @@
 						width="{$sliderParams['width']|escape:'html':'UTF-8'}"
 						height="{$sliderParams['height']|escape:'html':'UTF-8'}"
 						alt="{$slider.title|escape:'html':'UTF-8'}"
-						src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
 						data-src="{$slider.main_image|escape:'html':'UTF-8'}">
 				</a>
 

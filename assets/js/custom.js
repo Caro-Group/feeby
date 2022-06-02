@@ -1314,6 +1314,8 @@ function onResize() {
 //Top bar swiper
 $(document).ready(function () {
   const swiperBlog = new Swiper('[data-swiper-blog]', {
+    preloadImages: false,
+    lazy: true,
     speed: 300,
     slidesPerView: 'auto',
     spaceBetween: 0,
@@ -1325,6 +1327,8 @@ $(document).ready(function () {
   })
 
   const swiperAbout = new Swiper('[data-about-swiper]', {
+    preloadImages: false,
+    lazy: true,
     speed: 300,
     slidesPerView: 'auto',
     resistanceRatio: 0.5,
