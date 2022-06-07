@@ -982,21 +982,21 @@ function initSlickProductModal() {
 //Fix filter (category page) does not work on IE change dataset.searchUrl to getAttribute('data-search-url')
 
 $().ready(function () {
-  $('#leo_search_block_top .title_block').click(function () {
+  $('#leo_search_block_top .title_block').on('click', function () {
     $(this).parent().toggleClass('active')
     setTimeout(function () {
       jQuery('#leo_search_block_top.active input.form-control').trigger('focus')
     }, 100)
   })
 
-  $(document).keydown(function (e) {
+  $(document).on('keydown', function (e) {
     // ESCAPE key pressed
     if (e.keyCode == 27) {
       $('#leo_search_block_top').removeClass('active')
     }
   })
 
-  $(document).click(function (event) {
+  $(document).on('click', function (event) {
     if (!$(event.target).closest('#leo_search_block_top').length) {
       $('#leo_search_block_top').removeClass('active')
     }
@@ -1117,9 +1117,9 @@ function onResize() {
     onResize()
   })
 
-  $(window).resize($.debounce(250, onResize))
+  $(window).on('resize', $.debounce(250, onResize))
 
-  $(document).click(function (event) {
+  $(document).on('click', function (event) {
     if ($(window).width() >= 769) {
       $('#search_filters .facet .collapse').collapse('hide')
     }
@@ -1360,7 +1360,7 @@ function openMenuWithCategory(id) {
       .first()
       .addClass('open')
     if (!menu_el.hasClass('open-sub')) {
-      menu_el.children('.dropdown-toggle').click()
+      menu_el.children('.dropdown-toggle').trigger('click')
     }
   }
   var menu_id = menu_el.parents('[data-megamenu-id]').data('megamenu-id')
