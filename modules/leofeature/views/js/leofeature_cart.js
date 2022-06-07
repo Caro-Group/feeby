@@ -1243,7 +1243,7 @@ function activeDropdownEvent() {
   $('.leo-input-product-quantity').on('focusout', function () {
     updateQuantityProductDropDown($(this))
   })
-  $('.leo-input-product-quantity').keyup(function (event) {
+  $('.leo-input-product-quantity').on('keyup', function (event) {
     if (event.keyCode == 13) {
       updateQuantityProductDropDown($(this))
     }
