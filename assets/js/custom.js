@@ -1184,7 +1184,7 @@ $(document).ready(function () {
 
   if (typeof prestashop !== 'undefined') {
     window.addEventListener('resize', () => {
-      if (productSwiper) {
+      if (typeof productSwiper !== 'undefined') {
         productSwiper.slideTo(1, 300, false)
       }
     })
