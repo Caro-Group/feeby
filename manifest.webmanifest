@@ -3,7 +3,7 @@
   "background_color": "#FFFFFF",
   "display": "minimal-ui",
   "scope": "/",
-  "start_url": "/?source=pwa",
+  "start_url": "./?source=pwa",
   "name": "Feeby.pl - Sklep z obrazami i dekoracjami \u015bciennymi",
   "short_name": "Feeby.pl",
   "description": "Oryginalne fototapety, obrazy, plakaty, parawany",
