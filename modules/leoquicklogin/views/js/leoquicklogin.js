@@ -206,7 +206,7 @@ $(document).ready(function () {
   // var parent_obj = $(this).parents('.leo-quicklogin-form');
   // parent_obj.css({'height': 'auto'});
   // });
-  $('.leoquicklogin-forgotpass').click(function () {
+  $('.leoquicklogin-forgotpass').on('click', function () {
     var parent_obj = $(this).parents('.leo-login-form')
     if (!$(this).hasClass('active')) {
       $(this).addClass('active')

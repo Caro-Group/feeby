@@ -267,19 +267,19 @@
  */
 //MODAL TRIGGER
 $(document).ready(function () {
-  $('.product-base-info').click(function () {
+  $('.product-base-info').on('click', function () {
     $('.product-base-modal-background').show()
   })
 
-  $('.product-base-modal button').click(function () {
+  $('.product-base-modal button').on('click', function () {
     $('.product-base-modal-background').hide()
   })
 
-  $('.product-dimension-info').click(function () {
+  $('.product-dimension-info').on('click', function () {
     $('.product-dimension-modal-background').show()
   })
 
-  $('.product-dimension-modal button').click(function () {
+  $('.product-dimension-modal button').on('click', function () {
     $('.product-dimension-modal-background').hide()
   })
 })
@@ -420,7 +420,7 @@ $(document).ready(function () {
   }
 
   //DONGND:: update for order page - tab adress, when change adress, block adress change class selected
-  $('.address-item .radio-block').click(function () {
+  $('.address-item .radio-block').on('click', function () {
     if (!$(this).parents('.address-item').hasClass('selected')) {
       $('.address-item.selected').removeClass('selected')
       $(this).parents('.address-item').addClass('selected')
@@ -452,7 +452,7 @@ $(document).ready(function () {
   }
 
   //DONGND:: create demo product detail from megamenu
-  $('.demo-product-detail a').click(function (e) {
+  $('.demo-product-detail a').on('click', function (e) {
     if (!$(this).hasClass('updated')) {
       e.preventDefault()
       var current_url = window.location.href
@@ -649,7 +649,7 @@ function applyElevateZoom() {
     if ($.fn.elevateZoom !== undefined) {
       $('img.js-thumb').elevateZoom(zoom_config)
       //DONGND:: fix click a thumb replace all image and add fancybox
-      $('img.js-thumb').bind('click', function (e) {
+      $('img.js-thumb').on('click', function (e) {
         var ez = $(this).data('elevateZoom')
         $.fancybox(ez.getGalleryList())
         return false
@@ -660,7 +660,7 @@ function applyElevateZoom() {
       $('[data-zoom-container]').elevateZoom({ gallery: 'thumb-gallery' })
 
       //pass the images to Fancybox
-      $('[data-zoom-container]').bind('click', function (e) {
+      $('[data-zoom-container]').on('click', function (e) {
         var ez = $(this).data('elevateZoom')
         $.fancybox(ez.getGalleryList())
         return false
@@ -824,7 +824,7 @@ function findPosition(slides) {
 
 //DONGND:: loading quickview
 function actionQuickViewLoading() {
-  $('.quick-view').click(function () {
+  $('.quick-view').on('click', function () {
     if (!$(this).hasClass('active')) {
       $(this).addClass('active')
       $(this).find('.leo-quickview-bt-loading').css({ display: 'block' })
@@ -1127,7 +1127,7 @@ function onResize() {
 
   $(document).ready(function () {
     const aboveFiltersContainer = '[data-container="additional-filters"]'
-    const currentFilterContainer = '[data-target="#facet_attribute_group_18"]'
+    const currentFilterContainer = '[data-target="#facet_attribute_group_15"]'
 
     $(document).ajaxComplete(function () {
       if ($(currentFilterContainer).length !== 0) {
@@ -1370,7 +1370,7 @@ function openMenuWithCategory(id) {
       $(menu_el).parent().hasClass('level2') &&
       !$(menu_el).parent().hasClass('open-sub')
     ) {
-      $(menu_el).next('.caret').click()
+      $(menu_el).next('.caret').trigger('click')
     }
 
     if (
@@ -1378,24 +1378,24 @@ function openMenuWithCategory(id) {
       !$(menu_el).parent().hasClass('open-sub')
     ) {
       if ($(menu_el).parent().parent().hasClass('level2')) {
-        $(menu_el).parent().parent().find('.caret').click()
+        $(menu_el).parent().parent().find('.caret').trigger('click')
       }
       if ($(menu_el).parent().parent().parent().hasClass('level2')) {
-        $(menu_el).parent().parent().parent().find('.caret').click()
+        $(menu_el).parent().parent().parent().find('.caret').trigger('click')
       }
     }
   }
   if (
     menu_el.parents('.dropdown').each(function (i, item) {
       if (!$(item).hasClass('open-sub')) {
-        $(item).children('.dropdown-toggle').click()
+        $(item).children('.dropdown-toggle').trigger('click')
       }
     })
   );
 
   $('[data-target=".megamenu-off-canvas-' + menu_id + '"]')
     .first()
-    .click()
+    .trigger('click')
 
   var currentCatId = $('[data-current-category-id]')
     .first()
@@ -1599,14 +1599,13 @@ function handleUpdateZoom(mainSwiper) {
 }
 
 function paginationGoTop() {
-  $('.page-list a').click(function () {
+  $('.page-list a').on('click', function () {
     window.scrollTo({
       top: 0,
       behavior: 'smooth',
     })
   })
 }
-
 $(document).ready(function () {
   paginationGoTop()
   prestashop.on('updateProductList', paginationGoTop)

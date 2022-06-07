@@ -14,7 +14,7 @@ $(document).on('click', function (event) {
 })
 
 $(document).ready(function () {
-  $('#leo_search_query_top').click(function () {
+  $('#leo_search_query_top').on('click', function () {
     if ($(this).val().length > 2) {
       $('.leoproductsearch-result .ac_results').show()
     }
@@ -85,7 +85,7 @@ $(document).ready(function () {
       })
 
     //DONGND:: update when width of input has been change
-    $('#leo_search_query_' + blocksearch_type).click(function () {
+    $('#leo_search_query_' + blocksearch_type).on('click', function () {
       width_ac_results = $(this).outerWidth()
       //DONGND:: update option js libary option when resize
       $(this).setOptions({
@@ -94,7 +94,7 @@ $(document).ready(function () {
     })
   }
 
-  $('.cate-item').click(function () {
+  $('.cate-item').on('click', function () {
     if (!$(this).hasClass('active')) {
       $('.cate-item.active').removeClass('active')
       var cate_id = $(this).data('cate-id')

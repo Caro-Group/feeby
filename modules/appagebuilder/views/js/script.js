@@ -821,7 +821,7 @@ function apshowmore() {
   /**
    * Start block for module ap_product_list
    */
-  $('.btn-show-more').click(function () {
+  $('.btn-show-more').on('click', function () {
     var page = parseInt($(this).data('page'))
     var use_animation = parseInt($(this).data('use-animation'))
     var btn = $(this)
@@ -943,7 +943,7 @@ function apPopupForm() {
       $('body').find('#turnoff-popup-bt').trigger('click')
       $.cookie('apnewletter', '1')
       $('.turnoff-popup').addClass('active')
-      $('.turnoff-popup').click(function () {
+      $('.turnoff-popup').on('click', function () {
         if (!$(this).hasClass('active')) {
           $.cookie('apnewletter', '1')
           $(this).addClass('active')
@@ -962,7 +962,7 @@ $(document).ready(function () {
   //DONGND:: call active anmation
   activeAnimation()
   if ($('.ajaxtabcate').length) {
-    $('input:radio[name=ajaxtabcate]').click(function () {
+    $('input:radio[name=ajaxtabcate]').on('click', function () {
       $('.leo-ajax-tabs').each(function () {
         //if have product
         if (
@@ -992,7 +992,7 @@ $(document).ready(function () {
       $(this).find('.dropdown-item').first().addClass('active')
       $(wraper)
         .find('.nav-link')
-        .click(function () {
+        .on('click', function () {
           if ($(this).hasClass('active')) {
             return
           }
@@ -1013,7 +1013,7 @@ $(document).ready(function () {
 
       $(tabdrop)
         .find('.dropdown-item')
-        .click(function () {
+        .on('click', function () {
           $(wraper).find('.nav-link').removeClass('active')
           cclass = $(this).attr('class')
           var strArray = cclass.split(' ')

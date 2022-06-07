@@ -652,7 +652,7 @@ function leoBtCart() {
 
 //DONGND:: event for button add cart
 function leoSelectAttr() {
-  $('.leo-select-attr').on('click',function (e) {
+  $('.leo-select-attr').on('click', function (e) {
     e.preventDefault()
     var id_product = $(this).data('id-product')
     var attr_txt = $(this).text()
@@ -1746,7 +1746,7 @@ function createModalAndDropdown($only_dropdown, $only_total) {
 
 //DONGND:: event for notification
 function activeEventNotification() {
-  $('.leo-notification .notification').click(function () {
+  $('.leo-notification .notification').on('click', function () {
     $(this).removeClass('show').addClass('closed').parent().addClass('disable')
     // var obj = $(this);
     // setTimeout(
@@ -2030,7 +2030,7 @@ function flyCartEffect($element) {
 function activeEventFlyCartSlideBar() {
   $(
     '.leo-fly-cart-mask, .leo-fly-cart-slidebar .leo-fly-cart-icon, .leo-fly-cart-slidebar .leo-fly-cart-icon-wrapper, .leo-fly-cart-slidebar .leo-fly-cart',
-  ).click(function () {
+  ).on('click', function () {
     // console.log('test');
     $('.leo-fly-cart-mask.active').removeClass('active')
     $('.leo-fly-cart-icon.active-slidebarcart').removeClass(

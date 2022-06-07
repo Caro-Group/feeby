@@ -3927,7 +3927,7 @@
               .attr('tabindex', '0')
               .keypress(function (t) {
                 if (13 === t.keyCode || 32 === t.charCode)
-                  return n.$elementFilestyle.find('label').click(), !1
+                  return n.$elementFilestyle.find('label').trigger('click'), !1
               }),
             n.$element
               .css({
@@ -3950,8 +3950,8 @@
                 : n.$elementFilestyle.find('.badge').remove()
             }),
             window.navigator.userAgent.search(/firefox/i) > -1 &&
-              n.$elementFilestyle.find('label').click(function () {
-                return n.$element.click(), !1
+              n.$elementFilestyle.find('label').on('click', function () {
+                return n.$element.trigger('click'), !1
               })
         },
       }
@@ -4454,12 +4454,15 @@
               distance: 113,
               autoPlay: !1,
             }),
-            (0, o.default)('.scroll-box-arrows .left').click(function () {
+            (0, o.default)('.scroll-box-arrows .left').on('click', function () {
               ;(0, o.default)('#main .js-qv-mask').trigger('backward')
             }),
-            (0, o.default)('.scroll-box-arrows .right').click(function () {
-              ;(0, o.default)('#main .js-qv-mask').trigger('forward')
-            }))
+            (0, o.default)('.scroll-box-arrows .right').on(
+              'click',
+              function () {
+                ;(0, o.default)('#main .js-qv-mask').trigger('forward')
+              },
+            ))
           : ((0, o.default)('#main .js-qv-mask').removeClass('scroll'),
             (0, o.default)('.scroll-box-arrows').removeClass('scroll'))
       }
