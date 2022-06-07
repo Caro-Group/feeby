@@ -652,7 +652,7 @@ function leoBtCart() {
 
 //DONGND:: event for button add cart
 function leoSelectAttr() {
-  $('.leo-select-attr').click(function (e) {
+  $('.leo-select-attr').on('click',function (e) {
     e.preventDefault()
     var id_product = $(this).data('id-product')
     var attr_txt = $(this).text()

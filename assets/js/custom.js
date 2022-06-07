@@ -387,7 +387,7 @@ var options_quickview = {
   ],
 }
 
-$(window).resize(function () {
+$(window).on('resize', function () {
   //DONGND:: fix zoom, only work at product page
   if (prestashop.page.page_name == 'product') restartElevateZoom()
 
