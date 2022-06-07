@@ -284,25 +284,29 @@ $(document).ready(function () {
 
   //DONGND:: call event for fly cart slide bar
   activeEventFlyCartSlideBar()
-  $('.leo-fly-cart.enable-slidebar .leo-fly-cart-icon-wrapper').click(
+  $('.leo-fly-cart.enable-slidebar .leo-fly-cart-icon-wrapper').on(
+    'click',
     function () {
       $('.leo-fly-cart.enable-slidebar .leo-fly-cart-icon').trigger('click')
     },
   )
-  $('.leo-fly-cart.enable-slidebar .leo-fly-cart-icon').click(function () {
-    showSlideBarCart($(this))
-    return false
-  })
+  $('.leo-fly-cart.enable-slidebar .leo-fly-cart-icon').on(
+    'click',
+    function () {
+      showSlideBarCart($(this))
+      return false
+    },
+  )
 
   $(
     '.leo-fly-cart.enable-dropdown .leo-fly-cart-icon-wrapper , .leo-fly-cart.enable-dropdown .leo-fly-cart-icon',
-  ).click(function () {
+  ).on('click', function () {
     showDropDownCart($(this), 'flycart')
     return false
   })
 
   //DONGND:: click out to close dropdown-dropup cart
-  $(document).click(function (e) {
+  $(document).on('click', function (e) {
     e.stopPropagation()
     var container = $('.leo-dropdown-cart.dropdown.show')
 
@@ -325,7 +329,7 @@ $(document).ready(function () {
   getOffsetFlycartIcon()
 
   //DONGND:: resize update scroll bar of fly cart slide bar
-  $(window).resize(function () {
+  $(window).on('resize', function () {
     //DONGND:: active scroll bar
     $('.leo-dropdown-list-item').each(function () {
       //DONGND:: scroll bar for slidebar
@@ -346,7 +350,7 @@ function leoBtCart() {
   $('.leo-bt-cart').each(function () {
     if (!$(this).hasClass('leo-enable')) {
       $(this).addClass('leo-enable')
-      $(this).click(function (event) {
+      $(this).on('click', function (event) {
         if (
           $(this).hasClass('active') ||
           $(this).hasClass('reset') ||
