@@ -34,7 +34,7 @@
 				<input type="email" class="form-control lql-email-login font-body text-sm placeholder:italic border-gray-2000 border-solid border flex rounded-full pl-4 bg-white w-full focus:border-gray-3000 focus:ring-0" name="lql-email-login" required="" placeholder="{l s='Email Address' d='Modules.Leoquicklogin.Shop'}">
 			</div>
 			<div class="form-group lql-form-content-element">
-				<input type="password" class="form-control lql-pass-login font-body text-sm placeholder:italic border-gray-2000 border-solid border flex rounded-full pl-4 bg-white w-full focus:border-gray-3000 focus:ring-0" name="lql-pass-login" required="" placeholder="{l s='Password' d='Modules.Leoquicklogin.Shop'}">
+				<input type="password" autocomplete="current-password" class="form-control lql-pass-login font-body text-sm placeholder:italic border-gray-2000 border-solid border flex rounded-full pl-4 bg-white w-full focus:border-gray-3000 focus:ring-0" name="lql-pass-login" required="" placeholder="{l s='Password' d='Modules.Leoquicklogin.Shop'}">
 			</div>
 			<div class="form-group row lql-form-content-element">				
 				<div class="col-xs-6">
