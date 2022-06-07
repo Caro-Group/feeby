@@ -12,11 +12,11 @@
 
   $(document).ready(function () {
     $(function () {
-      lazyLoad($(`${elementLazySelector}`))
+      lazyLoad($(elementLazySelector))
     })
 
     $(document).ajaxComplete(function () {
-      lazyLoad($(`${elementLazySelector}`))
+      lazyLoad($(elementLazySelector))
     })
   })
 })(jQuery, document)
