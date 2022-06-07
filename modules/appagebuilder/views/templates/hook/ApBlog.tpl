@@ -24,18 +24,8 @@
         {/if}
         <div class="block_content">	
             {if !empty($products)}
-				{if $formAtts.carousel_type == "slickcarousel"}
-                    {assign var=leo_include_file value=$leo_helper->getTplTemplate('BlogSlickCarousel.tpl', $formAtts['override_folder'])}
-                    {include file=$leo_include_file}
-                {else}
-					{if $formAtts.carousel_type == 'boostrap'}
-						{assign var=leo_include_file value=$leo_helper->getTplTemplate('BlogCarousel.tpl', $formAtts['override_folder'])}
-						{include file=$leo_include_file}
-					{else}
-						{assign var=leo_include_file value=$leo_helper->getTplTemplate('BlogOwlCarousel.tpl', $formAtts['override_folder'])}
-						{include file=$leo_include_file}
-					{/if}
-				{/if}
+                {assign var=leo_include_file value=$leo_helper->getTplTemplate('BlogCarousel.tpl', $formAtts['override_folder'])}
+                {include file=$leo_include_file}
             {else}
                 <p class="alert alert-info">{l s='No blog at this time.' mod='appagebuilder'}</p>	
             {/if}

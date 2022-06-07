@@ -31,18 +31,8 @@
             {($apLiveEdit)?$apLiveEdit:'' nofilter}{* HTML form , no escape necessary *}
             <div class="block_content">
                 {if !empty($formAtts.slides)}
-                    {if $formAtts.carousel_type == "slickcarousel"}
-                        {assign var=leo_include_file value=$leo_helper->getTplTemplate('ApBlockSlickCarouselItem.tpl', $formAtts['override_folder'])}
-                        {include file=$leo_include_file}
-                    {else}
-                        {if $formAtts.carousel_type == 'boostrap'}
-                            {assign var=leo_include_file value=$leo_helper->getTplTemplate('ApBlockCarouselItem.tpl', $formAtts['override_folder'])}
-                            {include file=$leo_include_file}
-                        {else}
-                            {assign var=leo_include_file value=$leo_helper->getTplTemplate('ApBlockOwlCarouselItem.tpl', $formAtts['override_folder'])}
-                            {include file=$leo_include_file}
-                        {/if}
-                    {/if}
+                    {assign var=leo_include_file value=$leo_helper->getTplTemplate('ApBlockCarouselItem.tpl', $formAtts['override_folder'])}
+                    {include file=$leo_include_file}
                 {else}
                     <p class="alert alert-info">{l s='No slide at this time.' mod='appagebuilder'}</p>
                 {/if}
