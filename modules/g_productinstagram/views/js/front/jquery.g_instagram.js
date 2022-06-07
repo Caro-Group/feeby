@@ -645,7 +645,7 @@ $(document).ready(function () {
     }
   })
   // Show loadmore button
-  $(window).load(function () {
+  $(window).on('load', function () {
     $('.g_load_more').show()
   })
   // Event hover taged
