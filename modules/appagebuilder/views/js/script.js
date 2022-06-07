@@ -1448,7 +1448,7 @@ $(document).ready(function () {
 /**
  * List functions will run when window.load()
  */
-$(window).load(function () {
+$(window).on('load', function () {
   if (typeof ap_list_functions_loaded != 'undefined') {
     for (var i = 0; i < ap_list_functions_loaded.length; i++) {
       ap_list_functions_loaded[i]()

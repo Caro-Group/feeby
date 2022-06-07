@@ -3514,7 +3514,7 @@
             {
               key: 'parentFocus',
               value: function () {
-                ;(0, a.default)('.js-child-focus').focus(function () {
+                ;(0, a.default)('.js-child-focus').on('focus', function () {
                   ;(0, a.default)(this)
                     .closest('.js-parent-focus')
                     .addClass('focus')
@@ -6085,7 +6085,7 @@
                       return (
                         t(n).trigger(a),
                         !a.isDefaultPrevented() &&
-                          (this.focus(),
+                          (this.trigger('focus'),
                           this.setAttribute('aria-expanded', 'true'),
                           t(n).toggleClass(c.OPEN),
                           t(n).trigger(t.Event(u.SHOWN, o)),

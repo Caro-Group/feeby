@@ -970,7 +970,7 @@ function activeDropdownEvent() {
   )
 
   //DONGND:: show additional info
-  $('.view-leo-dropdown-additional').click(function () {
+  $('.view-leo-dropdown-additional').on('click', function () {
     var parent_obj = $(this).parents('.leo-dropdown-cart-item')
 
     var wrapper_parent_obj = $(this).parents('.leo-dropdown-list-item')
@@ -1103,7 +1103,7 @@ function activeDropdownEvent() {
   })
 
   //DONGND:: remove dropdown cart item
-  $('.leo-remove-from-cart').click(function () {
+  $('.leo-remove-from-cart').on('click', function () {
     var id_product = $(this).data('id-product')
     var id_product_attribute = $(this).data('id-product-attribute')
     var id_customization = $(this).data('id-customization')
@@ -1552,11 +1552,14 @@ function createModalAndDropdown($only_dropdown, $only_total) {
           type_dropdown_defaultcart == 'dropdown' ||
           type_dropdown_defaultcart == 'dropup'
         ) {
-          $('.leo-blockcart.cart-preview.show-leo-loading').click(function () {
-            // console.log('test');
-            showDropDownCart($(this), 'defaultcart')
-            return false
-          })
+          $('.leo-blockcart.cart-preview.show-leo-loading').on(
+            'click',
+            function () {
+              // console.log('test');
+              showDropDownCart($(this), 'defaultcart')
+              return false
+            },
+          )
         }
         if (
           type_dropdown_defaultcart == 'slidebar_left' ||
@@ -1564,10 +1567,13 @@ function createModalAndDropdown($only_dropdown, $only_total) {
           type_dropdown_defaultcart == 'slidebar_top' ||
           type_dropdown_defaultcart == 'slidebar_bottom'
         ) {
-          $('.leo-blockcart.cart-preview.show-leo-loading').click(function () {
-            showSlideBarCart($(this))
-            return false
-          })
+          $('.leo-blockcart.cart-preview.show-leo-loading').on(
+            'click',
+            function () {
+              showSlideBarCart($(this))
+              return false
+            },
+          )
         }
       }
     } else {
