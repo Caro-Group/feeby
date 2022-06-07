@@ -8245,7 +8245,7 @@
           ],
           11: [
             function (t, e, n) {
-              var i = /^(column|row)-reverse$/
+              var i = /^(column|row)-reverse$/;
               e.exports = function (t) {
                 t.children.sort(function (t, e) {
                   return t.style.order - e.style.order || t.index - e.index
