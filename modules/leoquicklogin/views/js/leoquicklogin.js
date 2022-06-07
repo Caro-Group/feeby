@@ -268,7 +268,7 @@ $(document).ready(function () {
     }
   })
 
-  $('.leo-resetpass-form-content').submit(function () {
+  $('.leo-resetpass-form-content').on('submit', function () {
     // if ($(this).find('.form-group.leo-has-error').length)
     if (
       $(this).find('.leoquicklogin-reset-pass-bt').hasClass('validate-ok') ||
@@ -279,7 +279,7 @@ $(document).ready(function () {
   })
 
   //DONGND:: button send email reset password
-  $('.leoquicklogin-reset-pass-bt').click(function () {
+  $('.leoquicklogin-reset-pass-bt').on('click', function () {
     if (!$(this).hasClass('active') && !$(this).hasClass('success')) {
       var object_e = $(this)
       var parent_obj = object_e.parents('.leo-resetpass-form-content')
