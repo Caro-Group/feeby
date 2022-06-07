@@ -955,7 +955,8 @@ function activeDropdownEvent() {
   })
 
   //DONGND:: highlight dropdown cart item
-  $('.leo-remove-from-cart, .view-leo-dropdown-additional').hover(
+  $('.leo-remove-from-cart, .view-leo-dropdown-additional').on(
+    'hover',
     function () {
       if ($(this).hasClass('leo-remove-from-cart')) {
         $(this).parents('.leo-dropdown-cart-item').addClass('high-light')
