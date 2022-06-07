@@ -985,7 +985,7 @@ $().ready(function () {
   $('#leo_search_block_top .title_block').click(function () {
     $(this).parent().toggleClass('active')
     setTimeout(function () {
-      jQuery('#leo_search_block_top.active input.form-control').focus()
+      jQuery('#leo_search_block_top.active input.form-control').trigger('focus')
     }, 100)
   })
 
@@ -1074,7 +1074,7 @@ function customSticky() {
   var pos = s.offset()
   var alreadySticky = false
 
-  $(window).scroll(function () {
+  $(window).on('scroll', function () {
     var windowpos = $(window).scrollTop()
     if (s.length) {
       if (!alreadySticky) {
@@ -1168,7 +1168,7 @@ function onResize() {
 
   //Filters custom move-end
 
-  $(window).load(function () {
+  $(window).on('load', function () {
     $('.category-top-menu a').each(function (t, el) {
       $(this).data('link', $(el).attr('href'))
     })
