@@ -1492,68 +1492,37 @@ $(document).ready(function () {
 })
 
 $(document).ready(function () {
-  // if(jQuery('.swiper-filters').length != 0){
-  // 	const breakpoint = window.matchMedia('(max-width:768px)')
-
-  // 	let swiperFilters;
-
-  // 	const breakpointCheck = function () {
-  // 		if (breakpoint.matches == true) {
-  // 			if (typeof swiperFilters !== 'undefined') swiperFilters.destroy(true,true);
-  // 		}
-  // 		else if (breakpoint.matches == false) {
-  // 			return enableSwiperFilter();
-
-  // 		}
-  // 	};
-
-  // 	const enableSwiperFilter =function () {
-  // 		swiperFilters = new Swiper('.swiper-filters', {
-  // 			speed: 150,
-  // 			roundLengths: true,
-  // 			slidesPerView: 'auto',
-  // 			freeMode: {
-  // 				enabled: true,
-  // 			},
-  // 		});
-  // 	}
-
-  // 	breakpoint.addListener(breakpointCheck);
-  // 	breakpointCheck();
-  // }
-
-  // prestashop.on("updateProductList", function(t) {
-  // 	window.dispatchEvent(new Event('resize'));
-  // 	enableSwiperFilter();
-  // })
-
-  let productSwiper = new Swiper('[data-swiper-product]', {
-    preloadImages: false,
-    lazy: true,
-    loadOnTransitionStart: true,
-    slidesPerView: 1,
-    spaceBetween: 20,
-    loop: true,
-    navigation: {
-      nextEl: '[data-swiper-product-next]',
-      prevEl: '[data-swiper-product-prev]',
-    },
-    pagination: {
-      el: '.product-thumb-images-pag',
-      clickable: true,
-      dynamicBullets: true,
-      dynamicMainBullets: 1,
-    },
-  })
-
-  handleUpdateZoom(productSwiper)
-
-  if (typeof prestashop !== 'undefined') {
-    window.addEventListener('resize', () => {
-      productSwiper.slideTo(1, 300, false)
+  if (jQuery('[data-swiper-product]').length != 0) {
+    let productSwiper = new Swiper('[data-swiper-product]', {
+      preloadImages: false,
+      lazy: true,
+      loadOnTransitionStart: true,
+      slidesPerView: 1,
+      spaceBetween: 20,
+      loop: true,
+      navigation: {
+        nextEl: '[data-swiper-product-next]',
+        prevEl: '[data-swiper-product-prev]',
+      },
+      pagination: {
+        el: '.product-thumb-images-pag',
+        clickable: true,
+        dynamicBullets: true,
+        dynamicMainBullets: 1,
+      },
     })
 
-    prestashop.on('updatedProduct', function (event) {
+    handleUpdateZoom(productSwiper)
+  }
+
+  window.addEventListener('resize', () => {
+    if (jQuery('[data-swiper-product]').length != 0) {
+      productSwiper.slideTo(1, 300, false)
+    }
+  })
+
+  prestashop.on('updatedProduct', function (event) {
+    if (jQuery('[data-swiper-product]').length != 0) {
       let productSwiper = new Swiper('[data-swiper-product]', {
         slidesPerView: 1,
         spaceBetween: 20,
@@ -1570,8 +1539,8 @@ $(document).ready(function () {
         },
       })
       handleUpdateZoom(productSwiper)
-    })
-  }
+    }
+  })
 })
 
 function handleUpdateZoom(mainSwiper) {
