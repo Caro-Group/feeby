@@ -1240,7 +1240,7 @@ function activeDropdownEvent() {
   // updateQuantityProductDropDown(event.currentTarget);
   // }
   // });
-  $('.leo-input-product-quantity').focusout(function () {
+  $('.leo-input-product-quantity').on('focusout', function () {
     updateQuantityProductDropDown($(this))
   })
   $('.leo-input-product-quantity').keyup(function (event) {
@@ -2047,7 +2047,7 @@ function activeEventFlyCartSlideBar() {
     $('.leo-fly-cart-slidebar.active').removeClass('active')
   })
 
-  $(document).keyup(function (e) {
+  $(document).on('keyup', function (e) {
     //DONGND:: press esc
     if (e.keyCode == 27) {
       if ($('.leo-fly-cart-mask').hasClass('active')) {
@@ -2187,12 +2187,9 @@ function checkFlyCartScrollBarDropDown($element) {
     height_default + height_bottom > object_parent.position().top
   ) {
     // console.log('test0');
-    $element
-      .addClass('active-scrollbar')
-      .css({
-        'max-height':
-          object_parent.position().top - height_icon - height_bottom,
-      })
+    $element.addClass('active-scrollbar').css({
+      'max-height': object_parent.position().top - height_icon - height_bottom,
+    })
     $element.mCustomScrollbar({
       theme: 'dark',
       scrollInertia: 200,
@@ -2213,15 +2210,13 @@ function checkFlyCartScrollBarDropDown($element) {
       $(window).height() - object_parent.position().top
   ) {
     // console.log('test1');
-    $element
-      .addClass('active-scrollbar')
-      .css({
-        'max-height':
-          $(window).height() -
-          object_parent.position().top -
-          height_icon -
-          height_bottom,
-      })
+    $element.addClass('active-scrollbar').css({
+      'max-height':
+        $(window).height() -
+        object_parent.position().top -
+        height_icon -
+        height_bottom,
+    })
     $element.mCustomScrollbar({
       theme: 'dark',
       scrollInertia: 200,
@@ -2243,13 +2238,11 @@ function checkFlyCartScrollBarDropDown($element) {
         .addClass('active-scrollbar')
         .css({ 'max-height': height_cart_item * number_cartitem_display })
     } else {
-      $element
-        .addClass('active-scrollbar')
-        .css({
-          'max-height':
-            $element.find('.leo-dropdown-cart-item').outerHeight() *
-            check_number_cartitem,
-        })
+      $element.addClass('active-scrollbar').css({
+        'max-height':
+          $element.find('.leo-dropdown-cart-item').outerHeight() *
+          check_number_cartitem,
+      })
     }
 
     $element.mCustomScrollbar({
