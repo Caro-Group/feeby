@@ -278,7 +278,7 @@
         var psBaseModuleUri = "{$psBaseModuleUri|escape:'html':'UTF-8'}";
         var txt_input_title = "{l s='Please input title of slider for all language' mod='leoslideshow'}";
         
-        $(".btn-remove-backurl").click(function(){
+        $(".btn-remove-backurl").on('click',function(){
             var field = 'slider-image_';
             langID = findActiveLang();
             if ($('#' + field + langID).val()) {
@@ -288,7 +288,7 @@
             }
         });
  
-        $(".btn-update-slider").click(function() {
+        $(".btn-update-slider").on('click',function() {
             var field = 'slider-image_';
             dialog_param = {
                 window: window,
@@ -342,11 +342,11 @@
                 
             $('#slider-editor_'+default_language).find('.layer-active').removeClass('layer-active').trigger('click');
             
-            $('.language-select li').click(function(){
+            $('.language-select li').on('click',function(){
                 $('#slider-editor_'+$(this).data('id-lang')).find('.layer-active').removeClass('layer-active').trigger('click');
             });
             
-            $(".btn-actionslider").click(function(){
+            $(".btn-actionslider").on('click',function(){
                 var object_e = $(this);
                 if($(this).attr("href").indexOf("deleteSlider") != -1) {
                     if(!confirm('Delete Selected Slider?')) return false;
@@ -415,7 +415,7 @@
         });
 
 
-        $(".slider-preview").click(function() {
+        $(".slider-preview").on('click',function() {
             var url = $(this).attr("href")+"&content_only=1";
             $('#dialog').remove();
             $('#content').prepend('<div id="dialog" style="padding: 3px 0px 0px 0px;"><iframe name="iframename2" src="' + url + '" style="padding:0; margin: 0; display: block; width: 100%; height: 100%;" frameborder="no" scrolling="auto"></iframe></div>');

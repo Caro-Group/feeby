@@ -67,7 +67,7 @@ var imgManUrl = "{$imgManUrl}"; // escape_html : wrong url to order image
         $('.fancybox').fancybox();
         
     });
-    $(".img-link").click(function(){
+    $(".img-link").on('click',function(){
        return false;
     });
     function selectImage(url){

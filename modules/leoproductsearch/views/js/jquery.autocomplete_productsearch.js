@@ -477,7 +477,7 @@ jQuery.browser = browser
             $('.leoproductsearch-result .ac_results').html(str)
             $('.leoproductsearch-result .ac_results').show()
 
-            $('.suggest-item').click(function () {
+            $('.suggest-item').on('click', function () {
               $('#leo_search_query_top').val($(this).attr('href'))
               onChange(0, true)
               return false
@@ -729,7 +729,7 @@ jQuery.browser = browser
             $(target(event)).addClass(CLASSES.ACTIVE)
           }
         })
-        .click(function (event) {
+        .on('click', function (event) {
           $(target(event)).addClass(CLASSES.ACTIVE)
           select()
           // TODO provide option to avoid setting focus again after selection? useful for cleanup-on-focus

@@ -194,7 +194,7 @@
 
 
 <script type="text/javascript">
-    $(".btn-modal").click(function() {
+    $(".btn-modal").on('click',function() {
         $('#myModal .modal-dialog ').css('width', '100%');
         $('#myModal .modal-dialog ').css('height', '90%');
 		

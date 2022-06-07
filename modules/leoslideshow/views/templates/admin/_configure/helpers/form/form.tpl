@@ -44,7 +44,7 @@
                 {/if}
                 <script>
                     $(document).ready(function() {
-                        $('#{$input.name|escape:'html':'UTF-8'}_{$language.id_lang|intval}-selectbutton').click(function(e) {
+                        $('#{$input.name|escape:'html':'UTF-8'}_{$language.id_lang|intval}-selectbutton').on('click',function(e) {
                             $('#{$input.name|escape:'html':'UTF-8'}_{$language.id_lang|intval}').trigger('click');
                         });
                         $('#{$input.name|escape:'html':'UTF-8'}_{$language.id_lang|intval}').change(function(e) {
