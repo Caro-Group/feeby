@@ -63,7 +63,7 @@
   rel="stylesheet">
 
 <meta name="theme-color" content="#DF1A5B">
-<link rel="manifest" href="/themes/feeby/manifest.json">
+<link rel="manifest" href="/themes/feeby/manifest.webmanifest">
 <!-- no-JS fallback -->
 <noscript>
   <link
