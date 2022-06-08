@@ -16,7 +16,7 @@ if (jQuery)
           this.drain(n)
           $(a)
             .prevAll('.star')
-            .andSelf()
+            .addBack()
             .addClass(b || 'star_hover')
         },
         drain: function (n) {
@@ -27,7 +27,7 @@ if (jQuery)
         },
         reset: function (n) {
           if (!$(d[n].currentElem).is('.cancel')) {
-            $(d[n].currentElem).prevAll('.star').andSelf().addClass('star_on')
+            $(d[n].currentElem).prevAll('.star').addBack().addClass('star_on')
           }
         },
         click: function (n, a) {
@@ -75,7 +75,7 @@ if (jQuery)
                   e.reset(n)
                   $(this).removeClass('star_on')
                 })
-                .click(function () {
+                .on('click', function () {
                   e.click(n, this)
                 }),
             )
