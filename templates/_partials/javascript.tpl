@@ -41,7 +41,7 @@
 {if isset($vars) && $vars|@count}
   <script defer type="text/javascript" src="data:text/javascript,
     {foreach from=$vars key=var_name item=var_value}
-    var {$var_name} = {$var_value|json_encode|escape:'quotes'};
+    var {$var_name} = {$var_value|urlencode|escape:'quotes'};
     {/foreach}
  "></script>
 {/if}
