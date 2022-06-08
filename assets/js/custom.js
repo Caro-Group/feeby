@@ -1127,10 +1127,13 @@ $(document).ready(function () {
       prevEl: '.swiper_banner-button-prev',
       nextEl: '.swiper_banner-button-next',
     },
-  }).on('beforeSlideChangeStart', function () {
-    if (typeof lazyLoad == 'function') {
-      lazyLoad('[data-lazy]')
-    }
+    on: {
+      beforeSlideChangeStart: function () {
+        if (typeof lazyLoad == 'function') {
+          lazyLoad('[data-lazy]')
+        }
+      },
+    },
   })
 })
 
@@ -1158,10 +1161,13 @@ $(document).ready(function () {
           slidesPerView: 4,
         },
       },
-    }).on('beforeSlideChangeStart', function () {
-      if (typeof lazyLoad == 'function') {
-        lazyLoad('[data-lazy]')
-      }
+      on: {
+        beforeSlideChangeStart: function () {
+          if (typeof lazyLoad == 'function') {
+            lazyLoad('[data-lazy]')
+          }
+        },
+      },
     })
   }
 })
@@ -1185,10 +1191,13 @@ $(document).ready(function () {
         dynamicBullets: true,
         dynamicMainBullets: 1,
       },
-    }).on('beforeSlideChangeStart', function () {
-      if (typeof lazyLoad == 'function') {
-        lazyLoad('[data-lazy]')
-      }
+      on: {
+        beforeSlideChangeStart: function () {
+          if (typeof lazyLoad == 'function') {
+            lazyLoad('[data-lazy]')
+          }
+        },
+      },
     })
 
     handleUpdateZoom(productSwiper)
@@ -1221,10 +1230,13 @@ $(document).ready(function () {
             dynamicBullets: true,
             dynamicMainBullets: 1,
           },
-        }).on('beforeSlideChangeStart', function () {
-          if (typeof lazyLoad == 'function') {
-            lazyLoad('[data-lazy]')
-          }
+          on: {
+            beforeSlideChangeStart: function () {
+              if (typeof lazyLoad == 'function') {
+                lazyLoad('[data-lazy]')
+              }
+            },
+          },
         })
         handleUpdateZoom(productSwiper)
       }
@@ -1325,10 +1337,13 @@ $(document).ready(function () {
           slidesPerView: 4,
         },
       },
-    }).on('beforeSlideChangeStart', function () {
-      if (typeof lazyLoad == 'function') {
-        lazyLoad('[data-lazy]')
-      }
+      on: {
+        beforeSlideChangeStart: function () {
+          if (typeof lazyLoad == 'function') {
+            lazyLoad('[data-lazy]')
+          }
+        },
+      },
     })
   }
 })
