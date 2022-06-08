@@ -17,3 +17,4 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  */
 import './events'
+import './facet.css'
