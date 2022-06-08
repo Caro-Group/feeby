@@ -1,0 +1,36 @@
+#search_filters .facet .title {
+  display: flex;
+}
+
+#search_filters .facet .title .collapse-icons {
+  margin-left: auto;
+}
+
+#search_filters .facet .facet-title {
+  width: calc(100% - 30px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#search_filters .facet .facet-label {
+  width: 100%;
+  text-align: left;
+}
+
+#search_filters .facet .facet-label .custom-checkbox,
+#search_filters .facet .facet-label .custom-radio {
+  top: -7px;
+  margin-right: 0;
+}
+
+#search_filters .facet .facet-label .color {
+  margin-left: 0;
+}
+
+#search_filters .facet .facet-label a {
+  width: calc(100% - 30px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
