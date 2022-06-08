@@ -28,6 +28,8 @@ assets:
         path: assets/js/loader.js
       - id: lazy-js
         path: assets/js/lazy.js
+        position: bottom
+        priority: 8001
 
 global_settings:
   hooks:
