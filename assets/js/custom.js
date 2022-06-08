@@ -1217,6 +1217,8 @@ $(document).ready(function () {
 
       if ($('[data-swiper-product]').length) {
         let productSwiper = new Swiper('[data-swiper-product]', {
+          preloadImages: true,
+          lazy: true,
           slidesPerView: 1,
           spaceBetween: 20,
           loop: true,
