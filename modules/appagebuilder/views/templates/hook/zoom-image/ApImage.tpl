@@ -22,7 +22,10 @@
                 <div class="flex flex-col h-full group">
                 {/if}
                 <div class="overflow-hidden rounded-md h-full">
-                    <img
+                    <picture>
+                        <source srcset="{if isset($formAtts.image) && $formAtts.image}{$path|escape:'html':'UTF-8'}{$formAtts.image|replace:".jpg":".webp"|replace:".jpeg":".webp"|escape:'html':'UTF-8'}{else}{if isset($formAtts.image_link)}{$formAtts.image_link|replace:".jpg":".webp"|replace:".jpeg":".webp"|escape:'html':'UTF-8'}{/if}{/if}" type="image/webp">
+                        <source srcset="{if isset($formAtts.image) && $formAtts.image}{$path|escape:'html':'UTF-8'}{$formAtts.image|escape:'html':'UTF-8'}{else}{if isset($formAtts.image_link)}{$formAtts.image_link|escape:'html':'UTF-8'}{/if}{/if}" type="image/jpeg"> 
+                        <img
                         class="object-cover {(isset($formAtts.class) && $formAtts.class|strstr:"object-center") ? 'object-center' : 'object-top'|escape:'html':'UTF-8'} aspect-square tablet:aspect-auto transform group-hover:scale-110 duration-2000 w-full h-auto tablet:h-[325px] desktop-presta:h-[460px] desktop:h-full"
                         loading="lazy"
                         src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
@@ -36,7 +39,9 @@
                         title="{((isset($formAtts.title) && $formAtts.title) ? $formAtts.title : '')|escape:'html':'UTF-8'}"
                         alt="{((isset($formAtts.alt) && $formAtts.alt) ? $formAtts.alt : '')|escape:'html':'UTF-8'}"
                         width="{((isset($formAtts.width) && $formAtts.width) ? ($formAtts.width|replace:"px":"") : '100%')|escape:'html':'UTF-8'}"
-                        height="{((isset($formAtts.height) && $formAtts.height) ? ($formAtts.height|replace:"px":"") : '100%')|escape:'html':'UTF-8'}" />
+                        height="{((isset($formAtts.height) && $formAtts.height) ? ($formAtts.height|replace:"px":"") : '100%')|escape:'html':'UTF-8'}" 
+                        />
+                    </picture>
 
 
                     {* add any 'dot' class in panel in order to create one and set it's position  *}
