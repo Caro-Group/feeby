@@ -187,7 +187,7 @@ function activeStar() {
 }
 
 function activeEventModalReview() {
-  $('.form-new-review').submit(function () {
+  $('.form-new-review').on('submit', function () {
     if (
       $('.new_review_form_content .form-group.leo-has-error').length ||
       $('.leo-fake-button').hasClass('validate-ok')
@@ -299,7 +299,7 @@ function activeEventModalReview() {
 }
 
 function activeEventFormReview() {
-  $('[data-review-form] .form-new-review').submit(function () {
+  $('[data-review-form] .form-new-review').on('submit', function () {
     if (
       $('.new_review_form_content .form-group.leo-has-error').length ||
       $('.leo-fake-button').hasClass('validate-ok')
