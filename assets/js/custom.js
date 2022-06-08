@@ -788,7 +788,7 @@ function customSticky() {
 
   $(document).ready(function () {
     const aboveFiltersContainer = '[data-container="additional-filters"]'
-    const currentFilterContainer = '[data-target="#facet_attribute_group_15"]'
+    const currentFilterContainer = '[data-target="#facet_attribute_group_18"]'
 
     $(document).ajaxComplete(function () {
       if ($(currentFilterContainer).length !== 0) {
