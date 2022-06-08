@@ -990,7 +990,7 @@ $(document).ready(function () {
     })
   }
 
-  if ($('[data-swiper-swiper]').length) {
+  if ($('[data-about-swiper]').length) {
     new Swiper('[data-about-swiper]', {
       preloadImages: false,
       lazy: true,
