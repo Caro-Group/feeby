@@ -652,7 +652,7 @@ function floatHeader() {
   })
   var headerScrollTimer
 
-  $(window).scroll(function () {
+  $(window).on('scroll', function () {
     if (headerScrollTimer) {
       window.clearTimeout(headerScrollTimer)
     }

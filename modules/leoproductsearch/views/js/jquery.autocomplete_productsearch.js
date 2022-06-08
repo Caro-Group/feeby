@@ -244,9 +244,9 @@ jQuery.browser = browser
         if ('data' in arguments[1]) cache.populate()
       })
       .bind('unautocomplete', function () {
-        select.unbind()
-        $input.unbind()
-        $(input.form).unbind('.autocomplete')
+        select.off()
+        $input.off()
+        $(input.form).off('.autocomplete')
       })
 
     function selectCurrent() {
