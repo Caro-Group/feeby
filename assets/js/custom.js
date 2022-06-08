@@ -977,8 +977,10 @@ $(document).ready(function () {
   if ($('[data-swiper-blog]').length) {
     new Swiper('[data-swiper-blog]', {
       preloadImages: true,
-      lazy: true,
-      loadOnTransitionStart: true,
+      lazy: {
+        loadOnTransitionStart: true,
+        checkInView: true,
+      },
       speed: 300,
       slidesPerView: 'auto',
       spaceBetween: 0,
@@ -993,8 +995,10 @@ $(document).ready(function () {
   if ($('[data-about-swiper]').length) {
     new Swiper('[data-about-swiper]', {
       preloadImages: false,
-      lazy: true,
-      loadOnTransitionStart: true,
+      lazy: {
+        loadOnTransitionStart: true,
+        checkInView: true,
+      },
       speed: 300,
       slidesPerView: 'auto',
       resistanceRatio: 0.5,
@@ -1110,8 +1114,10 @@ $(document).ready(function () {
 
   const swiperBanner = new Swiper('.swiper-banner', {
     preloadImages: true,
-    lazy: true,
-    loadOnTransitionStart: true,
+    lazy: {
+      loadOnTransitionStart: true,
+      checkInView: true,
+    },
     speed: 800,
     slidesPerView: 1,
     spaceBetween: 0,
@@ -1141,8 +1147,10 @@ $(document).ready(function () {
   if ($('.swiper-popular').length) {
     new Swiper('.swiper-popular', {
       preloadImages: false,
-      lazy: true,
-      loadOnTransitionStart: true,
+      lazy: {
+        loadOnTransitionStart: true,
+        checkInView: true,
+      },
       speed: 300,
       slidesPerView: 2,
       spaceBetween: 20,
@@ -1176,8 +1184,10 @@ $(document).ready(function () {
   if ($('[data-swiper-product]').length) {
     let productSwiper = new Swiper('[data-swiper-product]', {
       preloadImages: false,
-      lazy: true,
-      loadOnTransitionStart: true,
+      lazy: {
+        loadOnTransitionStart: true,
+        checkInView: true,
+      },
       slidesPerView: 1,
       spaceBetween: 20,
       loop: true,
@@ -1321,8 +1331,10 @@ $(document).ready(function () {
   if ($('[data-swiper-carousel]').length != 0) {
     new Swiper('[data-swiper-carousel]', {
       preloadImages: false,
-      lazy: true,
-      loadOnTransitionStart: true,
+      lazy: {
+        loadOnTransitionStart: true,
+        checkInView: true,
+      },
       speed: 400,
       spaceBetween: 20,
       slidesPerView: 'auto',
