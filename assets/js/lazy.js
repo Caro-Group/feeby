@@ -18,5 +18,9 @@
     $(document).ajaxComplete(function () {
       lazyLoad($(elementLazySelector))
     })
+
+    prestashop.on('updatedProduct', function (event) {
+      lazyLoad($(elementLazySelector))
+    })
   })
 })(jQuery, document)
