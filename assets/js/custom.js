@@ -976,7 +976,7 @@ function customSticky() {
 $(document).ready(function () {
   if ($('[data-swiper-blog]').length) {
     new Swiper('[data-swiper-blog]', {
-      preloadImages: false,
+      preloadImages: true,
       lazy: true,
       loadOnTransitionStart: true,
       speed: 300,
@@ -1109,7 +1109,7 @@ $(document).ready(function () {
   }
 
   const swiperBanner = new Swiper('.swiper-banner', {
-    preloadImages: false,
+    preloadImages: true,
     lazy: true,
     loadOnTransitionStart: true,
     speed: 800,
