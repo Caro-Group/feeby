@@ -117,4 +117,3 @@ if (jQuery)
       return this
     }
   })(jQuery)
-click
