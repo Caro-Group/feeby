@@ -1127,6 +1127,10 @@ $(document).ready(function () {
       prevEl: '.swiper_banner-button-prev',
       nextEl: '.swiper_banner-button-next',
     },
+  }).on('beforeSlideChangeStart', function () {
+    if (typeof lazyLoad == 'function') {
+      lazyLoad('[data-lazy]')
+    }
   })
 })
 
@@ -1154,6 +1158,10 @@ $(document).ready(function () {
           slidesPerView: 4,
         },
       },
+    }).on('beforeSlideChangeStart', function () {
+      if (typeof lazyLoad == 'function') {
+        lazyLoad('[data-lazy]')
+      }
     })
   }
 })
@@ -1177,6 +1185,10 @@ $(document).ready(function () {
         dynamicBullets: true,
         dynamicMainBullets: 1,
       },
+    }).on('beforeSlideChangeStart', function () {
+      if (typeof lazyLoad == 'function') {
+        lazyLoad('[data-lazy]')
+      }
     })
 
     handleUpdateZoom(productSwiper)
@@ -1190,6 +1202,10 @@ $(document).ready(function () {
     })
 
     prestashop.on('updatedProduct', function (event) {
+      if (typeof productSwiper == 'function') {
+        productSwiper.destroy(true, true)
+      }
+
       if ($('[data-swiper-product]').length) {
         let productSwiper = new Swiper('[data-swiper-product]', {
           slidesPerView: 1,
@@ -1205,6 +1221,10 @@ $(document).ready(function () {
             dynamicBullets: true,
             dynamicMainBullets: 1,
           },
+        }).on('beforeSlideChangeStart', function () {
+          if (typeof lazyLoad == 'function') {
+            lazyLoad('[data-lazy]')
+          }
         })
         handleUpdateZoom(productSwiper)
       }
@@ -1305,6 +1325,10 @@ $(document).ready(function () {
           slidesPerView: 4,
         },
       },
+    }).on('beforeSlideChangeStart', function () {
+      if (typeof lazyLoad == 'function') {
+        lazyLoad('[data-lazy]')
+      }
     })
   }
 })
