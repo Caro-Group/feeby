@@ -72,7 +72,7 @@ jQuery.browser = browser
       })
     },
     result: function (handler) {
-      return this.bind('result', handler)
+      return this.on('result', handler)
     },
     search: function (handler) {
       return this.trigger('search', [handler])
