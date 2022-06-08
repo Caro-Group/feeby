@@ -3665,10 +3665,10 @@ and dependencies (minified).
       ]() /* add scrollbars automatically on default selector */
 
       /* extend jQuery expressions */
-      $.extend($.expr[':'], {
+      $.extend($.expr.pseudos, {
         /* checks if element is within scrollable viewport */
         mcsInView:
-          $.expr[':'].mcsInView ||
+          $.expr.pseudos.mcsInView ||
           function (el) {
             var $el = $(el),
               content = $el.parents('.mCSB_container'),
@@ -3690,7 +3690,7 @@ and dependencies (minified).
           },
         /* checks if element or part of element is in view of scrollable viewport */
         mcsInSight:
-          $.expr[':'].mcsInSight ||
+          $.expr.pseudos.mcsInSight ||
           function (el, i, m) {
             var $el = $(el),
               elD,
@@ -3733,7 +3733,7 @@ and dependencies (minified).
           },
         /* checks if element is overflowed having visible scrollbar(s) */
         mcsOverflow:
-          $.expr[':'].mcsOverflow ||
+          $.expr.pseudos.mcsOverflow ||
           function (el) {
             var d = $(el).data(pluginPfx)
             if (!d) {

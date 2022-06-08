@@ -225,7 +225,7 @@ $(document).ready(function () {
             }
           })
 
-        $(window).resize(function () {
+        $(window).on('resize', function () {
           // console.log($(window).width());
           // if( $(window).width() > 523 ){
           if ($(window).width() > 991) {
@@ -315,7 +315,7 @@ $(document).ready(function () {
             .css('display', '')
         }
         auto_height_off(megamenu_element)
-        $(window).resize(function () {
+        $(window).on('resize', function () {
           auto_height_off(megamenu_element)
           if ($(document).width() > 543) {
             megamenu_element
@@ -402,7 +402,7 @@ $(document).ready(function () {
         megamenu_element.find('.verticalmenu').removeClass('active-hover')
         megamenu_element.find('.verticalmenu').addClass('active-button')
       }
-      $(window).resize(function () {
+      $(window).on('resize', function () {
         if ($(window).width() > 991) {
           megamenu_element
             .find('.verticalmenu .dropdown')
@@ -541,7 +541,7 @@ $(document).ready(function () {
     }
 
     if (value.type == 'horizontal') {
-      $(window).resize(function () {
+      $(window).on('resize', function () {
         // console.log($(window).width());
         if ($(window).width() <= 767) {
           set_target_blank(false, megamenu_element) // set cavas NO
@@ -678,7 +678,7 @@ function scrollSliderBarMenu(megamenu_element) {
   })
 
   var lastWidth = $(window).width()
-  $(window).resize(function () {
+  $(window).on('resize', function () {
     if ($(window).width() != lastWidth) {
       if ($(window).width() < maxWindowSize) {
         if ($(menuElement).hasClass('active'))
