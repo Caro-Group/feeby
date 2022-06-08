@@ -67,7 +67,7 @@
     var instafeed_start = 0;
     ap_list_functions.push(function(){
 
-        $(window).scroll(function() {
+        $(window).on('scroll',function() {
 		if(instafeed_start != 1){
 			var hT = $('#instafeed').offset().top,
 			hH = $('#instafeed').outerHeight(),

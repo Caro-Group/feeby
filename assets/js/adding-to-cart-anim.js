@@ -14,7 +14,8 @@ $(document).ready(function () {
       if (waiting <= 0) {
         $('body')
           .find('.add-to-cart-anim.add button.adding')
-          .switchClass('adding', 'added')
+          .removeClass('adding')
+          .addClass('added')
         setTimeout(function () {
           $('body')
             .find('.add-to-cart-anim.add button.adding')
@@ -28,7 +29,8 @@ $(document).ready(function () {
     if (event.eventType == 'updateProductInCart') {
       $('body')
         .find('.add-to-cart-anim.add button.adding')
-        .switchClass('adding', 'failed')
+        .removeClass('adding')
+        .addClass('failed')
       setTimeout(function () {
         $('body')
           .find('.add-to-cart-anim.add button.failed')

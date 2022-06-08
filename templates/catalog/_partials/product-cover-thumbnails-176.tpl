@@ -85,12 +85,6 @@
         {/if}
       </div>
     {/block}
-    {if $product.images|@count > 1}
-      <div class="arrows-product-fake slick-arrows">
-        <button class="slick-prev slick-arrow" aria-label="Previous" type="button" >{l s='Previous' d='Shop.Theme.Catalog'}</button>
-        <button class="slick-next slick-arrow" aria-label="Next" type="button">{l s='Next' d='Shop.Theme.Catalog'}</button>
-      </div>
-    {/if}
   {/if}
   {/block}
   {hook h='displayAfterProductThumbs'}

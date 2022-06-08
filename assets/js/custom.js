@@ -1,260 +1,3 @@
-/*!
- * jQuery throttle / debounce - v1.1 - 3/7/2010
- * http://benalman.com/projects/jquery-throttle-debounce-plugin/
- *
- * Copyright (c) 2010 "Cowboy" Ben Alman
- * Dual licensed under the MIT and GPL licenses.
- * http://benalman.com/about/license/
- */
-
-// Script: jQuery throttle / debounce: Sometimes, less is more!
-//
-// *Version: 1.1, Last updated: 3/7/2010*
-//
-// Project Home - http://benalman.com/projects/jquery-throttle-debounce-plugin/
-// GitHub       - http://github.com/cowboy/jquery-throttle-debounce/
-// Source       - http://github.com/cowboy/jquery-throttle-debounce/raw/master/jquery.ba-throttle-debounce.js
-// (Minified)   - http://github.com/cowboy/jquery-throttle-debounce/raw/master/jquery.ba-throttle-debounce.min.js (0.7kb)
-//
-// About: License
-//
-// Copyright (c) 2010 "Cowboy" Ben Alman,
-// Dual licensed under the MIT and GPL licenses.
-// http://benalman.com/about/license/
-//
-// About: Examples
-//
-// These working examples, complete with fully commented code, illustrate a few
-// ways in which this plugin can be used.
-//
-// Throttle - http://benalman.com/code/projects/jquery-throttle-debounce/examples/throttle/
-// Debounce - http://benalman.com/code/projects/jquery-throttle-debounce/examples/debounce/
-//
-// About: Support and Testing
-//
-// Information about what version or versions of jQuery this plugin has been
-// tested with, what browsers it has been tested in, and where the unit tests
-// reside (so you can test it yourself).
-//
-// jQuery Versions - none, 1.3.2, 1.4.2
-// Browsers Tested - Internet Explorer 6-8, Firefox 2-3.6, Safari 3-4, Chrome 4-5, Opera 9.6-10.1.
-// Unit Tests      - http://benalman.com/code/projects/jquery-throttle-debounce/unit/
-//
-// About: Release History
-//
-// 1.1 - (3/7/2010) Fixed a bug in <jQuery.throttle> where trailing callbacks
-//       executed later than they should. Reworked a fair amount of internal
-//       logic as well.
-// 1.0 - (3/6/2010) Initial release as a stand-alone project. Migrated over
-//       from jquery-misc repo v0.4 to jquery-throttle repo v1.0, added the
-//       no_trailing throttle parameter and debounce functionality.
-//
-// Topic: Note for non-jQuery users
-//
-// jQuery isn't actually required for this plugin, because nothing internal
-// uses any jQuery methods or properties. jQuery is just used as a namespace
-// under which these methods can exist.
-//
-// Since jQuery isn't actually required for this plugin, if jQuery doesn't exist
-// when this plugin is loaded, the method described below will be created in
-// the `Cowboy` namespace. Usage will be exactly the same, but instead of
-// $.method() or jQuery.method(), you'll need to use Cowboy.method().
-
-;(function (window, undefined) {
-  '$:nomunge' // Used by YUI compressor.
-
-  // Since jQuery really isn't required for this plugin, use `jQuery` as the
-  // namespace only if it already exists, otherwise use the `Cowboy` namespace,
-  // creating it if necessary.
-  var $ = window.jQuery || window.Cowboy || (window.Cowboy = {}),
-    // Internal method reference.
-    jq_throttle
-
-  // Method: jQuery.throttle
-  //
-  // Throttle execution of a function. Especially useful for rate limiting
-  // execution of handlers on events like resize and scroll. If you want to
-  // rate-limit execution of a function to a single time, see the
-  // <jQuery.debounce> method.
-  //
-  // In this visualization, | is a throttled-function call and X is the actual
-  // callback execution:
-  //
-  // > Throttled with `no_trailing` specified as false or unspecified:
-  // > ||||||||||||||||||||||||| (pause) |||||||||||||||||||||||||
-  // > X    X    X    X    X    X        X    X    X    X    X    X
-  // >
-  // > Throttled with `no_trailing` specified as true:
-  // > ||||||||||||||||||||||||| (pause) |||||||||||||||||||||||||
-  // > X    X    X    X    X             X    X    X    X    X
-  //
-  // Usage:
-  //
-  // > var throttled = jQuery.throttle( delay, [ no_trailing, ] callback );
-  // >
-  // > jQuery('selector').bind( 'someevent', throttled );
-  // > jQuery('selector').unbind( 'someevent', throttled );
-  //
-  // This also works in jQuery 1.4+:
-  //
-  // > jQuery('selector').bind( 'someevent', jQuery.throttle( delay, [ no_trailing, ] callback ) );
-  // > jQuery('selector').unbind( 'someevent', callback );
-  //
-  // Arguments:
-  //
-  //  delay - (Number) A zero-or-greater delay in milliseconds. For event
-  //    callbacks, values around 100 or 250 (or even higher) are most useful.
-  //  no_trailing - (Boolean) Optional, defaults to false. If no_trailing is
-  //    true, callback will only execute every `delay` milliseconds while the
-  //    throttled-function is being called. If no_trailing is false or
-  //    unspecified, callback will be executed one final time after the last
-  //    throttled-function call. (After the throttled-function has not been
-  //    called for `delay` milliseconds, the internal counter is reset)
-  //  callback - (Function) A function to be executed after delay milliseconds.
-  //    The `this` context and all arguments are passed through, as-is, to
-  //    `callback` when the throttled-function is executed.
-  //
-  // Returns:
-  //
-  //  (Function) A new, throttled, function.
-
-  $.throttle = jq_throttle = function (
-    delay,
-    no_trailing,
-    callback,
-    debounce_mode,
-  ) {
-    // After wrapper has stopped being called, this timeout ensures that
-    // `callback` is executed at the proper times in `throttle` and `end`
-    // debounce modes.
-    var timeout_id,
-      // Keep track of the last time `callback` was executed.
-      last_exec = 0
-
-    // `no_trailing` defaults to falsy.
-    if (typeof no_trailing !== 'boolean') {
-      debounce_mode = callback
-      callback = no_trailing
-      no_trailing = undefined
-    }
-
-    // The `wrapper` function encapsulates all of the throttling / debouncing
-    // functionality and when executed will limit the rate at which `callback`
-    // is executed.
-    function wrapper() {
-      var that = this,
-        elapsed = +new Date() - last_exec,
-        args = arguments
-
-      // Execute `callback` and update the `last_exec` timestamp.
-      function exec() {
-        last_exec = +new Date()
-        callback.apply(that, args)
-      }
-
-      // If `debounce_mode` is true (at_begin) this is used to clear the flag
-      // to allow future `callback` executions.
-      function clear() {
-        timeout_id = undefined
-      }
-
-      if (debounce_mode && !timeout_id) {
-        // Since `wrapper` is being called for the first time and
-        // `debounce_mode` is true (at_begin), execute `callback`.
-        exec()
-      }
-
-      // Clear any existing timeout.
-      timeout_id && clearTimeout(timeout_id)
-
-      if (debounce_mode === undefined && elapsed > delay) {
-        // In throttle mode, if `delay` time has been exceeded, execute
-        // `callback`.
-        exec()
-      } else if (no_trailing !== true) {
-        // In trailing throttle mode, since `delay` time has not been
-        // exceeded, schedule `callback` to execute `delay` ms after most
-        // recent execution.
-        //
-        // If `debounce_mode` is true (at_begin), schedule `clear` to execute
-        // after `delay` ms.
-        //
-        // If `debounce_mode` is false (at end), schedule `callback` to
-        // execute after `delay` ms.
-        timeout_id = setTimeout(
-          debounce_mode ? clear : exec,
-          debounce_mode === undefined ? delay - elapsed : delay,
-        )
-      }
-    }
-
-    // Set the guid of `wrapper` function to the same of original callback, so
-    // it can be removed in jQuery 1.4+ .unbind or .die by using the original
-    // callback as a reference.
-    if ($.guid) {
-      wrapper.guid = callback.guid = callback.guid || $.guid++
-    }
-
-    // Return the wrapper function.
-    return wrapper
-  }
-
-  // Method: jQuery.debounce
-  //
-  // Debounce execution of a function. Debouncing, unlike throttling,
-  // guarantees that a function is only executed a single time, either at the
-  // very beginning of a series of calls, or at the very end. If you want to
-  // simply rate-limit execution of a function, see the <jQuery.throttle>
-  // method.
-  //
-  // In this visualization, | is a debounced-function call and X is the actual
-  // callback execution:
-  //
-  // > Debounced with `at_begin` specified as false or unspecified:
-  // > ||||||||||||||||||||||||| (pause) |||||||||||||||||||||||||
-  // >                          X                                 X
-  // >
-  // > Debounced with `at_begin` specified as true:
-  // > ||||||||||||||||||||||||| (pause) |||||||||||||||||||||||||
-  // > X                                 X
-  //
-  // Usage:
-  //
-  // > var debounced = jQuery.debounce( delay, [ at_begin, ] callback );
-  // >
-  // > jQuery('selector').bind( 'someevent', debounced );
-  // > jQuery('selector').unbind( 'someevent', debounced );
-  //
-  // This also works in jQuery 1.4+:
-  //
-  // > jQuery('selector').bind( 'someevent', jQuery.debounce( delay, [ at_begin, ] callback ) );
-  // > jQuery('selector').unbind( 'someevent', callback );
-  //
-  // Arguments:
-  //
-  //  delay - (Number) A zero-or-greater delay in milliseconds. For event
-  //    callbacks, values around 100 or 250 (or even higher) are most useful.
-  //  at_begin - (Boolean) Optional, defaults to false. If at_begin is false or
-  //    unspecified, callback will only be executed `delay` milliseconds after
-  //    the last debounced-function call. If at_begin is true, callback will be
-  //    executed only at the first debounced-function call. (After the
-  //    throttled-function has not been called for `delay` milliseconds, the
-  //    internal counter is reset)
-  //  callback - (Function) A function to be executed after delay milliseconds.
-  //    The `this` context and all arguments are passed through, as-is, to
-  //    `callback` when the debounced-function is executed.
-  //
-  // Returns:
-  //
-  //  (Function) A new, debounced, function.
-
-  $.debounce = function (delay, at_begin, callback) {
-    return callback === undefined
-      ? jq_throttle(delay, at_begin, false)
-      : jq_throttle(delay, callback, at_begin !== false)
-  }
-})(this)
-
 /*
  *  @Website: apollotheme.com - prestashop template provider
  *  @author Apollotheme <apollotheme@gmail.com>
@@ -267,19 +10,19 @@
  */
 //MODAL TRIGGER
 $(document).ready(function () {
-  $('.product-base-info').click(function () {
+  $('.product-base-info').on('click', function () {
     $('.product-base-modal-background').show()
   })
 
-  $('.product-base-modal button').click(function () {
+  $('.product-base-modal button').on('click', function () {
     $('.product-base-modal-background').hide()
   })
 
-  $('.product-dimension-info').click(function () {
+  $('.product-dimension-info').on('click', function () {
     $('.product-dimension-modal-background').show()
   })
 
-  $('.product-dimension-modal button').click(function () {
+  $('.product-dimension-modal button').on('click', function () {
     $('.product-dimension-modal-background').hide()
   })
 })
@@ -387,7 +130,7 @@ var options_quickview = {
   ],
 }
 
-$(window).resize(function () {
+$(window).on('resize', function () {
   //DONGND:: fix zoom, only work at product page
   if (prestashop.page.page_name == 'product') restartElevateZoom()
 
@@ -420,7 +163,7 @@ $(document).ready(function () {
   }
 
   //DONGND:: update for order page - tab adress, when change adress, block adress change class selected
-  $('.address-item .radio-block').click(function () {
+  $('.address-item .radio-block').on('click', function () {
     if (!$(this).parents('.address-item').hasClass('selected')) {
       $('.address-item.selected').removeClass('selected')
       $(this).parents('.address-item').addClass('selected')
@@ -450,25 +193,6 @@ $(document).ready(function () {
       $('div[data-target="#product-modal"]').hide()
     }
   }
-
-  //DONGND:: create demo product detail from megamenu
-  $('.demo-product-detail a').click(function (e) {
-    if (!$(this).hasClass('updated')) {
-      e.preventDefault()
-      var current_url = window.location.href
-      if (
-        prestashop.page.page_name == 'product' &&
-        current_url.indexOf('.html') >= 0
-      ) {
-        var link_href = $(this).attr('href')
-        var layout_key_index = link_href.indexOf('?layout=')
-        var layout_key_value = link_href.substring(layout_key_index)
-        current_url = current_url.substring(0, current_url.indexOf('.html'))
-        var new_url = current_url + '.html' + layout_key_value
-        window.location.href = new_url
-      }
-    }
-  })
 })
 
 function innitSlickandZoom() {
@@ -649,7 +373,7 @@ function applyElevateZoom() {
     if ($.fn.elevateZoom !== undefined) {
       $('img.js-thumb').elevateZoom(zoom_config)
       //DONGND:: fix click a thumb replace all image and add fancybox
-      $('img.js-thumb').bind('click', function (e) {
+      $('img.js-thumb').on('click', function (e) {
         var ez = $(this).data('elevateZoom')
         $.fancybox(ez.getGalleryList())
         return false
@@ -660,7 +384,7 @@ function applyElevateZoom() {
       $('[data-zoom-container]').elevateZoom({ gallery: 'thumb-gallery' })
 
       //pass the images to Fancybox
-      $('[data-zoom-container]').bind('click', function (e) {
+      $('[data-zoom-container]').on('click', function (e) {
         var ez = $(this).data('elevateZoom')
         $.fancybox(ez.getGalleryList())
         return false
@@ -824,7 +548,7 @@ function findPosition(slides) {
 
 //DONGND:: loading quickview
 function actionQuickViewLoading() {
-  $('.quick-view').click(function () {
+  $('.quick-view').on('click', function () {
     if (!$(this).hasClass('active')) {
       $(this).addClass('active')
       $(this).find('.leo-quickview-bt-loading').css({ display: 'block' })
@@ -928,7 +652,7 @@ function floatHeader() {
   })
   var headerScrollTimer
 
-  $(window).scroll(function () {
+  $(window).on('scroll', function () {
     if (headerScrollTimer) {
       window.clearTimeout(headerScrollTimer)
     }
@@ -982,82 +706,25 @@ function initSlickProductModal() {
 //Fix filter (category page) does not work on IE change dataset.searchUrl to getAttribute('data-search-url')
 
 $().ready(function () {
-  $('#leo_search_block_top .title_block').click(function () {
+  $('#leo_search_block_top .title_block').on('click', function () {
     $(this).parent().toggleClass('active')
     setTimeout(function () {
-      jQuery('#leo_search_block_top.active input.form-control').focus()
+      jQuery('#leo_search_block_top.active input.form-control').trigger('focus')
     }, 100)
   })
 
-  $(document).keydown(function (e) {
+  $(document).on('keydown', function (e) {
     // ESCAPE key pressed
     if (e.keyCode == 27) {
       $('#leo_search_block_top').removeClass('active')
     }
   })
 
-  $(document).click(function (event) {
+  $(document).on('click', function (event) {
     if (!$(event.target).closest('#leo_search_block_top').length) {
       $('#leo_search_block_top').removeClass('active')
     }
   })
-
-  /*
-	  // fix bug module Amazzingfilter
-	if ($('body#category').hasClass("page-category")){
-		customThemeActions.updateContentAfter = function (jsonData) {
-			if (typeof $.LeoCustomAjax == 'function') {
-				var leoCustomAjax = new $.LeoCustomAjax();
-				leoCustomAjax.processAjax();
-			}
-			if ($('.af_pl_wrapper').find('.product_list').hasClass('list')) {
-				$('.leo_list').addClass('selected').siblings().removeClass('selected');
-			}    
-		}
-		$( document ).ajaxComplete(function() {
-			actionQuickViewLoading();
-			leoBtCart();
-			LeoWishlistButtonAction();
-			LeoCompareButtonAction();
-		});
-	}
-	*/
-
-  if ($('.list-images-mobile').length != 0) {
-    $('.list-images-mobile').slick({
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      arrows: true,
-      dots: true,
-      infinite: true,
-      //centerMode: true,
-      //fade: true,
-      customPaging: function (slick, index) {
-        var targetImage = slick.$slides.eq(index).find('img').attr('src')
-        return '<span><img src=" ' + targetImage + ' "/></span>'
-      },
-    })
-  }
-
-  $(document).ajaxComplete(function (event, xhr, settings) {
-    if (settings.url.indexOf('controller=product') > 0) {
-      $('.list-images-mobile').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: true,
-        dots: true,
-        infinite: true,
-        //centerMode: true,
-        //fade: true,
-        customPaging: function (slick, index) {
-          var targetImage = slick.$slides.eq(index).find('img').attr('src')
-          return '<span><img src=" ' + targetImage + ' "/></span>'
-        },
-      })
-    }
-  })
-
-  //customSticky();
 
   $(document).ajaxComplete(function () {
     $('.p-reference .product-reference').html(
@@ -1074,7 +741,7 @@ function customSticky() {
   var pos = s.offset()
   var alreadySticky = false
 
-  $(window).scroll(function () {
+  $(window).on('scroll', function () {
     var windowpos = $(window).scrollTop()
     if (s.length) {
       if (!alreadySticky) {
@@ -1101,12 +768,6 @@ function customSticky() {
   })
 }
 
-function onResize() {
-  if ($(window).width() >= 769) {
-    $('#search_filters_wrapper').collapse('show')
-  }
-}
-
 ;(function ($) {
   $(function () {
     var $myGroup = $('#search_filters .facet')
@@ -1114,20 +775,20 @@ function onResize() {
       $myGroup.find('.collapse.in').collapse('hide')
     })
 
-    onResize()
+    if ($('#search_filters_wrapper').length) {
+      if ($(window).width() > 768) {
+        $('#search_filters_wrapper').collapse('show')
+      }
+    }
   })
 
-  $(window).resize($.debounce(250, onResize))
-
-  $(document).click(function (event) {
-    if ($(window).width() >= 769) {
-      $('#search_filters .facet .collapse').collapse('hide')
-    }
+  $(document).on('click', function (event) {
+    $('#search_filters .facet .collapse').collapse('hide')
   })
 
   $(document).ready(function () {
     const aboveFiltersContainer = '[data-container="additional-filters"]'
-    const currentFilterContainer = '[data-target="#facet_attribute_group_18"]'
+    const currentFilterContainer = '[data-target="#facet_attribute_group_15"]'
 
     $(document).ajaxComplete(function () {
       if ($(currentFilterContainer).length !== 0) {
@@ -1168,7 +829,7 @@ function onResize() {
 
   //Filters custom move-end
 
-  $(window).load(function () {
+  $(window).on('load', function () {
     $('.category-top-menu a').each(function (t, el) {
       $(this).data('link', $(el).attr('href'))
     })
@@ -1313,36 +974,46 @@ function onResize() {
 
 //Top bar swiper
 $(document).ready(function () {
-  const swiperBlog = new Swiper('[data-swiper-blog]', {
-    speed: 300,
-    slidesPerView: 'auto',
-    spaceBetween: 0,
-    loop: true,
-    navigation: {
-      nextEl: '[data-swiper-blog-next]',
-      prevEl: '[data-swiper-blog-prev]',
-    },
-  })
+  if ($('[data-swiper-blog]').length) {
+    new Swiper('[data-swiper-blog]', {
+      preloadImages: false,
+      lazy: true,
+      loadOnTransitionStart: true,
+      speed: 300,
+      slidesPerView: 'auto',
+      spaceBetween: 0,
+      loop: true,
+      navigation: {
+        nextEl: '[data-swiper-blog-next]',
+        prevEl: '[data-swiper-blog-prev]',
+      },
+    })
+  }
 
-  const swiperAbout = new Swiper('[data-about-swiper]', {
-    speed: 300,
-    slidesPerView: 'auto',
-    resistanceRatio: 0.5,
-    breakpoints: {
-      768: {
-        slidesPerView: 3,
-        slidesPerGroup: 3,
-        slidesPerColumn: 2,
-        slidesPerColumnFill: 'row',
-        allowTouchMove: false,
+  if ($('[data-about-swiper]').length) {
+    new Swiper('[data-about-swiper]', {
+      preloadImages: false,
+      lazy: true,
+      loadOnTransitionStart: true,
+      speed: 300,
+      slidesPerView: 'auto',
+      resistanceRatio: 0.5,
+      breakpoints: {
+        768: {
+          slidesPerView: 3,
+          slidesPerGroup: 3,
+          slidesPerColumn: 2,
+          slidesPerColumnFill: 'row',
+          allowTouchMove: false,
+        },
       },
-    },
-    on: {
-      reachEnd: function () {
-        this.snapGrid = [...this.slidesGrid]
+      on: {
+        reachEnd: function () {
+          this.snapGrid = [...this.slidesGrid]
+        },
       },
-    },
-  })
+    })
+  }
 })
 
 function openMenuWithCategory(id) {
@@ -1354,7 +1025,7 @@ function openMenuWithCategory(id) {
       .first()
       .addClass('open')
     if (!menu_el.hasClass('open-sub')) {
-      menu_el.children('.dropdown-toggle').click()
+      menu_el.children('.dropdown-toggle').trigger('click')
     }
   }
   var menu_id = menu_el.parents('[data-megamenu-id]').data('megamenu-id')
@@ -1364,7 +1035,7 @@ function openMenuWithCategory(id) {
       $(menu_el).parent().hasClass('level2') &&
       !$(menu_el).parent().hasClass('open-sub')
     ) {
-      $(menu_el).next('.caret').click()
+      $(menu_el).next('.caret').trigger('click')
     }
 
     if (
@@ -1372,24 +1043,24 @@ function openMenuWithCategory(id) {
       !$(menu_el).parent().hasClass('open-sub')
     ) {
       if ($(menu_el).parent().parent().hasClass('level2')) {
-        $(menu_el).parent().parent().find('.caret').click()
+        $(menu_el).parent().parent().find('.caret').trigger('click')
       }
       if ($(menu_el).parent().parent().parent().hasClass('level2')) {
-        $(menu_el).parent().parent().parent().find('.caret').click()
+        $(menu_el).parent().parent().parent().find('.caret').trigger('click')
       }
     }
   }
   if (
     menu_el.parents('.dropdown').each(function (i, item) {
       if (!$(item).hasClass('open-sub')) {
-        $(item).children('.dropdown-toggle').click()
+        $(item).children('.dropdown-toggle').trigger('click')
       }
     })
   );
 
   $('[data-target=".megamenu-off-canvas-' + menu_id + '"]')
     .first()
-    .click()
+    .trigger('click')
 
   var currentCatId = $('[data-current-category-id]')
     .first()
@@ -1438,6 +1109,9 @@ $(document).ready(function () {
   }
 
   const swiperBanner = new Swiper('.swiper-banner', {
+    preloadImages: false,
+    lazy: true,
+    loadOnTransitionStart: true,
     speed: 800,
     slidesPerView: 1,
     spaceBetween: 0,
@@ -1457,104 +1131,83 @@ $(document).ready(function () {
 })
 
 $(document).ready(function () {
-  const swiperPopular = new Swiper('.swiper-popular', {
-    speed: 300,
-    slidesPerView: 2,
-    spaceBetween: 20,
-    loop: true,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-      dynamicBullets: true,
-      dynamicMainBullets: 1,
-    },
-    breakpoints: {
-      576: {
-        slidesPerView: 3,
+  if ($('.swiper-popular').length) {
+    new Swiper('.swiper-popular', {
+      preloadImages: false,
+      lazy: true,
+      loadOnTransitionStart: true,
+      speed: 300,
+      slidesPerView: 2,
+      spaceBetween: 20,
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        dynamicBullets: true,
+        dynamicMainBullets: 1,
       },
-      922: {
-        slidesPerView: 4,
+      breakpoints: {
+        576: {
+          slidesPerView: 3,
+        },
+        922: {
+          slidesPerView: 4,
+        },
       },
-    },
-  })
+    })
+  }
 })
 
 $(document).ready(function () {
-  // if(jQuery('.swiper-filters').length != 0){
-  // 	const breakpoint = window.matchMedia('(max-width:768px)')
+  if ($('[data-swiper-product]').length) {
+    let productSwiper = new Swiper('[data-swiper-product]', {
+      preloadImages: false,
+      lazy: true,
+      loadOnTransitionStart: true,
+      slidesPerView: 1,
+      spaceBetween: 20,
+      loop: true,
+      navigation: {
+        nextEl: '[data-swiper-product-next]',
+        prevEl: '[data-swiper-product-prev]',
+      },
+      pagination: {
+        el: '.product-thumb-images-pag',
+        clickable: true,
+        dynamicBullets: true,
+        dynamicMainBullets: 1,
+      },
+    })
 
-  // 	let swiperFilters;
-
-  // 	const breakpointCheck = function () {
-  // 		if (breakpoint.matches == true) {
-  // 			if (typeof swiperFilters !== 'undefined') swiperFilters.destroy(true,true);
-  // 		}
-  // 		else if (breakpoint.matches == false) {
-  // 			return enableSwiperFilter();
-
-  // 		}
-  // 	};
-
-  // 	const enableSwiperFilter =function () {
-  // 		swiperFilters = new Swiper('.swiper-filters', {
-  // 			speed: 150,
-  // 			roundLengths: true,
-  // 			slidesPerView: 'auto',
-  // 			freeMode: {
-  // 				enabled: true,
-  // 			},
-  // 		});
-  // 	}
-
-  // 	breakpoint.addListener(breakpointCheck);
-  // 	breakpointCheck();
-  // }
-
-  // prestashop.on("updateProductList", function(t) {
-  // 	window.dispatchEvent(new Event('resize'));
-  // 	enableSwiperFilter();
-  // })
-
-  let productSwiper = new Swiper('[data-swiper-product]', {
-    slidesPerView: 1,
-    spaceBetween: 20,
-    loop: true,
-    navigation: {
-      nextEl: '[data-swiper-product-next]',
-      prevEl: '[data-swiper-product-prev]',
-    },
-    pagination: {
-      el: '.product-thumb-images-pag',
-      clickable: true,
-      dynamicBullets: true,
-      dynamicMainBullets: 1,
-    },
-  })
-
-  handleUpdateZoom(productSwiper)
+    handleUpdateZoom(productSwiper)
+  }
 
   if (typeof prestashop !== 'undefined') {
     window.addEventListener('resize', () => {
-      productSwiper.slideTo(1, 300, false)
+      if (typeof productSwiper !== 'undefined') {
+        productSwiper.slideTo(1, 300, false)
+      }
     })
 
     prestashop.on('updatedProduct', function (event) {
-      let productSwiper = new Swiper('[data-swiper-product]', {
-        slidesPerView: 1,
-        spaceBetween: 20,
-        loop: true,
-        navigation: {
-          nextEl: '[data-swiper-product-next]',
-          prevEl: '[data-swiper-product-prev]',
-        },
-        pagination: {
-          el: '.product-thumb-images-pag',
-          clickable: true,
-          dynamicBullets: true,
-          dynamicMainBullets: 1,
-        },
-      })
-      handleUpdateZoom(productSwiper)
+      if ($('[data-swiper-product]').length) {
+        let productSwiper = new Swiper('[data-swiper-product]', {
+          slidesPerView: 1,
+          spaceBetween: 20,
+          loop: true,
+          navigation: {
+            nextEl: '[data-swiper-product-next]',
+            prevEl: '[data-swiper-product-prev]',
+          },
+          pagination: {
+            el: '.product-thumb-images-pag',
+            clickable: true,
+            dynamicBullets: true,
+            dynamicMainBullets: 1,
+          },
+        })
+        handleUpdateZoom(productSwiper)
+      }
     })
   }
 })
@@ -1584,14 +1237,13 @@ function handleUpdateZoom(mainSwiper) {
 }
 
 function paginationGoTop() {
-  $('.page-list a').click(function () {
+  $('.page-list a').on('click', function () {
     window.scrollTo({
       top: 0,
       behavior: 'smooth',
     })
   })
 }
-
 $(document).ready(function () {
   paginationGoTop()
   prestashop.on('updateProductList', paginationGoTop)
@@ -1634,6 +1286,9 @@ $(document).ready(function () {
 $(document).ready(function () {
   if ($('[data-swiper-carousel]').length != 0) {
     new Swiper('[data-swiper-carousel]', {
+      preloadImages: false,
+      lazy: true,
+      loadOnTransitionStart: true,
       speed: 400,
       spaceBetween: 20,
       slidesPerView: 'auto',

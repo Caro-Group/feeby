@@ -490,11 +490,6 @@
           else tabshortcode += '@|@' + $(this).data('shortcode')
           if (!tabshortcodekey) tabshortcodekey += $(this).attr('id')
           else tabshortcodekey += '@|@' + $(this).attr('id')
-          if (!$(this).find('slick-loading').length) {
-            $(this).html(
-              '<div class="slick-loading" style="display: block;"><div class="slick-list" style="height: 600px;"> </div></div>',
-            )
-          }
         }
       })
       if (tabshortcode) {
@@ -821,7 +816,7 @@ function apshowmore() {
   /**
    * Start block for module ap_product_list
    */
-  $('.btn-show-more').click(function () {
+  $('.btn-show-more').on('click', function () {
     var page = parseInt($(this).data('page'))
     var use_animation = parseInt($(this).data('use-animation'))
     var btn = $(this)
@@ -943,7 +938,7 @@ function apPopupForm() {
       $('body').find('#turnoff-popup-bt').trigger('click')
       $.cookie('apnewletter', '1')
       $('.turnoff-popup').addClass('active')
-      $('.turnoff-popup').click(function () {
+      $('.turnoff-popup').on('click', function () {
         if (!$(this).hasClass('active')) {
           $.cookie('apnewletter', '1')
           $(this).addClass('active')
@@ -962,7 +957,7 @@ $(document).ready(function () {
   //DONGND:: call active anmation
   activeAnimation()
   if ($('.ajaxtabcate').length) {
-    $('input:radio[name=ajaxtabcate]').click(function () {
+    $('input:radio[name=ajaxtabcate]').on('click', function () {
       $('.leo-ajax-tabs').each(function () {
         //if have product
         if (
@@ -992,7 +987,7 @@ $(document).ready(function () {
       $(this).find('.dropdown-item').first().addClass('active')
       $(wraper)
         .find('.nav-link')
-        .click(function () {
+        .on('click', function () {
           if ($(this).hasClass('active')) {
             return
           }
@@ -1013,7 +1008,7 @@ $(document).ready(function () {
 
       $(tabdrop)
         .find('.dropdown-item')
-        .click(function () {
+        .on('click', function () {
           $(wraper).find('.nav-link').removeClass('active')
           cclass = $(this).attr('class')
           var strArray = cclass.split(' ')
@@ -1201,189 +1196,7 @@ $(document).ready(function () {
         )
     }
   })
-
-  //DONGND:: fix owl carousel in tab load delay when resize.
-  $(window).resize(function () {
-    if ($('.tab-pane .owl-carousel').length) {
-      $('.tab-pane .owl-carousel').each(function (index, element) {
-        if (
-          !$(element).parents('.tab-pane').hasClass('active') &&
-          typeof $(element).data('owlCarousel') !== 'undefined'
-        ) {
-          var w_owl_active_tab = $(element)
-            .parents('.tab-pane')
-            .siblings('.active')
-            .find('.owl-carousel')
-            .width()
-
-          $(element).width(w_owl_active_tab)
-          $(element).data('owlCarousel').updateVars()
-          $(element).width('100%')
-        }
-      })
-    }
-  })
-
-  //DONGND:: loading owl carousel fake item
-  var check_window_w = parseInt($(window).width())
-
-  if (check_window_w >= 992 && check_window_w < 1200) {
-    addClassLoading('lg')
-  } else if (check_window_w >= 768 && check_window_w < 992) {
-    addClassLoading('md')
-  } else if (check_window_w >= 576 && check_window_w < 768) {
-    addClassLoading('sm')
-  } else if (check_window_w < 576) {
-    addClassLoading('m')
-  } else {
-    addClassLoading('xl')
-  }
-
-  // swiper in mobile
-  if (
-    $('.list-images-mobile').length &&
-    $('.list-images-mobile').children().length > 1
-  ) {
-    $('.list-images-mobile').slick({
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      arrows: true,
-      dots: true,
-      infinite: false,
-    })
-  }
-
-  if ($('.product-list-images-mobile').length) {
-    if ($('body').hasClass('lang-rtl')) {
-      $('.product-list-images-mobile').each(function () {
-        if ($(this).children().length > 1) {
-          $(this).slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: true,
-            dots: true,
-            infinite: false,
-            rtl: true,
-          })
-        }
-      })
-    } else {
-      $('.product-list-images-mobile').each(function () {
-        if ($(this).children().length > 1) {
-          $(this).slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: true,
-            dots: true,
-            infinite: false,
-          })
-        }
-      })
-    }
-
-    //turn off swipe mode of owl-carousel when slide active on mobile
-    $(document).ajaxComplete(function (event, xhr, settings) {
-      if (settings.url.indexOf('apajax') > 0) {
-        $('.product-list-images-mobile').each(function () {
-          if ($('.product-list-images-mobile').hasClass('slick-slider')) {
-            function offSlideCarousel(selector) {
-              selector
-                .parents('.owl-item')
-                .on('touchstart mousedown', function (e) {
-                  // Prevent carousel swipe
-                  e.stopPropagation()
-                })
-            }
-            if (window.addEventListener) {
-              window.addEventListener('load', offSlideCarousel($(this)), false)
-            } else if (window.attachEvent) {
-              window.attachEvent('onload', offSlideCarousel($(this)))
-            } else {
-              window.onload = offSlideCarousel($(this))
-            }
-          }
-        })
-      }
-      //fix swipe after ajax in category
-      if (settings.url.indexOf('from-xhr') > 0) {
-        if ($('body').hasClass('lang-rtl')) {
-          $('.product-list-images-mobile').each(function () {
-            if ($(this).children().length > 1) {
-              $(this).slick({
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                arrows: true,
-                dots: true,
-                infinite: false,
-                rtl: true,
-              })
-            }
-          })
-        } else {
-          $('.product-list-images-mobile').each(function () {
-            if ($(this).children().length > 1) {
-              $(this).slick({
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                arrows: true,
-                dots: true,
-                infinite: false,
-              })
-            }
-          })
-        }
-      }
-    })
-  }
-  if ($('body').attr('id') == 'product') {
-    $(document).ajaxComplete(function (event, xhr, settings) {
-      if (settings.url.indexOf('controller=product') > 0) {
-        if (
-          $('.list-images-mobile').length &&
-          $('.list-images-mobile').children().length > 1
-        ) {
-          $('.list-images-mobile').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: true,
-            dots: true,
-          })
-        }
-      }
-    })
-  }
 })
-
-//DONGND:: add class loading by width of window
-function addClassLoading($type) {
-  $('.timeline-wrapper').each(function () {
-    if ($(this).data($type) <= $(this).data('item')) {
-      var num_remove_item = $(this).data('item') - $(this).data($type)
-      if ($(this).data($type) < $(this).data('item')) {
-        var num_remove_item = $(this).data('item') - $(this).data($type)
-        $(this).find('.timeline-parent').slice(-num_remove_item).remove()
-      }
-
-      if (12 % $(this).data($type) == 0) {
-        if ($type == 'm') {
-          $(this)
-            .find('.timeline-parent')
-            .addClass('col-xs-' + 12 / $(this).data($type))
-        } else {
-          $(this)
-            .find('.timeline-parent')
-            .addClass('col-' + $type + '-' + 12 / $(this).data($type))
-        }
-      } else {
-        $(this)
-          .find('.timeline-parent')
-          .css({ width: 100 / $(this).data($type) + '%', float: 'left' })
-      }
-
-      $('.timeline-wrapper').removeClass('prepare')
-    }
-  })
-}
 
 //DONGND:: call function from leofeature
 function callLeoFeature() {
@@ -1404,13 +1217,6 @@ function callLeoFeature() {
   }
 }
 
-function SetOwlCarouselFirstLast(el) {
-  el.find('.owl-item').removeClass('first')
-  el.find('.owl-item.active').first().addClass('first')
-
-  el.find('.owl-item').removeClass('last')
-  el.find('.owl-item.active').last().addClass('last')
-}
 /**
  * List functions will run when document.ready()
  */
@@ -1448,7 +1254,7 @@ $(document).ready(function () {
 /**
  * List functions will run when window.load()
  */
-$(window).load(function () {
+$(window).on('load', function () {
   if (typeof ap_list_functions_loaded != 'undefined') {
     for (var i = 0; i < ap_list_functions_loaded.length; i++) {
       ap_list_functions_loaded[i]()
@@ -1459,18 +1265,6 @@ $(window).load(function () {
 $(document).ready(function () {
   if ($('#sitemap').length > 0) {
     $('#sitemap .sitemap').prepend(leo_site_map)
-  }
-
-  if ($('.lazy').length) {
-    $(function () {
-      $('.lazy').lazy({ effect: 'fadeIn' })
-    })
-
-    $(document).ajaxComplete(function () {
-      if ($('.lazy').length) {
-        $('.lazy').lazy({ effect: 'fadeIn' })
-      }
-    })
   }
 
   // REPLACE URL IN BLOCKLANGUAGES
@@ -1555,45 +1349,6 @@ $(document).ready(function () {
       leoCustomAjax.processAjax()
     }
   })
-
-  // auto get link product and add to demo link on megamenu to show multi product detail
-  if (
-    $('.demo-product-detail[data-menu-type=url] a').length &&
-    prestashop.page.page_name != 'product'
-  ) {
-    $.ajax({
-      type: 'POST',
-      headers: { 'cache-control': 'no-cache' },
-      url:
-        prestashop.urls.base_url +
-        'modules/appagebuilder/apajax.php' +
-        '?rand=' +
-        new Date().getTime(),
-      async: true,
-      cache: false,
-      dataType: 'json',
-      data: { action: 'get-product-link' },
-      success: function (jsonData) {
-        if (jsonData) {
-          $('.demo-product-detail[data-menu-type=url] a').each(function () {
-            var original_url = $(this).attr('href')
-            var layout_key = original_url.substring(
-              original_url.indexOf('?layout='),
-            )
-
-            var new_url = jsonData.replace('.html', '.html' + layout_key)
-            $(this).attr('href', new_url).addClass('updated')
-          })
-          if ($('.lazy').length) {
-            if (lazyLoadInstance) {
-              lazyLoadInstance.update()
-            }
-          }
-        }
-      },
-      error: function () {},
-    })
-  }
 })
 
 function removeParamFromURL(key, sourceURL) {

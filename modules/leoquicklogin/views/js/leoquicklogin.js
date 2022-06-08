@@ -45,7 +45,7 @@ $(document).ready(function () {
     }
   }
   //DONGND:: login action
-  $('.leo-quicklogin').click(function () {
+  $('.leo-quicklogin').on('click', function () {
     if (!$(this).hasClass('leo-dropdown')) {
       if (!$(this).hasClass('active')) {
         $(this).addClass('active')
@@ -198,7 +198,7 @@ $(document).ready(function () {
   // })
   activeEventModalLeoQuickLogin()
   activeEventSlidebarLeoQuickLogin()
-  $('.leo-dropdown-wrapper').click(function (e) {
+  $('.leo-dropdown-wrapper').on('click', function (e) {
     e.stopPropagation()
   })
   //DONGND:: display forgotpass form
@@ -206,7 +206,7 @@ $(document).ready(function () {
   // var parent_obj = $(this).parents('.leo-quicklogin-form');
   // parent_obj.css({'height': 'auto'});
   // });
-  $('.leoquicklogin-forgotpass').click(function () {
+  $('.leoquicklogin-forgotpass').on('click', function () {
     var parent_obj = $(this).parents('.leo-login-form')
     if (!$(this).hasClass('active')) {
       $(this).addClass('active')
@@ -245,19 +245,19 @@ $(document).ready(function () {
   // }
 
   // });
-  $('.lql-calllogin-action').click(function () {
+  $('.lql-calllogin-action').on('click', function () {
     callLoginForm($(this))
     return false
   })
 
   //DONGND:: display register form
-  $('.lql-callregister-action').click(function () {
+  $('.lql-callregister-action').on('click', function () {
     callRegisterForm($(this))
     return false
   })
 
   //DONGND:: button tab (only form)
-  $('.lql-bt').click(function () {
+  $('.lql-bt').on('click', function () {
     if (!$(this).hasClass('active')) {
       if ($(this).hasClass('lql-bt-login')) {
         callLoginForm($(this))
@@ -268,7 +268,7 @@ $(document).ready(function () {
     }
   })
 
-  $('.leo-resetpass-form-content').submit(function () {
+  $('.leo-resetpass-form-content').on('submit', function () {
     // if ($(this).find('.form-group.leo-has-error').length)
     if (
       $(this).find('.leoquicklogin-reset-pass-bt').hasClass('validate-ok') ||
@@ -279,7 +279,7 @@ $(document).ready(function () {
   })
 
   //DONGND:: button send email reset password
-  $('.leoquicklogin-reset-pass-bt').click(function () {
+  $('.leoquicklogin-reset-pass-bt').on('click', function () {
     if (!$(this).hasClass('active') && !$(this).hasClass('success')) {
       var object_e = $(this)
       var parent_obj = object_e.parents('.leo-resetpass-form-content')
@@ -377,7 +377,7 @@ $(document).ready(function () {
     }
   })
 
-  $('.leo-login-form-content').submit(function () {
+  $('.leo-login-form-content').on('submit', function () {
     // if ($(this).find('.form-group.leo-has-error').length)
     if (
       $(this).find('.lql-login-bt').hasClass('validate-ok') ||
@@ -388,7 +388,7 @@ $(document).ready(function () {
   })
 
   //DONGND:: button login
-  $('.lql-login-bt').click(function () {
+  $('.lql-login-bt').on('click', function () {
     if (!$(this).hasClass('active') && !$(this).hasClass('success')) {
       var object_e = $(this)
       var parent_obj = object_e.parents('.leo-login-form-content')
@@ -503,7 +503,7 @@ $(document).ready(function () {
     }
   })
 
-  $('.leo-register-form-content').submit(function () {
+  $('.leo-register-form-content').on('submit', function () {
     // if ($(this).find('.form-group.leo-has-error').length)
     if (
       $(this).find('.lql-register-bt').hasClass('validate-ok') ||
@@ -514,7 +514,7 @@ $(document).ready(function () {
   })
 
   //DONGND:: button login
-  $('.lql-register-bt').click(function () {
+  $('.lql-register-bt').on('click', function () {
     if (!$(this).hasClass('active') && !$(this).hasClass('success')) {
       var object_e = $(this)
       var parent_obj = object_e.parents('.leo-register-form-content')
@@ -661,7 +661,7 @@ $(document).ready(function () {
   }
 
   //DONGND:: twitter login
-  $('.twitter-login-bt').click(function () {
+  $('.twitter-login-bt').on('click', function () {
     window.open(
       lql_module_dir +
         'twitter.php?request=twitter&lang=' +
@@ -727,33 +727,36 @@ function callRegisterForm($element) {
 
 //DONGND:: event for slidebar
 function activeEventSlidebarLeoQuickLogin() {
-  $('.leoquicklogin-mask, .leoquicklogin-slidebar-close').click(function () {
-    $('.leoquicklogin-mask.active').removeClass('active')
-    $('.leo-quicklogin.active').removeClass('active')
-    $('body.leoquicklogin-active-push main').css({
-      '-moz-transform': 'translateX(0px)',
-      '-webkit-transform': 'translateX(0px)',
-      '-o-transform': 'translateX(0px)',
-      '-ms-transform': 'translateX(0px)',
-      transform: 'translateX(0px)',
-      '-moz-transform': 'translateY(0px)',
-      '-webkit-transform': 'translateY(0px)',
-      '-o-transform': 'translateY(0px)',
-      '-ms-transform': 'translateY(0px)',
-      transform: 'translateY(0px)',
-    })
-    setTimeout(function () {
-      $('body').removeClass(
-        'leoquicklogin-active-slidebar leoquicklogin-active-push',
-      )
-      //DONGND:: check auto gen rtl
-      if (lql_is_gen_rtl && prestashop.language.is_rtl == 1) {
-        $('body').removeClass('lql_is_gen_rtl')
-      }
-    }, 300)
+  $('.leoquicklogin-mask, .leoquicklogin-slidebar-close').on(
+    'click',
+    function () {
+      $('.leoquicklogin-mask.active').removeClass('active')
+      $('.leo-quicklogin.active').removeClass('active')
+      $('body.leoquicklogin-active-push main').css({
+        '-moz-transform': 'translateX(0px)',
+        '-webkit-transform': 'translateX(0px)',
+        '-o-transform': 'translateX(0px)',
+        '-ms-transform': 'translateX(0px)',
+        transform: 'translateX(0px)',
+        '-moz-transform': 'translateY(0px)',
+        '-webkit-transform': 'translateY(0px)',
+        '-o-transform': 'translateY(0px)',
+        '-ms-transform': 'translateY(0px)',
+        transform: 'translateY(0px)',
+      })
+      setTimeout(function () {
+        $('body').removeClass(
+          'leoquicklogin-active-slidebar leoquicklogin-active-push',
+        )
+        //DONGND:: check auto gen rtl
+        if (lql_is_gen_rtl && prestashop.language.is_rtl == 1) {
+          $('body').removeClass('lql_is_gen_rtl')
+        }
+      }, 300)
 
-    $('.leoquicklogin-slidebar.active').removeClass('active')
-  })
+      $('.leoquicklogin-slidebar.active').removeClass('active')
+    },
+  )
 }
 
 //DONGND:: event for modal

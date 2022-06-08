@@ -25,8 +25,10 @@
             <a href="{$formAtts.url}{*full url can not escape*}"
                 {(isset($formAtts.is_open) && $formAtts.is_open) ? 'target="_blank"' : ''|escape:'html':'UTF-8'}>
             {/if}
-            <img {if $aplazyload}loading="lazy"{/if} class="rounded-[5px] h-auto" {($formAtts.form_id|escape:'html':'UTF-8' == "form_18561261627433088") ? '' : 'data-pagespeed-no-transform'}
-                src="{if isset($formAtts.image) && $formAtts.image}{$path|escape:'html':'UTF-8'}{$formAtts.image|escape:'html':'UTF-8'}{else}{if isset($formAtts.image_link)}{$formAtts.image_link|escape:'html':'UTF-8'}{/if}{/if}"
+            <img loading="lazy" class="rounded-[5px] h-auto"}
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                data-lazy
+                data-src="{if isset($formAtts.image) && $formAtts.image}{$path|escape:'html':'UTF-8'}{$formAtts.image|escape:'html':'UTF-8'}{else}{if isset($formAtts.image_link)}{$formAtts.image_link|escape:'html':'UTF-8'}{/if}{/if}"
                 class="{(isset($formAtts.animation) && $formAtts.animation != 'none') ? 'has-animation' : ''|escape:'html':'UTF-8'}"
                 {if isset($formAtts.animation) && $formAtts.animation != 'none'}
                     data-animation="{$formAtts.animation|escape:'html':'UTF-8'}" {/if} {if $formAtts.animation_delay != ''}

@@ -284,25 +284,29 @@ $(document).ready(function () {
 
   //DONGND:: call event for fly cart slide bar
   activeEventFlyCartSlideBar()
-  $('.leo-fly-cart.enable-slidebar .leo-fly-cart-icon-wrapper').click(
+  $('.leo-fly-cart.enable-slidebar .leo-fly-cart-icon-wrapper').on(
+    'click',
     function () {
       $('.leo-fly-cart.enable-slidebar .leo-fly-cart-icon').trigger('click')
     },
   )
-  $('.leo-fly-cart.enable-slidebar .leo-fly-cart-icon').click(function () {
-    showSlideBarCart($(this))
-    return false
-  })
+  $('.leo-fly-cart.enable-slidebar .leo-fly-cart-icon').on(
+    'click',
+    function () {
+      showSlideBarCart($(this))
+      return false
+    },
+  )
 
   $(
     '.leo-fly-cart.enable-dropdown .leo-fly-cart-icon-wrapper , .leo-fly-cart.enable-dropdown .leo-fly-cart-icon',
-  ).click(function () {
+  ).on('click', function () {
     showDropDownCart($(this), 'flycart')
     return false
   })
 
   //DONGND:: click out to close dropdown-dropup cart
-  $(document).click(function (e) {
+  $(document).on('click', function (e) {
     e.stopPropagation()
     var container = $('.leo-dropdown-cart.dropdown.show')
 
@@ -325,7 +329,7 @@ $(document).ready(function () {
   getOffsetFlycartIcon()
 
   //DONGND:: resize update scroll bar of fly cart slide bar
-  $(window).resize(function () {
+  $(window).on('resize', function () {
     //DONGND:: active scroll bar
     $('.leo-dropdown-list-item').each(function () {
       //DONGND:: scroll bar for slidebar
@@ -346,7 +350,7 @@ function leoBtCart() {
   $('.leo-bt-cart').each(function () {
     if (!$(this).hasClass('leo-enable')) {
       $(this).addClass('leo-enable')
-      $(this).click(function (event) {
+      $(this).on('click', function (event) {
         if (
           $(this).hasClass('active') ||
           $(this).hasClass('reset') ||
@@ -648,7 +652,7 @@ function leoBtCart() {
 
 //DONGND:: event for button add cart
 function leoSelectAttr() {
-  $('.leo-select-attr').click(function (e) {
+  $('.leo-select-attr').on('click', function (e) {
     e.preventDefault()
     var id_product = $(this).data('id-product')
     var attr_txt = $(this).text()
@@ -955,7 +959,8 @@ function activeDropdownEvent() {
   })
 
   //DONGND:: highlight dropdown cart item
-  $('.leo-remove-from-cart, .view-leo-dropdown-additional').hover(
+  $('.leo-remove-from-cart, .view-leo-dropdown-additional').on(
+    'hover',
     function () {
       if ($(this).hasClass('leo-remove-from-cart')) {
         $(this).parents('.leo-dropdown-cart-item').addClass('high-light')
@@ -969,7 +974,7 @@ function activeDropdownEvent() {
   )
 
   //DONGND:: show additional info
-  $('.view-leo-dropdown-additional').click(function () {
+  $('.view-leo-dropdown-additional').on('click', function () {
     var parent_obj = $(this).parents('.leo-dropdown-cart-item')
 
     var wrapper_parent_obj = $(this).parents('.leo-dropdown-list-item')
@@ -1102,7 +1107,7 @@ function activeDropdownEvent() {
   })
 
   //DONGND:: remove dropdown cart item
-  $('.leo-remove-from-cart').click(function () {
+  $('.leo-remove-from-cart').on('click', function () {
     var id_product = $(this).data('id-product')
     var id_product_attribute = $(this).data('id-product-attribute')
     var id_customization = $(this).data('id-customization')
@@ -1240,10 +1245,10 @@ function activeDropdownEvent() {
   // updateQuantityProductDropDown(event.currentTarget);
   // }
   // });
-  $('.leo-input-product-quantity').focusout(function () {
+  $('.leo-input-product-quantity').on('focusout', function () {
     updateQuantityProductDropDown($(this))
   })
-  $('.leo-input-product-quantity').keyup(function (event) {
+  $('.leo-input-product-quantity').on('keyup', function (event) {
     if (event.keyCode == 13) {
       updateQuantityProductDropDown($(this))
     }
@@ -1551,11 +1556,14 @@ function createModalAndDropdown($only_dropdown, $only_total) {
           type_dropdown_defaultcart == 'dropdown' ||
           type_dropdown_defaultcart == 'dropup'
         ) {
-          $('.leo-blockcart.cart-preview.show-leo-loading').click(function () {
-            // console.log('test');
-            showDropDownCart($(this), 'defaultcart')
-            return false
-          })
+          $('.leo-blockcart.cart-preview.show-leo-loading').on(
+            'click',
+            function () {
+              // console.log('test');
+              showDropDownCart($(this), 'defaultcart')
+              return false
+            },
+          )
         }
         if (
           type_dropdown_defaultcart == 'slidebar_left' ||
@@ -1563,10 +1571,13 @@ function createModalAndDropdown($only_dropdown, $only_total) {
           type_dropdown_defaultcart == 'slidebar_top' ||
           type_dropdown_defaultcart == 'slidebar_bottom'
         ) {
-          $('.leo-blockcart.cart-preview.show-leo-loading').click(function () {
-            showSlideBarCart($(this))
-            return false
-          })
+          $('.leo-blockcart.cart-preview.show-leo-loading').on(
+            'click',
+            function () {
+              showSlideBarCart($(this))
+              return false
+            },
+          )
         }
       }
     } else {
@@ -1735,7 +1746,7 @@ function createModalAndDropdown($only_dropdown, $only_total) {
 
 //DONGND:: event for notification
 function activeEventNotification() {
-  $('.leo-notification .notification').click(function () {
+  $('.leo-notification .notification').on('click', function () {
     $(this).removeClass('show').addClass('closed').parent().addClass('disable')
     // var obj = $(this);
     // setTimeout(
@@ -2019,7 +2030,7 @@ function flyCartEffect($element) {
 function activeEventFlyCartSlideBar() {
   $(
     '.leo-fly-cart-mask, .leo-fly-cart-slidebar .leo-fly-cart-icon, .leo-fly-cart-slidebar .leo-fly-cart-icon-wrapper, .leo-fly-cart-slidebar .leo-fly-cart',
-  ).click(function () {
+  ).on('click', function () {
     // console.log('test');
     $('.leo-fly-cart-mask.active').removeClass('active')
     $('.leo-fly-cart-icon.active-slidebarcart').removeClass(
@@ -2047,7 +2058,7 @@ function activeEventFlyCartSlideBar() {
     $('.leo-fly-cart-slidebar.active').removeClass('active')
   })
 
-  $(document).keyup(function (e) {
+  $(document).on('keyup', function (e) {
     //DONGND:: press esc
     if (e.keyCode == 27) {
       if ($('.leo-fly-cart-mask').hasClass('active')) {
@@ -2187,12 +2198,9 @@ function checkFlyCartScrollBarDropDown($element) {
     height_default + height_bottom > object_parent.position().top
   ) {
     // console.log('test0');
-    $element
-      .addClass('active-scrollbar')
-      .css({
-        'max-height':
-          object_parent.position().top - height_icon - height_bottom,
-      })
+    $element.addClass('active-scrollbar').css({
+      'max-height': object_parent.position().top - height_icon - height_bottom,
+    })
     $element.mCustomScrollbar({
       theme: 'dark',
       scrollInertia: 200,
@@ -2213,15 +2221,13 @@ function checkFlyCartScrollBarDropDown($element) {
       $(window).height() - object_parent.position().top
   ) {
     // console.log('test1');
-    $element
-      .addClass('active-scrollbar')
-      .css({
-        'max-height':
-          $(window).height() -
-          object_parent.position().top -
-          height_icon -
-          height_bottom,
-      })
+    $element.addClass('active-scrollbar').css({
+      'max-height':
+        $(window).height() -
+        object_parent.position().top -
+        height_icon -
+        height_bottom,
+    })
     $element.mCustomScrollbar({
       theme: 'dark',
       scrollInertia: 200,
@@ -2243,13 +2249,11 @@ function checkFlyCartScrollBarDropDown($element) {
         .addClass('active-scrollbar')
         .css({ 'max-height': height_cart_item * number_cartitem_display })
     } else {
-      $element
-        .addClass('active-scrollbar')
-        .css({
-          'max-height':
-            $element.find('.leo-dropdown-cart-item').outerHeight() *
-            check_number_cartitem,
-        })
+      $element.addClass('active-scrollbar').css({
+        'max-height':
+          $element.find('.leo-dropdown-cart-item').outerHeight() *
+          check_number_cartitem,
+      })
     }
 
     $element.mCustomScrollbar({

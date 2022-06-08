@@ -111,7 +111,7 @@
         }
         
 	$( document ).ready(function() {
-		$("#img_order a").click(function(){
+		$("#img_order a").on('click',function(){
                     reloadImageList($(this).attr("data-type"));
                     $("#img_order a span").removeClass("text-danger");
                     $(this).find("span").addClass("text-danger");

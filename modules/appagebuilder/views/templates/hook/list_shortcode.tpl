@@ -111,14 +111,14 @@
 		
 		<script type="text/javascript">
 			$(document).ready(function(){
-				$('.list-sc-item').click(function(){
+				$('.list-sc-item').on('click',function(){
 					var shortcode_key = $(this).data('shortcode-key');
 					var shortcode_txt = '[ApSC sc_key='+shortcode_key+'][/ApSC]';
 					parent.tinyMCE.execCommand('mceInsertContent', false,shortcode_txt);
 					parent.tinyMCE.activeEditor.windowManager.close();
 				});
 				
-				$('.sc-direct').click(function(){
+				$('.sc-direct').on('click',function(){
 					window.open($(this).attr('href'), '_blank');
 					parent.tinyMCE.activeEditor.windowManager.close();
 				});

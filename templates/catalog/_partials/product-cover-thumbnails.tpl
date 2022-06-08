@@ -60,8 +60,8 @@
              ))}
 
              <div class="swiper-slide h-full">
-               <img id="zoom_product" loading="lazy" data-type-zoom="" class="img-fluid object-contain"
-                 src="{$image.bySize.large_default.url}" alt="{$product.default_image.legend}"
+               <img id="zoom_product" data-type-zoom="" class="img-fluid object-contain swiper-lazy"
+                 data-src="{$image.bySize.large_default.url}" alt="{$product.default_image.legend}"
                  title="{$product.default_image.legend}" itemprop="image"
                  width="{$product.default_image.bySize.large_default.width}"
                  height="{$product.default_image.bySize.large_default.height}"
@@ -71,7 +71,7 @@
                {if $image.legend|strstr:"(Konfigurator)" && !isset($selectedOriginalImage)}
                  <img id="product_original_img" class="hidden js-thumb" loading="lazy"
                    src="{$link->getImageLink($product->link_rewrite, $image.id_image)}" alt="{$image.legend}"
-                   title="{$image.legend}" itemprop="image" data-pagespeed-no-transform />
+                   title="{$image.legend}" itemprop="image" />
                    {assign var="selectedOriginalImage" value="true"}
                {/if}
              </div>
@@ -140,7 +140,7 @@
                  )
                ))}
                  <div
-                   class="swiper-custom-slide w-auto h-full relative thumb-container {if $image.id_image == $product.default_image.id_image} active {/if}"
+                   class="swiper-lazy swiper-custom-slide w-auto h-full relative thumb-container {if $image.id_image == $product.default_image.id_image} active {/if}"
                    style="    flex-shrink: 0;
                      transition-property: transform;">
                    <a href="javascript:void(0)" data-image="{$image.bySize.large_default.url}"
@@ -148,7 +148,8 @@
                      <img
                        class="h-[100px] w-[100px] tablet:h-[200px] tablet:w-[200px] border border-solid rounded-lg mr-[18px] {if $image.id_image == $product.default_image.id_image} selected {/if}"
                        data-image-medium-src="{$image.bySize.medium_default.url}"
-                       data-image-large-src="{$image.bySize.large_default.url}" src="{$image.bySize.product_thumbnail.url}"
+                       data-image-large-src="{$image.bySize.large_default.url}"                 
+                       data-src="{$image.bySize.product_thumbnail.url}"
                        alt="{$image.legend}" title="{$image.legend}" itemprop="image" width="200" height="200" loading="lazy" />
                    </a>
                  </div>

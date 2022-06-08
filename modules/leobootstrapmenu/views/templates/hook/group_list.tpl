@@ -298,7 +298,7 @@
 	var update_group_position_link = "{$update_group_position_link}";
     $(document).ready(function() {
         //import export fix
-        $('#import_file-selectbutton').click(function(e){
+        $('#import_file-selectbutton').on('click',function(e){
                 $('#import_file').trigger('click');
         });
         $('#import_file').change(function(e){
@@ -306,7 +306,7 @@
                 var file = val.split(/[\\/]/);
                 $('#import_file-name').val(file[file.length-1]);
         });
-        $('#import_file_submit_btn').click(function(e){
+        $('#import_file_submit_btn').on('click',function(e){
             if($("#import_file-name").val().indexOf(".txt") != -1){
                 if($("#override_group_on").is(":checked")) return confirm("{l s='Are you sure to override group?' mod='leobootstrapmenu'}");
 				if($("#override_widget_on").is(":checked")) return confirm("{l s='Are you sure to override widgets?' mod='leobootstrapmenu'}");
@@ -320,7 +320,7 @@
 		});
 
 		//import export widgets fix
-        $('#import_widgets_file-selectbutton').click(function(e){
+        $('#import_widgets_file-selectbutton').on('click',function(e){
                 $('#import_widgets_file').trigger('click');
         });
         $('#import_widgets_file').change(function(e){
@@ -328,7 +328,7 @@
                 var file = val.split(/[\\/]/);
                 $('#import_widgets_file-name').val(file[file.length-1]);
         });
-        $('#import_widgets_file_submit_btn').click(function(e){
+        $('#import_widgets_file_submit_btn').on('click',function(e){
             if($("#import_widgets_file-name").val().indexOf(".txt") != -1){
                 if($("#override_import_widgets_on").is(":checked")) return confirm("{l s='Are you sure to override widgets?' mod='leobootstrapmenu'}");
                 return true;
@@ -340,7 +340,7 @@
             }
 		});		
         
-        $(".group-preview").click(function() {
+        $(".group-preview").on('click',function() {
             eleDiv = $(this).parent().parent().parent();
             if ($(eleDiv).hasClass("open"))
                 eleDiv.removeClass("open");

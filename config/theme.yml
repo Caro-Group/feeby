@@ -26,6 +26,13 @@ assets:
         path: assets/js/swiper.js
       - id: loader-js
         path: assets/js/loader.js
+      - id: lazy-js
+        path: assets/js/lazy.js
+        position: bottom
+        priority: 8001
+      - id: fancybox-jquery-plugin-js
+        path: assets/js/fancybox.jquery.plugin.js
+        position: bottom
 
 global_settings:
   hooks:

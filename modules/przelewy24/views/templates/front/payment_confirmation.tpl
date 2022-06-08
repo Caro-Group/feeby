@@ -92,7 +92,7 @@
         </div>
         {if $P24_PAYMENT_METHOD_LIST}
             {if $p24_paymethod_graphics}
-                <div class="pay-method-list pay-method-graphics pay-method-list-first">
+                <div class="flex flex-wrap items-center justify-center mb-5">
                     {if $p24_paymethod_list_first|sizeof > 0}
                         {foreach $p24_paymethod_list_first as $bank_id => $bank_name}
                             {if !empty($bank_name)}
@@ -115,17 +115,7 @@
                         {/foreach}
                     {/if}
                 </div>
-                <div class="p24-text-center">
-                    <div class="p24-stuff-nav">
-                        <div class="p24-more-stuff p24-stuff">
-                            {l s='More payment methods' mod='przelewy24'}
-                        </div>
-                        <div class="p24-less-stuff p24-stuff">
-                            {l s='Less payment methods' mod='przelewy24'}
-                        </div>
-                    </div>
-                </div>
-                <div class="pay-method-list pay-method-graphics pay-method-list-second" style="display: none">
+                <div class="flex flex-wrap items-center justify-center mb-5">
                     {if $p24_paymethod_list_second|sizeof > 0}
                         {foreach $p24_paymethod_list_second as $bank_id => $bank_name}
                             {if !empty($bank_name)}
@@ -229,14 +219,12 @@
                             {l s='the Przelewy24 Terms' mod='przelewy24'}
                         </a>
                     </p>
-                    <div>
-                        <span class="custom-checkbox">
-                            <input type="checkbox" name="p24_regulation_accept" id="p24_regulation_accept" value="1">
+                    <label for="p24_regulation_accept" class="cursor-pointer flex items-center justify-center radio-block">
+                        <span class="flex items-center justify-center align-[-3px] mr-5">
+                            <input type="checkbox" name="p24_regulation_accept" id="p24_regulation_accept" value="1" class="after:absolute after:content-[''] after:h-[10px] after:m-[3px] after:rounded-sm after:transition after:w-[10px] appearance-none border-2 border-gray-3000 border-solid checked:after:bg-main checked:bg-white checked:border-main checked:focus:bg-white checked:focus:border-main checked:focus:ring-transparent checked:focus:shadow-none checked:hover:bg-white checked:hover:border-main checked:ring-0 checked:ring-transparent focus:ring-0 focus:ring-offset-0 focus:ring-transparent h-5 outline-none ring-transparent rounded transition transition-all w-5">
                             <span><i class="material-icons rtl-no-flip checkbox-checked"></i></span>
                         </span>
-                        <label for="p24_regulation_accept">
-                            <span>{l s='Yes, I have read and accept Przelewy24.pl terms.' mod='przelewy24'}</span>
-                        </label>
+                        <span>{l s='Yes, I have read and accept Przelewy24.pl terms.' mod='przelewy24'}</span>
                     </div>
                 </div>
             {/if}
@@ -291,11 +279,11 @@
                 {$submitButtonDisabled = ''}
             {/if}
             {if $payment_method_selected_id > 0}
-                <button data-validation-required="{$validationRequired}" data-text-oneclick="{l s='Pay by OneClick' mod='przelewy24'}"  {$submitButtonDisabled} id="submitButton" class="btn btn-primary" {if 2 === ($validationRequired|intval)}data-validation-link="{$validationLink}" type="button" onclick="proceedPayment({$cartId})"{else} onclick="formSend();" type="submit"{/if} >{l s='Pay' mod='przelewy24'}</button>
+                <button data-validation-required="{$validationRequired}" data-text-oneclick="{l s='Pay by OneClick' mod='przelewy24'}"  {$submitButtonDisabled} id="submitButton" class="bg-main border-0 continue cursor-pointer duration-150 flex hover:bg-main-hover items-center justify-between mb-8 ml-auto mx-auto p-3 px-4 rounded-full tablet:text-sm tablet:w-auto text-white text-xs uppercase w-full whitespace-nowrap" {if 2 === ($validationRequired|intval)}data-validation-link="{$validationLink}" type="button" onclick="proceedPayment({$cartId})"{else} onclick="formSend();" type="submit"{/if} >{l s='Pay' mod='przelewy24'}</button>
             {elseif isset($p24_blik_code)}
-                <button {$submitButtonDisabled} id="submitButton" onclick="formSend();" class="btn btn-primary">{l s='Pay by Blik' mod='przelewy24'}</button>
+                <button {$submitButtonDisabled} id="submitButton" onclick="formSend();" class="bg-main border-0 continue cursor-pointer duration-150 flex hover:bg-main-hover items-center justify-between mb-8 ml-auto mx-auto p-3 px-4 rounded-full tablet:text-sm tablet:w-auto text-white text-xs uppercase w-full whitespace-nowrap">{l s='Pay by Blik' mod='przelewy24'}</button>
             {else}
-                <button {$submitButtonDisabled} id="submitButton" data-validation-required="{$validationRequired}" data-text-oneclick="{l s='Pay by OneClick' mod='przelewy24'}" class="btn btn-primary" {if 2 === ($validationRequired|intval)}data-validation-link="{$validationLink}" type="button" onclick="proceedPayment({$cartId})"{else} onclick="formSend();" type="submit"{/if}>{l s='Pay by Przelewy24' mod='przelewy24'}</button>
+                <button {$submitButtonDisabled} id="submitButton" data-validation-required="{$validationRequired}" data-text-oneclick="{l s='Pay by OneClick' mod='przelewy24'}" class="bg-main border-0 continue cursor-pointer duration-150 flex hover:bg-main-hover items-center justify-between mb-8 ml-auto mx-auto p-3 px-4 rounded-full tablet:text-sm tablet:w-auto text-white text-xs uppercase w-full whitespace-nowrap" {if 2 === ($validationRequired|intval)}data-validation-link="{$validationLink}" type="button" onclick="proceedPayment({$cartId})"{else} onclick="formSend();" type="submit"{/if}>{l s='Pay by Przelewy24' mod='przelewy24'}</button>
             {/if}
         </form>
         {if !isset($p24_blik_code)}
