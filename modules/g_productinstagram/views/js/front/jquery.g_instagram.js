@@ -848,7 +848,7 @@ $(document).ready(function () {
     })
   })
   // Scroll autoload ".ginstemplate_3 .autoload_1"
-  $(window).scroll(function (e) {
+  $(window).on('scroll', function (e) {
     var positionScroll = $(this).scrollTop()
     $('.ginstemplate_3.autoload_1').each(function () {
       if ($(this).find('.g_load_more').length) {
@@ -872,7 +872,7 @@ $(document).ready(function () {
     })
   })
   // Set fullwidth tem
-  $(window).resize(function () {
+  $(window).on('resize', function () {
     if ($('.ginstagram_p') && $('.ginstagram_p').length > 0) {
       Globo.responsiveImgProduct()
     } else {
