@@ -8245,12 +8245,12 @@
           ],
           11: [
             function (t, e, n) {
-              var i = /^(column|row)-reverse$/
               e.exports = function (t) {
                 t.children.sort(function (t, e) {
                   return t.style.order - e.style.order || t.index - e.index
                 }),
-                  i.test(t.style.flexDirection) && t.children.reverse()
+                  /^(column|row)-reverse$/.test(t.style.flexDirection) &&
+                    t.children.reverse()
               }
             },
             {},
