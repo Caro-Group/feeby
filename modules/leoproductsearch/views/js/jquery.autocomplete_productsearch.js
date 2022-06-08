@@ -131,7 +131,7 @@ jQuery.browser = browser
 
     // only opera doesn't trigger keydown multiple times while pressed, others don't work with keypress at all
     $input
-      .bind(
+      .on(
         ($.browser.opera ? 'keypress' : 'keydown') + '.autocomplete',
         function (event) {
           // track last key pressed
@@ -235,15 +235,15 @@ jQuery.browser = browser
           request(value, findValueCallback, findValueCallback)
         })
       })
-      .bind('flushCache', function () {
+      .on('flushCache', function () {
         cache.flush()
       })
-      .bind('setOptions', function () {
+      .on('setOptions', function () {
         $.extend(options, arguments[1])
         // if we've updated the data, repopulate
         if ('data' in arguments[1]) cache.populate()
       })
-      .bind('unautocomplete', function () {
+      .on('unautocomplete', function () {
         select.off()
         $input.off()
         $(input.form).off('.autocomplete')
