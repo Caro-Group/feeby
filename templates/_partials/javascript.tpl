@@ -39,11 +39,11 @@
 {/foreach}
 
 {if isset($vars) && $vars|@count}
-  <script defer type="text/javascript" src="data:text/javascript,
+  <script type="text/javascript">
     {foreach from=$vars key=var_name item=var_value}
-    var {$var_name} = {$var_value|urlencode|escape:'quotes'};
+    var {$var_name} = {$var_value|json_encode nofilter};
     {/foreach}
- "></script>
+  </script>
 {/if}
 
 <script type="text/javascript" src="data:text/javascript,
