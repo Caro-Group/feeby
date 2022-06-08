@@ -1211,10 +1211,6 @@ $(document).ready(function () {
     })
 
     prestashop.on('updatedProduct', function (event) {
-      if (typeof productSwiper == 'function') {
-        productSwiper.destroy(true, true)
-      }
-
       if ($('[data-swiper-product]').length) {
         let productSwiper = new Swiper('[data-swiper-product]', {
           slidesPerView: 1,
