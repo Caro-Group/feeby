@@ -62,9 +62,9 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 {literal}
-  <style>html{visibility:hidden;}</style>
+  <style>html{opacity:0;}</style>
   <noscript>
-    <style>html{visibility:visible;}</style>
+    <style>html{opacity:1;}</style>
   </noscript>
 {/literal}
 
