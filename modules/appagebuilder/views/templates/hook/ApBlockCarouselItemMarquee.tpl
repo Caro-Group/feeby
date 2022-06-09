@@ -37,8 +37,9 @@
 
 
 								{if isset($slider.image) && !empty($slider.image)}
-									<div class="h-4 flex-shrink-0 flex justify-center items-center my-auto" style="flex-shrink:0;">
+									<div class="h-4 flex-shrink-0 flex justify-center items-center my-auto">
 										<img loading="{if $smarty.foreach.sliders.first}{else}lazy{/if}" class="h-full w-auto" data-lazy data-src="{$slider.image|escape:'html':'UTF-8'}"
+											width="69" height="13"
 											alt="{if isset($slider.title)}{$slider.title|escape:'html':'UTF-8'}{/if}" />
 									</div>
 								{/if}
