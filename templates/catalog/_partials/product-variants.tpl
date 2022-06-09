@@ -61,8 +61,8 @@
                   >
                   {if $group_attribute.texture}
                     <picture>
-                      <source src="{$group_attribute.texture|replace:".png":".webp"|replace:".jpg":".webp"|escape:'html':'UTF-8'}" type="image/webp">
-						          <source src="{$group_attribute.texture|escape:'html':'UTF-8'}" type="image/jpeg"> 
+                      <source srcset="{$group_attribute.texture|replace:".png":".webp"|replace:".jpg":".webp"|escape:'html':'UTF-8'}" type="image/webp">
+						          <source srcset="{$group_attribute.texture|escape:'html':'UTF-8'}" type="image/jpeg"> 
                       <img class="block h-full object-cover" src="{$group_attribute.texture}" />
                     </picture>
                   {/if}
