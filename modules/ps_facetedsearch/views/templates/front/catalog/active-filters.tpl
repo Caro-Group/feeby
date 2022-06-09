@@ -22,10 +22,10 @@
   {/block}
 
   {if $activeFilters|count}
-    <ul class="hidden tablet:flex">
+    <ul class="hidden tablet:flex flex-wrap">
       {foreach from=$activeFilters item="filter"}
         {block name='active_filters_item'}
-          <li class="filter-block ml-4 text-sm border-2 border-gray-2000 border-solid rounded-md py-1 pl-1 pr-2 ">
+          <li class="filter-block ml-4 text-sm mb-4 border-2 border-gray-2000 border-solid rounded-md py-1 pl-1 pr-2 ">
             <a class="js-search-link group text-main-dark font-normal" href="{$filter.nextEncodedFacetsURL}">
               <i class="material-icons float-left font-light mr-2 close text-lg relative mt-px flex justify-center items-center text-main-dark group-hover:text-main transition">&#xE5CD;</i>
               {l s='%1$s:' d='Shop.Theme.Catalog' sprintf=[$filter.facetLabel]}
