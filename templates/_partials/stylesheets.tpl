@@ -63,7 +63,7 @@
  *}
 {literal}
   <style>html{visibility:hidden;}</style>
-  <noscript>html{visibility:visible;}</noscript>
+  <noscript><style>html{visibility:visible;}</style></noscript>
 {/literal}
 {foreach $stylesheets.external as $stylesheet}
   <link rel="preload" href="{$stylesheet.uri}" as="style">     
