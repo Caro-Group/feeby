@@ -33,8 +33,8 @@
 					>		
 
 					<picture>
-						<source srcset="{$slider.main_image|replace:" ":"%20"|replace:".jpg":".webp"|replace:".png":".webp"|escape:'html':'UTF-8'}" type="image/webp">
-						<source srcset="{$slider.main_image|replace:" ":"%20"|escape:'html':'UTF-8'}" type="image/jpeg">
+						<source data-srcset="{$slider.main_image|replace:" ":"%20"|replace:".jpg":".webp"|replace:".png":".webp"|escape:'html':'UTF-8'}" type="image/webp">
+						<source data-srcset="{$slider.main_image|replace:" ":"%20"|escape:'html':'UTF-8'}" type="image/jpeg">
 						<img
 							class="block swiper-lazy min-w-full desktop-wide:h-banner-final object-left h-auto"
 							{if $smarty.foreach.sliders.first}{else}loading="lazy"{/if}

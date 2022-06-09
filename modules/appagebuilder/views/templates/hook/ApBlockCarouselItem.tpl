@@ -33,14 +33,14 @@
 				{/if}
 				{if isset($slider.image) && !empty($slider.image)}
 					<picture>
-						<source srcset="{$slider.image|replace:" ":"%20"|replace:".png":".webp"|replace:".jpg":".webp"|escape:'html':'UTF-8'}" type="image/webp">
-						<source srcset="{$slider.image|replace:" ":"%20"|escape:'html':'UTF-8'}" type="image/jpeg"> 
-						<img class="block swiper-lazy object-cover w-full h-full max-h-[182px] tablet:max-h-[367px]" loading="{$lazyImg}" data-lazy 
+						<source data-srcset="{$slider.image|replace:" ":"%20"|replace:".png":".webp"|replace:".jpg":".webp"|escape:'html':'UTF-8'}" type="image/webp">
+						<source data-srcset="{$slider.image|replace:" ":"%20"|escape:'html':'UTF-8'}" type="image/jpeg"> 
+						<img class="block swiper-lazy object-cover w-full h-full max-h-[182px] tablet:max-h-[367px]" loading="{$lazyImg}"
 					data-src="{$slider.image|replace:" ":"%20"|escape:'html':'UTF-8'}" alt="{if isset($slider.title)}{$slider.title|escape:'html':'UTF-8'}{/if}"/>
 					</picture>
 				{else}
 					{if isset($slider.image_link) && !empty($slider.image_link)}
-						<img class="block swiper-lazy object-cover w-full h-full max-h-[182px] tablet:max-h-[367px]" loading="{$lazyImg}" data-lazy 
+						<img class="block swiper-lazy object-cover w-full h-full max-h-[182px] tablet:max-h-[367px]" loading="{$lazyImg}" 
 						data-src="{$slider.image_link|escape:'html':'UTF-8'}" alt="{if isset($slider.title)}{$slider.title|escape:'html':'UTF-8'}{/if}"/>
 					{/if}
 				{/if}
