@@ -72,3 +72,4 @@
     {$stylesheet.content}
   </style>
 {/foreach}
+
