@@ -37,7 +37,7 @@
 						<source srcset="{$slider.main_image|replace:" ":"%20"|escape:'html':'UTF-8'}" type="image/jpeg">
 						<img
 							class="block swiper-lazy min-w-full desktop-wide:h-banner-final object-left h-auto"
-							loading="{if $smarty.foreach.sliders.first}{else}lazy{/if}"
+							{if $smarty.foreach.sliders.first}{else}loading="lazy"{/if}
 							width="{$sliderParams['width']|escape:'html':'UTF-8'}"
 							height="{$sliderParams['height']|escape:'html':'UTF-8'}"
 							alt="{$slider.title|escape:'html':'UTF-8'}"
