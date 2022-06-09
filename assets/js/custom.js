@@ -980,6 +980,7 @@ $(document).ready(function () {
       lazy: {
         loadOnTransitionStart: true,
         checkInView: true,
+        loadPrevNextAmount: 2,
       },
       speed: 300,
       slidesPerView: 'auto',
@@ -998,6 +999,7 @@ $(document).ready(function () {
       lazy: {
         loadOnTransitionStart: true,
         checkInView: true,
+        loadPrevNextAmount: 6,
       },
       speed: 300,
       slidesPerView: 'auto',
