@@ -994,7 +994,7 @@ $(document).ready(function () {
 
   if ($('[data-about-swiper]').length) {
     new Swiper('[data-about-swiper]', {
-      preloadImages: false,
+      preloadImages: true,
       lazy: {
         loadOnTransitionStart: true,
         checkInView: true,
