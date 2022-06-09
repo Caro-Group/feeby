@@ -54,11 +54,19 @@
                   <input class="input-color peer" type="radio" data-product-attribute="{$id_attribute_group}" name="group[{$id_attribute_group}]" value="{$id_attribute}" title="{$group_attribute.name}"{if $group_attribute.selected} checked="checked"{/if}>
                   <span
                     {if $group_attribute.texture}
-                      class="color texture w-full h-20 tablet:h-[120px] mx-auto tablet:mx-0 bg-no-repeat bg-cover rounded-[5px] border-2 border-solid border-white hover:border-white peer-checked:border-main opacity-50 peer-checked:opacity-100 transition shadow-none aspect-[4/3]" style="background-image: url({$group_attribute.texture})"
+                      class="color texture w-full h-20 tablet:h-[120px] mx-auto tablet:mx-0 bg-no-repeat bg-cover rounded-[5px] border-2 border-solid border-white hover:border-white peer-checked:border-main opacity-50 peer-checked:opacity-100 transition shadow-none aspect-[4/3] overflow-hidden"
                     {elseif $group_attribute.html_color_code}
                       class="color w-10 h-10 rounded-[5px]" style="background-color: {$group_attribute.html_color_code}" 
                     {/if}
-                  ></span>
+                  >
+                  {if $group_attribute.texture}
+                    <picture>
+                      <source src="{$group_attribute.texture|replace:".png":".webp"|replace:".jpg":".webp"|escape:'html':'UTF-8'}" type="image/webp">
+						          <source src="{$group_attribute.texture|escape:'html':'UTF-8'}" type="image/jpeg"> 
+                      <img class="block h-full object-cover" src="{$group_attribute.texture}" />
+                    </picture>
+                  {/if}
+                  </span>
                   <span class="text-main-dark text-base tablet-medium:text-2xl p-0 pt-[10px] text-center">{$group_attribute.name}</span>
                 </label>
               </li>
