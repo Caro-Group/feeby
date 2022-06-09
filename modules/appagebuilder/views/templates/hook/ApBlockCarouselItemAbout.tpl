@@ -27,7 +27,7 @@
 			<div class="swiper-slide">
 			{foreach from=$sliders item=slider key=i name="sliders"}
 				
-					<div class="w-[50px] tablet:w-[70px] aspect-square mb-6 bg-gray-1000 rounded-md ">
+					<div class="w-[50px] tablet:w-[70px] aspect-square mb-6 bg-gray-1000 rounded-md swiper-lazy">
 					{if isset($slider.image) && !empty($slider.image)}
 						<picture>
 							<source data-srcset="{$slider.image|replace:" ":"%20"|replace:".jpg":".webp"|replace:".png":".webp"|escape:'html':'UTF-8'}" type="image/webp">
