@@ -8,6 +8,7 @@ assets:
     all:
       - id: main-style
         path: assets/css/styles.min.css
+        inline: true
       - id: menu-style
         path: assets/css/menu.css
       - id: swiper-style

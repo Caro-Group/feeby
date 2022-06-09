@@ -23,8 +23,12 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 {foreach $stylesheets.external as $stylesheet}
-  <link rel="preload" href="{$stylesheet.uri}" as="style">     
-  <link rel="stylesheet" href="{$stylesheet.uri}" type="text/css" media="none" onload="this.media='all'; this.onload=null;">
+  <link rel="preload" href="{$stylesheet.uri}" as="style">
+  {if $stylesheet.uri}
+    <link rel="stylesheet" href="{$stylesheet.uri}" type="text/css" media="none" onload="this.media='all'; this.onload=null;">
+  {else}
+    <link rel="stylesheet" href="{$stylesheet.uri}" type="text/css" media="none" onload="this.media='all'; this.onload=null;">
+  {/if}
   <noscript><link rel="stylesheet" href="{$stylesheet.uri}" type="text/css" media="{$stylesheet.media}"></noscript>
 {/foreach}
 
