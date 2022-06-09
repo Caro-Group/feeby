@@ -30,10 +30,10 @@
 					<div class="w-[50px] tablet:w-[70px] aspect-square mb-6 bg-gray-1000 rounded-md ">
 					{if isset($slider.image) && !empty($slider.image)}
 						<picture>
-							<source srcset="{$slider.image|replace:".jpg":".webp"|replace:".png":".webp"|escape:'html':'UTF-8'}" type="image/webp">
-							<source srcset="{$slider.image|escape:'html':'UTF-8'}" type="image/jpeg">
+							<source srcset="{$slider.image|replace:" ":"%20"|replace:".jpg":".webp"|replace:".png":".webp"|escape:'html':'UTF-8'}" type="image/webp">
+							<source srcset="{$slider.image|replace:" ":"%20"|escape:'html':'UTF-8'}" type="image/jpeg">
 							<img class="block p-1 tablet:p-2 select-none h-auto swiper-lazy" data-lazy loading="lazy"
-						data-src="{$slider.image|escape:'html':'UTF-8'}" alt="{if isset($slider.title)}{$slider.title|escape:'html':'UTF-8'}{/if}" width="70" height="70"/>
+						data-src="{$slider.image|replace:" ":"%20"|escape:'html':'UTF-8'}" alt="{if isset($slider.title)}{$slider.title|escape:'html':'UTF-8'}{/if}" width="70" height="70"/>
 						</picture>
 					{else}
 						{if isset($slider.image_link) && !empty($slider.image_link)}

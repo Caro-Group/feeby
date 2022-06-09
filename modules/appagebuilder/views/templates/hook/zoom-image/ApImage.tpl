@@ -23,14 +23,14 @@
                 {/if}
                 <div class="overflow-hidden rounded-md h-full">
                     <picture>
-                        <source srcset="{if isset($formAtts.image) && $formAtts.image}{$path|escape:'html':'UTF-8'}{$formAtts.image|replace:".jpg":".webp"|replace:".jpeg":".webp"|escape:'html':'UTF-8'}{else}{if isset($formAtts.image_link)}{$formAtts.image_link|replace:".jpg":".webp"|replace:".jpeg":".webp"|replace:" ":"%20"|escape:'html':'UTF-8'}{/if}{/if}" type="image/webp">
+                        <source srcset="{if isset($formAtts.image) && $formAtts.image}{$path|escape:'html':'UTF-8'}{$formAtts.image|replace:" ":"%20"|replace:".jpg":".webp"|replace:".jpeg":".webp"|escape:'html':'UTF-8'}{else}{if isset($formAtts.image_link)}{$formAtts.image_link|replace:".jpg":".webp"|replace:".jpeg":".webp"|replace:" ":"%20"|escape:'html':'UTF-8'}{/if}{/if}" type="image/webp">
                         <source srcset="{if isset($formAtts.image) && $formAtts.image}{$path|escape:'html':'UTF-8'}{$formAtts.image|replace:" ":"%20"|escape:'html':'UTF-8'}{else}{if isset($formAtts.image_link)}{$formAtts.image_link|replace:" ":"%20"|escape:'html':'UTF-8'}{/if}{/if}" type="image/jpeg"> 
                         <img
                         class="object-cover {(isset($formAtts.class) && $formAtts.class|strstr:"object-center") ? 'object-center' : 'object-top'|escape:'html':'UTF-8'} aspect-square tablet:aspect-auto transform group-hover:scale-110 duration-2000 w-full h-auto tablet:h-[325px] desktop-presta:h-[460px] desktop:h-full"
                         loading="lazy"
                         src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
                         data-lazy
-                        data-src="{if isset($formAtts.image) && $formAtts.image}{$path|escape:'html':'UTF-8'}{$formAtts.image|escape:'html':'UTF-8'}{else}{if isset($formAtts.image_link)}{$formAtts.image_link|replace:" ":"%20"|escape:'html':'UTF-8'}{/if}{/if}"
+                        data-src="{if isset($formAtts.image) && $formAtts.image}{$path|escape:'html':'UTF-8'}{$formAtts.image|replace:" ":"%20"|escape:'html':'UTF-8'}{else}{if isset($formAtts.image_link)}{$formAtts.image_link|replace:" ":"%20"|escape:'html':'UTF-8'}{/if}{/if}"
                         class="{(isset($formAtts.animation) && $formAtts.animation != 'none') ? 'has-animation' : ''|escape:'html':'UTF-8'}"
                         {if isset($formAtts.animation) && $formAtts.animation != 'none'}
                         data-animation="{$formAtts.animation|escape:'html':'UTF-8'}" {/if}
