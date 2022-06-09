@@ -32,13 +32,17 @@
 					{if $slider.background_color != ''} style="background-color:{$slider.background_color|escape:'html':'UTF-8'};"{/if}			
 					>		
 
-					<img
-						class="block swiper-lazy min-w-full desktop-wide:h-banner-final object-left h-auto"
-						loading="{if $smarty.foreach.sliders.first}{else}lazy{/if}"
-						width="{$sliderParams['width']|escape:'html':'UTF-8'}"
-						height="{$sliderParams['height']|escape:'html':'UTF-8'}"
-						alt="{$slider.title|escape:'html':'UTF-8'}"
-						data-src="{$slider.main_image|escape:'html':'UTF-8'}">
+					<picture>
+						<source src="{$slider.main_image|replace:".jpg":".webp"|escape:'html':'UTF-8'}" type="image/webp">
+						<source src="{$slider.main_image|escape:'html':'UTF-8'}" type="image/jpeg">
+						<img
+							class="block swiper-lazy min-w-full desktop-wide:h-banner-final object-left h-auto"
+							loading="{if $smarty.foreach.sliders.first}{else}lazy{/if}"
+							width="{$sliderParams['width']|escape:'html':'UTF-8'}"
+							height="{$sliderParams['height']|escape:'html':'UTF-8'}"
+							alt="{$slider.title|escape:'html':'UTF-8'}"
+							data-src="{$slider.main_image|escape:'html':'UTF-8'}">
+					</picture>
 				</a>
 
 				<div>

@@ -38,9 +38,13 @@
 
 								{if isset($slider.image) && !empty($slider.image)}
 									<div class="h-4 flex-shrink-0 flex justify-center items-center my-auto">
-										<img loading="{if $smarty.foreach.sliders.first}{else}lazy{/if}" class="h-full w-auto" data-lazy data-src="{$slider.image|escape:'html':'UTF-8'}"
+										<picture>
+											<source src="{$slider.image|replace:".jpg":".webp"|escape:'html':'UTF-8'}" type="image/webp">
+											<source src="{$slider.image|escape:'html':'UTF-8'}" type="image/jpeg">
+											<img loading="{if $smarty.foreach.sliders.first}{else}lazy{/if}" class="h-full w-auto" data-lazy data-src="{$slider.image|escape:'html':'UTF-8'}"
 											width="69" height="13"
 											alt="{if isset($slider.title)}{$slider.title|escape:'html':'UTF-8'}{/if}" />
+										</picture>
 									</div>
 								{/if}
 

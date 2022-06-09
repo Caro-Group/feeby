@@ -29,8 +29,12 @@
 				
 					<div class="w-[50px] tablet:w-[70px] aspect-square mb-6 bg-gray-1000 rounded-md ">
 					{if isset($slider.image) && !empty($slider.image)}
-						<img class="block p-1 tablet:p-2 select-none h-auto swiper-lazy" data-lazy loading="lazy"
+						<picture>
+							<source src="{$slider.image|replace:".jpg":".webp"|escape:'html':'UTF-8'}" type="image/webp">
+							<source src="{$slider.image|escape:'html':'UTF-8'}" type="image/jpeg">
+							<img class="block p-1 tablet:p-2 select-none h-auto swiper-lazy" data-lazy loading="lazy"
 						data-src="{$slider.image|escape:'html':'UTF-8'}" alt="{if isset($slider.title)}{$slider.title|escape:'html':'UTF-8'}{/if}" width="70" height="70"/>
+						</picture>
 					{else}
 						{if isset($slider.image_link) && !empty($slider.image_link)}
 							<img class="block p-1 tablet:p-2 h-auto select-none swiper-lazy" data-lazy loading="lazy"
