@@ -22,10 +22,6 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
-{literal}
-  <style>html{visibility:hidden;}</style>
-  <noscript>html{visibility:visible;}</noscript>
-{/literal}
 {foreach $stylesheets.external as $stylesheet}
   <link rel="preload" href="{$stylesheet.uri}" as="style">     
   <link rel="stylesheet" href="{$stylesheet.uri}" type="text/css" media="none" onload="this.media='all'; this.onload=null;">
