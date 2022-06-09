@@ -1113,7 +1113,7 @@ $(document).ready(function () {
   }
 
   const swiperBanner = new Swiper('.swiper-banner', {
-    preloadImages: true,
+    preloadImages: false,
     lazy: {
       loadOnTransitionStart: true,
       checkInView: true,
@@ -1132,13 +1132,6 @@ $(document).ready(function () {
     navigation: {
       prevEl: '.swiper_banner-button-prev',
       nextEl: '.swiper_banner-button-next',
-    },
-    on: {
-      beforeSlideChangeStart: function () {
-        if (typeof lazyLoad == 'function') {
-          lazyLoad('[data-lazy]')
-        }
-      },
     },
   })
 })
