@@ -24,7 +24,7 @@
  *}
 {foreach $stylesheets.external as $stylesheet}
   <link rel="preload" href="{$stylesheet.uri}" as="style">
-  {if $stylesheet.urit|strstr:"cache"}
+  {if $stylesheet.uri|strstr:"cache"}
     <link rel="stylesheet" href="{$stylesheet.uri}" type="text/css" media="all">
   {else}
     <link rel="stylesheet" href="{$stylesheet.uri}" type="text/css" media="none" onload="this.media='all'; this.onload=null;">
