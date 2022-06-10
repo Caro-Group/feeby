@@ -24,15 +24,27 @@ assets:
     all:
       - id: swiper-js
         path: assets/js/swiper.js
+        attributes: defer
       - id: loader-js
         path: assets/js/loader.js
+        attributes: defer
       - id: lazy-js
         path: assets/js/lazy.js
-        position: bottom
+        position: defer
         priority: 8001
+        attributes: async
       - id: fancybox-jquery-plugin-js
         path: assets/js/fancybox.jquery.plugin.js
         position: bottom
+        attributes: async
+      - id: theme-main
+        path: assets/js/theme.js
+        priority: 50
+        attributes: async
+      - id: theme-custom
+        path: assets/js/custom.js
+        priority: 1000
+        attributes: async
 
 global_settings:
   hooks:

@@ -24,11 +24,11 @@
  *}
  {if $javascript.external|@count == 1}
   {foreach $javascript.external as $js}
-    <script defer type="text/javascript" src="{$js.uri}" {$js.attribute}></script>
+    <script type="text/javascript" src="{$js.uri}" {$js.attribute}></script>
   {/foreach}     
 {else}
   {foreach $javascript.external as $js}
-    <script defer type="text/javascript" src="{$js.uri}" {$js.attribute}></script>
+    <script type="text/javascript" src="{$js.uri}" {$js.attribute}></script>
   {/foreach}
 {/if}
 
@@ -39,14 +39,14 @@
 {/foreach}
 
 {if isset($vars) && $vars|@count}
-  <script defer type="text/javascript" src="data:text/javascript,
+  <script type="text/javascript">
     {foreach from=$vars key=var_name item=var_value}
-    var {$var_name} = {$var_value|json_encode|escape:'quotes'};
+    var {$var_name} = {$var_value|json_encode nofilter};
     {/foreach}
- "></script>
+  </script>
 {/if}
 
-<script type="text/javascript" src="data:text/javascript,
+<script type="text/javascript">
 	var choosefile_text = '{l s='Choose file' d='Shop.Theme.Actions'}';
 	var turnoff_popup_text = '{l s='Do not show this popup again' d='Shop.Theme.Actions'}';
 	
@@ -64,4 +64,4 @@
 
   var menu_category = '{l s='Category' d='Shop.Theme.Global'}';
   var menu_category_see_all = '{l s='See all' d='Shop.Theme.Global'}';
-"></script>
+</script>
