@@ -36,6 +36,12 @@ assets:
 
 global_settings:
   hooks:
+    modules_to_hook:
+      displayHome:
+        - ps_imageslider
+        - ps_featuredproducts
+        - ps_banner
+        - ps_customtext
     custom_hooks:
       - name: displayProductCoverPlacement
         title: Product Cover Additionall Placement Element
@@ -61,3 +67,42 @@ global_settings:
 #     all:
 #       - id: core.js
 #         path: assets/js/core.js
+
+
+  image_types:
+    cart_default:
+      width: 125
+      height: 125
+      scope: [products]
+    small_default:
+      width: 98
+      height: 98
+      scope: [products, categories, manufacturers, suppliers]
+    medium_default:
+      width: 452
+      height: 452
+      scope: [products, manufacturers, suppliers]
+    home_default:
+      width: 250
+      height: 250
+      scope: [products]
+    large_default:
+      width: 800
+      height: 800
+      scope: [products, manufacturers, suppliers]
+    category_default:
+      width: 141
+      height: 180
+      scope: [products, categories]
+    category_default_x2:
+      width: 141
+      height: 180
+      scope: [products, categories]
+    product_thumbnail: 
+      width: 250
+      height: 250
+      scope: [products]
+    stores_default:
+      width: 170
+      height: 115
+      scope: [stores]

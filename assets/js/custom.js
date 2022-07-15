@@ -1313,6 +1313,12 @@ $(document).ready(function () {
         $('#checkout-guest-form').removeClass('hidden')
       }
     })
+
+    if ($('[data-field]').filter('.has-error').length) {
+      $('[data-login-panel]').hide()
+      $('[data-js-elem="cart"]').removeClass('hidden')
+      $('#checkout-guest-form').removeClass('hidden')
+    }
   }
 })
 
@@ -1329,6 +1335,8 @@ $(document).ready(function () {
       lazy: {
         loadOnTransitionStart: true,
         checkInView: true,
+        loadPrevNext: true,
+        loadPrevNextAmount: 4,
       },
       speed: 400,
       spaceBetween: 20,

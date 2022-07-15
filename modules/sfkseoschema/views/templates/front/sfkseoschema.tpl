@@ -357,7 +357,7 @@ $(document).ready(function(){
 {/if}
 
 
-{if $SFK_HOME_PAGE == "YES"}
+{if $SFK_HOME_PAGE == "YES" && isset($SFK_FACEBOOK_HOME)}
 
 
 

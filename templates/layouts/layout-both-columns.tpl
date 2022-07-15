@@ -57,7 +57,7 @@
       <main id="wrapper">
         {hook h="displayWrapperTop"}
 
-        {if $page_name != 'index'}
+        {if $page.page_name != 'index'}
           <hr class="border-gray-1000 hidden tablet-medium:block w-full content-max:w-[1760px]"/>
         {/if}
 
@@ -91,7 +91,7 @@
               <div id="content-wrapper" class="left-column right-column float-right col-sm-4 col-md-6">
 		            {block name="displayContentWrapperTop"}{/block}
 
-                {block name="content"}{/block}
+                     {block name="content"}{/block}
 
 		            {block name="displayContentWrapperBottom"}{/block}
               </div>

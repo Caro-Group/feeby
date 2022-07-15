@@ -25,7 +25,7 @@
 
 {block name='displayTopBothColumn'}
   
-  {if isset($category) && $category.image.large.url}
+  {if isset($category) && $category.image && $category.image.large.url}
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 desktop-presta:mb-[10px]">
       <div class="-mx-[20px] tablet:mx-0">
         <picture>
