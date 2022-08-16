@@ -1,4 +1,4 @@
-name: Deploy on test
+name: Development workflow
 
 on:
   push:
@@ -7,45 +7,32 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-18.04
-    environment: test
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 2
-
-      - name: Get npm cache directory
-        id: npm-cache
-        run: |
-          echo "::set-output name=dir::$(npm config get cache)"
-          
-      - uses: actions/cache@v3
-        with:
-          path: ${{ steps.npm-cache.outputs.dir }}
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+        uses: actions/checkout@v1
 
       - name: Use Node.js 16.x
         uses: actions/setup-node@v1
         with:
           node-version: 16.x
 
-      - name: Install dependency in theme
+      - name: Install dependency
         run: npm install
 
-      - name: Generate theme
-        run: npm run deploy
+      - name: Generate website
+        run: npm run deploy --if-present
 
-      - name: Deploy to Server
-        uses: burnett01/rsync-deployments@5.1
+      - name: Remove node
+        run: sudo rm -rf node_modules
+
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
-          switches: -azr -vvv --relative --cvs-exclude --exclude='node_modules' --exclude='cache' --exclude='assets/img/modules' --exclude='*.code-workspace' --exclude='.*' --exclude='*.sh'  --delete
-          remote_path: ${{ secrets.REMOTE_PATH }}
-          remote_host: ${{ secrets.REMOTE_HOST }}
-          remote_port: ${{ secrets.REMOTE_PORT }}
-          remote_user: ${{ secrets.REMOTE_USER }}
-          remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
-          path: './'
+          server: 193.107.88.86
+          protocol: ftps
+          username: feeby
+          password: ${{ secrets.FTP_TEST_PASS }}
+          local-dir: './'
+          server-dir: /public_html/themes/feeby/
