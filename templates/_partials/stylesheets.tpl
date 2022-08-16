@@ -24,13 +24,31 @@
  *}
 {foreach $stylesheets.external as $stylesheet}
   <link rel="preload" href="{$stylesheet.uri}" as="style">
+
   {if $stylesheet.uri|strstr:"cache"}
     <link rel="stylesheet" href="{$stylesheet.uri}" type="text/css" media="all">
   {else}
-    <link rel="stylesheet" href="{$stylesheet.uri}" type="text/css" media="none" onload="this.media='all'; this.onload=null;">
+    <link rel="stylesheet" href="{$stylesheet.uri}" type="text/css" media="none"
+      onload="this.media='all'; this.onload=null;">
   {/if}
-  <noscript><link rel="stylesheet" href="{$stylesheet.uri}" type="text/css" media="{$stylesheet.media}"></noscript>
+
+  <noscript>
+    <link rel="stylesheet" href="{$stylesheet.uri}" type="text/css" media="{$stylesheet.media}">
+  </noscript>
 {/foreach}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,400&subset=latin-ext&display=swap"
+  as="style" media="none" onload="this.media='all';this.rel='stylesheet';this.onload=null;">
+
+<noscript>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,400&subset=latin-ext&display=swap"
+    media="all" rel="stylesheet">
+</noscript>
+
 
 {foreach $stylesheets.inline as $stylesheet}
   <style>

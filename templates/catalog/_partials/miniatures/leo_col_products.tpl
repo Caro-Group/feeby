@@ -11,10 +11,10 @@
     {/block}
 {/if}
 
-{if !isset($productClassWidget)}
+{if !isset($productClassWidget) && isset($pagebuilderConfig)}
     {assign var="productClassWidget" value={hook h="pagebuilderConfig" configName="productClass"}}
 {/if}
-{if !isset($productProfileDefault)}
+{if !isset($productProfileDefault) && isset($pagebuilderConfig)}
     {assign var="productProfileDefault" value={hook h="pagebuilderConfig" configName="productKey"}}
 {/if}
 

@@ -25,10 +25,14 @@
 
 {block name='displayTopBothColumn'}
   
-  {if isset($category) && $category.image.large.url}
+  {if isset($category) && $category.image && $category.image.large.url}
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 desktop-presta:mb-[10px]">
       <div class="-mx-[20px] tablet:mx-0">
-        <img class="w-full h-auto max-h-[400px] object-cover tablet:rounded-md" src="{$category.image.large.url}?timestamp={$category.date_upd|replace:'-':''|replace:' ':''|replace:':':''}" alt="{if !empty($category.image.legend)}{$category.image.legend}{else}{$category.name}{/if}">
+        <picture>
+          <source srcset="{$category.image.large.url|replace:" ":"%20"|replace:".png":".webp"|replace:".jpg":".webp"}?timestamp={$category.date_upd|replace:'-':''|replace:' ':''|replace:':':''|escape:'html':'UTF-8'}" type="image/webp">
+          <source srcset="{$category.image.large.url|replace:" ":"%20"}?timestamp={$category.date_upd|replace:'-':''|replace:' ':''|replace:':':''|escape:'html':'UTF-8'}" type="image/jpeg"> 
+          <img class="w-full h-auto max-h-[400px] object-cover tablet:rounded-md" src="{$category.image.large.url|replace:" ":"%20"}?timestamp={$category.date_upd|replace:'-':''|replace:' ':''|replace:':':''}" alt="{if !empty($category.image.legend)}{$category.image.legend}{else}{$category.name}{/if}">
+        </picture>
       </div>
     </div>
   {/if}

@@ -305,8 +305,20 @@ function productConfigurableSaveState() {
       $('[data-button-action="add-to-cart"]')
         .attr('disabled', false)
         .removeClass('adding')
-      $('.product-actions #product_customization_id').val(data.id_customization)
+
+  if (typeof prestashop !== 'undefined') {
+    prestashop.once('updatedProduct', function (event) {
+      $('.product-actions #product_customization_id').attr('value',data.id_customization)
     })
+  }
+
+      $('.product-actions #product_customization_id').attr('value',data.id_customization)
+    })
+
+
+
+
+
     return false
   })
 }

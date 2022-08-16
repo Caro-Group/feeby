@@ -947,3 +947,6 @@ body .sidebar #search_filters_wrapper {
   object-fit: cover;
 }
 
+.swiper-blog img.block {
+  margin-bottom: 0px;
+}

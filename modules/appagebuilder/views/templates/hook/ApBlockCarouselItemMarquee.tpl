@@ -37,9 +37,17 @@
 
 
 								{if isset($slider.image) && !empty($slider.image)}
-									<div class="h-4 flex-shrink-0 flex justify-center items-center my-auto" style="flex-shrink:0;">
-										<img loading="{if $smarty.foreach.sliders.first}{else}lazy{/if}" class="h-full w-auto" data-lazy data-src="{$slider.image|escape:'html':'UTF-8'}"
-											alt="{if isset($slider.title)}{$slider.title|escape:'html':'UTF-8'}{/if}" />
+									<div class="h-4 flex-shrink-0 flex justify-center items-center my-auto">
+										<picture>
+											<source
+												srcset="{$slider.image|replace:" ":"%20"|replace:".jpg":".webp"|replace:".png":".webp"|escape:'html':'UTF-8'}"
+												type="image/webp">
+											<source srcset="{$slider.image|replace:" ":"%20"|escape:'html':'UTF-8'}" type="image/jpeg">
+											<img loading="{if $smarty.foreach.sliders.first}{else}lazy{/if}"
+												class="h-full w-auto max-h-[16px]" data-lazy
+												data-src="{$slider.image|replace:" ":"%20"|escape:'html':'UTF-8'}" width="69"
+												height="13" alt="{if isset($slider.title)}{$slider.title|escape:'html':'UTF-8'}{/if}" />
+										</picture>
 									</div>
 								{/if}
 

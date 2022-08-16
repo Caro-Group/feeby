@@ -26,13 +26,14 @@
   {foreach from=$groups key=id_attribute_group item=group}
     {if !empty($group.attributes)}
 
-      <div class="{if $group.group_name|strstr:"Rodzaj fototapety"}hidden{/if} clearfix product-variants-item flex flex-col items-start mb-5">
+      <div
+        class="{if $group.group_name|strstr:"Rodzaj fototapety"}hidden{/if} clearfix product-variants-item flex flex-col items-start mb-5">
         <span class="block text-[14px] text-gray-main text-base leading-normal mb-[10px] font-light">
           {if $id_attribute_group neq 21}
             {$group.name}
           {/if}
         </span>
-        
+
         {if $group.group_type == 'select'}
 
           <select
@@ -56,10 +57,19 @@
                     name="group[{$id_attribute_group}]" value="{$id_attribute}" title="{$group_attribute.name}"
                     {if $group_attribute.selected} checked="checked" {/if}>
                   <span {if $group_attribute.texture}
-                      class="color texture w-full h-20 tablet:h-[120px] mx-auto tablet:mx-0 bg-no-repeat bg-cover rounded-[5px] border-2 border-solid border-white hover:border-white peer-checked:border-main opacity-50 peer-checked:opacity-100 transition shadow-none aspect-[4/3]"
-                    style="background-image: url({$group_attribute.texture})" {elseif $group_attribute.html_color_code}
-                      class="color w-10 h-10 rounded-[5px]" style="background-color: {$group_attribute.html_color_code}"
-                    {/if}></span>
+                      class="color texture w-full h-20 tablet:h-[120px] mx-auto tablet:mx-0 bg-no-repeat bg-cover rounded-[5px] border-2 border-solid border-white hover:border-white peer-checked:border-main opacity-50 peer-checked:opacity-100 transition shadow-none aspect-[4/3] overflow-hidden"
+                    {elseif $group_attribute.html_color_code} class="color w-10 h-10 rounded-[5px]"
+                    style="background-color: {$group_attribute.html_color_code}" {/if}>
+                    {if $group_attribute.texture}
+                      <picture>
+                        <source
+                          srcset="{$group_attribute.texture|replace:".png":".webp"|replace:".jpg":".webp"|escape:'html':'UTF-8'}"
+                          type="image/webp">
+                        <source srcset="{$group_attribute.texture|replace:" ":"%20"|escape:'html':'UTF-8'}" type="image/jpeg">
+                        <img class="block h-full object-cover" src="{$group_attribute.texture|replace:" ":"%20"}" />
+                      </picture>
+                    {/if}
+                  </span>
                   <span
                     class="text-main-dark text-base tablet-medium:text-2xl p-0 pt-[10px] text-center">{$group_attribute.name}</span>
                 </label>
