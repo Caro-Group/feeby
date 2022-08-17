@@ -14,10 +14,10 @@
 	<div class="bg-gray-1000">
 		<div class="blog-image-container">
 			{if $config->get('listing_show_title','1')}
-				<h4 class="title">
+				<h2 class="title">
 					<a href="{$blog.link|escape:'html':'UTF-8'}"
 						title="{$blog.title|escape:'html':'UTF-8'}">{$blog.title|escape:'html':'UTF-8'}</a>
-				</h4>
+				</h2>
 			{/if}
 			<div class="blog-meta">
 				{if $config->get('listing_show_author','1')&&!empty($blog.author)}
