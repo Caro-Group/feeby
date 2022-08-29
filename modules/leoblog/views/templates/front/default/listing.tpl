@@ -40,7 +40,7 @@
 					<div class="leading-blog">  
                         <div class="flex flex-wrap -mx-[10px]">
                             {foreach from=$leading_blogs item=blog name=leading_blog}
-                                <div class="px-[10px] w-full tablet:w-1/2 {if $listing_leading_column>1}desktop:w-1/{floor(12/$listing_leading_column|escape:'html':'UTF-8')}{/if} mb-[40px]">
+                                <div class="px-[10px] w-full tablet:w-1/2 {if $listing_leading_column>1}desktop:w-{floor(12/$listing_leading_column|escape:'html':'UTF-8')}/12{/if} mb-[40px]">
                                     {include file="$_listing_blog"}
                                 </div>	
                             {/foreach}
