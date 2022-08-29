@@ -10,99 +10,53 @@
 *}
 
 <article class="blog-item">
-	<div class="blog-image-container">
-		{if $config->get('listing_show_title','1')}
-			<h4 class="title">
-				<a href="{$blog.link|escape:'html':'UTF-8'}" title="{$blog.title|escape:'html':'UTF-8'}">{$blog.title|escape:'html':'UTF-8'}</a>
-			</h4>
-		{/if}
-		<div class="blog-meta">
-			{if $config->get('listing_show_author','1')&&!empty($blog.author)}
-				<span class="blog-author">
-					<i class="icon-font icon-user"></i> <span>{l s='Posted By' d='Shop.Theme.Global'}:</span> 
-					<a href="{$blog.author_link|escape:'html':'UTF-8'}" title="{$blog.author|escape:'html':'UTF-8'}">{$blog.author|escape:'html':'UTF-8'}</a> 
-				</span>
-			{/if}
-			
-			{if $config->get('listing_show_category','1')}
-				<span class="blog-cat"> 
-					<i class="icon-list icons"></i> <span>{l s='In' d='Shop.Theme.Global'}:</span> 
-					<a href="{$blog.category_link|escape:'html':'UTF-8'}" title="{$blog.category_title|escape:'html':'UTF-8'}">{$blog.category_title|escape:'html':'UTF-8'}</a>
-				</span>
-			{/if}
-			
-			{if $config->get('listing_show_created','1')}
-				<span class="blog-created">
-					<i class="icon-font icon-calendar"></i>
-					<time class="date" datetime="{strtotime($blog.date_add)|date_format:"%Y"|escape:'html':'UTF-8'}">	
-						{*					
-						{assign var='blog_date' value=strtotime($blog.date_add)|date_format:"%a"}
-						{l s=$blog_date d='Shop.Theme.Global'},	<!-- day of week -->
-						*}
-						{assign var='blog_month' value=strtotime($blog.date_add)|date_format:"%b"}
-						{l s=$blog_month d='Shop.Theme.Global'}		<!-- month-->			
-						{assign var='blog_day' value=strtotime($blog.date_add)|date_format:"%e"}	
-						{l s=$blog_day d='Shop.Theme.Global'} <!-- day of month -->	
-						{assign var='blog_year' value=strtotime($blog.date_add)|date_format:"%Y"}		
-						{l s=$blog_year d='Shop.Theme.Global'}	<!-- year -->
-					</time>
-				</span>
-			{/if}
-			
-			{if isset($blog.comment_count)&&$config->get('listing_show_counter','1')}	
-				<span class="blog-ctncomment">
-					<i class="icon-speech icons"></i> <span>{l s='Comment' d='Shop.Theme.Global'}:</span> 
-					{$blog.comment_count|intval}
-				</span>
-			{/if}
-
-			{if $config->get('listing_show_hit','1')}	
-				<span class="blog-hit">
-					<i class="icon-heart icons"></i> <span>{l s='Hit' d='Shop.Theme.Global'}:</span> 
-					{$blog.hits|intval}
-				</span>
-			{/if}
-		</div>
+	<div class="bg-gray-1000 px-[30px] flex flex-col">
+		
 		{if $blog.image && $config->get('listing_show_image',1)}
-		<div class="blog-image">
-			<img data-src="{$blog.preview_url|escape:'html':'UTF-8'}" title="{$blog.title|escape:'html':'UTF-8'}" alt="" class="lazy img-fluid" />
-		</div>
+			<div class="relative">
+				<img data-src="{$blog.preview_url|escape:'html':'UTF-8'}" title="{$blog.title|escape:'html':'UTF-8'}"
+					alt="" class="lazy img-fluid" />
+
+				<time class="absolute bottom-0 left-0 m-[30px] p-[9px] bg-white font-header font-italic font-light items-center text-center text-main text-[16px]" datetime="{strtotime($blog.date_add)|date_format:"%Y"|escape:'html':'UTF-8'}">
+					<span class="block font-[47px]">
+						{assign var='blog_day' value=strtotime($blog.date_add)|date_format:"%e"}
+						{l s=$blog_day d='Shop.Theme.Global'}
+						<!-- day of month -->
+					</span>
+					
+					{assign var='blog_month' value=strtotime($blog.date_add)|date_format:"%m"}
+					{l s=$blog_month d='Shop.Theme.Global'}
+					<!-- month-->
+
+					{assign var='blog_year' value=strtotime($blog.date_add)|date_format:"%Y"}
+					{l s=$blog_year d='Shop.Theme.Global'}
+					<!-- year -->
+				</time>
+			</div>
 		{/if}
-	</div>
-	<div class="blog-info">
+
+		{if $config->get('listing_show_title','1')}
+			<h2 class="font-header font-light text-[25px] mb-[30px]">
+				<a href="{$blog.link|escape:'html':'UTF-8'}"
+					title="{$blog.title|escape:'html':'UTF-8'}">{$blog.title|escape:'html':'UTF-8'}</a>
+			</h2>
+		{/if}
+
 		{if $config->get('listing_show_description','1')}
-			<div class="blog-shortinfo">
+			<div class="mb-[38px] [&>*]:text[16px] [&>*]:leading[21px]">
 				{$blog.description|strip_tags:'UTF-8'|truncate:160:'...' nofilter}{* HTML form , no escape necessary *}
 			</div>
 		{/if}
-		{if $config->get('listing_show_readmore',1)}
-			<p>
-				<a href="{$blog.link|escape:'html':'UTF-8'}" title="{$blog.title|escape:'html':'UTF-8'}" class="more btn btn-primary">{l s='Read more' d='Shop.Theme.Global'}</a>
-			</p>
-		{/if}
-	</div>
-	
-	<div class="hidden-xl-down hidden-xl-up datetime-translate">
-		{l s='Sunday' d='Shop.Theme.Global'}
-		{l s='Monday' d='Shop.Theme.Global'}
-		{l s='Tuesday' d='Shop.Theme.Global'}
-		{l s='Wednesday' d='Shop.Theme.Global'}
-		{l s='Thursday' d='Shop.Theme.Global'}
-		{l s='Friday' d='Shop.Theme.Global'}
-		{l s='Saturday' d='Shop.Theme.Global'}
 		
-		{l s='January' d='Shop.Theme.Global'}
-		{l s='February' d='Shop.Theme.Global'}
-		{l s='March' d='Shop.Theme.Global'}
-		{l s='April' d='Shop.Theme.Global'}
-		{l s='May' d='Shop.Theme.Global'}
-		{l s='June' d='Shop.Theme.Global'}
-		{l s='July' d='Shop.Theme.Global'}
-		{l s='August' d='Shop.Theme.Global'}
-		{l s='September' d='Shop.Theme.Global'}
-		{l s='October' d='Shop.Theme.Global'}
-		{l s='November' d='Shop.Theme.Global'}
-		{l s='December' d='Shop.Theme.Global'}
-					
+		{if $config->get('listing_show_readmore',1)}
+			<a href="{$blog.link|escape:'html':'UTF-8'}" title="{$blog.title|escape:'html':'UTF-8'}"
+				class="uppercase text-[14px] mr-[16px]">{l s='Read more' d='Shop.Theme.Global'}
+				<span>
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14" fill="none">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M9.25 13.3837L15.5 7.13375V6.25L9.25 0L8.36625 0.88375L13.5487 6.0675H0.5V7.3175H13.55L8.365 12.5L9.24875 13.3837H9.25Z" fill="#232322"/>
+					</svg>
+				</span>
+			</a>
+		{/if}
 	</div>
 </article>
