@@ -32,7 +32,7 @@
 				{if $url_rss != ''}
 					<h4 class="blog-lastest-rss"><a href="{$url_rss|escape:'htmlall':'UTF-8'}">{l s='RSS' mod='leoblog'}</a></h4>
 				{/if}
-                <p>{$meta_description|escape:'html':'UTF-8'}</p>
+                <p class="font-body mb-[52px] text-[16px]">{$meta_description|escape:'html':'UTF-8'}</p>
 			{/if}
 
 			<div class="inner">

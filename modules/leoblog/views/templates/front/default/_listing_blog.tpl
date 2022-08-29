@@ -18,7 +18,7 @@
 				data-src="{$blog.preview_url|escape:'html':'UTF-8'}" title="{$blog.title|escape:'html':'UTF-8'}"
 				width="468"
 				height="300"
-				alt="" class="w-full h-auto max-h-[300px]" />
+				alt="" class="w-full h-auto max-h-[300px] object-cover object-center" />
 
 			<time class="absolute bottom-0 left-0 m-[30px] p-[9px] bg-white font-header font-italic font-light items-center text-center text-main-dark text-[16px]" datetime="{strtotime($blog.date_add)|date_format:"%Y"|escape:'html':'UTF-8'}">
 				<span class="block text-[35px] leading-[35px]">
