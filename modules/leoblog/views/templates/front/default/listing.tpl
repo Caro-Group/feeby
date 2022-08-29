@@ -49,7 +49,7 @@
 
                         {if count($secondary_blogs)}
                             {foreach from=$secondary_blogs item=blog name=secondary_blog}
-                                <div class="px-[10px] w-full desktop:w-4/12 mb-[40px]">
+                                <div class="px-[10px] w-full tablet:w-1/2 desktop:w-4/12 mb-[40px]">
                                     {include file="$_listing_blog"}
                                 </div>
                             {/foreach}
