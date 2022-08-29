@@ -9,7 +9,7 @@
  * @license   GNU General Public License version 2
 *}
 
-<article class="blog-item">
+<article class="h-full">
 	<div class="bg-gray-1000 flex flex-col">
 		
 		{if $blog.image && $config->get('listing_show_image',1)}
@@ -55,8 +55,7 @@
 			{/if}
 			
 			{if $config->get('listing_show_readmore',1)}
-				<a class="mb-[35px]" href="{$blog.link|escape:'html':'UTF-8'}" title="{$blog.title|escape:'html':'UTF-8'}"
-					class="flex items-center uppercase text-[14px] mr-[16px] leading-[16px]">
+				<a class="mb-[35px] flex items-center uppercase text-[14px] mr-[16px] leading-[16px]" href="{$blog.link|escape:'html':'UTF-8'}" title="{$blog.title|escape:'html':'UTF-8'}">
 					{l s='Read more' d='Shop.Theme.Global'}
 
 					<svg xmlns="http://www.w3.org/2000/svg" width="15" height="13" viewBox="0 0 16 14" fill="none" class="ml-[10px]">
