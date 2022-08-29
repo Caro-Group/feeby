@@ -36,45 +36,27 @@
 
 			<div class="inner">
 				{if count($leading_blogs)+count($secondary_blogs)>0}
-					{if count($leading_blogs)}
-					<div class="leading-blog">  
-                        <div class="flex flex-wrap -mx-[10px]">
+                    <div class="flex flex-wrap -mx-[10px]">
+                        {if count($leading_blogs)}
                             {foreach from=$leading_blogs item=blog name=leading_blog}
-                                <div class="px-[10px] w-full tablet:w-1/2 {if $listing_leading_column>1}desktop:w-{floor(12/$listing_leading_column|escape:'html':'UTF-8')}/12{/if} mb-[40px]">
+                                <div class="px-[10px] w-full tablet:w-1/2 {if $listing_leading_column>1}desktop:w-4/12{/if} mb-[40px]">
                                     {include file="$_listing_blog"}
                                 </div>	
                             {/foreach}
-                        </div>
-					</div>
-					{/if}
+                        {/if}
 
 
-					{if count($secondary_blogs)}
-					<div class="secondary-blog">
+                        {if count($secondary_blogs)}
+                            {foreach from=$secondary_blogs item=blog name=secondary_blog}
+                                <div class="desktop:w-4/12 mb-[40px]">
+                                    {include file="$_listing_blog"}
+                                </div>
+                            {/foreach}
+                        {/if}
+                    </div>
 
-						{foreach from=$secondary_blogs item=blog name=secondary_blog}
-							{if ($smarty.foreach.secondary_blog.iteration%$listing_secondary_column==1)&&$listing_secondary_column>1}
-							  <div class="row">
-							{/if}
-							<div class="{if $listing_secondary_column<=1}no{/if}col-lg-{floor(12/$listing_secondary_column|escape:'html':'UTF-8')}">
-								
-									{include file="$_listing_blog"}
-							
-								
-								
-							</div>	
-							{if ($smarty.foreach.secondary_blog.iteration%$listing_secondary_column==0||$smarty.foreach.secondary_blog.last)&&$listing_secondary_column>1}
-							</div>
-							{/if}
-						{/foreach}
-					</div>
-					{/if}
 					<div class="top-pagination-content clearfix bottom-line">
-						
-									{include file="$_pagination"}
-						
-							
-						
+                        {include file="$_pagination"}
 					</div>
 				{else}
 					<div class="alert alert-warning">{l s='Sorry, We are update data, please come back later!!!!' mod='leoblog'}</div>
