@@ -11,7 +11,7 @@
 
 <article class="h-full bg-gray-1000 flex flex-col">
 	{if $blog.image && $config->get('listing_show_image',1)}
-		<div class="relative mb-[30px]">
+		<div class="relative">
 			<a href="{$blog.link|escape:'html':'UTF-8'}" class="text-main-dark hover:text-main">
 				<img 
 					src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
@@ -39,7 +39,7 @@
 		</div>
 	{/if}
 
-	<div class="flex flex-col px-[30px] flex-auto">
+	<div class="flex flex-col px-[30px] flex-auto mt-[30px]">
 		{if $config->get('listing_show_title','1')}
 			<h2 class="font-header font-light text-[25px] mb-[30px]">
 				<a href="{$blog.link|escape:'html':'UTF-8'}" class="text-main-dark hover:text-main"
