@@ -38,20 +38,13 @@
 				{if count($leading_blogs)+count($secondary_blogs)>0}
 					{if count($leading_blogs)}
 					<div class="leading-blog">  
-						{foreach from=$leading_blogs item=blog name=leading_blog}
-						 
-							{if ($smarty.foreach.leading_blog.iteration%$listing_leading_column==1)&&$listing_leading_column>1}
-							  <div class="flex -mx-[10px]">
-							{/if}
-							<div class="px-[10px] w-full tablet:w-1/2 {if $listing_leading_column>1}desktop:w-1/{floor(12/$listing_leading_column|escape:'html':'UTF-8')}{/if} mb-[40px]">
-								
-									{include file="$_listing_blog"}
-								
-							</div>	
-							{if ($smarty.foreach.leading_blog.iteration%$listing_leading_column==0||$smarty.foreach.leading_blog.last)&&$listing_leading_column>1}
-								</div>
-							{/if}
-						{/foreach}
+                        <div class="flex flex-wrap -mx-[10px]">
+                            {foreach from=$leading_blogs item=blog name=leading_blog}
+                                <div class="px-[10px] w-full tablet:w-1/2 {if $listing_leading_column>1}desktop:w-1/{floor(12/$listing_leading_column|escape:'html':'UTF-8')}{/if} mb-[40px]">
+                                    {include file="$_listing_blog"}
+                                </div>	
+                            {/foreach}
+                        </div>
 					</div>
 					{/if}
 
