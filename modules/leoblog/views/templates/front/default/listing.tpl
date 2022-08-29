@@ -41,9 +41,9 @@
 						{foreach from=$leading_blogs item=blog name=leading_blog}
 						 
 							{if ($smarty.foreach.leading_blog.iteration%$listing_leading_column==1)&&$listing_leading_column>1}
-							  <div class="flex">
+							  <div class="flex -mx-[10px]">
 							{/if}
-							<div class="w-full {if $listing_leading_column>1}desktop:w-1/{floor(12/$listing_leading_column|escape:'html':'UTF-8')}{/if} mb-[40px]">
+							<div class="px-[10px] w-full tablet:w-1/2 {if $listing_leading_column>1}desktop:w-1/{floor(12/$listing_leading_column|escape:'html':'UTF-8')}{/if} mb-[40px]">
 								
 									{include file="$_listing_blog"}
 								
