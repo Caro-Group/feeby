@@ -22,8 +22,8 @@
 					height="300"
 					alt="" class="w-full h-auto max-h-[300px]" />
 
-				<time class="absolute bottom-0 left-0 m-[30px] p-[9px] bg-white font-header font-italic font-light items-center text-center text-main text-[16px]" datetime="{strtotime($blog.date_add)|date_format:"%Y"|escape:'html':'UTF-8'}">
-					<span class="block text-[47px]">
+				<time class="absolute bottom-0 left-0 m-[30px] p-[9px] bg-white font-header font-italic font-light items-center text-center text-main-dark text-[16px]" datetime="{strtotime($blog.date_add)|date_format:"%Y"|escape:'html':'UTF-8'}">
+					<span class="block text-[47px] leading-[47px]">
 						{assign var='blog_day' value=strtotime($blog.date_add)|date_format:"%e"}
 						{l s=$blog_day d='Shop.Theme.Global'}
 						<!-- day of month -->
@@ -43,7 +43,7 @@
 		<div class="px-[30px]">
 			{if $config->get('listing_show_title','1')}
 				<h2 class="font-header font-light text-[25px] mb-[30px]">
-					<a href="{$blog.link|escape:'html':'UTF-8'}"
+					<a href="{$blog.link|escape:'html':'UTF-8'}" class="text-main-dark"
 						title="{$blog.title|escape:'html':'UTF-8'}">{$blog.title|escape:'html':'UTF-8'}</a>
 				</h2>
 			{/if}
@@ -55,7 +55,7 @@
 			{/if}
 			
 			{if $config->get('listing_show_readmore',1)}
-				<a class="mb-[35px] flex items-center uppercase text-[14px] mr-[16px] leading-[16px]" href="{$blog.link|escape:'html':'UTF-8'}" title="{$blog.title|escape:'html':'UTF-8'}">
+				<a class="mb-[35px] flex items-center uppercase text-[14px] mr-[16px] leading-[16px] text-main-dark" href="{$blog.link|escape:'html':'UTF-8'}" title="{$blog.title|escape:'html':'UTF-8'}">
 					{l s='Read more' d='Shop.Theme.Global'}
 
 					<svg xmlns="http://www.w3.org/2000/svg" width="15" height="13" viewBox="0 0 16 14" fill="none" class="ml-[10px]">
