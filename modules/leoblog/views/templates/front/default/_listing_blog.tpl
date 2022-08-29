@@ -23,7 +23,7 @@
 					alt="" class="w-full h-auto max-h-[300px]" />
 
 				<time class="absolute bottom-0 left-0 m-[30px] p-[9px] bg-white font-header font-italic font-light items-center text-center text-main text-[16px]" datetime="{strtotime($blog.date_add)|date_format:"%Y"|escape:'html':'UTF-8'}">
-					<span class="block font-[47px]">
+					<span class="block text-[47px]">
 						{assign var='blog_day' value=strtotime($blog.date_add)|date_format:"%e"}
 						{l s=$blog_day d='Shop.Theme.Global'}
 						<!-- day of month -->
@@ -32,7 +32,7 @@
 					{assign var='blog_month' value=strtotime($blog.date_add)|date_format:"%m"}
 					{l s=$blog_month d='Shop.Theme.Global'}
 					<!-- month-->
-
+					/
 					{assign var='blog_year' value=strtotime($blog.date_add)|date_format:"%Y"}
 					{l s=$blog_year d='Shop.Theme.Global'}
 					<!-- year -->
@@ -55,13 +55,13 @@
 			{/if}
 			
 			{if $config->get('listing_show_readmore',1)}
-				<a href="{$blog.link|escape:'html':'UTF-8'}" title="{$blog.title|escape:'html':'UTF-8'}"
-					class="uppercase text-[14px] mr-[16px]">{l s='Read more' d='Shop.Theme.Global'}
-					<span>
-						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14" fill="none">
-							<path fill-rule="evenodd" clip-rule="evenodd" d="M9.25 13.3837L15.5 7.13375V6.25L9.25 0L8.36625 0.88375L13.5487 6.0675H0.5V7.3175H13.55L8.365 12.5L9.24875 13.3837H9.25Z" fill="#232322"/>
-						</svg>
-					</span>
+				<a class="mb-[35px]" href="{$blog.link|escape:'html':'UTF-8'}" title="{$blog.title|escape:'html':'UTF-8'}"
+					class="flex items-center uppercase text-[14px] mr-[16px] leading-[16px]">
+					{l s='Read more' d='Shop.Theme.Global'}
+
+					<svg xmlns="http://www.w3.org/2000/svg" width="15" height="13" viewBox="0 0 16 14" fill="none" class="ml-[10px]">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M9.25 13.3837L15.5 7.13375V6.25L9.25 0L8.36625 0.88375L13.5487 6.0675H0.5V7.3175H13.55L8.365 12.5L9.24875 13.3837H9.25Z" fill="#232322"/>
+					</svg>			
 				</a>
 			{/if}
 		</div>
