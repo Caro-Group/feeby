@@ -13,7 +13,7 @@
 	<div class="bg-gray-1000 flex flex-col">
 		
 		{if $blog.image && $config->get('listing_show_image',1)}
-			<div class="relative">
+			<div class="relative mb-[30px]">
 				<img 
 					src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
 					data-lazy
