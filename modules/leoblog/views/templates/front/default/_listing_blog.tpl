@@ -49,7 +49,7 @@
 
 		{if $config->get('listing_show_description','1')}
 			<div class="mb-[38px] text-[16px] leading-[21px]">
-				{$blog.description|strip_tags:'UTF-8'|truncate:160:'...' nofilter}{* HTML form , no escape necessary *}
+				{$blog.description|strip_tags:'UTF-8' nofilter}{* HTML form , no escape necessary *}
 			</div>
 		{/if}
 		
