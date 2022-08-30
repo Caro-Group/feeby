@@ -42,7 +42,7 @@
 	<div class="flex flex-col px-[30px] flex-auto mt-[30px]">
 		{if $config->get('listing_show_title','1')}
 			<h2 class="font-header font-light text-[25px] mb-[30px]">
-				<a href="{$blog.link|escape:'html':'UTF-8'}" class="text-main-dark hover:text-main"
+				<a href="{$blog.link|escape:'html':'UTF-8'}" class="text-main-dark hover:text-main transition"
 					title="{$blog.title|escape:'html':'UTF-8'}">{$blog.title|escape:'html':'UTF-8'}</a>
 			</h2>
 		{/if}
@@ -54,11 +54,11 @@
 		{/if}
 		
 		{if $config->get('listing_show_readmore',1)}
-			<a class="mt-auto mb-[35px] flex items-center uppercase text-[14px] mr-[16px] leading-[16px] text-main-dark hover:text-main" href="{$blog.link|escape:'html':'UTF-8'}" title="{$blog.title|escape:'html':'UTF-8'}">
+			<a class="group transition mt-auto mb-[35px] flex items-center uppercase text-[14px] mr-[16px] leading-[16px] text-main-dark hover:text-main" href="{$blog.link|escape:'html':'UTF-8'}" title="{$blog.title|escape:'html':'UTF-8'}">
 				{l s='Read more' d='Shop.Theme.Global'}
 
 				<svg xmlns="http://www.w3.org/2000/svg" width="15" height="13" viewBox="0 0 16 14" fill="none" class="ml-[10px]">
-					<path fill-rule="evenodd" clip-rule="evenodd" d="M9.25 13.3837L15.5 7.13375V6.25L9.25 0L8.36625 0.88375L13.5487 6.0675H0.5V7.3175H13.55L8.365 12.5L9.24875 13.3837H9.25Z" fill="#232322"/>
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M9.25 13.3837L15.5 7.13375V6.25L9.25 0L8.36625 0.88375L13.5487 6.0675H0.5V7.3175H13.55L8.365 12.5L9.24875 13.3837H9.25Z" fill="#232322" class="group-hover:fill-main transition"/>
 				</svg>			
 			</a>
 		{/if}

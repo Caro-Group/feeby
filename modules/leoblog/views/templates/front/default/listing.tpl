@@ -15,7 +15,7 @@
 		{else}
 			{assign var='no_follow_text' value=''}
 		{/if} 
-		<div id="blog-listing" class="blogs-container box">
+		<div id="blog-listing" class="blogs-container box mb-28">
 			{if isset($filter.type)}
 				{if $filter.type=='tag'}
 					<h1>{l s='Filter Blogs By Tag' mod='leoblog'} : <span>{$filter.tag|escape:'html':'UTF-8'}</span></h1>
