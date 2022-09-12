@@ -27,6 +27,9 @@
                     </a>
                 </p>
             </h2>
+
+            {$HOOK_ORDER_CONFIRMATION nofilter}
+            {$HOOK_PAYMENT_RETURN nofilter}
         </div>
     </section>
 {/block}
