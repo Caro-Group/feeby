@@ -123,7 +123,7 @@
 
                                 </div>
                                 <a href="#" data-product-configurable="pdf"
-                                    class="hidden p-1 focus:text-gray-3000 focus:hover:text-main flex-[0_0_auto] flex items-center text-sm text-gray-3000 hover:text-main transition font-body font-normal tablet:text-base">
+                                    class="p-1 focus:text-gray-3000 focus:hover:text-main flex-[0_0_auto] flex items-center text-sm text-gray-3000 hover:text-main transition font-body font-normal tablet:text-base">
                                     {l s='Pobierz PDF' d='Shop.Theme.Catalog'}
                                     <svg class="ml-2 fill-current " width="20" height="26" viewBox="0 0 20 26"
                                         xmlns="http://www.w3.org/2000/svg">
