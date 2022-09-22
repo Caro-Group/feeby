@@ -145,7 +145,7 @@ $(document).ready(function () {
           "&picture=https://feeby.webo.design/themes/feeby/assets/img/modules/appagebuilder/images/parawany_optimized.jpg" +
           "&size=" +
           encodeURIComponent(height) +
-          " x " +
+          " 𝑥 " +
           encodeURIComponent(width) +
           "&title=" +
           encodeURIComponent(name) +
