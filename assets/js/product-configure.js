@@ -109,9 +109,18 @@ $(document).ready(function () {
       return $(this).data("productConfigurable") == "pdf";
     })
     .on("click", function (e) {
-      $.ajax({
-        url: "/index.php?fc=module&module=webo_pdfgenerator&controller=validation&action=getpdffromwebsite&pdfnamefile=testowanazwa&templatelocation=module:webo_pdfgenerator/views/templates/displayPdfGenerator.tpl&ajax=true&color=ART032_TF_346&size=300cm%20x%20300cm&standard=Flizesila%20g%C5%82adka&texture=Standard&picture=https://feeby.webo.design/themes/feeby/assets/img/modules/appagebuilder/images/parawany_optimized.jpg&size=300%20cm&title=Fototapeta%20Spacer%20dzikich%20z%20wierz%C4%85t%20-%20Andrea%20Hasse&width=300&height=200",
+      $root = $configurableElements.filter(function () {
+        return $(this).data("productConfigurable") == "modal";
       });
+
+      $root.find('[itemprop="name"]');
+      console.log($root);
+
+      window.open(
+        prestashop.urls.base_url +
+          "/index.php?fc=module&module=webo_pdfgenerator&controller=validation&action=getpdffromwebsite&pdfnamefile=testowanazwa&templatelocation=module:webo_pdfgenerator/views/templates/displayPdfGenerator.tpl&ajax=true&color=ART032_TF_346&size=300cm%20x%20300cm&standard=Flizesila%20g%C5%82adka&texture=Standard&picture=https://feeby.webo.design/themes/feeby/assets/img/modules/appagebuilder/images/parawany_optimized.jpg&size=300%20cm&title=Fototapeta%20Spacer%20dzikich%20z%20wierz%C4%85t%20-%20Andrea%20Hasse&width=300&height=200",
+        "_blank"
+      );
     });
 
   if (typeof prestashop !== "undefined") {
