@@ -113,17 +113,23 @@ $(document).ready(function () {
         return $(this).data("productConfigurable") == "modal";
       });
 
-      var name = $configurableElements.filter(function () {
-        return $(this).data("productConfigurable") == "name";
-      }).text;
+      var name = $configurableElements
+        .filter(function () {
+          return $(this).data("productConfigurable") == "name";
+        })
+        .text();
 
-      var width = $configurableElements.filter(function () {
-        return $(this).data("productConfigurable") == "width";
-      }).text;
+      var width = $configurableElements
+        .filter(function () {
+          return $(this).data("productConfigurable") == "width";
+        })
+        .text();
 
-      var height = $configurableElements.filter(function () {
-        return $(this).data("productConfigurable") == "height";
-      }).text;
+      var height = $configurableElements
+        .filter(function () {
+          return $(this).data("productConfigurable") == "height";
+        })
+        .text();
 
       var kolor = $("#group_19 [data-product-attribute]:checked").attr("title");
 
