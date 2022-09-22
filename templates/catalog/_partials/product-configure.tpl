@@ -81,7 +81,7 @@
                                                             {if $part == 5}{l s='Panel E' d='Shop.Theme.Catalog'}{/if}
                                                         </span>
                                                         <span
-                                                            class="part-size text-main-dark font-body tablet:text-base font-light opacity-40" data-product-configurable="width">{l s='100cm' d='Shop.Theme.Catalog'}</span>
+                                                            class="part-size text-main-dark font-body tablet:text-base font-light opacity-40">{l s='100cm' d='Shop.Theme.Catalog'}</span>
                                                     </div>
                                                     <img class="h-auto aspect-[2000/1333] select-none w-[500%] max-w-none {if $part> 1 } -translate-x-{$part - 1}/5 {/if}"
                                                         width="2000" height="1333" src="{$imageOriginal}"
@@ -105,7 +105,7 @@
                                         </g>
                                     </svg>
                                     <span class="font-body text-main-dark tablet:text-base font-light"
-                                        data-product-total-length>
+                                        data-product-total-length data-product-configurable="width">
                                         100cm
                                     </span>
                                 </div>

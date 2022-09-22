@@ -136,7 +136,8 @@ $(document).ready(function () {
       window.open(
         prestashop.urls.base_url +
           "index.php?fc=module&module=webo_pdfgenerator&controller=validation&action=getpdffromwebsite&ajax=true" +
-          "&pdfnamefile=testowanazwa" +
+          "&pdfnamefile=" +
+          encodeURIComponent(prestashop.shop.name + " - " + name) +
           "&color=" +
           encodeURIComponent(kolor) +
           "&standard=Flizelina" +
