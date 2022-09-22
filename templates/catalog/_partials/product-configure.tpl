@@ -18,7 +18,7 @@
                         </button>
 
                         <h1 class="max-w-screen-tablet-wide mx-auto w-full desktop-presta:hidden mt-5 desktop-presta:mt-0 flex-shrink-0 font-header product-detail-name text-xl leading-24px mb-5 pr-[70px] pl-5 tablet:pl-0 tablet:pr-[46px]"
-                            itemprop="name">
+                            itemprop="name" data-product-configurable="name">
                             {block name='page_title'}
                                 {$product.name}
                             {/block}
@@ -62,7 +62,7 @@
                                                         style="fill:#adafba;fill-rule:nonzero" />
                                                 </g>
                                             </svg>
-                                            300cm
+                                            <span data-product-configurable="height">300cm</span>
                                         </span>
                                     </div>
                                     <div class="flex-0 mr-0 tablet:mr-[25px] swiper overflow-hidden max-w-full "
@@ -81,7 +81,7 @@
                                                             {if $part == 5}{l s='Panel E' d='Shop.Theme.Catalog'}{/if}
                                                         </span>
                                                         <span
-                                                            class="part-size text-main-dark font-body tablet:text-base font-light opacity-40">{l s='100cm' d='Shop.Theme.Catalog'}</span>
+                                                            class="part-size text-main-dark font-body tablet:text-base font-light opacity-40" data-product-configurable="width">{l s='100cm' d='Shop.Theme.Catalog'}</span>
                                                     </div>
                                                     <img class="h-auto aspect-[2000/1333] select-none w-[500%] max-w-none {if $part> 1 } -translate-x-{$part - 1}/5 {/if}"
                                                         width="2000" height="1333" src="{$imageOriginal}"

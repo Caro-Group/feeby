@@ -113,12 +113,40 @@ $(document).ready(function () {
         return $(this).data("productConfigurable") == "modal";
       });
 
-      $root.find('[itemprop="name"]');
-      console.log($root);
+      var name = $configurableElements.filter(function () {
+        return $(this).data("productConfigurable") == "name";
+      }).text;
+
+      var width = $configurableElements.filter(function () {
+        return $(this).data("productConfigurable") == "width";
+      }).text;
+
+      var height = $configurableElements.filter(function () {
+        return $(this).data("productConfigurable") == "height";
+      }).text;
+
+      var kolor = $("#group_19 [data-product-attribute]:checked").attr("title");
 
       window.open(
         prestashop.urls.base_url +
-          "/index.php?fc=module&module=webo_pdfgenerator&controller=validation&action=getpdffromwebsite&pdfnamefile=testowanazwa&templatelocation=module:webo_pdfgenerator/views/templates/displayPdfGenerator.tpl&ajax=true&color=ART032_TF_346&size=300cm%20x%20300cm&standard=Flizesila%20g%C5%82adka&texture=Standard&picture=https://feeby.webo.design/themes/feeby/assets/img/modules/appagebuilder/images/parawany_optimized.jpg&size=300%20cm&title=Fototapeta%20Spacer%20dzikich%20z%20wierz%C4%85t%20-%20Andrea%20Hasse&width=300&height=200",
+          "index.php?fc=module&module=webo_pdfgenerator&controller=validation&action=getpdffromwebsite&ajax=true" +
+          "&pdfnamefile=testowanazwa" +
+          "&color=" +
+          encodeURIComponent(kolor) +
+          "&standard=Flizelina" +
+          "&texture=Standard" +
+          "&picture=https://feeby.webo.design/themes/feeby/assets/img/modules/appagebuilder/images/parawany_optimized.jpg" +
+          "&size=" +
+          encodeURIComponent(width) +
+          "cm%20" +
+          encodeURIComponent(height) +
+          "cm" +
+          "&title=" +
+          encodeURIComponent(name) +
+          "&width=" +
+          encodeURIComponent(width) +
+          "&height=" +
+          encodeURIComponent(height),
         "_blank"
       );
     });
