@@ -778,7 +778,7 @@ function customSticky() {
 
   $(document).ready(function () {
     const aboveFiltersContainer = '[data-container="additional-filters"]';
-    const currentFilterContainer = '[data-target="#facet_attribute_group_15"]';
+    const currentFilterContainer = '[data-target="#facet_attribute_group_18"]';
 
     $(document).ajaxComplete(function () {
       if ($(currentFilterContainer).length !== 0) {
@@ -1028,11 +1028,6 @@ $(document).ready(function () {
       loadOnTransitionStart: true,
       checkInView: true,
     },
-    preloadImages: false,
-    lazy: {
-      loadOnTransitionStart: true,
-      checkInView: true,
-    },
     speed: 800,
     slidesPerView: 1,
     spaceBetween: 0,
@@ -1182,10 +1177,12 @@ function handleUpdateZoom(mainSwiper) {
 
 function paginationGoTop() {
   $(".page-list a").on("click", function () {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    if (window.innerWidth >= 768) {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
   });
 }
 $(document).ready(function () {

@@ -43,7 +43,7 @@
             {elseif $page.type === 'next'}
               <li class="w-full flex justify-center tablet:hidden">
                 <a rel="next" href="{$page.url}"
-                  class="flex items-center bg-main border-none font-body font-normal p-2 px-[30px] rounded-[23px] text-white uppercase cursor-pointer next {['disabled' => !$page.clickable, 'js-search-link' => true]|classnames}">
+                  class="flex items-center bg-main hover:bg-main-hover border-none font-body font-normal p-2 px-[30px] rounded-[23px] text-white hover:text-white uppercase cursor-pointer transition duration-150 next {['disabled' => !$page.clickable, 'js-search-link' => true]|classnames}">
                   {l s='Load More Products' d='Shop.Theme.Actions'}
                 </a>
               </li>
