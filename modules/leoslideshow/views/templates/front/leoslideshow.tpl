@@ -95,17 +95,48 @@
 							</div><!-- SLIDE IMAGE END -->
 						{/if}
 
+
+						{if $layer.layer_type == "image"}
+							<!-- LAYER IMAGE BEGIN -->
+							<img src="{$layer.layer_content|escape:'html':'UTF-8'}" alt="" class="img_disable_drag" />
+						{/if}
+						<!-- LAYER IMAGE END -->
+
+
+						{if $layer.layer_type == "video"}
+							<!-- LAYER VIDEO BEGIN -->
+							{if $layer.layer_video_type == "vimeo"}
+								<iframe
+									src="http://player.vimeo.com/video/{$layer.layer_video_id|escape:'html':'UTF-8'}?wmode=transparent&amp;title=0&amp;byline=0&amp;portrait=0;api=1"
+									width="{$layer.layer_video_width|escape:'html':'UTF-8'}"
+									height="{$layer.layer_video_height|escape:'html':'UTF-8'}"></iframe>
+							{else}
+								<iframe src="http://www.youtube.com/embed/{$layer.layer_video_id|escape:'html':'UTF-8'}?wmode=transparent"
+									width="{$layer.layer_video_width|escape:'html':'UTF-8'}"
+									height="{$layer.layer_video_height|escape:'html':'UTF-8'}"></iframe>
+							{/if}
+						{/if}
+						<!-- LAYER VIDEO END -->
+
+
 					</div>
 				{/foreach}
 			{/if}
-		</div>
-		<div class="tablet:hidden swiper-pagination"></div>
-		<div class="hidden tablet:block absolute bottom-16 w-full z-10">
-			<div class="max-w-screen-desktop-wide mx-auto px-16">
-				<i
-					class="ti-arrow-left swiper_banner-button-prev p-3 ml-6 border-2 border-white text-white hover:bg-white hover:text-main-dark rounded-full border-solid transition cursor-pointer"></i>
-				<i
-					class="ti-arrow-right swiper_banner-button-next p-3 ml-6 border-2 border-white text-white hover:bg-white hover:text-main-dark rounded-full border-solid transition cursor-pointer"></i>
-			</div>
-		</div>
+
+		</div><!-- SLIDE IMAGE END -->
+	{/if}
+
+</div>
+{/foreach}
+{/if}
+</div>
+<div class="tablet:hidden swiper-pagination"></div>
+<div class="hidden tablet:block absolute bottom-16 w-full z-10">
+	<div class="max-w-screen-desktop-wide mx-auto px-16">
+		<i
+			class="ti-arrow-left swiper_banner-button-prev p-3 ml-6 border-2 border-white text-white hover:bg-white hover:text-main-dark rounded-full border-solid transition cursor-pointer"></i>
+		<i
+			class="ti-arrow-right swiper_banner-button-next p-3 ml-6 border-2 border-white text-white hover:bg-white hover:text-main-dark rounded-full border-solid transition cursor-pointer"></i>
 	</div>
+</div>
+</div>

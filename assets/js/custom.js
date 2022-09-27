@@ -1028,6 +1028,11 @@ $(document).ready(function () {
       loadOnTransitionStart: true,
       checkInView: true,
     },
+    preloadImages: false,
+    lazy: {
+      loadOnTransitionStart: true,
+      checkInView: true,
+    },
     speed: 800,
     slidesPerView: 1,
     spaceBetween: 0,

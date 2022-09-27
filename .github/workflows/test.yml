@@ -31,7 +31,7 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
           server: 193.107.88.86
-          protocol: ftp
+          protocol: ftps
           username: feeby
           password: ${{ secrets.FTP_TEST_PASS }}
           local-dir: "./"

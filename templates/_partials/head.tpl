@@ -33,6 +33,7 @@
   <title>{block name='head_seo_title'}{$page.meta.title}{/block}</title>
   <meta name="description" content="{block name='head_seo_description'}{$page.meta.description}{/block}">
   <meta name="keywords" content="{block name='head_seo_keywords'}{$page.meta.keywords}{/block}">
+    <meta name="google-site-verification" content="Ay0z4lz4rniVz3tIQ-ELp-6ygY-dbxr3h8XgQMvc4u4" />
   {if $page.meta.robots !== 'index'}
     <meta name="robots" content="{$page.meta.robots}">
   {/if}

@@ -38,6 +38,9 @@
                         <p class="font-light font-body text-sm tablet:text-base mb-0 ">
                             {l s='Order number: ' d='Modules.Payu.Shop'} <a href="{$redirectUrl}" class="font-medium text-main-dark hover:text-main transition"> {$orderPublicId} </a>
                         </p>
+
+                        {$HOOK_ORDER_CONFIRMATION nofilter}
+                        {$HOOK_PAYMENT_RETURN nofilter}
                     {else}
                         {l s='%s canceled%s.' sprintf=['<span class="text-red-500">','</span>'] d='Modules.Payu.Shop'} 
                                 

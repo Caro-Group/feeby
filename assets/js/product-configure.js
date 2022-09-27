@@ -7,16 +7,10 @@ $(document).ready(function () {
   var $configurableModal = $("#productConfigurable");
   var $productConfigurableOptions = $("[data-product-attribute]");
 
-  var imageVariant = $("#main")
-    .find("img#product_original_img")
-    .first()
-    .attr("src");
+  var imageVariant = $("#main").find("img#product_original_img").first().attr("src");
 
   if (typeof imageVariant === "undefined" || !imageVariant.length) {
-    imageVariant = $("#main")
-      .find("img[data-original]")
-      .first()
-      .attr("data-original");
+    imageVariant = $("#main").find("img[data-original]").first().attr("data-original");
   }
 
   $configurableElements
@@ -33,10 +27,7 @@ $(document).ready(function () {
       return parseInt($(this).data("productConfigurable"));
     })
     .each(function () {
-      $(this).data(
-        "productConfigurableId",
-        parseInt($(this).data("productConfigurable"))
-      );
+      $(this).data("productConfigurableId", parseInt($(this).data("productConfigurable")));
       configurableSelected.push({
         id: parseInt($(this).data("productConfigurable")),
         selected: false,
@@ -53,9 +44,7 @@ $(document).ready(function () {
     swiper = productConfigurableSwiper.call(swiperElement[0]);
 
     swiper.on("click", function () {
-      productConfigurableSelect(
-        $(swiper.clickedSlide).data("productConfigurable")
-      );
+      productConfigurableSelect($(swiper.clickedSlide).data("productConfigurable"));
     });
 
     $configurableModal.on("shown.bs.modal", function () {
@@ -71,38 +60,26 @@ $(document).ready(function () {
     return $(this).data("productConfigurable") == "add";
   });
 
-  $("body").on(
-    "click",
-    '.modal [data-button-action="add-to-cart"]',
-    function () {
-      var countConfigurableSelected = configurableSelected.filter(
-        (product) => product.selected === true
-      ).length;
-      if (countConfigurableSelected) {
-        $('.hidden [data-button-action="add-to-cart"]').trigger("click");
-        productConfigurableUnSelectAll();
-        productConfigurableSetState();
-        setTimeout(function () {
-          window.location.assign(prestashop.urls.pages.cart + "?action=show");
-        }, 300);
-      }
-    }
-  );
-
-  $("body").on(
-    "click",
-    '[data-button-action="add-sample-to-cart"]',
-    function () {
-      tempSelectedIds = configurableSelected.filter(
-        (product) => product.selected === true
-      );
+  $("body").on("click", '.modal [data-button-action="add-to-cart"]', function () {
+    var countConfigurableSelected = configurableSelected.filter((product) => product.selected === true).length;
+    if (countConfigurableSelected) {
+      $('.hidden [data-button-action="add-to-cart"]').trigger("click");
       productConfigurableUnSelectAll();
-      productConfigurableWriteState("Próbka"); //TODO: Check why not updating
-      productConfigurableSaveState();
       productConfigurableSetState();
-      $("[data-product-attribute]").eq(6).trigger("click");
+      setTimeout(function () {
+        window.location.assign(prestashop.urls.pages.cart + "?action=show");
+      }, 300);
     }
-  );
+  });
+
+  $("body").on("click", '[data-button-action="add-sample-to-cart"]', function () {
+    tempSelectedIds = configurableSelected.filter((product) => product.selected === true);
+    productConfigurableUnSelectAll();
+    productConfigurableWriteState("Próbka"); //TODO: Check why not updating
+    productConfigurableSaveState();
+    productConfigurableSetState();
+    $("[data-product-attribute]").eq(6).trigger("click");
+  });
 
   $configurableElements
     .filter(function () {
@@ -181,10 +158,7 @@ $(document).ready(function () {
 
   if (typeof prestashop !== "undefined") {
     prestashop.on("updatedProduct", function (event) {
-      var imageVariant = $(event.product_cover_thumbnails)
-        .find("img#product_original_img")
-        .first()
-        .attr("src");
+      var imageVariant = $(event.product_cover_thumbnails).find("img#product_original_img").first().attr("src");
 
       $configurableElements
         .filter(function () {
@@ -216,9 +190,7 @@ function productConfigurableSwiper() {
 }
 
 function productConfigurableSelect(productId) {
-  var configurableSelectedTemp = configurableSelected.filter(
-    (product) => product.selected === true
-  );
+  var configurableSelectedTemp = configurableSelected.filter((product) => product.selected === true);
 
   var index = productId - 1;
 
@@ -234,44 +206,28 @@ function productConfigurableSelect(productId) {
       }
       // check surrounding from left
       else if (index > configurableSelectedTemp[0].id - 1) {
-        for (
-          i = index;
-          i >
-          configurableSelectedTemp[configurableSelectedTemp.length - 1].id - 1;
-          i--
-        ) {
+        for (i = index; i > configurableSelectedTemp[configurableSelectedTemp.length - 1].id - 1; i--) {
           configurableSelected[i].selected = true;
         }
       }
-    } else if (
-      configurableSelectedTemp.length !== 1 &&
-      configurableSelected[index].selected == true
-    ) {
+    } else if (configurableSelectedTemp.length !== 1 && configurableSelected[index].selected == true) {
       // disabling one when clicked on selected edge
       if (
         configurableSelected[index].selected == true &&
         (configurableSelected[index].id == configurableSelectedTemp[0].id ||
-          configurableSelectedTemp[configurableSelectedTemp.length - 1].id ==
-            configurableSelected[index].id)
+          configurableSelectedTemp[configurableSelectedTemp.length - 1].id == configurableSelected[index].id)
       ) {
         configurableSelected[index].selected = false;
       }
       // disabling to sides from inside of selected group
       else {
-        var tempIndex = configurableSelectedTemp.findIndex(
-          (product) => product.id == productId
-        );
+        var tempIndex = configurableSelectedTemp.findIndex((product) => product.id == productId);
         if (tempIndex < Math.trunc(configurableSelectedTemp.length / 2)) {
           for (i = index - 1; i >= configurableSelectedTemp[0].id - 1; i--) {
             configurableSelected[i].selected = false;
           }
         } else {
-          for (
-            i = index + 1;
-            i <
-            configurableSelectedTemp[configurableSelectedTemp.length - 1].id;
-            i++
-          ) {
+          for (i = index + 1; i < configurableSelectedTemp[configurableSelectedTemp.length - 1].id; i++) {
             configurableSelected[i].selected = false;
           }
         }
@@ -306,18 +262,12 @@ function productConfigurableSetState() {
 }
 
 function productConfigurableDisplayLength() {
-  let selectedLength =
-    configurableSelected.filter((product) => product.selected === true).length *
-    100;
-  selectedLength > 0
-    ? selectedLengthElement.text(selectedLength + "cm")
-    : selectedLengthElement.text("");
+  let selectedLength = configurableSelected.filter((product) => product.selected === true).length * 100;
+  selectedLength > 0 ? selectedLengthElement.text(selectedLength + "cm") : selectedLengthElement.text("");
 }
 
 function productConfigurableWriteState($message) {
-  $messageField = $(".product-customization-item")
-    .first()
-    .find(".product-message");
+  $messageField = $(".product-customization-item").first().find(".product-message");
   if (typeof $message === "string") {
     $messageField.val($message);
   } else {
@@ -329,49 +279,31 @@ function productConfigurableWriteState($message) {
         $messageField.val(product.id + "," + $messageField.val());
       }
     });
-    $messageField.val(
-      $messageField.val().substring(0, $messageField.val().length - 1)
-    );
+    $messageField.val($messageField.val().substring(0, $messageField.val().length - 1));
   }
 }
 
 function productConfigurableSaveState() {
   var customizationContainers = $(".product-customization-item");
   customizationContainers.each(function () {
-    var formActionAttribute_url = $(".product-customization form").attr(
-      "action"
-    );
-    var formActionAttribute_name_field = $(this)
-      .find(".product-message")
-      .attr("name");
+    var formActionAttribute_url = $(".product-customization form").attr("action");
+    var formActionAttribute_name_field = $(this).find(".product-message").attr("name");
     var data = {};
-    data[formActionAttribute_name_field] = $(this)
-      .find(".product-message")
-      .val();
+    data[formActionAttribute_name_field] = $(this).find(".product-message").val();
     data["submitCustomizedData"] = 1;
     data["ajax"] = 1;
 
-    $('[data-button-action="add-to-cart"]')
-      .attr("disabled", "disabled")
-      .addClass("adding");
+    $('[data-button-action="add-to-cart"]').attr("disabled", "disabled").addClass("adding");
     $.post(formActionAttribute_url, data, null, "json").done(function (data) {
-      $('[data-button-action="add-to-cart"]')
-        .attr("disabled", false)
-        .removeClass("adding");
+      $('[data-button-action="add-to-cart"]').attr("disabled", false).removeClass("adding");
 
       if (typeof prestashop !== "undefined") {
         prestashop.once("updatedProduct", function (event) {
-          $(".product-actions #product_customization_id").attr(
-            "value",
-            data.id_customization
-          );
+          $(".product-actions #product_customization_id").attr("value", data.id_customization);
         });
       }
 
-      $(".product-actions #product_customization_id").attr(
-        "value",
-        data.id_customization
-      );
+      $(".product-actions #product_customization_id").attr("value", data.id_customization);
     });
 
     return false;
@@ -379,9 +311,7 @@ function productConfigurableSaveState() {
 }
 
 function productConfigurableUpdatePage() {
-  var countConfigurableSelected = configurableSelected.filter(
-    (product) => product.selected === true
-  ).length;
+  var countConfigurableSelected = configurableSelected.filter((product) => product.selected === true).length;
   $('[data-product-attribute="21"]')
     .eq(countConfigurableSelected - 1)
     .trigger("click");

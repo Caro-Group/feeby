@@ -62,24 +62,16 @@
 										class="uppercase hover:text-main transition font-body font-normal text-[10px] tablet:text-sm">
 										{$slider.sub_title|escape:'html':'UTF-8' nofilter}<i class="ti-arrow-right ml-2"></i></p>
 								{/if}
-							</div>
-							{if isset($slider.descript) && !empty($slider.descript)}
-								<div class="descript">{$slider.descript nofilter}{* HTML form , no escape necessary *}</div>
-							{/if}
-							{if $slider.link}
-							</div>
-						</a>
-					{/if}
 
-				{/foreach}
-			</div>
+							{/foreach}
+						</div>
 
-		{/foreach}
-	</div>
-</div>
+					{/foreach}
+				</div>
+		</div>
 
-<style>
-	.slide-content {
-		aspect-ratio: 1;
-	}
+		<style>
+			.slide-content {
+				aspect-ratio: 1;
+			}
 </style>

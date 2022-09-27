@@ -192,7 +192,7 @@ section#main > h1 {
 }
 
 .privacy-policy-sublist > li::before {
-  content: counter(list, lower-alpha) ") ";
+  content: counter(list, lower-alpha) ') ';
   counter-increment: list;
 }
 
@@ -523,7 +523,7 @@ section#main > h1 {
   margin: 25px 0 0 0;
 }
 
-.form-row input[type="checkbox"] {
+.form-row input[type='checkbox'] {
   margin: 0 10px 0 0;
 }
 
@@ -554,13 +554,13 @@ section#main > h1 {
 
 /* Sitemap */
 
-a[title="Strona główna"] + ul.nested {
+a[title='Strona główna'] + ul.nested {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 50px;
 }
 
-a[title="Strona główna"] + ul.nested li {
+a[title='Strona główna'] + ul.nested li {
   width: 250px;
 }
 
@@ -629,7 +629,7 @@ body#category #content.page-not-found .btn {
 }
 
 body#category #content.page-not-found .image-404:after {
-  content: "Brak produktów w tej kategorii";
+  content: 'Brak produktów w tej kategorii';
   margin: 10px;
   display: block;
 }
@@ -657,7 +657,7 @@ body#category #content.page-not-found .image-404:after {
 @media (min-width: 768px) {
   .leo-megamenu .dropdown-menu .menu-title-highlit-pink:after {
     display: block;
-    content: "";
+    content: '';
     position: absolute;
     background: #df1a5b;
     opacity: 0.05;
@@ -672,7 +672,7 @@ body#category #content.page-not-found .image-404:after {
 
 @media (min-width: 1200px) {
   .leo-megamenu .dropdown-menu .menu-title-highlit-pink:after {
-    content: "";
+    content: '';
     position: absolute;
     background: #df1a5b;
     opacity: 0.05;
@@ -687,7 +687,7 @@ body#category #content.page-not-found .image-404:after {
 
 @media (min-width: 1440px) {
   .leo-megamenu .dropdown-menu .menu-title-highlit-pink:after {
-    content: "";
+    content: '';
     position: absolute;
     background: #df1a5b;
     opacity: 0.05;
@@ -848,7 +848,7 @@ body .sidebar #search_filters_wrapper {
   display: none !important;
 }
 
-[disabled="disabled"] {
+[disabled='disabled'] {
   cursor: not-allowed;
 }
 
@@ -859,11 +859,14 @@ body .sidebar #search_filters_wrapper {
     display: none;
   }
 
-  .leo-megamenu .nav.navbar-nav.megamenu > li:first-child.aligned-fullwidth > .dropdown-menu {
+  .leo-megamenu
+    .nav.navbar-nav.megamenu
+    > li:first-child.aligned-fullwidth
+    > .dropdown-menu {
     display: none;
   }
 }
-[disabled="disabled"] {
+[disabled='disabled'] {
   cursor: not-allowed;
 }
 
@@ -905,8 +908,8 @@ body .sidebar #search_filters_wrapper {
 
 #back-top:before {
   position: absolute;
-  content: "\f176";
-  font-family: "FontAwesome";
+  content: '\f176';
+  font-family: 'FontAwesome';
   text-align: center;
   line-height: 40px;
   font-size: 18px;

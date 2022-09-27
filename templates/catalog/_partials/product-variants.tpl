@@ -61,6 +61,14 @@
                     {elseif $group_attribute.html_color_code} class="color w-10 h-10 rounded-[5px]"
                     style="background-color: {$group_attribute.html_color_code}" {/if}>
                     {if $group_attribute.texture}
+                      class="color texture w-full h-20 tablet:h-[120px] mx-auto tablet:mx-0 bg-no-repeat bg-cover rounded-[5px]
+            border-2 border-solid border-white hover:border-white peer-checked:border-main opacity-50
+            peer-checked:opacity-100 transition shadow-none aspect-[4/3] overflow-hidden"
+                    {elseif $group_attribute.html_color_code}
+                      class="color w-10 h-10 rounded-[5px]" style="background-color: {$group_attribute.html_color_code}"
+                    {/if}
+                    >
+                    {if $group_attribute.texture}
                       <picture>
                         <source
                           srcset="{$group_attribute.texture|replace:".png":".webp"|replace:".jpg":".webp"|escape:'html':'UTF-8'}"
