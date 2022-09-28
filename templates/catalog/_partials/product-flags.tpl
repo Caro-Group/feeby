@@ -39,7 +39,7 @@
 			{/if}
 		</li>
 	{/foreach}
-	{assign var="tags" value=Tag::getProductTags(Tools::getValue('id_product'))}
+	{assign var="tags" value=Tag::getProductTags($product['id_product'])}
 	{if isset($tags) && isset($language) && isset($tags[$language.id]) && $tags[$language.id] != ''}
 		{foreach from=$tags[$language.id] key=k item=tag}
 			{if $tag === 'bestseller'}
