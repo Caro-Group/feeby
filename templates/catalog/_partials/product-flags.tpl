@@ -40,7 +40,7 @@
 		</li>
 	{/foreach}
 	{assign var="tags" value=Tag::getProductTags(Tools::getValue('id_product'))}
-	{if isset($tags) && isset($tags[$language.id]) && $tags[$language.id] != ''}
+	{if isset($tags) && isset($language) && isset($tags[$language.id]) && $tags[$language.id] != ''}
 		{foreach from=$tags[$language.id] key=k item=tag}
 			{if $tag === 'bestseller'}
 				<li class="leading-5 mr-1 px-2 mb-1 rounded-full text-center bg-main-dark uppercase">
