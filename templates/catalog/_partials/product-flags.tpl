@@ -43,7 +43,7 @@
 	{if isset($tags) && isset($tags[$language.id]) && $tags[$language.id] != ''}
 		{foreach from=$tags[$language.id] key=k item=tag}
 			{if $tag === 'bestseller'}
-				<li class="leading-5 mr-1 px-2 mb-1 rounded-full text-center bg-gray-3000 uppercase">
+				<li class="leading-5 mr-1 px-2 mb-1 rounded-full text-center bg-main-dark uppercase">
 					{l s='Bestseller' d='Shop.Theme.Global'}
 				</li>
 			{/if}
