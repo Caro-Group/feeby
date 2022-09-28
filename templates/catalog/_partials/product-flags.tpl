@@ -24,7 +24,7 @@
  *}
 <ul class="product-flags flex flex-wrap text-white mt-1 mr-12 z-20">
 	{foreach from=$product.flags item=flag}
-		<li class="leading-5 mr-1 px-2 mb-1 rounded-full text-center 
+		<li class="leading-5 mr-1 px-2 mb-1 rounded-full text-center uppercase
 				{if $flag.type == 'discount' }
 					bg-main 
 				{elseif $flag.type == 'new'}
@@ -34,11 +34,19 @@
 				{/if}">
 
 			{if $flag.type == 'discount'}
-				PROMOCJA
-			{else}
+			{l s='Discount' d='Shop.Theme.Global'} {else}
 				{$flag.label}
 			{/if}
 		</li>
 	{/foreach}
-	{debug}
+	{assign var="tags" value=Tag::getProductTags(Tools::getValue('id_product'))}
+	{if isset($tags) && isset($tags[$language.id]) && $tags[$language.id] != ''}
+		{foreach from=$tags[$language.id] key=k item=tag}
+			{if $tag === 'bestseller'}
+				<li class="leading-5 mr-1 px-2 mb-1 rounded-full text-center bg-gray-3000 uppercase">
+					{l s='Bestseller' d='Shop.Theme.Global'}
+				</li>
+			{/if}
+		{/foreach}
+	{/if}
 </ul>
