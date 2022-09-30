@@ -45,7 +45,8 @@
 									data-src="{$slider.image_link|escape:'html':'UTF-8'}"
 									alt="{if isset($slider.title)}{$slider.title|escape:'html':'UTF-8'}{/if}" width="70" height="70" />
 							{/if}
-						</div>
+						{/if}
+					</div>
 
 						{if isset($slider.title) && !empty($slider.title)}
 							<h2 class="mb-6 font-normal">{$slider.title|escape:'html':'UTF-8' nofilter}</h2>
@@ -62,9 +63,9 @@
 						{/if}
 
 
-					{/foreach}
-				</div>
+				{/foreach}
+			</div>
 
-			{/foreach}
-		</div>
+		{/foreach}
 	</div>
+</div>
