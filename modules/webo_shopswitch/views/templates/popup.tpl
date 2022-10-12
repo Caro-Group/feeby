@@ -23,7 +23,13 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 <div class="hidden fixed inset-0 max-h-screen flex justify-center items-center p-5 bg-[#282828]/50">
-    <div class="flex flec-col items-center w-full max-w-[468px] bg-white rounded-[5px]">
+    <div class="flex flec-col items-center w-full max-w-[468px] bg-white rounded-[5px] p-7">
+        <h3 class="font-header italic font-light mt-5 mb-8">
+            {l s='Language' d='Shop.Theme.Global'}
+        </h3>
+
+
+
         <div class="language-selector">
             <span>{$current_language.name_simple}</span>
             <ul>
@@ -34,6 +40,10 @@
                 {/foreach}
             </ul>
         </div>
+
+        <h3 class="font-header italic font-light mt-10 mb-8">
+            {l s='Currency' d='Shop.Theme.Global'}
+        </h3>
 
 
         <div class="currency-selector">
