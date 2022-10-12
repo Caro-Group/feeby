@@ -25,13 +25,12 @@
 
 
 <div id="Webo">
-    <div class="language-currency flex items-center ml-[50px] desktop-presta:ml-[100px]">
+    <div class="language-currency flex items-center ml-[50px] mr-5 desktop-presta:ml-[100px] group cursor-pointer">
         <img class="flex-grow-0 flex-shrink-0 mr-2.5 rounded-full border border-solid border-gray-2000"
             src="../modules/webo_shopswitch/views/img/PL.png" height="30" width="30">
-        <span class="text-sm uppercase text-main-dark">{$current_language.id_lang}</span>
+        <span class="text-sm uppercase text-main-dark">{$current_language.name_simple}</span>
         <span
-            class="text-sm uppercase text-main-dark before:content-['|'] before:text-md before:text-main-dark before:mx-[7px]">
-            {$current_currency.iso_code}</span>
+            class="text-sm uppercase text-main-dark before:content-['|'] before:text-lg before:leading-[16px] before:text-main-dark before:mx-[7px]">{$current_currency.iso_code}</span>
     </div>
     {include file='module:webo_shopswitch/views/templates/popup.tpl'}
 </div>

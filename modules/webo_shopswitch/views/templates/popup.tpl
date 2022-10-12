@@ -24,7 +24,7 @@
  *}
 <div class="hidden fixed inset-0 max-h-screen flex justify-center items-center p-5 bg-[#282828]/50">
     <div class="flex flec-col items-center w-full max-w-[468px] bg-white rounded-[5px] p-7">
-        <h3 class="font-header italic font-light mt-5 mb-8">
+        <h3 class="text-2xl font-header italic font-light mt-5 mb-8">
             {l s='Language' d='Shop.Theme.Global'}
         </h3>
 
@@ -34,14 +34,19 @@
             <span>{$current_language.name_simple}</span>
             <ul>
                 {foreach from=$languages item=language}
-                    <li {if $language.id_lang == $current_language.id_lang} class="current" {/if}>
-                        <a href="{$link->getLanguageLink($language.id_lang)}">{$language.name_simple}</a>
-                    </li>
+                    <input class="peer appearance-none" type="radio" id="languageChoice" name="language"
+                        value="{$link->getLanguageLink($language.id_lang)}"
+                        {if $language.id_lang == $current_language.id_lang} checked {/if}>
+                    <label for="languageChoice" class="flex flec-col items-center mb-2.5">
+                        <img class="flex-grow-0 flex-shrink-0 mr-2.5 rounded-full border border-solid border-gray-2000 peer-checked:border-main transition duration-200"
+                            src="../img/PL.png" height="50" width="50">
+                        <span class="text-base font-normal text-main-dark">{$language.name_simple}</span>
+                    </label>
                 {/foreach}
             </ul>
         </div>
 
-        <h3 class="font-header italic font-light mt-10 mb-8">
+        <h3 class="text-2xl font-header italic font-light mt-10 mb-8">
             {l s='Currency' d='Shop.Theme.Global'}
         </h3>
 
