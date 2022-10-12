@@ -22,23 +22,20 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
-<div class="hidden fixed inset-0 max-h-screen flex justify-center items-center p-5 bg-[#282828]/50">
-    <div class="flex flec-col items-center w-full max-w-[468px] bg-white rounded-[5px] p-7">
-        <h3 class="text-2xl font-header italic font-light mt-5 mb-8">
+<div class="hidden fixed z-50 inset-0 max-h-screen flex justify-center items-center p-5 bg-[#282828]/50">
+    <div class="flex flex-col items-center w-full max-w-[468px] bg-white rounded-[5px] p-7">
+        <h3 class="text-2xl font-header italic font-light mt-5 mb-8 text-main-dark">
             {l s='Language' d='Shop.Theme.Global'}
         </h3>
-
-
-
-        <div class="language-selector">
+        <div class="language-selector mb-8">
             <ul class="flex flex-wrap justify-center">
                 {foreach from=$languages item=language}
-                    <li class="flex flex-col items-center basis-1/3">
-                        <input class="group appearance-none" type="radio" id="languageChoice" name="language"
+                    <li class="basis-1/3 flex justify-center flex-grow-0">
+                        <input class="appearance-none mx-auto" type="radio" id="{$language.id_lang}" name="language"
                             value="{$link->getLanguageLink($language.id_lang)}"
                             {if $language.id_lang == $current_language.id_lang} checked {/if}>
-                        <label for="languageChoice" class="flex flec-col items-center mb-2.5">
-                            <img class="flex-grow-0 flex-shrink-0 mr-2.5 rounded-full border border-solid border-gray-2000 group-checked:border-main transition duration-200"
+                        <label for="{$language.id_lang}" class="flex flex-col items-center mb-2.5">
+                            <img class="flex-grow-0 flex-shrink-0 mr-2.5 rounded-full border border-solid border-gray-2000 transition duration-200"
                                 src="/modules/webo_shopswitch/views/img/PL.png" height="50" width="50">
                             <span class="text-base font-normal text-main-dark">{$language.name_simple}</span>
                         </label>
@@ -47,16 +44,25 @@
             </ul>
         </div>
 
-        <h3 class="text-2xl font-header italic font-light mt-10 mb-8">
+        <hr class="w-full">
+
+        <h3 class="text-2xl font-header italic font-light my-8 text-main-dark">
             {l s='Currency' d='Shop.Theme.Global'}
         </h3>
 
 
         <div class="currency-selector">
-            <ul>
+            <ul class="flex flex-wrap justify-center">
                 {foreach from=$currencies item=currency}
-                    <li {if $currency.current} class="current" {/if}>
-                        <a rel="nofollow" href="{$currency.url}">{$currency.iso_code} {$currency.sign}</a>
+                    <li class="basis-1/3 flex justify-center flex-grow-0">
+                        <input class="appearance-none mx-auto" type="radio" id="{$currency.url}" name="language"
+                            value="{$currency.url}" {if $currency.current} checked {/if}>
+                        <label for="{$currency.url}" class="flex flex-col items-center mb-2.5">
+                            <span
+                                class="h-[50px] w-[50px] flex justify-center items-center flex-grow-0 flex-shrink-0 mr-2.5 rounded-full border border-solid border-gray-2000 text-2xl font-header text-main-dark transition duration-200"
+                                src="/modules/webo_shopswitch/views/img/PL.png">{$currency.sign}</span>
+                            <span class="text-base font-normal text-main-dark">{$currency.iso_code}</span>
+                        </label>
                     </li>
                 {/foreach}
             </ul>
