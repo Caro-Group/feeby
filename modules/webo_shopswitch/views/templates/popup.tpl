@@ -31,17 +31,18 @@
 
 
         <div class="language-selector">
-            <span>{$current_language.name_simple}</span>
-            <ul>
+            <ul class="flex flex-wrap justify-center">
                 {foreach from=$languages item=language}
-                    <input class="peer appearance-none" type="radio" id="languageChoice" name="language"
-                        value="{$link->getLanguageLink($language.id_lang)}"
-                        {if $language.id_lang == $current_language.id_lang} checked {/if}>
-                    <label for="languageChoice" class="flex flec-col items-center mb-2.5">
-                        <img class="flex-grow-0 flex-shrink-0 mr-2.5 rounded-full border border-solid border-gray-2000 peer-checked:border-main transition duration-200"
-                            src="../img/PL.png" height="50" width="50">
-                        <span class="text-base font-normal text-main-dark">{$language.name_simple}</span>
-                    </label>
+                    <li class="flex flex-col items-center basis-1/3">
+                        <input class="group appearance-none" type="radio" id="languageChoice" name="language"
+                            value="{$link->getLanguageLink($language.id_lang)}"
+                            {if $language.id_lang == $current_language.id_lang} checked {/if}>
+                        <label for="languageChoice" class="flex flec-col items-center mb-2.5">
+                            <img class="flex-grow-0 flex-shrink-0 mr-2.5 rounded-full border border-solid border-gray-2000 group-checked:border-main transition duration-200"
+                                src="/modules/webo_shopswitch/views/img/PL.png" height="50" width="50">
+                            <span class="text-base font-normal text-main-dark">{$language.name_simple}</span>
+                        </label>
+                    </li>
                 {/foreach}
             </ul>
         </div>
@@ -52,7 +53,6 @@
 
 
         <div class="currency-selector">
-            <span>{$current_currency.iso_code} {$current_currency.sign}</span>
             <ul>
                 {foreach from=$currencies item=currency}
                     <li {if $currency.current} class="current" {/if}>
