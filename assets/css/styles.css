@@ -662,6 +662,6 @@ img:not([src]) {
   visibility: hidden;
 }
 .language-selector input:checked + label img,
-.currency-selector input:checked + label img {
+.currency-selector input:checked + label currency-sign {
   @apply border-main;
 }

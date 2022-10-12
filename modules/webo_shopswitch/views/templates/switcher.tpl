@@ -30,9 +30,8 @@
             src="/modules/webo_shopswitch/views/img/PL.png" height="30" width="30">
         <span
             class="text-sm uppercase text-main-dark group-hover:text-main transition duration-200">{$current_language.name_simple}</span>
-        <span
-            class="text-sm uppercase text-main-dark group-hover:text-main-dark before:content-['|'] before:text-lg before:leading-[16px]
-before:text-main-dark before:mx-[7px] group-hover:text-main transition duration-200">{$current_currency.iso_code}</span>
+        <span class="text-sm uppercase text-main-dark group-hover:text-main before:content-['|'] before:text-lg before:leading-[16px]
+before:text-main-dark before:mx-[7px]  transition duration-200">{$current_currency.iso_code}</span>
     </div>
     {include file='module:webo_shopswitch/views/templates/popup.tpl'}
 </div>

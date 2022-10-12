@@ -27,15 +27,15 @@
         <h3 class="text-2xl font-header italic font-light mt-5 mb-8 text-main-dark">
             {l s='Language' d='Shop.Theme.Global'}
         </h3>
-        <div class="language-selector mb-8">
+        <div class="language-selector mb-8 w-full">
             <ul class="flex flex-wrap justify-center">
                 {foreach from=$languages item=language}
-                    <li class="basis-1/3 flex justify-center flex-grow-0">
-                        <input class="appearance-none mx-auto" type="radio" id="{$language.id_lang}" name="language"
+                    <li class="basis-1/3">
+                        <input class="hidden" type="radio" id="{$language.id_lang}" name="language"
                             value="{$link->getLanguageLink($language.id_lang)}"
                             {if $language.id_lang == $current_language.id_lang} checked {/if}>
-                        <label for="{$language.id_lang}" class="flex flex-col items-center mb-2.5">
-                            <img class="flex-grow-0 flex-shrink-0 mr-2.5 rounded-full border border-solid border-gray-2000 transition duration-200"
+                        <label for="{$language.id_lang}" class="flex flex-col items-center cursor-pointer">
+                            <img class="flex-grow-0 flex-shrink-0 mb-2 rounded-full border border-solid border-gray-2000 transition duration-200"
                                 src="/modules/webo_shopswitch/views/img/PL.png" height="50" width="50">
                             <span class="text-base font-normal text-main-dark">{$language.name_simple}</span>
                         </label>
@@ -51,15 +51,15 @@
         </h3>
 
 
-        <div class="currency-selector">
+        <div class="currency-selector w-full">
             <ul class="flex flex-wrap justify-center">
                 {foreach from=$currencies item=currency}
-                    <li class="basis-1/3 flex justify-center flex-grow-0">
-                        <input class="appearance-none mx-auto" type="radio" id="{$currency.url}" name="language"
-                            value="{$currency.url}" {if $currency.current} checked {/if}>
-                        <label for="{$currency.url}" class="flex flex-col items-center mb-2.5">
+                    <li class="basis-1/3">
+                        <input class="hidden" type="radio" id="{$currency.url}" name="currency" value="{$currency.url}"
+                            {if $currency.current} checked {/if}>
+                        <label for="{$currency.url}" class="flex flex-col items-center cursor-pointer">
                             <span
-                                class="h-[50px] w-[50px] flex justify-center items-center flex-grow-0 flex-shrink-0 mr-2.5 rounded-full border border-solid border-gray-2000 text-2xl font-header text-main-dark transition duration-200"
+                                class="currency-sign h-[50px] w-[50px] flex justify-center items-center flex-grow-0 flex-shrink-0 mb-2 rounded-full border border-solid border-gray-2000 text-2xl font-header text-main-dark transition duration-200"
                                 src="/modules/webo_shopswitch/views/img/PL.png">{$currency.sign}</span>
                             <span class="text-base font-normal text-main-dark">{$currency.iso_code}</span>
                         </label>
