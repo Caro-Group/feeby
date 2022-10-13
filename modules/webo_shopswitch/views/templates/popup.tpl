@@ -52,13 +52,13 @@
         </h3>
 
 
-        <div class="currency-selector w-full">
+        <div class="currency-selector mb-8 w-full">
             <ul class="flex flex-wrap justify-center">
                 {foreach from=$currencies item=currency}
                     <li class="basis-1/3">
-                        <input class="hidden" type="radio" id="{$currency.url}" name="currency" value="{$currency.url}"
+                        <input class="hidden" type="radio" id="{$currency.id}" name="currency" value="{$currency.id}"
                             {if $currency.current} checked {/if}>
-                        <label for="{$currency.url}" class="flex flex-col items-center cursor-pointer w-min mx-auto">
+                        <label for="{$currency.id}" class="flex flex-col items-center cursor-pointer w-min mx-auto">
                             <span
                                 class="currency-sign h-[50px] w-[50px] flex justify-center items-center flex-grow-0 flex-shrink-0 mb-2 rounded-full border border-solid border-gray-2000 text-2xl font-header text-main-dark transition duration-200"
                                 src="/modules/webo_shopswitch/views/img/PL.png">{$currency.sign}</span>
@@ -68,5 +68,11 @@
                 {/foreach}
             </ul>
         </div>
+        <button
+            class="bg-main hover:bg-main-hover duration-150 border-0 rounded-full text-white px-4 py-3 text-sm uppercase whitespace-nowrap font-body cursor-pointer"
+            name="submitNewsletter" type="submit" value="Subskrybuj">
+            Subskrybuj
+            <i class="ti-arrow-right text-white ml-2"></i>
+        </button>
     </div>
 </div>
