@@ -24,7 +24,7 @@
  *}
 <div id="shopswitch-popup"
     class="popup-hidden fixed z-50 inset-0 max-h-screen flex justify-center items-center p-5 bg-[#282828]/50 transition duration-300">
-    <div class="modal relative w-full max-w-[468px] bg-white rounded-[5px] p-7 transition duration-300">
+    <div class="shopswitch-modal relative w-full max-w-[468px] bg-white rounded-[5px] p-7 transition duration-300">
         <div class="absolute top-5 right-5 cursor-pointer group">
             <svg id="shopswitch-popup-close"
                 class="text-main-dark group-hover:text-main fill-current transition duration-200" width="28" height="28"
@@ -82,9 +82,8 @@
                 </ul>
             </div>
             <button
-                class="bg-main hover:bg-main-hover duration-150 border-0 rounded-full text-white px-4 py-3 text-sm uppercase whitespace-nowrap font-body cursor-pointer"
-                name="submitNewsletter" type="submit" value="Subskrybuj">
-                Subskrybuj
+                class="bg-main hover:bg-main-hover duration-150 border-0 rounded-full text-white px-4 py-3 text-sm uppercase whitespace-nowrap font-body cursor-pointer">
+                {l s='Save selection' d='Shop.Theme.Global'}
                 <i class="ti-arrow-right text-white ml-2"></i>
             </button>
         </form>

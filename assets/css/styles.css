@@ -670,6 +670,6 @@ img:not([src]) {
   @apply opacity-0 pointer-events-none z-0;
 }
 
-.popup-hidden .modal {
+.popup-hidden .shopswitch-modal {
   @apply transform translate-y-2.5;
 }
