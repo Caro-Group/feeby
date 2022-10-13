@@ -663,12 +663,7 @@ img:not([src]) {
 }
 .language-selector input:checked + label img,
 .currency-selector input:checked + label .currency-sign {
-  @apply border-main border-2;
-}
-
-.language-selector input:checked + label img,
-.currency-selector input:checked + label .currency-sign {
-  @apply border-main border-2;
+  @apply border-main;
 }
 
 .popup-hidden {
