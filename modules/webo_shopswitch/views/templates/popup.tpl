@@ -49,7 +49,7 @@
                             <label for="{$language.id_lang}"
                                 class="flex flex-col items-center cursor-pointer w-min mx-auto relative">
                                 <span
-                                    class="check absolute top-[-7px] left-[-7px] w-[25px] h-[25px] flex justify-center items-center rounded-full bg-main transform scale-50 opacity-0">
+                                    class="check absolute top-[-7px] left-[-7px] w-[25px] h-[25px] flex justify-center items-center rounded-full bg-main transform scale-50 opacity-0 transition duration-200">
                                     <svg width="15" height="11" viewBox="0 0 15 11" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -57,7 +57,7 @@
                                             fill="white" />
                                     </svg>
                                 </span>
-                                <img class="flex-grow-0 flex-shrink-0 mb-2 rounded-full border border-solid border-gray-2000 object-cover transition duration-200 overflow-hidden"
+                                <img class="flex-grow-0 flex-shrink-0 mb-2 rounded-full border border-solid border-gray-2000 object-cover transition-all duration-200 overflow-hidden"
                                     src="/img/l/{$language.id_lang}.jpg" height="50" width="50">
                                 <span class="text-base font-normal text-main-dark">{$language.name_simple}</span>
                             </label>
@@ -80,9 +80,18 @@
                             <input class="hidden" type="radio" id="{$currency.iso_code}" name="currency"
                                 value="{$currency.id}" {if $currency.current} checked {/if}>
                             <label for="{$currency.iso_code}"
-                                class="flex flex-col items-center cursor-pointer w-min mx-auto">
+                                class="flex flex-col items-center cursor-pointer w-min mx-auto relative">
                                 <span
-                                    class="currency-sign h-[50px] w-[50px] flex justify-center items-center flex-grow-0 flex-shrink-0 mb-2 rounded-full border border-solid border-gray-2000 text-2xl font-header text-main-dark transition duration-200"
+                                    class="check absolute top-[-7px] left-[-7px] w-[25px] h-[25px] flex justify-center items-center rounded-full bg-main transform scale-50 opacity-0 transition duration-200">
+                                    <svg width="15" height="11" viewBox="0 0 15 11" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M14.726 0.267938C15.0911 0.625442 15.0914 1.20536 14.7266 1.56322L5.38255 10.7314C5.20735 10.9033 4.96963 10.9999 4.72173 11C4.47382 11.0001 4.23606 10.9036 4.06077 10.7317L0.273719 7.01968C-0.0911912 6.662 -0.0911912 6.08208 0.273719 5.7244C0.638628 5.36671 1.23026 5.36671 1.59517 5.7244L4.72116 8.78849L13.4045 0.268586C13.7693 -0.0892756 14.3609 -0.0895654 14.726 0.267938Z"
+                                            fill="white" />
+                                    </svg>
+                                </span>
+                                <span
+                                    class="currency-sign h-[50px] w-[50px] flex justify-center items-center flex-grow-0 flex-shrink-0 mb-2 rounded-full border border-solid border-gray-2000 text-2xl font-header text-main-dark transition-all duration-200"
                                     src="/modules/webo_shopswitch/views/img/PL.png">{$currency.sign}</span>
                                 <span class="text-base font-normal text-main-dark">{$currency.iso_code}</span>
                             </label>
