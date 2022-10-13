@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let currPart = formData.get("currency");
     togglePopup();
     if (langPart && currPart) {
-      window.location = langPart + "?SubmitCurrency=1&id_currency=" + currPart;
+      window.location.replace(langPart + "?SubmitCurrency=1&id_currency=" + currPart);
     }
   });
 });
