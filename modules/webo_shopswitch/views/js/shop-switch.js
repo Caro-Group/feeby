@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let langPart = formData.get("language");
     let currPart = formData.get("currency");
     if (langPart && currPart) {
-      window.location = langPart + "&id_currency=" + currPart;
+      window.location.replace(langPart + "&id_currency=" + currPart);
     }
   });
 });
