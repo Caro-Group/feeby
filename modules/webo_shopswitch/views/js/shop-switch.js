@@ -11,8 +11,9 @@ document.addEventListener("DOMContentLoaded", function () {
     let formData = new FormData(popupForm);
     let langPart = formData.get("language");
     let currPart = formData.get("currency");
+    togglePopup();
     if (langPart && currPart) {
-      window.location = langPart + "&id_currency=" + currPart;
+      window.location = langPart + "?SubmitCurrency=1&id_currency=" + currPart;
     }
   });
 });
