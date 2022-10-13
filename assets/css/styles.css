@@ -663,7 +663,12 @@ img:not([src]) {
 }
 .language-selector input:checked + label img,
 .currency-selector input:checked + label .currency-sign {
-  @apply border-main;
+  @apply border-main border-2;
+}
+
+.language-selector input:checked + label img,
+.currency-selector input:checked + label .currency-sign {
+  @apply border-main border-2;
 }
 
 .popup-hidden {
@@ -672,4 +677,9 @@ img:not([src]) {
 
 .popup-hidden .shopswitch-modal {
   @apply transform -translate-y-2.5;
+}
+
+.language-selector input:checked + label .check,
+.currency-selector input:checked + label .check {
+  @apply scale-100 opacity-100;
 }
