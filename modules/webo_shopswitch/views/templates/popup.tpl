@@ -24,10 +24,11 @@
  *}
 <div id="shopswitch-popup"
     class="popup-hidden fixed z-50 inset-0 max-h-screen flex justify-center items-center p-5 bg-[#282828]/50 transition duration-300">
-    <div class="relative w-full max-w-[468px] bg-white rounded-[5px] p-7">
+    <div class="modal relative w-full max-w-[468px] bg-white rounded-[5px] p-7 transition duration-300">
         <div class="absolute top-5 right-5 cursor-pointer group">
-            <svg id="shopswitch-popup-close" class="text-main-dark group-hover:text-main fill-current" width="28"
-                height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg id="shopswitch-popup-close"
+                class="text-main-dark group-hover:text-main fill-current transition duration-200" width="28" height="28"
+                viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                     d="M0.703126 27.2031C0.314801 26.8148 0.314801 26.1852 0.703126 25.7969L25.7969 0.703135C26.1852 0.314809 26.8148 0.314809 27.2031 0.703134C27.5914 1.09146 27.5914 1.72106 27.2031 2.10938L2.10937 27.2031C1.72105 27.5914 1.09145 27.5914 0.703126 27.2031Z" />
                 <path
@@ -47,7 +48,7 @@
                                 {if $language.id_lang == $current_language.id_lang} checked {/if}>
                             <label for="{$language.id_lang}"
                                 class="flex flex-col items-center cursor-pointer w-min mx-auto">
-                                <img class="flex-grow-0 flex-shrink-0 mb-2 rounded-full border border-solid border-gray-2000 transition duration-200"
+                                <img class="flex-grow-0 flex-shrink-0 mb-2 rounded-full border border-solid border-gray-2000 transition duration-200 overflow-hidden"
                                     src="/modules/webo_shopswitch/views/img/PL.png" height="50" width="50">
                                 <span class="text-base font-normal text-main-dark">{$language.name_simple}</span>
                             </label>
@@ -67,9 +68,10 @@
                 <ul class="flex flex-wrap justify-center">
                     {foreach from=$currencies item=currency}
                         <li class="basis-1/3">
-                            <input class="hidden" type="radio" id="{$currency.id}" name="currency" value="{$currency.id}"
-                                {if $currency.current} checked {/if}>
-                            <label for="{$currency.id}" class="flex flex-col items-center cursor-pointer w-min mx-auto">
+                            <input class="hidden" type="radio" id="{$currency.iso_code}" name="currency"
+                                value="{$currency.id}" {if $currency.current} checked {/if}>
+                            <label for="{$currency.iso_code}"
+                                class="flex flex-col items-center cursor-pointer w-min mx-auto">
                                 <span
                                     class="currency-sign h-[50px] w-[50px] flex justify-center items-center flex-grow-0 flex-shrink-0 mb-2 rounded-full border border-solid border-gray-2000 text-2xl font-header text-main-dark transition duration-200"
                                     src="/modules/webo_shopswitch/views/img/PL.png">{$currency.sign}</span>

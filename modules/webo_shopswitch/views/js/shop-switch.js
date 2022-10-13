@@ -4,12 +4,16 @@ document.addEventListener("DOMContentLoaded", function () {
   const popupForm = document.querySelector("#shopswitch-popup form");
   const shopChangeButton = document.querySelector("#shopswitch-popup button");
 
-  popupOpen.addEventListener("click", togglePopup());
-  popupClose.addEventListener("click", togglePopup());
+  popupOpen.addEventListener("click", togglePopup);
+  popupClose.addEventListener("click", togglePopup);
 
   shopChangeButton.addEventListener("click", () => {
     let formData = new FormData(popupForm);
-    window.location = "https://feeby.webo.design/en/";
+    let langPart = formData.get("language");
+    let currPart = formData.get("currency");
+    if (langPart && currPart) {
+      window.location = langPart + "&id_currency=" + currPart;
+    }
   });
 });
 
