@@ -665,3 +665,7 @@ img:not([src]) {
 .currency-selector input:checked + label .currency-sign {
   @apply border-main;
 }
+
+.popup-hidden {
+  @apply opacity-0 pointer-events-none z-0;
+}
