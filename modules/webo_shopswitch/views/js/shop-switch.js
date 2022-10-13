@@ -1,15 +1,19 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const popupToggleButton = document.querySelector("#shopswitch-toggle");
-  const shopChangeButton = document.querySelector("#shopswitch-toggle button");
-  const popupModal = document.querySelector("#shopswitch-popup");
+  const popupOpen = document.querySelector("#shopswitch-toggle");
+  const popupClose = document.querySelector("#shopswitch-popup-close");
   const popupForm = document.querySelector("#shopswitch-popup form");
+  const shopChangeButton = document.querySelector("#shopswitch-popup button");
 
-  popupToggleButton.addEventListener("click", () => {
-    popupModal.classList.toggle("popup-hidden");
-  });
+  popupOpen.addEventListener("click", togglePopup());
+  popupClose.addEventListener("click", togglePopup());
 
   shopChangeButton.addEventListener("click", () => {
     let formData = new FormData(popupForm);
     window.location = "https://feeby.webo.design/en/";
   });
 });
+
+function togglePopup() {
+  const popupModal = document.querySelector("#shopswitch-popup");
+  popupModal.classList.toggle("popup-hidden");
+}
