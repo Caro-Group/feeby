@@ -669,3 +669,7 @@ img:not([src]) {
 .popup-hidden {
   @apply opacity-0 pointer-events-none z-0;
 }
+
+.popup-hidden .modal {
+  @apply transform translate-y-2.5;
+}
