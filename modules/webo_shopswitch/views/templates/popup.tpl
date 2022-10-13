@@ -48,8 +48,8 @@
                                 {if $language.id_lang == $current_language.id_lang} checked {/if}>
                             <label for="{$language.id_lang}"
                                 class="flex flex-col items-center cursor-pointer w-min mx-auto">
-                                <img class="flex-grow-0 flex-shrink-0 mb-2 rounded-full border border-solid border-gray-2000 transition duration-200 overflow-hidden"
-                                    src="/modules/webo_shopswitch/views/img/PL.png" height="50" width="50">
+                                <img class="flex-grow-0 flex-shrink-0 mb-2 rounded-full border border-solid border-gray-2000 object-cover transition duration-200 overflow-hidden"
+                                    src="/img/l/{$language.id_lang}.jpg" height="50" width="50">
                                 <span class="text-base font-normal text-main-dark">{$language.name_simple}</span>
                             </label>
                         </li>

@@ -671,5 +671,5 @@ img:not([src]) {
 }
 
 .popup-hidden .shopswitch-modal {
-  @apply transform translate-y-2.5;
+  @apply transform -translate-y-2.5;
 }
