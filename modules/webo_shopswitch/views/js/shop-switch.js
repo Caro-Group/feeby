@@ -22,5 +22,5 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function togglePopup(popup) {
-  popup.classList.add("popup-hidden");
+  popup.classList.toggle("popup-hidden");
 }
