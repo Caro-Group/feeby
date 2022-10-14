@@ -46,7 +46,7 @@
                         <li class="basis-1/3">
                             <input class="hidden" type="radio" id="{$shop.lang.id_lang}" name="language"
                                 value="{$protocol}{$shop.domain_ssl}{$shop.uri}{$shop.lang.iso_code}"
-                                {if $shop.lang.id_lang == $current_language.id_lang} checked {/if}>
+                                {if $shop.id_shop == $currentShop} checked {/if}>
                             <label for="{$shop.lang.id_lang}"
                                 class="flex flex-col items-center cursor-pointer w-min mx-auto relative">
                                 <span
@@ -58,8 +58,14 @@
                                             fill="white" />
                                     </svg>
                                 </span>
-                                <img class="flex-grow-0 flex-shrink-0 mb-2 rounded-full border border-solid border-gray-2000 object-cover transition-all duration-200 overflow-hidden"
-                                    src="/img/l/{$shop.lang.id_lang}.jpg" height="50" width="50">
+                                {if isset($shop.lang.id_lang)}
+                                    <img class="flex-grow-0 flex-shrink-0 mb-2 rounded-full border border-solid border-gray-2000 object-cover transition-all duration-200 overflow-hidden"
+                                        height="50" width="50" src="/img/l/{$shop.lang.id_lang}.jpg"
+                                        alt="{$shop.lang.language_code}" title="{$shop.lang.name}" />
+                                {else}
+                                    <img class="flex-grow-0 flex-shrink-0 mb-2 rounded-full border border-solid border-gray-2000 object-cover transition-all duration-200 overflow-hidden"
+                                        height="50" width="50" src="/img/l/none.jpg" alt="Flag no found">
+                                {/if}
                                 <span class="text-base font-normal text-main-dark">{$shop.lang.name_simple}</span>
                             </label>
                         </li>
