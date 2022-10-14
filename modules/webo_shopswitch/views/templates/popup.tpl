@@ -44,8 +44,8 @@
                     {foreach from=$languages item=language}
                         <li class="basis-1/3">
                             <input class="hidden" type="radio" id="{$language.id_lang}" name="language"
-                                value="{$link->getLanguageLink($language.id_lang)}"
-                                {if $language.id_lang == $current_language.id_lang} checked {/if}>
+                                value="{$language.id_lang}" {if $language.id_lang == $current_language.id_lang} checked
+                                {/if}>
                             <label for="{$language.id_lang}"
                                 class="flex flex-col items-center cursor-pointer w-min mx-auto relative">
                                 <span
