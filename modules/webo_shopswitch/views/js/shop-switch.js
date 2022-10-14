@@ -6,9 +6,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const shopChangeButton = document.querySelector("#shopswitch-popup button");
 
   popupOpen.forEach((element) => {
-    element.addEventListener("click", togglePopup(popupModal));
+    element.addEventListener("click", () => {
+      togglePopup(popupModal);
+    });
   });
-  popupClose.addEventListener("click", togglePopup(popupModal));
+  popupClose.addEventListener("click", () => {
+    togglePopup(popupModal);
+  });
 
   shopChangeButton.addEventListener("click", () => {
     let formData = new FormData(popupForm);
