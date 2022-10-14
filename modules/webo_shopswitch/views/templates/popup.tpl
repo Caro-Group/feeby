@@ -24,7 +24,8 @@
  *}
 <div id="shopswitch-popup"
     class="popup-hidden fixed z-50 inset-0 max-h-screen flex justify-center items-center p-5 bg-[#282828]/50 transition duration-300">
-    <div class="shopswitch-modal relative w-full max-w-[468px] bg-white rounded-[5px] p-7 transition duration-300">
+    <div
+        class="shopswitch-modal relative w-full max-w-[468px] bg-white rounded-[5px] p-7 transition duration-300 max-h-full overflow-y-auto">
         <div class="absolute top-5 right-5 cursor-pointer group">
             <svg id="shopswitch-popup-close"
                 class="text-main-dark group-hover:text-main fill-current transition duration-200" width="28" height="28"
@@ -41,12 +42,12 @@
             </h3>
             <div class="language-selector mb-8 w-full">
                 <ul class="flex flex-wrap justify-center">
-                    {foreach from=$languages item=language}
+                    {foreach from=$shops item=shop}
                         <li class="basis-1/3">
-                            <input class="hidden" type="radio" id="{$language.id_lang}" name="language"
-                                value="{$language.iso_code}" {if $language.id_lang == $current_language.id_lang} checked
-                                {/if}>
-                            <label for="{$language.id_lang}"
+                            <input class="hidden" type="radio" id="{$shop.lang.id_lang}" name="language"
+                                value="{$protocol}{$shop.domain_ssl}{$shop.uri}{$shop.lang.iso_code}"
+                                {if $shop.id_shop == $currentShop} checked {/if}>
+                            <label for="{$shop.lang.id_lang}"
                                 class="flex flex-col items-center cursor-pointer w-min mx-auto relative">
                                 <span
                                     class="check absolute top-[-7px] left-[-7px] w-[25px] h-[25px] flex justify-center items-center rounded-full bg-main transform scale-50 opacity-0 transition duration-200">
@@ -57,9 +58,15 @@
                                             fill="white" />
                                     </svg>
                                 </span>
-                                <img class="flex-grow-0 flex-shrink-0 mb-2 rounded-full border border-solid border-gray-2000 object-cover transition-all duration-200 overflow-hidden"
-                                    src="/img/l/{$language.id_lang}.jpg" height="50" width="50">
-                                <span class="text-base font-normal text-main-dark">{$language.name_simple}</span>
+                                {if isset($shop.lang.id_lang)}
+                                    <img class="flex-grow-0 flex-shrink-0 mb-2 rounded-full border border-solid border-gray-2000 object-cover transition-all duration-200 overflow-hidden"
+                                        height="50" width="50" src="/img/l/{$shop.lang.id_lang}.jpg"
+                                        alt="{$shop.lang.language_code}" title="{$shop.lang.name}" />
+                                {else}
+                                    <img class="flex-grow-0 flex-shrink-0 mb-2 rounded-full border border-solid border-gray-2000 object-cover transition-all duration-200 overflow-hidden"
+                                        height="50" width="50" src="/img/l/none.jpg" alt="Flag no found">
+                                {/if}
+                                <span class="text-base font-normal text-main-dark">{$shop.lang.name_simple}</span>
                             </label>
                         </li>
                     {/foreach}
