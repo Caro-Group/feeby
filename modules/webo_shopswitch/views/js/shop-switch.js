@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let currPart = formData.get("currency");
     togglePopup();
     if (langPart && currPart && prestashop) {
-      window.location.href = prestashop.urls.base_url + "/" + langPart + "/?SubmitCurrency=1&id_currency=" + currPart;
+      window.location.href = prestashop.urls.base_url + langPart + "/?SubmitCurrency=1&id_currency=" + currPart;
     }
   });
 });
