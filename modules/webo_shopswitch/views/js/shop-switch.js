@@ -25,6 +25,10 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+window.addEventListener("pageshow", () => {
+  document.querySelector("#shopswitch-popup form").reset();
+});
+
 function togglePopup(popup) {
   popup.classList.toggle("popup-hidden");
 }
