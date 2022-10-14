@@ -44,29 +44,32 @@
                 <ul class="flex flex-wrap justify-center">
                     {foreach from=$shops item=shop}
                         <li class="basis-1/3">
-                            <input class="hidden" type="radio" id="{$shop.lang.id_lang}" name="language"
-                                value="{$protocol}{$shop.domain_ssl}{$shop.uri}{$shop.lang.iso_code}"
-                                {if $shop.id_shop == $currentShop} checked {/if}>
-                            <label for="{$shop.lang.id_lang}"
+                            <input class="hidden" type="radio" id="{$shop.id_shop}" name="language"
+                                value="{$protocol}{$shop.domain_ssl}{$shop.uri}"
+                                {if $shop.id_shop == Context::getContext()->shop->id} checked {/if}>
+                            <label for="{$shop.id_shop}"
                                 class="flex flex-col items-center cursor-pointer w-min mx-auto relative">
-                                <span
-                                    class="check absolute top-[-7px] left-[-7px] w-[25px] h-[25px] flex justify-center items-center rounded-full bg-main transform scale-50 opacity-0 transition duration-200">
-                                    <svg width="15" height="11" viewBox="0 0 15 11" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M14.726 0.267938C15.0911 0.625442 15.0914 1.20536 14.7266 1.56322L5.38255 10.7314C5.20735 10.9033 4.96963 10.9999 4.72173 11C4.47382 11.0001 4.23606 10.9036 4.06077 10.7317L0.273719 7.01968C-0.0911912 6.662 -0.0911912 6.08208 0.273719 5.7244C0.638628 5.36671 1.23026 5.36671 1.59517 5.7244L4.72116 8.78849L13.4045 0.268586C13.7693 -0.0892756 14.3609 -0.0895654 14.726 0.267938Z"
-                                            fill="white" />
-                                    </svg>
-                                </span>
-                                {if isset($shop.lang.id_lang)}
-                                    <img class="flex-grow-0 flex-shrink-0 mb-2 rounded-full border border-solid border-gray-2000 object-cover transition-all duration-200 overflow-hidden"
-                                        height="50" width="50" src="/img/l/{$shop.lang.id_lang}.jpg"
-                                        alt="{$shop.lang.language_code}" title="{$shop.lang.name}" />
-                                {else}
-                                    <img class="flex-grow-0 flex-shrink-0 mb-2 rounded-full border border-solid border-gray-2000 object-cover transition-all duration-200 overflow-hidden"
-                                        height="50" width="50" src="/img/l/none.jpg" alt="Flag no found">
-                                {/if}
-                                <span class="text-base font-normal text-main-dark">{$shop.lang.name_simple}</span>
+                                <div class="relative flex-grow-0 flex-shrink-0">
+                                    {if isset($shop.lang.id_lang)}
+                                        <img class="mb-2 rounded-full border border-solid border-gray-2000 object-cover transition-all duration-200 overflow-hidden"
+                                            height="50" width="50" src="/img/l/{$shop.lang.id_lang}.jpg"
+                                            alt="{$shop.lang.language_code}" title="{$shop.lang.name}" />
+                                    {else}
+                                        <img class="mb-2 rounded-full border border-solid border-gray-2000 object-cover transition-all duration-200 overflow-hidden"
+                                            height="50" width="50" src="/img/l/none.jpg" alt="Flag no found">
+                                    {/if}
+                                    <span
+                                        class="check absolute top-[-7px] left-[-7px] w-[25px] h-[25px] flex justify-center items-center rounded-full bg-main transform scale-50 opacity-0 transition duration-200">
+                                        <svg width="15" height="11" viewBox="0 0 15 11" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M14.726 0.267938C15.0911 0.625442 15.0914 1.20536 14.7266 1.56322L5.38255 10.7314C5.20735 10.9033 4.96963 10.9999 4.72173 11C4.47382 11.0001 4.23606 10.9036 4.06077 10.7317L0.273719 7.01968C-0.0911912 6.662 -0.0911912 6.08208 0.273719 5.7244C0.638628 5.36671 1.23026 5.36671 1.59517 5.7244L4.72116 8.78849L13.4045 0.268586C13.7693 -0.0892756 14.3609 -0.0895654 14.726 0.267938Z"
+                                                fill="white" />
+                                        </svg>
+                                    </span>
+                                </div>
+
+                                <span class="text-base font-normal text-main-dark">{$shop.lang.name}</span>
                             </label>
                         </li>
                     {/foreach}
@@ -84,9 +87,9 @@
                 <ul class="flex flex-wrap justify-center">
                     {foreach from=$currencies item=currency}
                         <li class="basis-1/3">
-                            <input class="hidden" type="radio" id="{$currency.iso_code}" name="currency"
+                            <input class="hidden" type="radio" id="shop_{$currency.iso_code}" name="currency"
                                 value="{$currency.id}" {if $currency.current} checked {/if}>
-                            <label for="{$currency.iso_code}"
+                            <label for="shop_{$currency.iso_code}"
                                 class="flex flex-col items-center cursor-pointer w-min mx-auto relative">
                                 <span
                                     class="check absolute top-[-7px] left-[-7px] w-[25px] h-[25px] flex justify-center items-center rounded-full bg-main transform scale-50 opacity-0 transition duration-200">
