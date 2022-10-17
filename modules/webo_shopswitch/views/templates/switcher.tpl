@@ -23,7 +23,7 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 
-{* tablet-medium:flex *}
+{* tablet-medium:flex !border-hidden *}
 
 <div id="Webo">
     <div id="shopswitch-toggle"
