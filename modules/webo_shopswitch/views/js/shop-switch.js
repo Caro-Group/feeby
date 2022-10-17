@@ -45,10 +45,10 @@ function moveSwitcher(windowWidth,switcher){
 
   if (switcher.length>0) {
     if (!mobilePlaceholder && windowWidth < 992  ) {
+      switcher.forEach((element)=>{
+        element.classList.add('hidden')
+      })     
       document.querySelector('button.navbar-toggler').addEventListener('click',()=>{
-        switcher.forEach((element)=>{
-          element.classList.add('hidden')
-        })     
         moveSwitcher(windowWidth,switcher)
         switcher.forEach((element)=>{
           element.classList.remove('hidden')
@@ -63,6 +63,7 @@ function moveSwitcher(windowWidth,switcher){
     })     
   }else if(desktopPlaceholder.querySelector('#shopswitch-toggle') == null){
     switcher.forEach((element)=>{
+      element.classList.remove('hidden')
       desktopPlaceholder.appendChild(element)
     })     
     
