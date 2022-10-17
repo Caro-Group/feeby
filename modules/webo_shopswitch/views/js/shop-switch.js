@@ -5,6 +5,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const popupForm = document.querySelector("#shopswitch-popup form");
   const shopChangeButton = document.querySelector("#shopswitch-popup button");
 
+  popupClose.addEventListener("click", () => {
+    togglePopup(popupModal);
+  });
+
   popupOpen.forEach((element) => {
     element.addEventListener("click", () => {
       togglePopup(popupModal);
@@ -16,10 +20,6 @@ document.addEventListener("DOMContentLoaded", function () {
   })
 
   moveSwitcher(window.innerWidth,popupOpen)
-
-  popupClose.addEventListener("click", () => {
-    togglePopup(popupModal);
-  });
 
   shopChangeButton.addEventListener("click", () => {
     let formData = new FormData(popupForm);
