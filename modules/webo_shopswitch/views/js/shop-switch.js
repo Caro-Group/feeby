@@ -5,27 +5,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const popupForm = document.querySelector("#shopswitch-popup form");
   const shopChangeButton = document.querySelector("#shopswitch-popup button");
 
-  moveSwitcher(window.innerWidth,popupOpen)
-  popupOpen = document.querySelectorAll("#shopswitch-toggle");
+  popupClose.addEventListener("click", () => {
+    togglePopup(popupModal);
+  });
+
   popupOpen.forEach((element) => {
     element.addEventListener("click", () => {
       togglePopup(popupModal);
     });
-  });
-
-  window.addEventListener('resize',()=>{
-    moveSwitcher(window.innerWidth,popupOpen)
-    popupOpen = document.querySelectorAll("#shopswitch-toggle");
-    popupOpen.forEach((element) => {
-      element.addEventListener("click", () => {
-        togglePopup(popupModal);
-      });
-    });
-  
-  })
-
-  popupClose.addEventListener("click", () => {
-    togglePopup(popupModal);
   });
 
   shopChangeButton.addEventListener("click", () => {
@@ -37,6 +24,12 @@ document.addEventListener("DOMContentLoaded", function () {
       window.location.href = langPart + "?SubmitCurrency=1&id_currency=" + currPart;
     }
   });
+
+  window.addEventListener("resize", () => {
+    moveSwitcher(window.innerWidth, popupOpen);
+  });
+
+  moveSwitcher(window.innerWidth, popupOpen);
 });
 
 window.addEventListener("pageshow", () => {
@@ -47,35 +40,31 @@ function togglePopup(popup) {
   popup.classList.toggle("popup-hidden");
 }
 
-function moveSwitcher(windowWidth,switcher){
-  const mobilePlaceholder = document.querySelector(".off-canvas-nav-megamenu #shopswitch-mobile")
-  const desktopPlaceholder = document.querySelector("#Webo-shopswitch")
+function moveSwitcher(windowWidth, switcher) {
+  const mobilePlaceholder = document.querySelector(".off-canvas-nav-megamenu #shopswitch-mobile");
+  const desktopPlaceholder = document.querySelector("#Webo-shopswitch");
 
-  if (switcher.length>0) {
-    if (!mobilePlaceholder && windowWidth < 992  ) {
-      switcher.forEach((element)=>{
-        element.classList.add('hidden')
-      })     
-      document.querySelector('button.navbar-toggler').addEventListener('click',()=>{
-        moveSwitcher(windowWidth,switcher)
-        switcher.forEach((element)=>{
-          element.classList.remove('hidden')
-        })     
-
-      })
-
+  if (switcher.length > 0) {
+    if (!mobilePlaceholder && windowWidth < 992) {
+      switcher.forEach((element) => {
+        element.classList.add("hidden");
+      });
+      document.querySelector("button.navbar-toggler").addEventListener("click", () => {
+        moveSwitcher(windowWidth, switcher);
+        switcher.forEach((element) => {
+          element.classList.remove("hidden");
+        });
+      });
     }
-  if (windowWidth < 992 && mobilePlaceholder.querySelector('#shopswitch-toggle') == null) {
-    switcher.forEach((element)=>{
-      mobilePlaceholder.appendChild(element)
-    })     
-  }else if(desktopPlaceholder.querySelector('#shopswitch-toggle') == null){
-    switcher.forEach((element)=>{
-      element.classList.remove('hidden')
-      desktopPlaceholder.appendChild(element)
-    })     
-    
+    if (windowWidth < 992 && mobilePlaceholder.querySelector("#shopswitch-toggle") == null) {
+      switcher.forEach((element) => {
+        mobilePlaceholder.appendChild(element);
+      });
+    } else if (windowWidth >= 992 && desktopPlaceholder.querySelector("#shopswitch-toggle") == null) {
+      switcher.forEach((element) => {
+        element.classList.remove("hidden");
+        desktopPlaceholder.appendChild(element);
+      });
+    }
   }
-}
-
 }

@@ -680,5 +680,5 @@ img:not([src]) {
 }
 
 .link-hidden a{
-  @apply hidden
+  @apply !hidden
 }
