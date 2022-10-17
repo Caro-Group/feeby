@@ -15,12 +15,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  window.addEventListener('resize',()=>{
-    moveSwitcher(window.innerWidth,popupOpen)  
-  })
-
-  moveSwitcher(window.innerWidth,popupOpen)
-
   shopChangeButton.addEventListener("click", () => {
     let formData = new FormData(popupForm);
     let langPart = formData.get("language");
@@ -30,6 +24,13 @@ document.addEventListener("DOMContentLoaded", function () {
       window.location.href = langPart + "?SubmitCurrency=1&id_currency=" + currPart;
     }
   });
+  
+  window.addEventListener('resize',()=>{
+    moveSwitcher(window.innerWidth,popupOpen)  
+  })
+
+  moveSwitcher(window.innerWidth,popupOpen)
+
 });
 
 window.addEventListener("pageshow", () => {
