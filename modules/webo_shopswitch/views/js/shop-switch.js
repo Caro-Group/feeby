@@ -6,6 +6,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const shopChangeButton = document.querySelector("#shopswitch-popup button");
 
   moveSwitcher(window.innerWidth,popupOpen)
+  popupOpen.forEach((element) => {
+    element.addEventListener("click", () => {
+      togglePopup(popupModal);
+    });
+  });
 
   window.addEventListener('resize',()=>{
     moveSwitcher(window.innerWidth,popupOpen)  
