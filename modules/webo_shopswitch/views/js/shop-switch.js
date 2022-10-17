@@ -1,21 +1,29 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const popupOpen = document.querySelectorAll("#shopswitch-toggle");
+  let popupOpen = document.querySelectorAll("#shopswitch-toggle");
   const popupClose = document.querySelector("#shopswitch-popup-close");
   const popupModal = document.querySelector("#shopswitch-popup");
   const popupForm = document.querySelector("#shopswitch-popup form");
   const shopChangeButton = document.querySelector("#shopswitch-popup button");
 
   moveSwitcher(window.innerWidth,popupOpen)
-
-  window.addEventListener('resize',()=>{
-    moveSwitcher(window.innerWidth,popupOpen)
-  })
-
+  popupOpen = document.querySelectorAll("#shopswitch-toggle");
   popupOpen.forEach((element) => {
     element.addEventListener("click", () => {
       togglePopup(popupModal);
     });
   });
+
+  window.addEventListener('resize',()=>{
+    moveSwitcher(window.innerWidth,popupOpen)
+    popupOpen = document.querySelectorAll("#shopswitch-toggle");
+    popupOpen.forEach((element) => {
+      element.addEventListener("click", () => {
+        togglePopup(popupModal);
+      });
+    });
+  
+  })
+
   popupClose.addEventListener("click", () => {
     togglePopup(popupModal);
   });
