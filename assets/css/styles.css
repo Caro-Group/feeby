@@ -678,3 +678,7 @@ img:not([src]) {
 .currency-selector input:checked + label .check {
   @apply scale-100 opacity-100;
 }
+
+.link-hidden a{
+  @apply hidden
+}
