@@ -1,15 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const mobilePlaceholder = document.querySelector(".off-canvas-nav-megamenu #shopswitch-mobile")
-  const desktopPlaceholder = document.querySelector("#Webo-shopswitch")
-
   const popupOpen = document.querySelectorAll("#shopswitch-toggle");
   const popupClose = document.querySelector("#shopswitch-popup-close");
   const popupModal = document.querySelector("#shopswitch-popup");
   const popupForm = document.querySelector("#shopswitch-popup form");
   const shopChangeButton = document.querySelector("#shopswitch-popup button");
 
+  moveSwitcher(window.innerWidth,popupOpen)
+
   window.addEventListener('resize',()=>{
-    moveSwitcher(window.innerWidth,mobilePlaceholder,desktopPlaceholder,popupOpen)
+    moveSwitcher(window.innerWidth,popupOpen)
   })
 
   popupOpen.forEach((element) => {
@@ -40,8 +39,24 @@ function togglePopup(popup) {
   popup.classList.toggle("popup-hidden");
 }
 
-function moveSwitcher(windowWidth,mobilePlaceholder,desktopPlaceholder,switcher){
+function moveSwitcher(windowWidth,switcher){
+  const mobilePlaceholder = document.querySelector(".off-canvas-nav-megamenu #shopswitch-mobile")
+  const desktopPlaceholder = document.querySelector("#Webo-shopswitch")
+
   if (switcher.length>0) {
+    if (!mobilePlaceholder && windowWidth < 992  ) {
+      document.querySelector('button.navbar-toggler').addEventListener('click',()=>{
+        switcher.forEach((element)=>{
+          element.classList.add('hidden')
+        })     
+        moveSwitcher(windowWidth,switcher)
+        switcher.forEach((element)=>{
+          element.classList.remove('hidden')
+        })     
+
+      })
+
+    }
   if (windowWidth < 992 && mobilePlaceholder.querySelector('#shopswitch-toggle') == null) {
     switcher.forEach((element)=>{
       mobilePlaceholder.appendChild(element)
