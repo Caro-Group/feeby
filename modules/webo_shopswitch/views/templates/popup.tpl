@@ -23,7 +23,7 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 <div id="shopswitch-popup"
-    class="popup-hidden fixed z-50 inset-0 max-h-screen flex justify-center items-center p-5 bg-[#282828]/50 transition duration-300">
+    class="popup-hidden fixed z-[9999] inset-0 max-h-screen flex justify-center items-center p-5 bg-[#282828]/50 transition duration-300">
     <div
         class="shopswitch-modal relative w-full max-w-[468px] bg-white rounded-[5px] p-7 transition duration-300 max-h-full overflow-y-auto">
         <div class="absolute top-5 right-5 cursor-pointer group">
