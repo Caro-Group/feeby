@@ -6,22 +6,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const shopChangeButton = document.querySelector("#shopswitch-popup button");
 
   moveSwitcher(window.innerWidth,popupOpen)
-  popupOpen = document.querySelectorAll("#shopswitch-toggle");
-  popupOpen.forEach((element) => {
-    element.addEventListener("click", () => {
-      togglePopup(popupModal);
-    });
-  });
 
   window.addEventListener('resize',()=>{
-    moveSwitcher(window.innerWidth,popupOpen)
-    popupOpen = document.querySelectorAll("#shopswitch-toggle");
-    popupOpen.forEach((element) => {
-      element.addEventListener("click", () => {
-        togglePopup(popupModal);
-      });
-    });
-  
+    moveSwitcher(window.innerWidth,popupOpen)  
   })
 
   popupClose.addEventListener("click", () => {
@@ -69,7 +56,7 @@ function moveSwitcher(windowWidth,switcher){
     switcher.forEach((element)=>{
       mobilePlaceholder.appendChild(element)
     })     
-  }else if(desktopPlaceholder.querySelector('#shopswitch-toggle') == null){
+  }else if(windowWidth >= 992 && desktopPlaceholder.querySelector('#shopswitch-toggle') == null){
     switcher.forEach((element)=>{
       element.classList.remove('hidden')
       desktopPlaceholder.appendChild(element)
