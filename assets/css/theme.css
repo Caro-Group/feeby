@@ -10145,7 +10145,6 @@ div.active-hover ul > li:hover > .dropdown-menu {
     transform: translateX(0);
     }
   .off-canvas-active #page {
-    position: fixed;
     margin: 0 auto;
     max-width: 100%;
     width: 100%; }
