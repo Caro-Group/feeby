@@ -27,7 +27,7 @@
 
 <div id="Webo-shopswitch">
     <div id="shopswitch-toggle"
-        class="language-currency flex items-center ml-[50px] mr-5 desktop-presta:ml-[100px] group cursor-pointer">
+        class="language-currency flex items-center tablet-medium:ml-[50px] mr-5 desktop-presta:ml-[100px] group cursor-pointer">
         <img class="flex-grow-0 flex-shrink-0 mr-2.5 rounded-full border border-solid border-gray-2000 group-hover:border-main  object-cover transition duration-200"
             src="/img/l/{$current_language.id_lang}.jpg" height="30" width="30">
         <span class="text-sm uppercase text-main-dark group-hover:text-main transition
