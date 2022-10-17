@@ -53,6 +53,8 @@ function moveSwitcher(windowWidth,switcher){
         switcher.forEach((element)=>{
           element.classList.remove('hidden')
         })     
+        popupOpen = document.querySelectorAll("#shopswitch-toggle");
+
 
       })
 
