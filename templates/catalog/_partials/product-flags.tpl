@@ -22,9 +22,9 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
-    <ul class="product-flags flex flex-wrap text-white mt-1 mr-12 z-20">
-		{foreach from=$product.flags item=flag}
-			<li class="leading-5 mr-1 px-2 mb-1 rounded-full text-center 
+<ul class="product-flags flex flex-wrap text-white mt-1 mr-12 z-20">
+	{foreach from=$product.flags item=flag}
+		<li class="leading-5 mr-1 px-2 mb-1 rounded-full text-center uppercase
 				{if $flag.type == 'discount' }
 					bg-main 
 				{elseif $flag.type == 'new'}
@@ -33,11 +33,20 @@
 					bg-gray-3000	
 				{/if}">
 
-				{if $flag.type == 'discount'}
-					PROMOCJA
-				{else}	
-					{$flag.label}
-				{/if}
-			</li>
+			{if $flag.type == 'discount'}
+			{l s='Discount' d='Shop.Theme.Global'} {else}
+				{$flag.label}
+			{/if}
+		</li>
+	{/foreach}
+	{assign var="tags" value=Tag::getProductTags($product['id_product'])}
+	{if isset($tags) && isset($language) && isset($tags[$language.id]) && $tags[$language.id] != ''}
+		{foreach from=$tags[$language.id] key=k item=tag}
+			{if $tag === 'bestseller'}
+				<li class="leading-5 mr-1 px-2 mb-1 rounded-full text-center bg-main-dark uppercase">
+					{l s='Bestseller' d='Shop.Theme.Global'}
+				</li>
+			{/if}
 		{/foreach}
-	</ul>
+	{/if}
+</ul>

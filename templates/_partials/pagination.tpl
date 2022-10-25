@@ -33,30 +33,32 @@
 
   <div class="col-xs-12 col-md-6 col-lg-8 mt-8 mb-[53px] tablet:mt-16 tablet:mb-[90px] mx-auto">
     {block name='pagination_page_list'}
-     {if $pagination.should_be_displayed}
-      <ul class="page-list clearfix text-md-right text-xs-center flex justify-center">
-        {foreach from=$pagination.pages item="page"}
-          <li  class="{if $page.current}current relative after:-ml-4 after:absolute after:bg-main after:block after:-bottom-2 after:content-[''] after:h-1 after:left-1/2 after:rounded-full after:w-8 js-search-link text-inherit {/if} font-normal hover:text-main-dark text-base text-gray-3000 transition">
+      {if $pagination.should_be_displayed}
+        <ul class="page-list clearfix text-md-right text-xs-center flex justify-center">
+          {foreach from=$pagination.pages item="page"}
             {if $page.type === 'spacer'}
-              <span class="spacer text-gray-3000">&hellip;</span>
-            {else}
-              <a
-                rel="{if $page.type === 'previous'}prev{elseif $page.type === 'next'}next{else}nofollow{/if}"
-                href="{$page.url}"
-                class="text-inherit p-1 mx-2.5  {if $page.type === 'previous'}previous {elseif $page.type === 'next'}next {/if}{['disabled' => !$page.clickable, 'js-search-link' => true]|classnames}"
-              >
-                {if $page.type === 'previous'}
-                  {* <i class="fa fa-long-arrow-left"></i><span>{l s='Previous' d='Shop.Theme.Actions'}</span> *}
-                {elseif $page.type === 'next'}
-                  {* <span>{l s='Next' d='Shop.Theme.Actions'}</span><i class="fa fa-long-arrow-right"></i> *}
-                {else}
+              <li class="hidden tablet:block">
+                <span class="spacer text-gray-3000 text-base">&hellip;</span>
+              </li>
+            {elseif $page.type === 'next'}
+              <li class="w-full flex justify-center tablet:hidden">
+                <a rel="next" href="{$page.url}"
+                  class="flex items-center bg-main hover:bg-main-hover border-none font-body font-normal p-2 px-[30px] rounded-[23px] text-white hover:text-white uppercase cursor-pointer transition duration-150 next {['disabled' => !$page.clickable, 'js-search-link' => true]|classnames}">
+                  {l s='Load More Products' d='Shop.Theme.Actions'}
+                </a>
+              </li>
+            {else if $page.type != 'previous'}
+              <li
+                class="{if $page.current}current relative after:-ml-4 after:absolute after:bg-main after:block
+                  after:-bottom-2 after:content-[''] after:h-1 after:left-1/2 after:rounded-full after:w-8 js-search-link text-inherit {/if} font-normal hover:text-main-dark text-base text-gray-3000 hidden tablet:block transition">
+                <a rel="nofollow" href="{$page.url}"
+                  class="text-inherit p-1 mx-2.5 {['disabled' => !$page.clickable, 'js-search-link' => true]|classnames}">
                   {$page.page}
-                {/if}
-              </a>
+                </a>
+              </li>
             {/if}
-          </li>
-        {/foreach}
-      </ul>
+          {/foreach}
+        </ul>
       {/if}
     {/block}
   </div>
