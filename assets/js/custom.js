@@ -9,7 +9,7 @@
  * A template should always ship with an empty custom.js
  */
 $(document).ready(function () {
-  $("form#leosearchtopbox").submit(function (e) {
+  $("form#leosearchtopbox").on("submit", function (e) {
     e.preventDefault();
     var value = $(e.target).find("[name=search_query]").val();
     $('#search_widget input[name="s"]').val(value);
