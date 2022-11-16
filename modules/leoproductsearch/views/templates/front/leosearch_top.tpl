@@ -19,9 +19,7 @@
 <!-- Block search module -->
 <div id="leo_search_block_top" class="w-full exclusive{if $en_search_by_cat} search-by-category{/if}">
 		<form method="get" action="{$link->getPageLink('search', true)|escape:'html':'UTF-8'}" id="leosearchtopbox" data-label-suggestion="{l s='Suggestion' mod='leoproductsearch'}" data-search-for="{l s='Search for' mod='leoproductsearch'}" data-in-category="{l s='in category' mod='leoproductsearch'}" data-products-for="{l s='Products For' mod='leoproductsearch'}" data-label-products="{l s='Products' mod='leoproductsearch'}" data-view-all="{l s='View all' mod='leoproductsearch'}">
-		<input type="hidden" name="fc" value="module" />
-		<input type="hidden" name="module" value="leoproductsearch" />
-		<input type="hidden" name="controller" value="productsearch" />
+		<input type="hidden" name="controller" value="search" />
 		<input type="hidden" name="txt_not_found" value="{l s='No products found' mod='leoproductsearch'}">
                 <input type="hidden" name="leoproductsearch_static_token" value="{$leoproductsearch_static_token|escape:'htmlall':'UTF-8'|stripslashes}"/>
 		{*
