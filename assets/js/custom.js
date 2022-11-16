@@ -1383,11 +1383,4 @@ $(document).ready(function () {
       },
     });
   }
-
-  $("form#leosearchtopbox").submit(function (e) {
-    e.preventDefault();
-    var value = $(e.target).find("[name=search_query]").val();
-    $('#search_widget input[name="s"]').val(value);
-    $("#search_widget form").submit();
-  });
 });
