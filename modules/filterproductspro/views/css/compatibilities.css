@@ -1,0 +1,3 @@
+div#leo_search_block_top ~ #search_widget {
+  display: none;
+}
