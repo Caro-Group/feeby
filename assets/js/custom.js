@@ -8,6 +8,15 @@
  * Custom code goes here.
  * A template should always ship with an empty custom.js
  */
+$(document).ready(function () {
+  $("form#leosearchtopbox").submit(function (e) {
+    e.preventDefault();
+    var value = $(e.target).find("[name=search_query]").val();
+    $('#search_widget input[name="s"]').val(value);
+    $("#search_widget form").submit();
+  });
+});
+
 //MODAL TRIGGER
 $(document).ready(function () {
   $(".product-base-info").on("click", function () {
@@ -1374,11 +1383,4 @@ $(document).ready(function () {
       },
     });
   }
-
-  $("form#leosearchtopbox").submit(function (e) {
-    e.preventDefault();
-    var value = $(e.target).find("[name=search_query]").val();
-    $('#search_widget input[name="s"]').val(value);
-    $("#search_widget form").submit();
-  });
 });
