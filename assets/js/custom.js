@@ -8,6 +8,15 @@
  * Custom code goes here.
  * A template should always ship with an empty custom.js
  */
+$(document).ready(function () {
+  $("form#leosearchtopbox").on("submit", function (e) {
+    e.preventDefault();
+    var value = $(e.target).find("[name=search_query]").val();
+    $('#search_widget input[name="s"]').val(value);
+    $("#search_widget form").submit();
+  });
+});
+
 //MODAL TRIGGER
 $(document).ready(function () {
   $(".product-base-info").on("click", function () {
@@ -1245,6 +1254,35 @@ $(document).ready(function () {
       },
     });
 
+    if ($("#main").hasClass("product-image-gallery")) {
+      $("img.js-thumb").each(function () {
+        var parent_e = $(this).parent();
+        $(this).attr("src", parent_e.data("image"));
+        $(this).data("type-zoom", parent_e.data("zoom-image"));
+      });
+
+      if ($.fn.elevateZoom !== undefined) {
+        $("img.js-thumb").elevateZoom(zoom_config);
+        //DONGND:: fix click a thumb replace all image and add fancybox
+        $("img.js-thumb").on("click", function (e) {
+          var ez = $(this).data("elevateZoom");
+          $.fancybox(ez.getGalleryList());
+          return false;
+        });
+      }
+    } else {
+      if ($.fn.elevateZoom !== undefined) {
+        $("[data-zoom-container]").elevateZoom({ gallery: "thumb-gallery" });
+
+        //pass the images to Fancybox
+        $("[data-zoom-container]").on("click", function (e) {
+          var ez = $(this).data("elevateZoom");
+          $.fancybox(ez.getGalleryList());
+          return false;
+        });
+      }
+    }
+
     handleUpdateZoom(productSwiper);
   }
 
@@ -1285,6 +1323,38 @@ $(document).ready(function () {
             },
           },
         });
+
+        if ($("#main").hasClass("product-image-gallery")) {
+          $("img.js-thumb").each(function () {
+            var parent_e = $(this).parent();
+            $(this).attr("src", parent_e.data("image"));
+            $(this).data("type-zoom", parent_e.data("zoom-image"));
+          });
+
+          if ($.fn.elevateZoom !== undefined) {
+            $("img.js-thumb").elevateZoom(zoom_config);
+            //DONGND:: fix click a thumb replace all image and add fancybox
+            $("img.js-thumb").on("click", function (e) {
+              var ez = $(this).data("elevateZoom");
+              $.fancybox(ez.getGalleryList());
+              return false;
+            });
+          }
+        } else {
+          if ($.fn.elevateZoom !== undefined) {
+            $("[data-zoom-container]").elevateZoom({
+              gallery: "thumb-gallery",
+            });
+
+            //pass the images to Fancybox
+            $("[data-zoom-container]").on("click", function (e) {
+              var ez = $(this).data("elevateZoom");
+              $.fancybox(ez.getGalleryList());
+              return false;
+            });
+          }
+        }
+
         handleUpdateZoom(productSwiper);
       }
     });
