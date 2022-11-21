@@ -400,6 +400,37 @@ function applyElevateZoom() {
       });
     }
   }
+
+  prestashop.on("updatedProduct", function (event) {
+    if ($("#main").hasClass("product-image-gallery")) {
+      $("img.js-thumb").each(function () {
+        var parent_e = $(this).parent();
+        $(this).attr("src", parent_e.data("image"));
+        $(this).data("type-zoom", parent_e.data("zoom-image"));
+      });
+
+      if ($.fn.elevateZoom !== undefined) {
+        $("img.js-thumb").elevateZoom(zoom_config);
+        //DONGND:: fix click a thumb replace all image and add fancybox
+        $("img.js-thumb").on("click", function (e) {
+          var ez = $(this).data("elevateZoom");
+          $.fancybox(ez.getGalleryList());
+          return false;
+        });
+      }
+    } else {
+      if ($.fn.elevateZoom !== undefined) {
+        $("[data-zoom-container]").elevateZoom({ gallery: "thumb-gallery" });
+
+        //pass the images to Fancybox
+        $("[data-zoom-container]").on("click", function (e) {
+          var ez = $(this).data("elevateZoom");
+          $.fancybox(ez.getGalleryList());
+          return false;
+        });
+      }
+    }
+  });
 }
 
 function initSlickProductThumb(
