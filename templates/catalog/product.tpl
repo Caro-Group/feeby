@@ -152,25 +152,27 @@
  
                    <hr class="border-gray-1000 block w-full"/>
                    
-                   {block name='product_prices'}
-                      {assign var="perM" value=true}
-                     {include file='catalog/_partials/product-prices.tpl'}
-                   {/block}
-                   
-                   {block name='product_discounts'}
-                     {include file='catalog/_partials/product-discounts.tpl'}
-                   {/block}
+                   <div class="fixed bottom-0 left-0 right-0 tablet:relative w-full tablet:w-auto px-5 tablet:px-0 bg-gray-default tablet:bg-transparent">
+                    {block name='product_prices'}
+                        {assign var="perM" value=true}
+                      {include file='catalog/_partials/product-prices.tpl'}
+                    {/block}
+                    
+                    {block name='product_discounts'}
+                      {include file='catalog/_partials/product-discounts.tpl'}
+                    {/block}
 
-                   <div class="{if isset($productConfigurable)}hidden{/if}">
-                   
-                    {block name='product_add_to_cart'}
-                      {include file='catalog/_partials/product-add-to-cart.tpl'}
-                    {/block}
-  
-                    {block name='product_additional_info'}
-                      {include file='catalog/_partials/product-additional-info.tpl'}
-                    {/block}
-  
+                    <div class="{if isset($productConfigurable)}hidden{/if}">
+                    
+                      {block name='product_add_to_cart'}
+                        {include file='catalog/_partials/product-add-to-cart.tpl'}
+                      {/block}
+    
+                      {block name='product_additional_info'}
+                        {include file='catalog/_partials/product-additional-info.tpl'}
+                      {/block}
+    
+                    </div>
                    </div>
                    
                    {* Input to refresh product HTML removed, block kept for compatibility with themes *}
