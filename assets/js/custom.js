@@ -17,6 +17,12 @@
 //   });
 // });
 
+$('[data-button-action="add-to-cart"]').on("click", function () {
+  setTimeout(function () {
+    window.location.assign(prestashop.urls.pages.cart + "?action=show");
+  }, 300);
+});
+
 //MODAL TRIGGER
 $(document).ready(function () {
   $(".product-base-info").on("click", function () {
