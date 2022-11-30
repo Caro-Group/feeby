@@ -152,7 +152,7 @@
  
                    <hr class="border-gray-1000 block w-full"/>
                    
-                   <div class="fixed bottom-0 left-0 right-0 tablet:relative w-full tablet:w-auto px-5 tablet:px-0 bg-gray-default tablet:bg-transparent z-100">
+                   <div class="fixed bottom-0 left-0 right-0 tablet:relative w-full tablet:w-auto px-5 tablet:px-0 bg-gray-default tablet:bg-transparent z-50">
                     {block name='product_prices'}
                         {assign var="perM" value=true}
                       {include file='catalog/_partials/product-prices.tpl'}
