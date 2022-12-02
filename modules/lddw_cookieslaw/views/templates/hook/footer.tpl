@@ -17,6 +17,13 @@
            href="{$url}">{$text_more|escape:'html':'UTF-8'}</a>
     </p>
 </div>
+<style>
+@media(max-width: 768px){
+    .page-product #lddw-cookie-modal-box{
+        bottom: 150px;
+    }
+}   
+</style>
 {/if}
 {literal}
     <script>

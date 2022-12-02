@@ -99,7 +99,7 @@
            {/block}
          </div>
  
-         <div class="h-max sticky tablet:w-2/5 top-0 w-full">
+         <div class="h-max relative tablet:w-2/5 top-0 w-full tablet:sticky">
            {block name='page_header_container'}
              {block name='page_header'}
                <h1 class="font-header product-detail-name text-[20px] tablet:text-[35px] tablet:leading-[45px] leading-24px mb-0 pr-[46px]" itemprop="name">{block name='page_title'}{$product.name}{/block}</h1>
@@ -152,25 +152,27 @@
  
                    <hr class="border-gray-1000 block w-full"/>
                    
-                   {block name='product_prices'}
-                      {assign var="perM" value=true}
-                     {include file='catalog/_partials/product-prices.tpl'}
-                   {/block}
-                   
-                   {block name='product_discounts'}
-                     {include file='catalog/_partials/product-discounts.tpl'}
-                   {/block}
+                   <div class="fixed bottom-0 left-0 right-0 tablet:relative w-full tablet:w-auto px-5 tablet:px-0 bg-gray-default tablet:bg-transparent z-50">
+                    {block name='product_prices'}
+                        {assign var="perM" value=true}
+                      {include file='catalog/_partials/product-prices.tpl'}
+                    {/block}
+                    
+                    {block name='product_discounts'}
+                      {include file='catalog/_partials/product-discounts.tpl'}
+                    {/block}
 
-                   <div class="{if isset($productConfigurable)}hidden{/if}">
-                   
-                    {block name='product_add_to_cart'}
-                      {include file='catalog/_partials/product-add-to-cart.tpl'}
-                    {/block}
-  
-                    {block name='product_additional_info'}
-                      {include file='catalog/_partials/product-additional-info.tpl'}
-                    {/block}
-  
+                    <div class="{if isset($productConfigurable)}hidden{/if}">
+                    
+                      {block name='product_add_to_cart'}
+                        {include file='catalog/_partials/product-add-to-cart.tpl'}
+                      {/block}
+    
+                      {block name='product_additional_info'}
+                        {include file='catalog/_partials/product-additional-info.tpl'}
+                      {/block}
+    
+                    </div>
                    </div>
                    
                    {* Input to refresh product HTML removed, block kept for compatibility with themes *}

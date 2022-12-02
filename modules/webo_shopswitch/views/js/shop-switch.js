@@ -21,7 +21,8 @@ document.addEventListener("DOMContentLoaded", function () {
     let currPart = formData.get("currency");
     togglePopup(popupModal);
     if (langPart && currPart && prestashop) {
-      window.location.href = langPart + "?SubmitCurrency=1&id_currency=" + currPart;
+      window.location.href =
+        langPart + "?SubmitCurrency=1&id_currency=" + currPart;
     }
   });
 
@@ -37,11 +38,13 @@ window.addEventListener("pageshow", () => {
 });
 
 function togglePopup(popup) {
-  popup.classList.toggle("popup-hidden");
+  popup.classList.toggle("is-active");
 }
 
 function moveSwitcher(windowWidth, switcher) {
-  const mobilePlaceholder = document.querySelector(".off-canvas-nav-megamenu #shopswitch-mobile");
+  const mobilePlaceholder = document.querySelector(
+    ".off-canvas-nav-megamenu #shopswitch-mobile"
+  );
   const desktopPlaceholder = document.querySelector("#Webo-shopswitch");
 
   if (switcher.length > 0) {
@@ -49,18 +52,26 @@ function moveSwitcher(windowWidth, switcher) {
       switcher.forEach((element) => {
         element.classList.add("hidden");
       });
-      document.querySelector("button.navbar-toggler").addEventListener("click", () => {
-        moveSwitcher(windowWidth, switcher);
-        switcher.forEach((element) => {
-          element.classList.remove("hidden");
+      document
+        .querySelector("button.navbar-toggler")
+        .addEventListener("click", () => {
+          moveSwitcher(windowWidth, switcher);
+          switcher.forEach((element) => {
+            element.classList.remove("hidden");
+          });
         });
-      });
     }
-    if (windowWidth < 992 && mobilePlaceholder.querySelector("#shopswitch-toggle") == null) {
+    if (
+      windowWidth < 992 &&
+      mobilePlaceholder.querySelector("#shopswitch-toggle") == null
+    ) {
       switcher.forEach((element) => {
         mobilePlaceholder.appendChild(element);
       });
-    } else if (windowWidth >= 992 && desktopPlaceholder.querySelector("#shopswitch-toggle") == null) {
+    } else if (
+      windowWidth >= 992 &&
+      desktopPlaceholder.querySelector("#shopswitch-toggle") == null
+    ) {
       switcher.forEach((element) => {
         element.classList.remove("hidden");
         desktopPlaceholder.appendChild(element);
