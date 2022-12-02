@@ -64,15 +64,6 @@
   right: 0;
 }
 
-.off-canvas-nav-megamenu .nav li.dropdown.open-sub .dropdown-menu-inner .caret{
-    position: relative;
-    display: inline-block;
-    line-height: 28px;
-    height: auto;
-    width: auto;
-}
-
-
 .off-canvas-nav-megamenu .leo-widget .widget-html img,
 .off-canvas-nav-megamenu .leo-widget .widget-html .mobile-hidden{
   display: none;
