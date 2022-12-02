@@ -9,18 +9,21 @@
 {if isset($subcategories)}
     <div class="widget-subcategories">
         {if isset($widget_heading)&&!empty($widget_heading)}
-        <div class="widget-heading show-desktop hide-mobile mb-2 menu-title  tablet-medium:font-header tablet-medium:italic tablet-medium:uppercase pb-1 mb-5 border-0 tablet-medium:border-b-[3px] rounded-b-sm border-main border-solid tablet-medium:w-min text-main-dark font-light ">
-                {$widget_heading}
+        <div class="widget-heading relative tablet-medium:font-header tablet-medium:pb-1 my-0 tablet-medium:mb-5 border-0 tablet-medium:w-min border-0 border-b-2 border-gray-2000 tablet-medium:border-main border-solid tablet-medium:border-b-[3px] tablet-medium:rounded-b-sm"
+        data-toggle="dropdown" aria-expanded="false"
+        >
+             <span class="inline-block px-[14px] py-4 tablet-wide:px-0 tablet-medium:py-0 font-body tablet-medium:font-header tablet-medium:italic tablet-medium:uppercase text-xl tablet-medium:text-base text-main-dark font-medium tablet-medium:font-light">{$widget_heading}</span>
+             <b class=" tablet-wide:hidden caret before:text-main-dark text-2xl transition"></b>   
         </div>
         {/if}
-        <div class="widget-inner">
+        <div class="widget-inner ">
             {if $cat->id_category != ''}
                 <ul class="col-count-mob-one text-base" style="{if $id_widget == '1638828508'}column-count:3;{/if}{if $id_widget == '1638828714'}column-count:3;{/if}{if $id_widget == '1638836284'}column-count:3;{/if}{if $id_widget == '1638836384' || $id_widget == '1643878774' || $id_widget == '1643879539' || $id_widget == '1643880292'}column-count:2;{/if}">
 			{$count_sub = 0}
                 {foreach from=$subcategories item=subcategory name=subcategory}
                     {if $subcategory.description|strstr:"<!-- ARTYSTA -->" !== "<!-- ARTYSTA -->"}
 					   {$count_sub = $count_sub + 1}
-                        <li class="{if isset($subcategory.id_category) && (($id_widget == '1638828714' && $subcategory.id_category == 194) || ($id_widget == '1638836284' && $subcategory.id_category == 312) || ($id_widget == '1638836384' && $subcategory.id_category == 413))}hidden{/if} clearfix {if isset($subcategory.subsubcategories)}level2 dropdown mb-2{/if} {if $id_widget == '1643877669' && $count_sub > 6}tablet-wide:hidden{/if}">
+                        <li class="{if isset($subcategory.id_category) && (($id_widget == '1638828714' && $subcategory.id_category == 194) || ($id_widget == '1638836284' && $subcategory.id_category == 312) || ($id_widget == '1638836384' && $subcategory.id_category == 413))}hidden{/if} clearfix {if isset($subcategory.subsubcategories)}level2 dropdown px-[14px] py-5 tablet-medium:p-0 tablet-medium:mb-2 font-body text-main-dark text-base tablet-medium:font-light uppercase tablet-medium:normal-case border-0 border-b border-gray-2000 border-solid {/if} {if $id_widget == '1643877669' && $count_sub > 6}tablet-wide:hidden{/if}">
                             <a href="{$link->getCategoryLink($subcategory.id_category, $subcategory.link_rewrite)|escape:'htmlall':'UTF-8'}" title="{$subcategory.name|escape:'htmlall':'UTF-8'}" class="img font-normal mr-2 transition hover:text-main text-main-dark" {if $id_widget == '1638828714' && isset($subcategory.id_category) && ($subcategory.id_category == 389 || $subcategory.id_category == 59 || $subcategory.id_category == 617)}style="
                                 text-transform: uppercase;
                                 font-weight: 400;

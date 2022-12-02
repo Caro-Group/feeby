@@ -49,20 +49,8 @@
   padding: 20px 20px 16px;
 }
 
-.off-canvas-nav-megamenu .nav-item.sibling-opened {
-  display: none;
-}
-
 .off-canvas-nav-megamenu .active.open-sub .dropdown-sub.dropdown-menu{
   display: block;
-}
-
-.off-canvas-nav-megamenu .nav-item.open-sub{
-  position: absolute;
-  left: 0;
-  right: 0;
-  z-index: 1;
-  padding-bottom: 50px;
 }
 
 .off-canvas-nav-megamenu .nav-item.open-sub:after{

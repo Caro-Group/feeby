@@ -10231,7 +10231,7 @@ div.active-hover ul > li:hover > .dropdown-menu {
     margin: 0;
     width: 100% !important;
     border: 0;
-    padding: 0px 20px 10px;
+    padding: 0px 0px 10px;
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
     -o-box-shadow: none;
@@ -10261,8 +10261,6 @@ div.active-hover ul > li:hover > .dropdown-menu {
       line-height: 30px; }
   .off-canvas-nav-megamenu .mega-col {
     width: 100%; }
-  .off-canvas-nav-megamenu .leo-widget .widget-subcategories ul {
-    padding: 3px 3px 3px 7px; }
 
 /* OFF CANVAS MENU - SHOW CANVAS = NO */
 @media (max-width: 991px) {
