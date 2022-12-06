@@ -27,12 +27,13 @@ jobs:
       - name: Remove node
         run: sudo rm -rf node_modules
 
-      - name: 📂 Sync files
-        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      - name: Deploy to Server
+        uses: burnett01/rsync-deployments@5.2
         with:
-          server: 193.107.88.86
-          protocol: ftps
-          username: feeby
-          password: ${{ secrets.FTP_TEST_PASS }}
-          local-dir: './'
-          server-dir: /public_html/themes/feeby/
+          switches: -azrv --relative --cvs-exclude --exclude='node_modules' --exclude='cache' --exclude='assets/img/modules' --exclude='*.code-workspace' --exclude='.*' --exclude='*.sh'  --delete
+          remote_path: ${{ secrets.REMOTE_PATH }}
+          remote_host: ${{ secrets.REMOTE_HOST }}
+          remote_port: ${{ secrets.REMOTE_PORT }}
+          remote_user: ${{ secrets.REMOTE_USER }}
+          remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
+          path: "./"
