@@ -124,9 +124,11 @@
 			{/if}
 
 		</div><!-- SLIDE IMAGE END -->
-	{/if}
 
+	</div>
+	
 	<div class="tablet:hidden swiper-pagination"></div>
+
 	<div class="hidden tablet:block absolute bottom-16 w-full z-10">
 		<div class="max-w-screen-desktop-wide mx-auto px-16">
 			<i
