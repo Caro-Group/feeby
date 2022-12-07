@@ -7,16 +7,15 @@
 
 <div class="leo-widget" data-id_widget="{$id_widget}">
 {if isset($subcategories)}
-    <div class="widget-subcategories">
+    <div class="widget-subcategories {if isset($widget_heading)&&!empty($widget_heading)} widget-closed {/if} ">
         {if isset($widget_heading)&&!empty($widget_heading)}
-        <div class="widget-heading px-4 pb-4 pt-[14px] tablet-wide:px-0 tablet-medium:pt-0 relative tablet-medium:font-header tablet-medium:pb-1 my-0 tablet-medium:mb-5 border-0 tablet-medium:w-min border-0 border-b-2 border-gray-2000 tablet-medium:border-main border-solid tablet-medium:border-b-[3px] tablet-medium:rounded-b-sm"
-        data-toggle="dropdown" aria-expanded="false"
+        <div class="widget-heading dropdown-widget px-4 pb-4 pt-[14px] tablet-wide:px-0 tablet-medium:pt-0 relative tablet-medium:font-header tablet-medium:pb-1 my-0 tablet-medium:mb-5 border-0 tablet-medium:w-min border-0 border-b-2 border-gray-2000 tablet-medium:border-main border-solid tablet-medium:border-b-[3px] tablet-medium:rounded-b-sm"
         >
              <span class="inline-block font-body tablet-medium:font-header tablet-medium:italic tablet-medium:uppercase text-xl tablet-medium:text-base text-main-dark font-normal tablet-medium:font-light">{$widget_heading}</span>
-             <b class=" tablet-wide:hidden caret before:text-main-dark text-2xl transition"></b>   
+             <b class="caret tablet-wide:hidden caret before:text-main-dark text-2xl transition"></b>   
         </div>
         {/if}
-        <div class="widget-inner {if isset($widget_heading)&&!empty($widget_heading)} dropdown-menu tablet-medium:!visible tablet-medium:!opacity-100 tablet-medium:!translate-y-0 {/if} ">
+        <div class="widget-inner {if isset($widget_heading)&&!empty($widget_heading)} dropdown-widget-inner {/if} ">
             {if $cat->id_category != ''}
                 <ul class="col-count-mob-one text-base" style="{if $id_widget == '1638828508'}column-count:3;{/if}{if $id_widget == '1638828714'}column-count:3;{/if}{if $id_widget == '1638836284'}column-count:3;{/if}{if $id_widget == '1638836384' || $id_widget == '1643878774' || $id_widget == '1643879539' || $id_widget == '1643880292'}column-count:2;{/if}">
 			{$count_sub = 0}
