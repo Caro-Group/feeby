@@ -713,5 +713,5 @@ img:not([src]) {
 }
 
 .widget-closed .dropdown-widget-inner{
-  @apply hidden tablet-medium:!block
+  @apply hidden tablet-medium:!block;
 }
