@@ -234,7 +234,8 @@ p {
   @apply opacity-100 transform rotate-180;
 }
 
-.off-canvas-nav-megamenu .open-sub > .caret {
+.off-canvas-nav-megamenu .open-sub > .caret,
+.off-canvas-nav-megamenu .widget-opened > .caret{
   @apply transform rotate-[180deg];
 }
 
@@ -712,5 +713,5 @@ img:not([src]) {
 }
 
 .widget-closed .dropdown-widget-inner{
-  @apply hidden
+  @apply hidden tablet-medium:!block
 }

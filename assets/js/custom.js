@@ -1485,11 +1485,11 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.dropdown-widget').on('click',function (){
-    $(this).parent().toggleClass('widget-closed widget-opened')
     if ($(this).parent().hasClass('widget-closed')) {
       $(this).siblings('.dropdown-widget-inner').slideDown();
     }else if($(this).parent().hasClass('widget-opened')){
       $(this).siblings('.dropdown-widget-inner').slideUp();
     }
+    $(this).parent().toggleClass('widget-closed widget-opened')
   })
 });
