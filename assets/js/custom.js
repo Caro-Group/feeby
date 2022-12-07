@@ -1486,9 +1486,9 @@ $(document).ready(function () {
 $(document).ready(function () {
   $('.dropdown-widget').on('click',function (){
     if ($(this).parent().hasClass('widget-closed')) {
-      $(this).siblings('.dropdown-widget-inner').slideDown();
+      $(this).siblings('.dropdown-widget-inner').slideDown('fast');
     }else if($(this).parent().hasClass('widget-opened')){
-      $(this).siblings('.dropdown-widget-inner').slideUp();
+      $(this).siblings('.dropdown-widget-inner').slideUp('fast');
     }
     $(this).parent().toggleClass('widget-closed widget-opened')
   })
