@@ -235,7 +235,7 @@ p {
 }
 
 .off-canvas-nav-megamenu .open-sub > .caret,
-.off-canvas-nav-megamenu .widget-opened > .caret{
+.off-canvas-nav-megamenu .widget-opened .dropdown-widget > .caret{
   @apply transform rotate-[180deg];
 }
 
