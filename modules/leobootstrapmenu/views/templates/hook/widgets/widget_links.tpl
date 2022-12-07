@@ -9,7 +9,7 @@
 {if isset($links)}
     <div class="widget-links mb-4">
 	{if isset($widget_heading)&&!empty($widget_heading)}
-	<div class="menu-title border-0 border-b-2 border-gray-2000 border-solid my-0 pb-4 pt-[14px] px-4 relative tablet-medium:border-b-[3px] tablet-medium:border-main tablet-medium:font-header tablet-medium:mb-5 tablet-medium:pb-1 tablet-medium:pt-0 tablet-medium:rounded-b-sm tablet-medium:w-min tablet-wide:px-0 "
+	<div class="menu-title border-0 border-b-2 border-gray-2000 border-solid !my-0 pb-4 pt-[14px] px-4 relative tablet-medium:border-b-[3px] tablet-medium:border-main tablet-medium:font-header tablet-medium:!mb-5 tablet-medium:pb-1 tablet-medium:pt-0 tablet-medium:rounded-b-sm tablet-medium:w-min tablet-wide:px-0 "
 	data-toggle="dropdown" aria-expanded="false">
 		<span class="inline-block font-body tablet-medium:font-header tablet-medium:italic tablet-medium:uppercase text-xl tablet-medium:text-base text-main-dark font-normal tablet-medium:font-light">
 			{$widget_heading}
