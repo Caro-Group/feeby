@@ -16,7 +16,7 @@
              <b class=" tablet-wide:hidden caret before:text-main-dark text-2xl transition"></b>   
         </div>
         {/if}
-        <div class="widget-inner {if isset($widget_heading)&&!empty($widget_heading)} dropdown-menu {/if} ">
+        <div class="widget-inner {if isset($widget_heading)&&!empty($widget_heading)} dropdown-menu tablet-medium:!visible tablet-medium:!opacity-100 tablet-medium:!translate-y-0 {/if} ">
             {if $cat->id_category != ''}
                 <ul class="col-count-mob-one text-base" style="{if $id_widget == '1638828508'}column-count:3;{/if}{if $id_widget == '1638828714'}column-count:3;{/if}{if $id_widget == '1638836284'}column-count:3;{/if}{if $id_widget == '1638836384' || $id_widget == '1643878774' || $id_widget == '1643879539' || $id_widget == '1643880292'}column-count:2;{/if}">
 			{$count_sub = 0}
