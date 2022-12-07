@@ -710,3 +710,7 @@ img:not([src]) {
 .link-hidden a {
   @apply !hidden;
 }
+
+.widget-closed .dropdown-widget-inner{
+  @apply hidden
+}
