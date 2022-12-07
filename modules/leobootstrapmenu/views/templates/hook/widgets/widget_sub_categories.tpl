@@ -16,15 +16,15 @@
              <b class=" tablet-wide:hidden caret before:text-main-dark text-2xl transition"></b>   
         </div>
         {/if}
-        <div class="widget-inner">
+        <div class="widget-inner {if isset($widget_heading)&&!empty($widget_heading)} dropdown-menu {/if} ">
             {if $cat->id_category != ''}
                 <ul class="col-count-mob-one text-base" style="{if $id_widget == '1638828508'}column-count:3;{/if}{if $id_widget == '1638828714'}column-count:3;{/if}{if $id_widget == '1638836284'}column-count:3;{/if}{if $id_widget == '1638836384' || $id_widget == '1643878774' || $id_widget == '1643879539' || $id_widget == '1643880292'}column-count:2;{/if}">
 			{$count_sub = 0}
                 {foreach from=$subcategories item=subcategory name=subcategory}
                     {if $subcategory.description|strstr:"<!-- ARTYSTA -->" !== "<!-- ARTYSTA -->"}
 					   {$count_sub = $count_sub + 1}
-                        <li class="{if isset($subcategory.id_category) && (($id_widget == '1638828714' && $subcategory.id_category == 194) || ($id_widget == '1638836284' && $subcategory.id_category == 312) || ($id_widget == '1638836384' && $subcategory.id_category == 413))}hidden{/if} clearfix {if isset($subcategory.subsubcategories)}level2 dropdown relative border-0 border-b border-gray-2000 border-solid {/if} {if $id_widget == '1643877669' && $count_sub > 6}tablet-wide:hidden{/if}">
-                            <a href="{$link->getCategoryLink($subcategory.id_category, $subcategory.link_rewrite)|escape:'htmlall':'UTF-8'}" title="{$subcategory.name|escape:'htmlall':'UTF-8'}" class="img font-normal mr-2 inline-block !px-4 !pb-4 !pt-[14px] tablet-medium:!px-0 tablet-medium:!pb-0 tablet-medium:!pt-0  transition hover:text-main tablet-medium:mb-2 font-body text-main-dark text-base tablet-medium:font-light uppercase tablet-medium:normal-case " {if $id_widget == '1638828714' && isset($subcategory.id_category) && ($subcategory.id_category == 389 || $subcategory.id_category == 59 || $subcategory.id_category == 617)}style="
+                        <li class="{if isset($subcategory.id_category) && (($id_widget == '1638828714' && $subcategory.id_category == 194) || ($id_widget == '1638836284' && $subcategory.id_category == 312) || ($id_widget == '1638836384' && $subcategory.id_category == 413))}hidden{/if} clearfix {if isset($subcategory.subsubcategories)}level2 dropdown relative border-0 border-b border-gray-2000 border-solid tablet-medium:border-b-0 {/if} {if $id_widget == '1643877669' && $count_sub > 6}tablet-wide:hidden{/if}">
+                            <a href="{$link->getCategoryLink($subcategory.id_category, $subcategory.link_rewrite)|escape:'htmlall':'UTF-8'}" title="{$subcategory.name|escape:'htmlall':'UTF-8'}" class="img font-normal mr-2 inline-block !px-4 !py-[18px] tablet-medium:!px-0 tablet-medium:!py-0 transition hover:text-main tablet-medium:mb-2 font-body text-main-dark text-base tablet-medium:font-light uppercase tablet-medium:normal-case " {if $id_widget == '1638828714' && isset($subcategory.id_category) && ($subcategory.id_category == 389 || $subcategory.id_category == 59 || $subcategory.id_category == 617)}style="
                                 text-transform: uppercase;
                                 font-weight: 400;
                             "{/if} {if isset($subcategory.id_category)}data-category-id="{$subcategory.id_category}"{/if}>
@@ -37,7 +37,7 @@
                                     {foreach from=$subcategory.subsubcategories item=subsubcategory name=subsubcategory}
                                         {if $subsubcategory.description|strstr:"<!-- ARTYSTA -->" !== "<!-- ARTYSTA -->"}
 										  {$count_subsub = $count_subsub + 1}
-                                            <li class="clearfix level3 text-base my-3 {if $id_widget == '1643877669' && $count_subsub > 6}tablet-wide:hidden{/if}" {if $show_widget_bo == 'admin'}style="margin-left: 20px;"{/if}>
+                                            <li class="clearfix level3 text-base my-3 ml-5 tablet-medium:ml-0 {if $id_widget == '1643877669' && $count_subsub > 6}tablet-wide:hidden{/if}" {if $show_widget_bo == 'admin'}style="margin-left: 20px;"{/if}>
                                                 <a href="{$link->getCategoryLink($subsubcategory.id_category, $subsubcategory.link_rewrite)|escape:'htmlall':'UTF-8'}" title="{$subsubcategory.name|escape:'htmlall':'UTF-8'}" class="img font-light text-main-dark" {if isset($subsubcategory.id_category)}data-category-id="{$subsubcategory.id_category}"{/if}>
                                                     {$subsubcategory.name|escape:'htmlall':'UTF-8'} 
                                                 </a>
