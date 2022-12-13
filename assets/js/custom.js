@@ -1492,4 +1492,6 @@ $(document).ready(function () {
     }
     $(this).parent().toggleClass('widget-closed widget-opened')
   })
+  
+  $('.megamenu li[data-menu-type="category"]').last().find('.dropdown-menu-inner').addClass('border-0 border-b-[10px] tablet-medium:border-b-0 border-solid border-1000')
 });
