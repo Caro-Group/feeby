@@ -7,7 +7,7 @@
 
 <div class="leo-widget" data-id_widget="{$id_widget}">
 {if isset($links)}
-    <div class="widget-links mb-4 {if isset($widget_heading)&&!empty($widget_heading)} widget-closed {/if}">
+    <div class="widget-links {if isset($widget_heading)&&!empty($widget_heading)} widget-closed {/if}">
 	{if isset($widget_heading)&&!empty($widget_heading)}
 	<div class="dropdown-widget menu-title border-0 border-b-2 border-gray-2000 border-solid !my-0 pb-4 pt-[14px] px-4 relative tablet-medium:border-b-[3px] tablet-medium:border-main tablet-medium:font-header tablet-medium:!mb-5 tablet-medium:pb-1 tablet-medium:pt-0 tablet-medium:rounded-b-sm tablet-medium:w-min tablet-wide:px-0 ">
 		<span class="inline-block font-body tablet-medium:font-header tablet-medium:italic tablet-medium:uppercase text-xl tablet-medium:text-base text-main-dark font-normal tablet-medium:font-light">
@@ -20,7 +20,7 @@
 		<div id="tabs{$id}" class="panel-group">
 			<ul class="nav-links">
 				{foreach $links as $key => $ac}  
-				<li class="border-0 border-b-2 border-gray-2000 border-solid tablet-medium:border-b-0"><a href="{$ac.link}" class="font-body text-base font-light inline-block !px-4 !py-[18px] tablet-wide:!px-0 tablet-medium:!py-0 tablet-medium:mt-2 tablet-medium:hover:text-main transition duration-200 {if $page_name == 'category'}{if $category.id == $ac.cat_id || $category.id_parent == $ac.cat_id}text-main{else}text-main-dark{/if}{else}text-main-dark{/if}" {if isset($ac.cat_id)}data-category-id="{$ac.cat_id}"{/if}>{$ac.text}</a></li>
+				<li class="border-0 border-b-2 border-gray-2000 border-solid tablet-medium:border-b-0"><a href="{$ac.link}" class="font-body text-xl !font-normal  inline-block !px-4 !pb-4 !pt-[14px] tablet-wide:!px-0 tablet-medium:!py-0 tablet-medium:mt-2 tablet-medium:hover:text-main transition duration-200 {if $page_name == 'category'}{if $category.id == $ac.cat_id || $category.id_parent == $ac.cat_id}text-main{else}text-main-dark{/if}{else}text-main-dark{/if}" {if isset($ac.cat_id)}data-category-id="{$ac.cat_id}"{/if}>{$ac.text}</a></li>
 				{/foreach}
 			</ul>
 		</div>

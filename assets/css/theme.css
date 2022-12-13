@@ -10231,7 +10231,7 @@ div.active-hover ul > li:hover > .dropdown-menu {
     margin: 0;
     width: 100% !important;
     border: 0;
-    padding: 0px 0px 10px;
+    padding: 0px;
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
     -o-box-shadow: none;
