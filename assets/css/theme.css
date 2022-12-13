@@ -9753,10 +9753,12 @@ button:focus, button:hover {
         position: relative; }
         .leo-megamenu .dropdown-menu li a:hover .fa {
           color: #000; }
-    .leo-megamenu .dropdown-menu div.menu-title {
+    .leo-megamenu .dropdown-menu div.menu-title,
+    .widget-heading span {
       letter-spacing: 1px;
       position: relative; }
-      .leo-megamenu .dropdown-menu div.menu-title a {
+      .leo-megamenu .dropdown-menu div.menu-title a,
+      .widget-heading span {
         color: #000; }
     .leo-megamenu .dropdown-menu a > .menu-title {
       text-transform: capitalize;
