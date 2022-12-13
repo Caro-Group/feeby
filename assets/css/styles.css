@@ -51,6 +51,12 @@ p {
   }
 }
 
+@media (max-width: 991px) {
+  .leo-widget .widget-html p{
+    margin: 0px !important;
+  }
+}
+
 @layer components {
   h1,
   h2 {
@@ -714,4 +720,8 @@ img:not([src]) {
 
 .widget-closed .dropdown-widget-inner{
   @apply hidden tablet-medium:!block;
+}
+
+.off-canvas-nav-megamenu .mega-col{
+  @apply !min-h-0
 }
