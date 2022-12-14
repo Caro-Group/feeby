@@ -1107,7 +1107,6 @@ function openMenuWithCategory(id) {
         $(menu_el).parent().parent().find(".caret").trigger("click");
       }
       if ($(menu_el).parent().parent().parent().hasClass("level2")) {
-        $(menu_el).closest('.widget-subcategories').children('.dropdown-widget').click()
         $(menu_el).parent().parent().parent().find(".caret").trigger("click");
       }
     }
@@ -1142,6 +1141,7 @@ function openMenuWithCategory(id) {
     $(menu_el).parent().hasClass("level2") ||
     $(menu_el).parent().hasClass("level3")
   ) {
+    $(menu_el).closest('.widget-subcategories').children('.dropdown-widget').click()
     $(menu_el).removeClass("text-main-dark").addClass("text-main");
 
     if ($(menu_el).parent().parent().hasClass("level2")) {
