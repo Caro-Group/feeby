@@ -1107,6 +1107,7 @@ function openMenuWithCategory(id) {
         $(menu_el).parent().parent().find(".caret").trigger("click");
       }
       if ($(menu_el).parent().parent().parent().hasClass("level2")) {
+        $(menu_el).closest('.widget-subcategories').children('.dropdown-widget').click()
         $(menu_el).parent().parent().parent().find(".caret").trigger("click");
       }
     }
