@@ -99,7 +99,7 @@
      {else}
        <img class="lazy" data-src="{$urls.no_picture_image.bySize.large_default.url}" style="width:100%;" />
      {/if}
-     {include file="modules:bavideotab/views/templates/front/coverVideo.tpl"}
+     {include file="module:bavideotab/views/templates/front/coverVideo.tpl"}
    {/block}
 
    {block name='product_images'}
