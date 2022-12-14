@@ -1144,8 +1144,8 @@ function openMenuWithCategory(id) {
     $(".off-canvas-nav-megamenu").find("[data-category-id=" + currentCatId + "]").parent().parent().parent().each(
       function(){
           if(!$(this).hasClass('hidden')){
-              if($(this).closest('.dropdown-widget').parent().hasClass('widget-closed')){
-                $(this).closest('.dropdown-widget').click()
+              if($(this).closest('.widget-dropdown_container').hasClass('widget-closed')){
+                $(this).closest('.widget-dropdown_container').children('.dropdown-widget').click()
               }
           }
       }
