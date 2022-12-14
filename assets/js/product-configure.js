@@ -21,7 +21,7 @@ $(document).ready(function () {
 
   $configurableElements
     .filter(function () {
-      return $(this).data('productConfigurable') == 'swiper'
+      return $(this).data('productConfigurable') == 'container'
     })
     .find('img')
     .attr('src', imageVariant)
@@ -44,23 +44,18 @@ $(document).ready(function () {
       })
     })
 
-  var swiperElement = $configurableElements.filter(function () {
-    return $(this).data('productConfigurable') == 'swiper'
+  var containerElement = $configurableElements.filter(function () {
+    return $(this).data('productConfigurable') == 'container'
   })
 
-  var swiper = null
-  if (swiperElement.length != 0) {
-    swiper = productConfigurableSwiper.call(swiperElement[0])
-
-    swiper.on('click', function () {
-      productConfigurableSelect(
-        $(swiper.clickedSlide).data('productConfigurable'),
-      )
-    })
-
-    $configurableModal.on('shown.bs.modal', function () {
-      swiper.update()
-    })
+  if (containerElement.length != 0) {
+    $(containerElement)
+      .children()
+      .each(function () {
+        $(this).on("click", function () {
+          productConfigurableSelect($(this).data("productConfigurable"));
+        });
+      });
   }
 
   if ($configurableElements.length > 0) {
@@ -135,32 +130,13 @@ $(document).ready(function () {
 
       $configurableElements
         .filter(function () {
-          return $(this).data('productConfigurable') == 'swiper'
+          return $(this).data('productConfigurable') == 'container'
         })
         .find('img')
         .attr('src', imageVariant)
     })
   }
 })
-
-function productConfigurableSwiper() {
-  return new Swiper(this, {
-    slidesPerView: 'auto',
-    spaceBetween: 1,
-    watchOverflow: true,
-    breakpoints: {
-      480: {
-        spaceBetween: 1,
-      },
-      768: {
-        spaceBetween: 1,
-      },
-      1200: {
-        spaceBetween: 3,
-      },
-    },
-  })
-}
 
 function productConfigurableSelect(productId) {
   var configurableSelectedTemp = configurableSelected.filter(
