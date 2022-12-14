@@ -7,7 +7,7 @@
 
 <div class="leo-widget" data-id_widget="{$id_widget}">
 {if isset($subcategories)}
-    <div class="widget-subcategories {if isset($widget_heading)&&!empty($widget_heading)} widget-closed {/if} ">
+    <div class="widget-dropdown_container widget-subcategories {if isset($widget_heading)&&!empty($widget_heading)} widget-closed {/if} ">
         {if isset($widget_heading)&&!empty($widget_heading)}
         <div class="widget-heading dropdown-widget px-4 pb-4 pt-[14px] tablet-wide:px-0 tablet-medium:pt-0 relative tablet-medium:font-header tablet-medium:pb-1 my-0 tablet-medium:mb-5 border-0 tablet-medium:w-min border-0 border-b-2 border-gray-2000 tablet-medium:border-main border-solid tablet-medium:border-b-[3px] tablet-medium:rounded-b-sm"
         >
