@@ -1144,8 +1144,8 @@ function openMenuWithCategory(id) {
     $(".off-canvas-nav-megamenu").find("[data-category-id=" + currentCatId + "]").parent().parent().parent().each(
       function(){
           if(!$(this).hasClass('hidden')){
-              if($(this).closest('.widget-subcategories').hasClass('widget-closed')){
-                $(this).closest('.widget-subcategories').children('.dropdown-widget').click()
+              if($(this).closest('.dropdown-widget').parent().hasClass('widget-closed')){
+                $(this).closest('.dropdown-widget').click()
               }
           }
       }
