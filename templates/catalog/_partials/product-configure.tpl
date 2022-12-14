@@ -49,7 +49,7 @@
                             <div class="flex-0 mr-0 tablet:mr-[25px] overflow-hidden max-w-full ">
                                 <div class="relative flex h-full w-full items-center"  data-product-configurable="container">
                                     {for $part=1 to 5}
-                                        <div class="relative shrink-0 h-full w-[50px] phone:w-[19vw] tablet:w-[100px] overflow-hidden" data-product-configurable="{$part}">
+                                        <div class="product-part mr-[1px] desktop-presta:mr-[3px] relative shrink-0 h-full w-[50px] phone:w-[19vw] tablet:w-[100px] overflow-hidden" data-product-configurable="{$part}">
                                             <div class="text-center flex flex-col py-2">
                                                 <span class="part-name text-main-dark font-body tablet:text-base font-normal opacity-40 transition">
                                                     {if $part == 1}{l s='Panel A' d='Shop.Theme.Catalog'}{/if}
