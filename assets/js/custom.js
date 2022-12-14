@@ -1141,7 +1141,7 @@ function openMenuWithCategory(id) {
     $(menu_el).parent().hasClass("level2") ||
     $(menu_el).parent().hasClass("level3")
   ) {
-    if($(menu_el).closest('.widget-subcategories').hasClass('widget-closed')){
+    if($(menu_el).closest('.widget-subcategories').hasClass('widget-closed') && !$(menu_el).parent().hasClass('hidden')){
       $(menu_el).closest('.widget-subcategories').children('.dropdown-widget').click()
     }
     $(menu_el).removeClass("text-main-dark").addClass("text-main");
