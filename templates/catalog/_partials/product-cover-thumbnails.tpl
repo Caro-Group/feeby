@@ -87,6 +87,7 @@
          <div class="layer hidden-sm-down" data-toggle="modal" data-target="#product-modal">
            <i class="material-icons zoom-in">&#xE8FF;</i>
          </div>
+         {include file="module:bavideotab/views/templates/front/coverVideo.tpl"}
        </div>
 
          <div class="absolute tablet:left-4 tablet:bottom-10 z-50 flex justify-between w-full tablet:w-auto tablet:mb-8">
@@ -99,7 +100,6 @@
      {else}
        <img class="lazy" data-src="{$urls.no_picture_image.bySize.large_default.url}" style="width:100%;" />
      {/if}
-     {include file="module:bavideotab/views/templates/front/coverVideo.tpl"}
    {/block}
 
    {block name='product_images'}
