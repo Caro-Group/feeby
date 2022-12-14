@@ -599,20 +599,20 @@ body .loader {
   @apply max-w-lg mx-auto text-center;
 }
 
-[data-product-configurable='swiper'] .product-part img {
+[data-product-configurable='container'] .product-part img {
   @apply opacity-40 transition duration-200;
   -webkit-user-drag: none;
 }
 
-[data-product-configurable='swiper'] .product-part:hover img {
+[data-product-configurable='container'] .product-part:hover img {
   @apply desktop-presta:opacity-70 transition duration-200;
 }
 
-[data-product-configurable='swiper'] .product-part.selected img {
+[data-product-configurable='container'] .product-part.selected img {
   @apply opacity-100;
 }
 
-[data-product-configurable='swiper'] .product-part.selected:hover img {
+[data-product-configurable='container'] .product-part.selected:hover img {
   @apply opacity-100;
 }
 
