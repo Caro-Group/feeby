@@ -100,6 +100,7 @@
      {else}
        <img class="lazy" data-src="{$urls.no_picture_image.bySize.large_default.url}" style="width:100%;" />
      {/if}
+     {hook h='displayProductCoverPlacement'}
    {/block}
 
    {block name='product_images'}
