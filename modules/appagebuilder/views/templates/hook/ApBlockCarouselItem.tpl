@@ -67,7 +67,7 @@
 		</div>
 	</div>
 
-	<div class="hidden tablet:flex">
+	<div class="hidden tablet:flex ml-3">
 		<div class="my-8">
 			<i	class="ti-arrow-left inline-block swiper_blog-button-prev p-3 ml-6 border-2 border-main-dark text-main-dark hover:bg-main-dark hover:text-white rounded-full border-solid   transition cursor-pointer" data-swiper-blog-prev ></i>
 			<i	class="ti-arrow-right inline-block swiper_blog-button-next p-3 ml-6 border-2 border-main-dark text-main-dark hover:bg-main-dark hover:text-white rounded-full border-solid   transition cursor-pointer" data-swiper-blog-next ></i>
