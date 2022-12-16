@@ -52,7 +52,7 @@
                   >
       
                   <button
-                  class="bg-main hover:bg-main-hover duration-150 border-0 rounded-full text-white px-4 uppercase whitespace-nowrap font-body"
+                  class="bg-main hover:bg-main-hover duration-150 border-0 cursor-pointer rounded-full text-white px-4 uppercase whitespace-nowrap font-body"
                     name="submitNewsletter"
                     type="submit"
                     value="{l s='Subscribe' d='Shop.Theme.Actions'}"
