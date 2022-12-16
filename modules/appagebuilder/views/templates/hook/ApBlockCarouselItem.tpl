@@ -23,7 +23,6 @@
 		<div class="swiper-wrapper ml-4">
 		{$Num=array_chunk($formAtts.slides, $itemsperpage)}
 		{foreach from=$Num item=sliders name=val}
-
 			<div class="swiper-slide max-w-[235px] desktop-presta:max-w-[466px] mr-[20px]">
 			{foreach from=$sliders item=slider key=i name="sliders"}
 				{if $i == 1}{if $hookName == 'displayNav' || $hookName == 'displayNav1' || $hookName == 'displayNav2' || $hookName == 'displayNavFullWidth'}{assign var="lazyImg" value="eager"}{else}{assign var="lazyImg" value="lazy"}{/if}{else}{assign var="lazyImg" value="lazy"}{/if}
@@ -65,6 +64,13 @@
 			</div>
 
 		{/foreach}
+		</div>
+	</div>
+
+	<div class="hidden tablet:flex">
+		<div class="my-8">
+			<i	class="ti-arrow-left inline-block swiper_blog-button-prev p-3 ml-6 border-2 border-main-dark text-main-dark hover:bg-main-dark hover:text-white rounded-full border-solid   transition cursor-pointer" data-swiper-blog-prev ></i>
+			<i	class="ti-arrow-right inline-block swiper_blog-button-next p-3 ml-6 border-2 border-main-dark text-main-dark hover:bg-main-dark hover:text-white rounded-full border-solid   transition cursor-pointer" data-swiper-blog-next ></i>
 		</div>
 	</div>
 
