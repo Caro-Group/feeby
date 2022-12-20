@@ -9753,10 +9753,12 @@ button:focus, button:hover {
         position: relative; }
         .leo-megamenu .dropdown-menu li a:hover .fa {
           color: #000; }
-    .leo-megamenu .dropdown-menu div.menu-title {
+    .leo-megamenu .dropdown-menu div.menu-title,
+    .widget-heading span {
       letter-spacing: 1px;
       position: relative; }
-      .leo-megamenu .dropdown-menu div.menu-title a {
+      .leo-megamenu .dropdown-menu div.menu-title a,
+      .widget-heading span {
         color: #000; }
     .leo-megamenu .dropdown-menu a > .menu-title {
       text-transform: capitalize;
@@ -10145,7 +10147,6 @@ div.active-hover ul > li:hover > .dropdown-menu {
     transform: translateX(0);
     }
   .off-canvas-active #page {
-    position: fixed;
     margin: 0 auto;
     max-width: 100%;
     width: 100%; }
@@ -10232,7 +10233,7 @@ div.active-hover ul > li:hover > .dropdown-menu {
     margin: 0;
     width: 100% !important;
     border: 0;
-    padding: 0px 20px 10px;
+    padding: 0px;
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
     -o-box-shadow: none;
@@ -10256,14 +10257,10 @@ div.active-hover ul > li:hover > .dropdown-menu {
     margin: 10px 0;
     }
 
-  .off-canvas-nav-megamenu ul.nav-links {
-    padding-left: 7px; }
     .off-canvas-nav-megamenu ul.nav-links li {
       line-height: 30px; }
   .off-canvas-nav-megamenu .mega-col {
     width: 100%; }
-  .off-canvas-nav-megamenu .leo-widget .widget-subcategories ul {
-    padding: 3px 3px 3px 7px; }
 
 /* OFF CANVAS MENU - SHOW CANVAS = NO */
 @media (max-width: 991px) {

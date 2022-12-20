@@ -51,6 +51,12 @@ p {
   }
 }
 
+@media (max-width: 991px) {
+  .leo-widget .widget-html p{
+    margin: 0px !important;
+  }
+}
+
 @layer components {
   h1,
   h2 {
@@ -234,7 +240,8 @@ p {
   @apply opacity-100 transform rotate-180;
 }
 
-.off-canvas-nav-megamenu .open-sub > .caret {
+.off-canvas-nav-megamenu .open-sub > .caret,
+.off-canvas-nav-megamenu .widget-opened .dropdown-widget > .caret{
   @apply transform rotate-[180deg];
 }
 
@@ -688,4 +695,33 @@ body .loader {
 img[src=''],
 img:not([src]) {
   visibility: hidden;
+}
+.language-selector input:checked + label img,
+.currency-selector input:checked + label .currency-sign {
+  @apply border-main;
+}
+
+.popup-hidden:not(.is-active) {
+  @apply opacity-0 pointer-events-none z-0;
+}
+
+.popup-hidden .shopswitch-modal {
+  @apply transform -translate-y-2.5;
+}
+
+.language-selector input:checked + label .check,
+.currency-selector input:checked + label .check {
+  @apply scale-100 opacity-100;
+}
+
+.link-hidden a {
+  @apply !hidden;
+}
+
+.widget-closed .dropdown-widget-inner{
+  @apply hidden tablet-medium:!block;
+}
+
+.off-canvas-nav-megamenu .mega-col{
+  @apply !min-h-0
 }
