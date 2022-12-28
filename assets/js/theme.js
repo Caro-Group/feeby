@@ -2585,6 +2585,7 @@
               (e = n && n.dataset ? n.dataset : t),
                 l.default.emit("updateCart", {
                   reason: e,
+                  resp: e,
                 });
             })
             .fail(function (t) {
@@ -2660,6 +2661,7 @@
                   y(e).val(t.quantity),
                   l.default.emit("updateCart", {
                     reason: n,
+                    resp: n,
                   });
               })
               .fail(function (t) {
