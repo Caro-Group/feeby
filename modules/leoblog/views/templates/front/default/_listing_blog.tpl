@@ -12,7 +12,7 @@
 <article class="h-full bg-gray-1000 flex flex-col">
 	{if $blog.image && $config->get('listing_show_image',1)}
 		<div class="relative">
-			<a href="{$blog.link|escape:'html':'UTF-8'}" class="text-main-dark hover:text-main">
+			<a target='_blank' href="{$blog.link|escape:'html':'UTF-8'}" class="text-main-dark hover:text-main">
 				<img 
 					src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
 					data-lazy
@@ -42,7 +42,7 @@
 	<div class="flex flex-col px-[30px] flex-auto mt-[30px]">
 		{if $config->get('listing_show_title','1')}
 			<h2 class="font-header font-light text-[25px] mb-[30px]">
-				<a href="{$blog.link|escape:'html':'UTF-8'}" class="text-main-dark hover:text-main transition"
+				<a target='_blank' href="{$blog.link|escape:'html':'UTF-8'}" class="text-main-dark hover:text-main transition"
 					title="{$blog.title|escape:'html':'UTF-8'}">{$blog.title|escape:'html':'UTF-8'}</a>
 			</h2>
 		{/if}
@@ -54,7 +54,7 @@
 		{/if}
 		
 		{if $config->get('listing_show_readmore',1)}
-			<a class="group transition mt-auto mb-[35px] flex items-center uppercase text-[14px] mr-[16px] leading-[16px] text-main-dark hover:text-main" href="{$blog.link|escape:'html':'UTF-8'}" title="{$blog.title|escape:'html':'UTF-8'}">
+			<a target='_blank' class="group transition mt-auto mb-[35px] flex items-center uppercase text-[14px] mr-[16px] leading-[16px] text-main-dark hover:text-main" href="{$blog.link|escape:'html':'UTF-8'}" title="{$blog.title|escape:'html':'UTF-8'}">
 				{l s='Read more' d='Shop.Theme.Global'}
 
 				<svg xmlns="http://www.w3.org/2000/svg" width="15" height="13" viewBox="0 0 16 14" fill="none" class="ml-[10px]">
