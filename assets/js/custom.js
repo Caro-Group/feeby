@@ -1371,6 +1371,32 @@ $(document).ready(function () {
   }
 });
 
+handleFancyboxSwipe()
+
+function handleFancyboxSwipe(){
+  let startX;
+  let endX;
+  $(document).on('mousedown','.fancybox-outer', function(event) {
+    startX = event.clientX;
+  });
+  
+  $(document).on('mouseup','.fancybox-outer', function(event) {
+    endX = event.clientX;
+    const distance = endX - startX;
+    let fancybox = $.fancybox
+
+    if (Math.abs(distance) > 50) {
+      if (distance > 0) {
+        fancybox.outer.trigger('swiperight');
+        fancybox.prev()
+      } else {
+        fancybox.outer.trigger('swipeleft');
+        fancybox.next()
+      }
+    }
+  });
+}
+
 function handleUpdateZoom(mainSwiper) {
   window.addEventListener("resize", () => {
     mainSwiper.slideTo(1, 300, false);
