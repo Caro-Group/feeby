@@ -1382,12 +1382,20 @@ $(document).ready(function () {
 function handleFancyboxSwipe(){
   let startX;
   let endX;
-  $(document).on('mousedown','.fancybox-outer', function(event) {
-    startX = event.clientX;
+  $(document).on('mousedown touchstart','.fancybox-outer', function(event) {
+    if (event.type == 'touchstart') {
+      startX = event.touches[0].clientX;      
+    }else{
+      startX = event.clientX;
+    }
   });
   
-  $(document).on('mouseup','.fancybox-outer', function(event) {
-    endX = event.clientX;
+  $(document).on('mouseup touchend','.fancybox-outer', function(event) {
+    if (event.type == 'touchend') {
+      endX = event.changedTouches[0].clientX;      
+    }else{
+      endX = event.clientX;
+    }
     const distance = endX - startX;
     let fancybox = $.fancybox
 
