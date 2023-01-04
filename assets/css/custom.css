@@ -957,3 +957,6 @@ body .sidebar #search_filters_wrapper {
 div#leo_search_block_top ~ #search_widget {
   display: none;
 }
+.fancybox-outer *{
+  -webkit-user-drag: none;
+}
