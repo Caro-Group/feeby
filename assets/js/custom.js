@@ -1369,9 +1369,9 @@ $(document).ready(function () {
       }
     });
   }
+  handleFancyboxSwipe()
 });
 
-handleFancyboxSwipe()
 
 function handleFancyboxSwipe(){
   let startX;
