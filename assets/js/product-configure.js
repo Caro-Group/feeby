@@ -206,7 +206,7 @@ $(document).ready(function () {
         .attr("src", imageVariant);
     });
   }
-});
+})
 
 function productConfigurableSelect(productId) {
   var configurableSelectedTemp = configurableSelected.filter(
