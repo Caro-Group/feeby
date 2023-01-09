@@ -33,6 +33,7 @@
 
   <div class="col-xs-12 col-md-6 col-lg-8 mt-8 mb-[53px] tablet:mt-16 tablet:mb-[90px] mx-auto">
     {block name='pagination_page_list'}
+      {debug}
       {if $pagination.should_be_displayed}
         <ul class="page-list clearfix text-md-right text-xs-center flex justify-center">
           {foreach from=$pagination.pages item="page"}
