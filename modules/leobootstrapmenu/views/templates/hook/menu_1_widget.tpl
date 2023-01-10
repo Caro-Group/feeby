@@ -8,6 +8,7 @@
 
 {* function genMegaMenuByConfig *}
 {if $menu.active == 1}
+    {debug}
     <li data-menu-type="{$menu.type}"
         class="nav-item parent  {$menu.menu_class} {$class} {if $hascat}{$align}{/if} {$addwidget}"
         {$model->renderAttrs($menu)}>
