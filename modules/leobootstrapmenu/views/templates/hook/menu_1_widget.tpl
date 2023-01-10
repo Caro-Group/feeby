@@ -8,9 +8,8 @@
 
 {* function genMegaMenuByConfig *}
 {if $menu.active == 1}
-    {debug}
     <li data-menu-type="{$menu.type}"
-        class="nav-item parent  {$menu.menu_class} {$class} {if $hascat}{$align}{/if} {$addwidget}"
+        class="nav-item parent  {$menu.menu_class} {$class} {if $hascat}{$align}{/if} {$addwidget} {if $menu.item == $smarty.get.id_category} active {/if}"
         {$model->renderAttrs($menu)}>
         <a class="nav-link dropdown-toggle {if $hascat}has-category{/if} font-body text-main-dark text-base font-normal hidden tablet-medium:block"
             data-toggle="dropdown" href="{$model->getLink($menu)}" target="{$menu.target}">
