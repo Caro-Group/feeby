@@ -1502,6 +1502,7 @@ $(document).ready(function () {
       slidesPerView: "auto",
       rewind: true,
       slideClass: "slide",
+      allowTouchMove: true,
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
