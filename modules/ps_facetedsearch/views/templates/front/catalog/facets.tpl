@@ -45,7 +45,7 @@
                   aria-expanded="true" {/if} {if $_expand_id == 'attribute_group_15'}style="display: none;" {/if}>
                   <p class="facet-title m-0 text-base font-body font-normal group-hover:text-main transition">{$facet.label}
                   {if $activeCount>0}
-                    <span>({$activeCount})</span>
+                    <span class="tablet:hidden">({$activeCount})</span>
                   {/if}                  
                   </p>
                   <span class="pl-4 -top-1 relative">
