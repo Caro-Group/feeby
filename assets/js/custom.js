@@ -1135,15 +1135,25 @@ function openMenuWithCategory(id) {
     $(menu_el).parent().hasClass("level2") ||
     $(menu_el).parent().hasClass("level3")
   ) {
-    $(".off-canvas-nav-megamenu").find("[data-category-id=" + currentCatId + "]").parent().parent().parent().each(
-      function(){
-          if(!$(this).hasClass('hidden')){
-              if($(this).closest('.widget-dropdown_container').hasClass('widget-closed')){
-                $(this).closest('.widget-dropdown_container').children('.dropdown-widget').click()
-              }
+    $(".off-canvas-nav-megamenu")
+      .find("[data-category-id=" + currentCatId + "]")
+      .parent()
+      .parent()
+      .parent()
+      .each(function () {
+        if (!$(this).hasClass("hidden")) {
+          if (
+            $(this)
+              .closest(".widget-dropdown_container")
+              .hasClass("widget-closed")
+          ) {
+            $(this)
+              .closest(".widget-dropdown_container")
+              .children(".dropdown-widget")
+              .click();
           }
-      }
-    )
+        }
+      });
 
     $(menu_el).removeClass("text-main-dark").addClass("text-main");
 
@@ -1369,37 +1379,36 @@ $(document).ready(function () {
       }
     });
   }
-  handleFancyboxSwipe()
+  handleFancyboxSwipe();
 });
 
-
-function handleFancyboxSwipe(){
+function handleFancyboxSwipe() {
   let startX;
   let endX;
-  $(document).on('mousedown touchstart','.fancybox-outer', function(event) {
-    if (event.type == 'touchstart') {
-      startX = event.touches[0].clientX;      
-    }else{
+  $(document).on("mousedown touchstart", ".fancybox-outer", function (event) {
+    if (event.type == "touchstart") {
+      startX = event.touches[0].clientX;
+    } else {
       startX = event.clientX;
     }
   });
-  
-  $(document).on('mouseup touchend','.fancybox-outer', function(event) {
-    if (event.type == 'touchend') {
-      endX = event.changedTouches[0].clientX;      
-    }else{
+
+  $(document).on("mouseup touchend", ".fancybox-outer", function (event) {
+    if (event.type == "touchend") {
+      endX = event.changedTouches[0].clientX;
+    } else {
       endX = event.clientX;
     }
     const distance = endX - startX;
-    let fancybox = $.fancybox
+    let fancybox = $.fancybox;
 
     if (Math.abs(distance) > 50) {
       if (distance > 0) {
-        fancybox.outer.trigger('swiperight');
-        fancybox.prev()
+        fancybox.outer.trigger("swiperight");
+        fancybox.prev();
       } else {
-        fancybox.outer.trigger('swipeleft');
-        fancybox.next()
+        fancybox.outer.trigger("swipeleft");
+        fancybox.next();
       }
     }
   });
@@ -1488,12 +1497,6 @@ $(document).ready(function () {
   if ($("[data-swiper-carousel]").length != 0) {
     new Swiper("[data-swiper-carousel]", {
       preloadImages: false,
-      lazy: {
-        loadOnTransitionStart: true,
-        checkInView: true,
-        loadPrevNext: true,
-        loadPrevNextAmount: 4,
-      },
       speed: 400,
       spaceBetween: 20,
       slidesPerView: "auto",
@@ -1522,14 +1525,19 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-  $('.dropdown-widget').on('click',function (){
-    if ($(this).parent().hasClass('widget-closed')) {
-      $(this).siblings('.dropdown-widget-inner').slideDown('fast');
-    }else if($(this).parent().hasClass('widget-opened')){
-      $(this).siblings('.dropdown-widget-inner').slideUp('fast');
+  $(".dropdown-widget").on("click", function () {
+    if ($(this).parent().hasClass("widget-closed")) {
+      $(this).siblings(".dropdown-widget-inner").slideDown("fast");
+    } else if ($(this).parent().hasClass("widget-opened")) {
+      $(this).siblings(".dropdown-widget-inner").slideUp("fast");
     }
-    $(this).parent().toggleClass('widget-closed widget-opened')
-  })
-  
-  $('.megamenu li[data-menu-type="category"]').last().find('.dropdown-menu-inner').addClass('border-0 border-b-[10px] tablet-medium:border-b-0 border-solid border-gray-1000')
+    $(this).parent().toggleClass("widget-closed widget-opened");
+  });
+
+  $('.megamenu li[data-menu-type="category"]')
+    .last()
+    .find(".dropdown-menu-inner")
+    .addClass(
+      "border-0 border-b-[10px] tablet-medium:border-b-0 border-solid border-gray-1000"
+    );
 });
