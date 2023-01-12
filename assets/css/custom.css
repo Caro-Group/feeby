@@ -954,9 +954,6 @@ body .sidebar #search_filters_wrapper {
   margin-bottom: 0px;
 }
 
-div#leo_search_block_top ~ #search_widget {
-  display: none;
-}
 .fancybox-outer *{
   -webkit-user-drag: none;
 }
