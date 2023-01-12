@@ -31,8 +31,12 @@
                 {assign var=_expand_id value=10|mt_rand:100000}
               {/if}
               {assign var=_collapse value=true}
+              {assign var=activeCount value=0}
               {foreach from=$facet.filters item="filter"}
-                {if $filter.active}{assign var=_collapse value=false}{/if}
+                {if $filter.active}
+                  {assign var=_collapse value=false}
+                  {assign var=activeCount value=$activeCount+1}
+                {/if}
               {/foreach}
 
               <div class="title cursor-pointer px-5 tablet:px-0 border-0 border-b-2 tablet:border-b-0 border-gray-1000
@@ -40,6 +44,9 @@
                 data-parent="#search_filters" data-target="#facet_{$_expand_id}" data-toggle="collapse" {if !$_collapse}
                   aria-expanded="true" {/if} {if $_expand_id == 'attribute_group_18'}style="display: none;" {/if}>
                   <p class="facet-title m-0 text-base font-body font-normal group-hover:text-main transition">{$facet.label}
+                  {if $activeCount>0}
+                    <span>({$activeCount})</span>
+                  {/if}                  
                   </p>
                   <span class="pl-4 -top-1 relative">
                     <i class="material-icons text-xl text-main-dark group-hover:text-main transition">add</i>
