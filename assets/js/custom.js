@@ -1527,7 +1527,7 @@ $(document).ready(function () {
   }
 
   if (typeof prestashop !== "undefined") {
-    prestashop.on("updateFacets", function (event) {
+    prestashop.on("updatedProduct", function (event) {
       if ($("[data-swiper-carousel]").length != 0) {
         new Swiper("[data-swiper-carousel]", swiperOptions);
       }
