@@ -1179,16 +1179,18 @@ function openMenuWithCategory(id) {
     }
   }
 
-  document.querySelector('.off-canvas-nav-megamenu .widget-opened').scrollIntoView(true)
   
   if (!menu_el.length) {
     menu_el = $('.off-canvas-nav-megamenu [data-menu-type="category"].active') 
   }
   
   $('[data-target=".megamenu-off-canvas-' + menu_id + '"]')
-    .first()
-    .trigger("click");
+  .first()
+  .trigger("click");
 
+  setTimeout(()=>{
+    document.querySelector('.off-canvas-nav-megamenu .widget-opened').scrollIntoView(true)
+  },175);
 }
 
 
