@@ -1190,7 +1190,7 @@ function menuScrollToEl(el) {
   let menuContainer = $(el).parents('nav.offcanvas-mainnav');
   let posY = $(el).offset().top;
 
-  menuContainer.scrollTo(0,posY);
+  $(menuContainer).scrollTop(posY + 55);
 
 }
 
