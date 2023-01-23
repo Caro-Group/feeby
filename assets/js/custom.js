@@ -1171,12 +1171,13 @@ function openMenuWithCategory(id) {
     .find("[data-header-category-id=" + id + "]")
     .first();
     if (
-      $(menu_el).hasClass('widget-heading dropdown-widget') && 
-      $(menu_el).parent().hasClass("widget-closed")
+      $(menu_el).hasClass('widget-heading dropdown-widget')
       ){
-        $(menu_el).trigger("click");
+        if ($(menu_el).parent().hasClass("widget-closed")) {          
+          $(menu_el).trigger("click");
+        }
         var menu_el_parent = $(menu_el).parent().closest('.off-canvas-nav-megamenu [data-menu-type="category"]')
-        if (!menu_el_parent.hasClass("open-sub")) {
+        if (!menu_el_parent.hasClass("open-sub") ) {
           menu_el_parent.children(".dropdown-toggle").trigger("click");    }
         }
   }
