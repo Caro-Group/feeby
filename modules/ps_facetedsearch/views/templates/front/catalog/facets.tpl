@@ -44,6 +44,9 @@
                 data-parent="#search_filters" data-target="#facet_{$_expand_id}" data-toggle="collapse" {if !$_collapse}
                   aria-expanded="true" {/if} {if $_expand_id == 'attribute_group_18'}style="display: none;" {/if}>
                   <p class="facet-title m-0 text-base font-body font-normal group-hover:text-main {if $activeCount>0} text-main {/if} transition">{$facet.label}
+                  {if $activeCount>0}
+                    <span class="tablet:hidden">({$activeCount})</span>
+                  {/if} 
                   </p>
                   <span class="pl-4 -top-1 relative">
                     <i class="material-icons text-xl text-main-dark group-hover:text-main transition">add</i>
