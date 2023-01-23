@@ -1081,6 +1081,8 @@ function openMenuWithCategory(id) {
   var menu_el = $(".off-canvas-nav-megamenu")
     .find("[data-category-id=" + id + "]")
     .first();
+    var menu_id = menu_el.parents("[data-megamenu-id]").data("megamenu-id");
+
   if (!menu_el.length) {
     menu_el = $('.off-canvas-nav-megamenu [data-menu-type="category"].active')
       .first()
@@ -1088,7 +1090,7 @@ function openMenuWithCategory(id) {
     if (!menu_el.hasClass("open-sub")) {
       menu_el.children(".dropdown-toggle").trigger("click");
     }
-    
+    menu_id = menu_el.parents("[data-megamenu-id]").data("megamenu-id");
     menu_el = $(".off-canvas-nav-megamenu")
     .find("[data-header-category-id=" + id + "]")
     .first();
@@ -1101,7 +1103,7 @@ function openMenuWithCategory(id) {
   }
 
   if (menu_el.length) {
-  var menu_id = menu_el.parents("[data-megamenu-id]").data("megamenu-id");
+  menu_id = menu_el.parents("[data-megamenu-id]").data("megamenu-id");
 
     if (
       $(menu_el).parent().hasClass("level2") &&
