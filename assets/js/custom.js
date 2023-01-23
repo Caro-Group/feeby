@@ -1089,7 +1089,6 @@ function openMenuWithCategory(id) {
       menu_el.children(".dropdown-toggle").trigger("click");
     }
   }
-  var menu_id = menu_el.parents("[data-megamenu-id]").data("megamenu-id");
 
   if (menu_el.length) {
     if (
@@ -1118,10 +1117,6 @@ function openMenuWithCategory(id) {
       }
     })
   );
-
-  $('[data-target=".megamenu-off-canvas-' + menu_id + '"]')
-    .first()
-    .trigger("click");
 
   var currentCatId = $("[data-current-category-id]")
     .first()
@@ -1180,8 +1175,17 @@ function openMenuWithCategory(id) {
       $(menu_el).parent().hasClass("widget-closed")
       ){
         $(menu_el).trigger("click");
-    }
+        var menu_el_parent = $(menu_el).parent().closest('.off-canvas-nav-megamenu [data-menu-type="category"]')
+        if (!menu_el_parent.hasClass("open-sub")) {
+          menu_el_parent.children(".dropdown-toggle").trigger("click");    }
+        }
   }
+  
+  var menu_id = menu_el.parents("[data-megamenu-id]").data("megamenu-id");
+  $('[data-target=".megamenu-off-canvas-' + menu_id + '"]')
+    .first()
+    .trigger("click");
+
 }
 
 $(document).ready(function () {
