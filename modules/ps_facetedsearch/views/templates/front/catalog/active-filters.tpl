@@ -40,7 +40,7 @@
     {block name='facets_clearall_button'}
       {if $activeFilters|count}
         <div id="_desktop_search_filters_clear_all" class="clear-all-wrapper w-full tablet:w-auto relative">
-          <button data-search-url="{$clear_all_link}" class="js-search-filters-clear-all bg-gray-1000 hover:bg-gray-2000 transition border-2 border-gray-1000 border-solid cursor-pointer text-main-dark mx-auto tablet:ml-4 px-5 py-1.5 tablet:py-1 relative rounded-full text-base tablet:text-sm uppercase tablet:normal-case">
+          <button data-search-url="{$clear_all_link}" class="js-search-filters-clear-all block bg-gray-1000 hover:bg-gray-2000 transition border-2 border-gray-1000 border-solid cursor-pointer text-main-dark mx-auto tablet:ml-4 px-5 py-1.5 tablet:py-1 relative rounded-full text-base tablet:text-sm uppercase tablet:!normal-case">
             {l s='Clear all' d='Shop.Theme.Actions'}
           </button>
         </div>
