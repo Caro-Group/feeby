@@ -1171,7 +1171,7 @@ function openMenuWithCategory(id) {
         .addClass("text-main");
     }
   }
-  if (!menu_el.length) {
+  if (!menu_el.length && !$('.off-canvas-nav-megamenu [data-menu-type="category"].active').length) {
     menu_el = $(".off-canvas-nav-megamenu")
     .find("[data-header-category-id=" + id + "]")
     .first();
