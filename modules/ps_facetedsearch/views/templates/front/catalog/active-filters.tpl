@@ -16,9 +16,9 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
-<section id="js-active-search-filters" class="mt-5 pl-5 {if $activeFilters|count}active_filters{else}hide{/if}" style="display: flex;align-items: baseline;flex-wrap: wrap;">
+<section id="js-active-search-filters" class="mt-5 mb-5 tablet:mb-0 tablet:pl-5 {if $activeFilters|count}active_filters{else}hide{/if}" style="display: flex;align-items: baseline;flex-wrap: wrap;">
   {block name='active_filters_title'}
-    <p class="{if $activeFilters|count}active-filter-title{else}hidden-xs-up{/if} text-base font-body font-normal ">{l s='Active filters' d='Shop.Theme.Global'} <span class="hidden-sm-down hidden-lg-up">({$activeFilters|count})</span></p>
+    <p class="{if $activeFilters|count}active-filter-title{else}hidden-xs-up{/if} text-base font-body font-normal hidden tablet:block">{l s='Active filters' d='Shop.Theme.Global'} <span class="hidden-sm-down hidden-lg-up">({$activeFilters|count})</span></p>
   {/block}
 
   {if $activeFilters|count}
@@ -39,8 +39,8 @@
 
     {block name='facets_clearall_button'}
       {if $activeFilters|count}
-        <div id="_desktop_search_filters_clear_all" class="hidden-sm-down clear-all-wrapper relative">
-          <button data-search-url="{$clear_all_link}" class="js-search-filters-clear-all bg-gray-1000 hover:bg-gray-2000 transition border-2 border-gray-1000 border-solid cursor-pointer text-main-dark ml-4 px-5 py-1 relative rounded-full text-sm">
+        <div id="_desktop_search_filters_clear_all" class="clear-all-wrapper w-full tablet:w-auto relative">
+          <button data-search-url="{$clear_all_link}" class="js-search-filters-clear-all bg-gray-1000 hover:bg-gray-2000 transition border-2 border-gray-1000 border-solid cursor-pointer text-main-dark mx-auto tablet:ml-4 px-5 py-1.5 tablet:py-1 relative rounded-full text-base tablet:text-sm uppercase tablet:normal-case">
             {l s='Clear all' d='Shop.Theme.Actions'}
           </button>
         </div>
