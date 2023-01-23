@@ -1185,7 +1185,7 @@ function openMenuWithCategory(id) {
   .trigger("click");
 
   setTimeout(()=>{
-    document.querySelector('.off-canvas-nav-megamenu .widget-opened').scrollIntoView(true)
+    document.querySelector('.off-canvas-nav-megamenu .open-sub').scrollIntoView(true)
   },175);
 }
 
