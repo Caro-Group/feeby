@@ -1119,7 +1119,7 @@ function openMenuWithCategory(id) {
       if ($(menu_el).parent().parent().hasClass("level2")) {
         $(menu_el).parent().parent().find(".caret").trigger("click");
       }
-      if ($(menu_el).parent().parent().parent().hasClass("level2")) {
+      if ($(menu_el).parent().parent().parent().hasClass("level2") && !$(menu_el).parent().parent().parent().hasClass("open-sub")) {
         $(menu_el).parent().parent().parent().find(".caret").trigger("click");
       }
     }
