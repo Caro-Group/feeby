@@ -1179,6 +1179,8 @@ function openMenuWithCategory(id) {
         if (!menu_el_parent.hasClass("open-sub")) {
           menu_el_parent.children(".dropdown-toggle").trigger("click");    }
         }
+  }else{
+    menu_el = $('.off-canvas-nav-megamenu [data-menu-type="category"].active')
   }
   
   var menu_id = menu_el.parents("[data-megamenu-id]").data("megamenu-id");
