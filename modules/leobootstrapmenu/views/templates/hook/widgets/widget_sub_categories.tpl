@@ -6,6 +6,9 @@
 *}
 
 <div class="leo-widget" data-id_widget="{$id_widget}">
+{if $id_widget == '1642608476'}
+    {debug}
+{/if}
 {if isset($subcategories)}
     <div class="widget-dropdown_container widget-subcategories {if isset($widget_heading)&&!empty($widget_heading)} widget-closed {/if} ">
         {if isset($widget_heading)&&!empty($widget_heading)}
