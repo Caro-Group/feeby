@@ -1110,6 +1110,13 @@ function openMenuWithCategory(id) {
         $(menu_el).parent().parent().parent().find(".caret").trigger("click");
       }
     }
+
+    if (
+      $(menu_el).hasClass('widget-heading dropdown-widget') && 
+      $(menu_el).parent().hasClass("widget-closed")
+      ){
+        $(menu_el).trigger("click");
+    }
   }
   if (
     menu_el.parents(".dropdown").each(function (i, item) {
