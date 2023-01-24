@@ -89,96 +89,27 @@ $(document).ready(function () {
     '[data-button-action="add-sample-to-cart"]',
     function () {
       tempSelectedIds = configurableSelected.filter(
-        (product) => product.selected === true
-      );
-      productConfigurableUnSelectAll();
-      productConfigurableWriteState("Próbka"); //TODO: Check why not updating
-      productConfigurableSaveState();
-      productConfigurableSetState();
-      $("[data-product-attribute]").eq(6).trigger("click");
-    }
-  );
+        (product) => product.selected === true,
+      )
+      productConfigurableUnSelectAll()
+      productConfigurableWriteState('')
+      productConfigurableSaveState()
+      productConfigurableSetState()
+      $('[data-product-attribute]').eq(6).trigger('click')
+    },
+  )
 
-  $configurableElements
-    .filter(function () {
-      return $(this).data("productConfigurable") == "pdf";
-    })
-    .on("click", function (e) {
-      $root = $configurableElements.filter(function () {
-        return $(this).data("productConfigurable") == "modal";
-      });
-
-      var name = $configurableElements
-        .filter(function () {
-          return $(this).data("productConfigurable") == "name";
-        })
-        .text();
-
-      var width = $configurableElements
-        .filter(function () {
-          return $(this).data("productConfigurable") == "width";
-        })
-        .text();
-
-      var height = $configurableElements
-        .filter(function () {
-          return $(this).data("productConfigurable") == "height";
-        })
-        .text();
-
-      var kolor = $("#group_19 [data-product-attribute]:checked").attr("title");
-
-      var imgSrc = $configurableElements
-        .filter(function () {
-          return $(this).data("productConfigurable") == "swiper";
-        })
-        .find("img")
-        .first()
-        .attr("src");
-
-      var wnd = window.open(
-        prestashop.urls.base_url +
-          "index.php?fc=module&module=webo_pdfgenerator&controller=validation&action=getpdffromwebsite&ajax=true" +
-          "&pdfnamefile=" +
-          encodeURIComponent(prestashop.shop.name + " - " + name) +
-          "&color=" +
-          encodeURIComponent(kolor) +
-          "&standard=Flizelina" +
-          "&texture=Standard" +
-          "&picture=" +
-          encodeURIComponent(imgSrc) +
-          "&parts=" +
-          encodeURIComponent(
-            $(".product-customization-item")
-              .first()
-              .find(".product-message")
-              .val()
-          ) +
-          "&size=" +
-          encodeURIComponent(height) +
-          " x " +
-          encodeURIComponent(width) +
-          "&title=" +
-          encodeURIComponent(name) +
-          "&width=" +
-          encodeURIComponent(width) +
-          "&height=" +
-          encodeURIComponent(height),
-        "_blank"
-      );
-      wnd.print();
-    });
-
-  if (typeof prestashop !== "undefined") {
-    prestashop.on("updatedProduct", function (event) {
-      if ($("[data-product-attribute]").eq(6).is(":checked")) {
-        $("#quantity_wanted").val(1);
-        productConfigurableWriteState("Próbka"); //TODO: Check why not updating
-        $('.hidden [data-button-action="add-to-cart"]').trigger("click");
-
-        tempSelectedIds.forEach((product) => {
-          productConfigurableSelect(product.id);
-        });
+  if (typeof prestashop !== 'undefined') {
+    prestashop.on('updatedProduct', function (event) {
+      if ($('[data-product-attribute]').eq(6).is(':checked')) {
+        $('#quantity_wanted').val(1)
+        productConfigurableWriteState('')
+        $('.hidden [data-button-action="add-to-cart"]').trigger('click')
+        prestashop.on('updatedCart',function(){
+          tempSelectedIds.forEach((product) => {
+            productConfigurableSelect(product.id)
+          })
+        })   
       }
 
       $configurableElements
