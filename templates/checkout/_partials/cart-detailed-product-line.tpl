@@ -53,6 +53,7 @@
           {assign var="productSample" value="true"}
         {/if}
       {/foreach}
+      {debug}
 
       {if is_array($product.customizations) && $product.customizations|count && !isset($productSample)}
         {block name='cart_detailed_product_line_customization'}
@@ -63,7 +64,6 @@
                 {$field.label}:
               </span>
               <span class="font-light text-base text-main-dark">
-              {debug}
                 {if $field.type == 'text'}
                   {if (int)$field.id_module}
                     {$field.text nofilter}
