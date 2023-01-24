@@ -63,6 +63,7 @@
                 {$field.label}:
               </span>
               <span class="font-light text-base text-main-dark">
+              {debug}
                 {if $field.type == 'text'}
                   {if (int)$field.id_module}
                     {$field.text nofilter}
