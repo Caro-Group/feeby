@@ -53,7 +53,6 @@
           {assign var="productSample" value="true"}
         {/if}
       {/foreach}
-      {debug}
 
       {if is_array($product.customizations) && $product.customizations|count && !isset($productSample)}
         {block name='cart_detailed_product_line_customization'}
@@ -106,16 +105,20 @@
            <span class="price text-base tablet:text-lg {if $product.has_discount} text-main {else} text-main-dark {/if} font-medium">
             {if $productSample}
               {$product.unit_price_full|replace:' m2':''}
+              jest m2
             {else}
               {$product.unit_price_full}
+              brak m2
             {/if}            
             </span>
           {else}
             <span class="price text-base tablet:text-lg {if $product.has_discount} text-main {else} text-main-dark {/if} font-medium">
               {if $productSample}
                 {$product.price|replace:' m2':''}
+                Jest m2
               {else}
                 {$product.price}
+                Brak m2
               {/if} 
               </span>
           {/if}
