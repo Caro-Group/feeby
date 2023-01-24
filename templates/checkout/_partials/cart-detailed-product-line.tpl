@@ -103,9 +103,21 @@
         {/if}
         <div class="current-price text-right desktop-presta:text-left">
           {if $product.unit_price_full}
-           <span class="price text-base tablet:text-lg {if $product.has_discount} text-main {else} text-main-dark {/if} font-medium">{$product.unit_price_full}</span>
+           <span class="price text-base tablet:text-lg {if $product.has_discount} text-main {else} text-main-dark {/if} font-medium">
+            {if $productSample}
+              {$product.unit_price_full|replace:' m2':''}
+            {else}
+              {$product.unit_price_full}
+            {/if}            
+            </span>
           {else}
-            <span class="price text-base tablet:text-lg {if $product.has_discount} text-main {else} text-main-dark {/if} font-medium">{$product.price}</span>
+            <span class="price text-base tablet:text-lg {if $product.has_discount} text-main {else} text-main-dark {/if} font-medium">
+              {if $productSample}
+                {$product.price|replace:' m2':''}
+              {else}
+                {$product.price}
+              {/if} 
+              </span>
           {/if}
         </div>
       </div>
