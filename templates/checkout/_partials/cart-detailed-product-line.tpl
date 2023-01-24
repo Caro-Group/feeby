@@ -51,9 +51,10 @@
         </div>
         {if $value eq 'Próbka'}
           {assign var="productSample" value="true"}
-          JEST PRÓBKA
         {/if}
       {/foreach}
+
+      {debug}
 
       {if is_array($product.customizations) && $product.customizations|count && !isset($productSample)}
         {block name='cart_detailed_product_line_customization'}
@@ -73,11 +74,7 @@
                 {elseif $field.type == 'image'}
                   <img src="{$field.image.small.url}">
                 {/if}
-              </span>
-              {if $field.text eq 'Próbka'}
-                {assign var="productSample" value="true"}
-                JEST PRÓBKAAA
-              {/if}      
+              </span>  
             {/foreach}
             </div>
           {/foreach}
