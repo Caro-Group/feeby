@@ -92,7 +92,7 @@ $(document).ready(function () {
         (product) => product.selected === true,
       )
       productConfigurableUnSelectAll()
-      productConfigurableWriteState('Próbka') //TODO: Check why not updating
+      productConfigurableWriteState('') //TODO: Check why not updating
       productConfigurableSaveState()
       productConfigurableSetState()
       $('[data-product-attribute]').eq(6).trigger('click')
@@ -103,12 +103,13 @@ $(document).ready(function () {
     prestashop.on('updatedProduct', function (event) {
       if ($('[data-product-attribute]').eq(6).is(':checked')) {
         $('#quantity_wanted').val(1)
-        productConfigurableWriteState('Próbka') //TODO: Check why not updating
+        productConfigurableWriteState('') //TODO: Check why not updating
         $('.hidden [data-button-action="add-to-cart"]').trigger('click')
-
-        tempSelectedIds.forEach((product) => {
-          productConfigurableSelect(product.id)
-        })
+        prestashop.once('updateCart',function(){
+          tempSelectedIds.forEach((product) => {
+            productConfigurableSelect(product.id)
+          })
+        })  
       }
 
       $configurableElements
