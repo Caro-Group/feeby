@@ -830,9 +830,16 @@ function customSticky() {
       $myGroup.find(".collapse.in").collapse("hide");
     });
 
+    bindFilterCollapses()
+
+    prestashop.on('updateProductList',()=>{
+      bindFilterCollapses()
+    })
+  });
+
+  function bindFilterCollapses() {
     if ($("#search_filters_wrapper").length) {
       if ($(window).width() > 768) {
-        $("#search_filters_wrapper").collapse("show");
         $('.active-search-wrapper').collapse('show')
       }else{
         $('.active-search-wrapper').addClass('collapse')
@@ -845,9 +852,8 @@ function customSticky() {
       $("#search_filters_wrapper").on('hide.bs.collapse',function(){
         $('.active-search-wrapper').collapse('hide')
       })
-
     }
-  });
+  }
 
   $(document).on("click", function (event) {
     $("#search_filters .facet .collapse").collapse("hide");
