@@ -78,7 +78,7 @@
     </div>
 
     {block name='product_list_active_filters'}
-      <div style="flex:1 1 auto;" class="order-4">
+      <div style="flex:1 1 auto;" class="active-search-wrapper collapse order-4 tablet:h-full tablet:block">
         {$listing.rendered_active_filters nofilter}
       </div>
     {/block}
