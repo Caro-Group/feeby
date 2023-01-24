@@ -827,7 +827,19 @@ function customSticky() {
     if ($("#search_filters_wrapper").length) {
       if ($(window).width() > 768) {
         $("#search_filters_wrapper").collapse("show");
+        $('.active-search-wrapper').collapse('show')
+      }else{
+        $('.active-search-wrapper').addClass('collapse')
       }
+
+      $("#search_filters_wrapper").on('show.bs.collapse',function(){
+        $('.active-search-wrapper').collapse('show')
+      })
+      
+      $("#search_filters_wrapper").on('hide.bs.collapse',function(){
+        $('.active-search-wrapper').collapse('hide')
+      })
+
     }
   });
 
