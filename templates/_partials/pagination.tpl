@@ -58,7 +58,7 @@
             {if $page.type === 'previous'}
               <div class="w-full flex justify-center order-1">
                 <a rel="previous" href="{$page.url}"
-                  class="flex items-center border-0 border-b-[1px] border-black font-medium font-normal p-2 px-[30px] uppercase cursor-pointer transition duration-150 js-search-link prev {['disabled' => !$page.clickable, 'js-search-link' => true]|classnames}">
+                  class="flex items-center border-0 border-b-[1px] border-black font-medium font-normal p-2 py-[30px] mb-[10px] uppercase cursor-pointer transition duration-150 js-search-link prev {['disabled' => !$page.clickable, 'js-search-link' => true]|classnames}">
                   {l s='Load Previous Products' d='Shop.Theme.Actions'}
                 </a>
               </div>
