@@ -49,6 +49,7 @@
           <span class="font-light mr-1 text-base text-main-dark">{$attribute}:</span>
           <span class="font-light text-base text-main-dark">{$value}</span>
         </div>
+        test a
         {if $value eq 'Próbka'}
           {assign var="productSample" value="true"}
         {/if}
@@ -67,7 +68,7 @@
                   {if $field.text eq 'Próbka'}
                     {assign var="productSample" value="true"}
                   {/if}
-                  test a
+                  test b
                   {if (int)$field.id_module}
                     {$field.text nofilter}
                   {else}
