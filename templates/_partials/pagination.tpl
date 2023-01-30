@@ -40,14 +40,7 @@
               <li class="hidden">
                 <span class="spacer text-gray-3000 text-base">&hellip;</span>
               </li>
-            {elseif $page.type === 'next'}
-              <li class="w-full flex justify-center">
-                <a rel="next" href="{$page.url}"
-                  class="flex items-center bg-main hover:bg-main-hover border-none font-body font-normal p-2 px-[30px] rounded-[23px] text-white hover:text-white uppercase cursor-pointer transition duration-150 next {['disabled' => !$page.clickable, 'js-search-link' => true]|classnames}">
-                  {l s='Load More Products' d='Shop.Theme.Actions'}
-                </a>
-              </li>
-            {else if $page.type != 'previous'}
+            {else if $page.type != 'previous' && $page.type != 'next'}
               <li
                 class="{if $page.current}current relative after:-ml-4 after:absolute after:bg-main after:block
                   after:-bottom-2 after:content-[''] after:h-1 after:left-1/2 after:rounded-full after:w-8 js-search-link text-inherit {/if} font-normal hover:text-main-dark text-base text-gray-3000 hidden transition">
@@ -59,6 +52,27 @@
             {/if}
           {/foreach}
         </ul>
+
+        <div class="flex flex-col">
+          {foreach from=$pagination.pages item="page"}
+            {if $page.type === 'previous'}
+              <div class="w-full flex justify-center order-1">
+                <a rel="next" href="{$page.url}"
+                  class="flex items-center bg-main hover:bg-main-hover border-none font-medium font-normal p-2 px-[30px] rounded-[23px] text-white hover:text-white uppercase cursor-pointer transition duration-150 next {['disabled' => !$page.clickable, 'js-search-link' => true]|classnames}">
+                  {l s='Load More Products' d='Shop.Theme.Actions'}
+                </a>
+              </div>
+          
+            {elseif $page.type === 'next'}
+              <div class="w-full flex justify-center order-2">
+                <a rel="next" href="{$page.url}"
+                  class="flex items-center border-b-[1px] border-black font-medium font-normal p-2 px-[30px] rounded-[23px] uppercase cursor-pointer transition duration-150 next js-search-link prev {['disabled' => !$page.clickable, 'js-search-link' => true]|classnames}">
+                  {l s='Load previous producst' d='Shop.Theme.Actions'}
+                </a>
+              </div>
+            {/if}
+          {/foreach}
+        </div>
       {/if}
     {/block}
   </div>
