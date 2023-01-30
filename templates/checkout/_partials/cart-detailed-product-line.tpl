@@ -50,6 +50,7 @@
           <span class="font-light text-base text-main-dark">{$value}</span>
         </div>
         {if $value eq 'Próbka'}
+          <div class="w-2 h-2 bg-red-600"></div>
           {assign var="productSample" value="true"}
         {/if}
       {/foreach}
@@ -105,16 +106,20 @@
            <span class="price text-base tablet:text-lg {if $product.has_discount} text-main {else} text-main-dark {/if} font-medium">
             {if $productSample}
               {$product.unit_price_full|replace:' m2':''}
+              a
             {else}
               {$product.unit_price_full}
+              b
             {/if}            
             </span>
           {else}
             <span class="price text-base tablet:text-lg {if $product.has_discount} text-main {else} text-main-dark {/if} font-medium">
               {if $productSample}
                 {$product.price|replace:' m2':''}
+                c
               {else}
                 {$product.price}
+                d
               {/if} 
               </span>
           {/if}
