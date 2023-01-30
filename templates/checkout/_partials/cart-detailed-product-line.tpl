@@ -50,7 +50,6 @@
           <span class="font-light text-base text-main-dark">{$value}</span>
         </div>
         {if $value eq 'Próbka'}
-          <div class="w-2 h-2 bg-red-600"></div>
           {assign var="productSample" value="true"}
         {/if}
       {/foreach}
@@ -65,6 +64,10 @@
               </span>
               <span class="font-light text-base text-main-dark">
                 {if $field.type == 'text'}
+                  {if $field.text eq 'Próbka'}
+                    {assign var="productSample" value="true"}
+                  {/if}
+                  test a
                   {if (int)$field.id_module}
                     {$field.text nofilter}
                   {else}
