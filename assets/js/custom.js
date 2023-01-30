@@ -1481,6 +1481,18 @@ function handleUpdateZoom(mainSwiper) {
   });
 }
 
+function paginationGoTop() {
+  $(".page-list a").on("click", function () {
+      window.scrollTo({
+        top: 0,
+      });
+  });
+}
+$(document).ready(function () {
+  paginationGoTop();
+  prestashop.on("updateProductList", paginationGoTop);
+});
+
 $(document).ready(function () {
   if ($("#checkout").length != 0) {
     let currentStep = $(".js-current-step .step-number").text();
