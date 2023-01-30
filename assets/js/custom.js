@@ -824,28 +824,28 @@ function customSticky() {
       $myGroup.find(".collapse.in").collapse("hide");
     });
 
-    bindFilterCollapses()
+    bindFilterCollapses();
 
-    prestashop.on('updateProductList',()=>{
-      bindFilterCollapses()
-    })
+    prestashop.on("updateProductList", () => {
+      bindFilterCollapses();
+    });
   });
 
   function bindFilterCollapses() {
     if ($("#search_filters_wrapper").length) {
       if ($(window).width() > 768) {
-        $('.active-search-wrapper').collapse('show')
-      }else{
-        $('.active-search-wrapper').addClass('collapse')
+        $(".active-search-wrapper").collapse("show");
+      } else {
+        $(".active-search-wrapper").addClass("collapse");
       }
 
-      $("#search_filters_wrapper").on('show.bs.collapse',function(){
-        $('.active-search-wrapper').collapse('show')
-      })
-      
-      $("#search_filters_wrapper").on('hide.bs.collapse',function(){
-        $('.active-search-wrapper').collapse('hide')
-      })
+      $("#search_filters_wrapper").on("show.bs.collapse", function () {
+        $(".active-search-wrapper").collapse("show");
+      });
+
+      $("#search_filters_wrapper").on("hide.bs.collapse", function () {
+        $(".active-search-wrapper").collapse("hide");
+      });
     }
   }
 
@@ -1093,7 +1093,7 @@ function openMenuWithCategory(id) {
   var menu_el = $(".off-canvas-nav-megamenu")
     .find("[data-category-id=" + id + "]")
     .first();
-    var menu_id = menu_el.parents("[data-megamenu-id]").data("megamenu-id");
+  var menu_id = menu_el.parents("[data-megamenu-id]").data("megamenu-id");
 
   if (!menu_el.length) {
     menu_el = $('.off-canvas-nav-megamenu [data-menu-type="category"].active')
@@ -1104,18 +1104,17 @@ function openMenuWithCategory(id) {
     }
     menu_id = menu_el.parents("[data-megamenu-id]").data("megamenu-id");
     menu_el = $(".off-canvas-nav-megamenu")
-    .find("[data-header-category-id=" + id + "]")
-    .first();
+      .find("[data-header-category-id=" + id + "]")
+      .first();
     if (menu_el.length) {
-      if ($(menu_el).parent().hasClass("widget-closed")) {          
+      if ($(menu_el).parent().hasClass("widget-closed")) {
         $(menu_el).trigger("click");
       }
     }
-
   }
 
   if (menu_el.length) {
-  menu_id = menu_el.parents("[data-megamenu-id]").data("megamenu-id");
+    menu_id = menu_el.parents("[data-megamenu-id]").data("megamenu-id");
 
     if (
       $(menu_el).parent().hasClass("level2") &&
@@ -1131,7 +1130,10 @@ function openMenuWithCategory(id) {
       if ($(menu_el).parent().parent().hasClass("level2")) {
         $(menu_el).parent().parent().find(".caret").trigger("click");
       }
-      if ($(menu_el).parent().parent().parent().hasClass("level2") && !$(menu_el).parent().parent().parent().hasClass("open-sub")) {
+      if (
+        $(menu_el).parent().parent().parent().hasClass("level2") &&
+        !$(menu_el).parent().parent().parent().hasClass("open-sub")
+      ) {
         $(menu_el).parent().parent().parent().find(".caret").trigger("click");
       }
     }
@@ -1203,20 +1205,20 @@ function openMenuWithCategory(id) {
     }
   }
 
-  
   if (!menu_el.length) {
-    menu_el = $('.off-canvas-nav-megamenu [data-menu-type="category"].active') 
+    menu_el = $('.off-canvas-nav-megamenu [data-menu-type="category"].active');
   }
-  
+
   $('[data-target=".megamenu-off-canvas-' + menu_id + '"]')
-  .first()
-  .trigger("click");
+    .first()
+    .trigger("click");
 
-  setTimeout(()=>{
-    document.querySelector('.off-canvas-nav-megamenu .open-sub').scrollIntoView(true)
-  },175);
+  setTimeout(() => {
+    document
+      .querySelector(".off-canvas-nav-megamenu .open-sub")
+      .scrollIntoView(true);
+  }, 175);
 }
-
 
 $(document).ready(function () {
   var delayValue = $(".swiper-banner .swiper-slide").attr("data-pausetime");
@@ -1478,21 +1480,6 @@ function handleUpdateZoom(mainSwiper) {
       .trigger("click");
   });
 }
-
-function paginationGoTop() {
-  $(".page-list a").on("click", function () {
-    if (window.innerWidth >= 768) {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-    }
-  });
-}
-$(document).ready(function () {
-  paginationGoTop();
-  prestashop.on("updateProductList", paginationGoTop);
-});
 
 $(document).ready(function () {
   if ($("#checkout").length != 0) {

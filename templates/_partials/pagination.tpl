@@ -37,11 +37,11 @@
         <ul class="page-list clearfix text-md-right text-xs-center flex justify-center">
           {foreach from=$pagination.pages item="page"}
             {if $page.type === 'spacer'}
-              <li class="hidden tablet:block">
+              <li class="hidden">
                 <span class="spacer text-gray-3000 text-base">&hellip;</span>
               </li>
             {elseif $page.type === 'next'}
-              <li class="w-full flex justify-center tablet:hidden">
+              <li class="w-full flex justify-center">
                 <a rel="next" href="{$page.url}"
                   class="flex items-center bg-main hover:bg-main-hover border-none font-body font-normal p-2 px-[30px] rounded-[23px] text-white hover:text-white uppercase cursor-pointer transition duration-150 next {['disabled' => !$page.clickable, 'js-search-link' => true]|classnames}">
                   {l s='Load More Products' d='Shop.Theme.Actions'}
@@ -50,7 +50,7 @@
             {else if $page.type != 'previous'}
               <li
                 class="{if $page.current}current relative after:-ml-4 after:absolute after:bg-main after:block
-                  after:-bottom-2 after:content-[''] after:h-1 after:left-1/2 after:rounded-full after:w-8 js-search-link text-inherit {/if} font-normal hover:text-main-dark text-base text-gray-3000 hidden tablet:block transition">
+                  after:-bottom-2 after:content-[''] after:h-1 after:left-1/2 after:rounded-full after:w-8 js-search-link text-inherit {/if} font-normal hover:text-main-dark text-base text-gray-3000 hidden transition">
                 <a rel="nofollow" href="{$page.url}"
                   class="text-inherit p-1 mx-2.5 {['disabled' => !$page.clickable, 'js-search-link' => true]|classnames}">
                   {$page.page}
