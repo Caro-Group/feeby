@@ -4270,20 +4270,20 @@
           t.rendered_products_top
         );
 
-      if (window.innerWidth >= 768) {
-        (0, a.default)("#js-product-list").replaceWith(t.rendered_products);
+      //if (window.innerWidth >= 768) {
+      //  (0, a.default)("#js-product-list").replaceWith(t.rendered_products);
+      //} else {
+      if (t.current_url.includes("page=")) {
+        (0, a.default)("#js-product-list .products .row").append(
+          $(".row", t.rendered_products).children()
+        ),
+          (0, a.default)("#js-product-list nav.pagination").replaceWith(
+            $(".pagination", t.rendered_products)
+          );
       } else {
-        if (t.current_url.includes("page=")) {
-          (0, a.default)("#js-product-list .products .row").append(
-            $(".row", t.rendered_products).children()
-          ),
-            (0, a.default)("#js-product-list nav.pagination").replaceWith(
-              $(".pagination", t.rendered_products)
-            );
-        } else {
-          (0, a.default)("#js-product-list").replaceWith(t.rendered_products);
-        }
+        (0, a.default)("#js-product-list").replaceWith(t.rendered_products);
       }
+      //}
 
       (0, a.default)("#js-product-list-bottom").replaceWith(
         t.rendered_products_bottom
