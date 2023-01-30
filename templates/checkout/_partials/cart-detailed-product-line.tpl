@@ -49,8 +49,7 @@
           <span class="font-light mr-1 text-base text-main-dark">{$attribute}:</span>
           <span class="font-light text-base text-main-dark">{$value}</span>
         </div>
-        test a
-        {if $value eq 'Próbka'}
+        {if $value eq 'Próbka '}
           {assign var="productSample" value="true"}
         {/if}
       {/foreach}
@@ -65,10 +64,6 @@
               </span>
               <span class="font-light text-base text-main-dark">
                 {if $field.type == 'text'}
-                  {if $field.text eq 'Próbka'}
-                    {assign var="productSample" value="true"}
-                  {/if}
-                  test b
                   {if (int)$field.id_module}
                     {$field.text nofilter}
                   {else}
@@ -110,20 +105,16 @@
            <span class="price text-base tablet:text-lg {if $product.has_discount} text-main {else} text-main-dark {/if} font-medium">
             {if $productSample}
               {$product.unit_price_full|replace:' m2':''}
-              a
             {else}
               {$product.unit_price_full}
-              b
             {/if}            
             </span>
           {else}
             <span class="price text-base tablet:text-lg {if $product.has_discount} text-main {else} text-main-dark {/if} font-medium">
               {if $productSample}
                 {$product.price|replace:' m2':''}
-                c
               {else}
                 {$product.price}
-                d
               {/if} 
               </span>
           {/if}
