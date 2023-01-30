@@ -58,14 +58,14 @@
             {if $page.type === 'previous'}
               <div class="w-full flex justify-center order-1">
                 <a rel="previous" href="{$page.url}"
-                  class="flex items-center border-0 border-b-[1px] border-solid border-black font-medium font-normal p-2 py-[10px] px-[0px] mb-[20px] uppercase cursor-pointer transition duration-150 js-search-link prev {['disabled' => !$page.clickable, 'js-search-link' => true]|classnames}">
+                  class="flex items-center border-0 border-b-[1px] border-solid font-medium font-normal p-2 py-[10px] px-[0px] mb-[20px] uppercase cursor-pointer transition duration-150 js-search-link prev {['disabled' => !$page.clickable, 'js-search-link' => true]|classnames}">
                   {l s='Load Previous Products' d='Shop.Theme.Actions'}
                 </a>
               </div>
             {elseif $page.type === 'next'}
               <div class="w-full flex justify-center order-2">
                 <a rel="next" href="{$page.url}"
-                  class="flex items-center bg-main hover:bg-main-hover border-none font-medium font-normal p-[50px] tablet:p-2 px-[30px] rounded-[23px] text-white hover:text-white uppercase cursor-pointer transition duration-150 next {['disabled' => !$page.clickable, 'js-search-link' => true]|classnames}">
+                  class="flex items-center bg-main hover:bg-main-hover border-none font-medium font-normal p-[15px] tablet:p-2 px-[30px] rounded-[23px] text-white hover:text-white uppercase cursor-pointer transition duration-150 next {['disabled' => !$page.clickable, 'js-search-link' => true]|classnames}">
                   {l s='Load More Products' d='Shop.Theme.Actions'}
                 </a>
               </div>
