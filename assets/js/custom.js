@@ -1482,10 +1482,10 @@ function handleUpdateZoom(mainSwiper) {
 }
 
 function paginationGoTop() {
-  $(".page-list a").on("click", function () {
-      window.scrollTo({
-        top: 0,
-      });
+  $("#pagination-links a").on("click", function () {
+    window.scrollTo({
+      top: 0,
+    });
   });
 }
 $(document).ready(function () {

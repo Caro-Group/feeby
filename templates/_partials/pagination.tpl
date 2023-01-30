@@ -53,7 +53,7 @@
           {/foreach}
         </ul>
 
-        <div class="flex flex-col">
+        <div id="pagination-links" class="flex flex-col">
           {foreach from=$pagination.pages item="page"}
             {if $page.type === 'previous'}
               <div class="w-full flex justify-center order-1">
