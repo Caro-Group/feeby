@@ -49,7 +49,7 @@
           <span class="font-light mr-1 text-base text-main-dark">{$attribute}:</span>
           <span class="font-light text-base text-main-dark">{$value}</span>
         </div>
-        {if $value eq 'Próbka'}
+        {if $value eq 'Próbka '}
           {assign var="productSample" value="true"}
         {/if}
       {/foreach}
