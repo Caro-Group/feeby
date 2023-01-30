@@ -64,3 +64,11 @@
   </div>
 
 </nav>
+
+{literal}
+<script>
+window.addEventListener('popstate', function (event) {
+   location.reload();
+});
+</script>
+{/literal}
