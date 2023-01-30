@@ -4274,9 +4274,7 @@
       //  (0, a.default)("#js-product-list").replaceWith(t.rendered_products);
       //} else {
       if (t.current_url.includes("page=")) {
-        (0, a.default)("#js-product-list .products .row").replaceWith(
-          t.rendered_products
-        ),
+        (0, a.default)("#js-product-list").replaceWith(t.rendered_products),
           (0, a.default)("#js-product-list nav.pagination").replaceWith(
             $(".pagination", t.rendered_products)
           );
