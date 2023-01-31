@@ -49,7 +49,7 @@
           <span class="font-light mr-1 text-base text-main-dark">{$attribute}:</span>
           <span class="font-light text-base text-main-dark">{$value}</span>
         </div>
-        {if $value eq 'Próbka'}
+        {if $value eq 'Próbka '}
           {assign var="productSample" value="true"}
         {/if}
       {/foreach}
@@ -102,9 +102,21 @@
         {/if}
         <div class="current-price text-right desktop-presta:text-left">
           {if $product.unit_price_full}
-           <span class="price text-base tablet:text-lg {if $product.has_discount} text-main {else} text-main-dark {/if} font-medium">{$product.unit_price_full}</span>
+           <span class="price text-base tablet:text-lg {if $product.has_discount} text-main {else} text-main-dark {/if} font-medium">
+            {if $productSample}
+              {$product.unit_price_full|replace:' m2':''}
+            {else}
+              {$product.unit_price_full}
+            {/if}            
+            </span>
           {else}
-            <span class="price text-base tablet:text-lg {if $product.has_discount} text-main {else} text-main-dark {/if} font-medium">{$product.price}</span>
+            <span class="price text-base tablet:text-lg {if $product.has_discount} text-main {else} text-main-dark {/if} font-medium">
+              {if $productSample}
+                {$product.price|replace:' m2':''}
+              {else}
+                {$product.price}
+              {/if} 
+              </span>
           {/if}
         </div>
       </div>
