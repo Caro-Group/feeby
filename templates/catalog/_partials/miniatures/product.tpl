@@ -39,7 +39,7 @@
 							{if isset($lazy_load)}
 								src="{$product.cover.bySize.category_default_x2.url}"
 							{else}
-								src="{$product.cover.bySize.category_default.url}"
+								src="{$product.cover.bySize.category_default_x2.url}"
 								data-retina="{$product.cover.bySize.category_default_x2.url}"
 							{/if}
 
