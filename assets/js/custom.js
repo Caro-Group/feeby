@@ -909,16 +909,16 @@ function customSticky() {
       );
     });
 
-    prestashop.on("updateFacets", (param) => {
-      jQuery(".category-top-menu a").each(function (t, el) {
-        jQuery(el).attr(
-          "href",
-          jQuery(el).data("link") +
-            "?" +
-            param.substring(param.indexOf("?") + 1)
-        );
-      });
-    });
+    // prestashop.on("updateFacets", (param) => {
+    //   jQuery(".category-top-menu a").each(function (t, el) {
+    //     jQuery(el).attr(
+    //       "href",
+    //       jQuery(el).data("link") +
+    //         "?" +
+    //         param.substring(param.indexOf("?") + 1)
+    //     );
+    //   });
+    // });
 
     if ($("#cart").length) {
       $('#cart [data-toggle="popover"]').popover();
