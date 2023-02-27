@@ -1442,7 +1442,12 @@ function handleFancyboxSwipe() {
     } else {
       endX = event.clientX;
     }
-    const distance = endX - startX;
+    
+    if (event.type == "touchend" && event.changedTouches.length > 1) {
+      return
+    }
+
+    let distance = endX - startX;
     let fancybox = $.fancybox;
 
     if (Math.abs(distance) > 50) {
