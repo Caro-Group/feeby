@@ -1452,13 +1452,13 @@ function handleFancyboxSwipe() {
   });
 
   $(document).on("mouseup touchend", ".fancybox-outer", function (event) {
-    if (event.type == "touchend" && event.touches.length > 1) {
-      return
-    }
     if (event.type == "touchend") {
       endX = event.changedTouches[0].clientX;
     } else {
       endX = event.clientX;
+    }
+    if (event.type == "touchend" && event.touches.length > 1) {
+      endX = startX;
     }
     
 
