@@ -1440,9 +1440,11 @@ $(document).ready(function () {
         }
 
         handleUpdateZoom(productSwiper);
-      }
+      };
     });
-};
+  }
+  handleFancyboxSwipe();
+});
 
 function handleFancyboxSwipe() {
   let startX;
