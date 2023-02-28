@@ -1461,6 +1461,14 @@ function handleFancyboxSwipe() {
 
     let distance = endX - startX;
     let fancybox = $.fancybox;
+    let isMobileZoomed = false;
+
+    let zoomRatio = ( window.outerWidth / window.innerWidth) * 100;
+    if (window.innerWidth < 768 && zoomRatio.toFixed() > 100) {
+      cancelSwipe = true
+    }else{
+      cancelSwipe = false
+    }
 
     if ((Math.abs(distance) > 50) && !cancelSwipe) {
       if (distance > 0) {
