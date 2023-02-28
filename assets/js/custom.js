@@ -1434,13 +1434,11 @@ $(document).ready(function () {
 function handleFancyboxSwipe() {
   let startX;
   let endX;
+  let cancelSwipe = false
+
   $(document).on("mousedown touchstart", ".fancybox-outer", function (event) {
     if (event.type == "touchstart") {
       startX = event.touches[0].clientX;
-      if (event.touches.length > 1) {
-        ('touchstart > 1')
-        return
-      }
     } else {
       startX = event.clientX;
     }
@@ -1448,8 +1446,7 @@ function handleFancyboxSwipe() {
 
   $(document).on("touchmove", ".fancybox-outer", function (event) {
     if (event.touches.length > 1) {
-      alert('touchmove > 1')
-        endX = startX;
+        cancelSwipe = true
     }
   });
 
@@ -1468,7 +1465,7 @@ function handleFancyboxSwipe() {
     let distance = endX - startX;
     let fancybox = $.fancybox;
 
-    if (Math.abs(distance) > 50) {
+    if ((Math.abs(distance) > 50) && !cancelSwipe) {
       if (distance > 0) {
         fancybox.outer.trigger("swiperight");
         fancybox.prev();
