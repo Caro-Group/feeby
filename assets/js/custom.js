@@ -1442,7 +1442,7 @@ $(document).ready(function () {
         handleUpdateZoom(productSwiper);
       }
     });
-});
+};
 
 function handleFancyboxSwipe() {
   let startX;
