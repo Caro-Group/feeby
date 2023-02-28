@@ -1365,6 +1365,9 @@ $(document).ready(function () {
     handleFancyboxSwipe();
   }
 
+  if (typeof prestashop !== "undefined") {
+
+
     prestashop.on("updatedProduct", function (event) {
       if (typeof productSwiper == "function") {
         productSwiper.destroy(true, true);
