@@ -1389,6 +1389,13 @@ $(document).ready(function () {
               if (typeof lazyLoad == "function") {
                 lazyLoad("[data-lazy]");
               }
+
+              let zoomRatio = ( window.outerWidth / window.innerWidth) * 100;
+              if (window.innerWidth < 768 && zoomRatio.toFixed() > 100) {
+                productSwiper.allowTouchMove = false
+              }else{
+                productSwiper.allowTouchMove = true
+              }
             },
           },
         });
@@ -1461,7 +1468,6 @@ function handleFancyboxSwipe() {
 
     let distance = endX - startX;
     let fancybox = $.fancybox;
-    let isMobileZoomed = false;
 
     let zoomRatio = ( window.outerWidth / window.innerWidth) * 100;
     if (window.innerWidth < 768 && zoomRatio.toFixed() > 100) {
