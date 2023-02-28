@@ -1491,28 +1491,28 @@ function handleFancyboxSwipe() {
   });
 }
 
-function handleUpdateZoom(mainSwiper) {
-  // window.addEventListener("resize", () => {
-  //   mainSwiper.slideTo(1, 300, false);
-  // });
+function handleUpdateZoom(swiper) {
 
-  mainSwiper.on("activeIndexChange", function () {
-    // replace zoom realIndex
-    let activeElement = $(mainSwiper.wrapperEl)
-      .find(`[data-swiper-slide-index=${mainSwiper.realIndex}]`)
-      .eq(0);
-    let activeImageUrl = activeElement.attr("src");
-    $(".zoomWindowContainer div").css(
-      "background-image",
-      `url(${activeImageUrl})`
-    );
+  swiper.on("resize", updateZoom(swiper));
+  swiper.on("activeIndexChange", updateZoom(swiper));
+}
 
-    //set zoomGallery active slide
-    $("#thumb-gallery")
-      .find(".swiper-custom-slide a")
-      .eq(mainSwiper.realIndex)
-      .trigger("click");
-  });
+function updateZoom(swiper){
+  // replace zoom realIndex
+  let activeElement = $(swiper.wrapperEl)
+  .find(`[data-swiper-slide-index=${swiper.realIndex}]`)
+  .eq(0);
+  let activeImageUrl = activeElement.attr("src");
+  $(".zoomWindowContainer div").css(
+  "background-image",
+  `url(${activeImageUrl})`
+  );
+
+  //set zoomGallery active slide
+  $("#thumb-gallery")
+  .find(".swiper-custom-slide a")
+  .eq(swiper.realIndex)
+  .trigger("click");
 }
 
 function paginationGoTop() {
