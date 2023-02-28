@@ -1437,7 +1437,8 @@ function handleFancyboxSwipe() {
   $(document).on("mousedown touchstart", ".fancybox-outer", function (event) {
     if (event.type == "touchstart") {
       startX = event.touches[0].clientX;
-      if (event.touches.length > 0) {
+      if (event.touches.length > 1) {
+        ('touchstart > 1')
         return
       }
     } else {
@@ -1447,6 +1448,7 @@ function handleFancyboxSwipe() {
 
   $(document).on("touchmove", ".fancybox-outer", function (event) {
     if (event.touches.length > 1) {
+      alert('touchmove > 1')
         endX = startX;
     }
   });
@@ -1458,6 +1460,7 @@ function handleFancyboxSwipe() {
       endX = event.clientX;
     }
     if (event.type == "touchend" && event.touches.length > 1) {
+      alert('touchend > 1')
       endX = startX;
     }
     
