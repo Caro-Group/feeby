@@ -1320,9 +1320,9 @@ $(document).ready(function () {
     productSwiper.on('touchStart', () => {
       let zoomRatio = ( window.outerWidth / window.innerWidth) * 100;
       if (window.innerWidth < 768 && zoomRatio.toFixed() > 100) {
-        productSwiper.allowTouchMove = false
+        $("[data-swiper-product]").addClass('pointer-events-none')
       }else{
-        productSwiper.allowTouchMove = true
+        $("[data-swiper-product]").removeClass('pointer-events-none')
       }
     })
 
@@ -1399,9 +1399,9 @@ $(document).ready(function () {
         productSwiper.on('touchStart', () => {
           let zoomRatio = ( window.outerWidth / window.innerWidth) * 100;
           if (window.innerWidth < 768 && zoomRatio.toFixed() > 100) {
-            productSwiper.allowTouchMove = false
+            $("[data-swiper-product]").addClass('pointer-events-none')
           }else{
-            productSwiper.allowTouchMove = true
+            $("[data-swiper-product]").removeClass('pointer-events-none')
           }
         })
 
