@@ -1361,7 +1361,7 @@ $(document).ready(function () {
       }
     }
 
-    handleUpdateZoom(productSwiper);
+    // handleUpdateZoom(productSwiper);
     handleFancyboxSwipe();
   }
 
@@ -1436,7 +1436,7 @@ $(document).ready(function () {
           }
         }
 
-        handleUpdateZoom(productSwiper);
+        // handleUpdateZoom(productSwiper);
       }
     });
 });
