@@ -1492,6 +1492,7 @@ function handleFancyboxSwipe() {
 }
 
 function handleUpdateZoom(swiper) {
+  updateZoom(swiper)
   window.addEventListener('resize',() =>{
     updateZoom(swiper)
   })
