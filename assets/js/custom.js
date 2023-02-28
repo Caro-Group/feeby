@@ -1361,7 +1361,7 @@ $(document).ready(function () {
       }
     }
 
-    // handleUpdateZoom(productSwiper);
+    handleUpdateZoom(productSwiper);
     handleFancyboxSwipe();
   }
 
@@ -1436,7 +1436,7 @@ $(document).ready(function () {
           }
         }
 
-        // handleUpdateZoom(productSwiper);
+        handleUpdateZoom(productSwiper);
       }
     });
 });
@@ -1492,9 +1492,9 @@ function handleFancyboxSwipe() {
 }
 
 function handleUpdateZoom(mainSwiper) {
-  window.addEventListener("resize", () => {
-    mainSwiper.slideTo(1, 300, false);
-  });
+  // window.addEventListener("resize", () => {
+  //   mainSwiper.slideTo(1, 300, false);
+  // });
 
   mainSwiper.on("activeIndexChange", function () {
     // replace zoom realIndex
