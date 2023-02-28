@@ -1323,7 +1323,7 @@ $(document).ready(function () {
       },
     });
     
-    productSwiper.on('beforeSlideChangeStart', () => {
+    productSwiper.on('touchStart', () => {
       let zoomRatio = ( window.outerWidth / window.innerWidth) * 100;
       if (window.innerWidth < 768 && zoomRatio.toFixed() > 100) {
         productSwiper.allowTouchMove = false
