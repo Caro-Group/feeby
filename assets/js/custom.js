@@ -1319,17 +1319,19 @@ $(document).ready(function () {
           if (typeof lazyLoad == "function") {
             lazyLoad("[data-lazy]");
           }
-
-          let zoomRatio = ( window.outerWidth / window.innerWidth) * 100;
-          if (window.innerWidth < 768 && zoomRatio.toFixed() > 100) {
-            productSwiper.allowTouchMove = false
-          }else{
-            productSwiper.allowTouchMove = true
-          }
         },
       },
     });
-
+    
+    productSwiper.on('beforeSlideChangeStart', () => {
+      let zoomRatio = ( window.outerWidth / window.innerWidth) * 100;
+      if (window.innerWidth < 768 && zoomRatio.toFixed() > 100) {
+        productSwiper.allowTouchMove = false
+      }else{
+        productSwiper.allowTouchMove = true
+      }
+    })
+    
     if ($("#main").hasClass("product-image-gallery")) {
       $("img.js-thumb").each(function () {
         var parent_e = $(this).parent();
