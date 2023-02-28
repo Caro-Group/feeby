@@ -1326,9 +1326,9 @@ $(document).ready(function () {
     productSwiper.on('touchStart', () => {
       let zoomRatio = ( window.outerWidth / window.innerWidth) * 100;
       if (window.innerWidth < 768 && zoomRatio.toFixed() > 100) {
-        $("[data-swiper-product]").addClass('pointer-events-none')
+        productSwiper.allowTouchMove = false
       }else{
-        $("[data-swiper-product]").removeClass('pointer-events-none')
+        productSwiper.allowTouchMove = true
       }
     })
 
@@ -1405,9 +1405,9 @@ $(document).ready(function () {
         productSwiper.on('touchStart', () => {
           let zoomRatio = ( window.outerWidth / window.innerWidth) * 100;
           if (window.innerWidth < 768 && zoomRatio.toFixed() > 100) {
-            $("[data-swiper-product]").addClass('pointer-events-none')
+            productSwiper.allowTouchMove = false
           }else{
-            $("[data-swiper-product]").removeClass('pointer-events-none')
+            productSwiper.allowTouchMove = true
           }
         })
 
