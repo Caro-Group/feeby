@@ -1437,21 +1437,30 @@ function handleFancyboxSwipe() {
   $(document).on("mousedown touchstart", ".fancybox-outer", function (event) {
     if (event.type == "touchstart") {
       startX = event.touches[0].clientX;
+      if (event.touches.length > 0) {
+        return
+      }
     } else {
       startX = event.clientX;
     }
   });
 
+  $(document).on("touchmove", ".fancybox-outer", function (event) {
+    if (event.touches.length > 1) {
+        endX = startX;
+    }
+  });
+
   $(document).on("mouseup touchend", ".fancybox-outer", function (event) {
+    if (event.type == "touchend" && event.touches.length > 1) {
+      return
+    }
     if (event.type == "touchend") {
       endX = event.changedTouches[0].clientX;
     } else {
       endX = event.clientX;
     }
     
-    if (event.type == "touchend" && event.changedTouches.length > 1) {
-      return
-    }
 
     let distance = endX - startX;
     let fancybox = $.fancybox;
