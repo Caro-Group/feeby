@@ -1446,7 +1446,9 @@ function handleFancyboxSwipe() {
 
   $(document).on("touchmove", ".fancybox-outer", function (event) {
     if (event.touches.length > 1) {
-        cancelSwipe = true
+      cancelSwipe = true
+    }else{
+      cancelSwipe = false
     }
   });
 
@@ -1469,8 +1471,6 @@ function handleFancyboxSwipe() {
         fancybox.next();
       }
     }
-
-    cancelSwipe = false
   });
 }
 
