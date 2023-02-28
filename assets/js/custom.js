@@ -1319,6 +1319,13 @@ $(document).ready(function () {
           if (typeof lazyLoad == "function") {
             lazyLoad("[data-lazy]");
           }
+
+          let zoomRatio = ( window.outerWidth / window.innerWidth) * 100;
+          if (window.innerWidth < 768 && zoomRatio.toFixed() > 100) {
+            productSwiper.allowTouchMove = false
+          }else{
+            productSwiper.allowTouchMove = true
+          }
         },
       },
     });
@@ -1388,13 +1395,6 @@ $(document).ready(function () {
             beforeSlideChangeStart: function () {
               if (typeof lazyLoad == "function") {
                 lazyLoad("[data-lazy]");
-              }
-
-              let zoomRatio = ( window.outerWidth / window.innerWidth) * 100;
-              if (window.innerWidth < 768 && zoomRatio.toFixed() > 100) {
-                productSwiper.allowTouchMove = false
-              }else{
-                productSwiper.allowTouchMove = true
               }
             },
           },
