@@ -1455,12 +1455,7 @@ function handleFancyboxSwipe() {
       endX = event.changedTouches[0].clientX;
     } else {
       endX = event.clientX;
-    }
-    if (event.type == "touchend" && event.touches.length > 1) {
-      alert('touchend > 1')
-      endX = startX;
-    }
-    
+    }    
 
     let distance = endX - startX;
     let fancybox = $.fancybox;
@@ -1474,6 +1469,8 @@ function handleFancyboxSwipe() {
         fancybox.next();
       }
     }
+
+    cancelSwipe = false
   });
 }
 
