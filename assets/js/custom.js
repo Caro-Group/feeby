@@ -1342,7 +1342,7 @@ $(document).ready(function () {
       if ($.fn.elevateZoom !== undefined) {
         $("img.js-thumb").elevateZoom(zoom_config);
         //DONGND:: fix click a thumb replace all image and add fancybox
-        $("img.js-thumb").on("click resize", function (e) {
+        $("img.js-thumb").on("click", function (e) {
           var ez = $(this).data("elevateZoom");
           $.fancybox(ez.getGalleryList());
           return false;
@@ -1353,7 +1353,7 @@ $(document).ready(function () {
         $("[data-zoom-container]").elevateZoom({ gallery: "thumb-gallery" });
 
         //pass the images to Fancybox
-        $("[data-zoom-container]").on("click resize", function (e) {
+        $("[data-zoom-container]").on("click", function (e) {
           var ez = $(this).data("elevateZoom");
           $.fancybox(ez.getGalleryList());
           return false;
@@ -1418,7 +1418,7 @@ $(document).ready(function () {
           if ($.fn.elevateZoom !== undefined) {
             $("img.js-thumb").elevateZoom(zoom_config);
             //DONGND:: fix click a thumb replace all image and add fancybox
-            $("img.js-thumb").on("click resize", function (e) {
+            $("img.js-thumb").on("click", function (e) {
               var ez = $(this).data("elevateZoom");
               $.fancybox(ez.getGalleryList());
               return false;
@@ -1431,7 +1431,7 @@ $(document).ready(function () {
             });
 
             //pass the images to Fancybox
-            $("[data-zoom-container]").on("click resize", function (e) {
+            $("[data-zoom-container]").on("click", function (e) {
               var ez = $(this).data("elevateZoom");
               $.fancybox(ez.getGalleryList());
               return false;
