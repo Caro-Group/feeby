@@ -1317,6 +1317,15 @@ $(document).ready(function () {
       },
     });
 
+    productSwiper.on('touchStart', () => {
+      let zoomRatio = ( window.outerWidth / window.innerWidth) * 100;
+      if (window.innerWidth < 768 && zoomRatio.toFixed() > 100) {
+        productSwiper.allowTouchMove = false
+      }else{
+        productSwiper.allowTouchMove = true
+      }
+    })
+
     if ($("#main").hasClass("product-image-gallery")) {
       $("img.js-thumb").each(function () {
         var parent_e = $(this).parent();
@@ -1387,6 +1396,15 @@ $(document).ready(function () {
           },
         });
 
+        productSwiper.on('touchStart', () => {
+          let zoomRatio = ( window.outerWidth / window.innerWidth) * 100;
+          if (window.innerWidth < 768 && zoomRatio.toFixed() > 100) {
+            productSwiper.allowTouchMove = false
+          }else{
+            productSwiper.allowTouchMove = true
+          }
+        })
+
         if ($("#main").hasClass("product-image-gallery")) {
           $("img.js-thumb").each(function () {
             var parent_e = $(this).parent();
@@ -1428,6 +1446,8 @@ $(document).ready(function () {
 function handleFancyboxSwipe() {
   let startX;
   let endX;
+  let cancelSwipe = false
+
   $(document).on("mousedown touchstart", ".fancybox-outer", function (event) {
     if (event.type == "touchstart") {
       startX = event.touches[0].clientX;
@@ -1436,21 +1456,32 @@ function handleFancyboxSwipe() {
     }
   });
 
+  $(document).on("touchmove", ".fancybox-outer", function (event) {
+    if (event.touches.length > 1) {
+      cancelSwipe = true
+    }else{
+      cancelSwipe = false
+    }
+  });
+
   $(document).on("mouseup touchend", ".fancybox-outer", function (event) {
     if (event.type == "touchend") {
       endX = event.changedTouches[0].clientX;
     } else {
       endX = event.clientX;
-    }
-    
-    if (event.type == "touchend" && event.changedTouches.length > 1) {
-      return
-    }
+    }    
 
     let distance = endX - startX;
     let fancybox = $.fancybox;
 
-    if (Math.abs(distance) > 50) {
+    let zoomRatio = ( window.outerWidth / window.innerWidth) * 100;
+    if (window.innerWidth < 768 && zoomRatio.toFixed() > 100) {
+      cancelSwipe = true
+    }else{
+      cancelSwipe = false
+    }
+
+    if ((Math.abs(distance) > 50) && !cancelSwipe) {
       if (distance > 0) {
         fancybox.outer.trigger("swiperight");
         fancybox.prev();
