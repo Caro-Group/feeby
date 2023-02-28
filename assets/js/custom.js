@@ -1362,14 +1362,8 @@ $(document).ready(function () {
     }
 
     handleUpdateZoom(productSwiper);
+    handleFancyboxSwipe();
   }
-
-  if (typeof prestashop !== "undefined") {
-    window.addEventListener("resize", () => {
-      if (typeof productSwiper !== "undefined") {
-        productSwiper.slideTo(1, 300, false);
-      }
-    });
 
     prestashop.on("updatedProduct", function (event) {
       if (typeof productSwiper == "function") {
@@ -1445,8 +1439,6 @@ $(document).ready(function () {
         handleUpdateZoom(productSwiper);
       }
     });
-  }
-  handleFancyboxSwipe();
 });
 
 function handleFancyboxSwipe() {
