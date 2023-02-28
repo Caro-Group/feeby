@@ -697,3 +697,11 @@ img:not([src]) {
 .off-canvas-nav-megamenu .mega-col{
   @apply !min-h-0
 }
+
+.fancybox-title-float-wrap{
+  @apply top-[calc(100%_+_10px)];
+}
+
+.fancybox-title-float-wrap span.child{
+  @apply whitespace-normal;
+}

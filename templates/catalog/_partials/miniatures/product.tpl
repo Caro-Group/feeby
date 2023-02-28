@@ -33,15 +33,13 @@
 				{if $product.cover}
 					<a href="{$product.canonical_url}">
 						<img
-							class="block img-fluid object-cover w-full max-w-sm h-full {if isset($lazy_load)}swiper-lazy{/if}"
+							class="block img-fluid object-cover w-full max-w-sm h-full"
 							width="{$product.cover.bySize.category_default.width}"
 							height="{$product.cover.bySize.category_default.height}"
 							{if isset($lazy_load)}
-								data-src="{$product.cover.bySize.category_default_x2.url}"
+								src="{$product.cover.bySize.category_default_x2.url}"
 							{else}
-								src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-								data-lazy
-								data-src="{$product.cover.bySize.category_default.url}"
+								src="{$product.cover.bySize.category_default_x2.url}"
 								data-retina="{$product.cover.bySize.category_default_x2.url}"
 							{/if}
 
@@ -58,11 +56,9 @@
 							width="{$urls.no_picture_image.bySize.category_default.width}"
 							height="{$urls.no_picture_image.bySize.category_default.height}"
 							{if isset($lazy_load)}
-								data-src="{$urls.no_picture_image.bySize.category_default.url}"
+								src="{$urls.no_picture_image.bySize.category_default.url}"
 							{else}
-								src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-								data-lazy
-								data-src="{$urls.no_picture_image.bySize.category_default.url}"
+								src="{$urls.no_picture_image.bySize.category_default.url}"
 							{/if}
 							alt="{l s='No image available' d='Shop.Theme.Catalog'}"
 							loading="lazy" 

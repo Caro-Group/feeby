@@ -16,247 +16,249 @@
 // var wishlist_product_btn = '[data-id-wishlist] svg';
 
 var wishlist_product_state_class = {
-  default: ['opacity-100', 'opacity-0'],
-  loading: ['opacity-100 animate-pulse ', 'opacity-0'],
-  active: ['opacity-0 text-main fill-current', 'opacity-100 text-main'],
-}
+  default: ["opacity-100", "opacity-0"],
+  loading: ["opacity-100 animate-pulse ", "opacity-0"],
+  active: ["opacity-0 text-main fill-current", "opacity-100 text-main"],
+};
 
 function WishlistIconState(id, state) {
   for (let i = 0; i < 2; i++) {
     $('[data-id-product="' + id + '"] svg').each(function () {
-      $($(this).children()[i]).removeClass()
+      $($(this).children()[i]).removeClass();
 
       switch (state) {
         case 1:
           $($(this).children()[i]).addClass(
-            wishlist_product_state_class.default[i],
-          )
+            wishlist_product_state_class.default[i]
+          );
 
-          break
+          break;
 
         case 2:
           $($(this).children()[i]).addClass(
-            wishlist_product_state_class.loading[i],
-          )
+            wishlist_product_state_class.loading[i]
+          );
 
-          break
+          break;
         case 3:
           $($(this).children()[i]).addClass(
-            wishlist_product_state_class.active[i],
-          )
+            wishlist_product_state_class.active[i]
+          );
 
-          break
+          break;
       }
-    })
+    });
   }
 }
 
 $(document).ready(function () {
-  $('.leo-wishlist-button').each(function () {
-    let id_product = $(this).data('id-product')
-    if ($(this).hasClass('added')) {
-      WishlistIconState(id_product, 3)
+  $(".leo-wishlist-button").each(function () {
+    let id_product = $(this).data("id-product");
+    if ($(this).hasClass("added")) {
+      WishlistIconState(id_product, 3);
     } else {
-      WishlistIconState(id_product, 1)
+      WishlistIconState(id_product, 1);
     }
-  })
+  });
 
-  createLeoWishlistModalPopup()
-  LeoWishlistButtonAction()
-  prestashop.on('updateProductList', function () {
-    LeoWishlistButtonAction()
-  })
+  createLeoWishlistModalPopup();
+  LeoWishlistButtonAction();
+  prestashop.on("updateProductList", function () {
+    LeoWishlistButtonAction();
+  });
   //DONGND:: recall button action if need when change attribute at product page
-  prestashop.on('updatedProduct', function () {
-    LeoWishlistButtonAction()
-  })
-  prestashop.on('clickQuickView', function () {
+  prestashop.on("updatedProduct", function () {
+    LeoWishlistButtonAction();
+  });
+  prestashop.on("clickQuickView", function () {
     check_active_wishlist = setInterval(function () {
-      if ($('.quickview.modal').length) {
-        $('.quickview.modal').on('shown.bs.modal', function (e) {
-          LeoWishlistButtonAction()
-        })
-        clearInterval(check_active_wishlist)
+      if ($(".quickview.modal").length) {
+        $(".quickview.modal").on("shown.bs.modal", function (e) {
+          LeoWishlistButtonAction();
+        });
+        clearInterval(check_active_wishlist);
       }
-    }, 300)
-  })
+    }, 300);
+  });
 
   // $('.quickview.modal').on('shown.bs.modal', function (e) {
   // console.log('aaa');
   // })
-  activeEventModalWishlist()
-  LeoListWishlistAction()
-  $('.leo-save-wishlist-bt').on('click', function () {
-    if (!$(this).hasClass('active')) {
-      $(this).addClass('active')
-      $('.new-wishlist .has-danger .form-control-feedback').html('')
-      $('.new-wishlist .has-success .form-control-feedback').html('')
-      var name_wishlist = $.trim($('#wishlist_name').val())
+  activeEventModalWishlist();
+  LeoListWishlistAction();
+  $(".leo-save-wishlist-bt").on("click", function () {
+    if (!$(this).hasClass("active")) {
+      $(this).addClass("active");
+      $(".new-wishlist .has-danger .form-control-feedback").html("");
+      $(".new-wishlist .has-success .form-control-feedback").html("");
+      var name_wishlist = $.trim($("#wishlist_name").val());
       if (!name_wishlist) {
-        $('#wishlist_name').parent().addClass('has-error')
-        $(this).removeClass('active')
+        $("#wishlist_name").parent().addClass("has-error");
+        $(this).removeClass("active");
       } else {
-        var object_e = $(this)
-        $('#wishlist_name').parent().removeClass('has-error')
-        $('.leo-save-wishlist-bt-text').hide()
-        $('.leo-save-wishlist-loading').css({ display: 'block' })
+        var object_e = $(this);
+        $("#wishlist_name").parent().removeClass("has-error");
+        $(".leo-save-wishlist-bt-text").hide();
+        $(".leo-save-wishlist-loading").css({ display: "block" });
         $.ajax({
-          type: 'POST',
-          headers: { 'cache-control': 'no-cache' },
-          url: wishlist_url + '?rand=' + new Date().getTime(),
+          type: "POST",
+          headers: { "cache-control": "no-cache" },
+          url: wishlist_url + "?rand=" + new Date().getTime(),
           async: true,
           cache: false,
           data: {
             ajax: 1,
-            action: 'add-wishlist',
+            action: "add-wishlist",
             name_wishlist: name_wishlist,
             token: leo_token,
           },
           success: function (result) {
-            var object_result = $.parseJSON(result)
+            var object_result = $.parseJSON(result);
             if (object_result.errors.length) {
               // console.log(object_result.errors);
-              $('.new-wishlist .has-success .form-control-feedback').html('')
-              $('.new-wishlist .has-danger .form-control-feedback')
+              $(".new-wishlist .has-success .form-control-feedback").html("");
+              $(".new-wishlist .has-danger .form-control-feedback")
                 .html(object_result.errors)
-                .fadeIn()
+                .fadeIn();
             } else {
-              $('.new-wishlist .has-danger .form-control-feedback').html('')
-              $('.new-wishlist .has-success .form-control-feedback')
+              $(".new-wishlist .has-danger .form-control-feedback").html("");
+              $(".new-wishlist .has-success .form-control-feedback")
                 .html(object_result.result.message)
-                .fadeIn()
+                .fadeIn();
               setTimeout(function () {
-                $('.new-wishlist .has-success .form-control-feedback').fadeOut()
-              }, 3000)
-              $('#wishlist_name').val('')
+                $(
+                  ".new-wishlist .has-success .form-control-feedback"
+                ).fadeOut();
+              }, 3000);
+              $("#wishlist_name").val("");
 
-              $('.list-wishlist table tbody').append(
-                object_result.result.wishlist,
-              )
-              $('html, body').animate(
+              $(".list-wishlist table tbody").append(
+                object_result.result.wishlist
+              );
+              $("html, body").animate(
                 {
-                  scrollTop: $('.list-wishlist table tr.new').offset().top,
+                  scrollTop: $(".list-wishlist table tr.new").offset().top,
                 },
                 500,
                 function () {
-                  $('.list-wishlist table tr.new').removeClass('new')
-                },
-              )
-              LeoListWishlistAction()
+                  $(".list-wishlist table tr.new").removeClass("new");
+                }
+              );
+              LeoListWishlistAction();
               //DONGND:: reload list product if a wishlist current view
-              $('.list-wishlist tr.show .view-wishlist-product').trigger(
-                'click',
-              )
+              $(".list-wishlist tr.show .view-wishlist-product").trigger(
+                "click"
+              );
             }
-            $('.leo-save-wishlist-bt-text').show()
-            $('.leo-save-wishlist-loading').hide()
-            object_e.removeClass('active')
+            $(".leo-save-wishlist-bt-text").show();
+            $(".leo-save-wishlist-loading").hide();
+            object_e.removeClass("active");
           },
           error: function (XMLHttpRequest, textStatus, errorThrown) {
             alert(
-              'TECHNICAL ERROR: \n\nDetails:\nError thrown: ' +
+              "TECHNICAL ERROR: \n\nDetails:\nError thrown: " +
                 XMLHttpRequest +
-                '\n' +
-                'Text status: ' +
-                textStatus,
-            )
+                "\n" +
+                "Text status: " +
+                textStatus
+            );
           },
-        })
+        });
       }
     }
-    return false
-  })
-})
+    return false;
+  });
+});
 
 function createLeoWishlistModalPopup() {
-  var leoWishlistModalPopup = ''
+  var leoWishlistModalPopup = "";
   leoWishlistModalPopup +=
-    '<div class="modal leo-modal leo-modal-wishlist fade" tabindex="-1" role="dialog" aria-hidden="true">'
-  leoWishlistModalPopup += '<div class="modal-dialog" role="document">'
-  leoWishlistModalPopup += '<div class="modal-content">'
-  leoWishlistModalPopup += '<div class="modal-header">'
+    '<div class="modal leo-modal leo-modal-wishlist fade" tabindex="-1" role="dialog" aria-hidden="true">';
+  leoWishlistModalPopup += '<div class="modal-dialog" role="document">';
+  leoWishlistModalPopup += '<div class="modal-content">';
+  leoWishlistModalPopup += '<div class="modal-header">';
   leoWishlistModalPopup +=
-    '<button type="button" class="close" data-dismiss="modal" aria-label="Close">'
-  leoWishlistModalPopup += '<span aria-hidden="true">&times;</span>'
-  leoWishlistModalPopup += '</button>'
-  leoWishlistModalPopup += '<h5 class="modal-title text-xs-center">'
-  leoWishlistModalPopup += '</h5>'
-  leoWishlistModalPopup += '</div>'
-  leoWishlistModalPopup += '<div class="modal-footer">'
+    '<button type="button" class="close" data-dismiss="modal" aria-label="Close">';
+  leoWishlistModalPopup += '<span aria-hidden="true">&times;</span>';
+  leoWishlistModalPopup += "</button>";
+  leoWishlistModalPopup += '<h5 class="modal-title text-xs-center">';
+  leoWishlistModalPopup += "</h5>";
+  leoWishlistModalPopup += "</div>";
+  leoWishlistModalPopup += '<div class="modal-footer">';
   leoWishlistModalPopup +=
     '<button type="button" class="btn btn-secondary" data-dismiss="modal">' +
     wishlist_cancel_txt +
-    '</button>'
+    "</button>";
   leoWishlistModalPopup +=
-    '<button type="button" class="leo-modal-wishlist-bt btn btn-primary">'
+    '<button type="button" class="leo-modal-wishlist-bt btn btn-primary">';
   leoWishlistModalPopup +=
-    '<span class="leo-modal-wishlist-loading cssload-speeding-wheel"></span>'
-  leoWishlistModalPopup += '<span class="leo-modal-wishlist-bt-text">'
-  leoWishlistModalPopup += wishlist_ok_txt
-  leoWishlistModalPopup += '</span>'
-  leoWishlistModalPopup += '</button>'
-  leoWishlistModalPopup += '</div>'
-  leoWishlistModalPopup += '</div>'
-  leoWishlistModalPopup += '</div>'
-  leoWishlistModalPopup += '</div>'
-  $('body').append(leoWishlistModalPopup)
+    '<span class="leo-modal-wishlist-loading cssload-speeding-wheel"></span>';
+  leoWishlistModalPopup += '<span class="leo-modal-wishlist-bt-text">';
+  leoWishlistModalPopup += wishlist_ok_txt;
+  leoWishlistModalPopup += "</span>";
+  leoWishlistModalPopup += "</button>";
+  leoWishlistModalPopup += "</div>";
+  leoWishlistModalPopup += "</div>";
+  leoWishlistModalPopup += "</div>";
+  leoWishlistModalPopup += "</div>";
+  $("body").append(leoWishlistModalPopup);
 }
 
 function LeoWishlistButtonAction() {
-  if (!$('.leo-wishlist-button').hasClass('show-list')) {
-    $('body').on('click', '.leo-wishlist-button', function () {
-      if (!$('.leo-wishlist-button.active').length) {
-        var id_product = $(this).data('id-product')
-        var id_wishlist = $(this).data('id-wishlist')
-        var id_product_attribute = $(this).data('id-product-attribute')
+  if (!$(".leo-wishlist-button").hasClass("show-list")) {
+    $("body").on("click", ".leo-wishlist-button", function () {
+      if (!$(".leo-wishlist-button.active").length) {
+        var id_product = $(this).data("id-product");
+        var id_wishlist = $(this).data("id-wishlist");
+        var id_product_attribute = $(this).data("id-product-attribute");
         var content_wishlist_mess_remove =
           wishlist_remove +
           '. <a href="' +
           wishlist_url +
           '" target="_blank"><strong>' +
           wishlist_viewwishlist +
-          '.</strong></a>'
+          ".</strong></a>";
         var content_wishlist_mess_add =
           wishlist_add +
           '. <a href="' +
           wishlist_url +
           '" target="_blank"><strong>' +
           wishlist_viewwishlist +
-          '.</strong></a>'
+          ".</strong></a>";
 
-        $(this).addClass('active')
+        $(this).addClass("active");
 
-        WishlistIconState(id_product, 2)
+        WishlistIconState(id_product, 2);
 
-        if (!isLogged) {
-          //DONGND:: display quicklogin if enable
-          // if ($('.leo-quicklogin').length)
-          // {
-          // $('.leo-quicklogin').first().trigger('click');
-          // resetButtonAction();
-          // }
-          // else
-          // {
-          $('.leo-modal-wishlist .modal-title').html(wishlist_loggin_required)
-          $('.leo-modal-wishlist').modal('show')
-          WishlistIconState(id_product, 1)
-          // }
-          return false
-        }
+        // if (!isLogged) {
+        //   //DONGND:: display quicklogin if enable
+        //   // if ($('.leo-quicklogin').length)
+        //   // {
+        //   // $('.leo-quicklogin').first().trigger('click');
+        //   // resetButtonAction();
+        //   // }
+        //   // else
+        //   // {
+        //   $('.leo-modal-wishlist .modal-title').html(wishlist_loggin_required)
+        //   $('.leo-modal-wishlist').modal('show')
+        //   WishlistIconState(id_product, 1)
+        //   // }
+        //   return false
+        // }
 
-        var object_e = $(this)
-        object_e.find('.leo-wishlist-bt-loading').css({ display: 'block' })
-        if ($(this).hasClass('added') || $(this).hasClass('delete')) {
+        var object_e = $(this);
+        object_e.find(".leo-wishlist-bt-loading").css({ display: "block" });
+        if ($(this).hasClass("added") || $(this).hasClass("delete")) {
           //DONGND:: remove product form wishlist
           $.ajax({
-            type: 'POST',
-            headers: { 'cache-control': 'no-cache' },
-            url: wishlist_url + '?rand=' + new Date().getTime(),
+            type: "POST",
+            headers: { "cache-control": "no-cache" },
+            url: wishlist_url + "?rand=" + new Date().getTime(),
             async: true,
             cache: false,
             data: {
               ajax: 1,
-              action: 'remove',
+              action: "remove",
               id_product: id_product,
               id_wishlist: id_wishlist,
               id_product_attribute: id_product_attribute,
@@ -264,72 +266,74 @@ function LeoWishlistButtonAction() {
               token: leo_token,
             },
             success: function (result) {
-              var object_result = $.parseJSON(result)
+              var object_result = $.parseJSON(result);
               if (object_result.errors.length) {
-                $('.leo-modal-wishlist .modal-title').html(object_result.errors)
-                $('.leo-modal-wishlist').modal('show')
+                $(".leo-modal-wishlist .modal-title").html(
+                  object_result.errors
+                );
+                $(".leo-modal-wishlist").modal("show");
               } else {
                 //Leotheme add: update number product on icon wishlist after remove from wishlist
-                if ($('.ap-btn-wishlist .ap-total-wishlist').length) {
+                if ($(".ap-btn-wishlist .ap-total-wishlist").length) {
                   var old_num_wishlist = parseInt(
-                    $('.ap-btn-wishlist .ap-total-wishlist').data(
-                      'wishlist-total',
-                    ),
-                  )
-                  var new_num_wishlist = old_num_wishlist - 1
-                  $('.ap-btn-wishlist .ap-total-wishlist').data(
-                    'wishlist-total',
-                    new_num_wishlist,
-                  )
-                  $('.ap-btn-wishlist .ap-total-wishlist').text(
-                    new_num_wishlist,
-                  )
+                    $(".ap-btn-wishlist .ap-total-wishlist").data(
+                      "wishlist-total"
+                    )
+                  );
+                  var new_num_wishlist = old_num_wishlist - 1;
+                  $(".ap-btn-wishlist .ap-total-wishlist").data(
+                    "wishlist-total",
+                    new_num_wishlist
+                  );
+                  $(".ap-btn-wishlist .ap-total-wishlist").text(
+                    new_num_wishlist
+                  );
                 }
 
                 // compared_products.splice($.inArray(parseInt(id_product), compared_products), 1);
-                if (object_e.hasClass('delete')) {
+                if (object_e.hasClass("delete")) {
                   //DONGND:: remove from page wishlist
-                  $('td.product-' + id_product).fadeOut(function () {
-                    $(this).remove()
-                  })
+                  $("td.product-" + id_product).fadeOut(function () {
+                    $(this).remove();
+                  });
                 } else {
                   //DONGND:: remove from page product list
-                  $('.leo-modal-wishlist .modal-title').html(
-                    content_wishlist_mess_remove,
-                  )
-                  $('.leo-modal-wishlist').modal('show')
+                  $(".leo-modal-wishlist .modal-title").html(
+                    content_wishlist_mess_remove
+                  );
+                  $(".leo-modal-wishlist").modal("show");
                   $(
-                    '.leo-wishlist-button[data-id-product=' + id_product + ']',
-                  ).removeClass('added')
+                    ".leo-wishlist-button[data-id-product=" + id_product + "]"
+                  ).removeClass("added");
                   $(
-                    '.leo-wishlist-button[data-id-product=' + id_product + ']',
-                  ).attr('title', buttonwishlist_title_add)
-                  object_e.find('.leo-wishlist-bt-loading').hide()
-                  WishlistIconState(id_product, 1)
+                    ".leo-wishlist-button[data-id-product=" + id_product + "]"
+                  ).attr("title", buttonwishlist_title_add);
+                  object_e.find(".leo-wishlist-bt-loading").hide();
+                  WishlistIconState(id_product, 1);
                 }
               }
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
               alert(
-                'TECHNICAL ERROR: \n\nDetails:\nError thrown: ' +
+                "TECHNICAL ERROR: \n\nDetails:\nError thrown: " +
                   XMLHttpRequest +
-                  '\n' +
-                  'Text status: ' +
-                  textStatus,
-              )
+                  "\n" +
+                  "Text status: " +
+                  textStatus
+              );
             },
-          })
+          });
         } else {
           //DONGND:: add product to list product wishlist
           $.ajax({
-            type: 'POST',
-            headers: { 'cache-control': 'no-cache' },
-            url: wishlist_url + '?rand=' + new Date().getTime(),
+            type: "POST",
+            headers: { "cache-control": "no-cache" },
+            url: wishlist_url + "?rand=" + new Date().getTime(),
             async: true,
             cache: false,
             data: {
               ajax: 1,
-              action: 'add',
+              action: "add",
               id_product: id_product,
               id_wishlist: id_wishlist,
               id_product_attribute: id_product_attribute,
@@ -338,39 +342,41 @@ function LeoWishlistButtonAction() {
             },
             success: function (result) {
               // console.log(result);
-              var object_result = $.parseJSON(result)
+              var object_result = $.parseJSON(result);
               if (object_result.errors.length) {
-                $('.leo-modal-wishlist .modal-title').html(object_result.errors)
-                $('.leo-modal-wishlist').modal('show')
+                $(".leo-modal-wishlist .modal-title").html(
+                  object_result.errors
+                );
+                $(".leo-modal-wishlist").modal("show");
               } else {
-                $('.leo-modal-wishlist .modal-title').html(
-                  content_wishlist_mess_add,
-                )
-                $('.leo-modal-wishlist').modal('show')
+                $(".leo-modal-wishlist .modal-title").html(
+                  content_wishlist_mess_add
+                );
+                $(".leo-modal-wishlist").modal("show");
                 //Leotheme add: update number product on icon wishlist after add from wishlist
-                if ($('.ap-btn-wishlist .ap-total-wishlist').length) {
+                if ($(".ap-btn-wishlist .ap-total-wishlist").length) {
                   var old_num_wishlist = parseInt(
-                    $('.ap-btn-wishlist .ap-total-wishlist').data(
-                      'wishlist-total',
-                    ),
-                  )
-                  var new_num_wishlist = old_num_wishlist + 1
-                  $('.ap-btn-wishlist .ap-total-wishlist').data(
-                    'wishlist-total',
-                    new_num_wishlist,
-                  )
-                  $('.ap-btn-wishlist .ap-total-wishlist').text(
-                    new_num_wishlist,
-                  )
+                    $(".ap-btn-wishlist .ap-total-wishlist").data(
+                      "wishlist-total"
+                    )
+                  );
+                  var new_num_wishlist = old_num_wishlist + 1;
+                  $(".ap-btn-wishlist .ap-total-wishlist").data(
+                    "wishlist-total",
+                    new_num_wishlist
+                  );
+                  $(".ap-btn-wishlist .ap-total-wishlist").text(
+                    new_num_wishlist
+                  );
                 }
 
                 // console.log(object_result.result.id_wishlist);
                 //DONGND:: update id wishlist if the first add of user
-                if (id_wishlist == '') {
-                  $('.leo-wishlist-button').data(
-                    'id-wishlist',
-                    object_result.result.id_wishlist,
-                  )
+                if (id_wishlist == "") {
+                  $(".leo-wishlist-button").data(
+                    "id-wishlist",
+                    object_result.result.id_wishlist
+                  );
                   // wishlist_products[object_result.result.id_wishlist].push(id_product);
                 }
                 // else
@@ -379,85 +385,85 @@ function LeoWishlistButtonAction() {
                 // }
 
                 $(
-                  '.leo-wishlist-button[data-id-product=' + id_product + ']',
-                ).addClass('added')
+                  ".leo-wishlist-button[data-id-product=" + id_product + "]"
+                ).addClass("added");
                 $(
-                  '.leo-wishlist-button[data-id-product=' + id_product + ']',
-                ).attr('title', buttonwishlist_title_remove)
-                object_e.find('.leo-wishlist-bt-loading').hide()
-                object_e.find('.leo-wishlist-bt-content').show()
-                WishlistIconState(id_product, 3)
+                  ".leo-wishlist-button[data-id-product=" + id_product + "]"
+                ).attr("title", buttonwishlist_title_remove);
+                object_e.find(".leo-wishlist-bt-loading").hide();
+                object_e.find(".leo-wishlist-bt-content").show();
+                WishlistIconState(id_product, 3);
               }
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
               alert(
-                'TECHNICAL ERROR: \n\nDetails:\nError thrown: ' +
+                "TECHNICAL ERROR: \n\nDetails:\nError thrown: " +
                   XMLHttpRequest +
-                  '\n' +
-                  'Text status: ' +
-                  textStatus,
-              )
+                  "\n" +
+                  "Text status: " +
+                  textStatus
+              );
             },
-          })
+          });
         }
       }
-      return false
-    })
+      return false;
+    });
   } else {
     //DONGND:: add/remove wishlist with list wishlist
-    $('.wishlist-item').on('click', function () {
-      if (!$('.wishlist-item.active-add').length) {
-        var id_product = $(this).data('id-product')
-        var id_wishlist = $(this).data('id-wishlist')
-        var id_product_attribute = $(this).data('id-product-attribute')
+    $(".wishlist-item").on("click", function () {
+      if (!$(".wishlist-item.active-add").length) {
+        var id_product = $(this).data("id-product");
+        var id_wishlist = $(this).data("id-wishlist");
+        var id_product_attribute = $(this).data("id-product-attribute");
         var content_wishlist_mess_remove =
           wishlist_remove +
           '. <a href="' +
           wishlist_url +
           '" target="_blank"><strong>' +
           wishlist_viewwishlist +
-          '.</strong></a>'
+          ".</strong></a>";
         var content_wishlist_mess_add =
           wishlist_add +
           '. <a href="' +
           wishlist_url +
           '" target="_blank"><strong>' +
           wishlist_viewwishlist +
-          '.</strong></a>'
+          ".</strong></a>";
 
-        $(this).addClass('active-add')
+        $(this).addClass("active-add");
 
-        if (!isLogged) {
-          //DONGND:: display quicklogin if enable
-          // if ($('.leo-quicklogin').length)
-          // {
-          // $('.leo-quicklogin').first().trigger('click');
-          // resetButtonAction();
-          // }
-          // else
-          // {
-          $('.leo-modal-wishlist .modal-title').html(wishlist_loggin_required)
-          $('.leo-modal-wishlist').modal('show')
-          // }
-          return false
-        }
+        // if (!isLogged) {
+        //   //DONGND:: display quicklogin if enable
+        //   // if ($('.leo-quicklogin').length)
+        //   // {
+        //   // $('.leo-quicklogin').first().trigger('click');
+        //   // resetButtonAction();
+        //   // }
+        //   // else
+        //   // {
+        //   $(".leo-modal-wishlist .modal-title").html(wishlist_loggin_required);
+        //   $(".leo-modal-wishlist").modal("show");
+        //   // }
+        //   return false;
+        // }
 
-        var object_e = $(this)
-        var parents_e = object_e.parents('.leo-wishlist-button-dropdown')
-        parents_e.find('.leo-wishlist-button').addClass('active')
-        parents_e.find('.leo-wishlist-bt-loading').css({ display: 'block' })
+        var object_e = $(this);
+        var parents_e = object_e.parents(".leo-wishlist-button-dropdown");
+        parents_e.find(".leo-wishlist-button").addClass("active");
+        parents_e.find(".leo-wishlist-bt-loading").css({ display: "block" });
         // parents_e.find('.leo-wishlist-bt-content').hide();
-        if ($(this).hasClass('added') || $(this).hasClass('delete')) {
+        if ($(this).hasClass("added") || $(this).hasClass("delete")) {
           //DONGND:: remove product form wishlist
           $.ajax({
-            type: 'POST',
-            headers: { 'cache-control': 'no-cache' },
-            url: wishlist_url + '?rand=' + new Date().getTime(),
+            type: "POST",
+            headers: { "cache-control": "no-cache" },
+            url: wishlist_url + "?rand=" + new Date().getTime(),
             async: true,
             cache: false,
             data: {
               ajax: 1,
-              action: 'remove',
+              action: "remove",
               id_product: id_product,
               id_wishlist: id_wishlist,
               id_product_attribute: id_product_attribute,
@@ -465,96 +471,96 @@ function LeoWishlistButtonAction() {
               token: leo_token,
             },
             success: function (result) {
-              var object_result = $.parseJSON(result)
+              var object_result = $.parseJSON(result);
               if (object_result.errors.length) {
-                $('.leo-modal-wishlist .modal-title').html(object_result.errors)
-                $('.leo-modal-wishlist').modal('show')
+                $(".leo-modal-wishlist .modal-title").html(
+                  object_result.errors
+                );
+                $(".leo-modal-wishlist").modal("show");
               } else {
                 //Leotheme add: update number product on icon wishlist after remove from wishlist
-                if ($('.ap-btn-wishlist .ap-total-wishlist').length) {
+                if ($(".ap-btn-wishlist .ap-total-wishlist").length) {
                   var old_num_wishlist = parseInt(
-                    $('.ap-btn-wishlist .ap-total-wishlist').data(
-                      'wishlist-total',
-                    ),
-                  )
-                  var new_num_wishlist = old_num_wishlist - 1
-                  $('.ap-btn-wishlist .ap-total-wishlist').data(
-                    'wishlist-total',
-                    new_num_wishlist,
-                  )
-                  $('.ap-btn-wishlist .ap-total-wishlist').text(
-                    new_num_wishlist,
-                  )
+                    $(".ap-btn-wishlist .ap-total-wishlist").data(
+                      "wishlist-total"
+                    )
+                  );
+                  var new_num_wishlist = old_num_wishlist - 1;
+                  $(".ap-btn-wishlist .ap-total-wishlist").data(
+                    "wishlist-total",
+                    new_num_wishlist
+                  );
+                  $(".ap-btn-wishlist .ap-total-wishlist").text(
+                    new_num_wishlist
+                  );
                 }
 
                 // compared_products.splice($.inArray(parseInt(id_product), compared_products), 1);
-                if (object_e.hasClass('delete')) {
+                if (object_e.hasClass("delete")) {
                   //DONGND:: remove from page wishlist
-                  $('td.product-' + id_product).fadeOut(function () {
-                    $(this).remove()
-                  })
+                  $("td.product-" + id_product).fadeOut(function () {
+                    $(this).remove();
+                  });
                 } else {
                   //DONGND:: remove from page product list
-                  $('.leo-modal-wishlist .modal-title').html(
-                    content_wishlist_mess_remove,
-                  )
-                  $('.leo-modal-wishlist').modal('show')
+                  $(".leo-modal-wishlist .modal-title").html(
+                    content_wishlist_mess_remove
+                  );
+                  $(".leo-modal-wishlist").modal("show");
 
                   $(
-                    '.wishlist-item[data-id-wishlist=' +
+                    ".wishlist-item[data-id-wishlist=" +
                       id_wishlist +
-                      '][data-id-product=' +
+                      "][data-id-product=" +
                       id_product +
-                      ']',
-                  ).removeClass('added')
+                      "]"
+                  ).removeClass("added");
                   $(
-                    '.wishlist-item[data-id-wishlist=' +
+                    ".wishlist-item[data-id-wishlist=" +
                       id_wishlist +
-                      '][data-id-product=' +
+                      "][data-id-product=" +
                       id_product +
-                      ']',
-                  ).attr('title', buttonwishlist_title_add)
+                      "]"
+                  ).attr("title", buttonwishlist_title_add);
                   if (
                     !$(
-                      '.wishlist-item[data-id-product=' + id_product + ']',
-                    ).hasClass('added')
+                      ".wishlist-item[data-id-product=" + id_product + "]"
+                    ).hasClass("added")
                   ) {
                     $(
-                      '.leo-wishlist-button[data-id-product=' +
-                        id_product +
-                        ']',
-                    ).removeClass('added')
+                      ".leo-wishlist-button[data-id-product=" + id_product + "]"
+                    ).removeClass("added");
                   }
 
-                  parents_e.find('.leo-wishlist-bt-loading').hide()
-                  parents_e.find('.leo-wishlist-bt-content').show()
-                  parents_e.find('.leo-wishlist-button').removeClass('active')
+                  parents_e.find(".leo-wishlist-bt-loading").hide();
+                  parents_e.find(".leo-wishlist-bt-content").show();
+                  parents_e.find(".leo-wishlist-button").removeClass("active");
 
-                  WishlistIconState(id_product, 1)
+                  WishlistIconState(id_product, 1);
                 }
               }
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
               alert(
-                'TECHNICAL ERROR: \n\nDetails:\nError thrown: ' +
+                "TECHNICAL ERROR: \n\nDetails:\nError thrown: " +
                   XMLHttpRequest +
-                  '\n' +
-                  'Text status: ' +
-                  textStatus,
-              )
+                  "\n" +
+                  "Text status: " +
+                  textStatus
+              );
             },
-          })
+          });
         } else {
           //DONGND:: add product to list product wishlist
           $.ajax({
-            type: 'POST',
-            headers: { 'cache-control': 'no-cache' },
-            url: wishlist_url + '?rand=' + new Date().getTime(),
+            type: "POST",
+            headers: { "cache-control": "no-cache" },
+            url: wishlist_url + "?rand=" + new Date().getTime(),
             async: true,
             cache: false,
             data: {
               ajax: 1,
-              action: 'add',
+              action: "add",
               id_product: id_product,
               id_wishlist: id_wishlist,
               id_product_attribute: id_product_attribute,
@@ -563,204 +569,206 @@ function LeoWishlistButtonAction() {
             },
             success: function (result) {
               // console.log(result);
-              var object_result = $.parseJSON(result)
+              var object_result = $.parseJSON(result);
               if (object_result.errors.length) {
-                $('.leo-modal-wishlist .modal-title').html(object_result.errors)
-                $('.leo-modal-wishlist').modal('show')
+                $(".leo-modal-wishlist .modal-title").html(
+                  object_result.errors
+                );
+                $(".leo-modal-wishlist").modal("show");
               } else {
-                $('.leo-modal-wishlist .modal-title').html(
-                  content_wishlist_mess_add,
-                )
-                $('.leo-modal-wishlist').modal('show')
+                $(".leo-modal-wishlist .modal-title").html(
+                  content_wishlist_mess_add
+                );
+                $(".leo-modal-wishlist").modal("show");
                 //Leotheme add: update number product on icon wishlist after add from wishlist
-                if ($('.ap-btn-wishlist .ap-total-wishlist').length) {
+                if ($(".ap-btn-wishlist .ap-total-wishlist").length) {
                   var old_num_wishlist = parseInt(
-                    $('.ap-btn-wishlist .ap-total-wishlist').data(
-                      'wishlist-total',
-                    ),
-                  )
-                  var new_num_wishlist = old_num_wishlist + 1
-                  $('.ap-btn-wishlist .ap-total-wishlist').data(
-                    'wishlist-total',
-                    new_num_wishlist,
-                  )
-                  $('.ap-btn-wishlist .ap-total-wishlist').text(
-                    new_num_wishlist,
-                  )
+                    $(".ap-btn-wishlist .ap-total-wishlist").data(
+                      "wishlist-total"
+                    )
+                  );
+                  var new_num_wishlist = old_num_wishlist + 1;
+                  $(".ap-btn-wishlist .ap-total-wishlist").data(
+                    "wishlist-total",
+                    new_num_wishlist
+                  );
+                  $(".ap-btn-wishlist .ap-total-wishlist").text(
+                    new_num_wishlist
+                  );
                 }
 
                 // console.log(object_result.result.id_wishlist);
 
                 $(
-                  '.wishlist-item[data-id-wishlist=' +
+                  ".wishlist-item[data-id-wishlist=" +
                     id_wishlist +
-                    '][data-id-product=' +
+                    "][data-id-product=" +
                     id_product +
-                    ']',
-                ).addClass('added')
+                    "]"
+                ).addClass("added");
                 $(
-                  '.wishlist-item[data-id-wishlist=' +
+                  ".wishlist-item[data-id-wishlist=" +
                     id_wishlist +
-                    '][data-id-product=' +
+                    "][data-id-product=" +
                     id_product +
-                    ']',
-                ).attr('title', buttonwishlist_title_remove)
+                    "]"
+                ).attr("title", buttonwishlist_title_remove);
                 if (
                   !$(
-                    '.leo-wishlist-button[data-id-product=' + id_product + ']',
-                  ).hasClass('added')
+                    ".leo-wishlist-button[data-id-product=" + id_product + "]"
+                  ).hasClass("added")
                 ) {
                   $(
-                    '.leo-wishlist-button[data-id-product=' + id_product + ']',
-                  ).addClass('added')
+                    ".leo-wishlist-button[data-id-product=" + id_product + "]"
+                  ).addClass("added");
                 }
 
-                parents_e.find('.leo-wishlist-bt-loading').hide()
-                parents_e.find('.leo-wishlist-bt-content').show()
-                parents_e.find('.leo-wishlist-button').removeClass('active')
+                parents_e.find(".leo-wishlist-bt-loading").hide();
+                parents_e.find(".leo-wishlist-bt-content").show();
+                parents_e.find(".leo-wishlist-button").removeClass("active");
 
-                WishlistIconState(id_product, 3)
+                WishlistIconState(id_product, 3);
               }
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
               alert(
-                'TECHNICAL ERROR: \n\nDetails:\nError thrown: ' +
+                "TECHNICAL ERROR: \n\nDetails:\nError thrown: " +
                   XMLHttpRequest +
-                  '\n' +
-                  'Text status: ' +
-                  textStatus,
-              )
+                  "\n" +
+                  "Text status: " +
+                  textStatus
+              );
             },
-          })
+          });
         }
       }
-      return false
-    })
+      return false;
+    });
     // });
   }
 }
 
 function LeoListWishlistAction() {
   //DONGND:: click delete wishlist
-  $('.delete-wishlist').on('click', function () {
-    if (!$(this).hasClass('active')) {
-      $(this).addClass('active')
-      $(this).parents('tr').addClass('active')
-      if ($('.list-wishlist tr.active .default-wishlist').is(':checked')) {
-        $('.leo-modal-wishlist .modal-title').html(wishlist_del_default_txt)
-        $('.leo-modal-wishlist').removeClass('enable-action').modal('show')
+  $(".delete-wishlist").on("click", function () {
+    if (!$(this).hasClass("active")) {
+      $(this).addClass("active");
+      $(this).parents("tr").addClass("active");
+      if ($(".list-wishlist tr.active .default-wishlist").is(":checked")) {
+        $(".leo-modal-wishlist .modal-title").html(wishlist_del_default_txt);
+        $(".leo-modal-wishlist").removeClass("enable-action").modal("show");
       } else {
-        $('.leo-modal-wishlist .modal-title').html(wishlist_confirm_del_txt)
-        $('.leo-modal-wishlist').addClass('enable-action').modal('show')
+        $(".leo-modal-wishlist .modal-title").html(wishlist_confirm_del_txt);
+        $(".leo-modal-wishlist").addClass("enable-action").modal("show");
       }
     }
 
-    return false
-  })
+    return false;
+  });
 
   //DONGND:: confirm delete wishlist
-  $('.leo-modal-wishlist-bt').on('click', function () {
-    if (!$(this).hasClass('active')) {
+  $(".leo-modal-wishlist-bt").on("click", function () {
+    if (!$(this).hasClass("active")) {
       // console.log('test');
-      $(this).addClass('active')
-      var object_e = $(this)
-      var id_wishlist = $('.delete-wishlist.active').data('id-wishlist')
-      $('.leo-modal-wishlist-bt-text').hide()
-      $('.leo-modal-wishlist-loading').css({ display: 'block' })
+      $(this).addClass("active");
+      var object_e = $(this);
+      var id_wishlist = $(".delete-wishlist.active").data("id-wishlist");
+      $(".leo-modal-wishlist-bt-text").hide();
+      $(".leo-modal-wishlist-loading").css({ display: "block" });
 
       $.ajax({
-        type: 'POST',
-        headers: { 'cache-control': 'no-cache' },
-        url: wishlist_url + '?rand=' + new Date().getTime(),
+        type: "POST",
+        headers: { "cache-control": "no-cache" },
+        url: wishlist_url + "?rand=" + new Date().getTime(),
         async: true,
         cache: false,
         data: {
           ajax: 1,
-          action: 'delete-wishlist',
+          action: "delete-wishlist",
           id_wishlist: id_wishlist,
           token: leo_token,
         },
         success: function (result) {
-          var object_result = $.parseJSON(result)
+          var object_result = $.parseJSON(result);
           if (object_result.errors.length) {
-            $('.leo-modal-wishlist .modal-title').html(object_result.errors)
-            $('.leo-modal-wishlist').removeClass('enable-action').modal('show')
+            $(".leo-modal-wishlist .modal-title").html(object_result.errors);
+            $(".leo-modal-wishlist").removeClass("enable-action").modal("show");
           } else {
-            var object_delete = $('.list-wishlist tr.active')
-            $('.leo-modal-wishlist').modal('hide')
+            var object_delete = $(".list-wishlist tr.active");
+            $(".leo-modal-wishlist").modal("hide");
             object_delete.fadeOut(function () {
-              if ($(this).hasClass('show')) {
-                $('.leo-wishlist-product').fadeOut().html('')
+              if ($(this).hasClass("show")) {
+                $(".leo-wishlist-product").fadeOut().html("");
               } else {
                 //DONGND:: reload list product if a wishlist current view
-                $('.list-wishlist tr.show .view-wishlist-product').trigger(
-                  'click',
-                )
+                $(".list-wishlist tr.show .view-wishlist-product").trigger(
+                  "click"
+                );
               }
-              $(this).remove()
-            })
+              $(this).remove();
+            });
           }
-          $('.leo-modal-wishlist-loading').hide()
-          $('.leo-modal-wishlist-bt-text').show()
-          object_e.removeClass('active')
+          $(".leo-modal-wishlist-loading").hide();
+          $(".leo-modal-wishlist-bt-text").show();
+          object_e.removeClass("active");
         },
         error: function (XMLHttpRequest, textStatus, errorThrown) {
           alert(
-            'TECHNICAL ERROR: \n\nDetails:\nError thrown: ' +
+            "TECHNICAL ERROR: \n\nDetails:\nError thrown: " +
               XMLHttpRequest +
-              '\n' +
-              'Text status: ' +
-              textStatus,
-          )
+              "\n" +
+              "Text status: " +
+              textStatus
+          );
         },
-      })
+      });
     }
-  })
+  });
 
   //DONGND:: change default wishlist
-  $('.default-wishlist').on('click', function () {
-    if ($(this).is(':checked')) {
+  $(".default-wishlist").on("click", function () {
+    if ($(this).is(":checked")) {
       // console.log('test');
-      if (!$('.default-wishlist.active').length) {
-        $(this).addClass('active')
-        var object_e = $(this)
-        var id_wishlist = $('.default-wishlist.active').data('id-wishlist')
+      if (!$(".default-wishlist.active").length) {
+        $(this).addClass("active");
+        var object_e = $(this);
+        var id_wishlist = $(".default-wishlist.active").data("id-wishlist");
         $.ajax({
-          type: 'POST',
-          headers: { 'cache-control': 'no-cache' },
-          url: wishlist_url + '?rand=' + new Date().getTime(),
+          type: "POST",
+          headers: { "cache-control": "no-cache" },
+          url: wishlist_url + "?rand=" + new Date().getTime(),
           async: true,
           cache: false,
           data: {
             ajax: 1,
-            action: 'default-wishlist',
+            action: "default-wishlist",
             id_wishlist: id_wishlist,
             token: leo_token,
           },
           success: function (result) {
-            var object_result = $.parseJSON(result)
+            var object_result = $.parseJSON(result);
             if (object_result.errors.length) {
-              $('.leo-modal-wishlist .modal-title').html(object_result.errors)
-              $('.leo-modal-wishlist')
-                .removeClass('enable-action')
-                .modal('show')
+              $(".leo-modal-wishlist .modal-title").html(object_result.errors);
+              $(".leo-modal-wishlist")
+                .removeClass("enable-action")
+                .modal("show");
             } else {
-              $('.default-wishlist:checked').removeAttr('checked')
-              object_e.prop('checked', true)
+              $(".default-wishlist:checked").removeAttr("checked");
+              object_e.prop("checked", true);
             }
 
-            object_e.removeClass('active')
+            object_e.removeClass("active");
           },
           error: function (XMLHttpRequest, textStatus, errorThrown) {
             alert(
-              'TECHNICAL ERROR: \n\nDetails:\nError thrown: ' +
+              "TECHNICAL ERROR: \n\nDetails:\nError thrown: " +
                 XMLHttpRequest +
-                '\n' +
-                'Text status: ' +
-                textStatus,
-            )
+                "\n" +
+                "Text status: " +
+                textStatus
+            );
           },
-        })
+        });
       }
     }
     // else
@@ -768,314 +776,314 @@ function LeoListWishlistAction() {
     // console.log('test1');
 
     // }
-    return false
-  })
+    return false;
+  });
 
   //DONGND:: show list product of wishlist
-  $('.view-wishlist-product').on('click', function () {
-    if (!$('.view-wishlist-product.active').length) {
-      $(this).addClass('active')
-      $(this).next('.leo-view-wishlist-product-loading').show()
-      $('.list-wishlist tr.show').removeClass('show')
-      $(this).parents('tr').addClass('show')
-      var object_e = $(this)
-      var id_wishlist = $(this).data('id-wishlist')
+  $(".view-wishlist-product").on("click", function () {
+    if (!$(".view-wishlist-product.active").length) {
+      $(this).addClass("active");
+      $(this).next(".leo-view-wishlist-product-loading").show();
+      $(".list-wishlist tr.show").removeClass("show");
+      $(this).parents("tr").addClass("show");
+      var object_e = $(this);
+      var id_wishlist = $(this).data("id-wishlist");
       // $('.send-wishlist').fadeOut();
       // $('.leo-wishlist-product').fadeOut(function(){
       //$('.leo-wishlist-product').html('');
       $.ajax({
-        type: 'POST',
-        headers: { 'cache-control': 'no-cache' },
-        url: wishlist_url + '?rand=' + new Date().getTime(),
+        type: "POST",
+        headers: { "cache-control": "no-cache" },
+        url: wishlist_url + "?rand=" + new Date().getTime(),
         async: true,
         cache: false,
         data: {
           ajax: 1,
-          action: 'show-wishlist-product',
+          action: "show-wishlist-product",
           id_wishlist: id_wishlist,
           token: leo_token,
         },
         success: function (result) {
-          var object_result = $.parseJSON(result)
+          var object_result = $.parseJSON(result);
           if (object_result.errors.length) {
-            $('.leo-modal-wishlist .modal-title').html(object_result.errors)
-            $('.leo-modal-wishlist').removeClass('enable-action').modal('show')
+            $(".leo-modal-wishlist .modal-title").html(object_result.errors);
+            $(".leo-modal-wishlist").removeClass("enable-action").modal("show");
           } else {
-            $('.leo-wishlist-product').hide()
-            $('.leo-wishlist-product').html(object_result.result.html).fadeIn()
+            $(".leo-wishlist-product").hide();
+            $(".leo-wishlist-product").html(object_result.result.html).fadeIn();
             if (object_result.result.show_send_wishlist) {
-              $('.send-wishlist').fadeIn()
+              $(".send-wishlist").fadeIn();
               // LeoWishlistButtonAction();
-              if (!$('.leo-modal-send-wishlist').length) {
-                createLeoSendWishlistModalPopup()
-                LeoListWishlistProductModalAction()
+              if (!$(".leo-modal-send-wishlist").length) {
+                createLeoSendWishlistModalPopup();
+                LeoListWishlistProductModalAction();
               } else {
-                $('.leo-modal-reset-send-wishlist-bt').trigger('click')
+                $(".leo-modal-reset-send-wishlist-bt").trigger("click");
               }
-              LeoListWishlistProductAction()
+              LeoListWishlistProductAction();
             } else {
-              $('.send-wishlist').hide()
+              $(".send-wishlist").hide();
             }
-            refeshWishlist(id_wishlist)
+            refeshWishlist(id_wishlist);
           }
 
-          object_e.removeClass('active')
-          object_e.next('.leo-view-wishlist-product-loading').hide()
+          object_e.removeClass("active");
+          object_e.next(".leo-view-wishlist-product-loading").hide();
         },
         error: function (XMLHttpRequest, textStatus, errorThrown) {
           alert(
-            'TECHNICAL ERROR: \n\nDetails:\nError thrown: ' +
+            "TECHNICAL ERROR: \n\nDetails:\nError thrown: " +
               XMLHttpRequest +
-              '\n' +
-              'Text status: ' +
-              textStatus,
-          )
+              "\n" +
+              "Text status: " +
+              textStatus
+          );
         },
-      })
+      });
       // })
     }
-    return false
-  })
+    return false;
+  });
 }
 function LeoListWishlistProductModalAction() {
   //DONGND:: send wishlist
-  $('.leo-send-wishlist-button').on('click', function () {
-    var name_wishlist = $('.list-wishlist tr.show .view-wishlist-product').data(
-      'name-wishlist',
-    )
-    $('.leo-modal-send-wishlist .modal-title').html(
-      wishlist_send_wishlist_txt + ' "' + name_wishlist + '"',
-    )
-    $('.leo-modal-send-wishlist').modal('show')
+  $(".leo-send-wishlist-button").on("click", function () {
+    var name_wishlist = $(".list-wishlist tr.show .view-wishlist-product").data(
+      "name-wishlist"
+    );
+    $(".leo-modal-send-wishlist .modal-title").html(
+      wishlist_send_wishlist_txt + ' "' + name_wishlist + '"'
+    );
+    $(".leo-modal-send-wishlist").modal("show");
 
-    return false
-  })
+    return false;
+  });
 
-  $('.leo-modal-send-wishlist').on('submit', function () {
+  $(".leo-modal-send-wishlist").on("submit", function () {
     // if ($(this).find('.form-group.leo-has-error').length)
-    if ($('.leo-fake-send-wishlist-button').hasClass('validate-ok')) {
-      return false
+    if ($(".leo-fake-send-wishlist-button").hasClass("validate-ok")) {
+      return false;
     }
-  })
+  });
 
   //DONGND:: submit send wishlist
-  $('.leo-modal-send-wishlist-bt').on('click', function () {
-    if (!$(this).hasClass('active')) {
-      var check_submit_wishlist = true
-      var list_email = []
-      $(this).addClass('active')
-      var object_e = $(this)
-      $('.leo-modal-reset-send-wishlist-bt').fadeOut()
+  $(".leo-modal-send-wishlist-bt").on("click", function () {
+    if (!$(this).hasClass("active")) {
+      var check_submit_wishlist = true;
+      var list_email = [];
+      $(this).addClass("active");
+      var object_e = $(this);
+      $(".leo-modal-reset-send-wishlist-bt").fadeOut();
 
-      $('.wishlist_email').each(function (key, val) {
+      $(".wishlist_email").each(function (key, val) {
         if (
-          $(this).val() !== '' &&
-          !$(this).parents('.form-group').hasClass('has-success') &&
-          !$(this).parents('.form-group').hasClass('has-warning')
+          $(this).val() !== "" &&
+          !$(this).parents(".form-group").hasClass("has-success") &&
+          !$(this).parents(".form-group").hasClass("has-warning")
         ) {
           if (!validateEmail($(this).val())) {
-            $(this).parents('.form-group').addClass('leo-has-error')
-            check_submit_wishlist = false
+            $(this).parents(".form-group").addClass("leo-has-error");
+            check_submit_wishlist = false;
           } else {
-            $(this).parents('.form-group').removeClass('leo-has-error')
-            list_email.push(key)
+            $(this).parents(".form-group").removeClass("leo-has-error");
+            list_email.push(key);
           }
         }
-      })
+      });
       // console.log(check_submit_wishlist);
       if (check_submit_wishlist) {
         // if (list_email.length == 0)
         // console.log(list_email.length);
         // console.log(list_email);
         if (list_email.length == 0) {
-          $('.wishlist_email').each(function (key, val) {
-            if ($(this).val() == '') {
-              $(this).parents('.form-group').addClass('leo-has-error')
-              $(this).attr('required', '')
-              return false
+          $(".wishlist_email").each(function (key, val) {
+            if ($(this).val() == "") {
+              $(this).parents(".form-group").addClass("leo-has-error");
+              $(this).attr("required", "");
+              return false;
             }
-          })
-          object_e.removeClass('active')
-          $('.leo-modal-reset-send-wishlist-bt').fadeIn()
+          });
+          object_e.removeClass("active");
+          $(".leo-modal-reset-send-wishlist-bt").fadeIn();
         } else {
-          $('.leo-fake-send-wishlist-button').addClass('validate-ok')
+          $(".leo-fake-send-wishlist-button").addClass("validate-ok");
           var id_wishlist = $(
-            '.list-wishlist tr.show .view-wishlist-product',
-          ).data('id-wishlist')
+            ".list-wishlist tr.show .view-wishlist-product"
+          ).data("id-wishlist");
           // console.log(list_email);
 
-          $('.leo-modal-send-wishlist-bt-text').hide()
-          $('.leo-modal-send-wishlist-loading').css({ display: 'block' })
+          $(".leo-modal-send-wishlist-bt-text").hide();
+          $(".leo-modal-send-wishlist-loading").css({ display: "block" });
 
           $.each(list_email, function (key, val) {
-            var index_wishlist_email = val + 1
-            var email = $('#wishlist_email_' + index_wishlist_email).val()
+            var index_wishlist_email = val + 1;
+            var email = $("#wishlist_email_" + index_wishlist_email).val();
             var object_parent_e = $(
-              '#wishlist_email_' + index_wishlist_email,
-            ).parents('.form-group')
-            object_parent_e.find('.wishlist_email_status_loading').show()
+              "#wishlist_email_" + index_wishlist_email
+            ).parents(".form-group");
+            object_parent_e.find(".wishlist_email_status_loading").show();
 
             $.ajax({
-              type: 'POST',
-              headers: { 'cache-control': 'no-cache' },
-              url: wishlist_url + '?rand=' + new Date().getTime(),
+              type: "POST",
+              headers: { "cache-control": "no-cache" },
+              url: wishlist_url + "?rand=" + new Date().getTime(),
               async: true,
               cache: false,
               data: {
                 ajax: 1,
-                action: 'send-wishlist',
+                action: "send-wishlist",
                 id_wishlist: id_wishlist,
                 email: email,
                 token: leo_token,
               },
               success: function (result) {
-                object_parent_e.find('.wishlist_email_status_loading').hide()
-                var object_result = $.parseJSON(result)
+                object_parent_e.find(".wishlist_email_status_loading").hide();
+                var object_result = $.parseJSON(result);
                 if (object_result.errors.length) {
                   object_parent_e
-                    .addClass('has-warning')
-                    .find('.send_wishlist_error')
-                    .fadeIn()
+                    .addClass("has-warning")
+                    .find(".send_wishlist_error")
+                    .fadeIn();
                 } else {
                   object_parent_e
-                    .addClass('has-success')
-                    .find('.send_wishlist_success')
-                    .fadeIn()
+                    .addClass("has-success")
+                    .find(".send_wishlist_success")
+                    .fadeIn();
                 }
               },
               error: function (XMLHttpRequest, textStatus, errorThrown) {
                 alert(
-                  'TECHNICAL ERROR: \n\nDetails:\nError thrown: ' +
+                  "TECHNICAL ERROR: \n\nDetails:\nError thrown: " +
                     XMLHttpRequest +
-                    '\n' +
-                    'Text status: ' +
-                    textStatus,
-                )
+                    "\n" +
+                    "Text status: " +
+                    textStatus
+                );
               },
-            })
-          })
+            });
+          });
           $(document).ajaxStop(function () {
             // console.log('test');
-            $('.leo-modal-send-wishlist-loading').hide()
-            $('.leo-modal-send-wishlist-bt-text').show()
-            $('.leo-fake-send-wishlist-button').removeClass('validate-ok')
-            object_e.removeClass('active')
-            $('.leo-modal-reset-send-wishlist-bt').fadeIn()
-          })
+            $(".leo-modal-send-wishlist-loading").hide();
+            $(".leo-modal-send-wishlist-bt-text").show();
+            $(".leo-fake-send-wishlist-button").removeClass("validate-ok");
+            object_e.removeClass("active");
+            $(".leo-modal-reset-send-wishlist-bt").fadeIn();
+          });
         }
-        if ($('.form-send-wishlist .form-group.leo-has-error').length) {
-          $('.leo-fake-send-wishlist-button').trigger('click')
+        if ($(".form-send-wishlist .form-group.leo-has-error").length) {
+          $(".leo-fake-send-wishlist-button").trigger("click");
         }
       } else {
-        object_e.removeClass('active')
-        $('.leo-modal-reset-send-wishlist-bt').fadeIn()
-        $('.leo-fake-send-wishlist-button').trigger('click')
+        object_e.removeClass("active");
+        $(".leo-modal-reset-send-wishlist-bt").fadeIn();
+        $(".leo-fake-send-wishlist-button").trigger("click");
       }
     }
-  })
+  });
 
   //DONGND:: reset from send wishlist
-  $('.leo-modal-reset-send-wishlist-bt').on('click', function () {
-    $('.wishlist_email').val('').removeAttr('required')
-    $('.send_wishlist_form_content .form-group').removeClass(
-      'leo-has-error has-success has-warning',
-    )
-    $('.wishlist_email_status_loading').fadeOut()
-    $('.send_wishlist_msg').fadeOut()
-  })
+  $(".leo-modal-reset-send-wishlist-bt").on("click", function () {
+    $(".wishlist_email").val("").removeAttr("required");
+    $(".send_wishlist_form_content .form-group").removeClass(
+      "leo-has-error has-success has-warning"
+    );
+    $(".wishlist_email_status_loading").fadeOut();
+    $(".send_wishlist_msg").fadeOut();
+  });
 }
 
 function LeoListWishlistProductAction() {
   //DONGND:: delete product of wishlist
-  $('.leo-wishlist-button-delete').on('click', function () {
-    if (!$(this).hasClass('active')) {
-      $(this).addClass('active')
-      var object_e = $(this)
-      var object_parent_e = object_e.parents('.leo-wishlist-product')
-      var id_wishlist_product = $(this).data('id-wishlist-product')
-      var id_wishlist = $(this).data('id-wishlist')
+  $(".leo-wishlist-button-delete").on("click", function () {
+    if (!$(this).hasClass("active")) {
+      $(this).addClass("active");
+      var object_e = $(this);
+      var object_parent_e = object_e.parents(".leo-wishlist-product");
+      var id_wishlist_product = $(this).data("id-wishlist-product");
+      var id_wishlist = $(this).data("id-wishlist");
       $.ajax({
-        type: 'POST',
-        headers: { 'cache-control': 'no-cache' },
-        url: wishlist_url + '?rand=' + new Date().getTime(),
+        type: "POST",
+        headers: { "cache-control": "no-cache" },
+        url: wishlist_url + "?rand=" + new Date().getTime(),
         async: true,
         cache: false,
         data: {
           ajax: 1,
-          action: 'delete-wishlist-product',
+          action: "delete-wishlist-product",
           id_wishlist: id_wishlist,
           id_wishlist_product: id_wishlist_product,
           token: leo_token,
         },
         success: function (result) {
-          var object_result = $.parseJSON(result)
+          var object_result = $.parseJSON(result);
           if (object_result.errors.length) {
-            $('.leo-modal-wishlist .modal-title').html(object_result.errors)
-            $('.leo-modal-wishlist').removeClass('enable-action').modal('show')
+            $(".leo-modal-wishlist .modal-title").html(object_result.errors);
+            $(".leo-modal-wishlist").removeClass("enable-action").modal("show");
           } else {
-            object_e.parents('.leo-wishlistproduct-item').fadeOut(function () {
-              $(this).remove()
+            object_e.parents(".leo-wishlistproduct-item").fadeOut(function () {
+              $(this).remove();
               // console.log(object_parent_e);
               // console.log(object_parent_e.find('.leo-wishlistproduct-item'));
               // console.log(object_parent_e.find('.leo-wishlistproduct-item').length);
-              if (!object_parent_e.find('.leo-wishlistproduct-item').length) {
-                $('.send-wishlist').hide()
-                $('.list-wishlist tr.show .view-wishlist-product').trigger(
-                  'click',
-                )
+              if (!object_parent_e.find(".leo-wishlistproduct-item").length) {
+                $(".send-wishlist").hide();
+                $(".list-wishlist tr.show .view-wishlist-product").trigger(
+                  "click"
+                );
               }
-            })
-            refeshWishlist(id_wishlist)
+            });
+            refeshWishlist(id_wishlist);
           }
 
-          object_e.removeClass('active')
+          object_e.removeClass("active");
         },
         error: function (XMLHttpRequest, textStatus, errorThrown) {
           alert(
-            'TECHNICAL ERROR: \n\nDetails:\nError thrown: ' +
+            "TECHNICAL ERROR: \n\nDetails:\nError thrown: " +
               XMLHttpRequest +
-              '\n' +
-              'Text status: ' +
-              textStatus,
-          )
+              "\n" +
+              "Text status: " +
+              textStatus
+          );
         },
-      })
+      });
     }
-    return false
-  })
+    return false;
+  });
 
   //DONGND::
-  $('.leo-wishlist-product-save-button').on('click', function () {
-    if (!$(this).hasClass('active')) {
-      $(this).addClass('active')
-      var object_e = $(this)
-      var id_wishlist_product = $(this).data('id-wishlist-product')
-      var id_wishlist = $(this).data('id-wishlist')
+  $(".leo-wishlist-product-save-button").on("click", function () {
+    if (!$(this).hasClass("active")) {
+      $(this).addClass("active");
+      var object_e = $(this);
+      var id_wishlist_product = $(this).data("id-wishlist-product");
+      var id_wishlist = $(this).data("id-wishlist");
       // $('.leo-wishlistproduct-item-'+id_wishlist_product).addClass('update');
       var quantity = $(
-        '.wishlist-product-quantity-' + id_wishlist_product,
-      ).val()
+        ".wishlist-product-quantity-" + id_wishlist_product
+      ).val();
       var priority = $(
-        '.wishlist-product-priority-' + id_wishlist_product,
-      ).val()
+        ".wishlist-product-priority-" + id_wishlist_product
+      ).val();
 
       if (
         Math.floor(quantity) == quantity &&
         $.isNumeric(quantity) &&
         quantity > 0
       ) {
-        $('.wishlist-product-quantity-' + id_wishlist_product)
-          .parents('.form-group')
-          .removeClass('has-error')
+        $(".wishlist-product-quantity-" + id_wishlist_product)
+          .parents(".form-group")
+          .removeClass("has-error");
         $.ajax({
-          type: 'POST',
-          headers: { 'cache-control': 'no-cache' },
-          url: wishlist_url + '?rand=' + new Date().getTime(),
+          type: "POST",
+          headers: { "cache-control": "no-cache" },
+          url: wishlist_url + "?rand=" + new Date().getTime(),
           async: true,
           cache: false,
           data: {
             ajax: 1,
-            action: 'update-wishlist-product',
+            action: "update-wishlist-product",
             id_wishlist: id_wishlist,
             id_wishlist_product: id_wishlist_product,
             quantity: quantity,
@@ -1083,69 +1091,69 @@ function LeoListWishlistProductAction() {
             token: leo_token,
           },
           success: function (result) {
-            var object_result = $.parseJSON(result)
+            var object_result = $.parseJSON(result);
             if (object_result.errors.length) {
-              $('.leo-modal-wishlist .modal-title').html(object_result.errors)
-              $('.leo-modal-wishlist')
-                .removeClass('enable-action')
-                .modal('show')
+              $(".leo-modal-wishlist .modal-title").html(object_result.errors);
+              $(".leo-modal-wishlist")
+                .removeClass("enable-action")
+                .modal("show");
             } else {
-              $('.leo-wishlistproduct-item-' + id_wishlist_product).hide()
-              $('.leo-wishlistproduct-item-' + id_wishlist_product).fadeIn()
-              refeshWishlist(id_wishlist)
+              $(".leo-wishlistproduct-item-" + id_wishlist_product).hide();
+              $(".leo-wishlistproduct-item-" + id_wishlist_product).fadeIn();
+              refeshWishlist(id_wishlist);
             }
 
-            object_e.removeClass('active')
+            object_e.removeClass("active");
           },
           error: function (XMLHttpRequest, textStatus, errorThrown) {
             alert(
-              'TECHNICAL ERROR: \n\nDetails:\nError thrown: ' +
+              "TECHNICAL ERROR: \n\nDetails:\nError thrown: " +
                 XMLHttpRequest +
-                '\n' +
-                'Text status: ' +
-                textStatus,
-            )
+                "\n" +
+                "Text status: " +
+                textStatus
+            );
           },
-        })
+        });
       } else {
-        $('.wishlist-product-quantity-' + id_wishlist_product)
-          .parents('.form-group')
-          .addClass('has-error')
-        $('.leo-modal-wishlist .modal-title').html(wishlist_quantity_required)
-        $('.leo-modal-wishlist').removeClass('enable-action').modal('show')
-        object_e.removeClass('active')
+        $(".wishlist-product-quantity-" + id_wishlist_product)
+          .parents(".form-group")
+          .addClass("has-error");
+        $(".leo-modal-wishlist .modal-title").html(wishlist_quantity_required);
+        $(".leo-modal-wishlist").removeClass("enable-action").modal("show");
+        object_e.removeClass("active");
       }
     }
-    return false
-  })
+    return false;
+  });
 
-  $('.move-wishlist-item').on('click', function () {
-    if (!$(this).hasClass('active')) {
-      $(this).addClass('active')
-      var object_e = $(this)
-      var object_parent_e = object_e.parents('.leo-wishlist-product')
-      var id_wishlist_product = $(this).data('id-wishlist-product')
-      var id_product = $(this).data('id-product')
-      var id_product_attribute = $(this).data('id-product-attribute')
+  $(".move-wishlist-item").on("click", function () {
+    if (!$(this).hasClass("active")) {
+      $(this).addClass("active");
+      var object_e = $(this);
+      var object_parent_e = object_e.parents(".leo-wishlist-product");
+      var id_wishlist_product = $(this).data("id-wishlist-product");
+      var id_product = $(this).data("id-product");
+      var id_product_attribute = $(this).data("id-product-attribute");
       var id_old_wishlist = $(
-        '.list-wishlist tr.show .view-wishlist-product',
-      ).data('id-wishlist')
-      var id_new_wishlist = $(this).data('id-wishlist')
+        ".list-wishlist tr.show .view-wishlist-product"
+      ).data("id-wishlist");
+      var id_new_wishlist = $(this).data("id-wishlist");
       var priority = $(
-        '.wishlist-product-priority-' + id_wishlist_product,
-      ).val()
+        ".wishlist-product-priority-" + id_wishlist_product
+      ).val();
       var quantity = $(
-        '.wishlist-product-quantity-' + id_wishlist_product,
-      ).val()
+        ".wishlist-product-quantity-" + id_wishlist_product
+      ).val();
       $.ajax({
-        type: 'POST',
-        headers: { 'cache-control': 'no-cache' },
-        url: wishlist_url + '?rand=' + new Date().getTime(),
+        type: "POST",
+        headers: { "cache-control": "no-cache" },
+        url: wishlist_url + "?rand=" + new Date().getTime(),
         async: true,
         cache: false,
         data: {
           ajax: 1,
-          action: 'move-wishlist-product',
+          action: "move-wishlist-product",
           id_new_wishlist: id_new_wishlist,
           id_wishlist_product: id_wishlist_product,
           id_old_wishlist: id_old_wishlist,
@@ -1156,195 +1164,196 @@ function LeoListWishlistProductAction() {
           token: leo_token,
         },
         success: function (result) {
-          var object_result = $.parseJSON(result)
+          var object_result = $.parseJSON(result);
           if (object_result.errors.length) {
-            $('.leo-modal-wishlist .modal-title').html(object_result.errors)
-            $('.leo-modal-wishlist').removeClass('enable-action').modal('show')
+            $(".leo-modal-wishlist .modal-title").html(object_result.errors);
+            $(".leo-modal-wishlist").removeClass("enable-action").modal("show");
           } else {
-            object_e.parents('.leo-wishlistproduct-item').fadeOut(function () {
-              $(this).remove()
-              if (!object_parent_e.find('.leo-wishlistproduct-item').length) {
-                $('.send-wishlist').hide()
-                $('.list-wishlist tr.show .view-wishlist-product').trigger(
-                  'click',
-                )
+            object_e.parents(".leo-wishlistproduct-item").fadeOut(function () {
+              $(this).remove();
+              if (!object_parent_e.find(".leo-wishlistproduct-item").length) {
+                $(".send-wishlist").hide();
+                $(".list-wishlist tr.show .view-wishlist-product").trigger(
+                  "click"
+                );
               }
-            })
-            refeshWishlist(id_new_wishlist)
-            refeshWishlist(id_old_wishlist)
+            });
+            refeshWishlist(id_new_wishlist);
+            refeshWishlist(id_old_wishlist);
           }
 
-          object_e.removeClass('active')
+          object_e.removeClass("active");
         },
         error: function (XMLHttpRequest, textStatus, errorThrown) {
           alert(
-            'TECHNICAL ERROR: \n\nDetails:\nError thrown: ' +
+            "TECHNICAL ERROR: \n\nDetails:\nError thrown: " +
               XMLHttpRequest +
-              '\n' +
-              'Text status: ' +
-              textStatus,
-          )
+              "\n" +
+              "Text status: " +
+              textStatus
+          );
         },
-      })
+      });
     }
-    return false
-  })
+    return false;
+  });
 }
 
 function activeEventModalWishlist() {
-  $('.leo-modal-wishlist').on('hide.bs.modal', function (e) {
-    resetButtonAction()
-  })
+  $(".leo-modal-wishlist").on("hide.bs.modal", function (e) {
+    resetButtonAction();
+  });
 
-  $('.leo-modal-wishlist').on('hidden.bs.modal', function (e) {
-    $('body').css('padding-right', '')
-  })
-  $('.leo-modal-wishlist').on('show.bs.modal', function (e) {
-    if ($('.quickview.modal').length) {
-      $('.quickview.modal').modal('hide')
+  $(".leo-modal-wishlist").on("hidden.bs.modal", function (e) {
+    $("body").css("padding-right", "");
+  });
+  $(".leo-modal-wishlist").on("show.bs.modal", function (e) {
+    if ($(".quickview.modal").length) {
+      $(".quickview.modal").modal("hide");
     }
-  })
+  });
 }
 
 //DONGND:: reset button add wishlist after click
 function resetButtonAction() {
   // console.log($('.leo-modal-review-bt').length);
-  if ($('.leo-wishlist-button.active').length) {
+  if ($(".leo-wishlist-button.active").length) {
     // console.log('aaa');
-    $('.leo-wishlist-button.active').removeClass('active')
+    $(".leo-wishlist-button.active").removeClass("active");
   }
 
-  if ($('.wishlist-item.active-add').length) {
+  if ($(".wishlist-item.active-add").length) {
     // console.log('aaa');
-    $('.wishlist-item.active-add').removeClass('active-add')
+    $(".wishlist-item.active-add").removeClass("active-add");
   }
   // $('.leo-list-wishlist').fadeOut();
-  $('.default-wishlist.active').removeClass('active')
-  $('.delete-wishlist.active').removeClass('active')
+  $(".default-wishlist.active").removeClass("active");
+  $(".delete-wishlist.active").removeClass("active");
 
-  $('.list-wishlist tr.active').removeClass('active')
+  $(".list-wishlist tr.active").removeClass("active");
 
   // $('.leo-modal-wishlist').removeClass('enable-action');
 }
 
 function createLeoSendWishlistModalPopup() {
-  var leoSendWishlistModalPopup = ''
+  var leoSendWishlistModalPopup = "";
   leoSendWishlistModalPopup +=
-    '<div class="modal leo-modal leo-modal-send-wishlist fade" tabindex="-1" role="dialog" aria-hidden="true">'
-  leoSendWishlistModalPopup += '<div class="modal-dialog" role="document">'
-  leoSendWishlistModalPopup += '<div class="modal-content">'
-  leoSendWishlistModalPopup += '<div class="modal-header">'
+    '<div class="modal leo-modal leo-modal-send-wishlist fade" tabindex="-1" role="dialog" aria-hidden="true">';
+  leoSendWishlistModalPopup += '<div class="modal-dialog" role="document">';
+  leoSendWishlistModalPopup += '<div class="modal-content">';
+  leoSendWishlistModalPopup += '<div class="modal-header">';
   leoSendWishlistModalPopup +=
-    '<button type="button" class="close" data-dismiss="modal" aria-label="Close">'
-  leoSendWishlistModalPopup += '<span aria-hidden="true">&times;</span>'
-  leoSendWishlistModalPopup += '</button>'
-  leoSendWishlistModalPopup += '<h5 class="modal-title text-xs-center">'
-  leoSendWishlistModalPopup += '</h5>'
-  leoSendWishlistModalPopup += '</div>'
-  leoSendWishlistModalPopup += '<div class="modal-body">'
-  leoSendWishlistModalPopup += '<div class="send_wishlist_form_content">'
+    '<button type="button" class="close" data-dismiss="modal" aria-label="Close">';
+  leoSendWishlistModalPopup += '<span aria-hidden="true">&times;</span>';
+  leoSendWishlistModalPopup += "</button>";
+  leoSendWishlistModalPopup += '<h5 class="modal-title text-xs-center">';
+  leoSendWishlistModalPopup += "</h5>";
+  leoSendWishlistModalPopup += "</div>";
+  leoSendWishlistModalPopup += '<div class="modal-body">';
+  leoSendWishlistModalPopup += '<div class="send_wishlist_form_content">';
   leoSendWishlistModalPopup +=
-    '<form class="form-send-wishlist" action="#" method="post">'
+    '<form class="form-send-wishlist" action="#" method="post">';
   for (var $i = 1; $i <= 10; $i++) {
-    leoSendWishlistModalPopup += '<div class="form-group row">'
+    leoSendWishlistModalPopup += '<div class="form-group row">';
     leoSendWishlistModalPopup +=
       '<label class="col-form-label col-sm-2 text-sm-left" for="wishlist_email_' +
       $i +
       '">' +
       wishlist_email_txt +
-      ' ' +
+      " " +
       $i +
-      '</label>'
-    leoSendWishlistModalPopup += '<div class="wishlist_email_status col-sm-1">'
+      "</label>";
+    leoSendWishlistModalPopup += '<div class="wishlist_email_status col-sm-1">';
     leoSendWishlistModalPopup +=
-      '<div class="wishlist_email_status_loading cssload-speeding-wheel">'
-    leoSendWishlistModalPopup += '</div>'
+      '<div class="wishlist_email_status_loading cssload-speeding-wheel">';
+    leoSendWishlistModalPopup += "</div>";
     leoSendWishlistModalPopup +=
-      '<i class="send_wishlist_msg send_wishlist_success material-icons">&#xE876;</i>'
+      '<i class="send_wishlist_msg send_wishlist_success material-icons">&#xE876;</i>';
     leoSendWishlistModalPopup +=
-      '<i class="send_wishlist_msg send_wishlist_error material-icons">&#xE033;</i>'
-    leoSendWishlistModalPopup += '</div>'
-    leoSendWishlistModalPopup += '<div class="col-sm-9">'
+      '<i class="send_wishlist_msg send_wishlist_error material-icons">&#xE033;</i>';
+    leoSendWishlistModalPopup += "</div>";
+    leoSendWishlistModalPopup += '<div class="col-sm-9">';
     leoSendWishlistModalPopup +=
       '<input class="form-control wishlist_email" id="wishlist_email_' +
       $i +
       '" name="wishlist_email_' +
       $i +
-      '" type="email">'
-    leoSendWishlistModalPopup += '</div>'
-    leoSendWishlistModalPopup += '</div>'
+      '" type="email">';
+    leoSendWishlistModalPopup += "</div>";
+    leoSendWishlistModalPopup += "</div>";
   }
   leoSendWishlistModalPopup +=
-    '<button class="btn btn-primary form-control-submit leo-fake-send-wishlist-button pull-xs-right" type="submit"></button>'
-  leoSendWishlistModalPopup += '</form>'
-  leoSendWishlistModalPopup += '</div>'
-  leoSendWishlistModalPopup += '</div>'
-  leoSendWishlistModalPopup += '<div class="modal-footer">'
+    '<button class="btn btn-primary form-control-submit leo-fake-send-wishlist-button pull-xs-right" type="submit"></button>';
+  leoSendWishlistModalPopup += "</form>";
+  leoSendWishlistModalPopup += "</div>";
+  leoSendWishlistModalPopup += "</div>";
+  leoSendWishlistModalPopup += '<div class="modal-footer">';
   leoSendWishlistModalPopup +=
     '<button type="button" class="btn btn-primary leo-modal-reset-send-wishlist-bt">' +
     wishlist_reset_txt +
-    '</button>'
+    "</button>";
   leoSendWishlistModalPopup +=
     '<button type="button" class="btn btn-secondary" data-dismiss="modal">' +
     wishlist_cancel_txt +
-    '</button>'
+    "</button>";
   leoSendWishlistModalPopup +=
-    '<button type="button" class="leo-modal-send-wishlist-bt btn btn-primary">'
+    '<button type="button" class="leo-modal-send-wishlist-bt btn btn-primary">';
   leoSendWishlistModalPopup +=
-    '<span class="leo-modal-send-wishlist-loading cssload-speeding-wheel"></span>'
-  leoSendWishlistModalPopup += '<span class="leo-modal-send-wishlist-bt-text">'
-  leoSendWishlistModalPopup += wishlist_send_txt
-  leoSendWishlistModalPopup += '</span>'
-  leoSendWishlistModalPopup += '</button>'
-  leoSendWishlistModalPopup += '</div>'
-  leoSendWishlistModalPopup += '</div>'
-  leoSendWishlistModalPopup += '</div>'
-  leoSendWishlistModalPopup += '</div>'
-  $('body').append(leoSendWishlistModalPopup)
+    '<span class="leo-modal-send-wishlist-loading cssload-speeding-wheel"></span>';
+  leoSendWishlistModalPopup += '<span class="leo-modal-send-wishlist-bt-text">';
+  leoSendWishlistModalPopup += wishlist_send_txt;
+  leoSendWishlistModalPopup += "</span>";
+  leoSendWishlistModalPopup += "</button>";
+  leoSendWishlistModalPopup += "</div>";
+  leoSendWishlistModalPopup += "</div>";
+  leoSendWishlistModalPopup += "</div>";
+  leoSendWishlistModalPopup += "</div>";
+  $("body").append(leoSendWishlistModalPopup);
 }
 
 function validateEmail(email) {
   // var regex = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
   // return regex.test(email);
-  var reg = /^[a-z\p{L}0-9!#$%&'*+\/=?^`{}|~_-]+[.a-z\p{L}0-9!#$%&'*+\/=?^`{}|~_-]*@[a-z\p{L}0-9]+[._a-z\p{L}0-9-]*\.[a-z\p{L}0-9]+$/i
-  return reg.test(email)
+  var reg =
+    /^[a-z\p{L}0-9!#$%&'*+\/=?^`{}|~_-]+[.a-z\p{L}0-9!#$%&'*+\/=?^`{}|~_-]*@[a-z\p{L}0-9]+[._a-z\p{L}0-9-]*\.[a-z\p{L}0-9]+$/i;
+  return reg.test(email);
 }
 
 //DONGND:: update quantity of wishlist
 function refeshWishlist(id_wishlist) {
-  $('.leo-view-wishlist-product-loading-' + id_wishlist).show()
+  $(".leo-view-wishlist-product-loading-" + id_wishlist).show();
   $.ajax({
-    type: 'POST',
-    headers: { 'cache-control': 'no-cache' },
-    url: wishlist_url + '?rand=' + new Date().getTime(),
+    type: "POST",
+    headers: { "cache-control": "no-cache" },
+    url: wishlist_url + "?rand=" + new Date().getTime(),
     async: true,
     cache: false,
     data: {
       ajax: 1,
-      action: 'get-wishlist-info',
+      action: "get-wishlist-info",
       id_wishlist: id_wishlist,
       token: leo_token,
     },
     success: function (result) {
-      var object_result = $.parseJSON(result)
+      var object_result = $.parseJSON(result);
       if (object_result.errors.length) {
-        $('.leo-modal-wishlist .modal-title').html(object_result.errors)
-        $('.leo-modal-wishlist').removeClass('enable-action').modal('show')
+        $(".leo-modal-wishlist .modal-title").html(object_result.errors);
+        $(".leo-modal-wishlist").removeClass("enable-action").modal("show");
       } else {
-        $('.wishlist-numberproduct-' + id_wishlist).html(
-          object_result.result.number_product,
-        )
+        $(".wishlist-numberproduct-" + id_wishlist).html(
+          object_result.result.number_product
+        );
       }
-      $('.leo-view-wishlist-product-loading-' + id_wishlist).hide()
+      $(".leo-view-wishlist-product-loading-" + id_wishlist).hide();
     },
     error: function (XMLHttpRequest, textStatus, errorThrown) {
       alert(
-        'TECHNICAL ERROR: \n\nDetails:\nError thrown: ' +
+        "TECHNICAL ERROR: \n\nDetails:\nError thrown: " +
           XMLHttpRequest +
-          '\n' +
-          'Text status: ' +
-          textStatus,
-      )
+          "\n" +
+          "Text status: " +
+          textStatus
+      );
     },
-  })
+  });
 }
