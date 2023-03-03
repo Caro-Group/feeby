@@ -1450,6 +1450,7 @@ function handleFancyboxSwipe() {
   let startX;
   let endX;
   let cancelSwipe = false
+  const swipeDistance = 200
 
   $(document).on("mousedown touchstart", ".fancybox-outer", function (event) {
     if (event.type == "touchstart") {
@@ -1484,7 +1485,7 @@ function handleFancyboxSwipe() {
       cancelSwipe = false
     }
 
-    if ((Math.abs(distance) > 50) && !cancelSwipe) {
+    if ((Math.abs(distance) > swipeDistance) && !cancelSwipe) {
       if (distance > 0) {
         fancybox.outer.trigger("swiperight");
         fancybox.prev();
