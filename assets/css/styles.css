@@ -702,6 +702,34 @@ img:not([src]) {
   @apply top-[calc(100%_+_10px)];
 }
 
+.fancybox-title {
+  @apply !w-full !right-0 !left-0 px-12
+}
+
 .fancybox-title-float-wrap span.child{
   @apply whitespace-normal !mr-0;
+}
+
+.fancybox-nav.fancybox-prev{
+ @apply !w-10 !h-10 bottom-[-65px] -left-5
+}
+
+.fancybox-nav.fancybox-next{
+ @apply !w-10 !h-10 bottom-[-65px] -right-5
+}
+
+.fancybox-nav.fancybox-prev span::before{
+ font-family: 'themify';
+ line-height: 1;
+ content: "\e629";
+}
+
+.fancybox-nav.fancybox-next span::before{
+ font-family: 'themify';
+ line-height: 1;
+ content: "\e628";
+}
+
+.fancybox-nav span {
+  @apply justify-center items-center flex w-10 h-10 text-main-dark bg-gray-1000 hover:bg-main-dark hover:text-white rounded-full transition
 }
