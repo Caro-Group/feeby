@@ -711,11 +711,11 @@ img:not([src]) {
 }
 
 .fancybox-nav.fancybox-prev{
- @apply !w-10 !h-10 bottom-[-65px] -left-5
+ @apply !w-10 !h-10 top-auto bottom-[-65px] -left-5
 }
 
 .fancybox-nav.fancybox-next{
- @apply !w-10 !h-10 bottom-[-65px] -right-5
+ @apply !w-10 !h-10 top-auto bottom-[-65px] -right-5
 }
 
 .fancybox-nav.fancybox-prev span::before{
@@ -731,5 +731,5 @@ img:not([src]) {
 }
 
 .fancybox-nav span {
-  @apply justify-center items-center flex w-10 h-10 text-main-dark bg-gray-1000 hover:bg-main-dark hover:text-white rounded-full transition
+  @apply right-0 left-0 !visible bg-none justify-center items-center flex !w-10 !h-10 text-main-dark bg-gray-1000 hover:bg-main-dark hover:text-white rounded-full transition
 }
