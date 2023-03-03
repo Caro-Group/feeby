@@ -703,5 +703,5 @@ img:not([src]) {
 }
 
 .fancybox-title-float-wrap span.child{
-  @apply whitespace-normal;
+  @apply whitespace-normal !mr-0;
 }
