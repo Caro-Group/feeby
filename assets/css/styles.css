@@ -711,7 +711,7 @@ img:not([src]) {
 }
 
 .fancybox-nav{
-  @apply !w-10 !h-10 top-auto bottom-[-65px] z-[8060]
+  @apply !w-10 !h-10 !top-auto !bottom-[-65px] !z-[8060]
 }
 
 .fancybox-nav.fancybox-prev{
