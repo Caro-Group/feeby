@@ -93,9 +93,9 @@
         closeBtn:
           '<a title="Close" class="fancybox-item fancybox-close" href="javascript:;"></a>',
         next:
-          '<a title="Next" class="fancybox-nav fancybox-next !w-10 !h-10 bottom-[-65px] -left-5" href="javascript:;"><i class="ti-arrow-right justify-center items-center flex w-10 h-10 text-main-dark bg-gray-1000 hover:bg-main-dark hover:text-white rounded-full transition cursor-pointer"> </i></a>',
+          '<a title="Next" class="fancybox-nav fancybox-next" href="javascript:;"><span></span></a>',
         prev:
-          '<a title="Previous" class="fancybox-nav fancybox-prev !w-10 !h-10 bottom-[-65px] -right-5" href="javascript:;"><i class="ti-arrow-left justify-center items-center flex w-10 h-10 text-main-dark bg-gray-1000 hover:bg-main-dark hover:text-white rounded-full transition cursor-pointer"> </i></a>',
+          '<a title="Previous" class="fancybox-nav fancybox-prev" href="javascript:;"><span></span></a>',
       },
       openEffect: 'fade',
       openSpeed: 250,
@@ -1091,7 +1091,7 @@
       f.isFunction(e) && (e = e.call(d.element, d))
       if (q(e) && '' !== f.trim(e)) {
         d = f(
-          '<div class="fancybox-title !w-full !right-0 !left-0 px-12 fancybox-title-' +
+          '<div class="fancybox-title fancybox-title-' +
             c +
             '-wrap">' +
             e +
