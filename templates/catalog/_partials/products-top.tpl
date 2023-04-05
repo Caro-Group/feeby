@@ -66,11 +66,14 @@
         </div>
       {/if}
     {/block}
-    {debug}
+
     {if $page.page_name == 'search'}
       <div
       class="order-3 tablet:order-2 tablet:rounded-l-md tablet:bg-gray-1000 w-full tablet:w-filter ">
-        {hook h='filterProductsPro'}
+        <div id="search_filters_wrapper" class="collapse tablet:block tablet:h-full relative" aria-expanded="false"
+        style="">
+          {hook h='filterProductsPro'}
+        </div>
       </div>
     {/if}
 
