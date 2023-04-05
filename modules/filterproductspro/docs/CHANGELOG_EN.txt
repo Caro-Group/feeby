@@ -1,0 +1,175 @@
+v4.2.4 (07/07/2022)
+- Bug:
+  - #FPP-523: Problem showing products only products with stock in multi-store.
+  - #FPP-521: Very long load time when there are many products on the PricesDrop page.
+  - #FPP-523: Problem showing products with stock in multi-store.
+  - #FPP-499 & FPP-527: Problem with the "view results" button when disabling the mobile search floating button.
+  - #FPP-526: Error with scrolling in the list of products after filtering.
+  - Problem when ordering products with price discounts.
+  - Problem when selecting several attributes of a filter having the list of options deactivated, it always hid the other options after selecting one.
+  - When showing products from subcategories, non-visible products were being shown.
+  - Fixed problem in dependent category filters.
+- New feature and improvement:
+  - Improved performance when loading search engines and filters in the FrontOffice.
+  - When a filter has an A-Z or Z-A ordering applied, when new options are indexed, they are arranged according to the ordering of the filter.
+  - French translation.
+  - #FPP-131: Option to organize how many filters to show per row.
+  - #R-162: We remove Javascript code loading when the module executes functions on X page.
+  - New hook of prestashop 1.7.8 "displayHeaderCategory" is implemented.
+
+v4.2.3 (12/14/2021)
+- Bug:
+  - #FPP-511: Option "Hide unrelated options" of the searcher does not work.
+  - #FPP-513: The module ignores products with negative stock when searching and displaying searcher options.
+  - #FPP-515: An error occurs when searching for products when sorting the list of products by "Brand" is configured.
+
+v4.2.2 (07/30/2021)
+- Bug:
+  - #FPP-489: It does not correctly bring the results of custom filter products created by CSV
+  - #FPP-503: Error importing CSV due to combination references
+  - #FPP-496: Sorting does not work after activating the option "Show products from subcategories"
+  - #FPP-501: Error cleaning dependent filters and poor performance on custom filters
+  - #R-147: Problem when sorting by price after performing a search
+  - #R-149: Sometimes it showed repeated products with their different combinations
+  - #R-153: Problem with active shared stock in multi-store
+  - #R-154: Shows all search engines created on the Brands page
+  - #R-156: It was not possible to use the filter by text box
+  - #L-2: Problem when marking several options within the same filter
+- New feature and improvement:
+  - #FPP-500: Option to remove dependencies via CSV
+  - #R-152: Performance improvement in feature filters
+  - #R-155: It is only necessary to re-index products when using the price filter in a search engine.
+  - #R-156: If you searched for a word that did not have products, it showed all products, now it no longer returns results
+- Compatibilities:
+  - #FPP-491: leopartsfilter - v2.2.0 - LeoTheme
+  - #R-147: Compatibility with the ordering of products of the PRS028 template
+
+v4.2.1 (04/23/2021)
+- Bug:
+  - #FPP-488: Problem in the upgrade of version 4.2.0
+  - #FPP-486: When the price is given only by attributes, it shows price 0 in the products
+  - #FPP-485: Infinite scroll does not work if there are no active search engines
+
+v4.2.0 (04/09/2021)
+- Bug:
+  - #FPP-484: Remove column ordering for checkbox and radio type filters in Back Office
+  - #FPP-440: Does not show the category tree in PrestaShop 1.7.7.X
+  - #FPP-462: Does not show the search engine when checking the option "Select all categories" in the Categories tab of the configuration
+  - #FPP-464: Does not filter the options when being in the search page
+  - #FPP-473: Ignores stock filter selection when filtering by attributes
+  - #FPP-475: Problem in related options, related filters and stock by attributes
+  - #FPP-430: Does not show products when having the search engine positioned in a CMS
+  - #FPP-435: Force price indexing by cron task
+  - #FPP-443: It does not process CSV the first time you want to upload
+  - #FPP-448: Slow loading when entering module configuration with many search engines
+  - #FPP-461: It does not show correctly the result of products in the Home
+  - #FPP-466: Problem when searching for products with the option "Include products from sub-categories" checked
+  - #FPP-472: After selecting a stock filter in the FO, it always shows the selected option in English
+  - #FPP-330: Visual error in mobile search engine header when the name is too long
+- New feature and improvement:
+  - #FPP-444: Performance improvement
+  - #FPP-252: Ability to order from A-Z / Z-A regardless of language
+  - #FPP-277: Improve design of the "Dependencies" tab
+  - #FPP-370: Option to show the search engine on mobile as a drop-down, without floating button
+  - #FPP-170: Design tab to customize the search engine
+  - #FPP-451: Import CSV of dependencies by provider reference
+  - #FPP-455: Show Images of checkbox filters and radio of the same size
+  - #FPP-394: Minimize search engine when clicking the "Refresh search" icon on mobile
+- Compatibilities:
+  - #FPP-433: groupinc - v1.5.2 - idnovate
+  - #FPP-477: weadvancedsearch - v1.0.0 - WECOMM SOLUTIONS
+  - #FPP-478: iqitsearch - v1.1.3 - iqit-commerce.com
+
+v4.1.2 (11/20/2020)
+- Bug:
+  - #FPP-401: Does not show manually created options in custom filters
+  - #FPP-420: Performance issue with attribute filters
+  - #FPP-421: JS error when having the friendly URLs disabled in the store
+  - #FPP-423: Cookies do not work when showing the filters in the URL is active
+  - #FPP-428: It does not correctly pre-select the URL options when having two search engines with the same filters
+  - #FPP-428: Solution to a performance problem that occurred in certain cases
+  - #FPP-428: Does not save products added manually to custom filter options
+
+v4.1.1 (10/27/2020)
+- Bug:
+  - #FPP-414: Products without stock are shown although in the search engine configuration it is disabled
+  - #FPP-407: Does not delete the configured sections after searching
+  - #FPP-399: Search block appears on a wrong site
+  - #FPP-392: Filter display error on tablets and mobile devices with large screen
+  - #FPP-376: Shows OUT OF STOCK products when filtering only IN STOCK products
+  - #FPP-375: Error when editing a category, supplier or manufacturer in the BO having filters of this type configured
+  - #FPP-363: Error creating filters with special characters in the search engine
+  - #FPP-359: Error in the translations of the filter options "Condition" and "Stock" in the frontoffice
+  - #FPP-326: Does not filter when clicking on another site on the price slider
+- Improvement:
+  - #FPP-405: Option to display products from subcategories
+  - #FPP-373: Do not allow creating two stock type filters
+  - #FPP-369: Improvement in product price indexing
+- Compatibilities:
+  - #FPP-404: jxsearch - v1.3.1 - by Zemez (Alexander Grosul)
+  - #FPP-402: ambjolisearch - v4.3.11 - Ambris Informatique
+
+v4.1.0 (05/21/2020)
+- Bug:
+  - #FPP-280: Error trying to change the name of a search engine or the name of a filter.
+  - #FPP-290: Does not show color attributes in the product thumbnail.
+  - #FPP-312: Error indexing features.
+  - #FPP-316: Pagination does not work in some themes and does not filter products without attributes.
+  - #FPP-319: Error filtering products that do not have attributes by price.
+  - #FPP-323: When searching by price filter, it does not pre-select the values ​​that the customer selects.
+  - #FPP-345: Problem showing category filter options when restricting options per category page.
+  - #FPP-346: It does not filter the products according to the order configured by default in the first search.
+  - #FPP-348: Does not include sub-category products when the main category has associated products.
+  - #FPP-351: Does not show option name for filters of type attribute color.
+  - #FPP-352: Error indexing empty feature options from CRON.
+  - #FPP-354: Does not take into account restrictions by customer groups when obtaining results.
+- Improvement:
+  - #FPP-321: Use the Prestashop search engine to search by query.
+  - #FPP-327: Performance improvement for price filters.
+  - #FPP-331: Add selected filter block.
+  - #FPP-332: Implement the texture of the color type attributes for the color attribute filter.
+  - #FPP-350: Improved product indexing.
+
+v4.0.12 (01/28/2020)
+- HotFix:
+  - #FPP-300: Error creating configuration_files folder
+
+v4.0.11 (12/20/2019)
+- Bug:
+  - #FPP-281: Performance problem with having multiple stores.
+- Module Compatibility:
+  - #FPP-278: Problem changing the list view in the "warehouse" template.
+
+v4.0.10 (12/17/2019)
+- Bug:
+  - #FPP-265: Problem uploading CSV dependencies.
+  - #FPP-266: Warhouse template problem when searching or ordering.
+  - #FPP-273: Does not show tab with data of the product dependencies.
+- Improvement:
+  - #FPP-264: Improve visualization of the filters of type checkbox and radio in mobile.
+
+v4.0.9 (11/22/2019)
+- Bug:
+  - #FPP-245: Sorting options by total products only works in category filters.
+  - #FPP-250: Pagination error when automatically searching with active cookies.
+  - #FPP-210: Error searching by search box filter.
+- Module Compatibility:
+  - #FPP-249: flsproducthoverinfo - v1.3.0 - FlicoSoft.
+- Improvement:
+  - #FPP-258: Page load performance improvement.
+  - #FPP-244: Improved infinite scroll to ensure its operation in templates.
+
+v4.0.8 (10/09/2019)
+- Bug:
+  - #FPP-123: Does not show the filter category tree after changing the tab or filter.
+  - #FPP-231: Problem indexing characteristic filter options (happens with certain options).
+  - #FPP-213: The "Collapse all" option of the Categories filter in the new demo does not work.
+  - #FPP-79: The option "Show search results on another page" does not work.
+- Module Compatibility:
+  - #FPP-230: Paging problem with "warehouse" template.
+- Improvement:
+  - #FPP-225: Always show "See results and Search" button on mobile.
+  - #FPP-228: Show price ranges in the selected filters.
+
+v4.0.7
+- New version for PrestaShop 1.7
