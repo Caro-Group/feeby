@@ -271,7 +271,6 @@
     text-align: left !important;
     padding-left: 0px !important;
     vertical-align: text-bottom;
-    @apply
 }
 
 .fpp_searchers .searcher-content .filter-content .noUi-horizontal{

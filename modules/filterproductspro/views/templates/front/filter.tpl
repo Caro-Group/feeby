@@ -25,12 +25,12 @@
     data-name="{FilterProductsPro::linkRewrite($filter.name[$params_back.id_lang|intval])}"
     data-sort="{$filter.sort|intval}">
     {if $filter.type neq 7}
-        <div class="filter-name cursor-pointer px-5 tablet:px-0 border-0 border-b-2 tablet:border-b-0 border-gray-1000 border-solid py-5 tablet:py-0 justify-between tablet:justify-start group collapsed"
+        <div class="filter-name flex cursor-pointer px-5 tablet:px-0 border-0 border-b-2 tablet:border-b-0 border-gray-1000 border-solid py-5 tablet:py-0 justify-between tablet:justify-start group collapsed"
         data-target="#filter-options_{$filter.id_filter|intval}" data-toggle="collapse" aria-expanded="false">
-            <p class="m-0 text-base font-body font-normal text-main-dark group-hover:text-main transition">
+            <p class="!m-0 text-base font-body font-normal text-main-dark group-hover:text-main transition">
                 {$filter.name[$params_back.id_lang|intval]}
             </p>
-            <span class="pl-4 -top-1 relative">
+            <span class="pl-4 -top-[2px] relative">
                 <i class="material-icons text-xl text-main-dark group-hover:text-main transition">add</i>
             </span>
         </div>

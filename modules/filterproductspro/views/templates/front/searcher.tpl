@@ -27,7 +27,7 @@
                 <div data-id_searcher="{$searcher.id_searcher|intval}"
                     id = "searcher_{$searcher.id_searcher|intval}"
                     data-name="{FilterProductsPro::linkRewrite($searcher.name.{$params_back.id_lang|intval})}"
-                    class="pts searcher-content hook_{$searcher.hook|intval}">
+                    class="pts searcher-content hook_{$searcher.hook|intval} !bg-transparent">
                     <div class="searcher-header hidden">
                         <div class="header-content">
                             <i class="header-icon fa-pts fa-pts-filter"></i>&nbsp;
@@ -78,7 +78,7 @@
                             </div>
                         {/if}
                         <div class="filter-content">
-                            <div class="row">
+                            <div class="row flex flex-wrap">
                                 {assign var='col' value=$searcher.columns_break}
 
                                 {foreach from=$searcher.filters item=filter}
