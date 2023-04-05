@@ -55,7 +55,7 @@
       {/block}
 
       <main id="wrapper">
-        {hook h="displayWrapperTop"}
+        {* {hook h="displayWrapperTop"} *}
 
         {if $page.page_name != 'index'}
           <hr class="border-gray-1000 hidden tablet-medium:block w-full content-max:w-[1760px]"/>
