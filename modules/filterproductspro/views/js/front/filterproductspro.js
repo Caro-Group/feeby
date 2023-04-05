@@ -44,11 +44,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     limiter_url: '#',
     $loading: '<div class="loading_big">'
         +'<div class="loader">'
-            +'<div class="dot"></div>'
-            +'<div class="dot"></div>'
-            +'<div class="dot"></div>'
-            +'<div class="dot"></div>'
-            +'<div class="dot"></div>'
         +'</div>'
     +'</div>',
     init: function (){
