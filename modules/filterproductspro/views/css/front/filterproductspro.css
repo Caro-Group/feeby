@@ -219,20 +219,6 @@
     height: 8px;
 }
 
-/* Estilos barra (thumb) de scroll */
-.filter-options-content::-webkit-scrollbar-thumb {
-    background: #ccc;
-    border-radius: 4px;
-}
-
-.filter-options-content::-webkit-scrollbar-thumb:active {
-    background-color: #999999;
-}
-
-.filter-options-content::-webkit-scrollbar-thumb:hover {
-    background: #b3b3b3;
-}
-
 /* Estilos track de scroll */
 .filter-options-content::-webkit-scrollbar-track {
     background: #e1e1e1;
