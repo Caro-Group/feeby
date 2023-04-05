@@ -213,18 +213,6 @@
     padding-left: 23px;
 }
 
-/* Tamaño del scroll */
-.filter-options-content::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-}
-
-/* Estilos track de scroll */
-.filter-options-content::-webkit-scrollbar-track {
-    background: #e1e1e1;
-    /*border-radius: 4px;*/
-}
-
 .fpp_searchers .searcher-content .filter-content .checkbox span,
 .fpp_searchers .searcher-content .filter-content .radio span {
     vertical-align: middle;
