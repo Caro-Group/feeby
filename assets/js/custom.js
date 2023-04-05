@@ -1317,6 +1317,15 @@ $(document).ready(function () {
       },
     });
 
+    productSwiper.on('touchStart', () => {
+      let zoomRatio = ( window.outerWidth / window.innerWidth) * 100;
+      if (window.innerWidth < 768 && zoomRatio.toFixed() > 100) {
+        productSwiper.allowTouchMove = false
+      }else{
+        productSwiper.allowTouchMove = true
+      }
+    })
+
     if ($("#main").hasClass("product-image-gallery")) {
       $("img.js-thumb").each(function () {
         var parent_e = $(this).parent();
@@ -1350,11 +1359,7 @@ $(document).ready(function () {
   }
 
   if (typeof prestashop !== "undefined") {
-    window.addEventListener("resize", () => {
-      if (typeof productSwiper !== "undefined") {
-        productSwiper.slideTo(1, 300, false);
-      }
-    });
+
 
     prestashop.on("updatedProduct", function (event) {
       if (typeof productSwiper == "function") {
@@ -1386,6 +1391,15 @@ $(document).ready(function () {
             },
           },
         });
+
+        productSwiper.on('touchStart', () => {
+          let zoomRatio = ( window.outerWidth / window.innerWidth) * 100;
+          if (window.innerWidth < 768 && zoomRatio.toFixed() > 100) {
+            productSwiper.allowTouchMove = false
+          }else{
+            productSwiper.allowTouchMove = true
+          }
+        })
 
         if ($("#main").hasClass("product-image-gallery")) {
           $("img.js-thumb").each(function () {
@@ -1428,6 +1442,9 @@ $(document).ready(function () {
 function handleFancyboxSwipe() {
   let startX;
   let endX;
+  let cancelSwipe = false
+  const swipeDistance = 200
+
   $(document).on("mousedown touchstart", ".fancybox-outer", function (event) {
     if (event.type == "touchstart") {
       startX = event.touches[0].clientX;
@@ -1436,16 +1453,32 @@ function handleFancyboxSwipe() {
     }
   });
 
+  $(document).on("touchmove", ".fancybox-outer", function (event) {
+    if (event.touches.length > 1) {
+      cancelSwipe = true
+    }else{
+      cancelSwipe = false
+    }
+  });
+
   $(document).on("mouseup touchend", ".fancybox-outer", function (event) {
     if (event.type == "touchend") {
       endX = event.changedTouches[0].clientX;
     } else {
       endX = event.clientX;
-    }
-    const distance = endX - startX;
+    }    
+
+    let distance = endX - startX;
     let fancybox = $.fancybox;
 
-    if (Math.abs(distance) > 50) {
+    let zoomRatio = ( window.outerWidth / window.innerWidth) * 100;
+    if (window.innerWidth < 768 && zoomRatio.toFixed() > 100) {
+      cancelSwipe = true
+    }else{
+      cancelSwipe = false
+    }
+
+    if ((Math.abs(distance) > swipeDistance) && !cancelSwipe) {
       if (distance > 0) {
         fancybox.outer.trigger("swiperight");
         fancybox.prev();
@@ -1457,28 +1490,30 @@ function handleFancyboxSwipe() {
   });
 }
 
-function handleUpdateZoom(mainSwiper) {
-  window.addEventListener("resize", () => {
-    mainSwiper.slideTo(1, 300, false);
-  });
+function handleUpdateZoom(swiper) {
+  updateZoom(swiper)
+  window.addEventListener('resize',() =>{
+    updateZoom(swiper)
+  })
+  swiper.on("activeIndexChange", () => updateZoom(swiper));
+}
 
-  mainSwiper.on("activeIndexChange", function () {
-    // replace zoom realIndex
-    let activeElement = $(mainSwiper.wrapperEl)
-      .find(`[data-swiper-slide-index=${mainSwiper.realIndex}]`)
-      .eq(0);
-    let activeImageUrl = activeElement.attr("src");
-    $(".zoomWindowContainer div").css(
-      "background-image",
-      `url(${activeImageUrl})`
-    );
+function updateZoom(swiper){
+  // replace zoom realIndex
+  let activeElement = $(swiper.wrapperEl)
+  .find(`[data-swiper-slide-index=${swiper.realIndex}]`)
+  .eq(0);
+  let activeImageUrl = activeElement.attr("src");
+  $(".zoomWindowContainer div").css(
+  "background-image",
+  `url(${activeImageUrl})`
+  );
 
-    //set zoomGallery active slide
-    $("#thumb-gallery")
-      .find(".swiper-custom-slide a")
-      .eq(mainSwiper.realIndex)
-      .trigger("click");
-  });
+  //set zoomGallery active slide
+  $("#thumb-gallery")
+  .find(".swiper-custom-slide a")
+  .eq(swiper.realIndex)
+  .trigger("click");
 }
 
 function paginationGoTop() {
