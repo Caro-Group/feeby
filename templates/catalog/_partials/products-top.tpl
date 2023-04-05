@@ -67,6 +67,13 @@
       {/if}
     {/block}
 
+    {if $page.page_name == 'search'}
+      <div
+      class="horizontal_filters order-3 tablet:order-2 tablet:rounded-l-md tablet:bg-gray-1000 w-full tablet:w-filter ">
+        {hook h="filterProductsPro"}
+      </div>
+    {/if}
+
 
     <div
       class="flex justify-center tablet:justify-end order-2 tablet:order-3 rounded-md w-1/2  pl-[10px] tablet:pl-0 z-30 tablet:bg-gray-1000 {if isset($listing.rendered_facets) && $listing.rendered_facets}  tablet:rounded-none tablet:rounded-r-md tablet:w-auto  {else} tablet:w-full {/if} ">
