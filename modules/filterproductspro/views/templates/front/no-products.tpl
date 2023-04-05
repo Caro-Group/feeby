@@ -1,4 +1,4 @@
-/**
+{*
  * We offer the best and most useful modules PrestaShop and modifications for your online store.
  *
  * We are experts and professionals in PrestaShop
@@ -15,4 +15,10 @@
  *
  * @category  PrestaShop
  * @category  Module
- */
+*}
+
+ <div class="alert alert-info filterproductspro-no-products">
+    {l s='No results for your search criteria were found. If you need something specific, you can send an inquiry to our' mod='filterproductspro'}
+    &nbsp;<a href="{$contact_link|escape:'htmlall':'UTF-8'}">{l s='contact form' mod='filterproductspro'}</a>&nbsp;
+    {l s='and we will be happy to help.' mod='filterproductspro'}
+ </div>

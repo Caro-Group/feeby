@@ -1,4 +1,4 @@
-/**
+{*
  * We offer the best and most useful modules PrestaShop and modifications for your online store.
  *
  * We are experts and professionals in PrestaShop
@@ -15,4 +15,26 @@
  *
  * @category  PrestaShop
  * @category  Module
- */
+*}
+
+<style type="text/css">
+    {$params_back.CONFIGS.FPP_COLUMN_NAME|escape:'htmlall':'UTF-8'}{literal} {
+        position: relative;
+    }
+    {/literal}
+</style>
+{include file="./../front/theme.tpl"}
+
+{* Contenedor de buscadores en movil *}
+<div id="content-searchers-mobile" class="hidden-dt">
+    <div class="searcher-header">
+        <div>
+            <span>{l s='Choose a searcher' mod='filterproductspro'}</span>
+            <a class="close-content-searcher-mobile">
+                <i class="fa-pts fa-pts-times"></i>
+            </a>
+        </div>
+    </div>
+    <div class="searcher-body"></div>
+</div>
+{* End Contenedor de buscadores en movil *}
