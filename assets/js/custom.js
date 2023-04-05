@@ -825,7 +825,7 @@ function customSticky() {
 
 (function ($) {
   $(function () {
-    var $myGroup = $("#search_filters .facet");
+    var $myGroup = $("#search_filters .facet, .fpp_searchers .filter");
     $myGroup.on("show.bs.collapse", ".collapse", function () {
       $myGroup.find(".collapse.in").collapse("hide");
     });
