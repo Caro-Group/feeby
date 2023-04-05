@@ -66,11 +66,11 @@
         </div>
       {/if}
     {/block}
-
+    {debug}
     {if $page.page_name == 'search'}
       <div
-      class="horizontal_filters order-3 tablet:order-2 tablet:rounded-l-md tablet:bg-gray-1000 w-full tablet:w-filter ">
-        {hook h="filterProductsPro"}
+      class="order-3 tablet:order-2 tablet:rounded-l-md tablet:bg-gray-1000 w-full tablet:w-filter ">
+        {hook h='filterProductsPro'}
       </div>
     {/if}
 
