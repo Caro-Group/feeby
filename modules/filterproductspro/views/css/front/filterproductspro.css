@@ -455,7 +455,7 @@ div.loading_big {
 /*************************** END LOADING ***************************/
 
 /*************************** RESPONSIVE STYLES *********************/
-@media (max-width: 991px) {
+/* @media (max-width: 991px) {
     .hidden-mb{
         display: none;
     }
@@ -571,5 +571,5 @@ div.loading_big {
         color:#000000;
         border: 1px solid #000000;
     }
-}
+} */
 /*************************** END RESPONSIVE STYLES *********************/
