@@ -252,9 +252,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 AppFPP.generateSearcherUrl(id_searcher);
             }
             AppFPP.executeSearch({'id_searcher': id_searcher});
-            if ($(window).width() <= 992) {
-                AppFPP.toggleSearcher('#content_permanent_mobile_'+parseInt($(event.currentTarget).data('id_searcher')));
-            }
+            // if ($(window).width() <= 992) {
+            //     AppFPP.toggleSearcher('#content_permanent_mobile_'+parseInt($(event.currentTarget).data('id_searcher')));
+            // }
         }
     },
     initSlider: function (container,id_searcher,id_filter){
@@ -426,13 +426,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
     clickSearchButton: function(event) {
         var id_searcher = $(event.currentTarget).data('id_searcher');
         /* Ocultar buscador y contenedor al buscar */
-        if ($(window).width() < 992 && AppFPP.button_mobile) {
-            AppFPP.toggleSearcher('#content_permanent_mobile_'+id_searcher);
+        // if ($(window).width() < 992 && AppFPP.button_mobile) {
+        //     AppFPP.toggleSearcher('#content_permanent_mobile_'+id_searcher);
 
-            if ($('#content-searchers-mobile').is(':visible')) {
-                AppFPP.toggleSearcher('#content-searchers-mobile');
-            }
-        }
+        //     if ($('#content-searchers-mobile').is(':visible')) {
+        //         AppFPP.toggleSearcher('#content-searchers-mobile');
+        //     }
+        // }
         /* Fin Ocultar buscador y contenedor al buscar */
 
         AppFPP.executeSearch({
@@ -568,24 +568,24 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 AppFPP.initEventsSearcher({'id_searcher': param.id_searcher});
                 var option_selected = false;
 
-                if ($(window).width() < 992) {
-                    for (var id_searcher in AppFPP.optionsSelected) {
-                        if (!AppFPP.optionsSelected.hasOwnProperty(id_searcher)) continue;
-                        for (var id_filter in AppFPP.optionsSelected[id_searcher]) {
-                            if (!AppFPP.optionsSelected[id_searcher].hasOwnProperty(id_filter)) continue;
-                            if (id_filter == 'filter_depends' || id_filter == 'id_searcher') continue;
-                            option_selected = true;
-                        }
-                    }
+                // if ($(window).width() < 992) {
+                //     for (var id_searcher in AppFPP.optionsSelected) {
+                //         if (!AppFPP.optionsSelected.hasOwnProperty(id_searcher)) continue;
+                //         for (var id_filter in AppFPP.optionsSelected[id_searcher]) {
+                //             if (!AppFPP.optionsSelected[id_searcher].hasOwnProperty(id_filter)) continue;
+                //             if (id_filter == 'filter_depends' || id_filter == 'id_searcher') continue;
+                //             option_selected = true;
+                //         }
+                //     }
 
-                    var $searcher = $('#searcher_' + param.id_searcher);
+                //     var $searcher = $('#searcher_' + param.id_searcher);
 
-                    if (option_selected){
-                        $searcher.find('.searcher-footer').show();
-                    } else {
-                        $searcher.find('.searcher-footer').hide();
-                    }
-                }
+                //     if (option_selected){
+                //         $searcher.find('.searcher-footer').show();
+                //     } else {
+                //         $searcher.find('.searcher-footer').hide();
+                //     }
+                // }
 
                 if (FilterProductsPro.CONFIGS.FPP_SHOW_FILTER_IN_URL && FilterProductsPro.CONFIGS.FPP_ENABLE_COOKIES && AppFPP.hasOptionsSelected(param.id_searcher)) {
                     AppFPP.generateSearcherUrl(param.id_searcher);
@@ -595,13 +595,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
                     AppFPP.executeSearch({'id_searcher': param.id_searcher, 'loading': false, 'page': 1});
                 }
 
-                if (!AppFPP.button_mobile && $(window).width() < 992) {
-                    AppFPP.addCollapseToSearcherWithoutFloatButton(param.id_searcher);
+                // if (!AppFPP.button_mobile && $(window).width() < 992) {
+                //     AppFPP.addCollapseToSearcherWithoutFloatButton(param.id_searcher);
 
-                    if (option_selected){
-                        $('#searcher_'+param.id_searcher).find('.searcher-header').trigger('click');
-                    }
-                }
+                //     if (option_selected){
+                //         $('#searcher_'+param.id_searcher).find('.searcher-header').trigger('click');
+                //     }
+                // }
             },
             error: function (err){
                 window.console.log(err);
@@ -868,20 +868,20 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 }*/
 
                 AppFPP.removeSections();
-                if ($(document).width() < 992 && AppFPP.button_mobile) {
-                    if (AppFPP.hasOptionsSelected(param.id_searcher)) {
-                        $('#mobile_selected_option').remove();
-                        $('<div\>')
-                            .attr('id', 'mobile_selected_option')
-                            .addClass('pts row')
-                            .insertBefore('#js-product-list-top');
-                        /*Eliminar opciones seleccionadas para poner las nuevas clonandolas*/
-                        $('#mobile_selected_option').children().remove();
-                        $('#options_selected_' + param.id_searcher).clone().appendTo('#mobile_selected_option');
-                    } else {
-                        $('#mobile_selected_option').remove();
-                    }
-                }
+                // if ($(document).width() < 992 && AppFPP.button_mobile) {
+                //     if (AppFPP.hasOptionsSelected(param.id_searcher)) {
+                //         $('#mobile_selected_option').remove();
+                //         $('<div\>')
+                //             .attr('id', 'mobile_selected_option')
+                //             .addClass('pts row')
+                //             .insertBefore('#js-product-list-top');
+                //         /*Eliminar opciones seleccionadas para poner las nuevas clonandolas*/
+                //         $('#mobile_selected_option').children().remove();
+                //         $('#options_selected_' + param.id_searcher).clone().appendTo('#mobile_selected_option');
+                //     } else {
+                //         $('#mobile_selected_option').remove();
+                //     }
+                // }
 
                 $(document).trigger('fpp-executeSearch-complete', {});
             }
