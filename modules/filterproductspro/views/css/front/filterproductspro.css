@@ -35,9 +35,6 @@
     display: flex;
 }
 .fpp_searchers .searcher-content {
-    border: 1px solid #CCC;
-    box-shadow: 2px 2px 8px 0 rgba(0,0,0,.2);
-    margin-bottom: 20px;
     position: relative;
 }
 .fpp_searchers .container.searcher-top{
@@ -62,13 +59,7 @@
     float: right;
 }
 
-#content-searchers-mobile .searcher-body,
-.fpp_searchers .searcher-body {
-    padding: 10px;
-    background: #FFF;
-}
 .fpp_searchers .searcher-footer {
-    background: #FFF;
     padding-top: 0px;
     padding-right: 5px;
     padding-bottom: 10px;
@@ -78,7 +69,6 @@
     text-transform: uppercase;
     cursor:pointer !important;
     width: 100% !important;
-
 }
 .selected-option-content {
     padding-bottom: 10px;
@@ -281,11 +271,7 @@
     text-align: left !important;
     padding-left: 0px !important;
     vertical-align: text-bottom;
-}
-
-.fpp_searchers .searcher-content .filter-name {
-    font-weight: bold;
-    margin-bottom: 5px;
+    @apply
 }
 
 .fpp_searchers .searcher-content .filter-content .noUi-horizontal{

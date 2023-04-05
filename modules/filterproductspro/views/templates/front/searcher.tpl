@@ -21,14 +21,14 @@
     {foreach from=$params_back.searchers item=searcher}
         {if $searcher.filters|count > 0}
             {if $searcher.hook neq 1 and $searcher.hook neq 3 and $searcher.hook neq 4 and $searcher.hook neq 8}
-                <div class="container {if $searcher.hook eq 2}searcher-top{/if}">
+                <div class="{if $searcher.hook eq 2}searcher-top{/if}">
             {/if}
             <div class="content-permanent-mobile" id="content_permanent_mobile_{$searcher.id_searcher|intval}">
                 <div data-id_searcher="{$searcher.id_searcher|intval}"
                     id = "searcher_{$searcher.id_searcher|intval}"
                     data-name="{FilterProductsPro::linkRewrite($searcher.name.{$params_back.id_lang|intval})}"
                     class="pts searcher-content hook_{$searcher.hook|intval}">
-                    <div class="searcher-header">
+                    <div class="searcher-header hidden">
                         <div class="header-content">
                             <i class="header-icon fa-pts fa-pts-filter"></i>&nbsp;
                             <span>{$searcher.name.{$params_back.id_lang|intval}}</span>
@@ -82,7 +82,7 @@
                                 {assign var='col' value=$searcher.columns_break}
 
                                 {foreach from=$searcher.filters item=filter}
-                                    <div class="filter col-12 col-xs-12 {if $searcher.hook neq 3 and $searcher.hook neq 4} col-sm-6 col-md-{$col|intval} col-lg-{$col|intval} col-xl-{$col|intval} {else} col-sm-12 col-md-12 col-lg-12 col-xs-12 {/if}">
+                                    <div class="filter w-auto">
                                         {include file='./filter.tpl' filter=$filter}
                                     </div>
                                 {/foreach}

@@ -23,7 +23,8 @@
 {assign var='first_option' value=array_shift($filter.options)}
 {assign var='no_use' value=array_unshift($filter.options, $first_option)}
 
-<div class="column-{$filter.columns|intval} filter-options-content{if $first_option.color and !$first_option.color.color} two-column-mobile{/if}{if $searcher.hook neq 3 and $searcher.hook neq 4} fixed-height{/if}">
+<div id="filter-options_{$filter.id_filter|intval}" class="column-{$filter.columns|intval} filter-options-content{if $first_option.color and !$first_option.color.color} two-column-mobile{/if}{if $searcher.hook neq 3 and $searcher.hook neq 4} fixed-height{/if} max-h-[210px] overflow-y-scroll"
+    aria-expanded="false" >
     <div class="content-to-scroll">
         {foreach $filter.options item=option}
             {if $option}
