@@ -858,7 +858,7 @@ function customSticky() {
   }
 
   $(document).on("click", function (event) {
-    $("#search_filters .facet .collapse").collapse("hide");
+    $("#search_filters .facet .collapse, .fpp_searchers .filter .collapse").collapse("hide");
   });
 
   $(document).ready(function () {
