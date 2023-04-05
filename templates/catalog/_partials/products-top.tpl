@@ -39,7 +39,7 @@
 
   <div class=" flex flex-wrap justify-between ">
     <div style="flex:0 0 auto;" class="hidden-md-up w-1/2 pr-[10px] order-1 flex justify-center ">
-      {if !empty($listing.rendered_facets)}
+      {if !empty($listing.rendered_facets) || $page.page_name == 'search'}
 
         <button id="search_filter_toggler_collapse"
           class="border-0 px-5 text-left text-base text-normal bg-gray-1000 rounded-md text-main-dark text-left w-full"
@@ -68,19 +68,6 @@
     {/block}
 
     {if $page.page_name == 'search'}
-
-      <div style="flex:0 0 auto;" class="hidden-md-up w-1/2 pr-[10px] order-1 flex justify-center ">
-        <button id="search_filter_toggler_collapse"
-          class="border-0 px-5 text-left text-base text-normal bg-gray-1000 rounded-md text-main-dark text-left w-full"
-          data-toggle="collapse" href="#search_filters_wrapper" aria-expanded="false"
-          aria-controls="search_filters_wrapper">
-          {l s='Filter' d='Shop.Theme.Actions'}
-          <span class="-top-1 float-right pl-4 relative">
-            <i class="material-icons text-xl ">add</i>
-          </span>
-        </button>
-    </div>
-
       <div
         class="horizontal_filters order-3 tablet:order-2 tablet:rounded-l-md tablet:bg-gray-1000 w-full tablet:w-filter ">
           <div id="search_filters_wrapper" class="collapse tablet:block tablet:h-full relative" aria-expanded="false"
