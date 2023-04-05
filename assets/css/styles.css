@@ -697,8 +697,3 @@ img:not([src]) {
 .off-canvas-nav-megamenu .mega-col{
   @apply !min-h-0
 }
-
-
-.fpp_searchers .searcher-header{
-  @apply hidden
-}
