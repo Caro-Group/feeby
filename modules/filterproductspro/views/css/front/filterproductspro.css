@@ -371,6 +371,11 @@
     -ms-transform: rotate(45deg);
 }
 
+.filter-options-content.collapse{
+    max-height: 210px;
+    overflow-y: scroll;
+}
+
 /*************************** END FILTERS ***************************/
 
 /*************************** LOADING ***************************/
