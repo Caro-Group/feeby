@@ -833,7 +833,7 @@ function customSticky() {
   });
 
   function autoFiltersCollapse() {
-    var $filtersGroup = $("#search_filters .facet, .fpp_searchers .filter-options-content");
+    var $filtersGroup = $("#search_filters .facet, .fpp_searchers .filter");
     $filtersGroup.on("show.bs.collapse", ".collapse", function () {
       $filtersGroup.find(".collapse.in").collapse("hide");
     });
