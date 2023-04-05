@@ -595,6 +595,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
                     AppFPP.executeSearch({'id_searcher': param.id_searcher, 'loading': false, 'page': 1});
                 }
 
+                $(document).trigger('fpp-loaded', {})
+
                 // if (!AppFPP.button_mobile && $(window).width() < 992) {
                 //     AppFPP.addCollapseToSearcherWithoutFloatButton(param.id_searcher);
 
