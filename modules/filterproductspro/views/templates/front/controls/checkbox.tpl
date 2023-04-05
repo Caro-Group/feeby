@@ -23,13 +23,13 @@
 {assign var='first_option' value=array_shift($filter.options)}
 {assign var='no_use' value=array_unshift($filter.options, $first_option)}
 
-<div id="filter-options_{$filter.id_filter|intval}" class="column-{$filter.columns|intval} filter-options-content{if $first_option.color and !$first_option.color.color} two-column-mobile{/if}{if $searcher.hook neq 3 and $searcher.hook neq 4} fixed-height{/if}
-    collapse tablet:max-w-[350px] tablet:min-w-[260px] tablet:-ml-[19px] tablet:mt-[13px] bg-gray-1000 rounded-b-md"
+<div id="filter-options_{$filter.id_filter|intval}" class="column-{$filter.columns|intval} filter-options-content{if $first_option.color and !$first_option.color.color} two-column-mobile{/if}
+    collapse tablet:absolute z-20 tablet:max-w-[350px] tablet:min-w-[260px] tablet:-ml-[19px] tablet:mt-[13px] bg-gray-1000 rounded-b-md"
     aria-expanded="false" >
     <div class="content-to-scroll">
         {foreach $filter.options item=option}
             {if $option}
-                <div class="checkbox">
+                <div class="checkbox border-0 border-b border-solid border-white px-5 py-2 !m-0">
                     <label for="option_{$option.id_option|intval}">
                         <input
                             id="option_{$option.id_option|intval}"
@@ -46,10 +46,9 @@
                             value="{$option.id_option|intval}"
                             autocomplete="off"
                             {if $option.selected}checked{/if}
-                            {if $filter.type eq 5 and $option.color and ($option.color.color or $option.color.texture)}
-                                class="hidden d-none"
-                            {/if}
+                                class="hidden peer {if $filter.type eq 5 and $option.color and ($option.color.color or $option.color.texture)} d-none {/if}"
                         />
+                        <i class="material-icons hidden peer-checked:!inline-block text-main -left-1 -top-[7px] mr-2.5 text-lg relative">close</i>
 
                         {if $filter.type eq 5 and $option.color and ($option.color.color or $option.color.texture)}
                             {if $option.color.color}
@@ -61,7 +60,7 @@
                                 <span class="hidden">{$option.name|escape:'htmlall':'UTF-8'}</span>
                             {/if}
                         {else}
-                            <span>{$option.name|escape:'htmlall':'UTF-8'}</span>
+                            <span class="text-main-dark text-base font-light hover:text-main transition duration-200">{$option.name|escape:'htmlall':'UTF-8'}</span>
                         {/if}
                         {if $params_back.CONFIG_VARS.FPP_SHOW_TOTAL_PRODUCTS_OPTION eq 1 and $option.id_option != 0}
                             <span>({$option.total_products|intval})</span>

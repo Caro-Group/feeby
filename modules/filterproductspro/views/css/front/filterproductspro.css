@@ -173,8 +173,6 @@
 }
 
 .fpp_searchers .searcher-content .filter-options-content:not(.price) {
-    height: auto;
-    max-height: 130px;
     overflow: hidden;
     overflow-y: auto;
 }
@@ -186,8 +184,6 @@
     width: 100%;
     height: 100%;
     display:block;
-    padding-top: 8px;
-    padding-bottom: 8px;
 }
 
 .fpp_searchers .searcher-content .filter-options-content.price {
@@ -243,10 +239,6 @@
     /*border-radius: 4px;*/
 }
 
-.fpp_searchers .searcher-content .filter {
-    margin-bottom: 15px;
-}
-
 .fpp_searchers .searcher-content .filter-content .checkbox span,
 .fpp_searchers .searcher-content .filter-content .radio span {
     vertical-align: middle;
@@ -255,8 +247,6 @@
 .fpp_searchers .searcher-content .filter-content .checkbox,
 .fpp_searchers .searcher-content .filter-content .radio {
     margin-top: 0px;
-    margin-bottom: 5px;
-    padding-left:0px;
 }
 .fpp_searchers .searcher-content .filter-content .checkbox input,
 .fpp_searchers .searcher-content .filter-content .radio input{

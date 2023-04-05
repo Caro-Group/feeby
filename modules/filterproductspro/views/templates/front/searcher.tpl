@@ -45,7 +45,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="searcher-body">
+                    <div class="searcher-body tablet:pl-5">
+
+                    {* TODO: move selected filters section to the bottom *}
                         {if !empty($searcher.selected_options) }
                             <div id="options_selected_{$searcher.id_searcher|intval}">
                                 <div class="row">
@@ -82,7 +84,7 @@
                                 {assign var='col' value=$searcher.columns_break}
 
                                 {foreach from=$searcher.filters item=filter}
-                                    <div class="filter w-auto tablet:pr-5 tablet:py-2.5">
+                                    <div class="filter w-full tablet:w-auto tablet:pr-5 tablet:py-2.5">
                                         {include file='./filter.tpl' filter=$filter}
                                     </div>
                                 {/foreach}
