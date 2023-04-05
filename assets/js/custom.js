@@ -825,17 +825,25 @@ function customSticky() {
 
 (function ($) {
   $(function () {
-    var $myGroup = $("#search_filters .facet, .fpp_searchers .filter");
-    $myGroup.on("show.bs.collapse", ".collapse", function () {
-      $myGroup.find(".collapse.in").collapse("hide");
-    });
 
+    autoFiltersCollapse()
     bindFilterCollapses();
+
+    $(document).on('fpp-executeSearch-success',() => {
+      autoFiltersCollapse()
+    })
 
     prestashop.on("updateProductList", () => {
       bindFilterCollapses();
     });
   });
+
+  function autoFiltersCollapse() {
+    var $filtersGroup = $("#search_filters .facet, .fpp_searchers .filter");
+    $filtersGroup.on("show.bs.collapse", ".collapse", function () {
+      $filtersGroup.find(".collapse.in").collapse("hide");
+    });
+  }
 
   function bindFilterCollapses() {
     if ($("#search_filters_wrapper").length) {
