@@ -698,6 +698,7 @@ img:not([src]) {
   @apply !min-h-0
 }
 
+<<<<<<< HEAD
 .fancybox-title-float-wrap{
   @apply top-[calc(100%_+_10px)];
 }
@@ -736,4 +737,9 @@ img:not([src]) {
 
 .fancybox-nav span {
   @apply !right-0 !left-0 !visible !bg-none justify-center items-center flex !w-10 !h-10 text-main-dark bg-gray-1000 hover:bg-main-dark hover:text-white rounded-full transition
+=======
+
+.fpp_searchers .searcher-header{
+  @apply hidden
+>>>>>>> FEEB-737
 }
