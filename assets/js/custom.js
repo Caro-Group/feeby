@@ -829,7 +829,7 @@ function customSticky() {
     autoFiltersCollapse()
     bindFilterCollapses();
 
-    $(document).on('fpp-executeSearch-success',() => {
+    $(document).on('fpp-loaded',() => {
       autoFiltersCollapse()
     })
 
