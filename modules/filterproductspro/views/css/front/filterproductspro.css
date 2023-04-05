@@ -1,0 +1,621 @@
+/**
+ * We offer the best and most useful modules PrestaShop and modifications for your online store.
+ *
+ * We are experts and professionals in PrestaShop
+ *
+ * NOTICE OF LICENSE
+ *
+ * This file is not open source! Each license that you purchased is only available for 1 wesite only.
+ * If you want to use this file on more websites (or projects), you need to purchase additional licenses.
+ * You are not allowed to redistribute, resell, lease, license, sub-license or offer our resources to any third party.
+ *
+ * @author    PresTeamShop SAS (Registered Trademark) <info@presteamshop.com>
+ * @copyright 2011-2022 PresTeamShop SAS, All rights reserved.
+ * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License version 3.0
+ *
+ * @category  PrestaShop
+ * @category  Module
+ */
+
+/*************************** GENERAL ***************************/
+.fpp_popup {
+    overflow: hidden;
+}
+.fpp_popup #header{
+    position: relative;
+    z-index: 1;
+}
+.text-center {
+    text-align: center;
+}
+.overflow-hidden {
+    overflow: hidden;
+}
+.row-eq-height{
+    display: flex;
+}
+.fpp_searchers .searcher-content {
+    border: 1px solid #CCC;
+    box-shadow: 2px 2px 8px 0 rgba(0,0,0,.2);
+    margin-bottom: 20px;
+    position: relative;
+}
+.fpp_searchers .container.searcher-top{
+    padding-right: 0px;
+}
+.fpp_searchers .searcher-header .icon-collapse {
+    display: none;
+    float: right;
+    font-size:20px;
+    font-weight: bold;
+}
+#content-searchers-mobile .searcher-header,
+.fpp_searchers .searcher-header {
+    background: #EEE;
+    border-bottom: 1px solid #CCC;
+    padding: 5px 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.fpp_searchers .searcher-header .header-right-content{
+    float: right;
+}
+
+#content-searchers-mobile .searcher-body,
+.fpp_searchers .searcher-body {
+    padding: 10px;
+    background: #FFF;
+}
+.fpp_searchers .searcher-footer {
+    background: #FFF;
+    padding-top: 0px;
+    padding-right: 5px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+}
+.fpp_searchers .searcher-footer button {
+    text-transform: uppercase;
+    cursor:pointer !important;
+    width: 100% !important;
+
+}
+.selected-option-content {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+.selected-option-content .btn-reset-filter {
+    background: #FFF;
+    border: 1px solid #AAA;
+    border-radius: 5px;
+    font-weight: 600;
+    color: #555;
+    box-shadow: 1px 1px 4px -1px rgba(0,0,0,0.5);
+    margin-bottom: 4px;
+    transition: background .2s
+}
+.selected-option-content .btn-reset-filter:hover {
+    background: #EEE;
+    border: 1px solid #8e8e8e;
+    color: #555;
+}
+.selected-option-content .btn-selected-option {
+    position: relative;
+    background: #FFF;
+    padding-right: 18px;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    font-weight: 600;
+    color: #868484;
+    box-shadow: 1px 1px 4px -1px rgba(0,0,0,0.5);
+    margin-bottom: 4px;
+    text-align: left;
+    white-space: normal;
+    transition: background .2s
+}
+.selected-option-content .btn-selected-option i.fa-pts-times{
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    color: #adadad;
+}
+.selected-option-content .btn-selected-option:hover {
+    background: #EEE;
+    border: 1px solid #AAA;
+}
+#mobile_selected_option {
+    padding: 15px 15px 0 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #eee;
+    box-shadow: 5px 2px 9px 1px rgba(0,0,0,.1);
+}
+#mobile_selected_option .selected-option-content .filter-name{
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+#icon-searchers-mobile{
+    position: fixed;
+    bottom: 45%;
+    right: 0;
+    padding: 10px 12px;
+    z-index: 6000;
+    background: #FFF;
+    border: 1px solid #DDD;
+    font-size: 25px;
+    border-radius: 5px 0 0 5px;
+    box-shadow: 5px 2px 9px 1px rgba(0,0,0,.1);
+    cursor: pointer;
+}
+#content-searchers-mobile {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #FFF;
+    z-index: 6000;
+    transform: translateX(200%);
+    transition: transform .2s;
+}
+/*************************** END GENERAL ***************************/
+
+/*************************** FILTERS ***************************/
+
+.fpp_searchers .searcher-content .filter-options-content.column-2 .content-to-scroll {
+    column-count: 2;
+}
+.fpp_searchers .searcher-content .filter-options-content.column-3 .content-to-scroll {
+    column-count: 3;
+}
+.fpp_searchers .searcher-content .filter-options-content.column-4 .content-to-scroll {
+    column-count: 4;
+}
+
+/*Tamaño fijo para scroll*/
+.fpp_searchers .searcher-content .filter-options-content {
+/*    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;*/
+}
+
+.fpp_searchers .searcher-content .filter-options-content:not(.price) {
+    height: auto;
+    max-height: 130px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+.fpp_searchers .searcher-content .filter-options-content.fixed-height {
+    height: auto;
+}
+
+.fpp_searchers .searcher-content .filter-options-content .content-to-scroll {
+    width: 100%;
+    height: 100%;
+    display:block;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.fpp_searchers .searcher-content .filter-options-content.price {
+    padding-top: 0px;
+    padding-bottom: 10px;
+}
+
+.fpp_searchers .searcher-content .filter-options-content.price .input-group {
+    margin-top: 4px;
+}
+
+.fpp_searchers .searcher-content .filter-options-content.price label {
+    text-align: left;
+    font-size: 14px;
+    width: 100%;
+}
+
+.fpp_searchers .searcher-content .filter-options-content.price input {
+    text-align: right;
+    padding: 5px !important;
+}
+
+.slider-price-content {
+    width: 100%;
+    margin-top: 10px;
+    padding-right: 11px;
+    padding-left: 23px;
+}
+
+/* Tamaño del scroll */
+.filter-options-content::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+/* Estilos barra (thumb) de scroll */
+.filter-options-content::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+.filter-options-content::-webkit-scrollbar-thumb:active {
+    background-color: #999999;
+}
+
+.filter-options-content::-webkit-scrollbar-thumb:hover {
+    background: #b3b3b3;
+}
+
+/* Estilos track de scroll */
+.filter-options-content::-webkit-scrollbar-track {
+    background: #e1e1e1;
+    /*border-radius: 4px;*/
+}
+
+.fpp_searchers .searcher-content .filter {
+    margin-bottom: 15px;
+}
+
+.fpp_searchers .searcher-content .filter-content .checkbox span,
+.fpp_searchers .searcher-content .filter-content .radio span {
+    vertical-align: middle;
+    line-height: 0px;
+}
+.fpp_searchers .searcher-content .filter-content .checkbox,
+.fpp_searchers .searcher-content .filter-content .radio {
+    margin-top: 0px;
+    margin-bottom: 5px;
+    padding-left:0px;
+}
+.fpp_searchers .searcher-content .filter-content .checkbox input,
+.fpp_searchers .searcher-content .filter-content .radio input{
+    position: relative !important;
+    margin-left: 0px !important;
+    margin-right: 3px !important;
+}
+
+.fpp_searchers .searcher-content .filter-content .checkbox label,
+.fpp_searchers .searcher-content .filter-content .radio label{
+    display: inline-block;
+    text-align: left !important;
+    padding-left: 0px !important;
+    vertical-align: text-bottom;
+}
+
+.fpp_searchers .searcher-content .filter-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.fpp_searchers .searcher-content .filter-content .noUi-horizontal{
+    height: 10px;
+}
+
+.fpp_searchers .searcher-content .filter-content .noUi-handle {
+    height: 22px;
+    left: -17px;
+    top: -7px;
+    width: 22px;
+    cursor: pointer;
+}
+.fpp_searchers .searcher-content .filter-content .noUi-handle::after,
+.fpp_searchers .searcher-content .filter-content .noUi-handle::before {
+    left: 7px;
+    top: 3px;
+}
+.fpp_searchers .searcher-content .filter-content .noUi-handle::after {
+    left: 11px;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: relative;
+    display: inline-block;
+    border: 1px solid #969696;
+    border-radius: 3px;
+    left: 0;
+    height: 25px !important;
+    width: 25px !important;
+    vertical-align: middle;
+}
+
+.checkmark.radio {
+    position: relative;
+    display: inline-block;
+    border-radius: 50%;
+}
+
+.checkmark.with-image {
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* On mouse-over, add a grey background color */
+.filter-options-content:hover input ~ .checkmark {
+    /*background-color: #ccc;*/
+}
+
+/* When the checkbox is checked, add a blue background */
+.filter-options-content input:checked ~ .checkmark {
+    /*background-color: #2196F3;*/
+    border:2px solid #3a3939;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+/* Show the checkmark when checked */
+.filter-options-content input:checked ~ .checkmark:after {
+    opacity: 1;
+}
+
+/* Style the checkmark/indicator */
+.filter-options-content .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.filter-options-content .checkmark.white:not(.radio):after {
+    border: solid #191919;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.filter-options-content .checkmark.radio:after {
+    left: 4.3px;
+    top: 4.3px;
+    width: 13px;
+    border: 2px solid #3a3939;
+    background: #FFF;
+    height: 13px;
+    border-radius: 50%;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+}
+
+/*************************** END FILTERS ***************************/
+
+/*************************** LOADING ***************************/
+
+.loading_big .loader {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateX(-50%);
+}
+.loading_big .loader .dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    display: inline-block;
+    animation: slide 1s infinite;
+}
+.loading_big .loader .dot:nth-child(1) {
+    animation-delay: 0.1s;
+    background: #606060;
+}
+.loading_big .loader .dot:nth-child(2) {
+    animation-delay: 0.2s;
+    background: #606060;
+}
+.loading_big .loader .dot:nth-child(3) {
+    animation-delay: 0.3s;
+    background: #606060;
+}
+.loading_big .loader .dot:nth-child(4) {
+    animation-delay: 0.4s;
+    background: #606060;
+}
+.loading_big .loader .dot:nth-child(5) {
+    animation-delay: 0.5s;
+    background: #606060;
+}
+@-moz-keyframes slide {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.3;
+        transform: scale(2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@-webkit-keyframes slide {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.3;
+        transform: scale(2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@-o-keyframes slide {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.3;
+        transform: scale(2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes slide {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.3;
+        transform: scale(2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes easeOutBounce {
+    0% { bottom: 100%}
+    100% { bottom: 0}
+}
+@-webkit-keyframes easeOutBounce {
+    0% { bottom: 100%}
+    100% { bottom: 0}
+}
+
+div.loading_big {
+    cursor: wait;
+    left: 0;
+    top: 0;
+    position: absolute;
+    z-index: 99;
+    display: none;
+    height: 100%;
+    width: 100%;
+    background: rgba(255,255,255,0.5);
+}
+.loading_big i.fa-pts{
+    left: 48%;
+    top: 50%;
+    position: absolute;
+}
+
+/*************************** END LOADING ***************************/
+
+/*************************** RESPONSIVE STYLES *********************/
+@media (max-width: 991px) {
+    .hidden-mb{
+        display: none;
+    }
+    .btn-toggle-searcher {
+        margin-bottom: 10px;
+        text-align: left;
+        font-weight: 600;
+        text-transform: uppercase;
+        cursor:pointer !important;
+    }
+    .btn-toggle-searcher i.right{
+        float:right;
+        margin-top: 3px;
+    }
+    .fpp_searchers .searcher-content{
+        height: 100%;
+    }
+    .fpp_searchers .content-permanent-mobile{
+        display:none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 6000;
+        bottom: 0;
+        margin-bottom: 0;
+        transform: translateX(200%);
+        transition: transform .3s;
+        background: #FFF;
+    }
+    #content-searchers-mobile .searcher-header,
+    .fpp_searchers .searcher-content .searcher-header{
+        padding: 10px;
+        font-size: 15px;
+        color: #333333;
+
+    }
+    .fpp_searchers .searcher-header .header-content{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .fpp_searchers .searcher-header .header-icon{
+        margin-right: 8px;
+    }
+    .fpp_searchers .searcher-header .header-right-content{
+        display: block;
+        width: 45%;
+    }
+    .fpp_searchers .content-permanent-mobile .searcher-content .searcher-body{
+        height: calc(100vh - 155px) !important;
+        overflow-y: auto;
+    }
+    #content-searchers-mobile .searcher-body{
+        overflow-y: auto;
+    }
+    .fpp_searchers .content-permanent-mobile .searcher-content .searcher-footer{
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+    }
+    #content-searchers-mobile .searcher-header a.close-content-searcher-mobile,
+    .fpp_searchers .searcher-header a.close-mobile-searcher{
+        float: right;
+        font-size: 18px;
+        padding-right: 5px;
+        padding-left: 10px;
+        color: #333333;
+        margin-top: -2px;
+    }
+
+    .fpp_searchers .searcher-header a.refresh-mobile-searcher{
+        float: right;
+        padding: 0 10px;
+        border-right: 1px solid #CCCCCC;
+        cursor: pointer;
+    }
+
+    #content-searchers-mobile .searcher-header a.close-content-searcher-mobile{
+        margin-top: 0px;
+        color: #333333;
+    }
+
+    .fpp_searchers .searcher-footer {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+    .fpp_searchers .searcher-footer button{
+        font-size: 18px;
+        padding: 10px 5px;
+    }
+    .fpp_searchers .searcher-content .filter-options-content.column-3.two-column-mobile .content-to-scroll,
+    .fpp_searchers .searcher-content .filter-options-content.column-4.two-column-mobile .content-to-scroll {
+        column-count: 2 !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .hidden-dt{
+        display: none !important;
+    }
+    .fpp_searchers .searcher-header a.refresh-mobile-searcher{
+        float: right;
+        background: #FFF;
+        padding: 0px 5px;
+        border-radius: 5px;
+        border: 1px solid #CCC;
+        cursor: pointer;
+        transition: background .2s;
+    }
+    .fpp_searchers .searcher-header a.refresh-mobile-searcher:hover{
+        background: #DDDDDD;
+        color:#000000;
+        border: 1px solid #000000;
+    }
+}
+/*************************** END RESPONSIVE STYLES *********************/
