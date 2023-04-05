@@ -82,7 +82,7 @@
                                 {assign var='col' value=$searcher.columns_break}
 
                                 {foreach from=$searcher.filters item=filter}
-                                    <div class="filter w-auto">
+                                    <div class="filter w-auto tablet:pr-5 tablet:py-2.5">
                                         {include file='./filter.tpl' filter=$filter}
                                     </div>
                                 {/foreach}
