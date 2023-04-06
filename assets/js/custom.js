@@ -825,6 +825,7 @@ function customSticky() {
 
     $(document).on('fpp-loaded',() => {
       autoFiltersCollapse()
+      bindFilterCollapses()
     })
 
     prestashop.on("updateProductList", () => {
