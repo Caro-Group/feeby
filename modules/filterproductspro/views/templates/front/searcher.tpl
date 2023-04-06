@@ -101,7 +101,7 @@
     </div>
 </div>
 
-<div style="flex:1 1 auto;" class="order-4 tablet:h-full tablet:block">
+<div style="flex:1 1 auto;" class="active-search-wrapper order-4 tablet:h-full tablet:block">
     <div id="active_filters" class="tablet:block tablet:h-full relative" aria-expanded="false">
         {foreach from=$params_back.searchers item=searcher}
             {if $searcher.filters|count > 0}

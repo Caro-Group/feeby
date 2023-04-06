@@ -829,16 +829,14 @@ function customSticky() {
     autoFiltersCollapse()
     bindFilterCollapses();
 
-    if (prestashop.page.name == "search") {
-      $(document).on('fpp-loaded',() => {
-        autoFiltersCollapse()
-        bindFilterCollapses()
-      })
-    }else{
-      prestashop.on("updateProductList", () => {
-        bindFilterCollapses();
-      });
-    }
+    $(document).on('fpp-loaded',() => {
+      autoFiltersCollapse()
+      bindFilterCollapses()
+    })
+    
+    prestashop.on("updateProductList", () => {
+      bindFilterCollapses();
+    });
 
   });
 
