@@ -4266,7 +4266,12 @@
         (0, a.default)("#js-active-search-filters").replaceWith(
           t.rendered_active_filters
         )
-        if (prestashop.page.page_name != 'search') {
+        if (prestashop.page.page_name === 'search') {
+        (0, a.default)("#js-product-list-top .sort-by-row").replaceWith(
+          (0, a.default)(t.rendered_products_top).find('.sort-by-row')
+        );
+
+        }else{
           (0, a.default)("#js-product-list-top").replaceWith(
             t.rendered_products_top
           );
