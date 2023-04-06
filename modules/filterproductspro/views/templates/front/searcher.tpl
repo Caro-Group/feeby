@@ -103,7 +103,7 @@
 </div>
 
 <div style="flex:1 1 auto;"
-    class="active_filters_wrapper order-4 tablet:h-full tablet:block max-h-20 tablet:!max-h-[none] transition duration-300">
+    class="active_filters_wrapper order-4 tablet:h-full tablet:block max-h-20 tablet:!max-h-[none] overflow-hidden tablet:overflow-auto transition-all duration-200">
     <div id="active_filters" class="tablet:block tablet:h-full relative" aria-expanded="false">
         {foreach from=$params_back.searchers item=searcher}
             {if $searcher.filters|count > 0}
@@ -111,12 +111,12 @@
                     {if !empty($searcher.selected_options) }
                         <div style="flex:1 1 auto;" class="order-4 tablet:h-full tablet:block">
                             <div id="options_selected_{$searcher.id_searcher|intval}">
-                                <div class="mt-5 mb-5 tablet:mb-0 tablet:pl-5">
+                                <div class="mt-5 mb-5 tablet:mb-0 tablet:pl-5 flex flex-wrap">
                                     <p class="text-base font-body font-normal hidden tablet:block hidden mt-[2px]">
                                         {l s='Selected options: ' mod='filterproductspro'}</p>
                                     {foreach from=$searcher.selected_options item=option}
                                         <button id="btn_selected_option_{$option.id_option|intval}"
-                                            class="btn-selected-option hidden tablet:block filter-block ml-4 text-sm mb-4 border-2 border-gray-2000 border-solid rounded-md py-1 pl-1 pr-2 group text-main-dark font-normal cursor-pointer"
+                                            class="btn-selected-option hidden tablet:block filter-block ml-4 text-sm mb-4 border-2 border-gray-2000 border-solid rounded-md bg-transparent py-1 pl-1 pr-2 group text-main-dark font-normal cursor-pointer"
                                             data-id_searcher="{$searcher.id_searcher|intval}"
                                             data-id_filter="{$option.id_filter|intval}"
                                             data-filter_name="{$option.filter_name.{$params_back.id_lang|intval}}"

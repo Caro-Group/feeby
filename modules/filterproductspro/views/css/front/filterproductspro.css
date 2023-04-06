@@ -578,3 +578,7 @@ div.loading_big {
 #search_filters_wrapper.collapse:not(.in) ~ .active_filters_wrapper{
     max-height: 0px;
 }
+
+#search_filters_wrapper.collapsing ~ .active_filters_wrapper{
+    max-height: 0px;
+}
