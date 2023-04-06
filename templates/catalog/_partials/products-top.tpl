@@ -68,14 +68,8 @@
     {/block}
 
     {if $page.page_name == 'search'}
-      <div
-        class="order-3 tablet:order-2 tablet:rounded-l-md tablet:bg-gray-1000 w-full tablet:w-filter ">
-          <div id="search_filters_wrapper" class="collapse tablet:block tablet:h-full relative" aria-expanded="false"
-            style="">
-              {hook h="displayWrapperTop"}
-              {* {hook h="filterProductsPro"} *}
-            </div>
-      </div>
+      {hook h="displayWrapperTop"}
+      {* {hook h="filterProductsPro"} *}
     {/if}
 
 
