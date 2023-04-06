@@ -100,21 +100,11 @@ class="order-3 tablet:order-2 tablet:rounded-l-md tablet:bg-gray-1000 w-full tab
     </div>
 </div>
 
-
-
-
 <div style="flex:1 1 auto;" class="order-4 tablet:h-full tablet:block">
-  <div id="search_filters_wrapper_TEMP" class="tablet:block tablet:h-full relative" aria-expanded="false"
-    style="">
-        <div class='fpp_searchers'>
+  <div id="search_active_filters_TEMP" class="tablet:block tablet:h-full relative" aria-expanded="false">
             {foreach from=$params_back.searchers item=searcher}
                 {if $searcher.filters|count > 0}
                     <div class="content-permanent-mobile" id="content_permanent_mobile_{$searcher.id_searcher|intval}">
-                        <div data-id_searcher="{$searcher.id_searcher|intval}"
-                            id = "searcher_{$searcher.id_searcher|intval}"
-                            data-name="{FilterProductsPro::linkRewrite($searcher.name.{$params_back.id_lang|intval})}"
-                            class="pts searcher-content hook_{$searcher.hook|intval} !bg-transparent">
-                            <div class="searcher-body tablet:pl-5">
                                 {if !empty($searcher.selected_options) }
                                     <div style="flex:1 1 auto;" class="order-4 tablet:h-full tablet:block">
                                         <div id="options_selected_{$searcher.id_searcher|intval}">
@@ -147,12 +137,9 @@ class="order-3 tablet:order-2 tablet:rounded-l-md tablet:bg-gray-1000 w-full tab
                                             </div>
                                         </div>
                                     {/if}
-                                </div>
-                            </div>
                         </div>
                     {/if}
                 {/foreach}
-            </div>
         </div>
     </div>
 </div>
