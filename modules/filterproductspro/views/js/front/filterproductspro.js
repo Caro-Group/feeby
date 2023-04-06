@@ -821,14 +821,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
                         if ($(item).find('.fpp_searchers').length > 0) {
                             var sections = $(item).children();
                             $.each(sections, function(j, section){
-                                if (!$(section).hasClass('fpp_searchers') || $(section).find('.searcher-content').data('id_searcher') != param.id_searcher) {
+                                if (!$(section).find('.fpp_searchers') || $(section).find('.searcher-content').data('id_searcher') != param.id_searcher) {
                                     $(section).remove();
                                 }
                             });
                             $(item).append(response.render);
                             placed_filter = true;
                         } else {
-                            if (!$(item).hasClass('fpp_searchers') || $(item).find('.searcher-content').data('id_searcher') != param.id_searcher) {
+                            if (!$(item).find('.fpp_searchers') || $(item).find('.searcher-content').data('id_searcher') != param.id_searcher) {
                                 $(item).remove();
                             }
                         }

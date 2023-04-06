@@ -233,7 +233,6 @@
 .fpp_searchers .searcher-content .filter-content .radio label{
     display: inline-block;
     text-align: left !important;
-    padding-left: 0px !important;
     vertical-align: text-bottom;
 }
 
