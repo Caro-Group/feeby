@@ -100,9 +100,20 @@ class="order-3 tablet:order-2 tablet:rounded-l-md tablet:bg-gray-1000 w-full tab
     </div>
 </div>
 
+<div>
+{foreach from=$params_back.searchers item=searcher}
+    <div> TEST 1</div>
+{/foreach}
+</div>
+
+{foreach from=$params_back.searchers item=searcher}
+    <div> TEST 2</div>
+{/foreach}
+
 
 {foreach from=$params_back.searchers item=searcher}
     {if !empty($searcher.selected_options) }
+        {debug}
         <div style="flex:1 1 auto;" class="active-search-wrapper collapse order-4 tablet:h-full tablet:block">
             <div id="options_selected_{$searcher.id_searcher|intval}">
                 <div class="row">
