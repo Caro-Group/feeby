@@ -859,12 +859,10 @@ function customSticky() {
 
       $("#search_filters_wrapper").on("show.bs.collapse", function (e) {
         $(".active-search-wrapper").collapse("show");
-        e.stopPropagation()
       });
 
       $("#search_filters_wrapper").on("hide.bs.collapse", function (e) {
         $(".active-search-wrapper").collapse("hide");
-        e.stopPropagation()
       });
     }
   }

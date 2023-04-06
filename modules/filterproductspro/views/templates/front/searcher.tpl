@@ -50,39 +50,6 @@ class="order-3 tablet:order-2 tablet:rounded-l-md tablet:bg-gray-1000 w-full tab
                                 </div>
                             </div>
                             <div class="searcher-body tablet:pl-5">
-                                {if !empty($searcher.selected_options) }
-                                    <div style="flex:1 1 auto;" class="active-search-wrapper order-4 tablet:h-full tablet:block">
-                                        <div id="options_selected_{$searcher.id_searcher|intval}">
-                                            <div class="row">
-                                                <div class="selected-option-content col-xs-12">
-                                                    <div class="filter-name">{l s='Selected options: ' mod='filterproductspro'}</div>
-                                                    <div>
-                                                        <button class="btn btn-sm btn-reset-filter"
-                                                            id="reset_button_{$searcher.id_searcher|intval}"
-                                                            data-id_searcher="{$searcher.id_searcher|intval}">
-                                                            <i class="fa-pts fa-pts-eraser"></i>&nbsp;
-                                                            {l s='Reset Searcher' mod='filterproductspro'}
-                                                        </button>
-                                                        {foreach from=$searcher.selected_options item=option}
-                                                            <button
-                                                                id="btn_selected_option_{$option.id_option|intval}"
-                                                                class="btn btn-sm btn-selected-option"
-                                                                data-id_searcher="{$searcher.id_searcher|intval}"
-                                                                data-id_filter="{$option.id_filter|intval}"
-                                                                data-filter_name="{$option.filter_name.{$params_back.id_lang|intval}}"
-                                                                data-id_option="{$option.id_option|intval}"
-                                                                data-option_name="{$option.option_name.{$params_back.id_lang|intval}}"
-                                                                data-control_type="{$option.control|intval}">
-                                                                {$option.filter_name[$params_back.id_lang|intval]}: {$option.option_name[$params_back.id_lang|intval]|replace:'--':''}
-                                                                <i class="fa-pts fa-pts-times"></i>
-                                                            </button>
-                                                        {/foreach}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                {/if}
                                 <div class="filter-content">
                                     <div class="row flex flex-wrap">
                                         {assign var='col' value=$searcher.columns_break}
@@ -136,9 +103,8 @@ class="order-3 tablet:order-2 tablet:rounded-l-md tablet:bg-gray-1000 w-full tab
 
 
 
-<div
-class="TEST order-3 tablet:order-2 tablet:rounded-l-md tablet:bg-gray-1000 w-full tablet:w-filter ">
-  <div id="search_filters_wrapper" class="collapse tablet:block tablet:h-full relative" aria-expanded="false"
+<div style="flex:1 1 auto;" class="order-4 tablet:h-full tablet:block">
+  <div id="search_filters_wrapper_TEMP" class="tablet:block tablet:h-full relative" aria-expanded="false"
     style="">
         <div class='fpp_searchers'>
             {foreach from=$params_back.searchers item=searcher}
@@ -150,7 +116,7 @@ class="TEST order-3 tablet:order-2 tablet:rounded-l-md tablet:bg-gray-1000 w-ful
                             class="pts searcher-content hook_{$searcher.hook|intval} !bg-transparent">
                             <div class="searcher-body tablet:pl-5">
                                 {if !empty($searcher.selected_options) }
-                                    <div style="flex:1 1 auto;" class="active-search-wrapper order-4 tablet:h-full tablet:block">
+                                    <div style="flex:1 1 auto;" class="order-4 tablet:h-full tablet:block">
                                         <div id="options_selected_{$searcher.id_searcher|intval}">
                                             <div class="row">
                                                 <div class="selected-option-content col-xs-12">
@@ -180,13 +146,13 @@ class="TEST order-3 tablet:order-2 tablet:rounded-l-md tablet:bg-gray-1000 w-ful
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                {/if}
+                                    {/if}
+                                </div>
                             </div>
                         </div>
-                    </div>
-                {/if}
-            {/foreach}
+                    {/if}
+                {/foreach}
+            </div>
         </div>
     </div>
 </div>
