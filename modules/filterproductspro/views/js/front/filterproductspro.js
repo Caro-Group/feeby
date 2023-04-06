@@ -786,7 +786,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                     }
 
                     var html = $('<div></div>').html(response.rendered_products).children();
-                    // $('#js-product-list-top').replaceWith(response.rendered_products_top);
+                    $('#js-product-list-top').replaceWith(response.rendered_products_top);
                     $('#js-product-list .products').append(html.find('.products').html());
                     $('#js-product-list-bottom').replaceWith(response.rendered_products_bottom);
                     $('#js-product-list .pagination').hide();
