@@ -103,7 +103,7 @@
 </div>
 
 <div style="flex:1 1 auto;"
-    class=".active_filters_wrapper order-4 tablet:h-full tablet:block tablet:!max-h-[none] transition duration-300">
+    class="active_filters_wrapper order-4 tablet:h-full tablet:block max-h-20 tablet:!max-h-[none] transition duration-300">
     <div id="active_filters" class="tablet:block tablet:h-full relative" aria-expanded="false">
         {foreach from=$params_back.searchers item=searcher}
             {if $searcher.filters|count > 0}
@@ -112,11 +112,11 @@
                         <div style="flex:1 1 auto;" class="order-4 tablet:h-full tablet:block">
                             <div id="options_selected_{$searcher.id_searcher|intval}">
                                 <div class="mt-5 mb-5 tablet:mb-0 tablet:pl-5">
-                                    <div class="text-base font-body font-normal hidden tablet:block hidden tablet:block">
-                                        {l s='Selected options: ' mod='filterproductspro'}</div>
+                                    <p class="text-base font-body font-normal hidden tablet:block hidden mt-[2px]">
+                                        {l s='Selected options: ' mod='filterproductspro'}</p>
                                     {foreach from=$searcher.selected_options item=option}
                                         <button id="btn_selected_option_{$option.id_option|intval}"
-                                            class="btn-selected-option hidden tablet:block filter-block ml-4 text-sm mb-4 border-2 border-gray-2000 border-solid rounded-md py-1 pl-1 pr-2 group text-main-dark font-normal"
+                                            class="btn-selected-option hidden tablet:block filter-block ml-4 text-sm mb-4 border-2 border-gray-2000 border-solid rounded-md py-1 pl-1 pr-2 group text-main-dark font-normal cursor-pointer"
                                             data-id_searcher="{$searcher.id_searcher|intval}"
                                             data-id_filter="{$option.id_filter|intval}"
                                             data-filter_name="{$option.filter_name.{$params_back.id_lang|intval}}"
@@ -124,13 +124,13 @@
                                             data-option_name="{$option.option_name.{$params_back.id_lang|intval}}"
                                             data-control_type="{$option.control|intval}">
                                             <i
-                                                class="material-icons float-left font-light mr-2 close text-lg relative mt-px flex justify-center items-center text-main-dark group-hover:text-main transition"></i>
+                                                class="material-icons float-left font-light mr-2 text-lg relative mt-px flex justify-center items-center text-main-dark group-hover:text-main transition"></i>
                                             {$option.filter_name[$params_back.id_lang|intval]}:
                                             {$option.option_name[$params_back.id_lang|intval]|replace:'--':''}
                                         </button>
                                     {/foreach}
                                     <button
-                                        class="btn-reset-filter block bg-gray-1000 hover:bg-gray-2000 transition border-2 border-gray-1000 border-solid cursor-pointer text-main-dark mx-auto tablet:ml-4 px-5 py-1.5 tablet:py-1 relative rounded-full text-base tablet:text-sm uppercase tablet:!normal-case"
+                                        class="btn-reset-filter block bg-gray-1000 hover:bg-gray-2000 transition border-2 border-gray-1000 border-solid cursor-pointer text-main-dark mx-auto tablet:ml-4 px-5 py-1.5 tablet:py-1 relative rounded-full text-base tablet:text-sm uppercase tablet:!normal-case tablet:h-min"
                                         id="reset_button_{$searcher.id_searcher|intval}"
                                         data-id_searcher="{$searcher.id_searcher|intval}">
                                         {l s='Reset Searcher' mod='filterproductspro'}
