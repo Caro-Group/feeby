@@ -535,6 +535,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 var $tmp_searcher = $('<div>').append(response.html).find('#searcher_'+param.id_searcher);
                 $('#searcher_'+param.id_searcher).replaceWith($tmp_searcher);
 
+                var $tmp_active_filters = $('<div>').append(response.html).find('#active_filters');
+                $('#active_filters').replaceWith($tmp_active_filters);
+
                 var selector = '#searcher_'+param.id_searcher+' select[id^="filter_"][data-filter_depends="1"]';
                 if ($(selector).length > 0) {
                     while(true){

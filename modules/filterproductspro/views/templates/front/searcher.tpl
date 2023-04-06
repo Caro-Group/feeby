@@ -101,7 +101,7 @@ class="order-3 tablet:order-2 tablet:rounded-l-md tablet:bg-gray-1000 w-full tab
 </div>
 
 <div style="flex:1 1 auto;" class="order-4 tablet:h-full tablet:block">
-  <div id="search_active_filters_TEMP" class="tablet:block tablet:h-full relative" aria-expanded="false">
+  <div id="active_filters" class="tablet:block tablet:h-full relative" aria-expanded="false">
             {foreach from=$params_back.searchers item=searcher}
                 {if $searcher.filters|count > 0}
                     <div class="content-permanent-mobile" id="content_permanent_mobile_{$searcher.id_searcher|intval}">
