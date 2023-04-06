@@ -825,7 +825,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                                     $(section).remove();
                                 }
                             });
-                            $(item).append(response.render);
+                            $(item).append(response.rendered_products);
                             placed_filter = true;
                         } else {
                             if (!$(item).find('.fpp_searchers') || $(item).find('.searcher-content').data('id_searcher') != param.id_searcher) {
