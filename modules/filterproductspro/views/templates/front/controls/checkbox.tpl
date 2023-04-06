@@ -24,13 +24,13 @@
 {assign var='no_use' value=array_unshift($filter.options, $first_option)}
 
 <div id="filter-options_{$filter.id_filter|intval}" class="column-{$filter.columns|intval} filter-options-content{if $first_option.color and !$first_option.color.color} two-column-mobile{/if}
-    collapse tablet:!absolute z-20 tablet:max-w-[350px] tablet:min-w-[260px] tablet:-ml-[19px] tablet:mt-[13px] bg-gray-1000 rounded-b-md"
+    collapse tablet:!absolute z-20 tablet:max-w-[350px] tablet:min-w-[260px] tablet:-ml-[19px] tablet:mt-[13px] bg-gray-1000 rounded-b-md max-h-[210px]"
     aria-expanded="false" >
     <div class="content-to-scroll">
         {foreach $filter.options item=option}
             {if $option}
-                <div class="checkbox border-0 border-b border-solid border-white px-5 py-4 !m-0">
-                    <label for="option_{$option.id_option|intval}">
+                <div class="checkbox border-0 border-b border-solid border-white !pl-0 !m-0">
+                    <label for="option_{$option.id_option|intval}" class="px-5 py-4 w-full group">
                         <input
                             id="option_{$option.id_option|intval}"
                             name="filter_{$filter.id_filter|intval}"
@@ -60,7 +60,7 @@
                                 <span class="hidden">{$option.name|escape:'htmlall':'UTF-8'}</span>
                             {/if}
                         {else}
-                            <span class="font-body text-base {if $option.selected} text-main font-normal {else} text-main-dark font-light {/if} hover:text-main transition duration-200">{$option.name|escape:'htmlall':'UTF-8'}</span>
+                            <span class="font-body text-base {if $option.selected} text-main font-normal {else} text-main-dark font-light {/if} group-hover:text-main transition duration-200">{$option.name|escape:'htmlall':'UTF-8'}</span>
                         {/if}
                         {if $params_back.CONFIG_VARS.FPP_SHOW_TOTAL_PRODUCTS_OPTION eq 1 and $option.id_option != 0}
                             <span>({$option.total_products|intval})</span>
