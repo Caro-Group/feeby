@@ -572,3 +572,9 @@ div.loading_big {
     }
 } */
 /*************************** END RESPONSIVE STYLES *********************/
+
+/* CUSTOM */
+
+#search_filters_wrapper.collapse:not(.in) ~ .active_filters_wrapper{
+    max-height: 0px;
+}
