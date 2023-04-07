@@ -575,10 +575,6 @@ div.loading_big {
 
 /* CUSTOM */
 
-#search_filters_wrapper.collapse:not(.in) ~ .active_filters_wrapper{
-    max-height: 0px;
-}
-
-#search_filters_wrapper.collapsing ~ .active_filters_wrapper{
+#search_filters_wrapper.[aria-expanded="false"] ~ .active_filters_wrapper{
     max-height: 0px;
 }
