@@ -30,7 +30,7 @@
         {foreach $filter.options item=option}
             {if $option}
                 <div class="checkbox border-0 border-b border-solid border-white !pl-0 !m-0">
-                    <label for="option_{$option.id_option|intval}" class="px-5 py-4 w-full group">
+                    <label for="option_{$option.id_option|intval}" class="px-5 py-4 w-full group !flex items-center">
                         <input
                             id="option_{$option.id_option|intval}"
                             name="filter_{$filter.id_filter|intval}"
