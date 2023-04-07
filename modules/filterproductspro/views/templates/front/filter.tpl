@@ -41,7 +41,7 @@
                 {/if} 
             </p>
             <span class="pl-4 -top-[2px] relative">
-                <i class="material-icons text-xl text-main-dark group-hover:text-main transition">add</i>
+                <i class="material-icons text-xl {if $activeCount>0} text-main {else} text-main-dark {/if} group-hover:text-main transition">add</i>
             </span>
         </div>
     {/if}
