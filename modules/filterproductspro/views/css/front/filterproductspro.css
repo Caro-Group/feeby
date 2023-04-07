@@ -575,6 +575,6 @@ div.loading_big {
 
 /* CUSTOM */
 
-#search_filters_wrapper.[aria-expanded="false"] ~ .active_filters_wrapper{
+[aria-expanded="false"]#search_filters_wrapper ~ .active_filters_wrapper{
     max-height: 0px;
 }

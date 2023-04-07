@@ -48,7 +48,7 @@
                             {if $option.selected}checked{/if}
                                 class="hidden peer {if $filter.type eq 5 and $option.color and ($option.color.color or $option.color.texture)} d-none {/if}"
                         />
-                        <i class="material-icons hidden !visible peer-checked:!inline-block text-main -left-1 -top-[7px] mr-2.5 text-lg relative">close</i>
+                        <i class="material-icons hidden !visible peer-checked:!inline-block text-main -left-1 -top-[3px] mr-2.5 text-lg relative">close</i>
 
                         {if $filter.type eq 5 and $option.color and ($option.color.color or $option.color.texture)}
                             {if $option.color.color}
