@@ -115,7 +115,7 @@
                             <div id="options_selected_{$searcher.id_searcher|intval}">
                                 <div class="mt-5 mb-5 tablet:mb-0 tablet:pl-5 flex flex-wrap">
                                     <p class="text-base font-body font-normal hidden tablet:block hidden mt-[2px]">
-                                        {l s='Selected options ' mod='filterproductspro'}
+                                        {l s='Selected options: ' mod='filterproductspro'}
                                         {foreach from=$searcher.selected_options item=option}
                                             {assign var=activeCount value=$activeCount+1}
                                         {/foreach}
