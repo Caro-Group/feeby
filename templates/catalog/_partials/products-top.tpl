@@ -28,7 +28,6 @@
   {/block}
 {/if}
 
-{debug}
 
 <div id="js-product-list-top" class="pb-7 tablet:pb-3 pt-0 products-selection tablet:mb-[40px]">
   {if $page.page_name == 'category'}
