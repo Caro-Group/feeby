@@ -48,8 +48,6 @@
                             {if $option.selected}checked{/if}
                                 class="hidden peer {if $filter.type eq 5 and $option.color and ($option.color.color or $option.color.texture)} d-none {/if}"
                         />
-                        <i class="material-icons hidden !visible peer-checked:!inline-block text-main -left-1 -top-[3px] mr-2.5 text-lg relative">close</i>
-
                         {if $filter.id_filter == 16}
                         <div class="bg-gray-2000 clearfix float-left w-6 h-6 mr-6 rounded border border-solid" style="
                           {if $option.id_option == 796}
@@ -103,6 +101,8 @@
                           {/if}">
                           </div>
                         {/if}
+                        
+                        <i class="material-icons hidden !visible peer-checked:!inline-block text-main -left-1 -top-[3px] mr-2.5 text-lg relative">close</i>
 
                         {if $filter.type eq 5 and $option.color and ($option.color.color or $option.color.texture)}
                             {if $option.color.color}
