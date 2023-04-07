@@ -18,7 +18,7 @@
 *}
 
 <div id="search_filters_wrapper"
-    class=" order-3 tablet:order-2 tablet:rounded-l-md tablet:bg-gray-1000 w-full tablet:w-filter "
+    class=" order-3 tablet:order-2 tablet:rounded-l-md tablet:bg-gray-1000 w-full tablet:w-filter collapse"
     aria-expanded="false" style="">
     <div class="tablet:block tablet:h-full relative">
         <div class='fpp_searchers'>

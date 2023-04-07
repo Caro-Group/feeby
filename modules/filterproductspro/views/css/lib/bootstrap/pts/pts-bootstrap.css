@@ -5197,7 +5197,7 @@
 
     }
 }
-.pts .hidden {
+.pts .hidden:not(i) {
     display: none !important;
     visibility: hidden !important;
 }
