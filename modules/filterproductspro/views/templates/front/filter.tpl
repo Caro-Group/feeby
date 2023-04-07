@@ -17,7 +17,6 @@
  * @category  Module
 *}
 {assign var=activeCount value=0}
-{debug}
 
 <div id="filter_{$filter.id_filter|intval}"
     class="relative"
@@ -35,7 +34,7 @@
         {/foreach}
         <div class="filter-name flex cursor-pointer px-5 tablet:px-0 border-0 border-b-2 tablet:border-b-0 border-gray-1000 border-solid py-5 tablet:py-0 justify-between tablet:justify-start group collapsed"
         data-parent="#searcher_{$searcher.id_searcher|intval}" data-target="#filter-options_{$filter.id_filter|intval}" data-toggle="collapse" aria-expanded="false">
-            <p class="!m-0 text-base font-body font-normal {if $activeCount>0} text-main-dark {else} text-main {/if} text-main-dark group-hover:text-main transition">
+            <p class="!m-0 text-base font-body font-normal {if $activeCount>0} text-main {else} text-main-dark {/if} group-hover:text-main transition">
                 {$filter.name[$params_back.id_lang|intval]}
                 {if $activeCount>0}
                     <span class="tablet:hidden">({$activeCount})</span>
