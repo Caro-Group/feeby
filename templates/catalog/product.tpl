@@ -102,13 +102,18 @@
          <div class="h-max relative tablet:w-2/5 top-0 w-full tablet:sticky">
            {block name='page_header_container'}
              {block name='page_header'}
-               <h1 class="font-header product-detail-name text-[20px] tablet:text-[35px] tablet:leading-[45px] leading-24px mb-0 pr-[46px]" itemprop="name">{block name='page_title'}{$product.name}{/block}</h1>
+               <h1 class="font-header product-detail-name text-[20px] tablet:text-[35px] tablet:leading-[45px] leading-24px mb-0 pr-[46px] tablet:pr-[94px]" itemprop="name">{block name='page_title'}{$product.name}{/block}</h1>
              {/block}
            {/block}
  
-           <div class="leo-compare-wishlist-button absolute top-0 right-0">
-             {hook h='displayLeoWishlistButton' product=$product}
-             {hook h='displayLeoCompareButton' product=$product}
+           <div class=" absolute top-0 right-0">
+             <div class="mt-10 tablet:mt-0 tablet:mr-12">
+              {include file='_partials/share-btn.tpl'}
+             </div>
+             <div class="leo-compare-wishlist-button">
+              {hook h='displayLeoWishlistButton' product=$product}
+              {hook h='displayLeoCompareButton' product=$product}
+            </div>
            </div>
  
            {hook h='displayLeoProductReviewExtra' product=$product}
