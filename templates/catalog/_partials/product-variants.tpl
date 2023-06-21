@@ -26,10 +26,9 @@
   {foreach from=$groups key=id_attribute_group item=group}
     {if !empty($group.attributes)}
 
-      <div
-        class="{if $group.group_name|strstr:"Rodzaj fototapety"}hidden{/if} clearfix product-variants-item flex flex-col items-start mb-5">
-        <span class="block text-[14px] text-gray-main text-base leading-normal mb-[10px] font-light">
-          {if $id_attribute_group neq 21}
+      <div class="{if $group.group_name|strstr:"Rodzaj fototapety"}hidden{/if} clearfix product-variants-item flex flex-col items-start mb-5 {if $id_attribute_group eq 23 } py-5 px-2.5 tablet:p-[30px] border-2 border-gray-2000 border-solid rounded-[5px] {/if}">
+        <span class="block text-base text-gray-main text-lg leading-normal mb-[10px] font-medium">
+          {if $id_attribute_group neq 21 }
             {$group.name}
           {/if}
         </span>
@@ -50,36 +49,20 @@
 
           <ul id="group_{$id_attribute_group}" class="flex w-full flex-wrap justify-center tablet:justify-start">
             {foreach from=$group.attributes key=id_attribute item=group_attribute}
-              <li
-                class="input-container w-full mr-5 phone:max-w-[40%] tablet:max-w-[121px] tablet:aspect-ratio-[4/3] tablet:mr-5 desktop:max-w-[29%] ">
+              <li class="input-container w-full {if $id_attribute_group eq 23 } mx-2.5 tablet:ml-0 tablet:mr-[35px] phone:max-w-[80px] {/else} mr-5 phone:max-w-[40%] tablet:max-w-[121px] tablet:aspect-ratio-[4/3] tablet:mr-5 desktop:max-w-[29%] {/if} ">
                 <label aria-label="{$group_attribute.name}" class="flex flex-col">
-                  <input class="input-color peer" type="radio" data-product-attribute="{$id_attribute_group}"
-                    name="group[{$id_attribute_group}]" value="{$id_attribute}" title="{$group_attribute.name}"
-                    {if $group_attribute.selected} checked="checked" {/if}>
-                  <span {if $group_attribute.texture}
-                      class="color texture w-full h-20 tablet:h-[120px] mx-auto tablet:mx-0 bg-no-repeat bg-cover rounded-[5px] border-2 border-solid border-white hover:border-white peer-checked:border-main opacity-50 peer-checked:opacity-100 transition shadow-none aspect-[4/3] overflow-hidden"
-                    {elseif $group_attribute.html_color_code} class="color w-10 h-10 rounded-[5px]"
-                    style="background-color: {$group_attribute.html_color_code}" {/if}>
-                    {if $group_attribute.texture}
-                      class="color texture w-full h-20 tablet:h-[120px] mx-auto tablet:mx-0 bg-no-repeat bg-cover rounded-[5px]
-            border-2 border-solid border-white hover:border-white peer-checked:border-main opacity-50
-            peer-checked:opacity-100 transition shadow-none aspect-[4/3] overflow-hidden"
-                    {elseif $group_attribute.html_color_code}
-                      class="color w-10 h-10 rounded-[5px]" style="background-color: {$group_attribute.html_color_code}"
-                    {/if}
-                    >
-                    {if $group_attribute.texture}
-                      <picture>
-                        <source
-                          srcset="{$group_attribute.texture|replace:".png":".webp"|replace:".jpg":".webp"|escape:'html':'UTF-8'}"
-                          type="image/webp">
-                        <source srcset="{$group_attribute.texture|replace:" ":"%20"|escape:'html':'UTF-8'}" type="image/jpeg">
-                        <img class="block h-full object-cover" src="{$group_attribute.texture|replace:" ":"%20"}" />
-                      </picture>
-                    {/if}
-                  </span>
+                  <input class="input-color peer" type="radio" data-product-attribute="{$id_attribute_group}" name="group[{$id_attribute_group}]" value="{$id_attribute}" title="{$group_attribute.name}"{if $group_attribute.selected} checked="checked"{/if}>
                   <span
-                    class="text-main-dark text-base tablet-medium:text-2xl p-0 pt-[10px] text-center">{$group_attribute.name}</span>
+                   class="{if $group_attribute.texture} color texture w-full  {if $id_attribute_group eq 23 } tablet:h-[54px] {/else} h-20 tablet:h-[120px] {/if}  mx-auto tablet:mx-0 bg-no-repeat bg-cover rounded-[5px] border-2 border-solid border-gray-2000 hover:border-gray-3000 peer-checked:border-main opacity-50 peer-checked:opacity-100 transition shadow-none aspect-[4/3] overflow-hidden {elseif $group_attribute.html_color_code} color w-10 h-10 rounded-[5px] {/if}" {if $group_attribute.html_color_code} style="background-color: {$group_attribute.html_color_code}" {/if}>
+                  {if $group_attribute.texture}
+                    <picture>
+                      <source srcset="{$group_attribute.texture|replace:".png":".webp"|replace:".jpg":".webp"|escape:'html':'UTF-8'}" type="image/webp">
+						          <source srcset="{$group_attribute.texture|replace:" ":"%20"|escape:'html':'UTF-8'}" type="image/jpeg"> 
+                      <img class="block h-full object-cover" src="{$group_attribute.texture|replace:" ":"%20"}" />
+                    </picture>
+                  {/if}
+                  </span>
+                <span class="text-main-dark p-0 pt-[10px] text-center text-base {if $id_attribute_group eq 23 } tablet-medium:text-lg {/else} tablet-medium:text-2xl {/if}">{$group_attribute.name}</span>
                 </label>
               </li>
             {/foreach}
@@ -104,14 +87,22 @@
 
         {/if}
 
-        <span class="block leading-normal text-[14px] tablet:text-base text-[#ADAFBA]">
-          {if $group.group_name == "Rozmiar"}
+        <div class="flex leading-normal text-[14px] tablet:text-base text-[#ADAFBA] gap-2.5 tablet:gap-5">
+          {if $group.group_name == "Rozmiar" or $id_attribute_group eq 6}
 
-            {l s='See' d='Shop.Theme.Actions'} <a class="underline font-medium text-[#ADAFBA]" href="/tabela-rozmiarow"
-              target="_blank">{l s='table size' d='Shop.Theme.Actions'}</a>
+            <span>
+              {l s='See' d='Shop.Theme.Actions'} <a class="underline font-medium text-[#ADAFBA]" href="/tabela-rozmiarow" target="_blank">{l s='table size' d='Shop.Theme.Actions'}</a>
+            </span>
+            {if $breadcrumb["count"] > 0 && $breadcrumb["links"][1]["title"]|strstr:"Fototapety"}
+              <span>
+                <a class="underline font-medium text-[#ADAFBA]" href="/instrukcja-montazu" target="_blank">{l s='Download the assembly manual' d='Shop.Theme.Actions'}</a>
+              </span>
+            {/if}
+
 
           {elseif $group.group_name == "Typ"}
-
+            
+            <span>
             {if $breadcrumb["count"] > 0 && $breadcrumb["links"][1]["title"]|strstr:"Parawany"}
               {l s='Learn more about the' d='Shop.Theme.Actions'} <a class="underline font-medium text-[#ADAFBA]"
                 href="/nasze-parawany" target="_blank">{l s='manufacturing technology' d='Shop.Theme.Actions'}</a>
@@ -119,9 +110,9 @@
               {l s='Learn more about the' d='Shop.Theme.Actions'} <a class="underline font-medium text-[#ADAFBA]"
                 href="/technologia-wykonania" target="_blank">{l s='manufacturing technology' d='Shop.Theme.Actions'}</a>
             {/if}
-
+            </span>
           {/if}
-        </span>
+        </div>
 
       </div>
     {/if}
