@@ -83,10 +83,10 @@
           
         {/if}
 
-        <div class="flex leading-normal text-[14px] tablet:text-base text-[#ADAFBA] gap-2.5 tablet:gap-5">
+        <div class="flex flex-wrap leading-normal text-[14px] tablet:text-base text-[#ADAFBA] gap-2.5 tablet:gap-5">
           {if $group.group_name == "Rozmiar" || $id_attribute_group == 6}
 
-            <div class="flex items-center">
+            <div class="flex items-center ">
               <svg class="shrink-0 mr-2.5" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
                 <path d="M9 0.25C4.16797 0.25 0.25 4.16797 0.25 9C0.25 13.832 4.16797 17.75 9 17.75C13.832 17.75 17.75 13.832 17.75 9C17.75 4.16797 13.832 0.25 9 0.25ZM9 16.2656C4.98828 16.2656 1.73438 13.0117 1.73438 9C1.73438 4.98828 4.98828 1.73438 9 1.73438C13.0117 1.73438 16.2656 4.98828 16.2656 9C16.2656 13.0117 13.0117 16.2656 9 16.2656Z" fill="#ADAFBA"/>
                 <path d="M8.0625 5.5625C8.0625 5.81114 8.16127 6.0496 8.33709 6.22541C8.5129 6.40123 8.75136 6.5 9 6.5C9.24864 6.5 9.4871 6.40123 9.66291 6.22541C9.83873 6.0496 9.9375 5.81114 9.9375 5.5625C9.9375 5.31386 9.83873 5.0754 9.66291 4.89959C9.4871 4.72377 9.24864 4.625 9 4.625C8.75136 4.625 8.5129 4.72377 8.33709 4.89959C8.16127 5.0754 8.0625 5.31386 8.0625 5.5625ZM9.46875 7.75H8.53125C8.44531 7.75 8.375 7.82031 8.375 7.90625V13.2188C8.375 13.3047 8.44531 13.375 8.53125 13.375H9.46875C9.55469 13.375 9.625 13.3047 9.625 13.2188V7.90625C9.625 7.82031 9.55469 7.75 9.46875 7.75Z" fill="#ADAFBA"/>
@@ -104,6 +104,13 @@
                 <a class="underline font-medium text-[#ADAFBA]" href="/instrukcja-montazu" target="_blank">{l s='Download the assembly manual' d='Shop.Theme.Actions'}</a>
               </span>
             </div>
+
+            <div class="mt-[30px] w-full shrink-0 px-5 py-[5px] rounded-[5px] border border-solid border-gray-2000">
+              <span class="text-main-dark text-base">
+                {l s='Need a different size?' d='Shop.Theme.Actions'} <a class="underline font-medium text-main-dark" href="/" target="_blank">{l s='Try out our generator' d='Shop.Theme.Actions'}</a>
+              </span>
+            </div>
+
             {/if}
 
 
