@@ -49,11 +49,11 @@
 
           <ul id="group_{$id_attribute_group}" class="flex w-full flex-wrap justify-center tablet:justify-start">
             {foreach from=$group.attributes key=id_attribute item=group_attribute}
-              <li class="input-container w-full {if $id_attribute_group eq 23 } mx-2.5 tablet:ml-0 tablet:mr-[35px] phone:max-w-[80px] {/else} mr-5 phone:max-w-[40%] tablet:max-w-[121px] tablet:aspect-ratio-[4/3] tablet:mr-5 desktop:max-w-[29%] {/if} ">
+              <li class="input-container w-full {if $id_attribute_group eq 23 } mx-2.5 tablet:ml-0 tablet:mr-[35px] phone:max-w-[80px] {else} mr-5 phone:max-w-[40%] tablet:max-w-[121px] tablet:aspect-ratio-[4/3] tablet:mr-5 desktop:max-w-[29%] {/if} ">
                 <label aria-label="{$group_attribute.name}" class="flex flex-col">
                   <input class="input-color peer" type="radio" data-product-attribute="{$id_attribute_group}" name="group[{$id_attribute_group}]" value="{$id_attribute}" title="{$group_attribute.name}"{if $group_attribute.selected} checked="checked"{/if}>
                   <span
-                   class="{if $group_attribute.texture} color texture w-full  {if $id_attribute_group eq 23 } tablet:h-[54px] {/else} h-20 tablet:h-[120px] {/if}  mx-auto tablet:mx-0 bg-no-repeat bg-cover rounded-[5px] border-2 border-solid border-gray-2000 hover:border-gray-3000 peer-checked:border-main opacity-50 peer-checked:opacity-100 transition shadow-none aspect-[4/3] overflow-hidden {elseif $group_attribute.html_color_code} color w-10 h-10 rounded-[5px] {/if}" {if $group_attribute.html_color_code} style="background-color: {$group_attribute.html_color_code}" {/if}>
+                   class="{if $group_attribute.texture} color texture w-full  {if $id_attribute_group eq 23 } tablet:h-[54px] {else} h-20 tablet:h-[120px] {/if}  mx-auto tablet:mx-0 bg-no-repeat bg-cover rounded-[5px] border-2 border-solid border-gray-2000 hover:border-gray-3000 peer-checked:border-main opacity-50 peer-checked:opacity-100 transition shadow-none aspect-[4/3] overflow-hidden {elseif $group_attribute.html_color_code} color w-10 h-10 rounded-[5px] {/if}" {if $group_attribute.html_color_code} style="background-color: {$group_attribute.html_color_code}" {/if}>
                   {if $group_attribute.texture}
                     <picture>
                       <source srcset="{$group_attribute.texture|replace:".png":".webp"|replace:".jpg":".webp"|escape:'html':'UTF-8'}" type="image/webp">
@@ -62,7 +62,7 @@
                     </picture>
                   {/if}
                   </span>
-                <span class="text-main-dark p-0 pt-[10px] text-center text-base {if $id_attribute_group eq 23 } tablet-medium:text-lg {/else} tablet-medium:text-2xl {/if}">{$group_attribute.name}</span>
+                <span class="text-main-dark p-0 pt-[10px] text-center text-base {if $id_attribute_group eq 23 } tablet-medium:text-lg {else} tablet-medium:text-2xl {/if}">{$group_attribute.name}</span>
                 </label>
               </li>
             {/foreach}
@@ -88,7 +88,7 @@
         {/if}
 
         <div class="flex leading-normal text-[14px] tablet:text-base text-[#ADAFBA] gap-2.5 tablet:gap-5">
-          {if $group.group_name == "Rozmiar" or $id_attribute_group eq 6}
+          {if $group.group_name == "Rozmiar" || $id_attribute_group == 6}
 
             <span>
               {l s='See' d='Shop.Theme.Actions'} <a class="underline font-medium text-[#ADAFBA]" href="/tabela-rozmiarow" target="_blank">{l s='table size' d='Shop.Theme.Actions'}</a>
