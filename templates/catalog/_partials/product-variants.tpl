@@ -26,7 +26,10 @@
   {foreach from=$groups key=id_attribute_group item=group}
     {if !empty($group.attributes)}
 
-      <div class="{if $group.group_name|strstr:"Rodzaj fototapety"}hidden{/if} clearfix product-variants-item flex flex-col items-start mb-5 {if $id_attribute_group eq 23 } mt-10 py-5 px-2.5 tablet:p-[30px] border-2 border-gray-2000 border-solid rounded-[5px] animate-[expand_0.5s_ease-in-out_forwards] overflow-hidden {/if}">
+      {if $id_attribute_group eq 23 }
+        <div class="animate-[expand_0.3s_ease-in-out_forwards] overflow-hidden">
+      {/if}
+      <div class="{if $group.group_name|strstr:"Rodzaj fototapety"}hidden{/if} clearfix product-variants-item flex flex-col items-start mb-5 {if $id_attribute_group eq 23 } mt-10 py-5 px-2.5 tablet:p-[30px] border-2 border-gray-2000 border-solid rounded-[5px] {/if}">
         <span class="block text-base text-gray-main text-lg leading-normal mb-[10px] font-medium">
           {if $id_attribute_group neq 21 }
             {$group.name}
@@ -127,6 +130,9 @@
         </div>
 
       </div>
+      {if $id_attribute_group eq 23 }
+        </div>
+      {/if}
     {/if}
   {/foreach}
 </div>
