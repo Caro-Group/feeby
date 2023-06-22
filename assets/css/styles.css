@@ -16,15 +16,6 @@ p {
   @apply font-header;
 }
 
-@keyframes expand {
-  from {
-    max-height: 0px;
-  }
-  to {
-    max-height: 400px;
-  }
-}
-
 @keyframes fadeIn {
   from {
     opacity: 0;
