@@ -25,6 +25,8 @@ assets:
       - id: swiper-js
         path: assets/js/swiper.js
         attributes: defer
+      - id: sharer-js
+        path: assets/js/sharer.min.js
       - id: loader-js
         path: assets/js/loader.js
       - id: lazy-js
