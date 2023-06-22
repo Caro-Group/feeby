@@ -27,6 +27,7 @@ assets:
         attributes: defer
       - id: sharer-js
         path: assets/js/sharer.js
+        position: bottom
       - id: loader-js
         path: assets/js/loader.js
       - id: lazy-js
