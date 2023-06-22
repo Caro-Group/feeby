@@ -26,6 +26,7 @@ assets:
         path: assets/js/swiper.js
       - id: sharer-js
         path: assets/js/sharer.js
+        position: bottom
       - id: loader-js
         path: assets/js/loader.js
       - id: lazy-js
