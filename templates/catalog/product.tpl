@@ -157,7 +157,7 @@
  
                    <hr class="border-gray-1000 block w-full"/>
                    
-                   <div class="fixed bottom-0 left-0 right-0 tablet:relative w-full tablet:w-auto px-5 tablet:px-0 bg-gray-default tablet:bg-transparent z-50">
+                   <div class="fixed bottom-0 left-0 right-0 tablet:relative w-full tablet:w-auto px-5 tablet:px-0 bg-gray-default tablet:bg-transparent z-50 desktop-wide:flex items-center gap-5">
                     {block name='product_prices'}
                         {assign var="perM" value=true}
                       {include file='catalog/_partials/product-prices.tpl'}
@@ -167,7 +167,7 @@
                       {include file='catalog/_partials/product-discounts.tpl'}
                     {/block}
 
-                    <div class="{if isset($productConfigurable)}hidden{/if}">
+                    <div class="{if isset($productConfigurable)}hidden{/if} desktop-wide:w-full">
                     
                       {block name='product_add_to_cart'}
                         {include file='catalog/_partials/product-add-to-cart.tpl'}
