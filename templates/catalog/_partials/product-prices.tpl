@@ -33,13 +33,16 @@
       {/if}
     {/block}
 
-    <div class="flex flex-row items-baseline">
+    <div class="items-baseline"> 
 
       {block name='product_price'}
         <div
-          class="font-medium leading-none product-price text-[25px] tablet:text-[35px] mr-[10px] {if $product.has_discount}text-main{else}text-[#232322]{/if} {if $product.has_discount}has-discount{/if}"
-          itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-          <link itemprop="availability" href="{$product.seo_availability}" />
+          class="font-medium leading-none product-price text-[25px] tablet:text-[35px] mr-[10px] text-main-dark {if $product.has_discount}has-discount{/if}"
+          itemprop="offers"
+          itemscope
+          itemtype="https://schema.org/Offer"
+        >
+          <link itemprop="availability" href="{$product.seo_availability}"/>
           <meta itemprop="priceCurrency" content="{$currency.iso_code}">
 
           <div class="current-price">
