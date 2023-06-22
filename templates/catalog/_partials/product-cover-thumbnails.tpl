@@ -27,7 +27,7 @@
  {block name='product_cover_thumbnails'}
    {block name='product_cover'}
      {if $product.default_image}
-       <div class="border-2 border-solid rounded-[5px] swiper product-cover mb-0 overflow-hidden" data-swiper-product>
+       <div class="group border-2 border-solid rounded-[5px] swiper product-cover mb-0 overflow-hidden" data-swiper-product>
        {foreach from=$groups item=$attribute}
          {if $attribute["group_name"] == "Typ"}
            {foreach from=$attribute["attributes"] item=$item}
@@ -84,6 +84,15 @@
          <div data-zoom-container class="absolute top-0 left-0 w-full h-full z-10" data-zoom-image="{$image.bySize.large_default.url}"></div>
          {break}
          {/foreach}
+
+         <div class="hidden tablet:block absolute bottom-10 right-10 z-10 pointer-events-none">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle class="stroke-gray-3000 group-hover:stroke-main-dark transition duration-200" cx="20" cy="20" r="19" stroke-width="2"/>
+            <rect class="fill-gray-3000 group-hover:fill-main-dark transition duration-200" x="10" y="19" width="20" height="2" />
+            <rect class="fill-gray-3000 group-hover:fill-main-dark transition duration-200" x="21" y="10" width="20" height="2" transform="rotate(90 21 10)"/>
+          </svg>
+         </div>
+         
          <div class="layer hidden-sm-down" data-toggle="modal" data-target="#product-modal">
            <i class="material-icons zoom-in">&#xE8FF;</i>
          </div>
