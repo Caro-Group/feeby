@@ -18,16 +18,10 @@ p {
 
 @keyframes expand {
   from {
-    opacity: 0;
-    margin: 0 !important;
     max-height: 0px;
-    @apply !py-0
   }
   to {
-    opacity: 1;
-    margin: 40px 0 20px 0 !important;
     max-height: 400px;
-    @apply py-5 tablet:py-[30px]  
   }
 }
 
