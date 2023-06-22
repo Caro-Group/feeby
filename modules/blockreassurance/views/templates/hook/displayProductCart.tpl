@@ -1,8 +1,9 @@
 
 <div class="flex flex-wrap pb-11 tablet:pb-0 -mx-5 tablet:mx-0">
+{debug}
 {foreach from=$blocks item=$block key=$key}
-    <div class="flex items-center tablet:justify-center mt-7 tablet:mt-0 mx-auto w-1/2 tablet:w-full desktop-presta:w-1/2" >
-        <div class="flex flex-col tablet:flex-row items-center justify-start w-[200px] max-w-full" {if $block['type_link'] !== $LINK_TYPE_NONE && !empty($block['link'])} style="cursor:pointer;" onclick="window.open('{$block['link']}')"{/if} >
+    <div class="flex items-center tablet:justify-center mt-7 tablet:mt-0 mx-auto w-full desktop-presta:w-1/2" >
+        <div class="flex items-center justify-start w-[200px] max-w-full" {if $block['type_link'] !== $LINK_TYPE_NONE && !empty($block['link'])} style="cursor:pointer;" onclick="window.open('{$block['link']}')"{/if} >
             {if $block['icon'] != 'undefined'}
                 <span class="flex item-product items-center mr-[30px] tablet:mr-2">
                     {if $block['icon']}
