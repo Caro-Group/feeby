@@ -26,9 +26,6 @@
   {foreach from=$groups key=id_attribute_group item=group}
     {if !empty($group.attributes)}
 
-      {if $id_attribute_group eq 23 }
-        <div class="animate-[expand_0.3s_ease-in-out_forwards] overflow-hidden">
-      {/if}
       <div class="{if $group.group_name|strstr:"Rodzaj fototapety"}hidden{/if} clearfix product-variants-item flex flex-col items-start mb-5 {if $id_attribute_group eq 23 } mt-10 py-5 px-2.5 tablet:p-[30px] border-2 border-gray-2000 border-solid rounded-[5px] {/if}">
         <span class="block text-base text-gray-main text-lg leading-normal mb-[10px] font-medium">
           {if $id_attribute_group neq 21 }
@@ -54,9 +51,9 @@
             {foreach from=$group.attributes key=id_attribute item=group_attribute}
               <li class="input-container w-full {if $id_attribute_group eq 23 } mx-2.5 tablet:ml-0 tablet:mr-[35px] max-w-[80px] {else} mr-5 phone:max-w-[40%] tablet:max-w-[121px] tablet:aspect-ratio-[4/3] tablet:mr-5 desktop:max-w-[29%] {/if} ">
                 <label aria-label="{$group_attribute.name}" class="flex flex-col cursor-pointer">
-                  <input class="input-color group" type="radio" data-product-attribute="{$id_attribute_group}" name="group[{$id_attribute_group}]" value="{$id_attribute}" title="{$group_attribute.name}"{if $group_attribute.selected} checked="checked"{/if}>
+                  <input class="input-color peer" type="radio" data-product-attribute="{$id_attribute_group}" name="group[{$id_attribute_group}]" value="{$id_attribute}" title="{$group_attribute.name}"{if $group_attribute.selected} checked="checked"{/if}>
                   <span
-                   class="{if $group_attribute.texture} color texture w-full  {if $id_attribute_group eq 23 } h-[54px] {else} h-20 tablet:h-[120px] {/if}  mx-auto tablet:mx-0 bg-no-repeat bg-cover rounded-[5px] border-2 border-solid border-gray-2000 hover:border-gray-3000 group-checked:border-main opacity-50 group-checked:opacity-100 transition shadow-none aspect-[4/3] overflow-hidden {elseif $group_attribute.html_color_code} color w-10 h-10 rounded-[5px] {/if}" {if $group_attribute.html_color_code} style="background-color: {$group_attribute.html_color_code}" {/if}>
+                   class="{if $group_attribute.texture} color texture w-full  {if $id_attribute_group eq 23 } h-[54px] {else} h-20 tablet:h-[120px]  opacity-50 peer-checked:opacity-100 aspect-[4/3] {/if}  mx-auto tablet:mx-0 bg-no-repeat bg-cover rounded-[5px] border-2 border-solid border-gray-2000 hover:border-gray-3000 peer-checked:border-main transition shadow-none overflow-hidden {elseif $group_attribute.html_color_code} color w-10 h-10 rounded-[5px] {/if}" {if $group_attribute.html_color_code} style="background-color: {$group_attribute.html_color_code}" {/if}>
                   {if $group_attribute.texture}
                     <picture>
                       <source srcset="{$group_attribute.texture|replace:".png":".webp"|replace:".jpg":".webp"|escape:'html':'UTF-8'}" type="image/webp">
@@ -136,9 +133,6 @@
         </div>
 
       </div>
-      {if $id_attribute_group eq 23 }
-        </div>
-      {/if}
     {/if}
   {/foreach}
 </div>
