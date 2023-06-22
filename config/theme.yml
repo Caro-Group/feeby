@@ -21,12 +21,12 @@ assets:
         path: assets/js/adding-to-cart-anim.js
       - id: product-configure-js
         path: assets/js/product-configure.js
-    all:
-      - id: swiper-js
-        path: assets/js/swiper.js
       - id: sharer-js
         path: assets/js/sharer.js
         position: bottom
+    all:
+      - id: swiper-js
+        path: assets/js/swiper.js
       - id: loader-js
         path: assets/js/loader.js
       - id: lazy-js
