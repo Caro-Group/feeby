@@ -44,6 +44,9 @@
         <button id="search_filters_toggler"
           class="border-0 px-5 text-left text-base text-normal bg-gray-1000 rounded-md text-main-dark text-left w-full"
           {l s='Filter' d='Shop.Theme.Actions'}
+          {if !empty($activeFilters)} 
+            ({$activeFilters|count})
+          {/if}
           <span class="-top-1 float-right pl-4 relative">
             <i class="material-icons text-xl ">add</i>
           </span>
@@ -57,7 +60,6 @@
           class="fixed top-0 left-0 w-screen h-screen bg-black/20 px-5 py-10 transition duration-300">
           <div class="bg-white w-full h-full px-5 rounded-[5px]">
             <div class="py-2.5 flex justify-between border-0 border-b border-solid border-gray-3000">
-              <span class="font-header">{l s='Filter' d='Shop.Theme.Actions'}</span>
               <button id="search_filters_modal_close"> close </button>
             </div>
             <div>
