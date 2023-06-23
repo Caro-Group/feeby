@@ -291,6 +291,10 @@ li[data-menu-type='url'] a {
   @apply opacity-0 pointer-events-none
 }
 
+.facet-container.collapsed .facet-icon{
+  @apply rotate-180;
+}
+
 
 .select-list.js-search-link.current {
   @apply font-normal;

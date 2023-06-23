@@ -12534,9 +12534,6 @@ body#checkout #gift_message {
     body #search_filters .facet {
       margin-bottom: 0;
       padding-bottom: 0; } }
-  body #search_filters .facet .collapse {
-    max-height: 210px;
-    overflow-y: scroll; }
   body #search_filters .facet .facet-label, body #search_filters .facet .custom-checkbox {
     margin-bottom: 0; }
     body #search_filters .facet .facet-label a, body #search_filters .facet .custom-checkbox a {
