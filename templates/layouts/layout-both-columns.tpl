@@ -78,7 +78,7 @@
             {block name="displayTopBothColumn"}{/block}
 
             {block name="left_column"}
-              <div id="left-column" class="sidebar col-xs-12 col-sm-12 tablet:w-2/10">
+              <div id="left-column" class="sidebar col-xs-12 col-sm-12 tablet:w-2/12">
                 {if $page.page_name == 'product'}
                   {hook h='displayLeftColumnProduct'}
                 {else}
