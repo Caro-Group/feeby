@@ -270,8 +270,8 @@ li[data-menu-type='url'] a {
   @apply pl-5 inline;
 }
 
-#search_filters .facet-label.active a {
-  @apply text-main font-normal;
+#search_filters .facet-label.active {
+  @apply border-main;
 }
 
 #search_filters .facet-label.active > span {
@@ -280,11 +280,6 @@ li[data-menu-type='url'] a {
 
 #search_filters .facet-label > span {
   @apply hidden;
-}
-
-#search_filters .title:not(.collapsed) p,
-#search_filters .title:not(.collapsed) i {
-  @apply text-main;
 }
 
 #search_filters_modal:not(.active){
