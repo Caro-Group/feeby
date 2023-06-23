@@ -32,7 +32,7 @@
 {/if}
 
 {block name='content_wrapper'}
-  <div id="content-wrapper" class="left-column col-xs-12 col-sm-12 {if isset($CATEGORY_LAYOUT_CLEAN)}col-md-12 col-lg-12{else}col-md-8 col-lg-9{/if}">
+  <div id="content-wrapper" class="left-column col-xs-12 col-sm-12 {if isset($CATEGORY_LAYOUT_CLEAN)}col-md-12 col-lg-12{else} tablet:w-2/3 {/if}">
     {hook h="displayContentWrapperTop"}
     {block name='content'}
       <p>Hello world! This is HTML5 Boilerplate.</p>
