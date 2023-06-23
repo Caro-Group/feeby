@@ -287,13 +287,10 @@ li[data-menu-type='url'] a {
   @apply text-main;
 }
 
-/* .swiper-filters .swiper-wrapper .swiper-slide{
-    @apply w-auto h-auto  tablet:h-full;
-} */
+#search_filters_modal:not(.active){
+  @apply opacity-0 pointer-events-none
+}
 
-/* #search_filters_wrapper.collapse.in #search_filters .swiper-filters{
-    @apply tablet:pb-[250px] tablet:mb-[-250px];
-} */
 
 .select-list.js-search-link.current {
   @apply font-normal;

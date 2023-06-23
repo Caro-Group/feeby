@@ -1674,3 +1674,21 @@ $(document).ready(function () {
       "border-0 border-b-[10px] tablet-medium:border-b-0 border-solid border-gray-1000"
     );
 });
+
+
+$(document).ready(function () {
+
+  const filterBtn = document.querySelector('#search_filters_toggler')
+  const filterModal = document.querySelector('#search_filters_modal')
+  const filterModalCloseBtn = document.querySelector('#search_filters_modal_close')
+
+  if (filterBtn && filterModal && filterModalCloseBtn) {
+    filterBtn.addEventListener('click',()=>{
+      filterModal.classList.add('active')
+    })
+  
+    filterModalCloseBtn.addEventListener('click',()=>{
+      filterModal.classList.remove('active')
+    })
+  }
+});
