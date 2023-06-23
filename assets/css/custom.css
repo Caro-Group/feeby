@@ -800,11 +800,6 @@ body#category #content.page-not-found .image-404:after {
   }
 }
 
-body #search_filters .facet > ul {
-  max-height: 210px;
-  overflow: auto;
-}
-
 @media (max-width: 767px) {
   #category .sidebar #search_filters {
     padding: 0;

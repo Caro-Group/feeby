@@ -39,16 +39,16 @@
                 {/if}
               {/foreach}
 
-              <div class="title cursor-pointer  border-0 border-b-2 tablet:border-b-0 border-gray-1000
-                border-solid py-5 tablet:py-0 justify-between tablet:justify-start group [&.collapsed_.facet-icon]:rotate-180"
-                data-parent="#search_filters" data-target="#facet_{$_expand_id}" data-toggle="collapse" {if !$_collapse}
-                  aria-expanded="true" {/if} {if $_expand_id == 'attribute_group_18'}style="display: none;" {/if}>
+              <div class="facet-container title cursor-pointer  border-0 border-b-2 tablet:border-b-0 border-gray-1000
+                border-solid py-5 tablet:py-0 justify-between tablet:justify-start group"
+                data-parent="#search_filters" data-target="#facet_{$_expand_id}" data-toggle="collapse" 
+                  aria-expanded="true" {if $_expand_id == 'attribute_group_18'}style="display: none;" {/if}>
                   <p class="facet-title m-0 text-base font-body font-normal group-hover:text-main transition">{$facet.label}
                   {if $activeCount>0}
                     <span class="tablet:hidden">({$activeCount})</span>
                   {/if} 
                   </p>
-                  <svg class="facet-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg class="facet-icon transition duration-300" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M10.6273 5L19.5 13.7596L19.5 13.7614L18.2454 15L9.99913 6.73966L1.7546 14.9982L0.5 13.7596L9.3727 5L10.6273 5Z" fill="#232322"/>
                   </svg>
                 </div>
@@ -56,7 +56,7 @@
                 {if in_array($facet.widgetType, ['radio', 'checkbox'])}
                   {block name='facet_item_other'}
                     <ul id="facet_{$_expand_id}"
-                      class="collapse !max-h-none tablet:max-w-[350px] tablet:min-w-[260px] tablet:-ml-[19px] tablet:mt-[13px] bg-gray-1000 rounded-b-md">
+                      class="collapse tablet:min-w-[260px] tablet:-ml-[19px] tablet:mt-[13px] bg-gray-1000 rounded-b-md">
                       {foreach from=$facet.filters key=filter_key item="filter"}
                         {if !$filter.displayed}
                           {continue}
