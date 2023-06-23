@@ -79,7 +79,7 @@
                 {elseif $smarty.foreach.products.iteration%$nbItemsPerLineMobile == 1} first-item-of-mobile-line{/if}
                 {if $smarty.foreach.products.iteration > ($smarty.foreach.products.total - $totModuloMobile)} last-mobile-line{/if}
                 ">
-                <div class="relative overflow-hidden mx-2.5 tablet:ml-0 tablet:mr-[15px]">
+                <div class="relative overflow-hidden mx-2.5 desktop-presta:ml-0 desktop-presta:mr-[15px]">
                 {block name='product_miniature'}
                     {if isset($productProfileDefault) && $productProfileDefault}
                         {* exits THEME_NAME/profiles/profile_name.tpl -> load template*}
