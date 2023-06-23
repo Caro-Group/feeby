@@ -56,7 +56,7 @@
                 {if in_array($facet.widgetType, ['radio', 'checkbox'])}
                   {block name='facet_item_other'}
                     <ul id="facet_{$_expand_id}"
-                      class="collapse tablet:min-w-[260px] tablet:-ml-[19px] tablet:mt-[13px] bg-gray-1000 rounded-b-md">
+                      class="flex flex-wrap gap-2.5">
                       {foreach from=$facet.filters key=filter_key item="filter"}
                         {if !$filter.displayed}
                           {continue}
@@ -78,8 +78,8 @@
                             </label>
                           </li>
                         {else}
-                          <li class="border-0 border-b border-solid border-white px-5 py-2">
-                            <label class="facet-label whitespace-nowrap {if $filter.active} active {/if}"
+                          <li class="">
+                            <label class="facet-label whitespace-nowrap !px-[25px] !py-4 border-2 border-solid border-gray-2000 {if $filter.active} active {/if}"
                               for="facet_input_{$_expand_id}_{$filter_key}">
                               {if $facet.multipleSelectionAllowed}
                                 <span class="custom-checkbox">
@@ -98,13 +98,11 @@
                                 <span class="custom-radio border-0 bg-transparent">
                                   <input id="facet_input_{$_expand_id}_{$filter_key}" data-search-url="{$filter.nextEncodedFacetsURL}"
                                     type="radio" name="filter {$facet.label}" {if $filter.active }checked{/if}>
-                                  <span {if !$js_enabled} class="ps-shown-by-js hidden" {/if}>
-                                    <i class="material-icons text-main -left-1 -top-[7px] text-lg relative">close</i></span>
                                 </span>
                               {/if}
 
                               <a href="{$filter.nextEncodedFacetsURL}"
-                                class="text-main-dark text-base font-light search-link js-search-link" rel="nofollow">
+                                class="text-main-dark text-base search-link js-search-link" rel="nofollow">
                                 {if $facet.type == 'feature'}
                                   {if $facet.properties.id_feature == '4'}
 
@@ -166,9 +164,6 @@
                                   {/if}
                                 {/if}
                                 {$filter.label}
-                                {if $filter.magnitude and $show_quantities}
-                                  <span class="magnitude text-sm">({$filter.magnitude})</span>
-                                {/if}
                               </a>
                             </label>
                           </li>

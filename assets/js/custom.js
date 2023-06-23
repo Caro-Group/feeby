@@ -865,10 +865,6 @@ function customSticky() {
     }
   }
 
-  $(document).on("click", function (event) {
-    $("#search_filters .facet .collapse, .fpp_searchers .filter .collapse").collapse("hide");
-  });
-
   $(document).ready(function () {
     const aboveFiltersContainer = '[data-container="additional-filters"]';
     const currentFilterContainer = '[data-target="#facet_attribute_group_18"]';
