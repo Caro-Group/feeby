@@ -44,9 +44,6 @@
         <button id="search_filters_toggler"
           class="border-0 px-5 text-left text-base text-normal bg-gray-1000 rounded-md text-main-dark text-left w-full"
           {l s='Filter' d='Shop.Theme.Actions'}
-          {if !empty($activeFilters)} 
-            ({$activeFilters|count})
-          {/if}
           <span class="-top-1 float-right pl-4 relative">
             <i class="material-icons text-xl ">add</i>
           </span>
