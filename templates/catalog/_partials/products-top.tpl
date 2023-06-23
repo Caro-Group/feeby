@@ -39,7 +39,7 @@
 
   <div class=" flex flex-wrap justify-between ">
     <div style="flex:0 0 auto;" class="hidden-md-up w-1/2 pr-[10px] order-1 flex justify-center ">
-      {if !empty($listing.rendered_facets) || $page.page_name == 'search'}
+      {if !empty($listing.rendered_facets)}
 
         <button id="search_filters_toggler"
           class="border-0 px-5 text-left text-base text-normal bg-gray-1000 rounded-md text-main-dark text-left w-full"
@@ -60,6 +60,7 @@
           class="fixed top-0 left-0 w-screen h-screen bg-black/20 px-5 py-10 transition duration-300">
           <div class="bg-white w-full h-full px-5 rounded-[5px]">
             <div class="py-2.5 flex justify-between border-0 border-b border-solid border-gray-3000">
+              <span class="font-header">{l s='Filter' d='Shop.Theme.Actions'}</span>
               <button id="search_filters_modal_close"> close </button>
             </div>
             <div>
@@ -70,14 +71,9 @@
       {/if}
     {/block}
 
-    {if $page.page_name == 'search'}
-      {hook h="displayWrapperTop"}
-      {* {hook h="filterProductsPro"} *}
-    {/if}
-
 
     <div
-      class="flex justify-center tablet:justify-end order-2 tablet:order-3 rounded-md w-1/2  pl-[10px] tablet:pl-0 z-30 tablet:bg-gray-1000 {if (isset($listing.rendered_facets) && $listing.rendered_facets) ||  $page.page_name == 'search'}  tablet:rounded-none tablet:rounded-r-md tablet:w-auto  {else} tablet:w-full {/if} ">
+      class="flex justify-center tablet:justify-end order-2 tablet:order-3 rounded-md w-1/2  pl-[10px] tablet:pl-0 z-30 tablet:bg-gray-1000 {if isset($listing.rendered_facets) && $listing.rendered_facets}  tablet:rounded-none tablet:rounded-r-md tablet:w-auto  {else} tablet:w-full {/if} ">
       <div class="sort-by-row w-full tablet:w-48">
         {block name='sort_by'}
           {include file='catalog/_partials/sort-orders.tpl' sort_orders=$listing.sort_orders}
@@ -85,13 +81,11 @@
       </div>
     </div>
 
-    {if $page.page_name !== 'search'}
-      {block name='product_list_active_filters'}
-        <div style="flex:1 1 auto;" class="active-search-wrapper collapse order-4 tablet:h-full tablet:block">
-          {$listing.rendered_active_filters nofilter}
-        </div>
-      {/block}
-    {/if}
+    {block name='product_list_active_filters'}
+      <div style="flex:1 1 auto;" class="active-search-wrapper collapse order-4 tablet:h-full tablet:block">
+        {$listing.rendered_active_filters nofilter}
+      </div>
+    {/block}
 
   </div>
 </div>
