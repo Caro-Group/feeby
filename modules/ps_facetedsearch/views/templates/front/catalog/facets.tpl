@@ -55,7 +55,8 @@
 
                 {if in_array($facet.widgetType, ['radio', 'checkbox'])}
                   {block name='facet_item_other'}
-                    <ul id="facet_{$_expand_id}"
+                    <div id="facet_{$_expand_id}" class="overflow-hidden">
+                    <ul
                       class="flex flex-wrap gap-2.5">
                       {foreach from=$facet.filters key=filter_key item="filter"}
                         {if !$filter.displayed}
@@ -78,8 +79,8 @@
                             </label>
                           </li>
                         {else}
-                          <li class="">
-                            <label class="facet-label whitespace-nowrap !px-[25px] !py-4 border-2 border-solid border-gray-2000 {if $filter.active} active {/if}"
+                          <li class="max-w-full">
+                            <label class="facet-label whitespace-nowrap !px-[25px] !py-4 border-2 border-solid border-gray-2000 rounded-[5px] {if $filter.active} active {/if}"
                               for="facet_input_{$_expand_id}_{$filter_key}">
                               {if $facet.multipleSelectionAllowed}
                                 <span class="custom-checkbox">
@@ -89,9 +90,6 @@
                                     <i class="material-icons text-main -left-1 -top-[7px] text-lg relative">close</i>
                                   {elseif isset($filter.properties.texture)}
                                     <i class="material-icons text-main -left-1 -top-[7px] text-lg relative">close</i>
-                                  {else}
-                                    <span {if !$js_enabled} class="ps-shown-by-js" {/if}><i
-                                        class="material-icons text-main -left-1 -top-[7px] text-lg relative">close</i></span>
                                   {/if}
                                 </span>
                               {else}
@@ -170,6 +168,7 @@
                         {/if}
                       {/foreach}
                     </ul>
+                    </div>
                   {/block}
 
                 {elseif $facet.widgetType == 'dropdown'}
