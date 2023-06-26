@@ -22,7 +22,7 @@
       <div class="flex flex-col tablet:flex-wrap tablet:flex-row w-full">
         {foreach from=$displayedFacets item="facet"}
           <div class="tablet:pr-5 tablet:py-2.5">
-            <section class="facet clearfix  border-0 border-b-2 tablet:border-b-0 border-gray-1000">
+            <section class="facet clearfix  border-0 border-b-2 tablet:border-b-0 border-solid border-gray-1000">
               {if isset($facet.properties["id_attribute_group"])}
                 {assign var=_expand_id value="`$facet.type`_`$facet.properties['id_attribute_group']`"}
               {else if isset($facet.properties["id_feature"])}
@@ -39,8 +39,7 @@
                 {/if}
               {/foreach}
 
-              <div class="facet-container title cursor-pointer
-                border-solid py-5 tablet:py-0 justify-between tablet:justify-start group"
+              <div class="facet-container title cursor-pointer py-5 tablet:py-0 justify-between tablet:justify-start group collapse in"
                 data-target="#facet_{$_expand_id}" data-toggle="collapse" 
                   aria-expanded="true" {if $_expand_id == 'attribute_group_18'}style="display: none;" {/if}>
                   <p class="facet-title m-0 text-base font-body font-normal group-hover:text-main transition">{$facet.label}
@@ -55,9 +54,9 @@
 
                 {if in_array($facet.widgetType, ['radio', 'checkbox'])}
                   {block name='facet_item_other'}
-                    <div id="facet_{$_expand_id}" class="overflow-hidden">
+                    <div id="facet_{$_expand_id}" class="overflow-hidden collapse in">
                     <ul
-                      class="flex flex-wrap gap-2.5 pb-5">
+                      class="flex flex-wrap gap-2.5 pb-[30px]">
                       {foreach from=$facet.filters key=filter_key item="filter"}
                         {if !$filter.displayed}
                           {continue}
