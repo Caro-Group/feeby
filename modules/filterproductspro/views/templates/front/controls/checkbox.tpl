@@ -29,7 +29,7 @@
         {foreach $filter.options item=option}
             {if $option}
                 <li>
-                    <label for="option_{$option.id_option|intval}" class="whitespace-nowrap w-full cursor-pointer !mb-0 border-2 border-solid {if $option.selected } border-main {else} border-gray-2000 {/if} hover:border-gray-main rounded-[5px] transition duration-200 !p-[9px] tablet:!p-[13px] ">
+                    <label for="option_{$option.id_option|intval}" class="whitespace-nowrap !flex w-full cursor-pointer !mb-0 border-2 border-solid {if $option.selected } border-main {else} border-gray-2000 {/if} hover:border-gray-main rounded-[5px] transition duration-200 !p-[9px] tablet:!p-[13px] ">
                         <input
                             id="option_{$option.id_option|intval}"
                             name="filter_{$filter.id_filter|intval}"
@@ -52,7 +52,7 @@
 
 
                         {if $filter.id_filter == 18}
-                        <div class="bg-gray-2000 clearfix float-left w-[25px] h-[25px] mr-2.5 rounded border border-solid" style="
+                        <div class="shrink-0 bg-gray-2000 clearfix float-left w-[25px] h-[25px] mr-2.5 rounded border border-solid" style="
                           {if $option.id_option == 796}
                             background-color: #FEF3DE;
                             border-color: #FEF3DE;
@@ -115,7 +115,7 @@
                                 <span class="hidden">{$option.name|escape:'htmlall':'UTF-8'}</span>
                             {/if}
                         {else}
-                        <span class="block text-ellipsis overflow-hidden text-main-dark {if $filter.id_filter == 18} w-[calc(100%_-_35px)] {else} w-full {/if}">{$option.name|escape:'htmlall':'UTF-8'}</span>
+                        <span class="block text-ellipsis overflow-hidden text-main-dark w-full">{$option.name|escape:'htmlall':'UTF-8'}</span>
                         {/if}
                         {if $params_back.CONFIG_VARS.FPP_SHOW_TOTAL_PRODUCTS_OPTION eq 1 and $option.id_option != 0}
                             <span>({$option.total_products|intval})</span>
