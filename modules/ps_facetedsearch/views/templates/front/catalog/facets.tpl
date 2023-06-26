@@ -72,7 +72,7 @@
                               <a href="{$filter.nextEncodedFacetsURL}" class="flex flex-col js-search-link" rel="nofollow">
                                 <img class="object-cover w-[150px] h-24 tablet:w-44 tablet:h-28 " src="{$filter.properties.texture}" />
                                 <h3
-                                  class="{if $filter.active} text-main {else} text-main-dark {/if} group-hover:text-main transition duration-200 text-base tablet:text-lg font-normal font-body ml-[10px] tablet:ml-5 my-3">
+                                  class="text-main-dark group-hover:text-main transition duration-200 text-base tablet:text-lg font-normal font-body ml-[10px] tablet:ml-5 my-3">
                                   {$filter.label}</h3>
                               </a>
                             </label>

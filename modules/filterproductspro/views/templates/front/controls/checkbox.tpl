@@ -25,17 +25,11 @@
 
 <div id="filter-options_{$filter.id_filter|intval}" class="overflow-hidden collapse in"
     aria-expanded="true" >
-    <div class="flex flex-wrap gap-2.5 pb-[30px]">
+    <ul class="flex flex-wrap gap-2.5 pb-[30px]">
         {foreach $filter.options item=option}
             {if $option}
-                <div class="checkbox ">
-                    <label for="option_{$option.id_option|intval}" class="whitespace-nowrap border-2 border-solid border-gray-2000 rounded-[5px] checked:border-main
-                    {if $filter.id_filter == 18}
-                      !p-2.5 
-                    {else}
-                      !p-[15px]  
-                    {/if}
-                    ">
+                <li>
+                    <label for="option_{$option.id_option|intval}" class="whitespace-nowrap border-2 border-solid {if $filter.active} border-main {else} border-gray-2000 {/if} hover:border-gray-main rounded-[5px] transition duration-200 !p-[15px] tablet:!p-2.5 ">
                         <input
                             id="option_{$option.id_option|intval}"
                             name="filter_{$filter.id_filter|intval}"
@@ -54,10 +48,9 @@
                                 class="hidden peer {if $filter.type eq 5 and $option.color and ($option.color.color or $option.color.texture)} d-none {/if}"
                         />
 
-                        <i class="material-icons hidden !visible peer-checked:!inline-block text-main -left-1 -top-[3px] mr-2.5 text-lg relative">close</i>
 
                         {if $filter.id_filter == 18}
-                        <div class="bg-gray-2000 clearfix float-left w-[25px] h-[25px] mr-6 rounded border border-solid" style="
+                        <div class="bg-gray-2000 clearfix float-left w-[25px] h-[25px] mr-2.5 rounded border border-solid" style="
                           {if $option.id_option == 796}
                             background-color: #FEF3DE;
                             border-color: #FEF3DE;
@@ -126,8 +119,8 @@
                             <span>({$option.total_products|intval})</span>
                         {/if}
                     </label>
-                </div>
+                </li>
             {/if}
         {/foreach}
-    </div>
+    </ul>
 </div>
