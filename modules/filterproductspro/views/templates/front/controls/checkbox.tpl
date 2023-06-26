@@ -29,7 +29,7 @@
         {foreach $filter.options item=option}
             {if $option}
                 <li>
-                    <label for="option_{$option.id_option|intval}" class="whitespace-nowrap !flex w-full cursor-pointer !mb-0 border-2 border-solid {if $option.selected } border-main {else} border-gray-2000 {/if} hover:border-gray-main rounded-[5px] transition duration-200 !p-[9px] tablet:!p-[13px] ">
+                    <label for="option_{$option.id_option|intval}" class="whitespace-nowrap !flex w-full cursor-pointer !mb-0 border-2 border-solid {if $option.selected } border-main {else} border-gray-2000 {/if} hover:border-gray-3000 rounded-[5px] transition duration-200 !p-[9px] tablet:!p-[13px] ">
                         <input
                             id="option_{$option.id_option|intval}"
                             name="filter_{$filter.id_filter|intval}"
