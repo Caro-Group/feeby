@@ -1627,10 +1627,19 @@ $(document).ready(function () {
 
 $(document).ready(function () {
 
+  initFiltersModalToggle()
+
+  prestashop.on("updateFacets", () => {
+    initFiltersModalToggle()
+  });
+});
+
+function initFiltersModalToggle(){
+
   const filterBtn = document.querySelector('#search_filters_toggler')
   const filterModal = document.querySelector('#search_filters_modal')
   const filterModalCloseBtn = document.querySelector('#search_filters_modal_close')
-
+  
   if (filterBtn && filterModal && filterModalCloseBtn) {
     filterBtn.addEventListener('click',()=>{
       filterModal.classList.add('active')
@@ -1640,4 +1649,4 @@ $(document).ready(function () {
       filterModal.classList.remove('active')
     })
   }
-});
+}
