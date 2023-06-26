@@ -818,36 +818,6 @@ function customSticky() {
 }
 
 (function ($) {
-  $(function () {
-    var $myGroup = $("#search_filters .facet");
-    $myGroup.on("show.bs.collapse", ".collapse", function () {
-      $myGroup.find(".collapse.in").collapse("hide");
-    });
-
-    bindFilterCollapses();
-
-    prestashop.on("updateProductList", () => {
-      bindFilterCollapses();
-    });
-  });
-
-  function bindFilterCollapses() {
-    if ($("#search_filters_wrapper").length) {
-      if ($(window).width() > 768) {
-        $(".active-search-wrapper").collapse("show");
-      } else {
-        $(".active-search-wrapper").addClass("collapse");
-      }
-
-      $("#search_filters_wrapper").on("show.bs.collapse", function () {
-        $(".active-search-wrapper").collapse("show");
-      });
-
-      $("#search_filters_wrapper").on("hide.bs.collapse", function () {
-        $(".active-search-wrapper").collapse("hide");
-      });
-    }
-  }
 
   $(document).ready(function () {
     const aboveFiltersContainer = '[data-container="additional-filters"]';
