@@ -28,8 +28,8 @@
     <ul class="filter-options_container flex flex-wrap gap-2.5 pb-[30px]">
         {foreach $filter.options item=option}
             {if $option}
-                <li>
-                    <label for="option_{$option.id_option|intval}" class="whitespace-nowrap !flex w-full cursor-pointer !mb-0 border-2 border-solid {if $option.selected } border-main {else} border-gray-2000 {/if} hover:border-gray-3000 rounded-[5px] transition duration-200 !p-[9px] tablet:!p-[13px] ">
+                <li class="max-w-full">
+                    <label for="option_{$option.id_option|intval}" class="whitespace-nowrap !flex items-center w-full cursor-pointer !mb-0 border-2 border-solid {if $option.selected } border-main {else} border-gray-2000 {/if} hover:border-gray-3000 rounded-[5px] transition duration-200 !p-[9px] tablet:!p-[13px] ">
                         <input
                             id="option_{$option.id_option|intval}"
                             name="filter_{$filter.id_filter|intval}"
@@ -113,7 +113,7 @@
                                 <span class="hidden">{$option.name|escape:'htmlall':'UTF-8'}</span>
                             {/if}
                         {else}
-                        <span class="block text-ellipsis overflow-hidden text-main-dark w-full">{$option.name|escape:'htmlall':'UTF-8'}</span>
+                        <span class="block text-ellipsis overflow-hidden text-main-dark w-full font-body font-normal">{$option.name|escape:'htmlall':'UTF-8'}</span>
                         {/if}
                         {if $params_back.CONFIG_VARS.FPP_SHOW_TOTAL_PRODUCTS_OPTION eq 1 and $option.id_option != 0}
                             <span>({$option.total_products|intval})</span>

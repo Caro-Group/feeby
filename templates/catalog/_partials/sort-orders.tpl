@@ -24,7 +24,7 @@
  *}
 <div class="products-sort-order w-full dropdown select-title text-base">
   <button
-    class="select-title w-full text-base bg-transparent px-5 py-2 tablet:py-2.5 text-left !flex justify-between font-light text-main-dark border-gray-2000 hover:border-gray-3000 rounded-md border-solid border-2"
+    class="select-title w-full text-base bg-transparent px-5 py-2 tablet:py-2.5 text-left !flex justify-between font-light text-main-dark border-gray-2000 hover:border-gray-3000 rounded-md border-solid !border-2"
     rel="nofollow"
     data-toggle="dropdown"
     aria-haspopup="true"
