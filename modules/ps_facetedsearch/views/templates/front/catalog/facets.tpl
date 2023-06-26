@@ -22,7 +22,7 @@
       <div class="flex flex-col tablet:flex-wrap tablet:flex-row w-full">
         {foreach from=$displayedFacets item="facet"}
           <div class="tablet:pr-5 tablet:py-2.5">
-            <section class="facet clearfix">
+            <section class="facet clearfix  border-0 border-b-2 tablet:border-b-0 border-gray-1000">
               {if isset($facet.properties["id_attribute_group"])}
                 {assign var=_expand_id value="`$facet.type`_`$facet.properties['id_attribute_group']`"}
               {else if isset($facet.properties["id_feature"])}
@@ -39,9 +39,9 @@
                 {/if}
               {/foreach}
 
-              <div class="facet-container title cursor-pointer  border-0 border-b-2 tablet:border-b-0 border-gray-1000
+              <div class="facet-container title cursor-pointer
                 border-solid py-5 tablet:py-0 justify-between tablet:justify-start group"
-                data-parent="#search_filters" data-target="#facet_{$_expand_id}" data-toggle="collapse" 
+                data-target="#facet_{$_expand_id}" data-toggle="collapse" 
                   aria-expanded="true" {if $_expand_id == 'attribute_group_18'}style="display: none;" {/if}>
                   <p class="facet-title m-0 text-base font-body font-normal group-hover:text-main transition">{$facet.label}
                   {if $activeCount>0}
@@ -57,7 +57,7 @@
                   {block name='facet_item_other'}
                     <div id="facet_{$_expand_id}" class="overflow-hidden">
                     <ul
-                      class="flex flex-wrap gap-2.5">
+                      class="flex flex-wrap gap-2.5 pb-5">
                       {foreach from=$facet.filters key=filter_key item="filter"}
                         {if !$filter.displayed}
                           {continue}
@@ -80,7 +80,14 @@
                           </li>
                         {else}
                           <li class="max-w-full">
-                            <label class="facet-label whitespace-nowrap !px-[25px] !py-4 border-2 border-solid border-gray-2000 rounded-[5px] {if $filter.active} active {/if}"
+                            <label class="facet-label whitespace-nowrap border-2 border-solid border-gray-2000 rounded-[5px] 
+                              {if $filter.active} active {/if}
+                              {if $facet.type == 'feature' && $facet.properties.id_feature == '4'}
+                                !p-2.5 
+                              {else}
+                                !p-[15px]  
+                              {/if}
+                              "
                               for="facet_input_{$_expand_id}_{$filter_key}">
                               {if $facet.multipleSelectionAllowed}
                                 <span class="custom-checkbox">
@@ -100,11 +107,11 @@
                               {/if}
 
                               <a href="{$filter.nextEncodedFacetsURL}"
-                                class="text-main-dark text-base search-link js-search-link" rel="nofollow">
+                                class="!w-full text-main-dark text-base search-link js-search-link" rel="nofollow">
                                 {if $facet.type == 'feature'}
                                   {if $facet.properties.id_feature == '4'}
 
-                                    <div class="bg-gray-2000 clearfix float-left w-6 h-6 mr-6 rounded border border-solid" style="{if $filter.value == 36}
+                                    <div class="bg-gray-2000 clearfix float-left w-[25px] h-[25px] mr-2.5 rounded border border-solid" style="{if $filter.value == 36}
                                   background-color: #FEF3DE;
                                   border-color: #FEF3DE;
                                 {elseif $filter.value == 37}
