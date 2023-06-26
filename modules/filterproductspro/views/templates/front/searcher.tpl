@@ -78,7 +78,7 @@
                             </div>
                         {/if}
                         <div class="filter-content">
-                            <div class="row">
+                            <div class="flex flex-col">
                                 {assign var='col' value=$searcher.columns_break}
 
                                 {foreach from=$searcher.filters item=filter}

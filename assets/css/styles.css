@@ -286,7 +286,8 @@ li[data-menu-type='url'] a {
   @apply opacity-0 pointer-events-none
 }
 
-.facet-container.collapsed .facet-icon{
+.facet-container.collapsed .facet-icon,
+.filter-name.collapsed .facet-icon{
   @apply rotate-180;
 }
 
