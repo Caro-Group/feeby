@@ -1647,10 +1647,12 @@ function initFiltersModalToggle(){
   if (filterBtn && filterModal && filterModalCloseBtn) {
     filterBtn.addEventListener('click',()=>{
       filterModal.classList.add('active')
+      filterBtn.classList.add('!border-main')
     })
   
     filterModalCloseBtn.addEventListener('click',()=>{
       filterModal.classList.remove('active')
+      filterBtn.classList.remove('!border-main')
     })
   }
 }
