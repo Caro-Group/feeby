@@ -115,7 +115,7 @@
                                 <span class="hidden">{$option.name|escape:'htmlall':'UTF-8'}</span>
                             {/if}
                         {else}
-                        <span class="block text-ellipsis overflow-hidden text-main-dark w-full font-body font-light">{$option.name|escape:'htmlall':'UTF-8'}</span>
+                        <span class="block text-ellipsis overflow-hidden text-main-dark w-full font-body font-normal">{$option.name|escape:'htmlall':'UTF-8'}</span>
                         {/if}
                         {if $params_back.CONFIG_VARS.FPP_SHOW_TOTAL_PRODUCTS_OPTION eq 1 and $option.id_option != 0}
                             <span>({$option.total_products|intval})</span>
