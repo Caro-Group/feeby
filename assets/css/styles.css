@@ -282,6 +282,10 @@ li[data-menu-type='url'] a {
   @apply hidden;
 }
 
+ul.filter-options_container li label span{
+  @apply w-full text-ellipsis overflow-hidden block text-main-dark
+}
+
 #search_filters_modal:not(.active){
   @apply opacity-0 pointer-events-none
 }
