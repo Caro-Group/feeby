@@ -4265,9 +4265,6 @@
       (0, a.default)("#search_filters").replaceWith(t.rendered_facets),
         (0, a.default)("#js-active-search-filters").replaceWith(
           t.rendered_active_filters
-        ),
-        (0, a.default)("#js-product-list-top").replaceWith(
-          t.rendered_products_top
         );
 
       //if (window.innerWidth >= 768) {
