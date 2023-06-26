@@ -19,7 +19,7 @@
 {assign var=activeCount value=0}
 
 <div id="filter_{$filter.id_filter|intval}"
-    class="relative"
+    class="relative border-0 border-b tablet:border-b-0 border-gray-2000 border-solid"
     data-id_filter="{$filter.id_filter|intval}"
     data-control_type="{$filter.control|intval}"
     data-filter_name="{$filter.name.{$params_back.id_lang|intval}}"
@@ -32,17 +32,14 @@
                 {assign var=activeCount value=$activeCount+1}
             {/if}
         {/foreach}
-        <div class="filter-name flex cursor-pointer px-5 tablet:px-0 border-0 border-b-2 tablet:border-b-0 border-gray-1000 border-solid py-5 tablet:py-0 justify-between tablet:justify-start group collapsed"
-        data-parent="#searcher_{$searcher.id_searcher|intval}" data-target="#filter-options_{$filter.id_filter|intval}" data-toggle="collapse" aria-expanded="false">
+        <div class="filter-name flex cursor-pointer tablet:px-0  py-5 tablet:py-0 justify-between tablet:justify-start group collapse in"
+        data-parent="#searcher_{$searcher.id_searcher|intval}" data-target="#filter-options_{$filter.id_filter|intval}" data-toggle="collapse" aria-expanded="true">
             <p class="!m-0 text-base font-body font-normal {if $activeCount>0} text-main {else} text-main-dark {/if} group-hover:text-main transition">
                 {$filter.name[$params_back.id_lang|intval]}
-                {if $activeCount>0}
-                    <span class="tablet:hidden">({$activeCount})</span>
-                {/if} 
             </p>
-            <span class="pl-4 -top-[2px] relative">
-                <i class="material-icons text-xl {if $activeCount>0} text-main {else} text-main-dark {/if} group-hover:text-main transition">add</i>
-            </span>
+            <svg class="facet-icon transition duration-300" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.6273 5L19.5 13.7596L19.5 13.7614L18.2454 15L9.99913 6.73966L1.7546 14.9982L0.5 13.7596L9.3727 5L10.6273 5Z" fill="#232322"/>
+            </svg>
         </div>
     {/if}
     {if $params_back.CONFIG_VARS.FPP_FILTER_SEARCH_BOX and ($filter.control eq $params_back.control_types.CHECK or $filter.control eq $params_back.control_types.RADIO)}

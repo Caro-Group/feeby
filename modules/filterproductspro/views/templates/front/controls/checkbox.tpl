@@ -23,14 +23,19 @@
 {assign var='first_option' value=array_shift($filter.options)}
 {assign var='no_use' value=array_unshift($filter.options, $first_option)}
 
-<div id="filter-options_{$filter.id_filter|intval}" class="column-{$filter.columns|intval} filter-options-content{if $first_option.color and !$first_option.color.color} two-column-mobile{/if}
-    collapse tablet:!absolute z-20 tablet:max-w-[350px] tablet:min-w-[260px] tablet:-ml-[19px] tablet:mt-[13px] bg-gray-1000 rounded-b-md max-h-[210px]"
-    aria-expanded="false" >
-    <div class="content-to-scroll">
+<div id="filter-options_{$filter.id_filter|intval}" class="overflow-hidden collapse in"
+    aria-expanded="true" >
+    <div class="flex flex-wrap gap-2.5 pb-[30px]">
         {foreach $filter.options item=option}
             {if $option}
-                <div class="checkbox border-0 border-b border-solid border-white !pl-0 !m-0">
-                    <label for="option_{$option.id_option|intval}" class="px-5 py-4 w-full group !flex items-center">
+                <div class="checkbox ">
+                    <label for="option_{$option.id_option|intval}" class="whitespace-nowrap border-2 border-solid border-gray-2000 rounded-[5px] checked:border-main
+                    {if $filter.id_filter == 18}
+                      !p-2.5 
+                    {else}
+                      !p-[15px]  
+                    {/if}
+                    ">
                         <input
                             id="option_{$option.id_option|intval}"
                             name="filter_{$filter.id_filter|intval}"
@@ -51,8 +56,8 @@
 
                         <i class="material-icons hidden !visible peer-checked:!inline-block text-main -left-1 -top-[3px] mr-2.5 text-lg relative">close</i>
 
-                        {if $filter.id_filter == 16}
-                        <div class="bg-gray-2000 clearfix float-left w-6 h-6 mr-6 rounded border border-solid" style="
+                        {if $filter.id_filter == 18}
+                        <div class="bg-gray-2000 clearfix float-left w-[25px] h-[25px] mr-6 rounded border border-solid" style="
                           {if $option.id_option == 796}
                             background-color: #FEF3DE;
                             border-color: #FEF3DE;

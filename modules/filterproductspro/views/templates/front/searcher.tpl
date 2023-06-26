@@ -17,10 +17,6 @@
  * @category  Module
 *}
 
-<div id="search_filters_wrapper"
-    class=" order-3 tablet:order-2 tablet:rounded-l-md tablet:bg-gray-1000 w-full tablet:w-filter collapse tablet:block"
-    aria-expanded="false" style="">
-    <div class="tablet:block tablet:h-full relative">
         <div class='fpp_searchers'>
             {foreach from=$params_back.searchers item=searcher}
                 {if $searcher.filters|count > 0}
@@ -52,13 +48,13 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="searcher-body tablet:pl-5">
+                                <div class="searcher-body">
                                     <div class="filter-content">
-                                        <div class="row flex flex-wrap">
+                                        <div class="flex flex-col">
                                             {assign var='col' value=$searcher.columns_break}
 
                                             {foreach from=$searcher.filters item=filter}
-                                                <div class="filter w-full tablet:w-auto tablet:pr-5 tablet:py-2.5">
+                                                <div class="filter w-full">
                                                     {include file='./filter.tpl' filter=$filter}
                                                 </div>
                                             {/foreach}
@@ -99,9 +95,7 @@
                 {/if}
             {/foreach}
         </div>
-    </div>
-</div>
-
+        
 {assign var=activeCount value=0}
 
 <div style="flex:1 1 auto;"
