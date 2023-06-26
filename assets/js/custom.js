@@ -1636,9 +1636,6 @@ $(document).ready(function () {
 
   initFiltersModalToggle()
 
-  prestashop.on("updateFacets", () => {
-    initFiltersModalToggle()
-  });
 });
 
 function initFiltersModalToggle(){

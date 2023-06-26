@@ -4271,10 +4271,6 @@
           (0, a.default)(t.rendered_products_top).find('.sort-by-row')
         );
 
-        }else{
-          (0, a.default)("#js-product-list-top").replaceWith(
-            t.rendered_products_top
-          );
         }
 
       //if (window.innerWidth >= 768) {
