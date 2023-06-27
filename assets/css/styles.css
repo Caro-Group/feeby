@@ -309,6 +309,10 @@ li[data-menu-type='url'] a {
   @apply opacity-0 pointer-events-none
 }
 
+#search_filters_modal:not(.active) #search_filters_modal_inner{
+  @apply translate-x-full
+}
+
 .facet-container.collapsed .facet-icon,
 .filter-name.collapsed .facet-icon{
   @apply rotate-180;

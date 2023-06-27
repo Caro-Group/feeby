@@ -38,14 +38,14 @@
   {/if}
 
   <div class=" flex flex-wrap justify-between ">
-    <div style="flex:0 0 auto;" class="hidden-md-up w-1/2 pr-[10px] order-1 flex justify-center ">
+    <div style="flex:0 0 auto;" class="w-1/2 tablet:w-[232px] order-1 flex justify-center ">
       {if !empty($listing.rendered_facets)}
 
         <button id="search_filters_toggler"
-          class="cursor-pointer border-2 border-solid border-gray-2000 px-5 text-left text-base text-normal bg-gray-1000 hover:border-gray-3000 rounded-md text-main-dark text-left w-full transition duration-200" >
+          class="cursor-pointer border-2 border-solid border-gray-2000 px-5 text-left text-base tablet:text-lg uppercase text-normal bg-gray-1000 hover:border-gray-3000 rounded-md text-main-dark text-left w-full transition duration-200" >
           {l s='Filter' d='Shop.Theme.Actions'}
-          <span class="top-[3px] float-right pl-4 relative">
-            <svg width="18" height="18" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <span class="top-[3px] float-right pl-4 relative ">
+            <svg class="tablet:w-[25px] tablet:h-[25px]" width="18" height="18" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" clip-rule="evenodd" d="M15.1507 0C15.5448 0 15.8642 0.319412 15.8642 0.71342V6.20261C15.8642 6.59661 15.5448 6.91602 15.1507 6.91602C14.7567 6.91602 14.4373 6.59661 14.4373 6.20261V4.13424H0.713464C0.319432 4.13424 0 3.81484 0 3.42082C0 3.02682 0.319432 2.7074 0.713464 2.7074H14.4373V0.71342C14.4373 0.319412 14.7567 0 15.1507 0ZM22.6568 3.41391C22.6607 3.8079 22.3443 4.13039 21.9504 4.13422L17.9434 4.17143C17.5495 4.17525 17.2269 3.85895 17.2231 3.46496C17.2193 3.07096 17.5356 2.74848 17.9296 2.74465L21.9365 2.70744C22.3306 2.70362 22.653 3.01992 22.6568 3.41391ZM9.4478 8.18574C9.84184 8.18574 10.1613 8.50515 10.1613 8.89916V11.6057V11.6073V14.3883C10.1613 14.7823 9.84184 15.1018 9.4478 15.1018C9.05377 15.1018 8.73433 14.7823 8.73433 14.3883V12.32H0.713464C0.319432 12.32 0 12.0006 0 11.6066C0 11.2126 0.319432 10.8932 0.713464 10.8932H8.73433V8.89916C8.73433 8.50515 9.05377 8.18574 9.4478 8.18574ZM11.548 11.6066C11.548 11.2126 11.8675 10.8932 12.2615 10.8932H21.9435C22.3375 10.8932 22.6569 11.2126 22.6569 11.6066C22.6569 12.0006 22.3375 12.32 21.9435 12.32H12.2615C11.8675 12.32 11.548 12.0006 11.548 11.6066ZM13.2279 16.084C13.622 16.084 13.9414 16.4034 13.9414 16.7974V22.2866C13.9414 22.6806 13.622 23 13.2279 23C12.8339 23 12.5145 22.6806 12.5145 22.2866V20.2182H1.05647C0.662433 20.2182 0.34301 19.8988 0.34301 19.5048C0.34301 19.1108 0.662433 18.7914 1.05647 18.7914H12.5145V16.7974C12.5145 16.4034 12.8339 16.084 13.2279 16.084ZM23 19.5004C23.0024 19.8944 22.6849 20.2158 22.2909 20.2182L16.0575 20.2556C15.6635 20.2581 15.3422 19.9406 15.3397 19.5466C15.3373 19.1526 15.6548 18.8313 16.0488 18.8288L22.2821 18.7914C22.6762 18.789 22.9975 19.1064 23 19.5004Z" fill="black"/>
             </svg>         
           </span>
@@ -55,8 +55,8 @@
     {block name='product_list_active_filters'}
       {if isset($listing.rendered_facets) && $listing.rendered_facets}
         <div id="search_filters_modal"
-          class="fixed z-50 top-0 left-0 w-screen h-screen bg-black/20 px-5 py-10 transition duration-300">
-          <div class="flex flex-col bg-white w-full h-full rounded-[5px] overflow-hidden shadow-xl">
+          class="fixed z-50 top-0 left-0 tablet:left-auto tablet:right-0 tablet:top-10 tablet:bottom-10 w-screen tablet:w-[470px] h-screen tablet:h-auto bg-black/20 tablet:bg-transparent px-5 py-10 tablet:p-0 tablet:pr-10 transition duration-300 tablet:transition-none overflow-hidden">
+          <div id="search_filters_modal_inner" class="flex flex-col bg-white w-full h-full rounded-[5px] overflow-hidden shadow-xl tablet:shadow-2xl transition duration-300">
             <div class="py-2.5 px-[30px] flex justify-between items-center border-0 border-b border-solid border-gray-2000">
               <span class="font-header italic text-main-dark text-2xl">{l s='Filter' d='Shop.Theme.Actions'}</span>
                 <button id="search_filters_modal_close" class="group cursor-pointer appearance-none bg-transparent border-0 h-10 py-1.5"> 
@@ -76,7 +76,7 @@
 
 
     <div
-      class="flex justify-center tablet:justify-end order-2 tablet:order-3 rounded-md w-1/2  pl-[10px] tablet:pl-0 z-30 tablet:bg-gray-1000 {if isset($listing.rendered_facets) && $listing.rendered_facets}  tablet:rounded-none tablet:rounded-r-md tablet:w-auto  {else} tablet:w-full {/if} ">
+      class="flex justify-center tablet:justify-end order-2 tablet:order-3 rounded-md w-1/2  pl-[10px] tablet:pl-0 z-30 {if isset($listing.rendered_facets) && $listing.rendered_facets}  tablet:rounded-none tablet:rounded-r-md tablet:w-auto  {else} tablet:w-full {/if} ">
       <div class="sort-by-row w-full tablet:w-48">
         {block name='sort_by'}
           {include file='catalog/_partials/sort-orders.tpl' sort_orders=$listing.sort_orders}
