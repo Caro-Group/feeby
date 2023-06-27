@@ -57,8 +57,8 @@
         <div id="search_filters_modal"
           class="fixed z-50 top-0 left-0 tablet:left-auto tablet:right-0 tablet:top-10 tablet:bottom-10 w-screen tablet:w-[470px] h-screen tablet:h-auto bg-black/20 tablet:bg-transparent px-5 py-10 tablet:p-0 tablet:pr-5 transition duration-300 tablet:transition-none">
           <div id="search_filters_modal_inner" class="flex flex-col bg-white w-full h-full rounded-[5px] overflow-hidden shadow-xl tablet:shadow-2xl transition duration-300">
-            <div class="py-2.5 px-[30px] flex justify-between items-center border-0 border-b border-solid border-gray-2000">
-              <span class="font-header italic text-main-dark text-2xl">{l s='Filter' d='Shop.Theme.Actions'}</span>
+            <div class="h-full py-2.5 px-[30px] flex justify-between items-center border-0 border-b border-solid border-gray-2000">
+              <span class="font-header italic text-main-dark text-2xl tablet:text-4xl">{l s='Filter' d='Shop.Theme.Actions'}</span>
                 <button id="search_filters_modal_close" class="group cursor-pointer appearance-none bg-transparent border-0 h-10 py-1.5"> 
                   <svg class="fill-current text-main-dark group-hover:text-main transition duration-200" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0.755782 0.707112C1.14631 0.316585 1.77947 0.316587 2.17 0.707116L25.293 23.8304C25.6835 24.2209 25.6835 24.8541 25.293 25.2446L25.2447 25.2929C24.8542 25.6834 24.221 25.6834 23.8305 25.2929L0.707512 2.16959C0.316992 1.77907 0.316992 1.1459 0.707514 0.755379L0.755782 0.707112Z" ></path>
