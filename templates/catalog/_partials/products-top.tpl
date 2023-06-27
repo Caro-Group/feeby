@@ -56,7 +56,7 @@
       {if isset($listing.rendered_facets) && $listing.rendered_facets}
         <div id="search_filters_modal"
           class="fixed z-50 top-0 left-0 w-screen h-screen bg-black/20 px-5 py-10 transition duration-300">
-          <div class="flex flex-col bg-white w-full h-full rounded-[5px]">
+          <div class="flex flex-col bg-white w-full h-full rounded-[5px] overflow-hidden">
             <div class="py-2.5 px-[30px] flex justify-between items-center border-0 border-b border-solid border-gray-2000">
               <span class="font-header italic text-main-dark text-2xl">{l s='Filter' d='Shop.Theme.Actions'}</span>
                 <button id="search_filters_modal_close" class="group cursor-pointer appearance-none bg-transparent border-0 h-10 py-1.5"> 
