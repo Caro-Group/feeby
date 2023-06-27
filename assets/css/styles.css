@@ -301,6 +301,10 @@ li[data-menu-type='url'] a {
   @apply hidden;
 }
 
+.filter-options_container label.active{
+  @apply !border-main
+}
+
 #search_filters_modal:not(.active){
   @apply opacity-0 pointer-events-none
 }
@@ -308,6 +312,18 @@ li[data-menu-type='url'] a {
 .facet-container.collapsed .facet-icon,
 .filter-name.collapsed .facet-icon{
   @apply rotate-180;
+}
+
+.filter-options_container label.option-svg svg rect{
+  @apply stroke-gray-3000 transition duration-200
+}
+
+.filter-options_container label.option-svg:hover svg rect{
+  @apply stroke-gray-main
+}
+
+.filter-options_container label.option-svg.active svg rect{
+  @apply stroke-main
 }
 
 

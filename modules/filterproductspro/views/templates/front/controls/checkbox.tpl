@@ -25,11 +25,11 @@
 
 <div id="filter-options_{$filter.id_filter|intval}" class="overflow-hidden collapse in"
     aria-expanded="true" >
-    <ul class="filter-options_container flex flex-wrap gap-2.5 pb-[30px]">
+    <ul class="filter-options_container flex flex-wrap pb-[30px] {if $filter.id_filter == 23} gap-x-[30px] gap-y-5 items-end {else} gap-2.5 {/if}">
         {foreach $filter.options item=option}
             {if $option}
                 <li class="max-w-full">
-                    <label for="option_{$option.id_option|intval}" class="whitespace-nowrap !flex items-center w-full cursor-pointer !mb-0 border-2 border-solid {if $option.selected } border-main {else} border-gray-2000 {/if} hover:border-gray-3000 rounded-[5px] transition duration-200 !p-[9px] tablet:!p-[13px] ">
+                    <label for="option_{$option.id_option|intval}" class="whitespace-nowrap !flex {if $filter.id_filter == 23} option-svg flex-col gap-2.5 {else} border-2 border-solid border-gray-2000 hover:border-gray-3000 {/if} items-center w-full cursor-pointer !mb-0 {if $option.selected } active {/if} rounded-[5px] transition duration-200 !p-[9px] tablet:!p-[13px] ">
                         <input
                             id="option_{$option.id_option|intval}"
                             name="filter_{$filter.id_filter|intval}"
@@ -49,7 +49,6 @@
                                 class="hidden d-none"
                             {/if}
                         />
-
 
                         {if $filter.id_filter == 18}
                         <div class="shrink-0 bg-gray-2000 clearfix float-left w-[25px] h-[25px] mr-2.5 rounded border border-solid" style="
@@ -102,6 +101,55 @@
                             background-color: #000000;
                             border-color: #000000;
                           {/if}">
+                          </div>
+                        {/if}
+
+
+                        {if $filter.id_filter == 23}
+                          <div class="shrink-0">
+                            {if $option.id_option == 307}
+                              <svg class="tablet:hidden" width="60" height="75" viewBox="0 0 60 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="0.5" y="0.5" width="59" height="74" rx="4.5">
+                              </svg>
+
+                            {elseif $option.id_option == 308}
+                              <svg class="tablet:hidden" width="75" height="60" viewBox="0 0 75 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="0.5" y="0.5" width="74" height="59" rx="4.5"/>
+                              </svg>
+
+                            {elseif $option.id_option == 309}
+                              <svg class="tablet:hidden" width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect opacity="0.96" x="0.5" y="0.5" width="59" height="59" rx="4.5"/>
+                              </svg>
+                              
+                            {elseif $option.id_option == 310}
+                              <svg class="tablet:hidden" width="74" height="53" viewBox="0 0 74 53" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect opacity="0.96" x="0.5" y="0.5" width="19" height="52" rx="4.5" />
+                                <rect opacity="0.96" x="27.5" y="0.5" width="19" height="52" rx="4.5" />
+                                <rect opacity="0.96" x="54.5" y="0.5" width="19" height="52" rx="4.5" />
+                              </svg>
+
+                            
+                            {elseif $option.id_option == 311}
+                              <svg class="tablet:hidden" width="73" height="60" viewBox="0 0 73 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect opacity="0.96" x="0.5" y="20.5" width="12" height="19" rx="3.5" />
+                                <rect opacity="0.96" x="15.5" y="10.5" width="12" height="39" rx="3.5" />
+                                <rect opacity="0.96" x="30.5" y="0.5" width="12" height="59" rx="3.5" />
+                                <rect opacity="0.96" x="45.5" y="10.5" width="12" height="39" rx="3.5" />
+                                <rect opacity="0.96" x="60.5" y="20.5" width="12" height="19" rx="3.5" />
+                              </svg>
+                              
+                            {elseif $option.id_option == 312}
+                              <svg class="tablet:hidden" width="75" height="37" viewBox="0 0 75 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect opacity="0.96" x="0.5" y="0.5" width="74" height="35.9231" rx="4.5" />
+                              </svg>
+                              
+                            {elseif $option.id_option == 313}
+                              <svg class="tablet:hidden" width="50" height="75" viewBox="0 0 50 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect opacity="0.96" x="0.5" y="0.5" width="49" height="74" rx="4.5" />
+                              </svg>
+                              
+                            {/if}>
                           </div>
                         {/if}
                         
