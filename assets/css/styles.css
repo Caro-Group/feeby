@@ -266,6 +266,25 @@ li[data-menu-type='url'] a {
   @apply top-[53px] tablet:top-[81px];
 }
 
+.scrollbar-custom{
+  scrollbar-width: auto;
+  scrollbar-color: #adafba #ffffff;
+}
+
+.scrollbar-custom::-webkit-scrollbar {
+  width: 12px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background-color: #adafba;
+  border-radius: 10px;
+  border: 4px solid #ffffff;
+}
+
 #search_filters .add {
   @apply pl-5 inline;
 }

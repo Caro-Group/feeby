@@ -12504,7 +12504,6 @@ body#checkout #gift_message {
     width: 100%;
     cursor: pointer;
     position: relative;
-    border: 0;
     outline: 0;}
     .products-sort-order .select-title:hover {
       color: #000; }
