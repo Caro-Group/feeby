@@ -18,7 +18,7 @@
 *}
 
 <div id="filter_{$filter.id_filter|intval}"
-    class="relative border-0 border-b tablet:border-b-0 border-gray-2000 border-solid"
+    class="relative border-0 border-b border-gray-2000 border-solid"
     data-id_filter="{$filter.id_filter|intval}"
     data-control_type="{$filter.control|intval}"
     data-filter_name="{$filter.name.{$params_back.id_lang|intval}}"
@@ -31,7 +31,7 @@
                 {assign var=activeCount value=$activeCount+1}
             {/if}
         {/foreach}
-        <div class="filter-name !flex cursor-pointer tablet:px-0 py-5 tablet:py-0 justify-between tablet:justify-start group collapse in"
+        <div class="filter-name !flex cursor-pointer tablet:px-0 py-5 justify-between  group collapse in"
         data-parent="#searcher_{$searcher.id_searcher|intval}" data-target="#filter-options_{$filter.id_filter|intval}" data-toggle="collapse" aria-expanded="true">
             <p class="!m-0 text-lg tablet:text-2xl font-body font-normal text-main-dark">
                 {$filter.name[$params_back.id_lang|intval]}
