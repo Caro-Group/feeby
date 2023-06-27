@@ -1627,25 +1627,38 @@ $(document).ready(function () {
 
 $(document).ready(function () {
 
-  initFiltersModalToggle()
-
-});
-
-function initFiltersModalToggle(){
-
   const filterBtn = document.querySelector('#search_filters_toggler')
   const filterModal = document.querySelector('#search_filters_modal')
   const filterModalCloseBtn = document.querySelector('#search_filters_modal_close')
   
-  if (filterBtn && filterModal && filterModalCloseBtn) {
-    filterBtn.addEventListener('click',()=>{
-      filterModal.classList.add('active')
-      filterBtn.classList.add('!border-main')
-    })
+  initFiltersModalToggle()
   
-    filterModalCloseBtn.addEventListener('click',()=>{
-      filterModal.classList.remove('active')
-      filterBtn.classList.remove('!border-main')
-    })
+  
+  function openFilterModals(){
+    filterModal.classList.add('active')
+    filterBtn.classList.add('!border-main')
   }
-}
+  
+  function closeFilterModals(){
+    filterModal.classList.remove('active')
+    filterBtn.classList.remove('!border-main')
+  }
+  
+  function isFilterModalsActive(){
+    return filterModal.classList.contains('active')
+  }
+  
+  function initFiltersModalToggle(){    
+    if (filterBtn && filterModal && filterModalCloseBtn) {
+      filterBtn.addEventListener('click',()=>{
+        isFilterModalsActive() ? closeFilterModals() : openFilterModals()
+      })
+  
+      filterModalCloseBtn.addEventListener('click',()=>{
+        closeFilterModals()
+      })
+    }
+  }
+  
+});
+
