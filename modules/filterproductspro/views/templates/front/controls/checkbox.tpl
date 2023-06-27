@@ -53,52 +53,52 @@
 
                         {if $filter.id_filter == 18}
                         <div class="shrink-0 bg-gray-2000 clearfix float-left w-[25px] h-[25px] mr-2.5 rounded border border-solid" style="
-                          {if $option.id_option == 796}
+                          {if $option.id_option == 824}
                             background-color: #FEF3DE;
                             border-color: #FEF3DE;
-                          {elseif $option.id_option == 799}
+                          {elseif $option.id_option == 827}
                             background-color: #AA6D12;
                             border-color: #AA6D12;
-                          {elseif $option.id_option == 800}
+                          {elseif $option.id_option == 829}
                             background: linear-gradient(270deg, #000000 50.51%, #FFFFFF 50.52%);
                             border-color: #ADAFBA;
-                          {elseif $option.id_option == 804}
+                          {elseif $option.id_option == 833}
                             background-color: #ED0000;
                             border-color: #ED0000;
-                          {elseif $option.id_option == 806}
+                          {elseif $option.id_option == 834}
                             background-color: #C23D85;
                             border-color: #C23D85;
-                          {elseif $option.id_option == 808}
+                          {elseif $option.id_option == 836}
                             background: linear-gradient( 90deg, rgba(255, 0, 0, 1) 0%, rgba(255, 154, 0, 1) 10%, rgba(208, 222, 33, 1) 20%, rgba(79, 220, 74, 1) 30%, rgba(63, 218, 216, 1) 40%, rgba(47, 201, 226, 1) 50%, rgba(28, 127, 238, 1) 60%, rgba(95, 21, 242, 1) 70%, rgba(186, 12, 248, 1) 80%, rgba(251, 7, 217, 1) 90%, rgba(255, 0, 0, 1) 100% );
                             border-color: #ADAFBA;
-                          {elseif $option.id_option == 809}
+                          {elseif $option.id_option == 838}
                             background-color: #005FB1;
                             border-color: #005FB1;
-                          {elseif $option.id_option == 811}
+                          {elseif $option.id_option == 841}
                             background-color: #FF9A02;
                             border-color: #FF9A02;
-                          {elseif $option.id_option == 813}
+                          {elseif $option.id_option == 843}
                             background-color: #FFB6C1;
                             border-color: #FFB6C1;
-                          {elseif $option.id_option == 815}
+                          {elseif $option.id_option == 844}
                             background-color: #EAEAEA;
                             border-color: #EAEAEA;
-                          {elseif $option.id_option == 816}
+                          {elseif $option.id_option == 845}
                             background-color: #848484;
                             border-color: #848484;
-                          {elseif $option.id_option == 818}
+                          {elseif $option.id_option == 847}
                             background-color: #46932A;
                             border-color: #46932A;
-                          {elseif $option.id_option == 822}
+                          {elseif $option.id_option == 851}
                             background-color: #DFCA80;
                             border-color: #DFCA80;
-                          {elseif $option.id_option == 821}
+                          {elseif $option.id_option == 849}
                             background-color: #FFE233;
                             border-color: #FFE233;
-                          {elseif $option.id_option == 797}
+                          {elseif $option.id_option == 826}
                             background: #FFFFFF;
                             border-color: #ADAFBA;
-                          {elseif $option.id_option == 802}
+                          {elseif $option.id_option == 831}
                             background-color: #000000;
                             border-color: #000000;
                           {/if}">
