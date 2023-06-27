@@ -29,7 +29,7 @@
         {foreach $filter.options item=option}
             {if $option}
                 <li class="max-w-full">
-                    <label for="option_{$option.id_option|intval}" class=" !flex {if $filter.id_filter == 23} option-svg flex-col gap-1.5 {else} whitespace-nowrap border-2 border-solid border-gray-2000 hover:border-gray-3000 !p-[9px] tablet:!p-[13px] {/if} items-center w-full cursor-pointer !mb-0 {if $option.selected } active {/if} rounded-[5px] transition duration-200 ">
+                    <label for="option_{$option.id_option|intval}" class=" !flex {if $filter.id_filter == 23} option-svg flex-col {else} whitespace-nowrap border-2 border-solid border-gray-2000 hover:border-gray-3000 !p-[9px] tablet:!p-[13px] {/if} items-center w-full cursor-pointer !mb-0 {if $option.selected } active {/if} rounded-[5px] transition duration-200 ">
                         <input
                             id="option_{$option.id_option|intval}"
                             name="filter_{$filter.id_filter|intval}"
@@ -161,7 +161,7 @@
                                 <span class="hidden">{$option.name|escape:'htmlall':'UTF-8'}</span>
                             {/if}
                         {else}
-                        <span class="block text-ellipsis overflow-hidden text-main-dark w-auto max-w-full font-body font-normal">{$option.name|escape:'htmlall':'UTF-8'}</span>
+                        <span class="block text-ellipsis overflow-hidden text-main-dark w-auto {if $filter.id_filter == 23 && ($option.id_option == 969 || $option.id_option == 970)} max-w-[70px] text-center {else} max-w-full {/if} font-body font-normal">{$option.name|escape:'htmlall':'UTF-8'}</span>
                         {/if}
                         {if $params_back.CONFIG_VARS.FPP_SHOW_TOTAL_PRODUCTS_OPTION eq 1 and $option.id_option != 0}
                             <span>({$option.total_products|intval})</span>
