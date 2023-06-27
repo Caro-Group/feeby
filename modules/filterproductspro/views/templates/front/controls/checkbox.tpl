@@ -29,7 +29,7 @@
         {foreach $filter.options item=option}
             {if $option}
                 <li class="max-w-full">
-                    <label for="option_{$option.id_option|intval}" class="whitespace-nowrap !flex {if $filter.id_filter == 23} option-svg flex-col gap-2.5 {else} border-2 border-solid border-gray-2000 hover:border-gray-3000 {/if} items-center w-full cursor-pointer !mb-0 {if $option.selected } active {/if} rounded-[5px] transition duration-200 !p-[9px] tablet:!p-[13px] ">
+                    <label for="option_{$option.id_option|intval}" class=" !flex {if $filter.id_filter == 23} option-svg flex-col gap-1.5 {else} whitespace-nowrap border-2 border-solid border-gray-2000 hover:border-gray-3000 !p-[9px] tablet:!p-[13px] {/if} items-center w-full cursor-pointer !mb-0 {if $option.selected } active {/if} rounded-[5px] transition duration-200 ">
                         <input
                             id="option_{$option.id_option|intval}"
                             name="filter_{$filter.id_filter|intval}"
@@ -128,7 +128,7 @@
                               </svg>
 
                             
-                            {elseif $option.id_option == 311}
+                            {elseif $option.id_option == 974}
                               <svg class="tablet:hidden" width="73" height="60" viewBox="0 0 73 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect opacity="0.96" x="0.5" y="20.5" width="12" height="19" rx="3.5" />
                                 <rect opacity="0.96" x="15.5" y="10.5" width="12" height="39" rx="3.5" />
@@ -138,13 +138,13 @@
                               </svg>
                               
                             {elseif $option.id_option == 969}
-                              <svg class="tablet:hidden" width="75" height="37" viewBox="0 0 75 37" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect opacity="0.96" x="0.5" y="0.5" width="74" height="35.9231" rx="4.5" />
+                              <svg class="tablet:hidden" width="50" height="75" viewBox="0 0 50 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect opacity="0.96" x="0.5" y="0.5" width="49" height="74" rx="4.5" />
                               </svg>
                               
                             {elseif $option.id_option == 970}
-                              <svg class="tablet:hidden" width="50" height="75" viewBox="0 0 50 75" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect opacity="0.96" x="0.5" y="0.5" width="49" height="74" rx="4.5" />
+                              <svg class="tablet:hidden" width="75" height="37" viewBox="0 0 75 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect opacity="0.96" x="0.5" y="0.5" width="74" height="35.9231" rx="4.5" />
                               </svg>
                               
                             {/if}
@@ -161,7 +161,7 @@
                                 <span class="hidden">{$option.name|escape:'htmlall':'UTF-8'}</span>
                             {/if}
                         {else}
-                        <span class="block text-ellipsis overflow-hidden text-main-dark w-full font-body font-normal">{$option.name|escape:'htmlall':'UTF-8'}</span>
+                        <span class="block text-ellipsis overflow-hidden text-main-dark w-auto max-w-full font-body font-normal">{$option.name|escape:'htmlall':'UTF-8'}</span>
                         {/if}
                         {if $params_back.CONFIG_VARS.FPP_SHOW_TOTAL_PRODUCTS_OPTION eq 1 and $option.id_option != 0}
                             <span>({$option.total_products|intval})</span>
