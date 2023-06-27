@@ -309,8 +309,8 @@ li[data-menu-type='url'] a {
   @apply opacity-0 tablet:opacity-100 pointer-events-none
 }
 
-#search_filters_modal:not(.active) #search_filters_modal_inner{
-  @apply tablet:translate-x-full
+#search_filters_modal.active{
+  @apply tablet:-translate-x-full tablet:shadow-[0px_20px_100px_0px_rgba(0,0,0,0.15)]
 }
 
 .facet-container.collapsed .facet-icon,
