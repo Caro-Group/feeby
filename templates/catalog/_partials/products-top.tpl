@@ -42,7 +42,7 @@
       {if !empty($listing.rendered_facets)}
 
         <button id="search_filters_toggler"
-          class="flex items-center justify-between cursor-pointer border-2 border-solid border-gray-2000 px-5 text-left text-base tablet:text-lg uppercase text-normal bg-gray-1000 hover:border-gray-3000 rounded-md text-main-dark text-left w-full transition duration-200" >
+          class="flex items-center justify-between cursor-pointer border-2 border-solid border-gray-2000 px-5 tablet:px-10 text-left text-base tablet:text-lg uppercase text-normal bg-gray-1000 hover:border-gray-3000 rounded-md text-main-dark text-left w-full transition duration-200" >
           {l s='Filter' d='Shop.Theme.Actions'}
           <span class="top-[3px] float-right pl-4 relative ">
             <svg class="tablet:w-[25px] tablet:h-[25px]" width="18" height="18" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -55,8 +55,8 @@
     {block name='product_list_active_filters'}
       {if isset($listing.rendered_facets) && $listing.rendered_facets}
         <div id="search_filters_modal"
-          class="fixed z-50 top-0 left-0 tablet:left-full tablet:top-10 tablet:bottom-10 w-screen tablet:w-[470px] h-screen tablet:h-auto bg-black/20 tablet:bg-transparent px-5 py-10 tablet:p-0 tablet:pr-5 transition duration-300 tablet:transition-none">
-          <div class="flex flex-col bg-white w-full h-full rounded-[5px] overflow-hidden shadow-xl tablet:shadow-none transition-all duration-300">
+          class="fixed z-50 top-0 left-0 tablet:left-full tablet:top-10 tablet:bottom-10 w-screen tablet:w-[470px] h-screen tablet:h-auto bg-black/20 tablet:bg-transparent px-5 py-10 tablet:p-0 tablet:pr-5 transition duration-300">
+          <div id="search_filters_modal_inner" class="flex flex-col bg-white w-full h-full rounded-[5px] overflow-hidden shadow-xl tablet:shadow-none transition-all duration-300">
             <div class=" py-2.5 px-[30px] flex justify-between items-center border-0 border-b border-solid border-gray-2000">
               <span class="font-header italic text-main-dark text-2xl tablet:text-4xl">{l s='Filter' d='Shop.Theme.Actions'}</span>
                 <button id="search_filters_modal_close" class="group cursor-pointer appearance-none bg-transparent border-0 h-10 py-1.5"> 

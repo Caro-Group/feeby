@@ -310,7 +310,11 @@ li[data-menu-type='url'] a {
 }
 
 #search_filters_modal.active{
-  @apply tablet:-translate-x-full tablet:shadow-[0px_20px_100px_0px_rgba(0,0,0,0.15)]
+  @apply tablet:-translate-x-full
+}
+
+#search_filters_modal.active #search_filters_modal_inner{
+  @apply tablet:shadow-[0px_20px_100px_0px_rgba(0,0,0,0.15)]
 }
 
 .facet-container.collapsed .facet-icon,
