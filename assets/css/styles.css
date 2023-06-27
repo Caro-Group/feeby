@@ -306,7 +306,7 @@ li[data-menu-type='url'] a {
 }
 
 #search_filters_modal:not(.active){
-  @apply opacity-0 pointer-events-none
+  @apply opacity-0 tablet:opacity-100 pointer-events-none
 }
 
 #search_filters_modal:not(.active) #search_filters_modal_inner{

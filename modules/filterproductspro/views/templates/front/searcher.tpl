@@ -26,7 +26,7 @@
                         <div class="content-permanent-mobile" id="content_permanent_mobile_{$searcher.id_searcher|intval}">
                             <div data-id_searcher="{$searcher.id_searcher|intval}" id="searcher_{$searcher.id_searcher|intval}"
                                 data-name="{FilterProductsPro::linkRewrite($searcher.name.{$params_back.id_lang|intval})}"
-                                class="pts searcher-content hook_{$searcher.hook|intval} !bg-transparent">
+                                class="searcher-content hook_{$searcher.hook|intval} !bg-transparent">
                                 <div class="searcher-header hidden">
                                     <div class="header-content">
                                         <i class="header-icon fa-pts fa-pts-filter"></i>&nbsp;

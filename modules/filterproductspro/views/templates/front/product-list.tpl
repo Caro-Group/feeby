@@ -53,10 +53,6 @@
       <h2 id="js-product-list-header" class="h2">{$listing.label}</h2>
     {/block}
 
-    <ul id="additionallCategoriesFilter" data-container="additional-filters"
-      class="flex flex-wrap gap-5 border-0 border-b border-gray-1000 border-solid tablet-border-b-0 pb-1 mb-5 tablet:mb-0 tablet:pb-3">
-    </ul>
-
     <section id="products">
       {if $listing.products|count}
 

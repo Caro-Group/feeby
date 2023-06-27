@@ -188,7 +188,7 @@
                                 <span class="hidden">{$option.name|escape:'htmlall':'UTF-8'}</span>
                             {/if}
                         {else}
-                        <span class="block text-ellipsis overflow-hidden text-main-dark w-auto {if $filter.id_filter == 23 && ($option.id_option == 969 || $option.id_option == 970)} max-w-[70px] text-center {else} max-w-full {/if} font-body font-normal">{$option.name|escape:'htmlall':'UTF-8'}</span>
+                        <span class="text-base tablet:mt-1 block text-ellipsis overflow-hidden text-main-dark w-auto {if $filter.id_filter == 23 && ($option.id_option == 969 || $option.id_option == 970)} max-w-[70px] text-center {else} max-w-full {/if} font-body font-normal">{$option.name|escape:'htmlall':'UTF-8'}</span>
                         {/if}
                         {if $params_back.CONFIG_VARS.FPP_SHOW_TOTAL_PRODUCTS_OPTION eq 1 and $option.id_option != 0}
                             <span>({$option.total_products|intval})</span>
