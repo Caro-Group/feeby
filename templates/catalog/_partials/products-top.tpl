@@ -66,7 +66,7 @@
                   </svg>
                 </button>            
               </div>
-            <div class="px-[30px] overflow-y-auto">
+            <div class="px-[30px] overflow-y-auto scrollbar-custom">
               {hook h='filterproductspro'}
             </div>
           </div>
