@@ -109,24 +109,37 @@
                               <svg class="tablet:hidden" width="60" height="75" viewBox="0 0 60 75" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect x="0.5" y="0.5" width="59" height="74" rx="4.5">
                               </svg>
+                              <svg class="hidden tablet:block" width="96" height="120" viewBox="0 0 96 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="1" y="1" width="94" height="118" rx="4" stroke-width="2"/>
+                              </svg>
 
                             {elseif $option.id_option == 972}
                               <svg class="tablet:hidden" width="75" height="60" viewBox="0 0 75 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect x="0.5" y="0.5" width="74" height="59" rx="4.5"/>
+                              </svg>
+                              <svg class="hidden tablet:block" width="120" height="96" viewBox="0 0 120 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="1" y="1" width="118" height="94" rx="4" stroke-width="2"/>
                               </svg>
 
                             {elseif $option.id_option == 968}
                               <svg class="tablet:hidden" width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect opacity="0.96" x="0.5" y="0.5" width="59" height="59" rx="4.5"/>
                               </svg>
-                              
+                              <svg class="hidden tablet:block" width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect opacity="0.96" x="1" y="1" width="94" height="94" rx="4" stroke-width="2"/>
+                              </svg>
+
                             {elseif $option.id_option == 973}
                               <svg class="tablet:hidden" width="74" height="53" viewBox="0 0 74 53" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect opacity="0.96" x="0.5" y="0.5" width="19" height="52" rx="4.5" />
                                 <rect opacity="0.96" x="27.5" y="0.5" width="19" height="52" rx="4.5" />
                                 <rect opacity="0.96" x="54.5" y="0.5" width="19" height="52" rx="4.5" />
                               </svg>
-
+                              <svg class="hidden tablet:block" width="119" height="96" viewBox="0 0 119 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect opacity="0.96" x="1" y="1" width="31" height="94" rx="4" stroke-width="2"/>
+                                <rect opacity="0.96" x="44" y="1" width="31" height="94" rx="4" stroke-width="2"/>
+                                <rect opacity="0.96" x="87" y="1" width="31" height="94" rx="4" stroke-width="2"/>
+                              </svg>
                             
                             {elseif $option.id_option == 974}
                               <svg class="tablet:hidden" width="73" height="60" viewBox="0 0 73 60" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -136,15 +149,29 @@
                                 <rect opacity="0.96" x="45.5" y="10.5" width="12" height="39" rx="3.5" />
                                 <rect opacity="0.96" x="60.5" y="20.5" width="12" height="19" rx="3.5" />
                               </svg>
+                              <svg class="hidden tablet:block" width="145" height="96" viewBox="0 0 145 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect opacity="0.96" x="1" y="32.5" width="19" height="31" rx="4" stroke-width="2"/>
+                                <rect opacity="0.96" x="32" y="17" width="19" height="62" rx="4" stroke-width="2"/>
+                                <rect opacity="0.96" x="63" y="1" width="19" height="94" rx="4" stroke-width="2"/>
+                                <rect opacity="0.96" x="94" y="17" width="19" height="62" rx="4" stroke-width="2"/>
+                                <rect opacity="0.96" x="125" y="32.5" width="19" height="31" rx="4" stroke-width="2"/>
+                              </svg>
+
                               
                             {elseif $option.id_option == 969}
                               <svg class="tablet:hidden" width="50" height="75" viewBox="0 0 50 75" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect opacity="0.96" x="0.5" y="0.5" width="49" height="74" rx="4.5" />
                               </svg>
-                              
+                              <svg class="hidden tablet:block" width="64" height="96" viewBox="0 0 64 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect opacity="0.96" x="1" y="1" width="62" height="94" rx="4" stroke-width="2"/>
+                              </svg>
+                            
                             {elseif $option.id_option == 970}
                               <svg class="tablet:hidden" width="75" height="37" viewBox="0 0 75 37" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect opacity="0.96" x="0.5" y="0.5" width="74" height="35.9231" rx="4.5" />
+                              </svg>
+                              <svg class="hidden tablet:block" width="131" height="64" viewBox="0 0 131 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect opacity="0.96" x="1.5" y="1" width="128" height="62" rx="4" stroke-width="2"/>
                               </svg>
                               
                             {/if}
