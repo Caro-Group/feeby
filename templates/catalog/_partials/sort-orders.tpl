@@ -52,7 +52,7 @@
             href="{$sort_order.url}"
             class="group !bg-white border-0 border-b border-solid border-gray-2000 font-normal py-5 text-main-dark select-list js-search-link {['current' => $sort_order.current, 'js-search-link' => true]|classnames}"
           >
-          <span class="w-5 h-5 rounded border-2 border-solid border-main relative  before:absolute before:content-[''] before:rounded before:w-2.5 before:h-2.5 before:left-[3px] before:top-[3px] group-hover:before:bg-main/20 before:transition before:duration-200 "></span>
+          <span class="inline-block mr-3 top-1 w-5 h-5 rounded border-2 border-solid border-main relative  before:absolute before:content-[''] before:rounded-sm before:w-2.5 before:h-2.5 before:left-[3.75px] before:top-[3.5px] group-hover:before:bg-main/20 before:transition before:duration-200 "></span>
             {$sort_order.label}
           </a>
         {/foreach}
