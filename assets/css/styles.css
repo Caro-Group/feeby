@@ -305,15 +305,23 @@ li[data-menu-type='url'] a {
   @apply !border-main
 }
 
-#search_filters_modal:not(.active){
+.modal_productList{
+  @apply fixed z-50 top-0 left-0 tablet:left-full tablet:top-10 tablet:bottom-10 w-screen tablet:w-[470px] h-screen tablet:h-auto bg-black/20 tablet:bg-transparent px-5 py-10 tablet:p-0 tablet:pr-5 transition duration-300
+}
+
+.modal_productList-inner{
+  @apply flex flex-col bg-white w-full h-full rounded-[5px] overflow-hidden shadow-xl tablet:shadow-none transition-all duration-300
+}
+
+.modal_productList:not(.active){
   @apply opacity-0 tablet:opacity-100 pointer-events-none
 }
 
-#search_filters_modal.active{
+.modal_productList.active{
   @apply tablet:-translate-x-full
 }
 
-#search_filters_modal.active #search_filters_modal_inner{
+.modal_productList.active .modal_productList-inner{
   @apply tablet:shadow-[0px_20px_100px_0px_rgba(0,0,0,0.15)]
 }
 

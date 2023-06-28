@@ -1634,38 +1634,62 @@ $(document).ready(function () {
 
 $(document).ready(function () {
 
-  const filterBtn = document.querySelector('#search_filters_toggler')
   const filterModal = document.querySelector('#search_filters_modal')
+  const filterBtn = document.querySelector('#search_filters_toggler')
   const filterModalCloseBtn = document.querySelector('#search_filters_modal_close')
   
-  initFiltersModalToggle()
-  
-  
-  function openFilterModals(){
-    filterModal.classList.add('active')
-    filterBtn.classList.add('!border-main')
-  }
-  
-  function closeFilterModals(){
-    filterModal.classList.remove('active')
-    filterBtn.classList.remove('!border-main')
-  }
-  
-  function isFilterModalsActive(){
-    return filterModal.classList.contains('active')
-  }
-  
-  function initFiltersModalToggle(){    
-    if (filterBtn && filterModal && filterModalCloseBtn) {
-      filterBtn.addEventListener('click',()=>{
-        isFilterModalsActive() ? closeFilterModals() : openFilterModals()
-      })
-  
-      filterModalCloseBtn.addEventListener('click',()=>{
-        closeFilterModals()
-      })
-    }
-  }
-  
+  initModalToggle(filterModal,filterBtn,filterModalCloseBtn)
+
+  const sortModal = document.querySelector('#search_sort_modal')
+  const sortBtn = document.querySelector('#search_sort_toggler')
+  const sortModalCloseBtn = document.querySelector('#search_sort_modal_close')
+
+  initModalToggle(sortModal,sortBtn,sortModalCloseBtn)
+   
 });
+
+function openModal(modalElement,openBtnElement){
+  modalElement.classList.add('active')
+  openBtnElement.classList.add('!border-main')
+}
+
+function closeModal(modalElement,openBtnElement){
+  modalElement.classList.remove('active')
+  openBtnElement.classList.remove('!border-main')
+}
+
+function isModalActive(modalElement){
+  return modalElement.classList.contains('active')
+}
+
+const customModals = new Set()
+function initModalToggle(modalElement,openBtnElement,closeBtnElement){   
+  if (openBtnElement && modalElement && closeBtnElement) {
+    openBtnElement.addEventListener('click',()=>{
+      if (isModalActive(modalElement)) {
+        return closeModal(modalElement,openBtnElement)        
+      }
+
+      let activeModals = [...customModals].filter(modal => isModalActive(modal))
+      if (activeModals.length > 0) {
+        activeModals.forEach(activeModal=>{
+          closeModal(activeModal)
+        });
+
+        setTimeout(()=>{
+          openModal(modalElement)
+        },300);
+
+        return
+      }
+
+      openModal(modalElement)
+      
+    });
+    closeBtnElement.addEventListener('click',()=>{
+      closeModal(modalElement,openBtnElement)
+    });
+  }
+  customModals.add(modalElement)
+}
 

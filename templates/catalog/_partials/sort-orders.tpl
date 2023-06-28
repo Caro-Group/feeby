@@ -24,11 +24,8 @@
  *}
 <div class="products-sort-order w-full dropdown select-title text-base">
   <button
-    class="select-title w-full text-base tablet:text-lg uppercase bg-transparent px-5 tablet:px-10 py-2 tablet:py-2.5 text-left !flex justify-between items-center font-light text-main-dark border-gray-2000 hover:border-gray-3000 rounded-md border-solid !border-2 transition duration-200"
-    rel="nofollow"
-    data-toggle="dropdown"
-    aria-haspopup="true"
-    aria-expanded="false">
+    id="search_sort_toggler"
+    class="select-title w-full text-base tablet:text-lg uppercase bg-transparent px-5 tablet:px-10 py-2 tablet:py-2.5 text-left !flex justify-between items-center font-light text-main-dark border-gray-2000 hover:border-gray-3000 rounded-md border-solid !border-2 transition duration-200">
      <span class="sort-by text-main-dark font-normal text-main-dark">{l s='Sort by:' d='Shop.Theme.Global'}</span>
      <span class="shrink-0 ml-2 text-main-dark">
       <svg class="fill-current tablet:w-[25px] tablet:h-[25px] tablet:top-[3px] relative" width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -36,15 +33,30 @@
       </svg>
      </span> 
   </button>
-  <div class="dropdown-menu p-0 bg-gray-1000 rounded-md overflow-hidden">
-    {foreach from=$listing.sort_orders item=sort_order}
-      <a
-        rel="nofollow"
-        href="{$sort_order.url}"
-        class="select-list border-0 border-b border-solid border-white font-light js-search-link px-5 py-2 select-list text-main-dark text-sm {['current' => $sort_order.current, 'js-search-link' => true]|classnames}"
-      >
-        {$sort_order.label}
-      </a>
-    {/foreach}
+
+  <div id="search_sort_modal" class="modal_productList">
+    <div id="search_sort_modal_inner" class="modal_productList-inner">
+      <div class=" py-2.5 px-[30px] flex justify-between items-center border-0 border-b border-solid border-gray-2000">
+        <span class="font-header italic text-main-dark text-2xl tablet:text-4xl">{l s='Sort by:' d='Shop.Theme.Global'}</span>
+          <button id="search_sort_modal_close" class="group cursor-pointer appearance-none bg-transparent border-0 h-10 py-1.5"> 
+            <svg class="fill-current text-main-dark group-hover:text-main transition duration-200" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0.755782 0.707112C1.14631 0.316585 1.77947 0.316587 2.17 0.707116L25.293 23.8304C25.6835 24.2209 25.6835 24.8541 25.293 25.2446L25.2447 25.2929C24.8542 25.6834 24.221 25.6834 23.8305 25.2929L0.707512 2.16959C0.316992 1.77907 0.316992 1.1459 0.707514 0.755379L0.755782 0.707112Z" ></path>
+              <path d="M0.707106 25.2442C0.316582 24.8537 0.316582 24.2205 0.707105 23.83L23.8303 0.706705C24.2208 0.31618 24.854 0.316179 25.2445 0.706704L25.2928 0.754972C25.6833 1.1455 25.6833 1.77866 25.2928 2.16919L2.16958 25.2925C1.77906 25.683 1.1459 25.683 0.755373 25.2925L0.707106 25.2442Z" ></path>
+            </svg>
+          </button>            
+        </div>
+      <div class="px-[30px] overflow-y-auto scrollbar-custom">
+        {foreach from=$listing.sort_orders item=sort_order}
+          <a
+            rel="nofollow"
+            href="{$sort_order.url}"
+            class="select-list border-0 border-b border-solid border-white font-light js-search-link px-5 py-2 select-list text-main-dark text-sm {['current' => $sort_order.current, 'js-search-link' => true]|classnames}"
+          >
+            {$sort_order.label}
+          </a>
+        {/foreach}
+      </div>
+    </div>
   </div>
+
 </div>
