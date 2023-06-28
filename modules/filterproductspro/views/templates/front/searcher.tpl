@@ -53,7 +53,6 @@
                                     <div class="filter-content">
                                         <div class="flex flex-col">
                                             {assign var='col' value=$searcher.columns_break}
-
                                             {foreach from=$searcher.filters item=filter}
                                                 <div class="filter w-full">
                                                     {include file='./filter.tpl' filter=$filter}
@@ -61,12 +60,16 @@
                                             {/foreach}
                                         </div>
                                     </div>
+                                    {if $searcher.selected_options|@count}
+
                                     <button
-                                        class="btn-reset-filter my-10 block bg-gray-1000 hover:bg-gray-2000 transition border-2 border-gray-1000 border-solid cursor-pointer text-main-dark mx-auto tablet:ml-4 px-5 py-1.5 tablet:py-1 relative rounded-full text-base tablet:text-sm uppercase tablet:!normal-case tablet:h-min"
+                                        class="btn-reset-filter my-10 block bg-gray-1000 hover:bg-gray-2000 transition border-2 border-gray-1000 border-solid cursor-pointer text-main-dark mx-auto px-5 py-1.5 relative rounded-full text-base uppercase tablet:!normal-case tablet:h-min"
                                         id="reset_button_{$searcher.id_searcher|intval}"
                                         data-id_searcher="{$searcher.id_searcher|intval}">
                                         {l s='Reset Searcher' mod='filterproductspro'}
                                     </button>
+
+                                    {/if}
                                 </div>
                                 {if $searcher.instant_search eq 0}
                                     <div class="searcher-footer">
