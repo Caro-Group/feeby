@@ -50,8 +50,9 @@
           <a
             rel="nofollow"
             href="{$sort_order.url}"
-            class="select-list border-0 border-b border-solid border-white font-light js-search-link px-5 py-2 select-list text-main-dark text-sm {['current' => $sort_order.current, 'js-search-link' => true]|classnames}"
+            class="group !bg-white border-0 border-b border-solid border-gray-2000 font-normal py-5 text-main-dark select-list js-search-link {['current' => $sort_order.current, 'js-search-link' => true]|classnames}"
           >
+          <span class="w-5 h-5 rounded border-2 border-solid border-main relative  before:absolute before:content-[''] before:rounded before:w-2.5 before:h-2.5 before:left-[3px] before:top-[3px] group-hover:before:bg-main/20 before:transition before:duration-200 "></span>
             {$sort_order.label}
           </a>
         {/foreach}

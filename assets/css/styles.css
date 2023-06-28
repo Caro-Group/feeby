@@ -343,8 +343,8 @@ li[data-menu-type='url'] a {
 }
 
 
-.select-list.js-search-link.current {
-  @apply font-normal;
+.select-list.js-search-link.current > span {
+  @apply before:bg-main;
 }
 
 .faceted-overlay .spinner.spinner {
