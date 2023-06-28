@@ -344,7 +344,7 @@ li[data-menu-type='url'] a {
 
 
 .select-list.js-search-link.current > span {
-  @apply before:bg-main;
+  @apply border-main before:bg-main;
 }
 
 .faceted-overlay .spinner.spinner {

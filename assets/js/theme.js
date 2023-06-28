@@ -4265,8 +4265,8 @@
       (0, a.default)("#search_filters").replaceWith(t.rendered_facets),
         (0, a.default)("#js-active-search-filters").replaceWith(
           t.rendered_active_filters
-        ),(0, a.default)("#js-product-list-top .sort-by-row .dropdown-menu").replaceWith(
-          (0, a.default)(t.rendered_products_top).find('.sort-by-row .dropdown-menu')
+        ),(0, a.default)("#js-product-list-top .sort-by-row .sort-list").replaceWith(
+          (0, a.default)(t.rendered_products_top).find('.sort-by-row .sort-list')
         );
 
       //if (window.innerWidth >= 768) {
