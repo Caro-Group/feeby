@@ -53,9 +53,11 @@
                                         <div class="flex flex-col">
                                             {assign var='col' value=$searcher.columns_break}
                                             {foreach from=$searcher.filters item=filter}
-                                                <div class="filter w-full">
-                                                    {include file='./filter.tpl' filter=$filter}
-                                                </div>
+                                                {if $filter.options|@count}
+                                                    <div class="filter w-full">
+                                                        {include file='./filter.tpl' filter=$filter}
+                                                    </div>
+                                                {/if}
                                             {/foreach}
                                         </div>
                                     </div>
