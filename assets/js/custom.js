@@ -1655,7 +1655,7 @@ function isModalActive(modalElement){
   return modalElement.classList.contains('active')
 }
 
-const customModals = new Set()
+const customModals = []
 function initModalToggle(modalElement,openBtnElement,closeBtnElement){   
   if (openBtnElement && modalElement && closeBtnElement) {
     openBtnElement.addEventListener('click',()=>{
@@ -1663,10 +1663,10 @@ function initModalToggle(modalElement,openBtnElement,closeBtnElement){
         return closeModal(modalElement,openBtnElement)        
       }
 
-      let activeModals = [...customModals].filter(modal => isModalActive(modal))
+      let activeModals = customModals.filter(item => isModalActive(item.modal))
       if (activeModals.length > 0) {
-        activeModals.forEach(activeModal=>{
-          closeModal(activeModal,openBtnElement)
+        activeModals.forEach(item=>{
+          closeModal(item.modal,item.openBtn)
         });
 
         setTimeout(()=>{
@@ -1683,6 +1683,6 @@ function initModalToggle(modalElement,openBtnElement,closeBtnElement){
       closeModal(modalElement,openBtnElement)
     });
   }
-  customModals.add(modalElement)
+  customModals.push({modal: modalElement, openBtn:openBtnElement})
 }
 
