@@ -1673,17 +1673,17 @@ function initModalToggle(modalElement,openBtnElement,closeBtnElement){
       let activeModals = [...customModals].filter(modal => isModalActive(modal))
       if (activeModals.length > 0) {
         activeModals.forEach(activeModal=>{
-          closeModal(activeModal)
+          closeModal(activeModal,openBtnElement)
         });
 
         setTimeout(()=>{
-          openModal(modalElement)
+          openModal(modalElement,openBtnElement)
         },300);
 
         return
       }
 
-      openModal(modalElement)
+      openModal(modalElement,openBtnElement)
       
     });
     closeBtnElement.addEventListener('click',()=>{

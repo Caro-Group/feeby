@@ -22,7 +22,7 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
-<div class="products-sort-order w-full dropdown select-title text-base">
+<div class="products-sort-order w-full select-title text-base">
   <button
     id="search_sort_toggler"
     class="select-title w-full text-base tablet:text-lg uppercase bg-transparent px-5 tablet:px-10 py-2 tablet:py-2.5 text-left !flex justify-between items-center font-light text-main-dark border-gray-2000 hover:border-gray-3000 rounded-md border-solid !border-2 transition duration-200">
