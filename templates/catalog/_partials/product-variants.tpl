@@ -36,7 +36,7 @@
         {if $group.group_type == 'select'}
 
           <select
-            class="form-select taxt-base tablet:text-xl py-[18px] tablet:py-4 pl-[30px] bg-[center_right_30px] bg-gray-default rounded border-2 border-gray-2000 hover:border-gray-3000 !ring-0 !outline-0 !outline-offset-0 focus:!border-main w-full mb-[10px] focus:!ring-0 transition"
+            class="form-select taxt-base tablet:text-xl py-[18px] tablet:py-4 pl-[30px] bg-[center_right_30px] bg-gray-default rounded border-2 border-gray-2000 hover:border-gray-3000 !ring-0 !outline-0 !outline-offset-0 focus:!border-gray-3000 w-full mb-[10px] focus:!ring-0 transition"
             id="group_{$id_attribute_group}"
             data-product-attribute="{$id_attribute_group}"
             name="group[{$id_attribute_group}]">
