@@ -14,7 +14,7 @@
             {/if}
             <div class="flex flex-col items-start {if $block['type_link'] !== $LINK_TYPE_NONE && !empty($block['link'])} group-hover:underline {/if}">
                 {if empty($block['description'])}
-                    <p class="text-base text-main-dark font-body font-normal text-center">{$block['title']}</p>
+                    <p class="text-base text-main-dark font-body font-normal text-center tablet:text-left">{$block['title']}</p>
                 {else}
                     <span class="block-title" style="color:{$textColor};">{$block['title']}</span>
                     <p class="text-main-dark">{$block['description'] nofilter}</p>
