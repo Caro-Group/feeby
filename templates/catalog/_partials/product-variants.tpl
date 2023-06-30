@@ -127,8 +127,10 @@
             </span>
           {/if}
         </div>
-
       </div>
+      {if $group.group_name == "Typ" && $group.attributes['416'] && $group.attributes['416'].selected}
+        <hr>
+      {/if}
     {/if}
   {/foreach}
 </div>
