@@ -1,8 +1,8 @@
 
 <div class="flex flex-wrap pb-11 tablet:pb-0 ">
 {foreach from=$blocks item=$block key=$key}
-    <div class="flex items-center desktop-presta:justify-center mx-auto w-full desktop-presta:w-1/2" >
-        <div class="flex items-center justify-start desktop-presta:w-[224px] max-w-full group" {if $block['type_link'] !== $LINK_TYPE_NONE && !empty($block['link'])} style="cursor:pointer;" onclick="window.open('{$block['link']}')"{/if} >
+    <div class="flex items-center mx-auto w-full desktop-presta:w-1/2" >
+        <div class="flex items-center justify-start desktop-presta:w-full max-w-full group" {if $block['type_link'] !== $LINK_TYPE_NONE && !empty($block['link'])} style="cursor:pointer;" onclick="window.open('{$block['link']}')"{/if} >
             {if $block['icon'] != 'undefined'}
                 <span class="flex item-product items-center mr-[30px] desktop-presta:mr-2">
                     {if $block['icon']}
@@ -14,7 +14,7 @@
             {/if}
             <div class="flex flex-col items-start {if $block['type_link'] !== $LINK_TYPE_NONE && !empty($block['link'])} group-hover:underline {/if}">
                 {if empty($block['description'])}
-                    <p class="text-base text-main-dark font-body text-center">{$block['title']}</p>
+                    <p class="text-base text-main-dark font-body font-normal text-center">{$block['title']}</p>
                 {else}
                     <span class="block-title" style="color:{$textColor};">{$block['title']}</span>
                     <p class="text-main-dark">{$block['description'] nofilter}</p>
