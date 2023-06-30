@@ -129,7 +129,7 @@
         </div>
       </div>
       {if $group.group_name == "Typ" && $group.attributes['416'] && !$group.attributes['416'].selected}
-        <hr class="mb-0 mt-[30px]">
+        <hr class="my-[30px]">
       {/if}
     {/if}
   {/foreach}
