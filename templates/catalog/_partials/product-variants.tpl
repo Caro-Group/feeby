@@ -26,8 +26,8 @@
   {foreach from=$groups key=id_attribute_group item=group}
     {if !empty($group.attributes)}
 
-      <div class="{if $group.group_name|strstr:"Rodzaj fototapety"}hidden{/if} clearfix product-variants-item flex flex-col items-start mb-5 {if $id_attribute_group eq 23 } mt-10 py-5 px-2.5 tablet:p-[30px] border-2 border-gray-2000 border-solid rounded-[5px] {/if}">
-        <span class="block text-base text-gray-main text-lg leading-normal mb-[10px] font-medium">
+      <div class="{if $group.group_name|strstr:"Rodzaj fototapety"}hidden{/if} clearfix product-variants-item flex flex-col items-start mb-5 {if $id_attribute_group eq 23 } mt-[30px] py-5 px-2.5 tablet:p-[30px] border-2 border-gray-2000 border-solid rounded-[5px] {/if}">
+        <span class="block text-base text-gray-main text-lg leading-normal mb-[13px] tablet:mb-[18px] font-medium">
           {if $id_attribute_group neq 21 }
             {$group.name}
           {/if}
@@ -85,7 +85,7 @@
 
         {/if}
 
-        <div class="flex flex-wrap leading-normal text-[14px] tablet:text-base text-[#ADAFBA] gap-2.5 tablet:gap-5">
+        <div class="flex flex-wrap mt-5 leading-normal text-[14px] tablet:text-base text-[#ADAFBA] gap-2.5 tablet:gap-5">
           {if $group.group_name == "Rozmiar" || $id_attribute_group == 6}
 
             <a href="/tabela-rozmiarow" target="_blank" class="flex items-center phone:basis-[calc(50%_-_5px)] tablet-medium:basis-auto transition">
@@ -107,7 +107,7 @@
               </span>
             </a>
 
-            <div class=" text-center mt-5 w-full shrink-0 px-5 py-[5px] rounded-[5px] border border-solid border-gray-2000">
+            <div class=" text-center mt-2.5 w-full shrink-0 px-5 py-[5px] rounded-[5px] border border-solid border-gray-2000">
               <span class="text-main-dark text-base">
                 {l s='Need a different size?' d='Shop.Theme.Actions'} <a class="underline font-medium text-main-dark inline-block tablet:inline hover:!underline hover:!text-main transition duration-200" href="/" target="_blank">{l s='Try out our generator' d='Shop.Theme.Actions'}</a>
               </span>
