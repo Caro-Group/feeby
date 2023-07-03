@@ -39,23 +39,24 @@
 
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mb-[10px] desktop-presta:mb-5">
 
-  {include file='_partials/category_text.tpl'}
-
+  
   {block name='breadcrumb_arrow'}
     {include file='_partials/breadcrumb_arrow.tpl'}
   {/block}
 
     <h1 class="title_block title_block text-2xl tablet:text-4xl mt-2 tablet:mt-10 font-light text-main-dark">
-      {if $category.meta_keywords !== ''}
+    {if $category.meta_keywords !== ''}
         {$category.meta_keywords}
-      {elseif isset($categories) }
+        {elseif isset($categories) }
         {$categories.name}
-      {else}
-        {$page.title}
+        {else}
+          {$page.title}
       {/if}
     </h1>
-  </div>
-{/block}
+    </div>
+  {/block}
+  
+{include file='_partials/category_text.tpl'}
 
 {block name='displayBottomContent'}
   <div class="container">
