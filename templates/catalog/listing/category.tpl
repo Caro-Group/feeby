@@ -37,8 +37,12 @@
     </div>
   {/if}
 
-  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mb-[10px] desktop-presta:mb-[35px]">
-  
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mb-[10px] desktop-presta:mb-5">
+
+  {block name='category_text'}
+    {include file='_partials/category_text.tpl'}
+  {/block}
+
   {block name='breadcrumb_arrow'}
     {include file='_partials/breadcrumb_arrow.tpl'}
   {/block}
