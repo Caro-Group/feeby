@@ -54,9 +54,9 @@
       {/if}
     </h1>
     </div>
+    {include file='catalog/_partials/category-text.tpl'}
   {/block}
   
-{include file='catalog/_partials/category-text.tpl'}
 
 {block name='displayBottomContent'}
   <div class="container">
