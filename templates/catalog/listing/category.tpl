@@ -56,7 +56,7 @@
     </div>
   {/block}
   
-{include file='_partials/category_text.tpl'}
+{include file='catalog/_partials/category-text.tpl'}
 
 {block name='displayBottomContent'}
   <div class="container">
