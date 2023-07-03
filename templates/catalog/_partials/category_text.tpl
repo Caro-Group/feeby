@@ -23,7 +23,7 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 desktop-presta:mb-[35px] mb-5">
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tablet:mb-[35px] mb-5">
     <p class="font-body font-light max-w-screen-tablet-wide mt-2 tablet:mt-10 tablet:text-base text-main-dark text-sm title_block">
 
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc laoreet at neque non convallis. Curabitur quis
