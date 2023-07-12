@@ -53,6 +53,7 @@
       {/if}
     </div>
     {block name='product_list_active_filters'}
+      {debug}
       {if isset($listing.rendered_facets) && $listing.rendered_facets}
         <div id="search_filters_modal"
           class="modal_productList">
