@@ -53,8 +53,8 @@
       {/if}
     </div>
     {block name='product_list_active_filters'}
-      {debug}
-      {if isset($listing.rendered_facets) && $listing.rendered_facets}
+      {assign var='externalFilters' value={hook h='filterproductspro'}}
+      {if $externalFilters}
         <div id="search_filters_modal"
           class="modal_productList">
           <div id="search_filters_modal_inner" class="modal_productList-inner">
@@ -77,7 +77,7 @@
 
 
     <div
-      class="flex justify-center tablet:justify-end order-2 tablet:order-3 rounded-md w-1/2  pl-[10px] tablet:pl-0 {if isset($listing.rendered_facets) && $listing.rendered_facets}  tablet:rounded-none tablet:rounded-r-md tablet:w-auto  {else} tablet:w-full {/if} ">
+      class="flex justify-center tablet:justify-end order-2 tablet:order-3 rounded-md w-1/2  pl-[10px] tablet:pl-0 {if $externalFilters}  tablet:rounded-none tablet:rounded-r-md tablet:w-auto  {else} tablet:w-full {/if} ">
       <div class="sort-by-row w-full tablet:w-[232px] tablet-medium:ml-[50px]">
         {block name='sort_by'}
           {include file='catalog/_partials/sort-orders.tpl' sort_orders=$listing.sort_orders}
