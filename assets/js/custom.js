@@ -1686,10 +1686,12 @@ function initModalToggle(modalElement,openBtnElement,closeBtnElement){
       openModal(modalElement,openBtnElement)
       
     });
+    
     closeBtnElement.addEventListener('click',()=>{
       closeModal(modalElement,openBtnElement)
     });
+
+    customModals.push({modal: modalElement, openBtn:openBtnElement})
   }
-  customModals.push({modal: modalElement, openBtn:openBtnElement})
 }
 
