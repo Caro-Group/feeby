@@ -56,7 +56,7 @@
     <section id="products">
       {if $listing.products|count}
 
-        <div class="row row-md-revert">
+        <div class="row row-md-revert !sticky tablet:!static top-[-52px] tablet:top-0 z-20 bg-white mx-[-20px] tablet:mx-[-10px] px-[10px] tablet:px-0 shadow-[0px_4px_4px_rgba(0,0,0,0.1)] tablet:shadow-none">
 
           <div class="col-xs-12 col-md-pull-12">
             {block name='product_list_top'}
