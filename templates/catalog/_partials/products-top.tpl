@@ -28,7 +28,7 @@
   {/block}
 {/if}
 
-
+{assign var='externalFilters' value={hook h='filterproductspro'}}
 <div id="js-product-list-top" class="pb-7 tablet:pb-3 pt-0 products-selection tablet:mb-[40px]">
   {if $page.page_name == 'category'}
     <div class="bg-main-dark mb-5 p-2 rounded-full tablet:hidden text-base text-center text-white"
@@ -39,7 +39,7 @@
 
   <div class=" flex flex-wrap justify-between tablet-medium:justify-start tablet-medium:ml-[8.33%] ">
     <div style="flex:0 0 auto;" class="w-1/2 tablet:w-[232px] order-1 flex justify-center ">
-      {if !empty($listing.rendered_facets)}
+      {if !empty($externalFilters) || (!empty($listing.rendered_facets))}
 
         <button id="search_filters_toggler"
           class="flex items-center justify-between cursor-pointer border-2 border-solid border-gray-2000 px-5 tablet:px-10 text-left text-base tablet:text-lg uppercase text-normal bg-gray-1000 hover:border-gray-3000 rounded-md text-main-dark text-left w-full transition duration-200" >
@@ -53,8 +53,7 @@
       {/if}
     </div>
     {block name='product_list_active_filters'}
-      {assign var='externalFilters' value={hook h='filterproductspro'}}
-      {if $externalFilters || (isset($listing.rendered_facets) && $listing.rendered_facets)}
+      {if !empty($externalFilters) || (isset($listing.rendered_facets) && $listing.rendered_facets)}
         <div id="search_filters_modal"
           class="modal_productList">
           <div id="search_filters_modal_inner" class="modal_productList-inner">
