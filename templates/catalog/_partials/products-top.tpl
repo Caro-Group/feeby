@@ -67,7 +67,7 @@
                 </button>
               </div>
             <div class="px-[30px] overflow-y-auto scrollbar-custom">
-              {$externalFilters}
+              {$externalFilters nofilter}
             </div>
           </div>
         </div>
