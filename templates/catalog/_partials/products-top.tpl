@@ -29,7 +29,7 @@
 {/if}
 
 {assign var='externalFilters' value={hook h='filterproductspro'}}
-<div id="js-product-list-top" class="pb-7 tablet:pb-3 pt-0 products-selection tablet:mb-[40px]">
+<div id="js-product-list-top" class="pb-1 tablet:pb-3 pt-0 products-selection mb-7 tablet:mb-[40px]">
   {if $page.page_name == 'category'}
     <div class="bg-main-dark mb-5 p-2 rounded-full tablet:hidden text-base text-center text-white"
       data-current-category-id="{$smarty.get.id_category}" onclick="openMenuWithCategory({$smarty.get.id_category})">
