@@ -68,7 +68,7 @@
                 </button>
               </div>
             <div class="px-[30px] overflow-y-auto scrollbar-custom">
-              {hook h='filterproductspro'}
+              {$externalFilters}
             </div>
           </div>
         </div>
