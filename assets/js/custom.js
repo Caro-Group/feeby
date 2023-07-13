@@ -1696,7 +1696,7 @@ $(document).ready(function(){
       ([e]) => e.target.classList.toggle('shadow-[0px_4px_4px_rgba(0,0,0,0.1)]', e.intersectionRatio < 1),
       {
         threshold: [1],
-        rootMargin: "-51px 0px 0px 0px"
+        rootMargin: "51px 0px 0px 0px"
       }
     );
 
