@@ -843,10 +843,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 }
 
                 prestashop.emit('updateProductList', response);
-
+                
                 AppFPP.initEventsAfterSearching();
-
+                
                 $(document).trigger('fpp-executeSearch-success', {});
+                $("[data-filters-active-count]").html(` (${response.pagination.total_items})`);
             },
             complete: function() {
                 if (FilterProductsPro.CONFIGS.FPP_INFINITE_SCROLL) {
