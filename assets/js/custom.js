@@ -1688,3 +1688,18 @@ function initModalToggle(modalElement,openBtnElement,closeBtnElement){
   }
 }
 
+$(document).ready(function(){
+  const filterButtonsContainer = document.querySelector('[data-filters-buttons-container]')
+
+  if (filterButtonsContainer) {
+    const observer = new IntersectionObserver( 
+      ([e]) => e.target.classList.toggle('shadow-[0px_4px_4px_rgba(0,0,0,0.1)]', e.intersectionRatio < 1),
+      {
+        threshold: [1],
+        rootMargin: "-51px 0px 0px 0px"
+      }
+    );
+
+    observer.observe(filterButtonsContainer)
+  }
+})
