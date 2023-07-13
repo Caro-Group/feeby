@@ -1636,15 +1636,15 @@ $(document).ready(function () {
 
   const filterModal = document.querySelector('#search_filters_modal')
   const filterBtn = document.querySelector('#search_filters_toggler')
-  const filterModalCloseBtn = document.querySelector('#search_filters_modal_close')
+  const filterModalCloseBtns = document.querySelectorAll('[data-filters-modal-close]')
   
-  initModalToggle(filterModal,filterBtn,filterModalCloseBtn)
+  initModalToggle(filterModal,filterBtn,filterModalCloseBtns)
 
   const sortModal = document.querySelector('#search_sort_modal')
   const sortBtn = document.querySelector('#search_sort_toggler')
-  const sortModalCloseBtn = document.querySelector('#search_sort_modal_close')
+  const sortModalCloseBtns = document.querySelectorAll('[data-sort-modal-close]')
 
-  initModalToggle(sortModal,sortBtn,sortModalCloseBtn)
+  initModalToggle(sortModal,sortBtn,sortModalCloseBtns)
    
 });
 
@@ -1663,8 +1663,8 @@ function isModalActive(modalElement){
 }
 
 const customModals = []
-function initModalToggle(modalElement,openBtnElement,closeBtnElement){   
-  if (openBtnElement && modalElement && closeBtnElement) {
+function initModalToggle(modalElement,openBtnElement,closeBtnElements){   
+  if (openBtnElement && modalElement && closeBtnElements) {
     openBtnElement.addEventListener('click',()=>{
       if (isModalActive(modalElement)) {
         return closeModal(modalElement,openBtnElement)        
@@ -1687,9 +1687,11 @@ function initModalToggle(modalElement,openBtnElement,closeBtnElement){
       
     });
     
-    closeBtnElement.addEventListener('click',()=>{
-      closeModal(modalElement,openBtnElement)
-    });
+    closeBtnElements.forEach(button => {
+      button.addEventListener('click',()=>{
+        closeModal(modalElement,openBtnElement)
+      });
+    })
 
     customModals.push({modal: modalElement, openBtn:openBtnElement})
   }
