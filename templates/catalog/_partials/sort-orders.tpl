@@ -61,7 +61,6 @@
         <button id="search_sort_show_prod" class="text-center bg-main text-white px-5 w-full rounded-full  pb-2 hover:bg-main-hover transition duration-200 border-0 py-2 text-lg uppercase cursor-pointer"
         data-sort-modal-close >
         {l s='Show products' d='Shop.Theme.Actions'}
-          <span data-filters-active-count></span>
         </button>
       </div>
 
