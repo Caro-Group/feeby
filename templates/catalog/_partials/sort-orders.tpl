@@ -63,7 +63,7 @@
         {l s='Show products' d='Shop.Theme.Actions'}
           <span data-filters-active-count></span>
         </button>
-      <div>
+      </div>
 
     </div>
   </div>
