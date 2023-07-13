@@ -56,7 +56,7 @@
     <section id="products">
       {if $listing.products|count}
 
-        <div data-filters-buttons-container class="row row-md-revert !sticky tablet:!static top-[-52px] tablet:top-0 z-30 bg-white !mx-[-20px] tablet:!mx-[-10px] px-[10px] tablet:px-0 shadow-[0px_4px_4px_rgba(0,0,0,0.1)] transition duration-200 tablet:shadow-none mb-7 tablet:mb-0">
+        <div data-filters-buttons-container class="row row-md-revert !sticky tablet:!static top-[-52px] tablet:top-0 z-30 bg-white !mx-[-20px] tablet:!mx-[-10px] px-[10px] tablet:px-0 transition duration-200 tablet:shadow-none mb-7 tablet:mb-0">
 
           <div class="col-xs-12 col-md-pull-12">
             {block name='product_list_top'}
