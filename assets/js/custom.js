@@ -1730,7 +1730,7 @@ function handleModalsOffset(container){
   let containerOffset = container.getBoundingClientRect().bottom
 
   customModals.forEach(item=>{
-    if (window.innerHeight > containerOffset && !window.innerWidth < 768) {
+    if (window.innerHeight > containerOffset && window.innerWidth >= 768) {
       item.modal.style.top = containerOffset - window.innerHeight + 'px'
     }else{
       item.modal.style.top = '0px'
