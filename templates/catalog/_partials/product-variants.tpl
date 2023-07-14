@@ -65,7 +65,7 @@
                     </picture>
                   {/if}
                   </span>
-                <span class="text-main-dark p-0 text-center text-base {if $id_attribute_group|in_array:$ids_with_container} pt-1 tablet-medium:text-lg {else} pt-[10px] tablet-medium:text-2xl {/if}">{$group_attribute.name}</span>
+                <span class="text-main-dark p-0 text-center text-base {if $id_attribute_group|in_array:$ids_with_container} pt-1 tablet-medium:text-lg !leading-4 tablet-medium:!leading-5 {else} pt-[10px] tablet-medium:text-2xl {/if}">{$group_attribute.name}</span>
                 </label>
               </li>
             {/foreach}
