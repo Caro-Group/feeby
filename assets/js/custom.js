@@ -1711,7 +1711,7 @@ $(document).ready(function(){
     observer.observe(filterButtonsContainer)
   }
   
-  const productsList = document.querySelector('.products')
+  const productsList = document.querySelector('#js-product-list .products')
   
   if (productsList) {
     handleModalsOffset(productsList)
@@ -1730,7 +1730,7 @@ function handleModalsOffset(container){
   let containerOffset = container.getBoundingClientRect().bottom
 
   customModals.forEach(item=>{
-    if (window.innerHeight > containerOffset) {
+    if (window.innerHeight > containerOffset && !window.innerWidth < 768) {
       item.modal.style.top = containerOffset - window.innerHeight + 'px'
     }else{
       item.modal.style.top = '0px'
