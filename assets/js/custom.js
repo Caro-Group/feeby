@@ -1704,22 +1704,21 @@ $(document).ready(function(){
     observer.observe(filterButtonsContainer)
   }
   
-  const productsList = document.querySelector('#js-product-list .products')
-  
-  if (productsList) {
-    handleModalsOffset(productsList)
+  if (prestashop.page.page_name == 'category') {
+    handleModalsOffset()
     
     window.addEventListener('scroll',()=>{
-      handleModalsOffset(productsList)
+      handleModalsOffset()
     });
 
     window.addEventListener('resize',()=>{
-      handleModalsOffset(productsList)
+      handleModalsOffset()
     });
   }
 })
 
-function handleModalsOffset(container){
+function handleModalsOffset(){
+  let container = document.querySelector('#js-product-list .products')
   let containerOffset = container.getBoundingClientRect().bottom
 
   customModals.forEach(item=>{
