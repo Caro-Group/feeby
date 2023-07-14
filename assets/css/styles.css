@@ -306,7 +306,7 @@ li[data-menu-type='url'] a {
 }
 
 .modal_productList{
-  @apply fixed z-[1100] top-0 left-0 tablet:left-full tablet:top-10 tablet:bottom-10 w-screen tablet:w-[470px] h-screen tablet:h-auto bg-black/20 tablet:bg-transparent px-5 py-10 tablet:p-0 tablet:pr-5 transition duration-300
+  @apply fixed z-[1100] top-0 left-0 tablet:left-full w-screen tablet:w-[470px] h-screen bg-black/20 tablet:bg-transparent px-5 py-10 tablet:pl-0 tablet:pr-5 transition-transform duration-300
 }
 
 .modal_productList-inner{

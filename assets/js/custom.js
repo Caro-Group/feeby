@@ -1692,7 +1692,6 @@ function initModalToggle(modalElement,openBtnElement,closeBtnElements){
 
 $(document).ready(function(){
   const filterButtonsContainer = document.querySelector('[data-filters-buttons-container]')
-
   if (filterButtonsContainer) {
     const observer = new IntersectionObserver( 
       ([e]) => e.target.classList.toggle('shadow-[0px_4px_4px_rgba(0,0,0,0.1)]', e.intersectionRatio < 1),
@@ -1704,4 +1703,31 @@ $(document).ready(function(){
 
     observer.observe(filterButtonsContainer)
   }
+  
+  const productsList = document.querySelector('.products')
+  
+  if (productsList) {
+    handleModalsOffset(productsList)
+    
+    window.addEventListener('scroll',()=>{
+      handleModalsOffset(productsList)
+    });
+
+    window.addEventListener('resize',()=>{
+      handleModalsOffset(productsList)
+    });
+  }
 })
+
+function handleModalsOffset(container){
+  let containerOffset = container.getBoundingClientRect().bottom
+
+  customModals.forEach(item=>{
+    if (window.innerHeight > containerOffset) {
+      item.modal.style.top = containerOffset - window.innerHeight + 'px'
+    }else{
+      item.modal.style.top = '0px'
+    }
+  })
+
+}
