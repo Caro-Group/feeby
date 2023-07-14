@@ -55,7 +55,7 @@
                 <label aria-label="{$group_attribute.name}" class="flex flex-col cursor-pointer">
                   <input class="input-color peer" type="radio" data-product-attribute="{$id_attribute_group}" name="group[{$id_attribute_group}]" value="{$id_attribute}" title="{$group_attribute.name}"{if $group_attribute.selected} checked="checked"{/if}>
                   <span
-                   class="{if $group_attribute.texture} color texture w-full  {if $id_attribute_group|in_array:$ids_with_container} h-[54px] {else} h-20 tablet:h-[120px]  opacity-50 peer-checked:opacity-100 aspect-[4/3] {/if}  mx-auto tablet:mx-0 bg-no-repeat bg-cover rounded-[5px] border-2 border-solid border-gray-2000 hover:border-gray-3000 peer-checked:border-main transition shadow-none overflow-hidden {elseif $group_attribute.html_color_code} color w-10 h-10 rounded-[5px] {/if}" {if $group_attribute.html_color_code} style="background-color: {$group_attribute.html_color_code}" {/if}>
+                   class=" color texture w-full  {if $id_attribute_group|in_array:$ids_with_container} h-[54px] {else} h-20 tablet:h-[120px]  opacity-50 peer-checked:opacity-100 aspect-[4/3] {/if}  mx-auto tablet:mx-0 bg-no-repeat bg-cover rounded-[5px] border-2 border-solid border-gray-2000 hover:border-gray-3000 peer-checked:border-main transition shadow-none overflow-hidden" {if $group_attribute.html_color_code} style="background-color: {$group_attribute.html_color_code}" {/if}>
                   {if $group_attribute.texture}
                     <picture>
                       <source srcset="{$group_attribute.texture|replace:".png":".webp"|replace:".jpg":".webp"|escape:'html':'UTF-8'}" type="image/webp">
@@ -64,7 +64,7 @@
                     </picture>
                   {/if}
                   </span>
-                <span class="text-main-dark p-0 text-center text-base {if $id_attribute_group|in_array:$ids_with_container} pt-1 tablet-medium:text-lg whitespace-nowrap {else} pt-[10px] tablet-medium:text-2xl {/if}">{$group_attribute.name}</span>
+                <span class="text-main-dark p-0 text-center text-base {if $id_attribute_group|in_array:$ids_with_container} pt-1 tablet-medium:text-lg {else} pt-[10px] tablet-medium:text-2xl {/if}">{$group_attribute.name}</span>
                 </label>
               </li>
             {/foreach}
