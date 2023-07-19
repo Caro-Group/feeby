@@ -130,9 +130,7 @@
           {/if}
         </div>
       </div>
-      {if $group.group_name == "Typ" && $group.attributes['416']}
-        <hr class="my-[20px] {if !$group.attributes['416'].selected}desktop:hidden{/if}">
-      {/if}
+      <hr class="my-[20px] {if $group.group_name == "Typ" && $group.attributes['416'] && !$group.attributes['416'].selected || $group@last}desktop:hidden{/if}">
     {/if}
   {/foreach}
 </div>
