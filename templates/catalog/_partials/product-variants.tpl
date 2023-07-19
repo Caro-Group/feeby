@@ -61,7 +61,7 @@
                     <picture>
                       <source srcset="{$group_attribute.texture|replace:".png":".webp"|replace:".jpg":".webp"|escape:'html':'UTF-8'}" type="image/webp">
 						          <source srcset="{$group_attribute.texture|replace:" ":"%20"|escape:'html':'UTF-8'}" type="image/jpeg">
-                      <img class="block h-full object-cover" src="{$group_attribute.texture|replace:" ":"%20"}" />
+                      <img class="block h-full w-full object-cover" src="{$group_attribute.texture|replace:" ":"%20"}" />
                     </picture>
                   {/if}
                   </span>
@@ -87,7 +87,7 @@
 
         {/if}
 
-        <div class="flex flex-wrap mt-5 leading-normal text-[14px] tablet:text-base  gap-2.5 tablet:gap-5">
+        <div class="flex flex-wrap mt-5 leading-normal text-[14px] tablet:text-base  gap-2.5 tablet:gap-5 w-full">
           {if $group.group_name == "Rozmiar" || $id_attribute_group == 6}
 
             <a href="/tabela-rozmiarow" target="_blank" class="flex items-center phone:basis-[calc(50%_-_5px)] tablet-medium:basis-auto transition">
@@ -130,8 +130,8 @@
           {/if}
         </div>
       </div>
-      {if $group.group_name == "Typ" && $group.attributes['416'] && !$group.attributes['416'].selected}
-        <hr class="my-[30px]">
+      {if $group.group_name == "Typ" && $group.attributes['416']}
+        <hr class="my-[20px] {if !$group.attributes['416'].selected}desktop:hidden{/if}">
       {/if}
     {/if}
   {/foreach}
