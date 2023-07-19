@@ -22,7 +22,7 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
- {assign var="ids_with_container" value=[23, 4]}
+ {assign var="ids_with_container" value=[20, 3]}
 
  <div class="product-variants">
   {foreach from=$groups key=id_attribute_group item=group}
