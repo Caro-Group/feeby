@@ -10,7 +10,7 @@
 
 <div class="wishlist">
 	{if isset($wishlists)}
-		<a class="leo-wishlist-button btn-product btn-primary !pt-0 !top-0 btn{if $added_wishlist} added{/if} group" href="{url entity='module' name='leofeature' controller='mywishlist'}" data-id-wishlist="{$id_wishlist}" data-id-product="{$leo_wishlist_id_product}" data-id-product-attribute="{$leo_wishlist_id_product_attribute}" title="{if $added_wishlist}{l s='Remove from Wishlist' d='Modules.Leofeature.Shop'}{else}{l s='Add to Wishlist' d='Modules.Leofeature.Shop'}{/if}">
+		<a class="leo-wishlist-button btn-product btn-primary !pt-1 !top-0 btn{if $added_wishlist} added{/if} group" href="{url entity='module' name='leofeature' controller='mywishlist'}" data-id-wishlist="{$id_wishlist}" data-id-product="{$leo_wishlist_id_product}" data-id-product-attribute="{$leo_wishlist_id_product_attribute}" title="{if $added_wishlist}{l s='Remove from Wishlist' d='Modules.Leofeature.Shop'}{else}{l s='Add to Wishlist' d='Modules.Leofeature.Shop'}{/if}">
 			<span class="leo-wishlist-bt-loading cssload-speeding-wheel"></span>
 			<span class="leo-wishlist-bt-content justify-center">
 				<svg class="wishlist-svg transition" width="32px" height="32px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
