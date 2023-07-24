@@ -95,6 +95,9 @@
                           {elseif $option.id_option == 1119}
                             background-color: #FFFFFF;
                             border-color: #ADAFBA;
+                          {elseif $option.id_option == 1131}
+                            background-color: #40E0D0;
+                            border-color: #40E0D0;
                           {elseif $option.id_option == 11} //
                             background: #FFFFFF;
                             border-color: #ADAFBA;
@@ -108,7 +111,7 @@
 
                         {if $filter.id_filter == 50}
                           <div class="shrink-0">
-                            {if $option.id_option == 1135}
+                            {if $option.id_option == 1137}
                               <svg class="tablet:hidden" width="60" height="75" viewBox="0 0 60 75" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect x="0.5" y="0.5" width="59" height="74" rx="4.5" stroke="#ADAFBA" stroke-width="2">
                               </svg>
@@ -116,7 +119,7 @@
                                 <rect x="1" y="1" width="94" height="118" rx="4" stroke="#ADAFBA" stroke-width="2"/>
                               </svg>
 
-                            {elseif $option.id_option == 1137}
+                            {elseif $option.id_option == 1135}
                               <svg class="tablet:hidden" width="75" height="60" viewBox="0 0 75 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect x="0.5" y="0.5" width="74" height="59" rx="4.5" stroke="#ADAFBA" stroke-width="2"/>
                               </svg>
