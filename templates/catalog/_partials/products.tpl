@@ -23,7 +23,7 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 <div id="js-product-list">
-  <div class="products">  
+  <div class="products tablet:min-h-screen">  
     {assign var="leo_page" value='category'}
     {include file='catalog/_partials/miniatures/leo_col_products.tpl' products=$listing.products}   
   </div>
