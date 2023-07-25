@@ -22,73 +22,115 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
-{if !isset($LISTING_GRID_MODE) || !isset($LISTING_PRODUCT_COLUMN) || !isset($LISTING_PRODUCT_COLUMN_MODULE) || !isset($LISTING_PRODUCT_TABLET) || !isset($LISTING_PRODUCT_SMALLDEVICE) || !isset($LISTING_PRODUCT_EXTRASMALLDEVICE) || !isset($LISTING_PRODUCT_MOBILE)}
-  {block name="setting"}
-    {include file="layouts/setting.tpl"}
-  {/block}
-{/if}
+ {assign var="ids_with_container" value=[20, 3]}
 
-{assign var='externalFilters' value={hook h='filterproductspro'}}
-<div id="js-product-list-top" class="pb-1 tablet:pb-3 pt-0 products-selection tablet:mb-[40px]">
-  {if $page.page_name == 'category'}
-    <div class="bg-main-dark mb-5 p-2 rounded-full tablet:hidden text-base text-center text-white"
-      data-current-category-id="{$smarty.get.id_category}" onclick="openMenuWithCategory({$smarty.get.id_category})">
-      {l s='Categories' d='Shop.Theme.Global'}
-    </div>
-  {/if}
+ <div class="product-variants">
+  {foreach from=$groups key=id_attribute_group item=group}
+    {if !empty($group.attributes)}
 
-  <div class=" flex flex-wrap justify-between desktop-presta:mr-[15px] ">
-    <div style="flex:0 0 auto;" class="w-1/2 tablet:w-[232px] order-1 flex justify-center ">
-      {if !empty($externalFilters) || (!empty($listing.rendered_facets))}
+      <div class="{if $group.group_name|strstr:"Rodzaj fototapety"}hidden{/if} clearfix product-variants-item flex flex-col items-start mb-5 {if $id_attribute_group|in_array:$ids_with_container} mt-[30px] py-5 px-2.5 tablet:p-[30px] border-2 border-gray-2000 border-solid rounded-[5px] {/if}">
+        <span class="block text-base text-gray-main text-lg leading-normal mb-[13px] tablet:mb-[18px] font-medium">
+          {if $id_attribute_group neq 21 }
+            {$group.name}
+          {/if}
+        </span>
 
-        <button id="search_filters_toggler"
-          class="flex items-center justify-between cursor-pointer border-2 border-solid border-gray-2000 px-5 tablet:px-10 text-left text-base tablet:text-lg uppercase text-normal bg-gray-1000 hover:border-gray-3000 rounded-md text-main-dark text-left w-full transition duration-200" >
-          {l s='Filter' d='Shop.Theme.Actions'}
-          <span class="top-[3px] float-right pl-4 relative ">
-            <svg class="tablet:w-[25px] tablet:h-[25px]" width="18" height="18" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M15.1507 0C15.5448 0 15.8642 0.319412 15.8642 0.71342V6.20261C15.8642 6.59661 15.5448 6.91602 15.1507 6.91602C14.7567 6.91602 14.4373 6.59661 14.4373 6.20261V4.13424H0.713464C0.319432 4.13424 0 3.81484 0 3.42082C0 3.02682 0.319432 2.7074 0.713464 2.7074H14.4373V0.71342C14.4373 0.319412 14.7567 0 15.1507 0ZM22.6568 3.41391C22.6607 3.8079 22.3443 4.13039 21.9504 4.13422L17.9434 4.17143C17.5495 4.17525 17.2269 3.85895 17.2231 3.46496C17.2193 3.07096 17.5356 2.74848 17.9296 2.74465L21.9365 2.70744C22.3306 2.70362 22.653 3.01992 22.6568 3.41391ZM9.4478 8.18574C9.84184 8.18574 10.1613 8.50515 10.1613 8.89916V11.6057V11.6073V14.3883C10.1613 14.7823 9.84184 15.1018 9.4478 15.1018C9.05377 15.1018 8.73433 14.7823 8.73433 14.3883V12.32H0.713464C0.319432 12.32 0 12.0006 0 11.6066C0 11.2126 0.319432 10.8932 0.713464 10.8932H8.73433V8.89916C8.73433 8.50515 9.05377 8.18574 9.4478 8.18574ZM11.548 11.6066C11.548 11.2126 11.8675 10.8932 12.2615 10.8932H21.9435C22.3375 10.8932 22.6569 11.2126 22.6569 11.6066C22.6569 12.0006 22.3375 12.32 21.9435 12.32H12.2615C11.8675 12.32 11.548 12.0006 11.548 11.6066ZM13.2279 16.084C13.622 16.084 13.9414 16.4034 13.9414 16.7974V22.2866C13.9414 22.6806 13.622 23 13.2279 23C12.8339 23 12.5145 22.6806 12.5145 22.2866V20.2182H1.05647C0.662433 20.2182 0.34301 19.8988 0.34301 19.5048C0.34301 19.1108 0.662433 18.7914 1.05647 18.7914H12.5145V16.7974C12.5145 16.4034 12.8339 16.084 13.2279 16.084ZM23 19.5004C23.0024 19.8944 22.6849 20.2158 22.2909 20.2182L16.0575 20.2556C15.6635 20.2581 15.3422 19.9406 15.3397 19.5466C15.3373 19.1526 15.6548 18.8313 16.0488 18.8288L22.2821 18.7914C22.6762 18.789 22.9975 19.1064 23 19.5004Z" fill="black"/>
-            </svg>
-          </span>
-        </button>
-      {/if}
-    </div>
-    {block name='product_list_active_filters'}
-      {if !empty($externalFilters) || (isset($listing.rendered_facets) && $listing.rendered_facets)}
-        <div id="search_filters_modal"
-          class="modal_productList">
-          <div id="search_filters_modal_inner" class="modal_productList-inner">
-            <div class=" py-2.5 px-[30px] flex justify-between items-center border-0 border-b border-solid border-gray-2000">
-              <span class="font-header italic text-main-dark text-2xl tablet:text-4xl">{l s='Filter' d='Shop.Theme.Actions'}</span>
-                <button class="group cursor-pointer appearance-none bg-transparent border-0 h-10 py-1.5" data-filters-modal-close >
-                  <svg class="fill-current text-main-dark group-hover:text-main transition duration-200" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0.755782 0.707112C1.14631 0.316585 1.77947 0.316587 2.17 0.707116L25.293 23.8304C25.6835 24.2209 25.6835 24.8541 25.293 25.2446L25.2447 25.2929C24.8542 25.6834 24.221 25.6834 23.8305 25.2929L0.707512 2.16959C0.316992 1.77907 0.316992 1.1459 0.707514 0.755379L0.755782 0.707112Z" ></path>
-                    <path d="M0.707106 25.2442C0.316582 24.8537 0.316582 24.2205 0.707105 23.83L23.8303 0.706705C24.2208 0.31618 24.854 0.316179 25.2445 0.706704L25.2928 0.754972C25.6833 1.1455 25.6833 1.77866 25.2928 2.16919L2.16958 25.2925C1.77906 25.683 1.1459 25.683 0.755373 25.2925L0.707106 25.2442Z" ></path>
-                  </svg>
-                </button>
-              </div>
-            <div class="px-[30px] overflow-y-auto scrollbar-custom">
-              {$externalFilters nofilter}
+        {if $group.group_type == 'select'}
+
+          <select
+            class="form-select taxt-base tablet:text-xl py-[18px] tablet:py-4 pl-[30px] bg-[center_right_30px] bg-gray-default rounded border-2 border-gray-2000 hover:border-gray-3000 !ring-0 !outline-0 !outline-offset-0 focus:!border-gray-3000 w-full mb-[10px] focus:!ring-0 transition"
+            id="group_{$id_attribute_group}"
+            data-product-attribute="{$id_attribute_group}"
+            name="group[{$id_attribute_group}]">
+            {foreach from=$group.attributes key=id_attribute item=group_attribute}
+              <option value="{$id_attribute}" title="{$group_attribute.name}" {if $group_attribute.selected} selected="selected"
+                {/if}>{$group_attribute.name}</option>
+            {/foreach}
+          </select>
+
+        {elseif $group.group_type == 'color'}
+
+        <ul id="group_{$id_attribute_group}" class="flex w-full flex-wrap {if ! $id_attribute_group|in_array:$ids_with_container} justify-center {/if} tablet:justify-start">
+            {foreach from=$group.attributes key=id_attribute item=group_attribute}
+              <li class="input-container w-full {if $id_attribute_group|in_array:$ids_with_container} mx-2.5 tablet:ml-0 tablet:mr-[35px] max-w-[80px] {else} mr-5 phone:max-w-[40%] tablet:max-w-[121px] tablet:aspect-ratio-[4/3] tablet:mr-5 desktop:max-w-[29%] {/if} ">
+                <label aria-label="{$group_attribute.name}" class="flex flex-col cursor-pointer">
+                  <input class="input-color peer" type="radio" data-product-attribute="{$id_attribute_group}" name="group[{$id_attribute_group}]" value="{$id_attribute}" title="{$group_attribute.name}"{if $group_attribute.selected} checked="checked"{/if}>
+                  <span
+                   class=" color texture w-full  {if $id_attribute_group|in_array:$ids_with_container} h-[54px] {else} h-20 tablet:h-[120px]  opacity-50 peer-checked:opacity-100 aspect-[4/3] {/if}  mx-auto tablet:mx-0 bg-no-repeat bg-cover rounded-[5px] border-2 border-solid border-gray-2000 hover:border-gray-3000 peer-checked:border-main transition shadow-none overflow-hidden" {if $group_attribute.html_color_code} style="background-color: {$group_attribute.html_color_code}" {/if}>
+                  {if $group_attribute.texture}
+                    <picture>
+                      <source srcset="{$group_attribute.texture|replace:".png":".webp"|replace:".jpg":".webp"|escape:'html':'UTF-8'}" type="image/webp">
+						          <source srcset="{$group_attribute.texture|replace:" ":"%20"|escape:'html':'UTF-8'}" type="image/jpeg">
+                      <img class="block h-full w-full object-cover" src="{$group_attribute.texture|replace:" ":"%20"}" />
+                    </picture>
+                  {/if}
+                  </span>
+                <span class="text-main-dark p-0 text-center text-base {if $id_attribute_group|in_array:$ids_with_container} pt-1 tablet-medium:text-lg !leading-4 tablet-medium:!leading-5 {else} pt-[10px] tablet-medium:text-2xl {/if}">{$group_attribute.name}</span>
+                </label>
+              </li>
+            {/foreach}
+          </ul>
+
+        {elseif $group.group_type == 'radio'}
+
+          <ul id="group_{$id_attribute_group}"
+            class="{if $group.name == "Rozmiar fototapety" || $id_attribute_group == '21'} hidden {/if} flex flex-row flex-wrap">
+            {foreach from=$group.attributes key=id_attribute item=group_attribute}
+              <li class="shrink basis-0 tablet:basis-1/5 pb-2 pr-2">
+                <label class="mb-0 w-full h-full">
+                  <input class="form-radio sr-only peer" type="radio" data-product-attribute="{$id_attribute_group}" name="group[{$id_attribute_group}]" value="{$id_attribute}" title="{$group_attribute.name}"{if $group_attribute.selected} checked="checked"{/if}>
+                  <span class="bg-gray-default flex justify-center items-center text-center h-full border-2 border-solid cursor-pointer px-2 py-1 hover:border-gray-3000 peer-checked:border-main text-gray-main rounded transition {if $breadcrumb.links[1].title == 'Parawany'} text-sm tablet:text-base {else} text-base tablet:text-lg !leading-6 min-w-[120px] min-h-[100px] word-break {/if}">{$group_attribute.name}</span>
+                </label>
+              </li>
+            {/foreach}
+          </ul>
+
+        {/if}
+
+        <div class="flex flex-wrap mt-5 leading-normal text-[14px] tablet:text-base  gap-2.5 tablet:gap-5 w-full">
+          {if $group.group_name == "Rozmiar" || $id_attribute_group == 6}
+
+            <a href="/tabela-rozmiarow" target="_blank" class="flex items-center phone-wide:basis-[calc(50%_-_5px)] tablet-medium:basis-auto transition">
+              <svg class="shrink-0 mr-2.5" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <path d="M9 0.25C4.16797 0.25 0.25 4.16797 0.25 9C0.25 13.832 4.16797 17.75 9 17.75C13.832 17.75 17.75 13.832 17.75 9C17.75 4.16797 13.832 0.25 9 0.25ZM9 16.2656C4.98828 16.2656 1.73438 13.0117 1.73438 9C1.73438 4.98828 4.98828 1.73438 9 1.73438C13.0117 1.73438 16.2656 4.98828 16.2656 9C16.2656 13.0117 13.0117 16.2656 9 16.2656Z" fill="#ADAFBA"/>
+                <path d="M8.0625 5.5625C8.0625 5.81114 8.16127 6.0496 8.33709 6.22541C8.5129 6.40123 8.75136 6.5 9 6.5C9.24864 6.5 9.4871 6.40123 9.66291 6.22541C9.83873 6.0496 9.9375 5.81114 9.9375 5.5625C9.9375 5.31386 9.83873 5.0754 9.66291 4.89959C9.4871 4.72377 9.24864 4.625 9 4.625C8.75136 4.625 8.5129 4.72377 8.33709 4.89959C8.16127 5.0754 8.0625 5.31386 8.0625 5.5625ZM9.46875 7.75H8.53125C8.44531 7.75 8.375 7.82031 8.375 7.90625V13.2188C8.375 13.3047 8.44531 13.375 8.53125 13.375H9.46875C9.55469 13.375 9.625 13.3047 9.625 13.2188V7.90625C9.625 7.82031 9.55469 7.75 9.46875 7.75Z" fill="#ADAFBA"/>
+              </svg>
+              <span class="text-gray-3000 hover:text-main font-medium transition duration-200">
+                {l s='See table size' d='Shop.Theme.Actions'}
+              </span>
+            </a>
+            {if $breadcrumb["count"] > 0 && $breadcrumb["links"][1]["title"]|strstr:"Fototapety"}
+            <a href="/instrukcja-montazu" target="_blank" class="flex items-center phone-wide:basis-[calc(50%_-_5px)] tablet-medium:basis-auto transition">
+              <svg class="shrink-0 mr-2.5" xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 21 23" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M20.5 6.57812V19.9375C20.5 20.6834 20.199 21.3988 19.6632 21.9262C19.1273 22.4537 18.4006 22.75 17.6429 22.75H16.2143V21.3438H17.6429C18.0217 21.3438 18.3851 21.1956 18.653 20.9319C18.9209 20.6681 19.0714 20.3105 19.0714 19.9375V6.57812H16.2143C15.646 6.57812 15.1009 6.35589 14.6991 5.9603C14.2972 5.56472 14.0714 5.02819 14.0714 4.46875V1.65625H6.21429C5.83541 1.65625 5.47204 1.80441 5.20413 2.06813C4.93622 2.33185 4.78571 2.68954 4.78571 3.0625V15.7188H3.35714V3.0625C3.35714 2.31658 3.65816 1.60121 4.19398 1.07376C4.7298 0.546316 5.45652 0.25 6.21429 0.25L14.0714 0.25L20.5 6.57812ZM2.78571 16.9141H0.5V22.5377H1.63V20.6505H2.77714C3.18714 20.6505 3.53571 20.5703 3.82286 20.4072C4.11286 20.2427 4.33429 20.0205 4.48429 19.7406C4.63998 19.447 4.71902 19.1198 4.71429 18.7886C4.71429 18.437 4.63857 18.1192 4.48857 17.8366C4.33937 17.5556 4.11127 17.3227 3.83143 17.1658C3.54571 16.997 3.19857 16.9141 2.78571 16.9141ZM3.56429 18.7886C3.56944 18.9739 3.52771 19.1575 3.44286 19.323C3.36673 19.467 3.24824 19.5851 3.10286 19.6619C2.93655 19.7429 2.75261 19.7825 2.56714 19.7772H1.62571V17.8H2.56857C2.88 17.8 3.12429 17.8844 3.3 18.0545C3.47571 18.2261 3.56429 18.4708 3.56429 18.7886ZM5.30286 16.9141V22.5377H7.38857C7.96143 22.5377 8.43714 22.4252 8.81429 22.2044C9.19594 21.9796 9.49396 21.6399 9.66429 21.2355C9.85 20.8136 9.94429 20.3045 9.94429 19.7111C9.94429 19.1205 9.85143 18.617 9.66429 18.1994C9.49597 17.7996 9.2008 17.4642 8.82286 17.2431C8.44571 17.0238 7.96714 16.9141 7.38714 16.9141H5.30286ZM6.43286 17.8211H7.23714C7.59143 17.8211 7.88 17.8914 8.10714 18.0348C8.34291 18.1866 8.52079 18.4112 8.61286 18.6733C8.72571 18.9559 8.78143 19.3089 8.78143 19.7322C8.78586 20.0127 8.7532 20.2925 8.68429 20.5647C8.63339 20.7793 8.53807 20.9814 8.40429 21.1581C8.27999 21.3158 8.11531 21.4381 7.92714 21.5125C7.70666 21.5937 7.47249 21.6328 7.23714 21.6278H6.43286V17.8211ZM11.78 20.3003V22.5377H10.6514V16.9141H14.2914V17.8323H11.78V19.4031H14.0743V20.3003H11.78Z" fill="#ADAFBA"/>
+              </svg>
+              <span class="text-gray-3000 hover:text-main font-medium transition duration-200">
+                {l s='Download the assembly manual' d='Shop.Theme.Actions'}
+              </span>
+            </a>
+
+            <div class=" text-center mt-2.5 w-full shrink-0 px-5 py-[5px] rounded-[5px] border border-solid border-gray-2000">
+              <span class="text-main-dark text-base">
+                {l s='Need a different size?' d='Shop.Theme.Actions'} <a class="underline font-medium text-main-dark inline-block tablet:inline hover:!underline hover:!text-main transition duration-200" href="/" target="_blank">{l s='Try out our generator' d='Shop.Theme.Actions'}</a>
+              </span>
             </div>
-            <div class="border-0 border-b border-gray-2000 border-solid flex items-center justify-between mt-auto px-[30px] py-2.5">
-              <button id="search_filters_show_prod" class="text-center bg-main text-white px-5 w-full rounded-full  pb-2 hover:bg-main-hover transition duration-200 border-0 py-2 text-lg uppercase cursor-pointer"
-              data-filters-modal-close >
-              {l s='Show products' d='Shop.Theme.Actions'}
-              <span data-filters-active-count ></span>
-              </button>
-            </div>
-          </div>
+
+            {/if}
+
+
+          {elseif $group.group_name == "Płótno"}
+
+            <span class="font-normal text-gray-3000">
+            {if $breadcrumb["count"] > 0 && $breadcrumb["links"][1]["title"]|strstr:"Parawany"}
+              {l s='Learn more about the' d='Shop.Theme.Actions'} <a class="underline font-medium text-gray-3000 hover:text-main hover:underline transition duration-200" href="/nasze-parawany" target="_blank">{l s='manufacturing technology' d='Shop.Theme.Actions'}</a>
+            {else}
+              {l s='Learn more about the' d='Shop.Theme.Actions'} <a class="underline font-medium text-gray-3000 hover:text-main hover:underline transition duration-200" href="/technologia-wykonania" target="_blank">{l s='manufacturing technology' d='Shop.Theme.Actions'}</a>
+            {/if}
+            </span>
+          {/if}
         </div>
-      {/if}
-    {/block}
-
-
-    <div
-      class="flex justify-center tablet:justify-end order-2 tablet:order-3 rounded-md w-1/2  pl-[10px] tablet:pl-0 {if $externalFilters}  tablet:rounded-none tablet:rounded-r-md tablet:w-auto  {else} tablet:w-full {/if} ">
-      <div class="sort-by-row w-full tablet:w-[232px]">
-        {block name='sort_by'}
-          {include file='catalog/_partials/sort-orders.tpl' sort_orders=$listing.sort_orders}
-        {/block}
       </div>
-    </div>
-  </div>
+        <hr class="my-[20px] {if $group.group_name == "Typ" && $group.attributes['416'] && !$group.attributes['416'].selected || $group@last}desktop:hidden{/if} {if $group.attributes['2'].selected || $id_attribute_group|in_array:$ids_with_container}hidden{/if}">
+    {/if}
+  {/foreach}
 </div>
