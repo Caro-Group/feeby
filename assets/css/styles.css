@@ -60,7 +60,7 @@ p {
 @layer components {
   h1,
   h2 {
-    @apply text-main-dark italic;
+    @apply text-main-dark;
   }
 
   h1 {
