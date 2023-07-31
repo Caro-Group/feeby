@@ -15,7 +15,7 @@
         {($apLiveEdit)?$apLiveEdit:'' nofilter}{* HTML form , no escape necessary *}
         {if isset($formAtts.title)&&!empty($formAtts.title)}
             <div class="flex justify-between px-[30px] tablet-medium:px-[20px] tablet:mb-8">
-                <h2 class="flex-shrink-0 font-light text-2xl tablet:text-4xl">
+                <h2 class="flex-shrink-0 font-normal text-2xl tablet:text-4xl">
                     {$formAtts.title|rtrim|escape:'html':'UTF-8'}
                 </h2>
                 <svg class="tablet:h-[60px] w-auto" width="40px" height="40px" viewbox="0 0 123 123" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule: evenodd; clip-rule: evenodd; stroke-linejoin: round; stroke-miterlimit: 2;">
