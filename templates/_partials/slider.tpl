@@ -3,7 +3,7 @@
 
         {if !empty($title)}
             <div class="flex justify-between px-[30px] {if $type == "products-crossell" || $type == "products-releated-footer"} tablet-medium:px-[20px] {/if} {if $type == "products-releated-footer"} mt-8 tablet:mt-20 {/if} mb-[25px] tablet:mb-6">
-                <h2 class="font-light text-2xl tablet:text-4xl">
+                <h2 class="font-normal text-2xl tablet:text-4xl">
                     {$title}                
                 </h2>
                 <svg class="flex-shrink-0 tablet:h-[60px] w-auto" width="40px" height="40px" viewbox="0 0 123 123" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule: evenodd; clip-rule: evenodd; stroke-linejoin: round; stroke-miterlimit: 2;">
