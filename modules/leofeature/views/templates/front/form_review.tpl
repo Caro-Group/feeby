@@ -8,7 +8,7 @@
 
 <div class="bg-gray-default flex flex-col tablet-wide:flex-row flex-wrap p-[20px] py-[47px] tablet:p-12 tablet-wide:p-[80px] mt-2 mb-[100px] rounded-[5px]">
 	<div class="flex flex-col pr-10 text-main-dark flex-auto justify-center mb-[40px] tablet:mb-[20px]">
-		<span class="font-italic text-[20px] tablet:text-[25px] font-header">{l s='Do you have this product?' d='Modules.Leofeature.Shop'}</span>
+		<span class="font-normal text-[20px] tablet:text-[25px] font-body">{l s='Do you have this product?' d='Modules.Leofeature.Shop'}</span>
 		<span class="text-base tablet:text-[20px] font-body">{l s='Tell others how you rate it!' d='Modules.Leofeature.Shop'}</span>
 	</div>
 	<div class="new_review_form_content p-0 flex-[1_1_50%] tablet:mb-[20px]">

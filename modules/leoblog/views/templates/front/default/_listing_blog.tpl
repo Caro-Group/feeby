@@ -21,7 +21,7 @@
 					height="300"
 					alt="" class="w-full h-auto max-h-[300px] object-cover object-center" />
 			</a>
-			<time class="absolute bottom-0 left-0 m-[30px] p-[9px] bg-white font-header font-italic font-light items-center text-center text-main-dark text-[16px]" datetime="{strtotime($blog.date_add)|date_format:"%Y"|escape:'html':'UTF-8'}">
+			<time class="absolute bottom-0 left-0 m-[30px] p-[9px] bg-white font-body font-normal items-center text-center text-main-dark text-[16px]" datetime="{strtotime($blog.date_add)|date_format:"%Y"|escape:'html':'UTF-8'}">
 				<span class="block text-[35px] leading-[35px]">
 					{assign var='blog_day' value=strtotime($blog.date_add)|date_format:"%e"}
 					{l s=$blog_day d='Shop.Theme.Global'}
@@ -41,7 +41,7 @@
 
 	<div class="flex flex-col px-[30px] flex-auto mt-[30px]">
 		{if $config->get('listing_show_title','1')}
-			<h2 class="font-header font-light text-[25px] mb-[30px]">
+			<h2 class="font-body font-normal text-[25px] mb-[30px]">
 				<a href="{$blog.link|escape:'html':'UTF-8'}" target="_blank" class="text-main-dark hover:text-main transition"
 					title="{$blog.title|escape:'html':'UTF-8'}">{$blog.title|escape:'html':'UTF-8'}</a>
 			</h2>

@@ -88,7 +88,6 @@ module.exports = {
         "80px": "80px",
       },
       fontFamily: {
-        header: ['"Nomada Didone"', "Roboto", ...fontFamily.sans],
         body: ["Roboto", ...fontFamily.sans],
       },
       translate: {
