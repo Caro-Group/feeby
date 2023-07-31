@@ -25,7 +25,7 @@
 {if $cart.vouchers.allowed}
   {block name='cart_voucher'}
       <div class="cart-voucher desktop:ml-[122px] tablet:max-w-[370px] w-full my-6 tablet-wide:ml-[122px]">
-        <span class="font-header font-light italic tablet:text-2xl text-main-dark text-xl ml-5">
+        <span class="font-body font-normal tablet:text-2xl text-main-dark text-xl ml-5">
           {l s='Add coupon' d='Shop.Theme.Checkout'}
         </span>
         {if $cart.vouchers.added}

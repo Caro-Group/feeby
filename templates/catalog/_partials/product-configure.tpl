@@ -17,7 +17,7 @@
                                 class=" material-icons text-main-dark hover:text-main text-4xl transition select-none"></i>
                         </button>
 
-                        <h1 class="max-w-screen-tablet-wide mx-auto w-full desktop-presta:hidden mt-5 desktop-presta:mt-0 flex-shrink-0 font-header product-detail-name text-xl leading-24px mb-5 pr-[70px] pl-5 tablet:pl-0 tablet:pr-[46px]"
+                        <h1 class="max-w-screen-tablet-wide mx-auto w-full desktop-presta:hidden mt-5 desktop-presta:mt-0 flex-shrink-0 font-body font-normal product-detail-name text-xl leading-24px mb-5 pr-[70px] pl-5 tablet:pl-0 tablet:pr-[46px]"
                             itemprop="name" data-product-configurable="name">
                             {block name='page_title'}
                                 {$product.name}
@@ -95,7 +95,7 @@
 
                         <div
                             class="flex flex-col px-5 tablet:px-0 phone:mb-[100px] desktop-presta:mb-0 desktop-presta:flex-[0_0_320px] desktop-wide:flex-[0_0_610px] max-w-screen-tablet-wide mx-auto w-full desktop-presta:pl-5 desktop-wide:pl-[50px]">
-                            <h1 class="hidden desktop-presta:block mt-5 desktop-presta:mt-0 flex-shrink-0 font-header product-detail-name text-[35px] leading-24px mb-5 pr-[46px]"
+                            <h1 class="hidden desktop-presta:block mt-5 desktop-presta:mt-0 flex-shrink-0 font-body font-normal product-detail-name text-[35px] leading-24px mb-5 pr-[46px]"
                                 itemprop="name">
                                 {block name='page_title'}
                                     {$product.name}

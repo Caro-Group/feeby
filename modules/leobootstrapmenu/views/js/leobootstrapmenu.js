@@ -66,7 +66,7 @@ $(document).ready(function () {
             var $nav = $(
               "<section class='off-canvas-nav-megamenu' data-megamenu-id=" +
                 value.id +
-                "><nav class='offcanvas-mainnav' ><div class='off-canvas-button-megamenu'><span class='font-header italic text-2xl text-main-dark'>" +
+                "><nav class='offcanvas-mainnav' ><div class='off-canvas-button-megamenu'><span class='font-body font-normal text-2xl text-main-dark'>" +
                 menu_category +
                 "</span><span class='hidden-visually'>" +
                 close_bt_txt +

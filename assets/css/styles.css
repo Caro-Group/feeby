@@ -13,7 +13,7 @@ h1,
 h2,
 h3,
 p {
-  @apply font-header;
+  @apply font-body;
 }
 
 @keyframes fadeIn {
@@ -483,7 +483,7 @@ input[type='text'] + .input-group-btn span:nth-of-type(2) {
 }
 
 .product-desc-right-box .ApColumn .title_block {
-  @apply font-header mb-[15px] tablet:mb-5 text-xl font-normal italic normal-case text-main-dark;
+  @apply font-body mb-[15px] tablet:mb-5 text-xl font-normal normal-case text-main-dark;
 }
 
 .product-desc-right-box .ApColumn:first-child .title_block {

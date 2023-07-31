@@ -9,10 +9,10 @@
 {if isset($subcategories)}
     <div class="widget-dropdown_container widget-subcategories {if isset($widget_heading)&&!empty($widget_heading)} widget-closed {/if} " >
         {if isset($widget_heading)&&!empty($widget_heading)}
-        <div class="widget-heading dropdown-widget px-4 pb-4 pt-[14px] tablet-wide:px-0 tablet-medium:pt-0 relative tablet-medium:font-header tablet-medium:pb-1 my-0 tablet-medium:mb-5 border-0 tablet-medium:w-min border-0 border-b-2 border-gray-2000 tablet-medium:border-main border-solid tablet-medium:border-b-[3px] tablet-medium:rounded-b-sm"
+        <div class="widget-heading dropdown-widget px-4 pb-4 pt-[14px] tablet-wide:px-0 tablet-medium:pt-0 relative font-body font-normal tablet-medium:pb-1 my-0 tablet-medium:mb-5 border-0 tablet-medium:w-min border-0 border-b-2 border-gray-2000 tablet-medium:border-main border-solid tablet-medium:border-b-[3px] tablet-medium:rounded-b-sm"
         data-header-category-id="{$subcategories[0].id_parent}"
         >
-             <span class="inline-block font-body tablet-medium:font-header tablet-medium:italic tablet-medium:uppercase text-xl tablet-medium:text-base text-main-dark font-normal tablet-medium:font-light">{$widget_heading}</span>
+             <span class="inline-block font-body  tablet-medium:uppercase text-xl tablet-medium:text-base text-main-dark font-normal">{$widget_heading}</span>
              <b class="caret tablet-wide:hidden caret before:text-main-dark text-2xl transition"></b>   
         </div>
         {/if}

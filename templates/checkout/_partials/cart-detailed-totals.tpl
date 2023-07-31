@@ -24,7 +24,7 @@
  *}
 {block name='cart_detailed_totals'}
 <div class="cart-detailed-totals">
-  <span class="font-header italic text-2xl text-main-dark block pt-[20px] tablet:pt-[30px] mb-2 tablet:mb-[10px]">
+  <span class="font-body font-normal text-2xl text-main-dark block pt-[20px] tablet:pt-[30px] mb-2 tablet:mb-[10px]">
     {l s='Summary' d='Shop.Theme.Checkout'}
   </span>
   <div>
