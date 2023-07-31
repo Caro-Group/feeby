@@ -8,10 +8,10 @@
 	{if isset($leo_navigation_style) && $leo_navigation_style}
 		<ul class="lql-action{if $leo_form_layout != 'both'} lql-active{else} lql-inactive{/if}">
 			<li class="lql-action-bt">
-				<p class="lql-bt lql-bt-login italic font-normal text-xl{if $leo_form_layout == 'login'} lql-active{/if}">{l s='Login' d='Modules.Leoquicklogin.Shop'}</p>
+				<p class="lql-bt lql-bt-login font-normal text-xl{if $leo_form_layout == 'login'} lql-active{/if}">{l s='Login' d='Modules.Leoquicklogin.Shop'}</p>
 			</li>
 			<li class="lql-action-bt">
-				<p class="lql-bt lql-bt-register italic font-normal text-xl{if $leo_form_layout == 'register'} lql-active{/if}">{l s='Register' d='Modules.Leoquicklogin.Shop'}</p>
+				<p class="lql-bt lql-bt-register font-normal text-xl{if $leo_form_layout == 'register'} lql-active{/if}">{l s='Register' d='Modules.Leoquicklogin.Shop'}</p>
 			</li>
 		</ul>
 	{/if}
@@ -31,10 +31,10 @@
 			<div class="form-group lql-form-mesg has-danger">					
 			</div>
 			<div class="form-group lql-form-content-element">
-				<input type="email" autocomplete="email" class="form-control lql-email-login font-body text-sm placeholder:italic border-gray-2000 border-solid border flex rounded-full pl-4 bg-white w-full focus:border-gray-3000 focus:ring-0" name="lql-email-login" required="" placeholder="{l s='Email Address' d='Modules.Leoquicklogin.Shop'}">
+				<input type="email" autocomplete="email" class="form-control lql-email-login font-body text-sm border-gray-2000 border-solid border flex rounded-full pl-4 bg-white w-full focus:border-gray-3000 focus:ring-0" name="lql-email-login" required="" placeholder="{l s='Email Address' d='Modules.Leoquicklogin.Shop'}">
 			</div>
 			<div class="form-group lql-form-content-element">
-				<input type="password" autocomplete="current-password" class="form-control lql-pass-login font-body text-sm placeholder:italic border-gray-2000 border-solid border flex rounded-full pl-4 bg-white w-full focus:border-gray-3000 focus:ring-0" name="lql-pass-login" required="" placeholder="{l s='Password' d='Modules.Leoquicklogin.Shop'}">
+				<input type="password" autocomplete="current-password" class="form-control lql-pass-login font-body text-sm border-gray-2000 border-solid border flex rounded-full pl-4 bg-white w-full focus:border-gray-3000 focus:ring-0" name="lql-pass-login" required="" placeholder="{l s='Password' d='Modules.Leoquicklogin.Shop'}">
 			</div>
 			<div class="form-group row lql-form-content-element">				
 				<div class="col-xs-6">
@@ -70,7 +70,7 @@
 				<div class="form-group lql-form-mesg has-danger">					
 				</div>
 				<div class="form-group lql-form-content-element">
-					<input type="email" class="form-control lql-email-reset font-body text-sm placeholder:italic border-gray-2000 border-solid border flex rounded-full pl-4 bg-white w-full focus:border-gray-3000 focus:ring-0" name="lql-email-reset" required="" placeholder="{l s='Email Address' d='Modules.Leoquicklogin.Shop'}">
+					<input type="email" class="form-control lql-email-reset font-body text-sm border-gray-2000 border-solid border flex rounded-full pl-4 bg-white w-full focus:border-gray-3000 focus:ring-0" name="lql-email-reset" required="" placeholder="{l s='Email Address' d='Modules.Leoquicklogin.Shop'}">
 				</div>
 				<div class="form-group">					
 					<button type="submit" class="form-control-submit lql-form-bt leoquicklogin-reset-pass-bt bg-main-dark border-0 cursor-pointer duration-150 font-body hover:text-white hover:bg-black max-w-[320px] mb-3 px-5 py-3 rounded-full tablet:max-w-[300px] text-white text-xs  tablet:text-sm uppercase w-full whitespace-nowrap">			
@@ -98,16 +98,16 @@
 			<div class="form-group lql-form-mesg has-danger">					
 			</div>
 			<div class="form-group lql-form-content-element">
-				<input type="text" class="form-control lql-register-firstname font-body text-sm placeholder:italic border-gray-2000 border-solid border flex rounded-full pl-4 bg-white w-full focus:border-gray-3000 focus:ring-0" name="lql-register-firstname"  placeholder="{l s='First Name' d='Modules.Leoquicklogin.Shop'}">
+				<input type="text" class="form-control lql-register-firstname font-body text-sm border-gray-2000 border-solid border flex rounded-full pl-4 bg-white w-full focus:border-gray-3000 focus:ring-0" name="lql-register-firstname"  placeholder="{l s='First Name' d='Modules.Leoquicklogin.Shop'}">
 			</div>
 			<div class="form-group lql-form-content-element">
-				<input type="text" class="form-control lql-register-lastname font-body text-sm placeholder:italic border-gray-2000 border-solid border flex rounded-full pl-4 bg-white w-full focus:border-gray-3000 focus:ring-0" name="lql-register-lastname" required="" placeholder="{l s='Last Name' d='Modules.Leoquicklogin.Shop'}">
+				<input type="text" class="form-control lql-register-lastname font-body text-sm border-gray-2000 border-solid border flex rounded-full pl-4 bg-white w-full focus:border-gray-3000 focus:ring-0" name="lql-register-lastname" required="" placeholder="{l s='Last Name' d='Modules.Leoquicklogin.Shop'}">
 			</div>
 			<div class="form-group lql-form-content-element">
-				<input type="email" autocomplete="email" class="form-control lql-register-email font-body text-sm placeholder:italic border-gray-2000 border-solid border flex rounded-full pl-4 bg-white w-full focus:border-gray-3000 focus:ring-0" name="lql-register-email" required="" placeholder="{l s='Email Address' d='Modules.Leoquicklogin.Shop'}">
+				<input type="email" autocomplete="email" class="form-control lql-register-email font-body text-sm border-gray-2000 border-solid border flex rounded-full pl-4 bg-white w-full focus:border-gray-3000 focus:ring-0" name="lql-register-email" required="" placeholder="{l s='Email Address' d='Modules.Leoquicklogin.Shop'}">
 			</div>
 			<div class="form-group lql-form-content-element">
-				<input type="password" autocomplete="current-password" class="form-control lql-register-pass font-body text-sm placeholder:italic border-gray-2000 border-solid border flex rounded-full pl-4 bg-white w-full focus:border-gray-3000 focus:ring-0" name="lql-register-pass" required="" placeholder="{l s='Password' d='Modules.Leoquicklogin.Shop'}">
+				<input type="password" autocomplete="current-password" class="form-control lql-register-pass font-body text-sm border-gray-2000 border-solid border flex rounded-full pl-4 bg-white w-full focus:border-gray-3000 focus:ring-0" name="lql-register-pass" required="" placeholder="{l s='Password' d='Modules.Leoquicklogin.Shop'}">
 			</div>
 			{if $leo_check_terms }
 			<div class="form-group lql-form-content-element leo-form-chk">

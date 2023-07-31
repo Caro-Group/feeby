@@ -56,12 +56,12 @@
         <div class="container-fluid">
           <div class=" form-group">
             <label class="form-control-label">{l s='New password' d='Shop.Forms.Labels'}</label>
-            <input class="form-control form-input font-body text-sm placeholder:italic border-gray-2000 border-solid border flex rounded-full pl-4 bg-white w-full focus:border-gray-3000 focus:ring-0" type="password" data-validate="isPasswd" name="passwd" value="">
+            <input class="form-control form-input font-body text-sm  border-gray-2000 border-solid border flex rounded-full pl-4 bg-white w-full focus:border-gray-3000 focus:ring-0" type="password" data-validate="isPasswd" name="passwd" value="">
           </div>
 
           <div class="row form-group">
             <label class="form-control-label">{l s='Confirmation' d='Shop.Forms.Labels'}</label>
-            <input class="form-control form-input font-body text-sm placeholder:italic border-gray-2000 border-solid border flex rounded-full pl-4 bg-white w-full focus:border-gray-3000 focus:ring-0" type="password" data-validate="isPasswd" name="confirmation" value="">
+            <input class="form-control form-input font-body text-sm  border-gray-2000 border-solid border flex rounded-full pl-4 bg-white w-full focus:border-gray-3000 focus:ring-0" type="password" data-validate="isPasswd" name="confirmation" value="">
           </div>
 
           <input type="hidden" name="token" id="token" value="{$customer_token}">

@@ -34,15 +34,15 @@
 		<form class="form-new-review flex flex-row flex-wrap" action="#" method="post">
 			<div class="flex flex-col flex-wrap w-full tablet:w-1/2 tablet:pr-[20px] mb-[15px]">
 				<label class="text-main-dark text-base tablet:text-[20px] px-[20px]" for="new_review_title">{l s='Your title' d='Modules.Leofeature.Shop'}</label>
-				<input type="text" class="border border-solid border-gray-2000 font-italic form-input px-[20px] rounded-[23px] text-[#6B7280] placeholder:text-gray-3000 text-[12px] tablet:text-[14px]" id="new_review_title" required="required" name="new_review_title"  placeholder="{l s='Your title here' d='Modules.Leofeature.Shop'}">					  
+				<input type="text" class="border border-solid border-gray-2000 form-input px-[20px] rounded-[23px] text-[#6B7280] placeholder:text-gray-3000 text-[12px] tablet:text-[14px]" id="new_review_title" required="required" name="new_review_title"  placeholder="{l s='Your title here' d='Modules.Leofeature.Shop'}">					  
 			</div>
 			<div class="flex flex-col flex-wrap w-full tablet:w-1/2 mb-[15px]">
 				<label class="text-main-dark text-base tablet:text-[20px] px-[20px]" for="new_review_customer_name">{l s='Your pseudonim' d='Modules.Leofeature.Shop'}</label>
-				<input type="text" class="border border-solid border-gray-2000 font-italic form-input px-[20px] rounded-[23px] text-[#6B7280] placeholder:text-gray-3000 text-[12px] tablet:text-[14px]" id="new_review_customer_name" required="required" name="new_review_customer_name" placeholder="{l s='Your pseudonim here' d='Modules.Leofeature.Shop'}">					  
+				<input type="text" class="border border-solid border-gray-2000 form-input px-[20px] rounded-[23px] text-[#6B7280] placeholder:text-gray-3000 text-[12px] tablet:text-[14px]" id="new_review_customer_name" required="required" name="new_review_customer_name" placeholder="{l s='Your pseudonim here' d='Modules.Leofeature.Shop'}">					  
 			</div>
 			<div class="flex flex-col flex-wrap w-full mb-[15px]">
 				<label class="text-main-dark text-base tablet:text-[20px] px-[20px]" for="new_review_content">{l s='Your comment' d='Modules.Leofeature.Shop'}</label>
-				<textarea type="text" rows="5" class="form-textarea border border-solid border-gray-2000 font-italic px-[20px] rounded-[23px] text-[12px] tablet:text-[14px] text-[#6B7280] placeholder:text-gray-3000 resize-none" id="new_review_content" required="required" name="new_review_content" placeholder="{l s='Your comment here' d='Modules.Leofeature.Shop'}"></textarea>				  
+				<textarea type="text" rows="5" class="form-textarea border border-solid border-gray-2000 px-[20px] rounded-[23px] text-[12px] tablet:text-[14px] text-[#6B7280] placeholder:text-gray-3000 resize-none" id="new_review_content" required="required" name="new_review_content" placeholder="{l s='Your comment here' d='Modules.Leofeature.Shop'}"></textarea>				  
 			</div>
 
 			{hook h='displayGDPRConsent' id_module='leofeature'}

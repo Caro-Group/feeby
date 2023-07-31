@@ -44,7 +44,7 @@
 			{/if}
 			<div class="leoproductsearch-result">
 				<div class="leoproductsearch-loading cssload-speeding-wheel"></div>
-				<input class="search_query form-control italic border-0 tablet-medium:border border-gray-2000 border-solid rounded-full text-sm bg-transparent focus:border-gray-3000 transition" type="text" id="leo_search_query_top" name="s" value="{$search_query|escape:'htmlall':'UTF-8'|stripslashes}" placeholder="{l s='Search' mod='leoproductsearch'}"/>
+				<input class="search_query form-control border-0 tablet-medium:border border-gray-2000 border-solid rounded-full text-sm bg-transparent focus:border-gray-3000 transition" type="text" id="leo_search_query_top" name="search_query" value="{$search_query|escape:'htmlall':'UTF-8'|stripslashes}" placeholder="{l s='Search' mod='leoproductsearch'}"/>
 				<div class="ac_results lps_results"></div>
 			</div>
 			<button type="submit" id="leo_search_top_button" class="btn group bg-transparent tablet-medium:w-16 w-12 ">
