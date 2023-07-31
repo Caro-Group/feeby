@@ -52,7 +52,7 @@
               <form class="border-gray-2000 border-solid border flex rounded-full pl-4 bg-white" action="{$urls.pages.cart}" data-link-action="add-voucher" method="post">
                 <input type="hidden" name="token" value="{$static_token}">
                 <input type="hidden" name="addDiscount" value="1">
-                <input class="promo-input w-full bg-transparent border-0 py-3 outline-none font-body italic focus:ring-0 text-[12px] tablet:text-sm" type="text" name="discount_name" placeholder="{l s='Promo code' d='Shop.Theme.Checkout'}">
+                <input class="promo-input w-full bg-transparent border-0 py-3 outline-none font-body focus:ring-0 text-[12px] tablet:text-sm" type="text" name="discount_name" placeholder="{l s='Promo code' d='Shop.Theme.Checkout'}">
                 <button type="submit" class="bg-main hover:bg-main-hover cursor-pointer overflow-hidden transition border-0 rounded-full text-white px-8 uppercase whitespace-nowrap font-body">
                   <span class="font-light text-5xl flex justify-center leading-[30px] mb-2.5" >+</span>
                 </button>

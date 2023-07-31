@@ -44,7 +44,7 @@
               <div>
                 <div class="border-gray-2000 border-solid border flex rounded-full pl-4 bg-white ">
                   <input
-                  class="w-full bg-transparent border-0 py-3 outline-none font-body italic"
+                  class="w-full bg-transparent border-0 py-3 outline-none font-body"
                     name="email"
                     type="text"
                     value="{$value}"

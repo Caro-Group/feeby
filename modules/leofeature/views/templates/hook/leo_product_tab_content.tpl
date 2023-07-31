@@ -23,7 +23,7 @@
 							<div class="review-info mt-[60px] mb-[60px] border-0 border-b border-solid border-gray-2000 pb-5">
 
 								<div class="review_details mb-[20px]">
-									<p itemprop="name" class="font-body font-normal italic text-base desktop:text-[20px]">
+									<p itemprop="name" class="font-body font-normal text-base desktop:text-[20px]">
 										~{$review.title}
 									</p>
 									<p class="font-light font-body min-h-[60px]" itemprop="reviewBody">{$review.content|escape:'html':'UTF-8'|nl2br nofilter}</p>

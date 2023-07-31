@@ -15,7 +15,7 @@
 				<div class="form-group">
 					<label class="text-sm tablet:text-base" for="wishlist_name">{l s='Name' d='Modules.Leofeature.Shop'}</label>
 					<div class="flex flex-wrap tablet:flex-nowrap">
-					<input type="text" class="form-control form-input tablet:mr-5 font-body text-sm placeholder:italic border-gray-2000 border-solid border flex rounded-full pl-4 bg-white w-full focus:border-gray-3000 focus:ring-0" id="wishlist_name" placeholder="{l s='Enter name of new wishlist' d='Modules.Leofeature.Shop'}">
+					<input type="text" class="form-control form-input tablet:mr-5 font-body text-sm border-gray-2000 border-solid border flex rounded-full pl-4 bg-white w-full focus:border-gray-3000 focus:ring-0" id="wishlist_name" placeholder="{l s='Enter name of new wishlist' d='Modules.Leofeature.Shop'}">
 					<button type="submit" class="bg-main border-0 cursor-pointer duration-150 hover:bg-main-hover leo-save-wishlist-bt mt-5 tablet:mt-0  ml-auto p-2 px-4 rounded-full tablet:w-auto text-white uppercase w-full whitespace-nowrap leo-save-wishlist-bt">
 						<span class="leo-save-wishlist-loading cssload-speeding-wheel"></span>
 						<span class="leo-save-wishlist-bt-text">

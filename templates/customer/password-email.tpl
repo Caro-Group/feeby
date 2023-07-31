@@ -53,7 +53,7 @@
     <section class="form-fields">
       <div class="form-group center-email-fields row">
         <div class="flex w-full items-center flex-wrap tablet:flex-nowrap">
-          <input type="email" name="email" id="email" class="tablet:mr-5 mb-5 tablet:mb-0 form-input font-body text-sm placeholder:italic border-gray-2000 border-solid border flex rounded-full pl-4 bg-white w-full focus:border-gray-3000 focus:ring-0" placeholder="{l s='Email address' d='Shop.Forms.Labels'}" value="{if isset($smarty.post.email)}{$smarty.post.email|stripslashes}{/if}" class="form-control" required>
+          <input type="email" name="email" id="email" class="tablet:mr-5 mb-5 tablet:mb-0 form-input font-body text-sm  border-gray-2000 border-solid border flex rounded-full pl-4 bg-white w-full focus:border-gray-3000 focus:ring-0" placeholder="{l s='Email address' d='Shop.Forms.Labels'}" value="{if isset($smarty.post.email)}{$smarty.post.email|stripslashes}{/if}" class="form-control" required>
           <button class="form-control-submit hidden tablet:flex w-full text-xs tablet:text-sm tablet:w-auto bg-main hover:bg-main-hover duration-150 border-0 rounded-full text-white p-3 px-4 uppercase whitespace-nowrap mb-8 tablet:mb-0 items-center justify-between ml-auto cursor-pointer" name="submit" type="submit">
             {l s='Send reset link' d='Shop.Theme.Actions'}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" fill="none" class="ml-2 flex-0"><path fill-rule="evenodd" clip-rule="evenodd" d="m9.25 14.359 6.25-6.25v-.884L9.25.975l-.884.884 5.183 5.184H.5v1.25h13.05l-5.185 5.182.884.884h.001Z" fill="#fff"></path></svg>

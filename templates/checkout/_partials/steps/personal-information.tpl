@@ -12,7 +12,7 @@
 
   {if $customer.is_logged && !$customer.is_guest}
     <div class="p-5 tablet:p-0">
-      <h2 class="mb-4 font-normal italic mb-2 tablet:mb-[10px] text-2xl text-main-dark">
+      <h2 class="mb-4 font-normal mb-2 tablet:mb-[10px] text-2xl text-main-dark">
         {l s='%firstname% %lastname%'
           d='Shop.Theme.Customeraccount'
           sprintf=[

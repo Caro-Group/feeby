@@ -14,7 +14,7 @@
     <section id="content-hook_order_confirmation">
       <div class="card-block">
             {block name='order_confirmation_header'}
-              <h3 class="font-normal text-2xl tablet:text-4xl mt-14 mb-8 tablet:mb-10 text-main-dark italic max-w-[350px]">
+              <h3 class="font-normal text-2xl tablet:text-4xl mt-14 mb-8 tablet:mb-10 text-main-dark max-w-[350px]">
                 {l s='Your order is confirmed' d='Shop.Theme.Checkout'}
               </h3>
             {/block}
