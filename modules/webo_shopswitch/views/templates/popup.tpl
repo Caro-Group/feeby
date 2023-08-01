@@ -37,7 +37,7 @@
             </svg>
         </div>
         <form name="lang-curr-form" class="w-full flex flex-col items-center ">
-            <h3 class="text-2xl font-header italic font-light mt-5 mb-8 text-main-dark">
+            <h3 class="text-2xl font-body font-normal mt-5 mb-8 text-main-dark">
                 {l s='Language' d='Shop.Theme.Global'}
             </h3>
             <div class="language-selector mb-8 w-full">
@@ -78,7 +78,7 @@
 
             <hr class="w-full">
 
-            <h3 class="text-2xl font-header italic font-light my-8 text-main-dark">
+            <h3 class="text-2xl font-body font-normal my-8 text-main-dark">
                 {l s='Currency' d='Shop.Theme.Global'}
             </h3>
 
@@ -101,7 +101,7 @@
                                     </svg>
                                 </span>
                                 <span
-                                    class="currency-sign h-[50px] w-[50px] flex justify-center items-center flex-grow-0 flex-shrink-0 mb-2 rounded-full border border-solid border-gray-2000 text-2xl font-header text-main-dark transition-all duration-200"
+                                    class="currency-sign h-[50px] w-[50px] flex justify-center items-center flex-grow-0 flex-shrink-0 mb-2 rounded-full border border-solid border-gray-2000 text-2xl font-body not-italic font-normal text-main-dark transition-all duration-200"
                                     src="/modules/webo_shopswitch/views/img/PL.png">{$currency.sign}</span>
                                 <span class="text-base font-normal text-main-dark">{$currency.iso_code}</span>
                             </label>
