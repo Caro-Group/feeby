@@ -30,12 +30,14 @@
         {foreach from=$nodes item=node}
           {if $node.desc|strstr:"<!-- ARTYSTA -->" !== "<!-- ARTYSTA -->"}
             {assign var="activeNested" value=false}
-            {foreach from=$node item=item}
-              {if isset($category.id) && $item.id == $category.id}
-                {assign var="activeNested" value=true}
-              {/if}
-            {/foreach}
-            {if $activeNested}
+            {if $node.children}
+              {foreach from=$node.children item=item}
+                {if isset($category.id) && $item.id == $category.id}
+                  {assign var="activeNested" value=true}
+                {/if}
+              {/foreach}
+            {/if}
+          {if $activeNested}
               Has active
             {else}
               No active
