@@ -31,8 +31,8 @@
         {foreach from=$nodes item=node}
           {if $node.desc|strstr:"<!-- ARTYSTA -->" !== "<!-- ARTYSTA -->"}
             {if $node.children}
-              {foreach from=$node.children item=item key=key name=name}
-                {if $node.id == $category.id}
+              {foreach from=$node.children item=item}
+                {if $item.id == $category.id}
                   {assign "found_inside" true}
                   {break}
                 {/if}
