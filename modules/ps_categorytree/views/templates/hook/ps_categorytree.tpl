@@ -23,31 +23,20 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 
- {function name="checkNestedItem" node="" level=0}
-   {foreach from=$node.children item=item}
-       {if $item.id == $category.id}
-           {return true}
-       {elseif isset($item.children)}
-           {assign var="found" value=false}
-           {checkNestedItem node=$item level=$level+1}
-           {if $found}
-               {return true}
-           {/if}
-       {/if}
-   {/foreach}
-   {return false}
- {/function}
-
- {function name="categories" nodes=[] depth=0}
+{function name="categories" nodes=[] depth=0}
   {strip}
-    
-
     {if $nodes|count}
       <ul class="category-sub-menu">
         {foreach from=$nodes item=node}
           {if $node.desc|strstr:"<!-- ARTYSTA -->" !== "<!-- ARTYSTA -->"}
-            {assign var="activeNested" value=checkNestedItem node=$node}
-
+            {assign var="activeNested" value=false}
+            {if $node.children}
+              {foreach from=$node.children item=item}
+                {if isset($category.id) && $item.id == $category.id}
+                  {assign var="activeNested" value=true}
+                {/if}
+              {/foreach}
+            {/if}
           <li class="border-0 border-white border-solid border-t flex justify-between items-center flex-wrap" data-depth="{$depth}" {if isset($node.id)}data-cat-id="{$node.id}"{/if}>
             {if $depth===0}
               <a href="{$node.link}" {if isset($category.id) && $node.id == $category.id}class="selected"{/if}>{$node.name}</a>
@@ -62,10 +51,10 @@
             {else}
               <a class="category-sub-link {if isset($category.id) && $node.id == $category.id}selected{/if}" href="{$node.link}">{$node.name}</a>
               {if $node.children}
-                <div class="navbar-toggler collapse-icons float-right p-3 pr-5 {if isset($category.id) && $node.id != $category.id && $activeNested == false} collapsed {/if}" data-toggle="collapse" data-target="#exCollapsingNavbar{$node.id}">
+                <div class="navbar-toggler collapse-icons float-right p-3 pr-5 {if isset($category.id) && $node.id != $category.id} collapsed {/if}" data-toggle="collapse" data-target="#exCollapsingNavbar{$node.id}">
                   <i class="material-icons select-none text-3xl text-main-dark transition transform rotate-180"></i>
                 </div>
-                <div class="bg-white bg-opacity-50 {if isset($category.id) && $node.id == $category.id || $activeNested == true} collapse in {else} collapse {/if} " id="exCollapsingNavbar{$node.id}">
+                <div class="bg-white bg-opacity-50 {if isset($category.id) && $node.id == $category.id} collapse in {else} collapse {/if} " id="exCollapsingNavbar{$node.id}">
                   {categories nodes=$node.children depth=$depth+1}
                 </div>
               {/if}
