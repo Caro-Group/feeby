@@ -36,7 +36,7 @@
                 <div class="navbar-toggler collapse-icons float-right p-3 pr-5 {if isset($category.id) && $node.id != $category.id} collapsed {/if}" data-toggle="collapse" data-target="#exCollapsingNavbar{$node.id}">
                   <i class="material-icons select-none text-3xl text-main-dark transition transform rotate-180"></i>
                 </div>
-                <div class="bg-gray-1000 {if isset($category.id) && $node.id == $category.id} collapse in {else} collapse {/if}>{$node.name}" id="exCollapsingNavbar{$node.id}">
+                <div class="bg-gray-1000 {if isset($category.id) && $node.id == $category.id} collapse in {else} collapse {/if}" id="exCollapsingNavbar{$node.id}">
                   {categories nodes=$node.children depth=$depth+1}
                 </div>
               {/if}
