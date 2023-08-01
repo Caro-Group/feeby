@@ -35,6 +35,8 @@
                 {if $item.id == $category.id}
                   {assign "found_inside" true}
                   {break}
+                {else}
+                  {assign "found_inside" false}
                 {/if}
               {/foreach}
             {/if}
