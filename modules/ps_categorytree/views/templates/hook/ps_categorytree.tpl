@@ -29,6 +29,17 @@
       <ul class="category-sub-menu">
         {foreach from=$nodes item=node}
           {if $node.desc|strstr:"<!-- ARTYSTA -->" !== "<!-- ARTYSTA -->"}
+            {assign var="activeNested" value=false}
+            {foreach from=$node item=item}
+              {if isset($category.id) && $item.id == $category.id}
+                {assign var="activeNested" value=true}
+              {/if}
+            {/foreach}
+            {if $activeNested}
+              Has active
+            {else}
+              No active
+            {/if}
           <li class="border-0 border-white border-solid border-t flex justify-between items-center flex-wrap" data-depth="{$depth}" {if isset($node.id)}data-cat-id="{$node.id}"{/if}>
             {if $depth===0}
               <a href="{$node.link}" {if isset($category.id) && $node.id == $category.id}class="selected"{/if}>{$node.name}</a>
