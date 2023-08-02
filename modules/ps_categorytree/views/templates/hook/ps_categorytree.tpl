@@ -70,8 +70,12 @@
 <div class="hidden-sm-down pt-3 pr-10">
   <h4 class="text-2xl font-light text-main-dark mb-3">{l s='Categories' d='Shop.Theme.Catalog'}</h4>
   <div class="block_content">
-    <ul class="category-top-menu">
-      <li data-id="">{categories nodes=$categories.children}</li>
-    </ul>
-  </div>
+  {foreach from=$categories.children item=categoryLvl2}
+    {if $categoryLvl2|count}
+      <ul class="category-sub-menu">
+        {categories nodes=$categoryLvl2.children}
+      </ul>
+    {/if}
+  {/foreach} 
+</div>
 </div>
