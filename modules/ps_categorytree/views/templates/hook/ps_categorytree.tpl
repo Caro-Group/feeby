@@ -31,11 +31,9 @@
           {if $node.desc|strstr:"<!-- ARTYSTA -->" !== "<!-- ARTYSTA -->"}
             {assign var="activeNested" value=false}
             {if $node.children}
-              {foreach from=$node.children item=item}
-                {if isset($category.id) && $item.id == $category.id}
+                {if $c_tree_path && in_array($node.id, $c_tree_path)}
                   {assign var="activeNested" value=true}
                 {/if}
-              {/foreach}
             {/if}
           <li class="border-0 border-white border-solid border-t flex justify-between items-center flex-wrap" data-depth="{$depth}" {if isset($node.id)}data-cat-id="{$node.id}"{/if}>
             {if $depth===0}
