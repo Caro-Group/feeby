@@ -22,18 +22,6 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
- {function name="recursiveNode" nodes=[]}
-
-  {foreach from=$nodes item=node}
-    {if isset($node.id) && $node.id == $category.id}
-      {assign var="activeNested" value=true}
-    {/if}
-
-    {if $node.children}
-      {recursiveNode nodes=$node.children}
-    {/if}
-  {/foreach}
-{/function}
 
 {function name="categories" nodes=[] depth=0}
   {strip}
@@ -43,7 +31,11 @@
           {if $node.desc|strstr:"<!-- ARTYSTA -->" !== "<!-- ARTYSTA -->"}
             {assign var="activeNested" value=false}
             {if $node.children}
-              {recursiveNode nodes=$node.children}
+              {foreach from=$node.children item=item}
+                {if isset($category.id) && $item.id == $category.id}
+                  {assign var="activeNested" value=true}
+                {/if}
+              {/foreach}
             {/if}
           <li class="border-0 border-white border-solid border-t flex justify-between items-center flex-wrap" data-depth="{$depth}" {if isset($node.id)}data-cat-id="{$node.id}"{/if}>
             {if $depth===0}
