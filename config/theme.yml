@@ -61,6 +61,10 @@ global_settings:
       - name: displayCatalogListProduct
         title: Category Product List
         description: Category Product List display hook
+      - name: displayCategoryDescription
+        title: Category Additionall Description
+        description: Category Additionall Description
+
   #    product:
   #      - id: product-style
   #        path: assets/css/product.css
