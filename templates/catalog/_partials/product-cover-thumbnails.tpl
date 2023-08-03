@@ -114,7 +114,7 @@
    {block name='product_images'}
      <div class="swiper-container-horizontal relative h-10"><div class="product-thumb-images-pag swiper-pagination"></div></div>
 
-     <div class="hidden">
+     <div class="">
 
        {foreach from=$groups item=$attribute}
          {if $attribute["group_name"] == "Typ"}

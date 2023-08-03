@@ -1260,6 +1260,22 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
+
+  let thumbSwiper 
+
+  if ($("[data-swiper-product-thumb]").length) {
+    thumbSwiper = new Swiper("[data-swiper-product-thumb]", {
+      slidesPerView: "auto",
+      spaceBetween: 0,
+      slideClass: 'swiper-custom-slide',
+        navigation: {
+          nextEl: "[data-swiper-product-thumb-next]",
+          prevEl: "[data-swiper-product-thumb-prev]",
+        },
+      })
+  }
+
+
   if ($("[data-swiper-product]").length) {
     let productSwiper = new Swiper("[data-swiper-product]", {
       preloadImages: false,
@@ -1270,16 +1286,20 @@ $(document).ready(function () {
       slidesPerView: 1,
       spaceBetween: 20,
       loop: true,
-      navigation: {
-        nextEl: "[data-swiper-product-next]",
-        prevEl: "[data-swiper-product-prev]",
+      watchSlidesProgress: true,
+      thumbs:{
+        swiper: thumbSwiper
       },
-      pagination: {
-        el: ".product-thumb-images-pag",
-        clickable: true,
-        dynamicBullets: true,
-        dynamicMainBullets: 1,
-      },
+      // navigation: {
+      //   nextEl: "[data-swiper-product-next]",
+      //   prevEl: "[data-swiper-product-prev]",
+      // },
+      // pagination: {
+      //   el: ".product-thumb-images-pag",
+      //   clickable: true,
+      //   dynamicBullets: true,
+      //   dynamicMainBullets: 1,
+      // },
       on: {
         beforeSlideChangeStart: function () {
           if (typeof lazyLoad == "function") {
@@ -1339,6 +1359,22 @@ $(document).ready(function () {
         productSwiper.destroy(true, true);
       }
 
+      if (typeof thumbSwiper == "function") {
+        thumbSwiper.destroy(true, true);
+      }
+
+      if ($("[data-swiper-product-thumb]").length) {
+        thumbSwiper = new Swiper("[data-swiper-product-thumb]", {
+          slidesPerView: "auto",
+          spaceBetween: 0,
+          slideClass: 'swiper-custom-slide',
+            navigation: {
+              nextEl: "[data-swiper-product-thumb-next]",
+              prevEl: "[data-swiper-product-thumb-prev]",
+            },
+          })
+      }
+
       if ($("[data-swiper-product]").length) {
         let productSwiper = new Swiper("[data-swiper-product]", {
           preloadImages: true,
@@ -1346,16 +1382,20 @@ $(document).ready(function () {
           slidesPerView: 1,
           spaceBetween: 20,
           loop: true,
-          navigation: {
-            nextEl: "[data-swiper-product-next]",
-            prevEl: "[data-swiper-product-prev]",
+          watchSlidesProgress: true,
+          thumbs:{
+            swiper: thumbSwiper
           },
-          pagination: {
-            el: ".product-thumb-images-pag",
-            clickable: true,
-            dynamicBullets: true,
-            dynamicMainBullets: 1,
-          },
+          // navigation: {
+          //   nextEl: "[data-swiper-product-next]",
+          //   prevEl: "[data-swiper-product-prev]",
+          // },
+          // pagination: {
+          //   el: ".product-thumb-images-pag",
+          //   clickable: true,
+          //   dynamicBullets: true,
+          //   dynamicMainBullets: 1,
+          // },
           on: {
             beforeSlideChangeStart: function () {
               if (typeof lazyLoad == "function") {
