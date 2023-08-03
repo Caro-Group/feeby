@@ -99,20 +99,12 @@
          {include file="module:bavideotab/views/templates/front/coverVideo.tpl"}
        </div>
 
-         <div class="absolute tablet:left-4 tablet:bottom-10 z-50 flex justify-between w-full tablet:w-auto tablet:mb-10">
-           <i class="ti-arrow-left justify-center items-center flex tablet:ml-6 w-10 h-10 text-main-dark bg-gray-1000 hover:bg-main-dark hover:text-white rounded-full transition cursor-pointer"
-             data-swiper-product-prev> </i>
-           <i class="ti-arrow-right justify-center items-center flex tablet:ml-6 w-10 h-10 text-main-dark bg-gray-1000 hover:bg-main-dark hover:text-white rounded-full transition cursor-pointer"
-             data-swiper-product-next> </i>
-         </div>
-
      {else}
        <img class="lazy" data-src="{$urls.no_picture_image.bySize.large_default.url}" style="width:100%;" />
      {/if}
    {/block}
 
    {block name='product_images'}
-     <div class="swiper-container-horizontal relative h-10"><div class="product-thumb-images-pag swiper-pagination"></div></div>
 
      <div class="">
 
@@ -129,7 +121,7 @@
          {/if}
        {/foreach}
 
-       <div class="product-thumb-images flex relative">
+       <div class="product-thumb-images flex relative mt-5">
          <div class="swiper w-full overflow-hidden" data-swiper-product-thumb>
            <div id="thumb-gallery" class="swiper-wrapper">
              {foreach from=$product.images item=image key=$key name=pictures}
@@ -153,13 +145,11 @@
                    class="swiper-lazy swiper-custom-slide w-auto h-full relative thumb-container {if $image.id_image == $product.default_image.id_image} active {/if}"
                    style="    flex-shrink: 0;
                      transition-property: transform;">
-                   <a href="{$smarty.server.HTTP_HOST}" data-image="{$image.bySize.large_default.url}"
+                   <a href="{$smarty.server.HTTP_HOST}" data-image="{$image.bySize.large_default.url}" class="block"
                      data-zoom-image="{$image.bySize.large_default.url}">
                      <img
-                       class="h-[100px] w-[100px] tablet:h-[200px] tablet:w-[200px] border border-solid rounded-lg mr-[18px] {if $image.id_image == $product.default_image.id_image} selected {/if}"
-                       data-image-medium-src="{$image.bySize.medium_default.url}"
-                       data-image-large-src="{$image.bySize.large_default.url}"                 
-                       data-src="{$image.bySize.product_thumbnail.url}"
+                       class="h-[100px] w-[100px] tablet:h-[200px] tablet:w-[200px] border border-solid rounded-lg mr-[18px] {if $image.id_image == $product.default_image.id_image} selected {/if}"                
+                       src="{$image.bySize.product_thumbnail.url}"
                        alt="{$image.legend}" title="{$image.legend}" itemprop="image" width="200" height="200" loading="lazy" />
                    </a>
                  </div>
