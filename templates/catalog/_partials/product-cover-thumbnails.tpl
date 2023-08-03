@@ -148,7 +148,7 @@
                    <a href="{$smarty.server.HTTP_HOST}" data-image="{$image.bySize.large_default.url}" class="block"
                      data-zoom-image="{$image.bySize.large_default.url}">
                      <img
-                       class="h-[100px] w-[100px] tablet:h-[200px] tablet:w-[200px] border border-solid rounded-lg mr-[18px] {if $image.id_image == $product.default_image.id_image} selected {/if}"                
+                       class="h-[100px] w-[100px] tablet:h-[200px] tablet:w-[200px] border border-solid rounded-lg mr-[18px] box-border transition-all duration-200 {if $image.id_image == $product.default_image.id_image} selected {/if}"                
                        src="{$image.bySize.product_thumbnail.url}"
                        alt="{$image.legend}" title="{$image.legend}" itemprop="image" width="200" height="200" loading="lazy" />
                    </a>

@@ -395,7 +395,7 @@ li[data-menu-type='url'] a {
   z-index: 26;
 }
 .swiper-slide-thumb-active img {
-  @apply border-main;
+  @apply border-main border-2;
 }
 
 .products .product_list ul {
