@@ -23,13 +23,8 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tablet:mb-[35px] mb-5">
-    <p class="font-body font-light max-w-screen-tablet-wide mt-2 tablet:mt-10 tablet:text-base text-main-dark text-sm title_block">
-
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc laoreet at neque non convallis. Curabitur quis
-        aliquet odio. Praesent ultrices viverra arcu. Suspendisse molestie magna et condimentum mattis. Etiam elit elit,
-        consectetur sit amet feugiat volutpat, rhoncus in mauris. Proin ut ante pellentesque, faucibus metus vitae,
-        ultricies sem. 
-        
-    </p>
+ <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tablet:mb-[35px] mb-5">
+   <p class="font-body font-light max-w-screen-tablet-wide mt-2 tablet:mt-10 tablet:text-base text-main-dark text-sm title_block">
+     {hook h="displayCategoryDescription"}
+   </p>
 </div>
