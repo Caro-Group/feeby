@@ -112,28 +112,28 @@
                         {if $filter.id_filter == 50}
                           <div class="shrink-0">
 
-                          {if $option.id_option == 1137} {* PION *}
+                          {if $option.id_option == 1137 || $option.id_option == 1291} {* PION *}
                             <svg class="tablet:hidden" width="83" height="140" viewBox="0 0 83 140" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <rect x="1" y="1" width="81" height="109" rx="8" stroke="{if $option.selected }#DF1A5B{else}#ADAFBA{/if}" stroke-width="2"/>
                             </svg>
                             <svg class="hidden tablet:block" width="60" height="80" viewBox="0 0 60 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <rect x="0.5" y="0.5" width="59" height="79" rx="5.5" stroke="{if $option.selected }#DF1A5B{else}#ADAFBA{/if}" stroke-width="1"/>
                             </svg>
-                          {elseif $option.id_option == 1135} {* POZIOM *}
+                          {elseif $option.id_option == 1135 || $option.id_option == 1292} {* POZIOM *}
                             <svg class="tablet:hidden" width="111" height="83" viewBox="0 0 111 83" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <rect x="1" y="1" width="109" height="81" rx="8" stroke="{if $option.selected }#DF1A5B{else}#ADAFBA{/if}" stroke-width="2"/>
                             </svg>
                             <svg class="hidden tablet:block" width="80" height="60" viewBox="0 0 80 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <rect x="0.5" y="0.5" width="79" height="59" rx="5.5" stroke="{if $option.selected }#DF1A5B{else}#ADAFBA{/if}" stroke-width="1"/>
                             </svg>
-                          {elseif $option.id_option == 1136} {* KWADRAT *}
+                          {elseif $option.id_option == 1136 || $option.id_option == 1288} {* KWADRAT *}
                             <svg class="tablet:hidden" width="87" height="83" viewBox="0 0 87 83" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <rect x="1" y="1" width="85" height="81" rx="8" stroke="{if $option.selected }#DF1A5B{else}#ADAFBA{/if}" stroke-width="2"/>
                             </svg>
                             <svg class="hidden tablet:block" width="60" height="57" viewBox="0 0 60 57" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <rect x="0.5" y="0.5" width="59" height="56" rx="5.5" stroke="{if $option.selected }#DF1A5B{else}#ADAFBA{/if}" stroke-width="1"/>
                             </svg>
-                          {elseif $option.id_option == 1217} {* TRYPTYK *}
+                          {elseif $option.id_option == 1217 || $option.id_option == 1293} {* TRYPTYK *}
                             <svg class="tablet:hidden" width="158" height="84" viewBox="0 0 158 84" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <rect x="1" y="1" width="46" height="82" rx="8" stroke="{if $option.selected }#DF1A5B{else}#ADAFBA{/if}" stroke-width="2"/>
                               <rect x="56" y="1" width="46" height="82" rx="8" stroke="{if $option.selected }#DF1A5B{else}#ADAFBA{/if}" stroke-width="2"/>
@@ -144,7 +144,7 @@
                               <rect x="36.5" y="0.5" width="28" height="50" rx="5.5" stroke="{if $option.selected }#DF1A5B{else}#ADAFBA{/if}" stroke-width="1"/>
                               <rect x="72.5" y="0.5" width="28" height="50" rx="5.5" stroke="{if $option.selected }#DF1A5B{else}#ADAFBA{/if}" stroke-width="1"/>
                             </svg>
-                          {elseif $option.id_option == 1218} {* 5 CZESCI *}
+                          {elseif $option.id_option == 1218 || $option.id_option == 1287} {* 5 CZESCI *}
                             <svg class="tablet:hidden" width="161" height="88" viewBox="0 0 161 88" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <rect x="1" y="24" width="27" height="40" rx="8" stroke="{if $option.selected }#DF1A5B{else}#ADAFBA{/if}" stroke-width="2"/>
                               <rect x="34" y="13.5" width="27" height="61" rx="8" stroke="{if $option.selected }#DF1A5B{else}#ADAFBA{/if}" stroke-width="2"/>
@@ -159,21 +159,21 @@
                               <rect x="77.5" y="9.5" width="21" height="47" rx="5.5" stroke="{if $option.selected }#DF1A5B{else}#ADAFBA{/if}" stroke-width="1"/>
                               <rect x="103.5" y="17.5" width="21" height="31" rx="5.5" stroke="{if $option.selected }#DF1A5B{else}#ADAFBA{/if}" stroke-width="1"/>
                             </svg>
-                          {elseif $option.id_option == 1221} {* PANORAMA POZIOM *}
+                          {elseif $option.id_option == 1221 || $option.id_option == 1294} {* PANORAMA POZIOM *}
                             <svg class="tablet:hidden" width="135" height="50" viewBox="0 0 135 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <rect x="1" y="1" width="133" height="48" rx="8" stroke="{if $option.selected }#DF1A5B{else}#ADAFBA{/if}" stroke-width="2"/>
                             </svg>
                             <svg class="hidden tablet:block" width="100" height="38" viewBox="0 0 100 38" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <rect x="0.5" y="0.5" width="99" height="36.037" rx="5.5" stroke="{if $option.selected }#DF1A5B{else}#ADAFBA{/if}" stroke-width="1"/>
                             </svg>
-                          {elseif $option.id_option == 1220} {* PANORAMA PION *}
+                          {elseif $option.id_option == 1220 || $option.id_option == 1289} {* PANORAMA PION *}
                             <svg class="tablet:hidden" width="54" height="107" viewBox="0 0 54 107" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <rect x="1.5" y="1" width="51" height="105" rx="8" stroke="{if $option.selected }#DF1A5B{else}#ADAFBA{/if}" stroke-width="2"/>
                             </svg>
                             <svg class="hidden tablet:block" width="40" height="81" viewBox="0 0 40 81" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <rect x="0.5" y="0.5" width="39" height="79.7547" rx="5.5" stroke="{if $option.selected }#DF1A5B{else}#ADAFBA{/if}" stroke-width="1"/>
                             </svg>
-                          {elseif $option.id_option == 1219} {* ZESTAW *}
+                          {elseif $option.id_option == 1219 || $option.id_option == 1290} {* ZESTAW *}
                             <svg class="tablet:hidden" width="158" height="49" viewBox="0 0 158 49" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <rect x="1" y="1" width="46" height="47" rx="8" stroke="{if $option.selected }#DF1A5B{else}#ADAFBA{/if}" stroke-width="2"/>
                               <rect x="56" y="1" width="46" height="47" rx="8" stroke="{if $option.selected }#DF1A5B{else}#ADAFBA{/if}" stroke-width="2"/>
