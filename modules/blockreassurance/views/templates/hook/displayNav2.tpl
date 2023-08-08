@@ -25,7 +25,7 @@
 {* tablet:mt-12 tablet:mb-8 *}
 
 {if $elements}
-  <div class="flex justify-center tablet:justify-start desktop:justify-center font-light  text-xs tablet:text-base tablet:mx-0 text-main-dark flex-wrap">
+  <div class="flex justify-center tablet:justify-start desktop:justify-center font-light text-xs tablet:text-small desktop:text-base tablet:mx-0 text-main-dark flex-wrap">
       {foreach from=$elements item=$block key=$key name=blocks}
         {if $smarty.foreach.blocks.iteration < 3}
             <p class="{if $block@first}mb-0 mr-4 phone-wide:mr-0{/if} phone-wide:px-3 font-body">
