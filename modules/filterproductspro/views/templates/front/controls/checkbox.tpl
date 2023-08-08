@@ -110,7 +110,7 @@
 
 
                         {if $filter.id_filter == 50 || $filter.id_filter == 64}
-                          <div class="shrink-0 text-center">
+                          <div class="shrink-0">
 
 
                           {if $option.id_option == 1137 || $option.id_option == 1291} {* PION *}
@@ -274,7 +274,7 @@
                                 <span class="hidden">{$option.name|escape:'htmlall':'UTF-8'}</span>
                             {/if}
                         {else}
-                        <span class="text-base block text-main-dark w-auto {if $filter.id_filter == 23 && ($option.id_option == 969 || $option.id_option == 970)} max-w-[72px] text-center tablet:mt-1 {else} max-w-full {/if} font-body font-normal">{$option.name|escape:'htmlall':'UTF-8'}</span>
+                        <span class="{if $filter.id_filter == 50 || $filter.id_filter == 64}text-center{/if} text-base block text-main-dark w-auto {if $filter.id_filter == 23 && ($option.id_option == 969 || $option.id_option == 970)} max-w-[72px] text-center tablet:mt-1 {else} max-w-full {/if} font-body font-normal">{$option.name|escape:'htmlall':'UTF-8'}</span>
                         {/if}
                         {if $params_back.CONFIG_VARS.FPP_SHOW_TOTAL_PRODUCTS_OPTION eq 1 and $option.id_option != 0}
                             <span>({$option.total_products|intval})</span>
