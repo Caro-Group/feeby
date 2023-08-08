@@ -71,6 +71,7 @@ module.exports = {
         "banner-final": "750px",
         label: "173px",
         100: "28rem",
+        screen: ["100vh /* fallback for Opera, IE and etc. */", "100dvh"],
       },
       minHeight: {
         8: "2rem",
