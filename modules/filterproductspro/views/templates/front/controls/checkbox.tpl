@@ -25,10 +25,10 @@
 
 <div id="filter-options_{$filter.id_filter|intval}" class="overflow-hidden collapse in"
     aria-expanded="true" >
-    <ul class="filter-options_container flex flex-wrap pb-[30px] {if $filter.id_filter == 23} gap-x-[30px] gap-y-5 items-end {else} gap-2.5 {/if}">
+    <ul class="filter-options_container flex flex-wrap pb-[30px] {if $filter.id_filter == 23} gap-x-[30px] gap-y-5 items-end {else} gap-x-2.5 desktop:gap-2.5 {/if}">
         {foreach $filter.options item=option}
             {if $option}
-            <li class="max-w-full {if $filter.id_filter == 50 || $filter.id_filter == 64}w-full phone:w-1/2 tablet:w-full mr-2 desktop:mr-10{/if}">
+            <li class="max-w-full {if $filter.id_filter == 50 || $filter.id_filter == 64}w-full phone:w-1/2 tablet:w-auto desktop:mr-10{/if}">
                     <label for="option_{$option.id_option|intval}" class=" !flex {if $filter.id_filter == 50 || $filter.id_filter == 64} option-svg flex-col {else} border-2 border-solid border-gray-2000 hover:border-gray-3000 !p-[9px] tablet:!p-[13px] {/if} items-center w-full cursor-pointer !mb-0 {if $option.selected } active {/if} rounded-[5px] transition duration-200 ">
                         <input
                             id="option_{$option.id_option|intval}"
