@@ -28,7 +28,7 @@
     <ul class="filter-options_container flex flex-wrap pb-[30px] {if $filter.id_filter == 23} gap-x-[30px] gap-y-5 items-end {else} gap-2.5 {/if}">
         {foreach $filter.options item=option}
             {if $option}
-            <li class="max-w-full {if $filter.id_filter == 50 || $filter.id_filter == 64}mr-2 desktop:mr-10{/if}">
+            <li class="max-w-full {if $filter.id_filter == 50 || $filter.id_filter == 64}w-full phone:w-1/2 tablet:w-full mr-2 desktop:mr-10{/if}">
                     <label for="option_{$option.id_option|intval}" class=" !flex {if $filter.id_filter == 50 || $filter.id_filter == 64} option-svg flex-col {else} border-2 border-solid border-gray-2000 hover:border-gray-3000 !p-[9px] tablet:!p-[13px] {/if} items-center w-full cursor-pointer !mb-0 {if $option.selected } active {/if} rounded-[5px] transition duration-200 ">
                         <input
                             id="option_{$option.id_option|intval}"
@@ -113,7 +113,7 @@
                           <div class="shrink-0">
 
                           {if $option.id_option == 1137 || $option.id_option == 1291} {* PION *}
-                            <svg class="tablet:hidden" width="83" height="140" viewBox="0 0 83 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="tablet:hidden" width="83" height="111" viewBox="0 0 83 111" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <rect x="1" y="1" width="81" height="109" rx="8" stroke="{if $option.selected }#DF1A5B{else}#ADAFBA{/if}" stroke-width="2"/>
                             </svg>
                             <svg class="hidden tablet:block" width="60" height="80" viewBox="0 0 60 80" fill="none" xmlns="http://www.w3.org/2000/svg">
