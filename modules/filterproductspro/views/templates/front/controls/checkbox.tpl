@@ -25,7 +25,7 @@
 
 <div id="filter-options_{$filter.id_filter|intval}" class="overflow-hidden collapse in"
     aria-expanded="true" >
-  <ul class="filter-options_container flex flex-wrap pb-[30px] {if $filter.id_filter == 23} gap-x-[30px] gap-y-5 items-end {else} gap-y-2.5 desktop:gap-2.5 {/if}">
+  <ul class="filter-options_container flex flex-wrap pb-[30px] {if $filter.id_filter == 23} gap-x-[30px] gap-y-5 items-end {else}{if $filter.id_filter == 50 || $filter.id_filter == 64}gap-y-2.5 desktop:gap-2.5{else}gap-2.5{/if} {/if}">
         {foreach $filter.options item=option}
             {if $option}
             <li class="max-w-full {if $filter.id_filter == 50 || $filter.id_filter == 64}w-full phone:w-1/2 phone:px-2 tablet:px-0 tablet:w-auto desktop:mr-10{/if}">
@@ -110,7 +110,7 @@
 
 
                         {if $filter.id_filter == 50 || $filter.id_filter == 64}
-                          <div class="shrink-0">
+                          <div class="shrink-0 text-center">
 
 
                           {if $option.id_option == 1137 || $option.id_option == 1291} {* PION *}
