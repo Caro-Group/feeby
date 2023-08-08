@@ -49,7 +49,7 @@
                         />
 
                         {if $filter.id_filter == 49}
-                        <div class="shrink-0 bg-gray-2000 clearfix float-left w-[25px] h-[25px] mr-2.5 rounded border border-solid" style="
+                        <div class="shrink-0 bg-gray-2000 clearfix float-left w-[25px] h-[25px] mr-2.5 rounded-full border border-solid" style="
                           {if $option.id_option == 1118}
                             background-color: #FEF3DE;
                             border-color: #FEF3DE;
