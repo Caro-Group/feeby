@@ -61,7 +61,7 @@
           <button
             id="search_sort_toggler"
             data-filters-tab-btn='1'
-            class="select-title w-full text-base tablet:text-lg uppercase bg-transparent px-5 tablet:px-10 py-2 tablet:py-2.5 text-left !flex justify-between items-center font-light text-main-dark border-gray-2000 hover:border-gray-3000 rounded-md border-solid !border-2 transition duration-200">
+            class="select-title w-full text-base tablet:text-lg uppercase bg-transparent px-5 tablet:px-10 py-2 tablet:py-2.5 text-left !flex justify-between items-center font-light text-main-dark border-gray-2000 hover:border-gray-3000 rounded-md border-solid !border-2 transition duration-200 cursor-pointer">
             <span class="sort-by text-main-dark font-normal text-main-dark">{l s='Sort by:' d='Shop.Theme.Global'}</span>
             <span class="shrink-0 ml-2 text-main-dark">
               <svg class="fill-current tablet:w-[25px] tablet:h-[25px] tablet:top-[3px] relative" width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -76,11 +76,13 @@
     <div id="search_filters_modal" class="modal_productList">
     <div id="search_filters_modal_inner" class="modal_productList-inner">
       <div
-        class=" py-2.5 px-[30px] flex justify-between items-center border-0 border-b border-solid border-gray-2000">
-        {if !empty($externalFilters) || (isset($listing.rendered_facets) && $listing.rendered_facets)}
-          <span class="font-header text-main-dark text-xl tablet:text-3xl cursor-pointer" data-filters-tab='0' >{l s='Filter' d='Shop.Theme.Actions'}</span>
-        {/if}
-        <span class="font-header text-main-dark text-xl tablet:text-3xl cursor-pointer" data-filters-tab='1' >{l s='Sort by:' d='Shop.Theme.Global'}</span>
+        class=" px-[30px] flex justify-between items-center border-0 border-b border-solid border-gray-2000">
+        <div class="flex">
+          {if !empty($externalFilters) || (isset($listing.rendered_facets) && $listing.rendered_facets)}
+            <span class="py-2.5 font-header text-main-dark text-xl tablet:text-3xl cursor-pointer" data-filters-tab='0' >{l s='Filter' d='Shop.Theme.Actions'}</span>
+          {/if}
+          <span class="py-2.5 font-header text-main-dark text-xl tablet:text-3xl cursor-pointer" data-filters-tab='1' >{l s='Sort by:' d='Shop.Theme.Global'}</span>
+        </div>
         <button class="group cursor-pointer appearance-none bg-transparent border-0 h-10 py-1.5"
           data-filters-modal-close>
           <svg class="fill-current text-main-dark group-hover:text-main transition duration-200" width="26"
