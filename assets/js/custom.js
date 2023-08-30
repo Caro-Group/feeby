@@ -1670,7 +1670,7 @@ function switchTab(tabEl,tabContainerEl){
 
 function initModalToggle(btnEl,tabEl){
   const filterModal = document.querySelector('#search_filters_modal')
-  const filterTabContainer = document.querySelector('#search_filters_modal')
+  const filterTabContainer = document.querySelector('[data-filters-tabs]')
   const filterModalCloseBtns = document.querySelectorAll('[data-filters-modal-close]')
 
   if (filterModal && filterTabContainer) {
@@ -1718,28 +1718,27 @@ $(document).ready(function(){
   }
   
   if (prestashop.page.page_name == 'category') {
-    handleModalsOffset()
+    handleModalOffset()
     
     window.addEventListener('scroll',()=>{
-      handleModalsOffset()
+      handleModalOffset()
     });
 
     window.addEventListener('resize',()=>{
-      handleModalsOffset()
+      handleModalOffset()
     });
   }
 })
 
-function handleModalsOffset(){
+function handleModalOffset(){
+  let modalEl = document.querySelector('#search_filters_modal')
   let container = document.querySelector('#js-product-list .products')
   let containerOffset = container.getBoundingClientRect().bottom
 
-  customModals.forEach(item=>{
     if (window.innerHeight > containerOffset && window.innerWidth >= 768) {
-      item.modal.style.top = containerOffset - window.innerHeight + 'px'
+      modalEl.style.top = containerOffset - window.innerHeight + 'px'
     }else{
-      item.modal.style.top = '0px'
+      modalEl.style.top = '0px'
     }
-  })
 
 }
