@@ -42,6 +42,7 @@
       {if !empty($externalFilters) || (!empty($listing.rendered_facets))}
 
         <button id="search_filters_toggler"
+        data-filters-tab-btn='0'
           class="flex items-center justify-between cursor-pointer border-2 border-solid border-gray-2000 px-5 tablet:px-10 text-left text-base tablet:text-lg uppercase text-normal bg-gray-1000 hover:border-gray-3000 rounded-md text-main-dark text-left w-full transition duration-200" >
           {l s='Filter' d='Shop.Theme.Actions'}
           <span class="top-[3px] float-right pl-4 relative ">
@@ -55,10 +56,11 @@
 
     <div
       class="flex justify-center tablet:justify-end order-2 tablet:order-3 rounded-md w-1/2  pl-[10px] tablet:pl-0 {if $externalFilters}  tablet:rounded-none tablet:rounded-r-md tablet:w-auto  {else} tablet:w-full {/if} ">
-      <div class="sort-by-row w-full tablet:w-[232px]">
-        <div class="products-sort-order w-full select-title text-base">
+      <div class="w-full tablet:w-[232px]">
+        <div class=" w-full select-title text-base">
           <button
             id="search_sort_toggler"
+            data-filters-tab-btn='1'
             class="select-title w-full text-base tablet:text-lg uppercase bg-transparent px-5 tablet:px-10 py-2 tablet:py-2.5 text-left !flex justify-between items-center font-light text-main-dark border-gray-2000 hover:border-gray-3000 rounded-md border-solid !border-2 transition duration-200">
             <span class="sort-by text-main-dark font-normal text-main-dark">{l s='Sort by:' d='Shop.Theme.Global'}</span>
             <span class="shrink-0 ml-2 text-main-dark">
@@ -76,9 +78,9 @@
       <div
         class=" py-2.5 px-[30px] flex justify-between items-center border-0 border-b border-solid border-gray-2000">
         {if !empty($externalFilters) || (isset($listing.rendered_facets) && $listing.rendered_facets)}
-          <span class="font-header text-main-dark text-2xl tablet:text-4xl">{l s='Filter' d='Shop.Theme.Actions'}</span>
+          <span class="font-header text-main-dark text-xl tablet:text-3xl cursor-pointer" data-filters-tab='0' >{l s='Filter' d='Shop.Theme.Actions'}</span>
         {/if}
-        <span class="font-header text-main-dark text-2xl tablet:text-4xl">{l s='Sort by:' d='Shop.Theme.Global'}</span>
+        <span class="font-header text-main-dark text-xl tablet:text-3xl cursor-pointer" data-filters-tab='1' >{l s='Sort by:' d='Shop.Theme.Global'}</span>
         <button class="group cursor-pointer appearance-none bg-transparent border-0 h-10 py-1.5"
           data-filters-modal-close>
           <svg class="fill-current text-main-dark group-hover:text-main transition duration-200" width="26"
@@ -92,9 +94,9 @@
           </svg>
         </button>
       </div>
-      <div class="w-full h-full overflow-hidden">
-        <div class="w-full flex h-full" data-filters-tabs>
-          <div class="shrink-0 grow-0 basis-full px-[30px] overflow-y-auto scrollbar-custom" data-filters-tab-filter>
+      <div class="w-full h-full overflow-hidden sort-by-row">
+        <div class="w-full flex h-full transition duration-[300ms]" data-filters-tabs>
+          <div class="shrink-0 grow-0 basis-full px-[30px] overflow-y-auto scrollbar-custom" >
             {block name='product_list_active_filters'}
               {if !empty($externalFilters) || (isset($listing.rendered_facets) && $listing.rendered_facets)}
                 {$externalFilters nofilter}
@@ -102,7 +104,7 @@
             {/block}
           </div>
 
-          <div class="shrink-0 grow-0 basis-full  px-[30px] overflow-y-auto scrollbar-custom" data-filters-tab-sort>
+          <div id="sort-list" class="shrink-0 grow-0 basis-full px-[30px] overflow-y-auto scrollbar-custom products-sort-order">
             {block name='sort_by'}
               {include file='catalog/_partials/sort-orders.tpl' sort_orders=$listing.sort_orders}
             {/block}

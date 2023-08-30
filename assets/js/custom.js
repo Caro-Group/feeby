@@ -1674,17 +1674,15 @@ $(document).ready(function () {
 
 $(document).ready(function () {
 
-  const filterModal = document.querySelector('#search_filters_modal')
   const filterBtn = document.querySelector('#search_filters_toggler')
-  const filterModalCloseBtns = document.querySelectorAll('[data-filters-modal-close]')
-  
-  initModalToggle(filterModal,filterBtn,filterModalCloseBtns)
+  const filterTabLabel = document.querySelector('[data-filters-tab="0"]')
 
-  const sortModal = document.querySelector('#search_sort_modal')
+  initModalToggle(filterBtn,filterTabLabel)
+
   const sortBtn = document.querySelector('#search_sort_toggler')
-  const sortModalCloseBtns = document.querySelectorAll('[data-sort-modal-close]')
+  const sortTabLabel = document.querySelector('[data-filters-tab="1"]')
 
-  initModalToggle(sortModal,sortBtn,sortModalCloseBtns)
+  initModalToggle(sortBtn,sortTabLabel)
    
 });
 
@@ -1698,44 +1696,59 @@ function closeModal(modalElement,openBtnElement){
   openBtnElement.classList.remove('!border-main')
 }
 
-function isModalActive(modalElement){
-  return modalElement.classList.contains('active')
+function isTabActive(tabEl){
+  return tabEl.classList.contains('active')
 }
 
-const customModals = []
-function initModalToggle(modalElement,openBtnElement,closeBtnElements){   
-  if (openBtnElement && modalElement && closeBtnElements) {
-    openBtnElement.addEventListener('click',()=>{
-      if (isModalActive(modalElement)) {
-        return closeModal(modalElement,openBtnElement)        
+function switchTab(tabEl,tabContainerEl){
+  let tabNumber = tabEl.getAttribute('data-filters-tab')
+  let allTabs = document.querySelectorAll('[data-filters-tab]')
+  let allBtns = document.querySelectorAll('[data-filters-tab-btn]')
+  allTabs.forEach(tab => tab.classList.remove('active'))
+  allBtns.forEach(btn => {
+    if (btn.getAttribute('data-filters-tab') !== tabNumber) {
+      btn.classList.remove('active')
+    }
+  })
+  
+  tabContainerEl.style.transform = `translateX(-${tabNumber * 100}%)`
+  tabEl.classList.add('active')
+}
+
+function initModalToggle(btnEl,tabEl){
+  const filterModal = document.querySelector('#search_filters_modal')
+  const filterTabContainer = document.querySelector('#search_filters_modal')
+  const filterModalCloseBtns = document.querySelectorAll('[data-filters-modal-close]')
+
+  if (filterModal && filterTabContainer) {
+    btnEl.addEventListener('click',()=>{
+      if (isTabActive(tabEl)) {
+        closeModal(filterModal,btnEl)
+      } else {
+        openModal(filterModal,btnEl)
+        switchTab(tabEl,filterTabContainer)
       }
-
-      let activeModals = customModals.filter(item => isModalActive(item.modal))
-      if (activeModals.length > 0) {
-        activeModals.forEach(item=>{
-          closeModal(item.modal,item.openBtn)
-        });
-
-        setTimeout(()=>{
-          openModal(modalElement,openBtnElement)
-        },300);
-
-        return
-      }
-
-      openModal(modalElement,openBtnElement)
-      
-    });
-    
-    closeBtnElements.forEach(button => {
-      button.addEventListener('click',()=>{
-        closeModal(modalElement,openBtnElement)
-      });
     })
 
-    customModals.push({modal: modalElement, openBtn:openBtnElement})
+    tabEl.addEventListener('click',()=>{
+      if (!isTabActive(tabEl)) {
+        openModal(filterModal,btnEl)
+        switchTab(tabEl,filterTabContainer)
+      }
+    })
+
+    filterModalCloseBtns.forEach(btn => {
+      btn.addEventListener('click',()=>{
+        closeModal(filterModal,btnEl)
+      })
+    })
+    
   }
+
 }
+
+
+
 
 $(document).ready(function(){
   const filterButtonsContainer = document.querySelector('[data-filters-buttons-container]')
