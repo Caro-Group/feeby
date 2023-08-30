@@ -1673,7 +1673,7 @@ function initModalToggle(btnEl,tabEl){
   const filterTabContainer = document.querySelector('[data-filters-tabs]')
   const filterModalCloseBtns = document.querySelectorAll('[data-filters-modal-close]')
 
-  if (filterModal && filterTabContainer) {
+  if (filterModal && filterTabContainer && filterModalCloseBtns && btnEl && tabEl) {
     btnEl.addEventListener('click',()=>{
       if (isActive(tabEl) && isActive(filterModal)) {
         closeModal(filterModal,btnEl)
