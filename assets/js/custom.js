@@ -1649,8 +1649,8 @@ function closeModal(modalElement,openBtnElement){
   openBtnElement.classList.remove('!border-main')
 }
 
-function isTabActive(tabEl){
-  return tabEl.classList.contains('active')
+function isActive(el){
+  return el.classList.contains('active')
 }
 
 function switchTab(tabEl,tabContainerEl){
@@ -1659,7 +1659,7 @@ function switchTab(tabEl,tabContainerEl){
   let allBtns = document.querySelectorAll('[data-filters-tab-btn]')
   allTabs.forEach(tab => tab.classList.remove('active'))
   allBtns.forEach(btn => {
-    if (btn.getAttribute('data-filters-tab') !== tabNumber) {
+    if (btn.getAttribute('data-filters-tab-btn') != tabNumber) {
       btn.classList.remove('active')
     }
   })
@@ -1675,7 +1675,7 @@ function initModalToggle(btnEl,tabEl){
 
   if (filterModal && filterTabContainer) {
     btnEl.addEventListener('click',()=>{
-      if (isTabActive(tabEl)) {
+      if (isActive(tabEl) && isActive(filterModal)) {
         closeModal(filterModal,btnEl)
       } else {
         openModal(filterModal,btnEl)
@@ -1684,7 +1684,7 @@ function initModalToggle(btnEl,tabEl){
     })
 
     tabEl.addEventListener('click',()=>{
-      if (!isTabActive(tabEl)) {
+      if (!isActive(tabEl)) {
         openModal(filterModal,btnEl)
         switchTab(tabEl,filterTabContainer)
       }
