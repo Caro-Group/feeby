@@ -23,7 +23,6 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 
-<div id="sort-list" class="px-[30px] overflow-y-auto scrollbar-custom">
   {foreach from=$listing.sort_orders item=sort_order}
     <a
       rel="nofollow"
@@ -34,4 +33,3 @@
       {$sort_order.label}
     </a>
   {/foreach}
-</div>
