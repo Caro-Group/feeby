@@ -1654,18 +1654,30 @@ function isActive(el){
 }
 
 function switchTab(tabEl,tabContainerEl){
-  let tabNumber = tabEl.getAttribute('data-filters-tab')
   let allTabs = document.querySelectorAll('[data-filters-tab]')
   let allBtns = document.querySelectorAll('[data-filters-tab-btn]')
+
+  let tabNumber = tabEl.getAttribute('data-filters-tab')
   allTabs.forEach(tab => tab.classList.remove('active'))
   allBtns.forEach(btn => {
     if (btn.getAttribute('data-filters-tab-btn') != tabNumber) {
-      btn.classList.remove('active')
+      btn.classList.remove('!border-main')
     }
   })
   
   tabContainerEl.style.transform = `translateX(-${tabNumber * 100}%)`
   tabEl.classList.add('active')
+  setDecorPosition()
+}
+
+function setDecorPosition(){
+  let decorEl = document.querySelector('[data-filters-active-decor]')
+  let activeTabEl = document.querySelector('[data-filters-tab].active')
+  
+  if (decorEl && activeTabEl ) {
+    decorEl.style.left = `${activeTabEl.offsetLeft}px`
+    decorEl.style.width = `${activeTabEl.clientWidth}px`
+  }
 }
 
 function initModalToggle(btnEl,tabEl){
@@ -1726,6 +1738,7 @@ $(document).ready(function(){
 
     window.addEventListener('resize',()=>{
       handleModalOffset()
+      setDecorPosition()
     });
   }
 })

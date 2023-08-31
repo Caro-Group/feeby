@@ -77,11 +77,12 @@
     <div id="search_filters_modal_inner" class="modal_productList-inner">
       <div
         class=" px-[30px] flex justify-between items-center border-0 border-b border-solid border-gray-2000">
-        <div class="flex">
+        <div class="flex relative">
           {if !empty($externalFilters) || (isset($listing.rendered_facets) && $listing.rendered_facets)}
-            <span class="py-2.5 font-header text-main-dark text-xl tablet:text-3xl cursor-pointer" data-filters-tab='0' >{l s='Filter' d='Shop.Theme.Actions'}</span>
+            <span class="p-[13px] md:p-5 font-header text-main-dark text-xl tablet:text-3xl cursor-pointer [&:not(.active)]:!text-gray-3000 transition duration-200" data-filters-tab='0' >{l s='Filter' d='Shop.Theme.Actions'}</span>
           {/if}
-          <span class="py-2.5 font-header text-main-dark text-xl tablet:text-3xl cursor-pointer" data-filters-tab='1' >{l s='Sort by:' d='Shop.Theme.Global'}</span>
+          <span class="p-[13px] md:p-5 font-header text-main-dark text-xl tablet:text-3xl cursor-pointer [&:not(.active)]:!text-gray-3000 transition duration-200" data-filters-tab='1' >{l s='Sort by:' d='Shop.Theme.Global'}</span>
+          <span class="absolute z-10 top-full left-0 h-1 rounded-b-md bg-main transition-all duration-[300ms]" data-filters-active-decor></span>
         </div>
         <button class="group cursor-pointer appearance-none bg-transparent border-0 h-10 py-1.5"
           data-filters-modal-close>
