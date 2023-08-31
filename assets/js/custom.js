@@ -1675,7 +1675,7 @@ function setDecorPosition(){
   let activeTabEl = document.querySelector('[data-filters-tab].active')
   
   if (decorEl && activeTabEl ) {
-    decorEl.style.left = `${activeTabEl.offsetLeft}px`
+    decorEl.style.transform = `translateX(${activeTabEl.offsetLeft}px)`
     decorEl.style.width = `${activeTabEl.clientWidth}px`
   }
 }
