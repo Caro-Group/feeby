@@ -325,6 +325,10 @@ li[data-menu-type='url'] a {
   @apply tablet:shadow-[0px_20px_100px_0px_rgba(0,0,0,0.15)]
 }
 
+[data-filters-tab].active{
+  @apply !text-main-dark
+}
+
 .facet-container.collapsed .facet-icon,
 .filter-name.collapsed .facet-icon{
   @apply rotate-180;
