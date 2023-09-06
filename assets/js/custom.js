@@ -824,7 +824,6 @@ function customSticky() {
 }
 
 (function ($) {
-
   $(document).ready(function () {
     const aboveFiltersContainer = '[data-container="additional-filters"]';
     const currentFilterContainer = '[data-target="#facet_attribute_group_18"]';
@@ -904,15 +903,18 @@ function customSticky() {
 
   if (
     $('#checkout-guest-form [data-field="password"]').value !== "" &&
-    prestashop.customer.is_logged
+    prestashop.customer?.is_logged
   ) {
+    if (typeof prestashop.customer == "undefined") {
+      prestashop.customer = [];
+    }
     prestashop.customer.is_guest_logged = true;
   }
   $("body").on(
     "change",
     '#checkout-guest-form [data-field="password"]',
     function (e) {
-      if (this.value !== "" && prestashop.customer.is_logged) {
+      if (this.value !== "" && prestashop.customer?.is_logged) {
         prestashop.customer.is_guest_logged = true;
       }
     }
@@ -1260,21 +1262,19 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-
-  let thumbSwiper 
+  let thumbSwiper;
 
   if ($("[data-swiper-product-thumb]").length) {
     thumbSwiper = new Swiper("[data-swiper-product-thumb]", {
       slidesPerView: "auto",
       spaceBetween: 0,
-      slideClass: 'swiper-custom-slide',
-        navigation: {
-          nextEl: "[data-swiper-product-thumb-next]",
-          prevEl: "[data-swiper-product-thumb-prev]",
-        },
-      })
+      slideClass: "swiper-custom-slide",
+      navigation: {
+        nextEl: "[data-swiper-product-thumb-next]",
+        prevEl: "[data-swiper-product-thumb-prev]",
+      },
+    });
   }
-
 
   if ($("[data-swiper-product]").length) {
     let productSwiper = new Swiper("[data-swiper-product]", {
@@ -1287,8 +1287,8 @@ $(document).ready(function () {
       spaceBetween: 20,
       loop: true,
       watchSlidesProgress: true,
-      thumbs:{
-        swiper: thumbSwiper
+      thumbs: {
+        swiper: thumbSwiper,
       },
       // navigation: {
       //   nextEl: "[data-swiper-product-next]",
@@ -1309,14 +1309,14 @@ $(document).ready(function () {
       },
     });
 
-    productSwiper.on('touchStart', () => {
-      let zoomRatio = ( window.outerWidth / window.innerWidth) * 100;
+    productSwiper.on("touchStart", () => {
+      let zoomRatio = (window.outerWidth / window.innerWidth) * 100;
       if (window.innerWidth < 768 && zoomRatio.toFixed() > 100) {
-        productSwiper.allowTouchMove = false
-      }else{
-        productSwiper.allowTouchMove = true
+        productSwiper.allowTouchMove = false;
+      } else {
+        productSwiper.allowTouchMove = true;
       }
-    })
+    });
 
     if ($("#main").hasClass("product-image-gallery")) {
       $("img.js-thumb").each(function () {
@@ -1352,8 +1352,6 @@ $(document).ready(function () {
   }
 
   if (typeof prestashop !== "undefined") {
-
-
     prestashop.on("updatedProduct", function (event) {
       if (typeof productSwiper == "function") {
         productSwiper.destroy(true, true);
@@ -1367,12 +1365,12 @@ $(document).ready(function () {
         thumbSwiper = new Swiper("[data-swiper-product-thumb]", {
           slidesPerView: "auto",
           spaceBetween: 0,
-          slideClass: 'swiper-custom-slide',
-            navigation: {
-              nextEl: "[data-swiper-product-thumb-next]",
-              prevEl: "[data-swiper-product-thumb-prev]",
-            },
-          })
+          slideClass: "swiper-custom-slide",
+          navigation: {
+            nextEl: "[data-swiper-product-thumb-next]",
+            prevEl: "[data-swiper-product-thumb-prev]",
+          },
+        });
       }
 
       if ($("[data-swiper-product]").length) {
@@ -1383,8 +1381,8 @@ $(document).ready(function () {
           spaceBetween: 20,
           loop: true,
           watchSlidesProgress: true,
-          thumbs:{
-            swiper: thumbSwiper
+          thumbs: {
+            swiper: thumbSwiper,
           },
           // navigation: {
           //   nextEl: "[data-swiper-product-next]",
@@ -1405,14 +1403,14 @@ $(document).ready(function () {
           },
         });
 
-        productSwiper.on('touchStart', () => {
-          let zoomRatio = ( window.outerWidth / window.innerWidth) * 100;
+        productSwiper.on("touchStart", () => {
+          let zoomRatio = (window.outerWidth / window.innerWidth) * 100;
           if (window.innerWidth < 768 && zoomRatio.toFixed() > 100) {
-            productSwiper.allowTouchMove = false
-          }else{
-            productSwiper.allowTouchMove = true
+            productSwiper.allowTouchMove = false;
+          } else {
+            productSwiper.allowTouchMove = true;
           }
-        })
+        });
 
         if ($("#main").hasClass("product-image-gallery")) {
           $("img.js-thumb").each(function () {
@@ -1446,7 +1444,7 @@ $(document).ready(function () {
         }
 
         handleUpdateZoom(productSwiper);
-      };
+      }
     });
   }
   handleFancyboxSwipe();
@@ -1455,8 +1453,8 @@ $(document).ready(function () {
 function handleFancyboxSwipe() {
   let startX;
   let endX;
-  let cancelSwipe = false
-  const swipeDistance = 200
+  let cancelSwipe = false;
+  const swipeDistance = 200;
 
   $(document).on("mousedown touchstart", ".fancybox-outer", function (event) {
     if (event.type == "touchstart") {
@@ -1468,9 +1466,9 @@ function handleFancyboxSwipe() {
 
   $(document).on("touchmove", ".fancybox-outer", function (event) {
     if (event.touches.length > 1) {
-      cancelSwipe = true
-    }else{
-      cancelSwipe = false
+      cancelSwipe = true;
+    } else {
+      cancelSwipe = false;
     }
   });
 
@@ -1479,19 +1477,19 @@ function handleFancyboxSwipe() {
       endX = event.changedTouches[0].clientX;
     } else {
       endX = event.clientX;
-    }    
+    }
 
     let distance = endX - startX;
     let fancybox = $.fancybox;
 
-    let zoomRatio = ( window.outerWidth / window.innerWidth) * 100;
+    let zoomRatio = (window.outerWidth / window.innerWidth) * 100;
     if (window.innerWidth < 768 && zoomRatio.toFixed() > 100) {
-      cancelSwipe = true
-    }else{
-      cancelSwipe = false
+      cancelSwipe = true;
+    } else {
+      cancelSwipe = false;
     }
 
-    if ((Math.abs(distance) > swipeDistance) && !cancelSwipe) {
+    if (Math.abs(distance) > swipeDistance && !cancelSwipe) {
       if (distance > 0) {
         fancybox.outer.trigger("swiperight");
         fancybox.prev();
@@ -1504,29 +1502,29 @@ function handleFancyboxSwipe() {
 }
 
 function handleUpdateZoom(swiper) {
-  updateZoom(swiper)
-  window.addEventListener('resize',() =>{
-    updateZoom(swiper)
-  })
+  updateZoom(swiper);
+  window.addEventListener("resize", () => {
+    updateZoom(swiper);
+  });
   swiper.on("activeIndexChange", () => updateZoom(swiper));
 }
 
-function updateZoom(swiper){
+function updateZoom(swiper) {
   // replace zoom realIndex
   let activeElement = $(swiper.wrapperEl)
-  .find(`[data-swiper-slide-index=${swiper.realIndex}]`)
-  .eq(0);
+    .find(`[data-swiper-slide-index=${swiper.realIndex}]`)
+    .eq(0);
   let activeImageUrl = activeElement.attr("src");
   $(".zoomWindowContainer div").css(
-  "background-image",
-  `url(${activeImageUrl})`
+    "background-image",
+    `url(${activeImageUrl})`
   );
 
   //set zoomGallery active slide
   $("#thumb-gallery")
-  .find(".swiper-custom-slide a")
-  .eq(swiper.realIndex)
-  .trigger("click");
+    .find(".swiper-custom-slide a")
+    .eq(swiper.realIndex)
+    .trigger("click");
 }
 
 function paginationGoTop() {
@@ -1671,134 +1669,139 @@ $(document).ready(function () {
     );
 });
 
-
 $(document).ready(function () {
+  const filterBtn = document.querySelector("#search_filters_toggler");
+  const filterTabLabel = document.querySelector('[data-filters-tab="0"]');
 
-  const filterBtn = document.querySelector('#search_filters_toggler')
-  const filterTabLabel = document.querySelector('[data-filters-tab="0"]')
+  initModalToggle(filterBtn, filterTabLabel);
 
-  initModalToggle(filterBtn,filterTabLabel)
+  const sortBtn = document.querySelector("#search_sort_toggler");
+  const sortTabLabel = document.querySelector('[data-filters-tab="1"]');
 
-  const sortBtn = document.querySelector('#search_sort_toggler')
-  const sortTabLabel = document.querySelector('[data-filters-tab="1"]')
-
-  initModalToggle(sortBtn,sortTabLabel)
-   
+  initModalToggle(sortBtn, sortTabLabel);
 });
 
-function openModal(modalElement,openBtnElement){
-  modalElement.classList.add('active')
-  openBtnElement.classList.add('!border-main')
+function openModal(modalElement, openBtnElement) {
+  modalElement.classList.add("active");
+  openBtnElement.classList.add("!border-main");
 }
 
-function closeModal(modalElement,openBtnElement){
-  modalElement.classList.remove('active')
-  openBtnElement.classList.remove('!border-main')
+function closeModal(modalElement, openBtnElement) {
+  modalElement.classList.remove("active");
+  openBtnElement.classList.remove("!border-main");
 }
 
-function isActive(el){
-  return el.classList.contains('active')
+function isActive(el) {
+  return el.classList.contains("active");
 }
 
-function switchTab(tabEl,tabContainerEl){
-  let allTabs = document.querySelectorAll('[data-filters-tab]')
-  let allBtns = document.querySelectorAll('[data-filters-tab-btn]')
+function switchTab(tabEl, tabContainerEl) {
+  let allTabs = document.querySelectorAll("[data-filters-tab]");
+  let allBtns = document.querySelectorAll("[data-filters-tab-btn]");
 
-  let tabNumber = tabEl.getAttribute('data-filters-tab')
-  allTabs.forEach(tab => tab.classList.remove('active'))
-  allBtns.forEach(btn => {
-    if (btn.getAttribute('data-filters-tab-btn') != tabNumber) {
-      btn.classList.remove('!border-main')
+  let tabNumber = tabEl.getAttribute("data-filters-tab");
+  allTabs.forEach((tab) => tab.classList.remove("active"));
+  allBtns.forEach((btn) => {
+    if (btn.getAttribute("data-filters-tab-btn") != tabNumber) {
+      btn.classList.remove("!border-main");
     }
-  })
-  
-  tabContainerEl.style.transform = `translateX(-${tabNumber * 100}%)`
-  tabEl.classList.add('active')
-  setDecorPosition()
+  });
+
+  tabContainerEl.style.transform = `translateX(-${tabNumber * 100}%)`;
+  tabEl.classList.add("active");
+  setDecorPosition();
 }
 
-function setDecorPosition(){
-  let decorEl = document.querySelector('[data-filters-active-decor]')
-  let activeTabEl = document.querySelector('[data-filters-tab].active')
-  
-  if (decorEl && activeTabEl ) {
-    decorEl.style.transform = `translateX(${activeTabEl.offsetLeft}px)`
-    decorEl.style.width = `${activeTabEl.clientWidth}px`
+function setDecorPosition() {
+  let decorEl = document.querySelector("[data-filters-active-decor]");
+  let activeTabEl = document.querySelector("[data-filters-tab].active");
+
+  if (decorEl && activeTabEl) {
+    decorEl.style.transform = `translateX(${activeTabEl.offsetLeft}px)`;
+    decorEl.style.width = `${activeTabEl.clientWidth}px`;
   }
 }
 
-function initModalToggle(btnEl,tabEl){
-  const filterModal = document.querySelector('#search_filters_modal')
-  const filterTabContainer = document.querySelector('[data-filters-tabs]')
-  const filterModalCloseBtns = document.querySelectorAll('[data-filters-modal-close]')
+function initModalToggle(btnEl, tabEl) {
+  const filterModal = document.querySelector("#search_filters_modal");
+  const filterTabContainer = document.querySelector("[data-filters-tabs]");
+  const filterModalCloseBtns = document.querySelectorAll(
+    "[data-filters-modal-close]"
+  );
 
-  if (filterModal && filterTabContainer && filterModalCloseBtns && btnEl && tabEl) {
-    btnEl.addEventListener('click',()=>{
+  if (
+    filterModal &&
+    filterTabContainer &&
+    filterModalCloseBtns &&
+    btnEl &&
+    tabEl
+  ) {
+    btnEl.addEventListener("click", () => {
       if (isActive(tabEl) && isActive(filterModal)) {
-        closeModal(filterModal,btnEl)
+        closeModal(filterModal, btnEl);
       } else {
-        openModal(filterModal,btnEl)
-        switchTab(tabEl,filterTabContainer)
+        openModal(filterModal, btnEl);
+        switchTab(tabEl, filterTabContainer);
       }
-    })
+    });
 
-    tabEl.addEventListener('click',()=>{
+    tabEl.addEventListener("click", () => {
       if (!isActive(tabEl)) {
-        openModal(filterModal,btnEl)
-        switchTab(tabEl,filterTabContainer)
+        openModal(filterModal, btnEl);
+        switchTab(tabEl, filterTabContainer);
       }
-    })
+    });
 
-    filterModalCloseBtns.forEach(btn => {
-      btn.addEventListener('click',()=>{
-        closeModal(filterModal,btnEl)
-      })
-    })
-    
+    filterModalCloseBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        closeModal(filterModal, btnEl);
+      });
+    });
   }
-
 }
 
-
-
-
-$(document).ready(function(){
-  const filterButtonsContainer = document.querySelector('[data-filters-buttons-container]')
+$(document).ready(function () {
+  const filterButtonsContainer = document.querySelector(
+    "[data-filters-buttons-container]"
+  );
   if (filterButtonsContainer) {
-    const observer = new IntersectionObserver( 
-      ([e]) => e.target.classList.toggle('shadow-[0px_4px_4px_rgba(0,0,0,0.1)]', e.intersectionRatio < 1),
+    const observer = new IntersectionObserver(
+      ([e]) =>
+        e.target.classList.toggle(
+          "shadow-[0px_4px_4px_rgba(0,0,0,0.1)]",
+          e.intersectionRatio < 1
+        ),
       {
         threshold: [1],
-        rootMargin: "51px 0px 0px 0px"
+        rootMargin: "51px 0px 0px 0px",
       }
     );
 
-    observer.observe(filterButtonsContainer)
+    observer.observe(filterButtonsContainer);
   }
-  
-  if (prestashop.page.page_name == 'category') {
-    handleModalOffset()
-    
-    window.addEventListener('scroll',()=>{
-      handleModalOffset()
+
+  if (prestashop.page.page_name == "category") {
+    handleModalOffset();
+
+    window.addEventListener("scroll", () => {
+      handleModalOffset();
     });
 
-    window.addEventListener('resize',()=>{
-      handleModalOffset()
-      setDecorPosition()
+    window.addEventListener("resize", () => {
+      handleModalOffset();
+      setDecorPosition();
     });
   }
-})
+});
 
-function handleModalOffset(){
-  let modalEl = document.querySelector('#search_filters_modal')
-  let container = document.querySelector('#js-product-list .products')
-  let containerOffset = container.getBoundingClientRect().bottom
+function handleModalOffset() {
+  let modalEl = document.querySelector("#search_filters_modal");
+  let container = document.querySelector("#js-product-list .products");
+  let containerOffset = container.getBoundingClientRect().bottom;
 
-    if (window.innerHeight > containerOffset && window.innerWidth >= 768) {
-      modalEl.style.top = containerOffset - window.innerHeight + 'px'
-    }else{
-      modalEl.style.top = '0px'
-    }
-
+  if (window.innerHeight > containerOffset && window.innerWidth >= 768) {
+    modalEl.style.top = containerOffset - window.innerHeight + "px";
+  } else {
+    modalEl.style.top = "0px";
+  }
 }
