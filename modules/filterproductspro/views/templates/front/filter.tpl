@@ -34,7 +34,7 @@
         {/foreach}
         <div class="filter-name !flex cursor-pointer tablet:px-0 py-5 justify-between  group collapse in"
         data-parent="#searcher_{$searcher.id_searcher|intval}" data-target="#filter-options_{$filter.id_filter|intval}" data-toggle="collapse" aria-expanded="true">
-            <p class="!m-0 text-[20px] tablet:text-2xl font-body font-normal text-main-dark">
+            <p class="!m-0 text-lg tablet:text-[20px] font-body font-normal text-main-dark">
                 {$filter.name[$params_back.id_lang|intval]}
             </p>
             <svg class="facet-icon transition duration-300" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
