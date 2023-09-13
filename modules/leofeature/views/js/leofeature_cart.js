@@ -1558,7 +1558,7 @@ function createModalAndDropdown($only_dropdown, $only_total) {
           type_dropdown_defaultcart == "dropdown" ||
           type_dropdown_defaultcart == "dropup"
         ) {
-          $(document).on("click", ".cart-preview", function () {
+          $(document).on("click mouseover", ".cart-preview", function () {
             // console.log('test');
             showDropDownCart($(this), "defaultcart");
             return false;
