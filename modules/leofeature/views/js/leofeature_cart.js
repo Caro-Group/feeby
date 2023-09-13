@@ -848,6 +848,12 @@ function showDropDownCart($element, $type) {
   }
 }
 
+$(document).ready(function () {
+  $(document).on("click", "blockcart a", function (e) {
+    e.preventDefault();
+  });
+});
+
 //DONGND:: show dropdown cart
 function showSlideBarCart($element) {
   if (!$(".leo-fly-cart-slidebar.disable").length) {
