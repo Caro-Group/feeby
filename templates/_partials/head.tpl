@@ -79,7 +79,7 @@
 
 {*
 
-Classes used in builder: 
+Classes used in builder:
 
 tablet-medium:mr-20 tablet-wide:mr-8 desktop:mr-0 tablet-medium:top-auto tablet-medium:w-3/5 tablet-medium:absolute
 tablet-medium:-bottom-12 tablet:mx-4 desktop-presta:mx-0 tablet-medium:border-b-0 tablet-medium:border-t
@@ -87,6 +87,7 @@ tablet-medium:pb-0
 tablet-wide:mt-4
 tablet-wide:hidden
 tablet-medium:hidden
+static
 *}
 
 {* LEO - Load Css With Prestashop Standard *}
@@ -119,7 +120,7 @@ tablet-medium:hidden
 
 {block name='hook_extra'}{/block}
 
-{* 
+{*
 Classes used in builder:
  tablet-medium:mr-20 tablet-wide:mr-8 desktop:mr-0 tablet-medium:top-auto tablet-medium:w-3/5 tablet-medium:absolute tablet-medium:-bottom-12 py-1 tablet:py-0 tablet:h-[60px] desktop:w-1/2 desktop:pr-32 desktop:pr-20 tablet:text-4xl text-2xl mt-14 tablet:mt-14 mt-16 tablet:mt-28 mt-20 tablet:mt-20  px-10px mb-12
  tablet-medium:mb-12 desktop-presta:px-24 tablet-medium:px-7 pl-2 flex-1 tablet-medium:max-w-screen-phablet tablet:-mx-4 p-8 tablet-wide:p-20 tablet-wide:pb-16 px-24 tablet-medium:bg-transparent w-16 tablet-medium:w-full tablet-medium:px-10 tablet-medium:px-8
