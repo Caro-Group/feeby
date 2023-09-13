@@ -592,12 +592,6 @@ function leoBtCart() {
                           $(".blockcart").replaceWith(
                             $(resp.preview).find(".blockcart")
                           );
-                          //DONGND:: show modal popup
-                          if (resp.modal) {
-                            window.location.replace(
-                              prestashop.urls.pages.cart + "?action=show"
-                            );
-                          }
 
                           //DONGND:: refresh dropdown cart
                           createModalAndDropdown(1, 0);
