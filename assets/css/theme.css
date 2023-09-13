@@ -1,6 +1,6 @@
 
 @charset "UTF-8";
-/* 
+/*
 font-family: 'Poppins', sans-serif;
  */
 /*!
@@ -10,15 +10,15 @@ font-family: 'Poppins', sans-serif;
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /***************************************************
-  Mixins Themes 
+  Mixins Themes
 /***************************************************/
 /* Mixin Normal*/
 /* Mixin Clear */
 /* Mixin Border */
 /*background RGBA
 ============================================*/
-/************************************ 
-	Override Bootstrap 
+/************************************
+	Override Bootstrap
 *************************************/
 
 hr {
@@ -2902,7 +2902,7 @@ a.bg-inverse:focus, a.bg-inverse:hover {
   margin: 0;
   overflow: visible;
   clip: auto; }
-/* 
+/*
 .w-100 {
   width: 100% !important; }
 
@@ -3291,15 +3291,15 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
     display: none !important; } }
 
 /***************************************************
-  Mixins Themes 
+  Mixins Themes
 /***************************************************/
 /* Mixin Normal*/
 /* Mixin Clear */
 /* Mixin Border */
 /*background RGBA
 ============================================*/
-/************************************ 
-	Override Bootstrap 
+/************************************
+	Override Bootstrap
 *************************************/
 .container {
   margin-left: auto;
@@ -5111,15 +5111,15 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
   .offset-xl-9-6 {
     margin-left: 80%; } }
 /***************************************************
-  Mixins Themes 
+  Mixins Themes
 /***************************************************/
 /* Mixin Normal*/
 /* Mixin Clear */
 /* Mixin Border */
 /*background RGBA
 ============================================*/
-/************************************ 
-	Override Bootstrap 
+/************************************
+	Override Bootstrap
 *************************************/
 /*! normalize.css v4.2.0 | MIT License | github.com/necolas/normalize.css */
 html {
@@ -5523,25 +5523,25 @@ output {
   font-weight: 400; }
 
 /***************************************************
-  Mixins Themes 
+  Mixins Themes
 /***************************************************/
 /* Mixin Normal*/
 /* Mixin Clear */
 /* Mixin Border */
 /*background RGBA
 ============================================*/
-/************************************ 
-	Override Bootstrap 
+/************************************
+	Override Bootstrap
 *************************************/
 /**
  * Web Application Prefix Apply For Making Owner Styles
  */
 /**
- *   Blocks Layout Selectors 
+ *   Blocks Layout Selectors
  */
 /***********************************************************************/
 /***************************************************
-  Mixins Themes 
+  Mixins Themes
 /***************************************************/
 /* Mixin Normal*/
 /* Mixin Clear */
@@ -9582,9 +9582,6 @@ button:focus, button:hover {
     color: #000;
     background: none; }
 
-#_desktop_cart {
-  position: relative; }
-
 /*
 * NAVIGATION
 */
@@ -9646,7 +9643,7 @@ button:focus, button:hover {
         .leo-megamenu .navbar-nav > li.parent > a span.menu-title {
           position: static; }
         }
-          
+
       .leo-megamenu .navbar-nav > li > a {
         padding: 15px 0;
         font-size: 13px;
@@ -11511,21 +11508,21 @@ body#category .product_list.grid .ajax_block_product {
   color: #f44d51; }
 
 /***************************************************
-  Mixins Themes 
+  Mixins Themes
 /***************************************************/
 /* Mixin Normal*/
 /* Mixin Clear */
 /* Mixin Border */
 /*background RGBA
 ============================================*/
-/************************************ 
-	Override Bootstrap 
+/************************************
+	Override Bootstrap
 *************************************/
 /**
  * Web Application Prefix Apply For Making Owner Styles
  */
 /**
- *   Blocks Layout Selectors 
+ *   Blocks Layout Selectors
  */
 /***********************************************************************/
 #search_widget.open a.popup-title i:before {
@@ -12399,21 +12396,21 @@ body#checkout #gift_message {
       background: none; }
 
 /***************************************************
-  Mixins Themes 
+  Mixins Themes
 /***************************************************/
 /* Mixin Normal*/
 /* Mixin Clear */
 /* Mixin Border */
 /*background RGBA
 ============================================*/
-/************************************ 
-	Override Bootstrap 
+/************************************
+	Override Bootstrap
 *************************************/
 /**
  * Web Application Prefix Apply For Making Owner Styles
  */
 /**
- *   Blocks Layout Selectors 
+ *   Blocks Layout Selectors
  */
 /***********************************************************************/
 #products .up .btn-secondary, #products .up .btn-tertiary {
@@ -12659,21 +12656,21 @@ body #search_filters .clear-all-wrapper {
     padding-top: 16px;
     text-align: center; } }
 /***************************************************
-  Mixins Themes 
+  Mixins Themes
 /***************************************************/
 /* Mixin Normal*/
 /* Mixin Clear */
 /* Mixin Border */
 /*background RGBA
 ============================================*/
-/************************************ 
-	Override Bootstrap 
+/************************************
+	Override Bootstrap
 *************************************/
 /**
  * Web Application Prefix Apply For Making Owner Styles
  */
 /**
- *   Blocks Layout Selectors 
+ *   Blocks Layout Selectors
  */
 /***********************************************************************/
 #product #content {
@@ -13382,7 +13379,7 @@ body #search_filters .clear-all-wrapper {
       font-size: 10px;
       opacity: 0;
       visibility: hidden; }
-      
+
     .leo-compare-wishlist-button .btn-product:hover {
       color: #000 !important; }
       .leo-compare-wishlist-button .btn-product:hover span span {
@@ -13548,7 +13545,7 @@ body #search_filters .clear-all-wrapper {
       @media (max-width: 480px) {
         .product-image-thumbs-left .product-tabs.tabs .nav-tabs .nav-item {
           display: block; } }
-      
+
   .product-image-thumbs-left .product-tabs.tabs .tab-content {
     clear: both;
     padding: 50px 0;
@@ -13572,7 +13569,7 @@ body #search_filters .clear-all-wrapper {
       display: inline-block;
       margin: 0;
       border: 0; }
-      
+
 
 .product-image-no-thumbs-fullwidth .product-cover {
   text-align: center; }
@@ -13822,21 +13819,21 @@ p.promo-code-button {
       font-size: 14px; }
 
 /***************************************************
-  Mixins Themes 
+  Mixins Themes
 /***************************************************/
 /* Mixin Normal*/
 /* Mixin Clear */
 /* Mixin Border */
 /*background RGBA
 ============================================*/
-/************************************ 
-	Override Bootstrap 
+/************************************
+	Override Bootstrap
 *************************************/
 /**
  * Web Application Prefix Apply For Making Owner Styles
  */
 /**
- *   Blocks Layout Selectors 
+ *   Blocks Layout Selectors
  */
 /***********************************************************************/
 .quickview .modal-dialog {
@@ -14595,7 +14592,7 @@ ul, ol {
 #index .breadcrumb {
   display: none !important; }
 
-/* 
+/*
 ::-webkit-scrollbar {
   width: 5px;
 }
@@ -15232,7 +15229,7 @@ ul.ps-alert-success li.item p {
 
   .list-brands li.brand > div {
     width: 100%; } }
-    
+
 img[title="cms-img"] {
   margin: 0 0 30px; }
 
@@ -15489,7 +15486,7 @@ div.slick-arrows .slick-arrow.slick-next {
 
 div.slick-arrows .slick-arrow {
   height: 40px;
-  width: 40px; 
+  width: 40px;
 top: 169px;}
 
 div.slick-arrows .slick-arrow

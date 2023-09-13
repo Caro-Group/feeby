@@ -34,7 +34,7 @@
 {hook h='displayAfterBodyOpeningTag'}
 <main>
     <!-- Menu part-->
-    <header id="header">
+    <header id="header" class="relative">
         {block name='header'}
             {include file='_partials/header.tpl'}
         {/block}

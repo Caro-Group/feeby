@@ -1,5 +1,5 @@
 /***************************************************
-  Mixins Themes 
+  Mixins Themes
 /***************************************************/
 /* Mixin Normal*/
 /* Mixin Clear */
@@ -7,16 +7,16 @@
 /*background RGBA
 ============================================*/
 /***************************************************
-  Mixins RTL Themes 
+  Mixins RTL Themes
 /***************************************************/
-/************************************ 
-	Override Bootstrap 
+/************************************
+	Override Bootstrap
 *************************************/
 /**
  * Web Application Prefix Apply For Making Owner Styles
  */
 /**
- *   Blocks Layout Selectors 
+ *   Blocks Layout Selectors
  */
 /***********************************************************************/
 .leo-bt-cart.disable {
@@ -642,7 +642,14 @@ div.star:before {
     transform: translateY(0px); } }
 
 .leo-dropdown-cart {
-  position: absolute; }
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  bottom: 0;
+  height: calc(100dvh - 250px);
+  overflow: auto;
+ }
   .leo-dropdown-cart.defaultcart {
     right: 0; }
     .rtl .leo-dropdown-cart.defaultcart {

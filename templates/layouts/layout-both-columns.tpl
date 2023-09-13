@@ -44,7 +44,7 @@
         {include file='catalog/_partials/product-activation.tpl'}
       {/block}
 
-      <header id="header">
+      <header id="header" class="relative">
         {block name='header'}
           {include file='_partials/header.tpl'}
         {/block}
@@ -68,9 +68,9 @@
           {block name='breadcrumb'}
             {include file='_partials/breadcrumb.tpl'}
           {/block}
-                    
+
           {block name="displayTopContent"}{/block}
-         
+
           {if isset($fullwidth_hook.displayHome) AND $fullwidth_hook.displayHome == 0}
             <div class="row">
           {/if}
@@ -110,7 +110,7 @@
             {block name="displayBottomBothColumn"}
               {hook h='displayCatalogBottom'}
             {/block}
-              
+
 
           {if isset($fullwidth_hook.displayHome) AND $fullwidth_hook.displayHome == 0}
             </div>
@@ -119,8 +119,8 @@
         {if isset($fullwidth_hook.displayHome) AND $fullwidth_hook.displayHome == 0}
           </div>
         {/if}
-	      
-        
+
+
         {block name="displayBottomContent"}{/block}
       </main>
 
@@ -134,7 +134,7 @@
           {include file="$tpl_dir./modules/appagebuilder/views/templates/front/info/paneltool.tpl"}
       {/if}
       {if isset($LEO_BACKTOP) && $LEO_BACKTOP}
-          <div id="back-top" class="progress-wrap"> 
+          <div id="back-top" class="progress-wrap">
             <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
               <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
             </svg>
@@ -154,6 +154,6 @@
     {block name='hook_before_body_closing_tag'}
       {hook h='displayBeforeBodyClosingTag'}
     {/block}
-    
+
   </body>
 </html>
