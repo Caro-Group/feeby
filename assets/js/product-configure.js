@@ -21,7 +21,7 @@ $(document).ready(function () {
 
   $configurableElements
     .filter(function () {
-      return $(this).data('productConfigurable') == 'container'
+      return $(this).data("productConfigurable") == "container";
     })
     .find("img")
     .attr("src", imageVariant);
@@ -45,8 +45,8 @@ $(document).ready(function () {
     });
 
   var containerElement = $configurableElements.filter(function () {
-    return $(this).data('productConfigurable') == 'container'
-  })
+    return $(this).data("productConfigurable") == "container";
+  });
 
   if (containerElement.length != 0) {
     $(containerElement)
@@ -77,9 +77,6 @@ $(document).ready(function () {
         $('.hidden [data-button-action="add-to-cart"]').trigger("click");
         productConfigurableUnSelectAll();
         productConfigurableSetState();
-        setTimeout(function () {
-          window.location.assign(prestashop.urls.pages.cart + "?action=show");
-        }, 300);
       }
     }
   );
@@ -89,27 +86,27 @@ $(document).ready(function () {
     '[data-button-action="add-sample-to-cart"]',
     function () {
       tempSelectedIds = configurableSelected.filter(
-        (product) => product.selected === true,
-      )
-      productConfigurableUnSelectAll()
-      productConfigurableWriteState('') //TODO: Check why not updating
-      productConfigurableSaveState()
-      productConfigurableSetState()
-      $('[data-product-attribute]').eq(6).trigger('click')
-    },
-  )
+        (product) => product.selected === true
+      );
+      productConfigurableUnSelectAll();
+      productConfigurableWriteState(""); //TODO: Check why not updating
+      productConfigurableSaveState();
+      productConfigurableSetState();
+      $("[data-product-attribute]").eq(6).trigger("click");
+    }
+  );
 
-  if (typeof prestashop !== 'undefined') {
-    prestashop.on('updatedProduct', function (event) {
-      if ($('[data-product-attribute]').eq(6).is(':checked')) {
-        $('#quantity_wanted').val(1)
-        productConfigurableWriteState('') //TODO: Check why not updating
-        $('.hidden [data-button-action="add-to-cart"]').trigger('click')
-        prestashop.once('updateCart',function(){
+  if (typeof prestashop !== "undefined") {
+    prestashop.on("updatedProduct", function (event) {
+      if ($("[data-product-attribute]").eq(6).is(":checked")) {
+        $("#quantity_wanted").val(1);
+        productConfigurableWriteState(""); //TODO: Check why not updating
+        $('.hidden [data-button-action="add-to-cart"]').trigger("click");
+        prestashop.once("updateCart", function () {
           tempSelectedIds.forEach((product) => {
-            productConfigurableSelect(product.id)
-          })
-        })  
+            productConfigurableSelect(product.id);
+          });
+        });
       }
 
       $configurableElements
@@ -131,13 +128,13 @@ $(document).ready(function () {
 
       $configurableElements
         .filter(function () {
-          return $(this).data('productConfigurable') == 'container'
+          return $(this).data("productConfigurable") == "container";
         })
         .find("img")
         .attr("src", imageVariant);
     });
   }
-})
+});
 
 function productConfigurableSelect(productId) {
   var configurableSelectedTemp = configurableSelected.filter(

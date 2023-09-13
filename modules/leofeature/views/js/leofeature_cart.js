@@ -306,7 +306,7 @@ $(document).ready(function () {
   });
 
   //DONGND:: click out to close dropdown-dropup cart
-  $(document).on("click mouseover", function (e) {
+  $(document).on("click", function (e) {
     e.stopPropagation();
     var container = $(".leo-dropdown-cart.dropdown.show");
 
