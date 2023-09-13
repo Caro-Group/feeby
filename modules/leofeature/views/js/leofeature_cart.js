@@ -837,8 +837,14 @@ function showDropDownCart($element, $type) {
 
   if (!object_element.hasClass("show")) {
     object_element.addClass("show");
+    if ($type == "defaultcart") {
+      document.addClass("overflow-hidden");
+    }
   } else {
     object_element.removeClass("show");
+    if ($type == "defaultcart") {
+      document.addClass("overflow-hidden");
+    }
   }
 }
 
