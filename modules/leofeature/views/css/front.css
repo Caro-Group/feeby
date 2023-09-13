@@ -644,11 +644,9 @@ div.star:before {
  @media(min-width: 992px){
   .leo-dropdown-cart {
     position: absolute;
-    left: 0;
+    left: auto;
     right: 0;
-    width: 100%;
-    bottom: auto;
-    overflow: auto;
+    width: auto;
    }
 
  }
