@@ -592,10 +592,6 @@ function leoBtCart() {
                           $(".blockcart").replaceWith(
                             $(resp.preview).find(".blockcart")
                           );
-                          //DONGND:: show modal popup
-                          if (resp.modal) {
-                            showModalPopupCart(resp.modal);
-                          }
 
                           //DONGND:: refresh dropdown cart
                           createModalAndDropdown(1, 0);
