@@ -22,7 +22,7 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
-<div id="_desktop_cart" class=" mr-3 ">
+<div id="_desktop_cart" class=" mr-3 desktop:relative">
   <div class="blockcart leo-blockcart cart-preview relative {if $cart.products_count > 0}active{else}inactive{/if}" data-refresh-url="{$refresh_url}">
     <div class="header">
       {if $cart.products_count > 0}
