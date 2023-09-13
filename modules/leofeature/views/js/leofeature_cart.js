@@ -848,12 +848,6 @@ function showDropDownCart($element, $type) {
   }
 }
 
-$(document).ready(function () {
-  $(document).on("click", "blockcart a", function (e) {
-    e.preventDefault();
-  });
-});
-
 //DONGND:: show dropdown cart
 function showSlideBarCart($element) {
   if (!$(".leo-fly-cart-slidebar.disable").length) {
@@ -1570,8 +1564,8 @@ function createModalAndDropdown($only_dropdown, $only_total) {
           type_dropdown_defaultcart == "dropdown" ||
           type_dropdown_defaultcart == "dropup"
         ) {
-          $(document).on("click", ".cart-preview", function () {
-            // console.log('test');
+          $(document).on("click", ".cart-preview", function (e) {
+            e.preventDefault();
             showDropDownCart($(this), "defaultcart");
             return false;
           });
