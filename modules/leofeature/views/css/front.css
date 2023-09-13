@@ -646,8 +646,7 @@ div.star:before {
   left: 0;
   right: 0;
   width: 100%;
-  bottom: 0;
-  height: calc(100dvh - 250px);
+  bottom: auto;
   overflow: auto;
  }
   .leo-dropdown-cart.defaultcart {
