@@ -1558,7 +1558,7 @@ function createModalAndDropdown($only_dropdown, $only_total) {
           type_dropdown_defaultcart == "dropdown" ||
           type_dropdown_defaultcart == "dropup"
         ) {
-          $(".leo-blockcart.cart-preview.show-leo-loading").on(
+          $(".leo-blockcart.cart-preview.on(
             "click",
             function () {
               // console.log('test');
@@ -1573,7 +1573,7 @@ function createModalAndDropdown($only_dropdown, $only_total) {
           type_dropdown_defaultcart == "slidebar_top" ||
           type_dropdown_defaultcart == "slidebar_bottom"
         ) {
-          $(".leo-blockcart.cart-preview.show-leo-loading").on(
+          $(".leo-blockcart.cart-preview").on(
             "click",
             function () {
               showSlideBarCart($(this));
