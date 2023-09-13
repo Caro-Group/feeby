@@ -44,7 +44,7 @@
         {include file='catalog/_partials/product-activation.tpl'}
       {/block}
 
-      <header id="header">
+      <header id="header" class="relative">
         {block name='header'}
           {include file='_partials/header.tpl'}
         {/block}
@@ -98,7 +98,7 @@
                 </div>
               {/block}
             </div>
-          
+
         {if isset($fullwidth_hook.displayHome) AND $fullwidth_hook.displayHome == 0}
           </div>
         {/if}

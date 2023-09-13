@@ -38,7 +38,7 @@
       {hook h='displayAfterBodyOpeningTag'}
     {/block}
 
-    <header id="header">
+    <header id="header" class="relative">
       {block name='header'}
         {include file='checkout/_partials/header.tpl'}
       {/block}
@@ -55,17 +55,17 @@
       {block name='content'}
         <section id="content" class="relative pt-[120px] tablet:pt-40">
           <div class="flex flex-wrap desktop-presta:flex-nowrap">
-          
+
             {block name='checkout_process'}
               {render file='checkout/checkout-process.tpl' ui=$checkout_process}
             {/block}
-            
+
             <div class="cart-grid-body desktop-presta:ml-40 flex-auto w-full hidden desktop-presta:flex-[0_0_467px] " data-js-elem="cart">
-              
+
               {block name='cart_summary'}
                 {include file='checkout/_partials/cart-summary.tpl' cart = $cart}
               {/block}
-              
+
               {hook h='displayReassurance'}
             </div>
           </div>
@@ -110,7 +110,7 @@
           </div>
         {/block}
       {if isset($LEO_BACKTOP) && $LEO_BACKTOP}
-        <div id="back-top" class="progress-wrap"> 
+        <div id="back-top" class="progress-wrap">
           <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
             <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
           </svg>
