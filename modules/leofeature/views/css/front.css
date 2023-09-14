@@ -724,11 +724,24 @@ div.star:before {
   background: #fff;
   z-index: 99;
   min-width: 265px;
-  right: 0;}
+  right: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.leo-dropdown-list-item-warpper{
+  flex: 1 1 auto;
+}
   .leo-dropdown-cart-content .leo-dropdown-list-item.active-scrollbar {
     overflow: auto; }
   .leo-dropdown-cart-content a.leo-dropdown-customization, .leo-dropdown-cart-content a.leo-dropdown-combination {
     color: #2fb5d2; }
+
+@media(min-width: 992px){
+  .leo-dropdown-cart-content {
+    display: block;
+  height: auto;}
+}
 
 .leo-dropdown-list-item {
   margin-bottom: 0px; }
