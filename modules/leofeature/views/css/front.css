@@ -634,18 +634,14 @@ div.star:before {
 
 .leo-dropdown-cart {
   position: absolute;
-  left: 0;
+  left: auto;
   right: 0;
-  width: 100%;
+  width: 100vw;
   bottom: auto;
-  overflow: auto;
  }
 
  @media(min-width: 992px){
   .leo-dropdown-cart {
-    position: absolute;
-    left: auto;
-    right: 0;
     width: auto;
    }
 
