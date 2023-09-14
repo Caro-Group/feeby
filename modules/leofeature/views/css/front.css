@@ -723,7 +723,7 @@ div.star:before {
 .leo-dropdown-cart-content {
   background: #fff;
   z-index: 99;
-  min-width: 265px;
+  min-width: 320px;
   right: 0;
   height: 100%;
   display: flex;
