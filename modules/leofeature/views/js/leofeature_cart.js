@@ -839,15 +839,23 @@ function showDropDownCart($element, $type) {
     object_element.addClass("show");
     $(window).scrollTop(0);
     if ($type == "defaultcart") {
-      //$(document).addClass("overflow-hidden");
+      if ($(window).width() < 993) {
+        $("html").addClass("overflow-hidden");
+      }
     }
   } else {
     object_element.removeClass("show");
     if ($type == "defaultcart") {
-      //$(document).addClass("overflow-hidden");
+      if ($(window).width() < 993) {
+        $("html").removeClass("overflow-hidden");
+      }
     }
   }
 }
+
+$(window).on("resize", function () {
+  $("html").removeClass("overflow-hidden");
+});
 
 $(document).ready(function () {
   $(document).on("click", "blockcart a", function (e) {
