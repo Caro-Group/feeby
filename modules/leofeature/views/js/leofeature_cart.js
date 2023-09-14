@@ -856,7 +856,7 @@ $(document).ready(function () {
     prestashop.urls.current_url.split("?")[0] !== prestashop.urls.pages.cart
   ) {
     prestashop.on("updateCart", function (event) {
-      jQuery(".leo-blockcart").trigger("click");
+      showDropDownCart($(this), "defaultcart");
     });
   }
 });
