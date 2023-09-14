@@ -1577,11 +1577,13 @@ function createModalAndDropdown($only_dropdown, $only_total) {
           type_dropdown_defaultcart == "dropdown" ||
           type_dropdown_defaultcart == "dropup"
         ) {
-          $(document).on("click", ".cart-preview", function (e) {
-            e.preventDefault();
-            showDropDownCart($(this), "defaultcart");
-            return false;
-          });
+          $(document)
+            .off("click.showMiniCart")
+            .on("click.showMiniCart", ".cart-preview", function (e) {
+              e.preventDefault();
+              showDropDownCart($(this), "defaultcart");
+              return false;
+            });
         }
         if (
           type_dropdown_defaultcart == "slidebar_left" ||
