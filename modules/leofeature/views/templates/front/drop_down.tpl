@@ -6,7 +6,7 @@
 * @description: Leo feature for prestashop 1.7: ajax cart, review, compare, wishlist at product list
 *}
 	{if $only_total != 1}
-		<div class="leo-dropdown-cart-content clearfix rounded-md font-body font-light text-main-dark text-sm shadow-lg">
+		<div class="leo-dropdown-cart-content clearfix rounded-md font-body font-light text-main-dark text-sm shadow-xl">
 			<div class="leo-dropdown-list-item-warpper">
 				<ul class="leo-dropdown-list-item overflow-auto">{foreach from=$cart.products item=product name="cart_product"}<li class="leo-dropdown-cart-item clearfix{if ($product.attributes|count && $show_combination) || ($product.customizations|count && $show_customization)} has-view-additional{/if}{if $smarty.foreach.cart_product.first} first{/if}{if $smarty.foreach.cart_product.last} last{/if}">
 							<div class="leo-cart-item-img">
@@ -177,7 +177,7 @@
 						{l s='View Cart' d='Modules.Leofeature.Shop'}
 						<i class="ti-arrow-right ml-2"></i>
 					</a>
-					<a class="bg-main mt-5 border-0 cursor-pointer duration-150 flex font-body hover:text-white hover:bg-main-hover items-center justify-between max-w-[320px] mb-3 px-5 py-3 rounded-full tablet:max-w-[300px] text-white text-sm uppercase w-full whitespace-nowrap items-center" href="{$order_url}">
+					<a class="bg-main mt-5 border-0 cursor-pointer duration-150 flex font-body hover:text-white hover:bg-main-hover items-center justify-between mb-3 px-5 py-3 rounded-full text-white text-sm uppercase w-full whitespace-nowrap items-center" href="{$order_url}">
 						{l s='Check Out' d='Modules.Leofeature.Shop'}
 						<i class="ti-arrow-right ml-2"></i>
 					</a>
