@@ -853,7 +853,7 @@ $(document).ready(function () {
     e.preventDefault();
   });
   if (
-    prestashop.urls.current_url.split("?")[0] !== prestashop.urls.current_url
+    prestashop.urls.current_url.split("?")[0] !== prestashop.urls.pages.cart
   ) {
     prestashop.on("updateCart", function (event) {
       jQuery(".leo-blockcart").trigger("click");
