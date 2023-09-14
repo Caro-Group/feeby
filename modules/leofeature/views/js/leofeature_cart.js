@@ -852,6 +852,13 @@ $(document).ready(function () {
   $(document).on("click", "blockcart a", function (e) {
     e.preventDefault();
   });
+  if (
+    prestashop.urls.current_url.split("?")[0] !== prestashop.urls.current_url
+  ) {
+    prestashop.on("updateCart", function (event) {
+      jQuery(".leo-blockcart").trigger("click");
+    });
+  }
 });
 
 //DONGND:: show dropdown cart
