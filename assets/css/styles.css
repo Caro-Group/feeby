@@ -737,3 +737,27 @@ img:not([src]) {
 .fancybox-nav span {
   @apply !right-0 !left-0 !visible !bg-none justify-center items-center flex !w-10 !h-10 text-main-dark bg-gray-1000 hover:bg-main-dark hover:text-white rounded-full transition
 }
+
+#search_widget{
+  @apply hidden
+}
+
+#leo_search_block_top .form-control{
+  @apply !h-10 !leading-10
+}
+
+#leo_search_block_top .btn{
+  @apply !h-10
+}
+
+.leo-megamenu .dropdown-menu{
+  @apply tablet-medium:top-[calc(100%_+_10px)]
+}
+
+.leo-megamenu .navbar-nav > li > a{
+  @apply tablet-medium:!py-0
+}
+
+.leo-megamenu .navbar-nav > li > a > .menu-title{
+  @apply tablet-medium:!leading-none
+}
