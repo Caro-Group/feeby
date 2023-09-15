@@ -1256,19 +1256,21 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-  let thumbSwiper;
+
+  let thumbSwiper 
 
   if ($("[data-swiper-product-thumb]").length) {
     thumbSwiper = new Swiper("[data-swiper-product-thumb]", {
       slidesPerView: "auto",
       spaceBetween: 0,
-      slideClass: "swiper-custom-slide",
-      navigation: {
-        nextEl: "[data-swiper-product-thumb-next]",
-        prevEl: "[data-swiper-product-thumb-prev]",
-      },
-    });
+      slideClass: 'swiper-custom-slide',
+        navigation: {
+          nextEl: "[data-swiper-product-thumb-next]",
+          prevEl: "[data-swiper-product-thumb-prev]",
+        },
+      })
   }
+
 
   if ($("[data-swiper-product]").length) {
     let productSwiper = new Swiper("[data-swiper-product]", {
@@ -1281,8 +1283,18 @@ $(document).ready(function () {
       spaceBetween: 20,
       loop: true,
       watchSlidesProgress: true,
-      thumbs: {
-        swiper: thumbSwiper,
+      thumbs:{
+        swiper: thumbSwiper
+      },
+      navigation: {
+        nextEl: "[data-swiper-product-next]",
+        prevEl: "[data-swiper-product-prev]",
+      },
+      pagination: {
+        el: ".product-thumb-images-pag",
+        clickable: true,
+        dynamicBullets: true,
+        dynamicMainBullets: 1,
       },
       // navigation: {
       //   nextEl: "[data-swiper-product-next]",
@@ -1359,12 +1371,12 @@ $(document).ready(function () {
         thumbSwiper = new Swiper("[data-swiper-product-thumb]", {
           slidesPerView: "auto",
           spaceBetween: 0,
-          slideClass: "swiper-custom-slide",
-          navigation: {
-            nextEl: "[data-swiper-product-thumb-next]",
-            prevEl: "[data-swiper-product-thumb-prev]",
-          },
-        });
+          slideClass: 'swiper-custom-slide',
+            navigation: {
+              nextEl: "[data-swiper-product-thumb-next]",
+              prevEl: "[data-swiper-product-thumb-prev]",
+            },
+          })
       }
 
       if ($("[data-swiper-product]").length) {
@@ -1375,8 +1387,8 @@ $(document).ready(function () {
           spaceBetween: 20,
           loop: true,
           watchSlidesProgress: true,
-          thumbs: {
-            swiper: thumbSwiper,
+          thumbs:{
+            swiper: thumbSwiper
           },
           // navigation: {
           //   nextEl: "[data-swiper-product-next]",
