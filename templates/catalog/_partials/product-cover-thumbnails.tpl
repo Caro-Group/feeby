@@ -80,6 +80,14 @@
            {/foreach}
          </div>
 
+         <div class="absolute tablet:left-4 bottom-2.5 inset-x-2.5 z-50 flex justify-between">
+          <i class="ti-arrow-left justify-center items-center flex tablet:ml-6 w-10 h-10 text-main-dark bg-gray-1000 hover:bg-main-dark hover:text-white rounded-full transition cursor-pointer"
+            data-swiper-product-prev> </i>
+            <div data-swiper-product-pagination></div>
+          <i class="ti-arrow-right justify-center items-center flex tablet:ml-6 w-10 h-10 text-main-dark bg-gray-1000 hover:bg-main-dark hover:text-white rounded-full transition cursor-pointer"
+            data-swiper-product-next> </i>
+        </div>
+
          {foreach from=$product.images item=image key=$key name=pictures}
          <div data-zoom-container class="absolute top-0 left-0 w-full h-full z-10" data-zoom-image="{$image.bySize.large_default.url}"></div>
          {break}
@@ -98,13 +106,6 @@
          </div>
          {include file="module:bavideotab/views/templates/front/coverVideo.tpl"}
        </div>
-
-      <div class="absolute tablet:left-4 tablet:bottom-10 z-50 flex justify-between w-full tablet:w-auto tablet:mb-8">
-        <i class="ti-arrow-left justify-center items-center flex tablet:ml-6 w-10 h-10 text-main-dark bg-gray-1000 hover:bg-main-dark hover:text-white rounded-full transition cursor-pointer"
-          data-swiper-product-prev> </i>
-        <i class="ti-arrow-right justify-center items-center flex tablet:ml-6 w-10 h-10 text-main-dark bg-gray-1000 hover:bg-main-dark hover:text-white rounded-full transition cursor-pointer"
-          data-swiper-product-next> </i>
-      </div>
 
 
      {else}

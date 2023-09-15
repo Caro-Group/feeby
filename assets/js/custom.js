@@ -1291,7 +1291,7 @@ $(document).ready(function () {
         prevEl: "[data-swiper-product-prev]",
       },
       pagination: {
-        el: ".product-thumb-images-pag",
+        el: "[data-swiper-product-pagination]",
         clickable: true,
         dynamicBullets: true,
         dynamicMainBullets: 1,

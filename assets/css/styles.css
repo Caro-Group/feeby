@@ -716,7 +716,7 @@ body .loader {
   display: none;
 }
 
-.product-thumb-images-pag.swiper-pagination.swiper-pagination-bullets-dynamic {
+[data-swiper-product-pagination].swiper-pagination.swiper-pagination-bullets-dynamic {
   display: block;
 }
 
