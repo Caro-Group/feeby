@@ -864,14 +864,11 @@ $(document).ready(function () {
   if (
     prestashop.urls.current_url.split("?")[0] !== prestashop.urls.pages.cart
   ) {
-    prestashop.on("updateCart", function (event) {
-      //showDropDownCart($(".cart-preview"), "defaultcart");
-      let mainFunction = prestashop.blockcart.showModal;
-      prestashop.blockcart.showModal = function () {
-        mainFunction();
-        showDropDownCart($(".cart-preview"), "defaultcart");
-      };
-    });
+    let mainFunction = prestashop.blockcart.showModal;
+    prestashop.blockcart.showModal = function () {
+      mainFunction();
+      showDropDownCart($(".cart-preview"), "defaultcart");
+    };
   }
 });
 
