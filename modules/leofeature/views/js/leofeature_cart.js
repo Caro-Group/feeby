@@ -868,8 +868,8 @@ $(document).ready(function () {
       //showDropDownCart($(".cart-preview"), "defaultcart");
       let mainFunction = prestashop.blockcart.showModal;
       prestashop.blockcart.showModal = function () {
-        showDropDownCart($(".cart-preview"), "defaultcart");
         mainFunction();
+        showDropDownCart($(".cart-preview"), "defaultcart");
       };
     });
   }
