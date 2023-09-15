@@ -753,3 +753,67 @@ img:not([src]) {
 .off-canvas-nav-megamenu .mega-col{
   @apply !min-h-0
 }
+
+.fancybox-title-float-wrap{
+  @apply top-[calc(100%_+_10px)];
+}
+
+.fancybox-title {
+  @apply !w-full !right-0 !left-0 px-12
+}
+
+.fancybox-title-float-wrap span.child{
+  @apply whitespace-normal !mr-0;
+}
+
+.fancybox-nav{
+  @apply !w-10 !h-10 !top-auto !bottom-[-65px] !z-[8060]
+}
+
+.fancybox-nav.fancybox-prev{
+ @apply -left-5
+}
+
+.fancybox-nav.fancybox-next{
+ @apply -right-5
+}
+
+.fancybox-nav.fancybox-prev span::before{
+ font-family: 'themify';
+ line-height: 1;
+ content: "\e629";
+}
+
+.fancybox-nav.fancybox-next span::before{
+ font-family: 'themify';
+ line-height: 1;
+ content: "\e628";
+}
+
+.fancybox-nav span {
+  @apply !right-0 !left-0 !visible !bg-none justify-center items-center flex !w-10 !h-10 text-main-dark bg-gray-1000 hover:bg-main-dark hover:text-white rounded-full transition
+}
+
+#search_widget{
+  @apply hidden
+}
+
+#leo_search_block_top .form-control{
+  @apply !h-10 !leading-10
+}
+
+#leo_search_block_top .btn{
+  @apply !h-10
+}
+
+.leo-megamenu .dropdown-menu{
+  @apply tablet-medium:top-[calc(100%_+_10px)]
+}
+
+.leo-megamenu .navbar-nav > li > a{
+  @apply tablet-medium:!py-0
+}
+
+.leo-megamenu .navbar-nav > li > a > .menu-title{
+  @apply tablet-medium:!leading-none
+}
