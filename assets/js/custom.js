@@ -1318,16 +1318,16 @@ $(document).ready(function () {
       thumbs:{
         swiper: thumbSwiper
       },
-      // navigation: {
-      //   nextEl: "[data-swiper-product-next]",
-      //   prevEl: "[data-swiper-product-prev]",
-      // },
-      // pagination: {
-      //   el: ".product-thumb-images-pag",
-      //   clickable: true,
-      //   dynamicBullets: true,
-      //   dynamicMainBullets: 1,
-      // },
+      navigation: {
+        nextEl: "[data-swiper-product-next]",
+        prevEl: "[data-swiper-product-prev]",
+      },
+      pagination: {
+        el: ".product-thumb-images-pag",
+        clickable: true,
+        dynamicBullets: true,
+        dynamicMainBullets: 1,
+      },
       on: {
         beforeSlideChangeStart: function () {
           if (typeof lazyLoad == "function") {

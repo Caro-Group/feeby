@@ -90,6 +90,14 @@
          {include file="module:bavideotab/views/templates/front/coverVideo.tpl"}
        </div>
 
+      <div class="absolute tablet:left-4 tablet:bottom-10 z-50 flex justify-between w-full tablet:w-auto tablet:mb-8">
+        <i class="ti-arrow-left justify-center items-center flex tablet:ml-6 w-10 h-10 text-main-dark bg-gray-1000 hover:bg-main-dark hover:text-white rounded-full transition cursor-pointer"
+          data-swiper-product-prev> </i>
+        <i class="ti-arrow-right justify-center items-center flex tablet:ml-6 w-10 h-10 text-main-dark bg-gray-1000 hover:bg-main-dark hover:text-white rounded-full transition cursor-pointer"
+          data-swiper-product-next> </i>
+      </div>
+
+
      {else}
        <img class="lazy" data-src="{$urls.no_picture_image.bySize.large_default.url}" style="width:100%;" />
      {/if}
@@ -97,7 +105,7 @@
 
    {block name='product_images'}
 
-     <div class="">
+     <div class="hidden tablet:block">
 
        {foreach from=$groups item=$attribute}
          {if $attribute["group_name"] == "Typ"}
