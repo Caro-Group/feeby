@@ -868,6 +868,9 @@ $(document).ready(function () {
     prestashop.blockcart.showModal = function () {
       mainFunction();
       showDropDownCart($(".cart-preview"), "defaultcart");
+      $("body")
+        .find(".add-to-cart-anim.add button.adding")
+        .removeClass("added");
     };
   }
 });
