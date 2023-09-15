@@ -15,7 +15,7 @@
 		<div class="marquee-wrapper flex w-max h-5 tablet:h-10  select-none">
 			{foreach from=$Num item=sliders name=val}
 				{foreach from=$sliders item=slider key=i name="sliders"}
-					<div class=" w-max min-w-[100vw] pr-10 h-5 tablet:h-10 flex items-center justify-center whitespace-nowrap">
+					<div class=" w-max min-w-[100vw] pr-10 h-5 tablet:h-[35px] flex items-center justify-center whitespace-nowrap">
 						{if $slider.link}
 							<a class="flex justify-center items-center" title="{l s='%s' sprintf=[$slider.title] mod='appagebuilder'}"
 								{if $formAtts.is_open}target="_blank" {/if} href="{$slider.link}{*full link can not escape*}">

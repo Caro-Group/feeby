@@ -28,10 +28,10 @@
                 {/if}
 
                 {if isset($formAtts.links) && $formAtts.links|@count > 0}
-                    <ul class="flex ">
+                    <ul class="flex items-center">
                         {foreach from=$formAtts.links item=item}
                             {if $item.title && $item.link}
-                                <li class="ml-6">
+                                <li class="ml-6 leading-[16px]">
                                     <a class="text-main-dark hover:text-main transition font-body" href="{$item.link}"
                                         target="{$item.target_type}">
                                         {if $item.link|strstr:'facebook'}
