@@ -87,6 +87,7 @@ tablet-medium:pb-0
 tablet-wide:mt-4
 tablet-wide:hidden
 tablet-medium:hidden
+tablet-medium:flex
 *}
 
 {* LEO - Load Css With Prestashop Standard *}
