@@ -29,7 +29,7 @@
 
       {block name='product_price'}
         <div
-          class="font-medium leading-none product-price text-[25px] tablet:text-[35px] mr-[10px] text-main-dark {if $product.has_discount}has-discount{/if}"
+          class="font-medium leading-none product-price text-[25px] tablet:text-[35px] mr-2.5 text-main-dark {if $product.has_discount}has-discount{/if}"
           itemprop="offers"
           itemscope
           itemtype="https://schema.org/Offer"
