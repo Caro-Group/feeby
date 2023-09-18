@@ -27,7 +27,7 @@
  {block name='product_cover_thumbnails'}
    {block name='product_cover'}
      {if $product.default_image}
-       <div class="border-2 border-solid rounded-[5px] swiper product-cover w-full mb-0 overflow-hidden" data-swiper-product>
+       <div class="group border-2 border-solid rounded-[5px] swiper product-cover w-full mb-0 overflow-hidden" data-swiper-product>
        {foreach from=$groups item=$attribute}
          {if $attribute["group_name"] == "Typ"}
            {foreach from=$attribute["attributes"] item=$item}
@@ -131,7 +131,7 @@
        {/foreach}
 
        <div class="product-thumb-images flex relative mr-5 h-full max-h-full">
-         <div class="swiper w-full overflow-hidden" data-swiper-product-thumb>
+         <div class="swiper h-[230px] tablet-medium:h-[350px] desktop-presta:h-[460px] overflow-hidden" data-swiper-product-thumb>
            <div id="thumb-gallery" class="swiper-wrapper flex flex-col">
              {foreach from=$product.images item=image key=$key name=pictures}
 
