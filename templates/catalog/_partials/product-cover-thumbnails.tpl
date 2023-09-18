@@ -132,7 +132,7 @@
 
        <div class="product-thumb-images flex relative mr-5 h-full max-h-full">
          <div class="swiper w-full overflow-hidden" data-swiper-product-thumb>
-           <div id="thumb-gallery" class="swiper-wrapper">
+           <div id="thumb-gallery" class="swiper-wrapper flex flex-col">
              {foreach from=$product.images item=image key=$key name=pictures}
 
                {if !((
@@ -151,7 +151,7 @@
                  )
                ))}
                  <div
-                   class="swiper-lazy swiper-custom-slide w-auto h-full relative thumb-container {if $image.id_image == $product.default_image.id_image} active {/if}"
+                   class="swiper-lazy swiper-custom-slide w-full h-auto relative thumb-container {if $image.id_image == $product.default_image.id_image} active {/if}"
                    style="    flex-shrink: 0;
                      transition-property: transform;">
                    <a href="{$smarty.server.HTTP_HOST}" data-image="{$image.bySize.large_default.url}" class="block"

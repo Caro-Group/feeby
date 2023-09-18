@@ -193,6 +193,7 @@
  
            </div>
 
+           </div>
            {assign var="tags" value=Tag::getProductTags(Tools::getValue('id_product'))}
            {if isset($tags) && isset($tags[$language.id]) && $tags[$language.id] != ''}
               <div class="flex flex-row text-gray-3000 text-xs w-full tablet:pr-10 tablet:ml-[130px] text-sm">
@@ -209,8 +210,6 @@
                 </ul>
               </div>
             {/if}
- 
-         </div>
        </div>
  
        {block name='product_info'}
