@@ -88,6 +88,14 @@
             data-swiper-product-next> </i>
         </div>
 
+        <div class="hidden tablet:block absolute bottom-5 right-5 z-10 pointer-events-none">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle class="stroke-gray-3000 group-hover:stroke-main-dark transition duration-200" cx="20" cy="20" r="19" stroke-width="2"></circle>
+            <rect class="fill-gray-3000 group-hover:fill-main-dark transition duration-200" x="10" y="19" width="20" height="2"></rect>
+            <rect class="fill-gray-3000 group-hover:fill-main-dark transition duration-200" x="21" y="10" width="20" height="2" transform="rotate(90 21 10)"></rect>
+          </svg>
+         </div>
+
          {foreach from=$product.images item=image key=$key name=pictures}
          <div data-zoom-container class="absolute top-0 left-0 w-full h-full z-10" data-zoom-image="{$image.bySize.large_default.url}"></div>
          {break}
