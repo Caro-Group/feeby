@@ -154,10 +154,10 @@
                    class="swiper-lazy swiper-custom-slide h-[110px] w-[110px] relative thumb-container {if $image.id_image == $product.default_image.id_image} active {/if}"
                    style="    flex-shrink: 0;
                      transition-property: transform;">
-                   <a data-image="{$image.bySize.large_default.url}" class="block"
+                   <a data-image="{$image.bySize.large_default.url}" class="block w-full h-full"
                      data-zoom-image="{$image.bySize.large_default.url}">
                      <img
-                       class=" border border-solid rounded-lg box-border transition-all duration-200 {if $image.id_image == $product.default_image.id_image} selected {/if}"                
+                       class="w-full h-full mb-2.5 border border-solid rounded-lg box-border transition-all duration-200 {if $image.id_image == $product.default_image.id_image} selected {/if}"                
                        src="{$image.bySize.product_thumbnail.url}"
                        alt="{$image.legend}" title="{$image.legend}" itemprop="image" width="200" height="200" loading="lazy" />
                    </a>
