@@ -24,20 +24,12 @@
  *}
  {if $product.show_price}
   <div class="product-prices">
-    {block name='product_discount'}
-      {if $product.has_discount}
-        <div class="leading-none mb-1 product-discount text-[#BABABA] text-base line-through">
-          {hook h='displayProductPriceBlock' product=$product type="old_price"}
-          <span class="regular-price">{$product.regular_price}</span>
-        </div>
-      {/if}
-    {/block}
 
     <div class="flex flex-row items-baseline"> 
 
       {block name='product_price'}
         <div
-          class="font-medium leading-none product-price text-[25px] tablet:text-[35px] mr-[10px] {if $product.has_discount}text-main{else}text-[#232322]{/if} {if $product.has_discount}has-discount{/if}"
+          class="font-medium leading-none product-price text-[25px] tablet:text-[35px] mr-2.5 {if $product.has_discount}text-main{else}text-[#232322]{/if} {if $product.has_discount}has-discount{/if}"
           itemprop="offers"
           itemscope
           itemtype="https://schema.org/Offer"
@@ -60,6 +52,15 @@
             {/if}
           </div>
         </div>
+      {/block}
+
+      {block name='product_discount'}
+        {if $product.has_discount}
+          <div class="leading-none mr-2.5 product-discount text-[#BABABA] text-base line-through">
+            {hook h='displayProductPriceBlock' product=$product type="old_price"}
+            <span class="regular-price">{$product.regular_price}</span>
+          </div>
+        {/if}
       {/block}
 
       {block name='product_without_taxes'}
