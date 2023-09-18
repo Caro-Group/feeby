@@ -69,12 +69,11 @@
         {include file='_partials/breadcrumb_arrow.tpl'}
        {/block}
 
-       <div class="flex flex-wrap flex-row mb-[25px] tablet:mb-0">
+       <div class="flex flex-wrap flex-row mb-16 tablet:mb-[100px]">
          <div class="w-full tablet:w-3/5 tablet:pr-10">
            {block name='page_content_container'}
              <section class="page-content tablet:!mb-2.5" id="content">
                {block name='page_content'}
-               {include file='catalog/_partials/product-flags.tpl'}
                  {block name='product_cover_thumbnails'}
                    {include file='catalog/_partials/product-cover-thumbnails.tpl'}
                  {/block}
@@ -101,7 +100,7 @@
            {/block}
          </div>
  
-         <div class="h-max relative tablet:w-2/5 top-0 w-full tablet:sticky">
+         <div class="h-max relative tablet:w-2/5 top-0 w-full tablet:sticky shadow-[0px_-4px_20px_0px_rgba(0,0,0,0.15)] shadow-black/[0.15]">
            {block name='page_header_container'}
              {block name='page_header'}
                <h1 class="font-header product-detail-name text-base tablet:text-xl font-normal mb-0 pr-[46px] tablet:pr-[94px]" itemprop="name">{block name='page_title'}{$product.name}{/block}</h1>

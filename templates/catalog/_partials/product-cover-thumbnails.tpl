@@ -28,6 +28,7 @@
    {block name='product_cover'}
      {if $product.default_image}
        <div class="group border-2 border-solid rounded-[5px] swiper product-cover w-full mb-0 overflow-hidden aspect-[16/15] tablet:aspect-square" data-swiper-product>
+       {include file='catalog/_partials/product-flags.tpl'}
        {foreach from=$groups item=$attribute}
          {if $attribute["group_name"] == "Typ"}
            {foreach from=$attribute["attributes"] item=$item}
@@ -131,7 +132,7 @@
        {/foreach}
 
        <div class="product-thumb-images flex relative mr-5 h-full max-h-full">
-         <div class="swiper h-[230px] tablet-medium:h-[350px] desktop-presta:h-[460px] overflow-hidden" data-swiper-product-thumb>
+         <div class="swiper h-[230px] tablet-medium:h-[350px] desktop-presta:h-[470px] overflow-hidden" data-swiper-product-thumb>
            <div id="thumb-gallery" class="swiper-wrapper flex flex-col">
              {foreach from=$product.images item=image key=$key name=pictures}
 
@@ -179,14 +180,14 @@
 
            {if $product.images|@count > 1}
              <div data-swiper-product-thumb-prev
-               class="absolute left-[calc(50%_-_20px)] top-0 swiper-button-disabled z-10">
+               class="absolute left-[calc(50%_-_20px)] top-0 swiper-button-disabled z-10 h-[21px]">
                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="21" viewBox="0 0 40 21" fill="none">
                 <path d="M35 21C37.7614 21 40 18.7614 40 16L40 1.90735e-06L9.17939e-07 1.58893e-07L2.18557e-07 16C9.78513e-08 18.7614 2.23857 21 5 21L35 21Z" fill="#EFEFEF" fill-opacity="0.95"/>
                 <path d="M20.825 5.97613L26.9996 11.2109L26.9996 11.212L26.1265 11.9521L20.3878 7.01576L14.6504 11.9511L13.7773 11.2109L19.9519 5.97613L20.825 5.97613Z" fill="#181828"/>
               </svg>
              </div>
              <div data-swiper-product-thumb-next
-               class="absolute left-[calc(50%_-_20px)] bottom-0 swiper-button-disabled z-10">
+               class="absolute left-[calc(50%_-_20px)] bottom-0 swiper-button-disabled z-10 h-[21px]">
                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="21" viewBox="0 0 40 21" fill="none">
                  <path d="M35 -2.18557e-07C37.7614 -9.78513e-08 40 2.23858 40 5L40 21L-9.17939e-07 21L-2.18557e-07 5C-9.78513e-08 2.23857 2.23857 -1.6506e-06 5 -1.5299e-06L35 -2.18557e-07Z" fill="#EFEFEF" fill-opacity="0.95"/>
                  <path d="M20.825 14.5131L26.9996 9.27835L26.9996 9.27731L26.1265 8.53711L20.3878 13.4735L14.6504 8.53816L13.7773 9.27835L19.9519 14.5131L20.825 14.5131Z" fill="#181828"/>
