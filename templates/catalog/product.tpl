@@ -82,7 +82,7 @@
              </section>
              {if isset($tags) && isset($tags[$language.id]) && $tags[$language.id] != ''}
                 <div class="hidden tablet:flex flex-row text-gray-3000 text-xs w-full pl-[130px]">
-                  <ul class="flex flex-wrap float-left gap-2.5 tablet:gap-1">
+                  <ul class="flex flex-wrap float-left gap-1 gap-x-1.5 ">
                       <li>
                         <span class="text-gray-3000 text-xs transition font-medium">{l s='Tags' d='Shop.Theme.Catalog'}:</span>
                       </li>

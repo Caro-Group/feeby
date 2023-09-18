@@ -1261,7 +1261,7 @@ $(document).ready(function () {
 
   if ($("[data-swiper-product-thumb]").length) {
     thumbSwiper = new Swiper("[data-swiper-product-thumb]", {
-      slidesPerView: 2,
+      slidesPerView: 'auto',
       spaceBetween: 0,
       direction: "vertical",
       slideClass: 'swiper-custom-slide',
@@ -1269,15 +1269,6 @@ $(document).ready(function () {
           nextEl: "[data-swiper-product-thumb-next]",
           prevEl: "[data-swiper-product-thumb-prev]",
         },
-      breakpoints:{
-        955:{
-          slidesPerView: 3
-        },
-        1200:{
-          slidesPerView: 4
-        }
-
-      }
       })
   }
 
