@@ -27,7 +27,7 @@
  {block name='product_cover_thumbnails'}
    {block name='product_cover'}
      {if $product.default_image}
-       <div class="group border-2 border-solid rounded-[5px] swiper product-cover w-full mb-0 overflow-hidden" data-swiper-product>
+       <div class="group border-2 border-solid rounded-[5px] swiper product-cover w-full mb-0 overflow-hidden aspect-[16/15] tablet:aspect-square" data-swiper-product>
        {foreach from=$groups item=$attribute}
          {if $attribute["group_name"] == "Typ"}
            {foreach from=$attribute["attributes"] item=$item}
@@ -151,7 +151,7 @@
                  )
                ))}
                  <div
-                   class="swiper-lazy swiper-custom-slide h-[110px] w-[110px] mb-2.5 relative thumb-container {if $image.id_image == $product.default_image.id_image} active {/if}"
+                   class="swiper-lazy swiper-custom-slide h-[110px] w-[110px] relative thumb-container {if $image.id_image == $product.default_image.id_image} active {/if}"
                    style="    flex-shrink: 0;
                      transition-property: transform;">
                    <a data-image="{$image.bySize.large_default.url}" class="block w-full h-full"
