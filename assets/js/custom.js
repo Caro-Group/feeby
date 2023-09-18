@@ -1293,8 +1293,6 @@ $(document).ready(function () {
       pagination: {
         el: "[data-swiper-product-pagination]",
         clickable: true,
-        dynamicBullets: true,
-        dynamicMainBullets: 1,
       },
       // navigation: {
       //   nextEl: "[data-swiper-product-next]",

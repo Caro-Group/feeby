@@ -716,8 +716,12 @@ body .loader {
   display: none;
 }
 
-[data-swiper-product-pagination].swiper-pagination.swiper-pagination-bullets-dynamic {
-  display: block;
+[data-swiper-product-pagination] .swiper-pagination-bullet {
+  @apply bg-transparent border-[#C0C0C4] w-[9px] h-[9px] transition-all duration-300
+}
+
+[data-swiper-product-pagination] .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  @apply bg-[#181828] border-[#181828] w-3 h-3
 }
 
 img[src=''],

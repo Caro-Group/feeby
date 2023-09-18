@@ -68,20 +68,6 @@
         {include file='_partials/breadcrumb_arrow.tpl'}
        {/block}
 
-       {assign var="tags" value=Tag::getProductTags(Tools::getValue('id_product'))}
-       {if isset($tags) && isset($tags[$language.id]) && $tags[$language.id] != ''}
-          <div class="flex flex-row text-gray-3000 text-xs w-full tablet:w-3/5 tablet:pr-10 text-sm">
-            {l s='Tags' d='Shop.Theme.Catalog'}:
-            <ul class="flex flex-wrap float-left">
-              {foreach from=$tags[$language.id] key=k item=value}
-                <li class="ml-1 mb-1">
-                  <a href="{$link->getPageLink('search', true, NULL, "tag={$value|urlencode}")}" class="hover:text-main text-gray-3000 text-sm transition">#{$value|escape:html:'UTF-8'}</a>
-                </li>
-              {/foreach}
-            </ul>
-          </div>
-        {/if}
-
        <div class="flex flex-wrap flex-row mb-[25px] tablet:mb-0">
          <div class="w-full tablet:w-3/5 tablet:pr-10">
            {block name='page_content_container'}
@@ -210,6 +196,23 @@
              {/block}
  
            </div>
+
+           {assign var="tags" value=Tag::getProductTags(Tools::getValue('id_product'))}
+           {if isset($tags) && isset($tags[$language.id]) && $tags[$language.id] != ''}
+              <div class="flex flex-row text-gray-3000 text-xs w-full tablet:pr-10 tablet:ml-[130px] text-sm">
+                {l s='Tags' d='Shop.Theme.Catalog'}:
+                <ul class="flex flex-wrap float-left gap-2.5 tablet:gap-1">
+                    <li>
+                      <span class="hover:text-main text-gray-3000 text-sm transition font-normal">{l s='Tags' d='Shop.Theme.Catalog'}:</span>
+                    </li>
+                  {foreach from=$tags[$language.id] key=k item=value}
+                    <li>
+                      <a href="{$link->getPageLink('search', true, NULL, "tag={$value|urlencode}")}" class="hover:text-main text-gray-3000 text-sm transition">#{$value|escape:html:'UTF-8'}</a>
+                    </li>
+                  {/foreach}
+                </ul>
+              </div>
+            {/if}
  
          </div>
        </div>
