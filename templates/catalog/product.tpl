@@ -74,7 +74,6 @@
            {block name='page_content_container'}
              <section class="page-content tablet:!mb-2.5" id="content">
                {block name='page_content'}
-               {include file='catalog/_partials/product-flags.tpl'}
                  {block name='product_cover_thumbnails'}
                    {include file='catalog/_partials/product-cover-thumbnails.tpl'}
                  {/block}
