@@ -100,7 +100,7 @@
            {/block}
          </div>
  
-         <div class="h-max relative tablet:w-2/5 top-0 w-full tablet:sticky shadow-[0px_-4px_20px_0px_rgba(0,0,0,0.15)] shadow-black/[0.15]">
+         <div class="h-max relative tablet:w-2/5 top-0 w-full tablet:sticky">
            {block name='page_header_container'}
              {block name='page_header'}
                <h1 class="font-header product-detail-name text-base tablet:text-xl font-normal mb-0 pr-[46px] tablet:pr-[94px]" itemprop="name">{block name='page_title'}{$product.name}{/block}</h1>
@@ -166,7 +166,7 @@
                    {/block}
  
                    
-                   <div class="fixed bottom-0 left-0 right-0 tablet:relative w-full tablet:w-auto px-5 tablet:px-0 bg-gray-default tablet:bg-transparent z-50">
+                   <div class="fixed bottom-0 left-0 right-0 tablet:relative w-full tablet:w-auto px-5 tablet:px-0 bg-gray-default tablet:bg-transparent z-50 ">
 
                     <div class="{if isset($productConfigurable)}hidden{/if} desktop-wide:w-full">
                     
