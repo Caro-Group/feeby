@@ -104,7 +104,7 @@
          <div class="h-max relative tablet:w-2/5 top-0 w-full tablet:sticky">
            {block name='page_header_container'}
              {block name='page_header'}
-               <h1 class="font-body font-normal product-detail-name text-[20px] tablet:text-[35px] tablet:leading-[45px] leading-24px mb-0 pr-[46px] tablet:pr-[94px]" itemprop="name">{block name='page_title'}{$product.name}{/block}</h1>
+               <h1 class="font-header product-detail-name text-base tablet:text-xl mb-0 pr-[46px]" itemprop="name">{block name='page_title'}{$product.name}{/block}</h1>
              {/block}
            {/block}
  
@@ -135,6 +135,15 @@
                    <input type="hidden" name="token" value="{$static_token}">
                    <input type="hidden" name="id_product" value="{$product.id}" id="product_page_product_id">
                    <input type="hidden" name="id_customization" value="{$product.id_customization}" id="product_customization_id">
+
+                   {block name='product_prices'}
+                    {assign var="perM" value=true}
+                    {include file='catalog/_partials/product-prices.tpl'}
+                   {/block}
+                  
+                   {block name='product_discounts'}
+                    {include file='catalog/_partials/product-discounts.tpl'}
+                   {/block}
  
                    {block name='product_variants'}
                      {include file='catalog/_partials/product-variants.tpl'}
@@ -158,15 +167,7 @@
                    {/block}
  
                    
-                  <div class="fixed bottom-0 left-0 right-0 tablet:relative w-full tablet:w-auto mt-2 px-5 tablet:px-0 bg-gray-default tablet:bg-transparent z-50 desktop-wide:flex items-center tablet:border-b tablet:border-0 tablet:border-solid tablet:mb-6">
-                    {block name='product_prices'}
-                        {assign var="perM" value=true}
-                      {include file='catalog/_partials/product-prices.tpl'}
-                    {/block}
-                    
-                    {block name='product_discounts'}
-                      {include file='catalog/_partials/product-discounts.tpl'}
-                    {/block}
+                   <div class="fixed bottom-0 left-0 right-0 tablet:relative w-full tablet:w-auto px-5 tablet:px-0 bg-gray-default tablet:bg-transparent z-50">
 
                     <div class="{if isset($productConfigurable)}hidden{/if} desktop-wide:w-full">
                     

@@ -24,14 +24,6 @@
  *}
 {if $product.show_price}
   <div class="product-prices">
-    {block name='product_discount'}
-      {if $product.has_discount}
-        <div class="leading-none mb-1 product-discount text-[#BABABA] text-base line-through">
-          {hook h='displayProductPriceBlock' product=$product type="old_price"}
-          <span class="regular-price">{$product.regular_price}</span>
-        </div>
-      {/if}
-    {/block}
 
     <div class=" flex desktop-wide:block items-baseline"> 
 
@@ -64,6 +56,15 @@
             {/if}
           </div>
         </div>
+      {/block}
+
+      {block name='product_discount'}
+        {if $product.has_discount}
+          <div class="leading-none mr-2.5 product-discount text-[#BABABA] text-base line-through">
+            {hook h='displayProductPriceBlock' product=$product type="old_price"}
+            <span class="regular-price">{$product.regular_price}</span>
+          </div>
+        {/if}
       {/block}
 
       {block name='product_without_taxes'}
