@@ -108,9 +108,14 @@
              {/block}
            {/block}
  
-           <div class="leo-compare-wishlist-button absolute top-0 right-0">
-             {hook h='displayLeoWishlistButton' product=$product}
-             {hook h='displayLeoCompareButton' product=$product}
+           <div class=" absolute top-0 right-0">
+             <div class="mt-10 tablet:mt-0 tablet:mr-12">
+              {include file='_partials/share-btn.tpl'}
+             </div>
+             <div class="leo-compare-wishlist-button">
+              {hook h='displayLeoWishlistButton' product=$product}
+              {hook h='displayLeoCompareButton' product=$product}
+            </div>
            </div>
  
            {hook h='displayLeoProductReviewExtra' product=$product}
@@ -161,11 +166,10 @@
                      {/if}
                    {/block}
  
-                   <hr class="border-gray-1000 block w-full"/>
                    
                    <div class="fixed bottom-0 left-0 right-0 tablet:relative w-full tablet:w-auto px-5 tablet:px-0 bg-gray-default tablet:bg-transparent z-50">
 
-                    <div class="{if isset($productConfigurable)}hidden{/if}">
+                    <div class="{if isset($productConfigurable)}hidden{/if} desktop-wide:w-full">
                     
                       {block name='product_add_to_cart'}
                         {include file='catalog/_partials/product-add-to-cart.tpl'}
@@ -176,7 +180,7 @@
                       {/block}
     
                     </div>
-                   </div>
+                  </div>
                    
                    {* Input to refresh product HTML removed, block kept for compatibility with themes *}
                    {block name='product_refresh'}{/block}

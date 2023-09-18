@@ -80,6 +80,10 @@ p {
     @apply mx-auto;
   }
 
+  .word-break{
+    word-break: break-word;
+  }
+
   .swiper-about .swiper-slide.swiper-slide-active img {
     filter: invert(17%) sepia(49%) saturate(5868%) hue-rotate(328deg)
       brightness(101%) contrast(93%);

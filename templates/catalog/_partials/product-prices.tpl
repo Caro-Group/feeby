@@ -25,11 +25,11 @@
  {if $product.show_price}
   <div class="product-prices">
 
-    <div class="flex flex-row items-baseline"> 
+    <div class=" flex desktop-wide:block items-baseline"> 
 
       {block name='product_price'}
         <div
-          class="font-medium leading-none product-price text-[25px] tablet:text-[35px] mr-2.5 {if $product.has_discount}text-main{else}text-[#232322]{/if} {if $product.has_discount}has-discount{/if}"
+          class="font-medium leading-none product-price text-[25px] tablet:text-[35px] mr-2.5 text-main-dark {if $product.has_discount}has-discount{/if}"
           itemprop="offers"
           itemscope
           itemtype="https://schema.org/Offer"
