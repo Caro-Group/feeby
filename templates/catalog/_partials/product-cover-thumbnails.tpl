@@ -115,7 +115,7 @@
 
    {block name='product_images'}
 
-     <div class="hidden tablet:block py-10">
+     <div class="hidden tablet:block py-10 shrink-0">
 
        {foreach from=$groups item=$attribute}
          {if $attribute["group_name"] == "Typ"}

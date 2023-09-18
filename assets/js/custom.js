@@ -1263,6 +1263,7 @@ $(document).ready(function () {
     thumbSwiper = new Swiper("[data-swiper-product-thumb]", {
       slidesPerView: "auto",
       spaceBetween: 0,
+      direction: "vertical",
       slideClass: 'swiper-custom-slide',
         navigation: {
           nextEl: "[data-swiper-product-thumb-next]",
