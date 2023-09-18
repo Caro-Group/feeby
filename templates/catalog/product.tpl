@@ -23,6 +23,7 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
  {extends file=$layout}
+ {assign var="tags" value=Tag::getProductTags(Tools::getValue('id_product'))}
 
  {block name='head_seo' prepend}
    <link rel="canonical" href="{$product.canonical_url}">
@@ -71,7 +72,7 @@
        <div class="flex flex-wrap flex-row mb-[25px] tablet:mb-0">
          <div class="w-full tablet:w-3/5 tablet:pr-10">
            {block name='page_content_container'}
-             <section class="page-content" id="content">
+             <section class="page-content tablet:!mb-2.5" id="content">
                {block name='page_content'}
                {include file='catalog/_partials/product-flags.tpl'}
                  {block name='product_cover_thumbnails'}
@@ -79,6 +80,21 @@
                  {/block}
                {/block}
              </section>
+             {if isset($tags) && isset($tags[$language.id]) && $tags[$language.id] != ''}
+                <div class="hidden tablet:flex flex-row text-gray-3000 text-xs w-full pl-[130px]">
+                  <ul class="flex flex-wrap float-left gap-2.5 tablet:gap-1">
+                      <li>
+                        <span class="text-gray-3000 text-xs transition font-medium">{l s='Tags' d='Shop.Theme.Catalog'}:</span>
+                      </li>
+                    {foreach from=$tags[$language.id] key=k item=value}
+                      <li>
+                        <a href="{$link->getPageLink('search', true, NULL, "tag={$value|urlencode}")}" class="hover:text-main text-gray-3000 text-xs transition">#{$value|escape:html:'UTF-8'}</a>
+                      </li>
+                    {/foreach}
+                  </ul>
+                </div>
+              {/if}
+  
              {block name='product_images_modal'}
                {include file='catalog/_partials/product-images-modal.tpl'}
              {/block}
@@ -194,17 +210,15 @@
            </div>
 
            </div>
-           {assign var="tags" value=Tag::getProductTags(Tools::getValue('id_product'))}
            {if isset($tags) && isset($tags[$language.id]) && $tags[$language.id] != ''}
-              <div class="flex flex-row text-gray-3000 text-xs w-full tablet:pr-10 tablet:ml-[130px] text-sm">
-                {l s='Tags' d='Shop.Theme.Catalog'}:
+              <div class="flex tablet:hidden flex-row text-gray-3000 text-xs w-full">
                 <ul class="flex flex-wrap float-left gap-2.5 tablet:gap-1">
                     <li>
-                      <span class="hover:text-main text-gray-3000 text-sm transition font-normal">{l s='Tags' d='Shop.Theme.Catalog'}:</span>
+                      <span class="text-gray-3000 text-xs transition font-medium">{l s='Tags' d='Shop.Theme.Catalog'}:</span>
                     </li>
                   {foreach from=$tags[$language.id] key=k item=value}
                     <li>
-                      <a href="{$link->getPageLink('search', true, NULL, "tag={$value|urlencode}")}" class="hover:text-main text-gray-3000 text-sm transition">#{$value|escape:html:'UTF-8'}</a>
+                      <a href="{$link->getPageLink('search', true, NULL, "tag={$value|urlencode}")}" class="hover:text-main text-gray-3000 text-xs transition">#{$value|escape:html:'UTF-8'}</a>
                     </li>
                   {/foreach}
                 </ul>
