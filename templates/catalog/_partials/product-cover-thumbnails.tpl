@@ -157,7 +157,7 @@
                    <a data-image="{$image.bySize.large_default.url}" class="block w-full h-full"
                      data-zoom-image="{$image.bySize.large_default.url}">
                      <img
-                       class="w-full h-full border border-solid rounded-lg box-border transition-all duration-200 {if $image.id_image == $product.default_image.id_image} selected {/if}"                
+                       class="block w-full h-full border border-solid rounded-lg box-border transition-all duration-200 {if $image.id_image == $product.default_image.id_image} selected {/if}"                
                        src="{$image.bySize.product_thumbnail.url}"
                        alt="{$image.legend}" title="{$image.legend}" itemprop="image" width="200" height="200" loading="lazy" />
                    </a>
