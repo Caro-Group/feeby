@@ -27,7 +27,7 @@
     {block name='product_quantity'}
       <div class="product-quantity clearfix">
         <div class="flex ">
-          <div class="qty clearfix mr-5">
+          <div class="hidden qty clearfix mr-5">
             <span class="control-label sr-only">{l s='Quantity' d='Shop.Theme.Catalog'}</span>
             <input
               type="number"
