@@ -23,7 +23,7 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 
- <div class="images-container">
+ <div class="images-container flex tablet:flex-row-reverse items-center">
  {block name='product_cover_thumbnails'}
    {block name='product_cover'}
      {if $product.default_image}
@@ -80,13 +80,21 @@
            {/foreach}
          </div>
 
-         <div class="absolute tablet:left-4 bottom-2.5 inset-x-2.5 z-50 flex justify-between">
-          <i class="ti-arrow-left justify-center items-center flex tablet:ml-6 w-10 h-10 text-main-dark bg-gray-1000 hover:bg-main-dark hover:text-white rounded-full transition cursor-pointer"
+         <div class="absolute bottom-2.5 tablet:bottom-5 inset-x-2.5 tablet:inset-x-5 z-50 flex justify-between tablet:justify-start tablet:gap-2.5">
+          <i class="ti-arrow-left justify-center items-center flex w-10 h-10 text-main-dark bg-gray-1000 hover:bg-main-dark hover:text-white rounded-full transition cursor-pointer"
             data-swiper-product-prev> </i>
-            <div data-swiper-product-pagination></div>
-          <i class="ti-arrow-right justify-center items-center flex tablet:ml-6 w-10 h-10 text-main-dark bg-gray-1000 hover:bg-main-dark hover:text-white rounded-full transition cursor-pointer"
+            <div class="!block tablet:!hidden" data-swiper-product-pagination></div>
+          <i class="ti-arrow-right justify-center items-center flex w-10 h-10 text-main-dark bg-gray-1000 hover:bg-main-dark hover:text-white rounded-full transition cursor-pointer"
             data-swiper-product-next> </i>
         </div>
+
+        <div class="hidden tablet:block absolute bottom-5 right-5 z-10 pointer-events-none">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle class="stroke-gray-3000 group-hover:stroke-main-dark transition duration-200" cx="20" cy="20" r="19" stroke-width="2"></circle>
+            <rect class="fill-gray-3000 group-hover:fill-main-dark transition duration-200" x="10" y="19" width="20" height="2"></rect>
+            <rect class="fill-gray-3000 group-hover:fill-main-dark transition duration-200" x="21" y="10" width="20" height="2" transform="rotate(90 21 10)"></rect>
+          </svg>
+         </div>
 
          {foreach from=$product.images item=image key=$key name=pictures}
          <div data-zoom-container class="absolute top-0 left-0 w-full h-full z-10" data-zoom-image="{$image.bySize.large_default.url}"></div>
@@ -106,7 +114,7 @@
 
    {block name='product_images'}
 
-     <div class="hidden tablet:block">
+     <div class="hidden tablet:block py-10">
 
        {foreach from=$groups item=$attribute}
          {if $attribute["group_name"] == "Typ"}
@@ -121,7 +129,7 @@
          {/if}
        {/foreach}
 
-       <div class="product-thumb-images flex relative mt-5">
+       <div class="product-thumb-images flex relative mr-5 h-full max-h-full">
          <div class="swiper w-full overflow-hidden" data-swiper-product-thumb>
            <div id="thumb-gallery" class="swiper-wrapper">
              {foreach from=$product.images item=image key=$key name=pictures}
@@ -148,7 +156,7 @@
                    <a href="{$smarty.server.HTTP_HOST}" data-image="{$image.bySize.large_default.url}" class="block"
                      data-zoom-image="{$image.bySize.large_default.url}">
                      <img
-                       class="h-[100px] w-[100px] tablet:h-[200px] tablet:w-[200px] border border-solid rounded-lg mr-[18px] box-border transition-all duration-200 {if $image.id_image == $product.default_image.id_image} selected {/if}"                
+                       class="h-[110px] w-[110px] border border-solid rounded-lg mb-2.5 box-border transition-all duration-200 {if $image.id_image == $product.default_image.id_image} selected {/if}"                
                        src="{$image.bySize.product_thumbnail.url}"
                        alt="{$image.legend}" title="{$image.legend}" itemprop="image" width="200" height="200" loading="lazy" />
                    </a>
@@ -170,15 +178,17 @@
 
            {if $product.images|@count > 1}
              <div data-swiper-product-thumb-prev
-               class="absolute bg-gray-default bottom-0 flex items-center justify-center left-0 m-auto rounded-r-[5px] swiper-button-disabled top-0 w-[24px] h-[40px] z-10">
-               <svg xmlns="http://www.w3.org/2000/svg" width="7" height="14" fill="none">
-                 <path d="M0 6.175 6.132 0h.001L7 .873 1.218 6.612l5.78 5.737-.866.873L0 7.048v-.873Z" fill="#181828" />
-               </svg>
+               class="absolute left-[calc(50%_-_20px)] top-0 swiper-button-disabled z-10">
+               <svg xmlns="http://www.w3.org/2000/svg" width="40" height="21" viewBox="0 0 40 21" fill="none">
+                <path d="M35 21C37.7614 21 40 18.7614 40 16L40 1.90735e-06L9.17939e-07 1.58893e-07L2.18557e-07 16C9.78513e-08 18.7614 2.23857 21 5 21L35 21Z" fill="#EFEFEF" fill-opacity="0.95"/>
+                <path d="M20.825 5.97613L26.9996 11.2109L26.9996 11.212L26.1265 11.9521L20.3878 7.01576L14.6504 11.9511L13.7773 11.2109L19.9519 5.97613L20.825 5.97613Z" fill="#181828"/>
+              </svg>
              </div>
              <div data-swiper-product-thumb-next
-               class="absolute bg-gray-default bottom-0 flex items-center justify-center right-0 m-auto rounded-l-[5px] swiper-button-disabled top-0 w-[24px] h-[40px] z-10">
-               <svg xmlns="http://www.w3.org/2000/svg" width="7" height="14" fill="none">
-                 <path d="M7 6.175.868 0H.867L0 .873l5.782 5.739-5.78 5.737.866.873L7 7.048v-.873Z" fill="#181828" />
+               class="absolute left-[calc(50%_-_20px)] bottom-0 swiper-button-disabled z-10">
+               <svg xmlns="http://www.w3.org/2000/svg" width="40" height="21" viewBox="0 0 40 21" fill="none">
+                 <path d="M35 -2.18557e-07C37.7614 -9.78513e-08 40 2.23858 40 5L40 21L-9.17939e-07 21L-2.18557e-07 5C-9.78513e-08 2.23857 2.23857 -1.6506e-06 5 -1.5299e-06L35 -2.18557e-07Z" fill="#EFEFEF" fill-opacity="0.95"/>
+                 <path d="M20.825 14.5131L26.9996 9.27835L26.9996 9.27731L26.1265 8.53711L20.3878 13.4735L14.6504 8.53816L13.7773 9.27835L19.9519 14.5131L20.825 14.5131Z" fill="#181828"/>
                </svg>
              </div>
            {/if}
