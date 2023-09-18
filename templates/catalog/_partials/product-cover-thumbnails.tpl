@@ -27,7 +27,7 @@
  {block name='product_cover_thumbnails'}
    {block name='product_cover'}
      {if $product.default_image}
-       <div class="border-2 border-solid rounded-[5px] swiper product-cover mb-0 overflow-hidden" data-swiper-product>
+       <div class="border-2 border-solid rounded-[5px] swiper product-cover w-full mb-0 overflow-hidden" data-swiper-product>
        {foreach from=$groups item=$attribute}
          {if $attribute["group_name"] == "Typ"}
            {foreach from=$attribute["attributes"] item=$item}
@@ -151,13 +151,13 @@
                  )
                ))}
                  <div
-                   class="swiper-lazy swiper-custom-slide w-full h-auto relative thumb-container {if $image.id_image == $product.default_image.id_image} active {/if}"
+                   class="swiper-lazy swiper-custom-slide h-[110px] w-[110px] relative thumb-container {if $image.id_image == $product.default_image.id_image} active {/if}"
                    style="    flex-shrink: 0;
                      transition-property: transform;">
-                   <a href="{$smarty.server.HTTP_HOST}" data-image="{$image.bySize.large_default.url}" class="block"
+                   <a data-image="{$image.bySize.large_default.url}" class="block"
                      data-zoom-image="{$image.bySize.large_default.url}">
                      <img
-                       class="h-[110px] w-[110px] border border-solid rounded-lg mb-2.5 box-border transition-all duration-200 {if $image.id_image == $product.default_image.id_image} selected {/if}"                
+                       class=" border border-solid rounded-lg box-border transition-all duration-200 {if $image.id_image == $product.default_image.id_image} selected {/if}"                
                        src="{$image.bySize.product_thumbnail.url}"
                        alt="{$image.legend}" title="{$image.legend}" itemprop="image" width="200" height="200" loading="lazy" />
                    </a>
