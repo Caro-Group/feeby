@@ -102,7 +102,7 @@
         {/if}
 
         </div>
-      <hr class="my-[20px]  {if $group.group_name|strstr:"Rodzaj fototapety" || ($group.group_name == "Typ" && $group.attributes['416'] && $group.attributes['416'] && $group.attributes['416'].selected) }hidden{/if}  {if $id_attribute_group == '2'} tablet:hidden {/if} ">
+      <hr class="my-[20px]  {if $group.group_name|strstr:"Rodzaj fototapety" || ($group.group_name == "Typ" && $group.attributes['416'] && $group.attributes['416'] && $group.attributes['416'].selected) || $id_attribute_group == '2' || $id_attribute_group == '23' }hidden{/if}  ">
     {/if}
   {/foreach}
 </div>

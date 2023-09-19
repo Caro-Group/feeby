@@ -1391,8 +1391,9 @@ $(document).ready(function () {
 
       if ($("[data-swiper-product-thumb]").length) {
         thumbSwiper = new Swiper("[data-swiper-product-thumb]", {
-          slidesPerView: "auto",
-          spaceBetween: 0,
+          slidesPerView: 'auto',
+          spaceBetween: 10,
+          direction: "vertical",
           slideClass: 'swiper-custom-slide',
             navigation: {
               nextEl: "[data-swiper-product-thumb-next]",
