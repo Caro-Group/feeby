@@ -25,7 +25,7 @@
  {if $product.show_price}
   <div class="product-prices">
 
-    <div class=" flex desktop-wide:block items-baseline"> 
+    <div class=" flex items-baseline"> 
 
       {block name='product_price'}
         <div
@@ -56,7 +56,7 @@
 
       {block name='product_discount'}
         {if $product.has_discount}
-          <div class="leading-none mr-2.5 product-discount text-[#BABABA] text-base line-through">
+          <div class="leading-none mr-2.5 product-discount text-gray-3000 text-base line-through">
             {hook h='displayProductPriceBlock' product=$product type="old_price"}
             <span class="regular-price">{$product.regular_price}</span>
           </div>
@@ -87,7 +87,7 @@
 
       {hook h='displayProductPriceBlock' product=$product type="weight" hook_origin='product_sheet'}
 
-      <div class="leading-none tax-shipping-delivery-label lowercase font-light text-base text-[#BABABA]">
+      <div class="leading-none tax-shipping-delivery-label lowercase font-light text-base text-gray-3000">
         {if isset($configuration.taxes_enabled) &&  !$configuration.taxes_enabled}
           {l s='No tax' d='Shop.Theme.Catalog'}
         {elseif $configuration.display_taxes_label}
