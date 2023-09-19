@@ -211,7 +211,7 @@
                {hook h='displayReassurance'}
              {/block}
 
-             <hr class="my-5 ">
+             <hr class="my-5 bg-gray-2000">
 
              <div class="flex flex-wrap mt-5 leading-normal text-sm gap-2.5 tablet:gap-5 w-full">
 
@@ -235,7 +235,7 @@
               </a>
              </div>
 
-             <hr class="my-5 tablet:hidden">
+             <hr class="my-5 bg-gray-2000 tablet:hidden">
  
            </div>
 

@@ -1,4 +1,4 @@
-<hr class="mb-5 tablet:mb-2.5">
+<hr class="mb-5 tablet:mb-2.5 bg-gray-2000">
 <div class="flex flex-wrap">
 {foreach from=$blocks item=$block key=$key}
     <div class="flex items-center mx-auto w-full desktop-presta:w-1/2" >
