@@ -22,7 +22,7 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
-<div class="product-add-to-cart py-[15px] desktop-wide:!pb-0">
+<div class="product-add-to-cart py-[15px] tablet:!py-0 tablet:mb-5">
   {if !$configuration.is_catalog}
     {block name='product_quantity'}
       <div class="product-quantity clearfix">
