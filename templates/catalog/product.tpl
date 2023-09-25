@@ -62,7 +62,7 @@
      {hook h='displayLeoProfileProduct' product=$product typeProduct='detail'}
    {else}
  
-     <section id="main" class="product-detail tablet:pt-[20px]" itemscope itemtype="https://schema.org/Product">
+     <section id="main" class="product-detail tablet:pt-[20px] desktop-presta:pt-0" itemscope itemtype="https://schema.org/Product">
        <meta itemprop="url" content="{$product.url}">
  
        {block name='breadcrumb_arrow'}
@@ -70,7 +70,7 @@
        {/block}
 
        <div class="flex flex-wrap flex-row mb-16 tablet:mb-0">
-         <div class="w-full tablet:w-3/5 tablet:pr-10 tablet:pb-10">
+         <div class="w-full tablet:w-3/5 tablet:pr-[55px] tablet:pb-10">
            {block name='page_content_container'}
              <section class="page-content tablet:!mb-2.5" id="content">
                {block name='page_content'}

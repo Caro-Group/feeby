@@ -62,7 +62,7 @@
         {/if}
 
         {if isset($fullwidth_hook.displayHome) AND $fullwidth_hook.displayHome == 0}
-          <div class="container">
+          <div class="container desktop-wide:px-[100px]">
         {/if}
 
           {block name='breadcrumb'}
