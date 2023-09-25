@@ -1087,6 +1087,14 @@ $(document).ready(function () {
       },
     });
   }
+
+  if ($("[data-categories-swiper]").length) {
+    new Swiper("[data-categories-swiper]", {
+      speed: 300,
+      slidesPerView: "auto",
+      spaceBetween: 0,
+    });
+  }
 });
 
 function openMenuWithCategory(id) {
