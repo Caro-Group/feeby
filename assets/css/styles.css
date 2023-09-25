@@ -555,6 +555,10 @@ input[type='text'] + .input-group-btn span:nth-of-type(2) {
   @apply hidden;
 }
 
+.star{
+  @apply w-3 !text-[13px] !ml-0 !mr-1
+}
+
 div.star.star_on:before,
 div.star.star_hover:before {
   content: '\f005';
@@ -563,7 +567,7 @@ div.star.star_hover:before {
 
 .star:before {
   content: '\f006';
-  @apply text-gray-3000;
+  @apply text-gray-3000 ml-[0.5px];
 }
 
 .item-link:hover img {
