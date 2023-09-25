@@ -9,7 +9,7 @@
 	<div class="product-tabs tabs">
 	  	<ul class="flex items-baseline flex-nowrap nav nav-tabs mb-5 after:content-[''] after:h-[1px] after:w-full after:absolute after:bottom-[2px] relative after:bg-[#F8F8F8] after:z-[-1]" role="tablist">
 		    {if $product.description}
-		    	<li class="nav-item mr-[79px]">
+		    	<li class="nav-item mr-12 md:mr-[79px]">
 				   <a
 					 class="font-header text-base tablet:text-[25px] text-gray-3000 border-0 border-b-[3px] border-solid rounded-b-[3px] nav-link font-italic{if $product.description} active{/if}"
 					 data-toggle="tab"
@@ -19,7 +19,7 @@
 					 {if $product.description} aria-selected="true"{/if}>{l s='Description' d='Shop.Theme.Catalog'}</a>
 				</li>
 	    	{/if}
-		    <li class="nav-item mr-[79px]">
+		    <li class="nav-item mr-5 md:mr-[79px]">
 				<a
 				  class="font-header text-base tablet:text-[25px] text-gray-3000 border-0 border-b-[3px] border-solid rounded-b-[3px] nav-link font-italic{if !$product.description} active{/if}"
 				  data-toggle="tab"
@@ -29,7 +29,7 @@
 				  {if !$product.description} aria-selected="true"{/if}>{l s='Product Details' d='Shop.Theme.Catalog'}</a>
 			</li>
 		    {if $product.attachments}
-				<li class="nav-item mr-[79px]">
+				<li class="nav-item mr-5 md:mr-[79px]">
 				  <a
 					class="font-header text-base tablet:text-[25px] text-gray-3000 border-0 border-b-[3px] border-solid rounded-b-[3px] nav-link font-italic"
 					data-toggle="tab"
@@ -39,7 +39,7 @@
 				</li>
 			 {/if}
 		    {foreach from=$product.extraContent item=extra key=extraKey}
-			    <li class="nav-item mr-[79px]">
+			    <li class="nav-item mr-5 md:mr-[79px]">
 				  <a
 					class="font-header text-base tablet:text-[25px] text-gray-3000 border-0 border-b-[3px] border-solid rounded-b-[3px] nav-link font-italic"
 					data-toggle="tab"
