@@ -93,7 +93,7 @@
               <li class="shrink basis-0 tablet:basis-1/5 pb-2 pr-2">
                 <label class="mb-0 w-full h-full">
                   <input class="form-radio sr-only peer" type="radio" data-product-attribute="{$id_attribute_group}" name="group[{$id_attribute_group}]" value="{$id_attribute}" title="{$group_attribute.name}"{if $group_attribute.selected} checked="checked"{/if}>
-                  <span class="bg-gray-default flex justify-center items-center text-center h-full border-2 border-solid cursor-pointer px-2 py-3 hover:border-gray-3000 peer-checked:border-main text-gray-main rounded transition text-sm !leading-[21px] min-w-[120px] word-break">{$group_attribute.name}</span>
+                  <span class="bg-gray-default flex justify-center items-center text-center h-full border-2 border-solid cursor-pointer px-2 py-3 hover:border-gray-3000 peer-checked:border-main text-gray-main rounded transition text-sm !leading-[139%] min-w-[120px] word-break">{$group_attribute.name}</span>
                 </label>
               </li>
             {/foreach}

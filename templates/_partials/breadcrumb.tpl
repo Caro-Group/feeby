@@ -56,7 +56,7 @@
 </div>
 {else}
 <nav data-depth="{$breadcrumb.count}" class="breadcrumb hidden desktop-presta:block">
-  <ol class="mb-6 py-2" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <ol class="mb-6 desktop-presta:mb-[19px] py-2" itemscope itemtype="http://schema.org/BreadcrumbList">
     {block name='breadcrumb'}
       {foreach from=$breadcrumb.links item=path name=breadcrumb}
         {block name='breadcrumb_item'}
