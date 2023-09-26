@@ -56,7 +56,7 @@
 </div>
 {else}
 <nav data-depth="{$breadcrumb.count}" class="breadcrumb">
-  <ol class="desktop-presta:mb-[19px] py-2 whitespace-nowrap overflow-auto -mx-5 px-[30px] scrollbar-none" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <ol class="py-2 whitespace-nowrap overflow-auto -mx-5 px-[30px] scrollbar-none {if $page.page_name == 'product' } desktop-presta:mb-[30px] {else} desktop-presta:mb-[19px] {/if}" itemscope itemtype="http://schema.org/BreadcrumbList">
     {block name='breadcrumb'}
       {foreach from=$breadcrumb.links item=path name=breadcrumb}
         {block name='breadcrumb_item'}
