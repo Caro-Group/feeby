@@ -64,10 +64,6 @@
  
      <section id="main" class="product-detail tablet:pt-[20px] desktop-presta:pt-0" itemscope itemtype="https://schema.org/Product">
        <meta itemprop="url" content="{$product.url}">
- 
-       {block name='breadcrumb_arrow'}
-        {include file='_partials/breadcrumb_arrow.tpl'}
-       {/block}
 
        <div class="flex flex-wrap flex-row mb-16 tablet:mb-0">
          <div class="w-full tablet:w-3/5 tablet:pr-[55px] tablet:pb-10">
