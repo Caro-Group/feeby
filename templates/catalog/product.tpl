@@ -63,10 +63,6 @@
  
      <section id="main" class="product-detail tablet:pt-[20px]" itemscope itemtype="https://schema.org/Product">
        <meta itemprop="url" content="{$product.url}">
- 
-       {block name='breadcrumb_arrow'}
-        {include file='_partials/breadcrumb_arrow.tpl'}
-       {/block}
 
        {assign var="tags" value=Tag::getProductTags(Tools::getValue('id_product'))}
        {if isset($tags) && isset($tags[$language.id]) && $tags[$language.id] != ''}

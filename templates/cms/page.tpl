@@ -24,10 +24,6 @@
  *}
 {extends file='page.tpl'}
 
-{block name='breadcrumb_arrow'}
-  {include file='_partials/breadcrumb_arrow.tpl'}
-{/block}
-
 {block name='page_title'}
   {$cms.meta_title}
 {/block}
