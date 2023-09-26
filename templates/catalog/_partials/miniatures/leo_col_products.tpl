@@ -57,7 +57,7 @@
 {assign var="categoryLayout" value={hook h="pagebuilderConfig" configName="categoryLayout"}}
 {assign var="classCategoryLayout" value={hook h="pagebuilderConfig" configName="classCategoryLayout"}}
 
-<div {if isset($id) && $id} id="{$id}"{/if} class="product_list {if isset($leo_page) && $leo_page=='category'}{$LISTING_GRID_MODE}{/if} {if isset($classCategoryLayout) && $classCategoryLayout != ""}{$classCategoryLayout} {elseif isset($productClassWidget)} {$productClassWidget}{/if} ">
+<div {if isset($id) && $id} id="{$id}"{/if} class="product_list {if isset($leo_page) && $leo_page=='category'}{$LISTING_GRID_MODE}{/if} {if isset($classCategoryLayout) && $classCategoryLayout != ""}{$classCategoryLayout} {elseif isset($productClassWidget)} {$productClassWidget}{/if} {if (isset($page.page_name) && $page.page_name == 'search') || (isset($leo_page) && $leo_page=='search')} tablet:pr-36 {/if} ">
     <div class="mx-0 row">
         {foreach from=$products item=product name=products}
             {math equation="(total%perLine)" total=$products|count perLine=$nbItemsPerLine assign=totModulo}
