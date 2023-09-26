@@ -9,7 +9,7 @@
 {* tablet:block border-1 border-2 border-main-dark tablet:flex hover:bg-main-dark hover:text-white pb-10 py-8 max-w-screen-full-hd classes used in blog swiper section*}
 
 
-<div class="mb-5 mt-2.5 swiper !overflow-visible" data-categories-swiper>
+<div class="my-2.5 swiper !overflow-visible" data-categories-swiper>
 	<div class="swiper-wrapper">
 		{$Num=array_chunk($formAtts.slides, $itemsperpage)}
 		{foreach from=$Num item=sliders name=val}
@@ -39,7 +39,7 @@
 						{/if}
 						</div>
 						{if isset($slider.title) && !empty($slider.title)}
-							<span class="mb-6 font-normal text-center text-main-dark text-xs font-medium w-full">{$slider.title|escape:'html':'UTF-8' nofilter}</span>
+							<span class="flex justify-center font-normal text-center text-main-dark text-xs font-medium w-full ">{$slider.title|escape:'html':'UTF-8' nofilter}</span>
 						{/if}
 					</a>
 
