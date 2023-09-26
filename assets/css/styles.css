@@ -87,9 +87,23 @@ p {
     height: 0 !important;
   }
 
+  .scrollbar-none::-webkit-scrollbar-thumb {
+    display: none !important;
+    -webkit-appearance: none !important;
+    background: transparent !important;
+    height: 0 !important;
+  }
+
+  .scrollbar-none::-webkit-scrollbar-track {
+    display: none !important;
+    -webkit-appearance: none !important;
+    background: transparent !important;
+    height: 0 !important;
+  }
+
   .scrollbar-none {
-      -ms-overflow-style: none !important;
-      scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
   }
 
   .swiper-about .swiper-slide.swiper-slide-active img {
