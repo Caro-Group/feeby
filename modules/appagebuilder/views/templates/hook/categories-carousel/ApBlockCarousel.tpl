@@ -11,7 +11,7 @@
         <div class="alert alert-warning leo-lib-error">{$formAtts.lib_error}</div>
     {/if}
 {else}
-    <div class="block block_carousel exclusive appagebuilder {(isset($formAtts.class)) ? $formAtts.class : ''|escape:'html':'UTF-8'}">
+    <div class="block block_carousel exclusive appagebuilder !mb-0 {(isset($formAtts.class)) ? $formAtts.class : ''|escape:'html':'UTF-8'}">
         {($apLiveEdit)?$apLiveEdit:'' nofilter}{* HTML form , no escape necessary *}
         <div class="block_content">
             {if !empty($formAtts.slides)}
