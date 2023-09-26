@@ -80,6 +80,15 @@ p {
     @apply mx-auto;
   }
 
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-none {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+  }
+
   .swiper-about .swiper-slide.swiper-slide-active img {
     filter: invert(17%) sepia(49%) saturate(5868%) hue-rotate(328deg)
       brightness(101%) contrast(93%);

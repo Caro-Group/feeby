@@ -55,12 +55,12 @@
   {/if}
 </div>
 {else}
-<nav data-depth="{$breadcrumb.count}" class="breadcrumb hidden desktop-presta:block">
-  <ol class="mb-6 py-2" itemscope itemtype="http://schema.org/BreadcrumbList">
+<nav data-depth="{$breadcrumb.count}" class="breadcrumb">
+  <ol class="desktop-presta:mb-[19px] py-2 whitespace-nowrap overflow-auto -mx-5 px-[30px] scrollbar-none" itemscope itemtype="http://schema.org/BreadcrumbList">
     {block name='breadcrumb'}
       {foreach from=$breadcrumb.links item=path name=breadcrumb}
         {block name='breadcrumb_item'}
-          <li class="before:content-['/'] before:px-1 before:font-bold before:italic before:text-gray-300 first:before:hidden text-sm text-gray-3000 last:before:text-main last:pointer-events-none last:text-main-dark hover:text-main-dark" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <li class="before:content-['/'] before:px-1 before:font-bold before:italic before:text-gray-300 first:before:hidden text-xs tablet:text-sm text-gray-3000 last:before:text-main last:pointer-events-none last:text-main-dark hover:text-main-dark" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
             <a class="text-inherit transition" itemprop="item" href="{$path.url}">
               <span itemprop="name">{$path.title}</span>
             </a>
