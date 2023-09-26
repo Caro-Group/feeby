@@ -13,12 +13,12 @@
 	<div class="swiper-wrapper">
 		{$Num=array_chunk($formAtts.slides, $itemsperpage)}
 		{foreach from=$Num item=sliders name=val}
+			{foreach from=$sliders item=slider key=i name="sliders"}
 
 			<div class="swiper-slide mr-[25px]">
-				{foreach from=$sliders item=slider key=i name="sliders"}
 					{if $slider.link}
-					<a class="w-[70px] flex flex-col items-center gap-2.5">
-						<div class="w-full h-auto aspect-square rounded-full overflow-hodden border-main-dark">
+					<a href="{$slider.link}" class="w-[70px] flex flex-col items-center gap-[6px] cursor-pointer">
+						<div class="w-full h-auto aspect-square rounded-full overflow-hidden border border-solid border-main-dark">
 						{if isset($slider.image) && !empty($slider.image)}
 							<picture class="w-full h-full" >
 								<source
@@ -45,9 +45,9 @@
 
 					{/if}
 
-				{/foreach}
-			</div>
-
+				</div>
+					
+			{/foreach}
 		{/foreach}
 	</div>
 </div>
