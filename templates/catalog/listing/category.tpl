@@ -40,10 +40,6 @@
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mb-[10px] desktop-presta:mb-5">
 
   
-  {block name='breadcrumb_arrow'}
-    {include file='_partials/breadcrumb_arrow.tpl'}
-  {/block}
-
     <h1 class="title_block title_block text-2xl tablet:text-4xl mt-2 tablet:mt-10 font-light text-main-dark">
     {if $category.meta_keywords !== ''}
         {$category.meta_keywords}
