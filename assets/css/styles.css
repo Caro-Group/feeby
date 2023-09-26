@@ -85,12 +85,15 @@ p {
   }
   
   .scrollbar-none::-webkit-scrollbar {
-    display: none;
+    display: none !important;
+    -webkit-appearance: none !important;
+    background: transparent !important;
+    height: 0 !important;
   }
 
   .scrollbar-none {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
+      -ms-overflow-style: none !important;
+      scrollbar-width: none !important;
   }
 
   .swiper-about .swiper-slide.swiper-slide-active img {
