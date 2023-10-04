@@ -24,7 +24,7 @@
  *}
 
  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tablet:mb-[35px] mb-5">
-   <p class="font-body font-light max-w-screen-tablet-wide mt-2 tablet:mt-10 tablet:text-base text-main-dark text-sm title_block">
+   <div class="[&>p]:font-body [&>p]:font-light max-w-screen-tablet-wide [&>p]:mt-2 [&>p]:tablet:mt-10 [&>p]:tablet:text-base [&>p]:text-main-dark [&>p]:text-sm title_block">
      {hook h="displayCategoryDescription"}
-   </p>
+   </div>
 </div>
