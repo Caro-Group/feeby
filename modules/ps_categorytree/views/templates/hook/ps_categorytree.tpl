@@ -23,7 +23,7 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 
-{function name="categories" nodes=[] depth=0}
+ {function name="categories" nodes=[] depth=0}
   {strip}
     {if $nodes|count}
       <ul class="category-sub-menu">
@@ -68,12 +68,17 @@
 <div class="hidden-sm-down pt-3">
   <h4 class="text-2xl font-light text-main-dark mb-3">{l s='Categories' d='Shop.Theme.Catalog'}</h4>
   <div class="block_content">
-  {foreach from=$categories.children item=categoryLvl2}
-    {if $categoryLvl2|count}
-      <ul class="category-sub-menu">
-        {categories nodes=$categoryLvl2.children}
-      </ul>
+    {if !empty($categories.children)}
+      {foreach from=$categories.children item=categoryLvl2}
+        {if $c_tree_path && in_array($categoryLvl2.id, $c_tree_path) || ($category.level_depth == 2 && $category.id == $categoryLvl2.id)}
+          {if $categoryLvl2|count && !empty($categoryLvl2.children)}
+            <ul class="category-sub-menu">
+              {categories nodes=$categoryLvl2.children}
+            </ul>
+          {/if}
+        {/if}
+      {/foreach}
     {/if}
-  {/foreach} 
+  </div>
 </div>
-</div>
+
