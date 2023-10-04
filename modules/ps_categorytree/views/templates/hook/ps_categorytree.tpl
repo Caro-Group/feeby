@@ -23,30 +23,36 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 
-{function name="categories" nodes=[] depth=0}
+ {function name="categories" nodes=[] depth=0}
   {strip}
     {if $nodes|count}
       <ul class="category-sub-menu">
         {foreach from=$nodes item=node}
           {if $node.desc|strstr:"<!-- ARTYSTA -->" !== "<!-- ARTYSTA -->"}
-          <li class="   border-0 border-white border-solid border-t flex justify-between items-center flex-wrap" data-depth="{$depth}" {if isset($node.id)}data-cat-id="{$node.id}"{/if}>
+            {assign var="activeNested" value=false}
+            {if $node.children}
+                {if $c_tree_path && in_array($node.id, $c_tree_path)}
+                  {assign var="activeNested" value=true}
+                {/if}
+            {/if}
+          <li class="border-0 border-white border-solid border-t flex justify-between items-center flex-wrap" data-depth="{$depth}" {if isset($node.id)}data-cat-id="{$node.id}"{/if}>
             {if $depth===0}
               <a href="{$node.link}" {if isset($category.id) && $node.id == $category.id}class="selected"{/if}>{$node.name}</a>
               {if $node.children}
-                <div class="navbar-toggler collapse-icons float-right p-3 pr-5 collapsed" data-toggle="collapse" data-target="#exCollapsingNavbar{$node.id}">
+                <div class="navbar-toggler collapse-icons float-right p-3 pr-5 {if isset($category.id) && $node.id != $category.id && $activeNested == false } collapsed {/if}" data-toggle="collapse" data-target="#exCollapsingNavbar{$node.id}">
                   <i class="material-icons select-none text-3xl text-main-dark transition transform rotate-180"></i>
                 </div>
-                <div class="collapse bg-gray-1000" id="exCollapsingNavbar{$node.id}">
+                <div class="bg-gray-1000 {if isset($category.id) && $node.id == $category.id || $activeNested == true} collapse in {else} collapse {/if}" id="exCollapsingNavbar{$node.id}">
                   {categories nodes=$node.children depth=$depth+1}
                 </div>
               {/if}
             {else}
-              <a class="category-sub-link" href="{$node.link}" {if isset($category.id) && $node.id == $category.id}class="selected"{/if}>{$node.name}</a>
+              <a class="category-sub-link {if isset($category.id) && $node.id == $category.id}selected{/if}" href="{$node.link}">{$node.name}</a>
               {if $node.children}
-                <div class="navbar-toggler collapse-icons float-right p-3 pr-5 collapsed" data-toggle="collapse" data-target="#exCollapsingNavbar{$node.id}">
+                <div class="navbar-toggler collapse-icons float-right p-3 pr-5 {if isset($category.id) && $node.id != $category.id && $activeNested == false } collapsed {/if}" data-toggle="collapse" data-target="#exCollapsingNavbar{$node.id}">
                   <i class="material-icons select-none text-3xl text-main-dark transition transform rotate-180"></i>
                 </div>
-                <div class="collapse bg-white bg-opacity-50" id="exCollapsingNavbar{$node.id}">
+                <div class="bg-white bg-opacity-50 {if isset($category.id) && $node.id == $category.id || $activeNested == true } collapse in {else} collapse {/if} " id="exCollapsingNavbar{$node.id}">
                   {categories nodes=$node.children depth=$depth+1}
                 </div>
               {/if}
@@ -59,11 +65,20 @@
   {/strip}
 {/function}
 
-<div class="hidden-sm-down pt-3 pr-10">
+<div class="hidden-sm-down pt-3">
   <h4 class="text-2xl font-light text-main-dark mb-3">{l s='Categories' d='Shop.Theme.Catalog'}</h4>
   <div class="block_content">
-    <ul class="category-top-menu">
-      <li data-id="">{categories nodes=$categories.children}</li>
-    </ul>
+    {if !empty($categories.children)}
+      {foreach from=$categories.children item=categoryLvl2}
+        {if $c_tree_path && in_array($categoryLvl2.id, $c_tree_path) || ($category.level_depth == 2 && $category.id == $categoryLvl2.id)}
+          {if $categoryLvl2|count && !empty($categoryLvl2.children)}
+            <ul class="category-sub-menu">
+              {categories nodes=$categoryLvl2.children}
+            </ul>
+          {/if}
+        {/if}
+      {/foreach}
+    {/if}
   </div>
 </div>
+
