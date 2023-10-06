@@ -53,15 +53,17 @@
                                         <div class="flex flex-col">
                                             {assign var='col' value=$searcher.columns_break}
                                             {foreach from=$searcher.filters item=filter}
-                                                {if $filter.options|@count}
-                                                    <div class="filter w-full">
-                                                        {include file='./filter.tpl' filter=$filter}
-                                                    </div>
+                                                {if $filter && isset($filter.options)}
+                                                    {if $filter.options|@count}
+                                                        <div class="filter w-full">
+                                                            {include file='./filter.tpl' filter=$filter}
+                                                        </div>
+                                                    {/if}
                                                 {/if}
                                             {/foreach}
                                         </div>
                                     </div>
-                                    {if $searcher.selected_options|@count}
+                                    {if isset($searcher.selected_options) && $searcher.selected_options|@count}
 
                                     <button
                                         class="btn-reset-filter my-10 block bg-gray-1000 hover:bg-gray-2000 transition border-2 border-gray-1000 border-solid cursor-pointer text-main-dark mx-auto px-5 py-1.5 relative rounded-full text-base uppercase tablet:!normal-case tablet:h-min"
@@ -106,4 +108,3 @@
                 {/if}
             {/foreach}
         </div>
-        
