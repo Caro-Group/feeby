@@ -1657,3 +1657,25 @@ $(document).ready(function () {
       "border-0 border-b-[10px] tablet-medium:border-b-0 border-solid border-gray-1000"
     );
 });
+
+$(document).ready(function () {
+
+  if ($('#category_description > div').length > 0) {
+    
+    $( window ).on( "resize", () => {
+      handleDescriptionState()  
+    });
+  
+    (function handleDescriptionState(){
+      if (62 <= $('#category_description > div').outerHeight() ) {
+        $('#category_description').collapse('show')
+        $('a.collapse-text').addClass('hidden');
+      }else{
+        $('#category_description').collapse('hide')
+        $('a.collapse-text').removeClass('hidden');
+      }
+    })()
+    
+  }
+
+});
