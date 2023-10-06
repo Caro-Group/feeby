@@ -52,6 +52,7 @@
         {$page.title}
       {/if}
     </h1>
+    {include file='catalog/_partials/category-text.tpl'}
   </div>
 {/block}
 

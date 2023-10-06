@@ -737,3 +737,16 @@ img:not([src]) {
 .fancybox-nav span {
   @apply !right-0 !left-0 !visible !bg-none justify-center items-center flex !w-10 !h-10 text-main-dark bg-gray-1000 hover:bg-main-dark hover:text-white rounded-full transition
 }
+
+.collapse-text.collapsed .down{
+  @apply block
+}
+.collapse-text:not(.collapsed) .down{
+  @apply hidden
+}
+.collapse-text.collapsed .up{
+  @apply hidden
+}
+.collapse-text:not(.collapsed) .up{
+  @apply block
+}
