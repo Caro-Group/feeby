@@ -865,5 +865,5 @@ img:not([src]) {
 }
 
 [aria-expanded="false"]#category_description{
-  @apply !h-10
+  height: 62px !important;
 }
