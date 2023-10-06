@@ -94,7 +94,7 @@
          {break}
          {/foreach}
 
-         <div class="absolute hidden tablet:block items-end bottom-5 right-5 z-10 pointer-events-none ml-auto tablet:w-[90px]">
+         <div class="absolute hidden tablet:block items-end bottom-5 right-5 z-10 pointer-events-none ml-auto">
             <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle class="stroke-gray-3000 group-hover:stroke-main-dark transition duration-200" cx="20" cy="20" r="19" stroke-width="2"></circle>
               <rect class="fill-gray-3000 group-hover:fill-main-dark transition duration-200" x="10" y="19" width="20" height="2"></rect>
