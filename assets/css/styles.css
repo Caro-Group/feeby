@@ -750,3 +750,7 @@ img:not([src]) {
 .collapse-text:not(.collapsed) .up{
   @apply block
 }
+
+[aria-expanded="false"]#category_description{
+  @apply !h-10
+}
