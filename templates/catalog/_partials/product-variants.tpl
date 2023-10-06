@@ -47,7 +47,7 @@
               {/foreach}
             </select>
 
-            {if $group.group_name == "Rozmiar" || $id_attribute_group == 6}
+            {if $group.group_name == "Rozmiar" || $id_attribute_group == 6 || false}
 
               <a href="/" target="_blank" class="w-full tablet:w-[156px] group flex justify-center items-center w-full shrink-0 px-5 py-1.5 tablet:py-0 rounded-[5px] border border-solid border-gray-2000 hover:border-gray-3000 transition duration-300">
                 <svg class="mr-5 tablet:mr-2.5 shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -57,9 +57,9 @@
                   {l s='Order custom-size wallpaper' d='Shop.Theme.Actions'}
                 </span>
               </a>
-  
+
             {/if}
-          
+
           </div>
 
         {elseif $group.group_type == 'color'}
