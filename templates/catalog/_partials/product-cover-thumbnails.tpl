@@ -81,11 +81,11 @@
            {/foreach}
          </div>
 
-         <div class="absolute bottom-2.5 tablet:bottom-5 inset-x-2.5 tablet:inset-x-5 z-50 flex justify-between tablet:justify-start tablet:gap-2.5 items-center">
-          <i class="ti-arrow-left justify-center items-center flex w-10 h-10 text-main-dark bg-gray-1000 hover:bg-main-dark hover:text-white rounded-full transition cursor-pointer"
+         <div class="absolute bottom-2.5 tablet:bottom-5 inset-x-2.5 tablet:inset-x-5 z-50 flex justify-between tablet:justify-start tablet:gap-2.5 items-center pointer-events-none">
+          <i class="ti-arrow-left justify-center items-center flex w-10 h-10 text-main-dark bg-gray-1000 hover:bg-main-dark hover:text-white rounded-full transition cursor-pointer pointer-events-all"
             data-swiper-product-prev> </i>
             <div class="!flex tablet:!hidden gap-[9px]" data-swiper-product-pagination></div>
-          <i class="ti-arrow-right justify-center items-center flex w-10 h-10 text-main-dark bg-gray-1000 hover:bg-main-dark hover:text-white rounded-full transition cursor-pointer"
+          <i class="ti-arrow-right justify-center items-center flex w-10 h-10 text-main-dark bg-gray-1000 hover:bg-main-dark hover:text-white rounded-full transition cursor-pointer pointer-events-all"
             data-swiper-product-next> </i>
           <div class="hidden tablet:block items-end bottom-5 right-5 z-10 pointer-events-none ml-auto">
             <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
