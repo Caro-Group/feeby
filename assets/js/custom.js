@@ -1823,19 +1823,22 @@ function handleModalOffset() {
 $(document).ready(function () {
   if ($('#category_description > div').length > 0) {
     
-    $( window ).on( "resize", () => {
-      handleDescriptionState()  
-    });
-  
-    (function handleDescriptionState(){
-      if (62 <= $('#category_description > div').outerHeight() ) {
+    function handleDescriptionState(){
+      if (62 >= $('#category_description > div').outerHeight() ) {
         $('#category_description').collapse('show')
         $('a.collapse-text').addClass('hidden');
       }else{
         $('#category_description').collapse('hide')
         $('a.collapse-text').removeClass('hidden');
       }
-    })()
+    }
+
+    handleDescriptionState()
+
+    $( window ).on( "resize", () => {
+      handleDescriptionState()  
+    });
+  
     
   }
 
