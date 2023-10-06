@@ -81,25 +81,26 @@
            {/foreach}
          </div>
 
-         <div class="absolute bottom-2.5 tablet:bottom-5 inset-x-2.5 tablet:inset-x-5 z-50 flex justify-between tablet:justify-start tablet:gap-2.5 items-center z-10">
-          <i class="ti-arrow-left justify-center items-center flex w-10 h-10 text-main-dark bg-gray-1000 hover:bg-main-dark hover:text-white rounded-full transition cursor-pointer"
-            data-swiper-product-prev> </i>
-            <div class="!flex tablet:!hidden gap-[9px]" data-swiper-product-pagination></div>
-          <i class="ti-arrow-right justify-center items-center flex w-10 h-10 text-main-dark bg-gray-1000 hover:bg-main-dark hover:text-white rounded-full transition cursor-pointer"
-            data-swiper-product-next> </i>
-          <div class="hidden tablet:block items-end bottom-5 right-5 z-10 pointer-events-none ml-auto">
+         <div class="absolute bottom-2.5 tablet:bottom-5 inset-x-2.5 tablet:inset-x-5 z-50 flex justify-between tablet:justify-start tablet:gap-2.5 items-center tablet:w-[90px]">
+            <i class="ti-arrow-left justify-center items-center flex w-10 h-10 text-main-dark bg-gray-1000 hover:bg-main-dark hover:text-white rounded-full transition cursor-pointer"
+              data-swiper-product-prev> </i>
+              <div class="!flex tablet:!hidden gap-[9px]" data-swiper-product-pagination></div>
+            <i class="ti-arrow-right justify-center items-center flex w-10 h-10 text-main-dark bg-gray-1000 hover:bg-main-dark hover:text-white rounded-full transition cursor-pointer"
+              data-swiper-product-next> </i>
+          </div>
+
+         {foreach from=$product.images item=image key=$key name=pictures}
+         <div data-zoom-container class="absolute top-0 left-0 w-full h-full z-50" data-zoom-image="{$image.bySize.large_default.url}"></div>
+         {break}
+         {/foreach}
+
+         <div class="absolute hidden tablet:block items-end bottom-5 right-5 z-10 pointer-events-none ml-auto tablet:w-[90px]">
             <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle class="stroke-gray-3000 group-hover:stroke-main-dark transition duration-200" cx="20" cy="20" r="19" stroke-width="2"></circle>
               <rect class="fill-gray-3000 group-hover:fill-main-dark transition duration-200" x="10" y="19" width="20" height="2"></rect>
               <rect class="fill-gray-3000 group-hover:fill-main-dark transition duration-200" x="21" y="10" width="20" height="2" transform="rotate(90 21 10)"></rect>
             </svg>
-           </div>
-        </div>
-
-         {foreach from=$product.images item=image key=$key name=pictures}
-         <div data-zoom-container class="absolute top-0 left-0 w-full h-full z-10" data-zoom-image="{$image.bySize.large_default.url}"></div>
-         {break}
-         {/foreach}
+          </div>
 
          <div class="layer hidden-sm-down" data-toggle="modal" data-target="#product-modal">
            <i class="material-icons zoom-in">&#xE8FF;</i>
