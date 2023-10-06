@@ -1673,12 +1673,7 @@ $(document).ready(function () {
     }
 
     handleDescriptionState()
-
-    $( window ).on( "resize", () => {
-      handleDescriptionState()  
-    });
-  
+    $( window ).on( "resize", handleDescriptionState);
     
   }
-
 });
