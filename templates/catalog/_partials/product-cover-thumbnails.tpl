@@ -28,19 +28,19 @@
    {block name='product_cover'}
      {if $product.default_image}
        <div class="group border-2 border-solid rounded-[5px] swiper product-cover w-full mb-0 overflow-hidden aspect-[16/15] tablet:aspect-square" data-swiper-product>
-       {include file='catalog/_partials/product-flags.tpl'}
-       {foreach from=$groups item=$attribute}
-         {if $attribute["group_name"] == "Typ"}
-           {foreach from=$attribute["attributes"] item=$item}
-             {if $item["name"] == 'Obraz na płótnie' && $item["selected"]}
-               {assign var="productHideThreeLastThumbs" value="true"}
-             {/if}
-             {if $item["name"] == 'Obraz panelowy' && $item["selected"]}
-               {assign var="productHideLastThumbs" value="true"}
-             {/if}
-           {/foreach}
-         {/if}
-       {/foreach}
+        {include file='catalog/_partials/product-flags.tpl'}
+        {foreach from=$groups item=$attribute}
+          {if $attribute["group_name"] == "Typ"}
+            {foreach from=$attribute["attributes"] item=$item}
+              {if $item["name"] == 'Obraz na płótnie' && $item["selected"]}
+                {assign var="productHideThreeLastThumbs" value="true"}
+              {/if}
+              {if $item["name"] == 'Obraz panelowy' && $item["selected"]}
+                {assign var="productHideLastThumbs" value="true"}
+              {/if}
+            {/foreach}
+          {/if}
+        {/foreach}
 
          <div class="swiper-wrapper border-gray-default">
            {foreach from=$product.images item=image key=$key name=pictures}
