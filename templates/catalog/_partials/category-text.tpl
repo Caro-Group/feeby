@@ -23,7 +23,7 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 
- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tablet:mb-[15px] ">
+ <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mb-6 tablet:mb-[15px] ">
     <div id="category_description" class="collapse !block pb-5 relative overflow-hidden after:absolute after:content-[''] after:bottom-0 after:inset-x-0 after:h-5 after:from-white after:to-transparent after:bg-gradient-to-t [&>p]:font-body [&>p]:font-light max-w-screen-tablet-wide [&>p]:mt-2 [&>p]:tablet:mt-10 [&>p]:tablet:text-base [&>p]:text-main-dark [&>p]:text-sm title_block" aria-expanded="false">
         {hook h="displayCategoryDescription"}
     </div>
