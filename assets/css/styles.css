@@ -851,3 +851,15 @@ img:not([src]) {
 .leo-megamenu .navbar-nav > li > a > .menu-title{
   @apply tablet-medium:!leading-none
 }
+.collapse-text.collapsed .down{
+  @apply block
+}
+.collapse-text:not(.collapsed) .down{
+  @apply hidden
+}
+.collapse-text.collapsed .up{
+  @apply hidden
+}
+.collapse-text:not(.collapsed) .up{
+  @apply block
+}

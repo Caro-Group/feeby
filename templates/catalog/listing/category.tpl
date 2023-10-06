@@ -49,10 +49,9 @@
           {$page.title}
       {/if}
     </h1>
-    </div>
     {include file='catalog/_partials/category-text.tpl'}
-  {/block}
-  
+  </div>
+{/block}
 
 {block name='displayBottomContent'}
   <div class="container">
