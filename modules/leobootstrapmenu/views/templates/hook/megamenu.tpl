@@ -33,7 +33,7 @@ ul tag is buil in $boostrapmenu
   tablet-medium:flex
   tablet-medium:justify-between
 *}
-                            <div class="leo-top-menu collapse tablet:visible navbar-toggleable-md megamenu-off-canvas megamenu-off-canvas-{$megamenu_id}">{$boostrapmenu|escape:'html':'UTF-8' nofilter}{* HTML form , no escape necessary *}</div>
+                            <div class="leo-top-menu collapse tablet-medium:visible navbar-toggleable-md megamenu-off-canvas megamenu-off-canvas-{$megamenu_id}">{$boostrapmenu|escape:'html':'UTF-8' nofilter}{* HTML form , no escape necessary *}</div>
             </nav>
 <script type="text/javascript">
 	list_menu_tmp.id = '{$megamenu_id}';
