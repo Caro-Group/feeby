@@ -1,11 +1,11 @@
 <div class="wislish-button relative">
   <a
-    class="ap-btn-wishlist relative mr-5 block height-[25px]"
+    class="ap-btn-wishlist relative mr-5 block height-[25px] mt-[5px] mb-auto"
     href="{url entity='module' name='leofeature' controller='mywishlist'}"
     title=""
     rel="nofollow"
   >
-    <span class="-bottom-[2px] -right-1 absolute w-full ap-total ap-total-wishlist aspect-square bg-main bottom-0 h-[15px] leading-none max-w-[15px] overflow-hidden pt-0.5 rounded-full text-[12px] text-center text-ellipsis text-white text-xs empty:invisible peer z-30"></span>
+    <span class="bottom-[2px] -right-1 absolute w-full ap-total ap-total-wishlist aspect-square bg-main bottom-0 h-[15px] leading-none max-w-[15px] overflow-hidden pt-0.5 rounded-full text-[12px] text-center text-ellipsis text-white text-xs empty:invisible peer z-30"></span>
     <svg class="z-10 fill-current text-main-dark hover:text-main transition peer-[:empty]:invisible" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
       <path d="M9.738 20.007a.124.124 0 0 1-.014-.012c-1.137-1.088-6.56-6.523-6.56-6.523a.427.427 0 0 1-.069-.088v.001l-.002-.004-.003-.003h.002-.002C1.734 12.138.96 10.326.96 8.382.96 4.82 3.532 1.92 6.696 1.92c2.446 0 4.465 2.265 5.282 3.333l.022.03.022-.03c.817-1.068 2.836-3.333 5.281-3.333 3.165 0 5.737 2.9 5.737 6.462 0 1.623-.54 3.172-1.525 4.373l-.002.002-.001.003a.423.423 0 0 1-.077.103l-.01.003-.032.016c.015 0 .03-.007.04-.018-.078.087-.15.155-.22.222l-.092.089-8.815 8.778a.433.433 0 0 1-.306.127h-.002a.43.43 0 0 1-.085-.008.39.39 0 0 1-.207-.105.43.43 0 0 1 .015-.65c1.504-1.538 8.895-8.856 8.895-8.856l.001-.001c.047-.045.095-.089.139-.139v-.002l.002-.001a.403.403 0 0 1 .031-.042.054.054 0 0 0 .011.077.054.054 0 0 1-.017-.066v-.002a.055.055 0 0 1 .007-.01v-.001c.892-1.056 1.384-2.438 1.384-3.892 0-3.088-2.186-5.6-4.87-5.6-1.063 0-2.063.552-2.883 1.217a11.15 11.15 0 0 0-2.057 2.262l-.046.025.046-.025a.429.429 0 0 1-.364.184.429.429 0 0 1-.364-.184l.046.025-.046-.025a11.15 11.15 0 0 0-2.057-2.262c-.82-.665-1.82-1.216-2.883-1.216-2.684 0-4.87 2.51-4.87 5.599 0 1.75.71 3.371 1.949 4.449.042.037.076.08.1.128l.003.004 6.448 6.412a.43.43 0 0 1-.274.766.433.433 0 0 1-.314-.134Zm-6.568-6.61.004.005a.055.055 0 0 1-.031.01s.013-.005.027-.015Zm-.06-.011.017.006-.017-.006Zm.762-.351-.004-.004c.01-.01.02-.023.02-.04a.054.054 0 0 1-.016.043Zm17.492-.177.013-.014.016.038a.055.055 0 0 1-.037-.015l.008-.009Zm.017-.018-.001.001.016.037-.015-.037Zm.086-.058-.003-.007h-.002l.005.007Zm-.646-.458c-.009-.028-.02-.06-.027-.053l-.004.003a.054.054 0 0 0-.007.013c-.01.022.006.043.023.058a.326.326 0 0 1 .015-.021ZM12.297 6.26a.279.279 0 0 1-.012.014c.015.01.032.012.033.012l-.021-.026Z"/>
     </svg>
