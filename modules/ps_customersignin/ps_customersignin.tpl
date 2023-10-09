@@ -22,7 +22,7 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
-{debug}
+
 <div class="userinfo-selector user-block-header ApRawHtml" id="_desktop_user_info">
   {if $logged}
     <a href="{$my_account_url}" data-toggle="dropdown" class="popup-title mr-5 " title="{l s='Account' d='Shop.Theme.Global'}">
