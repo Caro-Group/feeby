@@ -27,7 +27,7 @@
  {block name='product_cover_thumbnails'}
    {block name='product_cover'}
      {if $product.default_image}
-       <div class="border-2 border-solid rounded-[5px] swiper product-cover mb-0 overflow-hidden" data-swiper-product>
+       <div class="border-2 border-solid border-gray-1000 rounded-[5px] swiper product-cover mb-0 overflow-hidden" data-swiper-product>
        {foreach from=$groups item=$attribute}
          {if $attribute["group_name"] == "Typ"}
            {foreach from=$attribute["attributes"] item=$item}
@@ -147,7 +147,7 @@
                    <a href="{$smarty.server.HTTP_HOST}" data-image="{$image.bySize.large_default.url}"
                      data-zoom-image="{$image.bySize.large_default.url}">
                      <img
-                       class="h-[100px] w-[100px] tablet:h-[200px] tablet:w-[200px] border border-solid rounded-lg mr-[18px] {if $image.id_image == $product.default_image.id_image} selected {/if}"
+                       class="h-[100px] w-[100px] tablet:h-[200px] tablet:w-[200px] border border-solid border-gray-1000 rounded-lg mr-[18px] {if $image.id_image == $product.default_image.id_image} selected {/if}"
                        data-image-medium-src="{$image.bySize.medium_default.url}"
                        data-image-large-src="{$image.bySize.large_default.url}"                 
                        data-src="{$image.bySize.product_thumbnail.url}"
