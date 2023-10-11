@@ -116,7 +116,7 @@
                     <div class="sub-title-widget">{$formAtts.sub_title nofilter}</div>
                 {/if}
                 {if isset($formAtts.links) && $formAtts.links|@count > 0}
-                    <ul class="collapse" id="footer-link-{$formAtts.form_id|escape:'html':'UTF-8'}">
+                    <ul class="collapse tablet:!visible" id="footer-link-{$formAtts.form_id|escape:'html':'UTF-8'}">
                         {foreach from=$formAtts.links item=item}
                             {if $item.title && $item.link}
                                 <li
