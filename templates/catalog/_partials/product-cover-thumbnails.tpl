@@ -27,7 +27,7 @@
  {block name='product_cover_thumbnails'}
    {block name='product_cover'}
      {if $product.default_image}
-       <div class="group border-2 border-solid rounded-[5px] swiper product-cover w-full mb-0 overflow-hidden aspect-[16/15] tablet:aspect-square" data-swiper-product>
+       <div class="group border-2 border-solid border-gray-1000 rounded-[5px] swiper product-cover w-full mb-0 overflow-hidden aspect-[16/15] tablet:aspect-square" data-swiper-product>
         {include file='catalog/_partials/product-flags.tpl'}
         {foreach from=$groups item=$attribute}
           {if $attribute["group_name"] == "Typ"}
@@ -158,7 +158,7 @@
                    <a data-image="{$image.bySize.large_default.url}" class="block w-full h-full"
                      data-zoom-image="{$image.bySize.large_default.url}">
                      <img
-                       class="block w-full h-full border border-solid rounded-lg box-border transition-all duration-200 {if $image.id_image == $product.default_image.id_image} selected {/if}"
+                       class="block w-full h-full border border-solid border-gray-1000 rounded-lg box-border transition-all duration-200 {if $image.id_image == $product.default_image.id_image} selected {/if}"
                        src="{$image.bySize.product_thumbnail.url}"
                        alt="{$image.legend}" title="{$image.legend}" itemprop="image" width="200" height="200" loading="lazy" />
                    </a>

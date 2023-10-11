@@ -1834,7 +1834,14 @@ $(document).ready(function () {
     }
 
     handleDescriptionState()
-    $( window ).on( "resize", handleDescriptionState);
+
+    let prevWidth = window.innerWidth;
+    $( window ).on( "resize", () => {
+      if (window.innerWidth !== prevWidth ) {
+        handleDescriptionState()
+        prevWidth = window.innerWidth;
+      }
+    });
     
   }
 });

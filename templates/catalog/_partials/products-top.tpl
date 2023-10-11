@@ -43,7 +43,7 @@
 
         <button id="search_filters_toggler"
         data-filters-tab-btn='0'
-          class="flex items-center justify-between cursor-pointer border-2 border-solid border-gray-2000 px-5 tablet:px-10 text-left text-base tablet:text-lg uppercase text-normal bg-gray-1000 hover:border-gray-3000 rounded-md text-main-dark text-left w-full transition duration-200" >
+          class="flex items-center justify-between cursor-pointer border-2 border-solid border-gray-2000 px-5 tablet:px-10 text-left text-sm tablet:text-lg uppercase text-normal bg-gray-1000 hover:border-gray-3000 rounded-md text-main-dark text-left w-full transition duration-200" >
           {l s='Filter' d='Shop.Theme.Actions'}
           <span class="top-[3px] float-right pl-4 relative ">
             <svg class="tablet:w-[25px] tablet:h-[25px]" width="18" height="18" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -61,7 +61,7 @@
           <button
             id="search_sort_toggler"
             data-filters-tab-btn='1'
-            class="select-title w-full text-base tablet:text-lg uppercase bg-transparent px-5 tablet:px-10 py-2 tablet:py-2.5 text-left !flex justify-between items-center font-light text-main-dark border-gray-2000 hover:border-gray-3000 rounded-md border-solid !border-2 transition duration-200 cursor-pointer">
+            class="select-title w-full text-sm tablet:text-lg uppercase bg-transparent phone-wide:px-5 tablet:px-10 py-2 tablet:py-2.5 text-left !flex justify-between items-center font-light text-main-dark border-gray-2000 hover:border-gray-3000 rounded-md border-solid !border-2 transition duration-200 cursor-pointer">
             <span class="sort-by text-main-dark font-normal text-main-dark">{l s='Sort by:' d='Shop.Theme.Global'}</span>
             <span class="shrink-0 ml-2 text-main-dark">
               <svg class="fill-current tablet:w-[25px] tablet:h-[25px] tablet:top-[3px] relative" width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">

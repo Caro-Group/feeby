@@ -79,7 +79,7 @@
                     </picture>
                   {/if}
                   </span>
-                <span class="text-main-dark p-0 text-center text-base {if $id_attribute_group|in_array:$ids_with_container} pt-1 tablet-medium:text-lg !leading-4 tablet-medium:!leading-5 {else} pt-[10px] tablet-medium:text-2xl {/if}">{$group_attribute.name}</span>
+                <span class="text-main-dark p-0 text-center text-base {if $id_attribute_group|in_array:$ids_with_container} pt-1 tablet-medium:text-lg !leading-4 tablet-medium:!leading-5 {else} pt-[10px] tablet-medium:text-sm {/if}">{$group_attribute.name}</span>
                 </label>
               </li>
             {/foreach}
@@ -93,7 +93,7 @@
               <li class="shrink basis-0 tablet:basis-1/5 pr-2">
                 <label class="mb-0 w-full h-full">
                   <input class="form-radio sr-only peer" type="radio" data-product-attribute="{$id_attribute_group}" name="group[{$id_attribute_group}]" value="{$id_attribute}" title="{$group_attribute.name}"{if $group_attribute.selected} checked="checked"{/if}>
-                  <span class="bg-gray-default flex justify-center items-center text-center h-full border-2 border-solid cursor-pointer px-2 py-3 hover:border-gray-3000 peer-checked:border-main text-gray-main rounded transition text-sm !leading-[139%] min-w-[120px] word-break">{$group_attribute.name}</span>
+                  <span class="bg-gray-default flex justify-center items-center text-center h-full border-2 border-solid border-gray-2000 cursor-pointer px-2 py-3 hover:border-gray-3000 peer-checked:border-main text-gray-main rounded transition text-sm !leading-[139%] min-w-[120px] word-break">{$group_attribute.name}</span>
                 </label>
               </li>
             {/foreach}
