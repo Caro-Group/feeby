@@ -319,6 +319,10 @@ li[data-menu-type='url'] a {
   @apply py-[18px];
 }
 
+.sidebar .category-sub-menu [data-depth="1"] .category-sub-link{
+  @apply pl-5
+}
+
 .sidebar .category-sub-menu li div:last-child {
   @apply w-full;
 }
