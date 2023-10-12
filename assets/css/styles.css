@@ -398,7 +398,7 @@ li[data-menu-type='url'] a {
 }
 
 .sidebar .category-sub-menu li a {
-  @apply pl-5 py-[18px];
+  @apply py-[18px];
 }
 
 .sidebar .category-sub-menu li div:last-child {
