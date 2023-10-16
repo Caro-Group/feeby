@@ -274,19 +274,14 @@ function LeoWishlistButtonAction() {
                 $(".leo-modal-wishlist").modal("show");
               } else {
                 //Leotheme add: update number product on icon wishlist after remove from wishlist
-                if ($(".ap-btn-wishlist .ap-total-wishlist").length) {
-                  var old_num_wishlist = parseInt(
-                    $(".ap-btn-wishlist .ap-total-wishlist").data(
-                      "wishlist-total"
-                    )
-                  );
+                if (object_result.result) {
                   var new_num_wishlist = old_num_wishlist - 1;
                   $(".ap-btn-wishlist .ap-total-wishlist").data(
                     "wishlist-total",
-                    new_num_wishlist
+                    object_result.result
                   );
                   $(".ap-btn-wishlist .ap-total-wishlist").text(
-                    new_num_wishlist
+                    object_result.result
                   );
                 }
 
@@ -355,18 +350,12 @@ function LeoWishlistButtonAction() {
                 $(".leo-modal-wishlist").modal("show");
                 //Leotheme add: update number product on icon wishlist after add from wishlist
                 if ($(".ap-btn-wishlist .ap-total-wishlist").length) {
-                  var old_num_wishlist = parseInt(
-                    $(".ap-btn-wishlist .ap-total-wishlist").data(
-                      "wishlist-total"
-                    )
-                  );
-                  var new_num_wishlist = old_num_wishlist + 1;
                   $(".ap-btn-wishlist .ap-total-wishlist").data(
                     "wishlist-total",
-                    new_num_wishlist
+                    object_result.result
                   );
                   $(".ap-btn-wishlist .ap-total-wishlist").text(
-                    new_num_wishlist
+                    object_result.result
                   );
                 }
 
@@ -480,18 +469,12 @@ function LeoWishlistButtonAction() {
               } else {
                 //Leotheme add: update number product on icon wishlist after remove from wishlist
                 if ($(".ap-btn-wishlist .ap-total-wishlist").length) {
-                  var old_num_wishlist = parseInt(
-                    $(".ap-btn-wishlist .ap-total-wishlist").data(
-                      "wishlist-total"
-                    )
-                  );
-                  var new_num_wishlist = old_num_wishlist - 1;
                   $(".ap-btn-wishlist .ap-total-wishlist").data(
                     "wishlist-total",
-                    new_num_wishlist
+                    object_result.result
                   );
                   $(".ap-btn-wishlist .ap-total-wishlist").text(
-                    new_num_wishlist
+                    object_result.result
                   );
                 }
 
@@ -582,18 +565,12 @@ function LeoWishlistButtonAction() {
                 $(".leo-modal-wishlist").modal("show");
                 //Leotheme add: update number product on icon wishlist after add from wishlist
                 if ($(".ap-btn-wishlist .ap-total-wishlist").length) {
-                  var old_num_wishlist = parseInt(
-                    $(".ap-btn-wishlist .ap-total-wishlist").data(
-                      "wishlist-total"
-                    )
-                  );
-                  var new_num_wishlist = old_num_wishlist + 1;
                   $(".ap-btn-wishlist .ap-total-wishlist").data(
                     "wishlist-total",
-                    new_num_wishlist
+                    object_result.result
                   );
                   $(".ap-btn-wishlist .ap-total-wishlist").text(
-                    new_num_wishlist
+                    object_result.result
                   );
                 }
 
