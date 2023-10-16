@@ -275,7 +275,6 @@ function LeoWishlistButtonAction() {
               } else {
                 //Leotheme add: update number product on icon wishlist after remove from wishlist
                 if (object_result.result) {
-                  var new_num_wishlist = old_num_wishlist - 1;
                   $(".ap-btn-wishlist .ap-total-wishlist").data(
                     "wishlist-total",
                     object_result.result
