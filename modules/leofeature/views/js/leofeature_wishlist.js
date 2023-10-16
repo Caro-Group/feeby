@@ -277,10 +277,12 @@ function LeoWishlistButtonAction() {
                 if (object_result.result) {
                   $(".ap-btn-wishlist .ap-total-wishlist").data(
                     "wishlist-total",
-                    object_result.result
+                    object_result.result.number_product
                   );
                   $(".ap-btn-wishlist .ap-total-wishlist").text(
-                    object_result.result
+                    object_result.result.number_product
+                      ? object_result.result.number_product
+                      : ""
                   );
                 }
 
@@ -351,10 +353,12 @@ function LeoWishlistButtonAction() {
                 if ($(".ap-btn-wishlist .ap-total-wishlist").length) {
                   $(".ap-btn-wishlist .ap-total-wishlist").data(
                     "wishlist-total",
-                    object_result.result
+                    object_result.result.number_product
                   );
                   $(".ap-btn-wishlist .ap-total-wishlist").text(
-                    object_result.result
+                    object_result.result.number_product
+                      ? object_result.result.number_product
+                      : ""
                   );
                 }
 
@@ -470,10 +474,12 @@ function LeoWishlistButtonAction() {
                 if ($(".ap-btn-wishlist .ap-total-wishlist").length) {
                   $(".ap-btn-wishlist .ap-total-wishlist").data(
                     "wishlist-total",
-                    object_result.result
+                    object_result.result.number_product
                   );
                   $(".ap-btn-wishlist .ap-total-wishlist").text(
-                    object_result.result
+                    object_result.result.number_product
+                      ? object_result.result.number_product
+                      : ""
                   );
                 }
 
@@ -566,10 +572,12 @@ function LeoWishlistButtonAction() {
                 if ($(".ap-btn-wishlist .ap-total-wishlist").length) {
                   $(".ap-btn-wishlist .ap-total-wishlist").data(
                     "wishlist-total",
-                    object_result.result
+                    object_result.result.number_product
                   );
                   $(".ap-btn-wishlist .ap-total-wishlist").text(
-                    object_result.result
+                    object_result.result.number_product
+                      ? object_result.result.number_product
+                      : ""
                   );
                 }
 
