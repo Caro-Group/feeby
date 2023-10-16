@@ -1190,6 +1190,7 @@ function activeDropdownEvent() {
 
           if (!obj.cart.products.length) {
             $(".leo-dropdown-cart").remove();
+            $('html').removeClass('overflow-hidden');
             $("[data-cart-count]").text(0);
           }
 
