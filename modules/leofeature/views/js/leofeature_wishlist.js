@@ -1005,6 +1005,16 @@ function LeoListWishlistProductAction() {
             $(".leo-modal-wishlist .modal-title").html(object_result.errors);
             $(".leo-modal-wishlist").removeClass("enable-action").modal("show");
           } else {
+            $(".ap-btn-wishlist .ap-total-wishlist").data(
+              "wishlist-total",
+              object_result.result.number_product
+            );
+            $(".ap-btn-wishlist .ap-total-wishlist").text(
+              object_result.result.number_product
+                ? object_result.result.number_product
+                : ""
+            );
+            
             object_e.parents(".leo-wishlistproduct-item").fadeOut(function () {
               $(this).remove();
               // console.log(object_parent_e);
