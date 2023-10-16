@@ -739,6 +739,15 @@ function LeoListWishlistAction() {
             } else {
               $(".default-wishlist:checked").removeAttr("checked");
               object_e.prop("checked", true);
+              $(".ap-btn-wishlist .ap-total-wishlist").data(
+                "wishlist-total",
+                object_result.result.number_product
+              );
+              $(".ap-btn-wishlist .ap-total-wishlist").text(
+                object_result.result.number_product
+                  ? object_result.result.number_product
+                  : ""
+              );
             }
 
             object_e.removeClass("active");
@@ -1014,7 +1023,7 @@ function LeoListWishlistProductAction() {
                 ? object_result.result.number_product
                 : ""
             );
-            
+
             object_e.parents(".leo-wishlistproduct-item").fadeOut(function () {
               $(this).remove();
               // console.log(object_parent_e);
