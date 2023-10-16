@@ -1292,9 +1292,7 @@ function activeDropdownEvent() {
   var flag = false;
 
   //DONGND:: change quantity product dropdown with button up-down
-  $(".leo-bt-product-quantity-down, .leo-bt-product-quantity-up").on(
-    "touchstart click",
-    function () {
+  $(".leo-bt-product-quantity-down, .leo-bt-product-quantity-up").on("click", function () {
       if (flag == true) {
         flag = false;
         clearTimeout(timer);
