@@ -15,7 +15,7 @@
 								{/if}
 							</div>
 							<div class="leo-cart-item-info">
-								<div class="product-name"><a class="label font-normal" href="{$product.url}" title="{$product.name}">{$product.name|truncate:24:'...'}</a></div>
+								<div class="product-name"><a class="label font-normal" href="{$product.url}" title="{$product.name}">{$product.name|truncate:24:'...':true}</a></div>
 								<div class="product-price">
 									{if $product.has_discount}
 										<div class="product-discount">
