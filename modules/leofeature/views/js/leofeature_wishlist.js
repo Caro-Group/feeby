@@ -275,13 +275,14 @@ function LeoWishlistButtonAction() {
               } else {
                 //Leotheme add: update number product on icon wishlist after remove from wishlist
                 if (object_result.result) {
-                  var new_num_wishlist = old_num_wishlist - 1;
                   $(".ap-btn-wishlist .ap-total-wishlist").data(
                     "wishlist-total",
-                    object_result.result
+                    object_result.result.number_product
                   );
                   $(".ap-btn-wishlist .ap-total-wishlist").text(
-                    object_result.result
+                    object_result.result.number_product
+                      ? object_result.result.number_product
+                      : ""
                   );
                 }
 
@@ -352,10 +353,12 @@ function LeoWishlistButtonAction() {
                 if ($(".ap-btn-wishlist .ap-total-wishlist").length) {
                   $(".ap-btn-wishlist .ap-total-wishlist").data(
                     "wishlist-total",
-                    object_result.result
+                    object_result.result.number_product
                   );
                   $(".ap-btn-wishlist .ap-total-wishlist").text(
-                    object_result.result
+                    object_result.result.number_product
+                      ? object_result.result.number_product
+                      : ""
                   );
                 }
 
@@ -471,10 +474,12 @@ function LeoWishlistButtonAction() {
                 if ($(".ap-btn-wishlist .ap-total-wishlist").length) {
                   $(".ap-btn-wishlist .ap-total-wishlist").data(
                     "wishlist-total",
-                    object_result.result
+                    object_result.result.number_product
                   );
                   $(".ap-btn-wishlist .ap-total-wishlist").text(
-                    object_result.result
+                    object_result.result.number_product
+                      ? object_result.result.number_product
+                      : ""
                   );
                 }
 
@@ -567,10 +572,12 @@ function LeoWishlistButtonAction() {
                 if ($(".ap-btn-wishlist .ap-total-wishlist").length) {
                   $(".ap-btn-wishlist .ap-total-wishlist").data(
                     "wishlist-total",
-                    object_result.result
+                    object_result.result.number_product
                   );
                   $(".ap-btn-wishlist .ap-total-wishlist").text(
-                    object_result.result
+                    object_result.result.number_product
+                      ? object_result.result.number_product
+                      : ""
                   );
                 }
 
@@ -732,6 +739,15 @@ function LeoListWishlistAction() {
             } else {
               $(".default-wishlist:checked").removeAttr("checked");
               object_e.prop("checked", true);
+              $(".ap-btn-wishlist .ap-total-wishlist").data(
+                "wishlist-total",
+                object_result.result.number_product
+              );
+              $(".ap-btn-wishlist .ap-total-wishlist").text(
+                object_result.result.number_product
+                  ? object_result.result.number_product
+                  : ""
+              );
             }
 
             object_e.removeClass("active");
@@ -998,6 +1014,16 @@ function LeoListWishlistProductAction() {
             $(".leo-modal-wishlist .modal-title").html(object_result.errors);
             $(".leo-modal-wishlist").removeClass("enable-action").modal("show");
           } else {
+            $(".ap-btn-wishlist .ap-total-wishlist").data(
+              "wishlist-total",
+              object_result.result.number_product
+            );
+            $(".ap-btn-wishlist .ap-total-wishlist").text(
+              object_result.result.number_product
+                ? object_result.result.number_product
+                : ""
+            );
+
             object_e.parents(".leo-wishlistproduct-item").fadeOut(function () {
               $(this).remove();
               // console.log(object_parent_e);
