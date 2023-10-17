@@ -877,3 +877,7 @@ img:not([src]) {
 [aria-expanded="false"]#category_description{
   height: 62px !important;
 }
+
+.fancybox-skin{
+  @apply !mb-10
+}
