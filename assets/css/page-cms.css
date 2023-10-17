@@ -22,6 +22,10 @@
     @apply font-body text-sm tablet:text-base text-main-dark;
 }
 
+.page-cms .page-content strong{
+    @apply text-main-dark;
+}
+
 .page-cms .page-content ol{
     @apply mb-[30px];
 }
@@ -31,7 +35,7 @@
 }
 
 .page-cms .page-content a{
-    @apply hover:text-main hover:decoration-solid transition;
+    @apply text-main-dark hover:text-main hover:decoration-solid transition;
 }
 
 .page-cms .page-cms h2{
