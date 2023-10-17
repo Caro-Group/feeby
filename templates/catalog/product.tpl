@@ -220,6 +220,8 @@
                   {l s='Learn more about our products' d='Shop.Theme.Actions'}
                 </span>
               </a>
+              {$category|dump}
+              {$category.id_parent|dump}
 
               {if $category["id_parent"] == '449' || $category["id_parent"] == '792'}
                 <a href="/instrukcja-montazu" target="_blank" class="flex items-center tablet-medium:basis-auto transition">
