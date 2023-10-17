@@ -46,8 +46,8 @@
                 </button>
             </li>
             <li >
-                <button data-sharer="email" data-url="https://{$smarty.server.HTTP_HOST}{$smarty.server.REQUEST_URI}" class="appearance-none cursor-pointer border-0 bg-transparent w-10 h-[35px] hover:text-main text-main-dark transition">
-                    <i class="fa-envelope text-inherit" style="
+                <button data-sharer="linkedin" data-url="https://{$smarty.server.HTTP_HOST}{$smarty.server.REQUEST_URI}" class="appearance-none cursor-pointer border-0 bg-transparent w-10 h-[35px] hover:text-main text-main-dark transition">
+                    <i class="fa-linkedin text-inherit" style="
                         font-family: 'FontAwesome';
                         font-style: normal;
                     "></i>
