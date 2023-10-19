@@ -152,7 +152,7 @@
                  )
                ))}
                  <div
-                   class="swiper-lazy swiper-custom-slide h-[110px] w-[110px] relative thumb-container cursor-pointer {if $image.id_image == $product.default_image.id_image} active {/if}"
+                   class="swiper-lazy swiper-custom-slide h-[110px] 1920:h-[90px] w-[110px] 1920:w-[90px] relative thumb-container cursor-pointer {if $image.id_image == $product.default_image.id_image} active {/if}"
                    style="    flex-shrink: 0;
                      transition-property: transform;">
                    <a data-image="{$image.bySize.large_default.url}" class="block w-full h-full"
