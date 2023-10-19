@@ -66,7 +66,7 @@
        <meta itemprop="url" content="{$product.url}">
 
        <div class="flex flex-wrap flex-row mb-16 tablet:mb-0">
-         <div class="w-full tablet:w-3/5 1920:w-1/3 tablet:pr-[55px] tablet:pb-10">
+         <div class="w-full tablet:w-3/5 1920:w-2/3 tablet:pr-[55px] tablet:pb-10">
            {block name='page_content_container'}
              <section class="page-content tablet:!mb-2.5" id="content">
                {block name='page_content'}
@@ -96,7 +96,7 @@
            {/block}
          </div>
  
-         <div class="h-max relative tablet:w-2/3 top-0 w-full tablet:sticky">
+         <div class="h-max relative tablet:w-2/5 1920:w-1/3 top-0 w-full tablet:sticky">
            {block name='page_header_container'}
              {block name='page_header'}
                <h1 class="font-header product-detail-name text-base tablet:text-xl font-normal mb-0 pr-[46px] tablet:pr-[94px]" itemprop="name">{block name='page_title'}{$product.name}{/block}</h1>
