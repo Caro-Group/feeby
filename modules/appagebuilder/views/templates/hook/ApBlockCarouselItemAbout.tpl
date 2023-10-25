@@ -24,9 +24,9 @@
 		{$Num=array_chunk($formAtts.slides, $itemsperpage)}
 		{foreach from=$Num item=sliders name=val}
 
-			<div class="swiper-slide">
 			{foreach from=$sliders item=slider key=i name="sliders"}
-				
+				<div class="swiper-slide">
+
 					<div class="w-[50px] tablet:w-[70px] aspect-square mb-6 bg-gray-1000 rounded-md swiper-lazy">
 					{if isset($slider.image) && !empty($slider.image)}
 						<picture>
@@ -54,8 +54,9 @@
 				{/if}
 
 
+
+				</div>
 			{/foreach}
-			</div>
 
 		{/foreach}
 		</div>
