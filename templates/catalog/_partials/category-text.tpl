@@ -22,7 +22,7 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
- {capture name="displayCategoryDescription"}
+{capture name="displayCategoryDescription"}
     {hook h="displayCategoryDescription"}
 {/capture}
  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mb-6 tablet:mb-[15px] ">
