@@ -24,13 +24,13 @@
 {extends file='catalog/listing/product-list.tpl'}
 
 {block name='displayTopBothColumn'}
-  
+
   {if isset($category) && $category.image && $category.image.large.url}
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 desktop-presta:mb-[10px]">
       <div class="-mx-[20px] tablet:mx-0">
         <picture>
           <source srcset="{$category.image.large.url|replace:" ":"%20"|replace:".png":".webp"|replace:".jpg":".webp"}?timestamp={$category.date_upd|replace:'-':''|replace:' ':''|replace:':':''|escape:'html':'UTF-8'}" type="image/webp">
-          <source srcset="{$category.image.large.url|replace:" ":"%20"}?timestamp={$category.date_upd|replace:'-':''|replace:' ':''|replace:':':''|escape:'html':'UTF-8'}" type="image/jpeg"> 
+          <source srcset="{$category.image.large.url|replace:" ":"%20"}?timestamp={$category.date_upd|replace:'-':''|replace:' ':''|replace:':':''|escape:'html':'UTF-8'}" type="image/jpeg">
           <img class="w-full h-auto max-h-[400px] object-cover tablet:rounded-md" src="{$category.image.large.url|replace:" ":"%20"}?timestamp={$category.date_upd|replace:'-':''|replace:' ':''|replace:':':''}" alt="{if !empty($category.image.legend)}{$category.image.legend}{else}{$category.name}{/if}">
         </picture>
       </div>
@@ -38,17 +38,6 @@
   {/if}
 
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mb-[10px] desktop-presta:mb-5">
-
-  
-    <h1 class="title_block title_block text-2xl tablet:text-4xl mt-2 tablet:mt-10 font-light text-main-dark">
-    {if $category.meta_keywords !== ''}
-        {$category.meta_keywords}
-        {elseif isset($categories) }
-        {$categories.name}
-        {else}
-          {$page.title}
-      {/if}
-    </h1>
     {include file='catalog/_partials/category-text.tpl'}
   </div>
 {/block}
@@ -67,8 +56,8 @@
                 </a>
               </div>
               <div class="subcategory-meta">
-                <h3><a class="subcategory-name" href="{$link->getCategoryLink($subcategory.id_category, $subcategory.link_rewrite)|escape:'html':'UTF-8'}">{$subcategory.name|truncate:25:'...'|escape:'html':'UTF-8'}</a></h3> 
-                <div class="subcategory-description">{$subcategory.description|strip_tags|truncate:120:'...'|escape:'html':'UTF-8' nofilter}</div>   
+                <h3><a class="subcategory-name" href="{$link->getCategoryLink($subcategory.id_category, $subcategory.link_rewrite)|escape:'html':'UTF-8'}">{$subcategory.name|truncate:25:'...'|escape:'html':'UTF-8'}</a></h3>
+                <div class="subcategory-description">{$subcategory.description|strip_tags|truncate:120:'...'|escape:'html':'UTF-8' nofilter}</div>
               </div>
             </div>
           {/foreach}
