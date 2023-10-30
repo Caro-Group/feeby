@@ -37,9 +37,7 @@
     </div>
   {/if}
 
-  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mb-[10px] desktop-presta:mb-5">
-    {include file='catalog/_partials/category-text.tpl'}
-  </div>
+  {include file='catalog/_partials/category-text.tpl'}
 {/block}
 
 {block name='displayBottomContent'}
