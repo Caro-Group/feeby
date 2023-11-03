@@ -881,3 +881,7 @@ img:not([src]) {
 .fancybox-skin{
   @apply !mb-10
 }
+
+.popup-attr-active{
+  @apply !pointer-events-auto !opacity-100
+}
