@@ -34,9 +34,9 @@
               {$group.name}
             </span>
           {/if}
-          {if $id_attribute_group eq 2 }
+          {if $id_attribute_group eq 5 }
             {include file="./product-attr-popup.tpl" content_id=27}
-          {elseif $id_attribute_group eq 5 }
+          {elseif $id_attribute_group eq 1 }
             {include file="./product-attr-popup.tpl" content_id=28}
           {/if}
         </div>
