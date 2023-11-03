@@ -30,6 +30,12 @@
       class="group !bg-white border-0 border-b border-solid border-gray-2000 font-normal py-3 text-main-dark select-list js-search-link {['current' => $sort_order.current, 'js-search-link' => true]|classnames}"
     >
     <span class="inline-block mr-3 top-1 w-5 h-5 rounded border-2 border-solid border-gray-3000 group-hover:border-main transition duration-200 relative  before:absolute before:content-[''] before:rounded-sm before:w-2.5 before:h-2.5 before:left-[3.75px] before:top-[3.5px] "></span>
+    {if $sort_order.label == 'Newest'}
+      {l s='Newest' d='Shop.Theme.Catalog'}
+    {else if $sort_order.label == 'Bestseller'}
+      {l s='Bestseller' d='Shop.Theme.Catalog'}
+    {else}
       {$sort_order.label}
+    {/if}
     </a>
   {/foreach}
