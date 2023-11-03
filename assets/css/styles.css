@@ -738,6 +738,10 @@ img:not([src]) {
   @apply !right-0 !left-0 !visible !bg-none justify-center items-center flex !w-10 !h-10 text-main-dark bg-gray-1000 hover:bg-main-dark hover:text-white rounded-full transition
 }
 
+.zoomContainer{
+  @apply z-50
+}
+
 .popup-attr-active{
   @apply !pointer-events-auto !opacity-100
 }
