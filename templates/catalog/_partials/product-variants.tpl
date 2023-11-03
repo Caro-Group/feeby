@@ -22,7 +22,6 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
- {assign var="ids_with_info" value=[2,5]} 
  
  <div class="product-variants">
   {foreach from=$groups key=id_attribute_group item=group}
@@ -35,7 +34,7 @@
               {$group.name}
             </span>
           {/if}
-          {if in_array($id_attribute_group, $ids_with_info)}
+          {if $id_attribute_group eq 2 }
             <span class="text-inherit ml-2 hover:underline hover:text-main cursor-pointer transition duration-200" data-attr-popup-open>
               {l s='Look' d='Shop.Theme.Global'}
             </span>
@@ -48,7 +47,8 @@
                       </svg>
                   </div>
                   <div class="w-full px-7 overflow-y-auto bg-gray-default">
-                    {* attr info image *}
+                    {assign var=attr_images value=CMS::getCMSContent(27)}
+                    {$attr_images.content nofilter}
                   </div>
                 </div>
             </div>
