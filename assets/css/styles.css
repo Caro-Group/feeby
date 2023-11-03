@@ -882,6 +882,10 @@ img:not([src]) {
   @apply !mb-10
 }
 
+.zoomContainer{
+  @apply z-50
+}
+
 .popup-attr-active{
   @apply !pointer-events-auto !opacity-100
 }
