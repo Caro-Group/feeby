@@ -99,7 +99,7 @@
            {/block}
          </div>
  
-         <div class="h-max relative tablet:w-2/5 top-0 w-full tablet:sticky z-40">
+         <div class="h-max relative tablet:w-2/5 top-0 w-full tablet:sticky z-50">
            {block name='page_header_container'}
              {block name='page_header'}
                <h1 class="font-header product-detail-name text-[20px] tablet:text-[35px] tablet:leading-[45px] leading-24px mb-0 pr-[46px]" itemprop="name">{block name='page_title'}{$product.name}{/block}</h1>

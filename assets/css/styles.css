@@ -739,7 +739,7 @@ img:not([src]) {
 }
 
 .zoomContainer{
-  @apply z-50
+  @apply z-[60]
 }
 
 .popup-attr-active{
