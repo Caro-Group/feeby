@@ -37,6 +37,9 @@
           {if $id_attribute_group eq 2 }
             {include file="./product-attr-popup.tpl" content_id=27}
           {/if}
+          {* {if $id_attribute_group eq 5 }
+            {include file="./product-attr-popup.tpl" content_id=28}
+          {/if} *}
         </div>
         
         {if $group.group_type == 'select'}
