@@ -1657,3 +1657,13 @@ $(document).ready(function () {
       "border-0 border-b-[10px] tablet-medium:border-b-0 border-solid border-gray-1000"
     );
 });
+
+$(document).ready(function () {
+  $(document).on('click','[data-attr-popup-open]',()=>{
+    $('[data-attr-popup]').addClass('popup-attr-active')
+  })
+  $(document).on('click','[data-attr-popup-close]',()=>{
+    $('[data-attr-popup]').removeClass('popup-attr-active')
+  })
+
+});
