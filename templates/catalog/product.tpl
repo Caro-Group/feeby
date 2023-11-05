@@ -28,7 +28,7 @@
  {block name='head_seo' prepend}
    <link rel="canonical" href="{$product.canonical_url}">
  {/block}
- 
+
  {block name='head' append}
    <meta property="og:type" content="product">
    <meta property="og:url" content="{$urls.current_url}">
@@ -47,21 +47,21 @@
    <meta property="product:weight:units" content="{$product.weight_unit}">
    {/if}
  {/block}
- 
- {block name='content'}  
- 
+
+ {block name='content'}
+
   {foreach from=$product->features item=$feature}
     {if $feature.name == 'Konfigurowalny' && $feature.value == 'Tak'}
   	  {assign var="productConfigurable" value="true"}
-      {include file="catalog/_partials/product-configure.tpl" product=$product} 
+      {include file="catalog/_partials/product-configure.tpl" product=$product}
     {/if}
   {/foreach}
 
-  
+
    {if isset($product.productLayout) && $product.productLayout != ''}
      {hook h='displayLeoProfileProduct' product=$product typeProduct='detail'}
    {else}
- 
+
      <section id="main" class="product-detail tablet:pt-[20px] desktop-presta:pt-0" itemscope itemtype="https://schema.org/Product">
        <meta itemprop="url" content="{$product.url}">
 
@@ -89,20 +89,20 @@
                   </ul>
                 </div>
               {/if}
-  
+
              {block name='product_images_modal'}
                {include file='catalog/_partials/product-images-modal.tpl'}
              {/block}
            {/block}
          </div>
- 
+
          <div class="h-max relative tablet:w-2/5 1920:w-[calc(33.333333%_+_30px)] top-0 w-full tablet:sticky z-[60]">
            {block name='page_header_container'}
              {block name='page_header'}
                <h1 class="font-header product-detail-name text-base tablet:text-xl font-normal mb-0 pr-[46px] tablet:pr-[94px]" itemprop="name">{block name='page_title'}{$product.name}{/block}</h1>
              {/block}
            {/block}
- 
+
            <div class=" absolute top-0 right-0">
              <div class="mt-10 tablet:mt-0 tablet:mr-12">
               {include file='_partials/share-btn.tpl'}
@@ -112,18 +112,18 @@
               {hook h='displayLeoCompareButton' product=$product}
             </div>
            </div>
- 
+
            {hook h='displayLeoProductReviewExtra' product=$product}
- 
+
            <div class="product-information">
              {hook h='displayProductInformationTop'}
-             
+
              {block name='product_description_short'}
               {if $product.description_short}
                 <div class="text-sm tablet:text-base text-main-dark font-body font-light" itemprop="description">{$product.description_short|strip_tags nofilter}</div>
               {/if}
              {/block}
-              
+
               <div class="product-actions">
                {block name='product_buy'}
                  <form action="{$urls.pages.cart}" method="post" id="add-to-cart-or-refresh">
@@ -135,11 +135,11 @@
                     {assign var="perM" value=true}
                     {include file='catalog/_partials/product-prices.tpl'}
                    {/block}
-                  
+
                    {block name='product_discounts'}
                     {include file='catalog/_partials/product-discounts.tpl'}
                    {/block}
- 
+
                    {block name='product_variants'}
                      {include file='catalog/_partials/product-variants.tpl'}
                    {/block}
@@ -147,7 +147,7 @@
                       <p class="font-body font-medium text-sm tablet:text-base text-gray-3000">{l s='Wypróbuj fototapetę przed zamówieniem ' d='Shop.Theme.Actions'}
                       <button type="button" class="bg-transparent text-gray-3000 border-0 px-0 underline hover:text-main cursor-pointer transition " data-button-action="add-sample-to-cart" >{l s='zamów próbkę' d='Shop.Theme.Actions'}</button>.</p>
                    {/if}
- 
+
                    {block name='product_pack'}
                      {if $packItems}
                        <section class="product-pack">
@@ -160,49 +160,49 @@
                      </section>
                      {/if}
                    {/block}
- 
-                   
+
+
                    <div class="fixed bottom-0 left-0 right-0 tablet:relative w-full tablet:w-auto px-5 tablet:px-0 bg-gray-default tablet:bg-transparent z-50  shadow-[0px_-4px_20px_0px_rgba(0,0,0,0.15)] shadow-black/[0.15] tablet:shadow-none">
 
                     <div class="{if isset($productConfigurable)}hidden{/if} desktop-wide:w-full">
-                    
+
                       {block name='product_add_to_cart'}
                         {include file='catalog/_partials/product-add-to-cart.tpl'}
                       {/block}
-    
+
                       {block name='product_additional_info'}
                         {include file='catalog/_partials/product-additional-info.tpl'}
                       {/block}
-    
+
                     </div>
                   </div>
-                   
+
                    {* Input to refresh product HTML removed, block kept for compatibility with themes *}
                    {block name='product_refresh'}{/block}
                  </form>
                {/block}
              </div>
- 
-            
-            
+
+
+
             {if isset($productConfigurable)}
               <button type="button" class="bg-main block border-0 cursor-pointer font-medium h-full hover:bg-main-hover overflow-hidden phone-wide:text-base px-4 py-3 relative rounded-full tablet:text-xl text-base text-center text-white transition uppercase w-full tablet:mb-6" data-toggle="modal" data-target="#productConfigurable">
                 {l s='Zamów fototapetę' d='Shop.Theme.Actions'}
               </button>
-              
+
             {/if}
-            
+
             {if $product.is_customizable && count($product.customizations.fields)}
               <div class="{if isset($productConfigurable)}hidden{/if}">
               {block name='product_customization'}
                 {include file="catalog/_partials/product-customization.tpl" customizations=$product.customizations}
               {/block}
-              
+
               {hook h='displayProductButtons' product=$product}
                </div>
              {/if}
 
- 
+
              {block name='hook_display_reassurance'}
                {hook h='displayReassurance'}
              {/block}
@@ -221,7 +221,7 @@
                 </span>
               </a>
 
-              {if $breadcrumb["count"] > 0 && $breadcrumb["links"][1]["title"]|strstr:"Fototapety" || 
+              {if $breadcrumb["count"] > 0 && $breadcrumb["links"][1]["title"]|strstr:"Fototapety" ||
                   $breadcrumb["count"] > 1 && $breadcrumb["links"][2]["title"]|strstr:"Fototapety premium"}
                 <a href="{url entity='attachment' params=['id_attachment' => 1]}" class="flex items-center tablet-medium:basis-auto transition">
                   <svg class="shrink-0 mr-2.5" xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 21 23" fill="none">
@@ -235,7 +235,7 @@
              </div>
 
              <hr class="my-5 bg-gray-2000 tablet:hidden">
- 
+
            </div>
 
            </div>
@@ -254,7 +254,7 @@
               </div>
             {/if}
        </div>
- 
+
        {block name='product_info'}
          {if isset($USE_PTABS) && $USE_PTABS == 'tab'}
            {include file="sub/product_info/tab.tpl"}
@@ -262,16 +262,16 @@
            {include file="sub/product_info/accordions.tpl"}
          {else}
            {include file="sub/product_info/default.tpl"}
-         {/if}  
+         {/if}
        {/block}
- 
- 
- 
- 
+
+
+
+
        <aside class="products-aside -mx-[30px] overflow-hidden">
          {* hook h='displayApSC' sc_key=sc2585205791 *}
        </aside>
- 
+
        {block name='product_accessories'}
          {if $accessories}
            <section class="product-accessories clearfix">
@@ -301,21 +301,21 @@
        {block name='product_footer'}
          {hook h='displayFooterProduct' product=$product category=$category}
        {/block}
- 
+
        {block name='product_images_modal'}
          {include file='catalog/_partials/product-images-modal.tpl'}
        {/block}
      </section>
    {/if}
- 
+
  {/block}
 
  {block name='hook_footer_before' prepend}
   <div class="container max-w-screen-full-hd w-full">
     <div class="border-0 border-b border-gray-2000 border-solid mx-auto w-full tablet:mb-6 tablet:mt-1"></div>
   </div>
-  <aside class="container instagram">
-  {hook h='displayApSC' sc_key=sc2039205557}
+  <aside class="container instagram !hidden">
+   {hook h='displayApSC' sc_key=sc2039205557}
   </aside>
  {/block}
- 
+
