@@ -42,7 +42,7 @@
 	<div class="flex flex-col px-[30px] flex-auto mt-[30px]">
 		{if $config->get('listing_show_title','1')}
 			<h2 class="font-header font-light text-[25px] mb-[30px]">
-				<a href="{$blog.link|escape:'html':'UTF-8'}" target="_blank" class="text-main-dark hover:text-main transition"
+				<a href="{$blog.link|escape:'html':'UTF-8'}" target="_blank" class="text-main-dark hover:text-main break-words transition "
 					title="{$blog.title|escape:'html':'UTF-8'}">{$blog.title|escape:'html':'UTF-8'}</a>
 			</h2>
 		{/if}
