@@ -60,7 +60,7 @@
 {/function}
 
 <div class="hidden-sm-down pt-3 pr-10">
-  <h4 class="text-2xl font-light text-main-dark mb-3">{l s='Categories' d='Shop.Theme.Catalog'}</h4>
+  <span class="inline-block text-2xl font-light text-main-dark mb-3">{l s='Categories' d='Shop.Theme.Catalog'}</span>
   <div class="block_content">
     <ul class="category-top-menu">
       <li data-id="">{categories nodes=$categories.children}</li>
