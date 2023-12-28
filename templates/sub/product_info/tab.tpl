@@ -55,7 +55,6 @@
 		     	{block name='product_description'}
 					<div class="flex flex-wrap product-desc-wrapper">
 		       			<div class="w-full tablet:w-1/2 product-description mb-[60px] tablet:mb-5">
-						   <h2 class="h2 product-title" itemprop="name">{$product.name}</h2>
 						   {$product.description nofilter}
 						</div>
 						<div class="w-full tablet:w-1/2 product-icons-description">{hook h='displayApSC' sc_key=sc3645178611}</div>
