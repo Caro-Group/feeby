@@ -27,7 +27,7 @@
 {/capture}
  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mb-6 tablet:mb-[15px] ">
     <div id="category_description" class="{if $smarty.capture.displayCategoryDescription|strip_tags:false|count_paragraphs > 3}collapse{/if} !visible !block pb-5 mt-2 tablet:mt-10 relative overflow-hidden after:absolute after:content-[''] after:bottom-0 after:inset-x-0 after:h-4 after:from-white after:to-transparent after:bg-gradient-to-t" {if $smarty.capture.displayCategoryDescription|strip_tags:false|count_paragraphs > 3}aria-expanded="false"{/if}>
-        <div class="[&_p]:font-body [&_p]:font-light max-w-screen-tablet-wide [&_p]:text-main-dark [&_p]:!text-[13px] [&_a]:text-main [&_a]:hover:text-main-hover [&_a]:transition [&_a]:duration-200 title_block">
+        <div class="[&>p]:font-body [&>p]:font-light max-w-screen-tablet-wide [&>p]:text-main-dark [&>p]:!text-[13px] title_block">
           {$smarty.capture.displayCategoryDescription nofilter}
         </div>
     </div>

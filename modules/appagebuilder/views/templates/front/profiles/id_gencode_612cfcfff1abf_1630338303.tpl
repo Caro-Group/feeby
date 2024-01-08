@@ -5,4 +5,4 @@
 * @copyright Apollotheme
 * @description: ApPageBuilder is module help you can build content for your shop
 *}
-{include file='module:leofeature/views/templates/front/wishlist_button.tpl'}
+{hook h='displayApSC' sc_key=sc2496999506}

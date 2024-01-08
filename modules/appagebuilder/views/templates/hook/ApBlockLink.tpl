@@ -77,9 +77,9 @@
         {if !isset($formAtts.accordion_type) || $formAtts.accordion_type == 'full'}{* Default : always full *}
             <div class="ApLink {(isset($formAtts.class)) ? $formAtts.class : ''|escape:'html':'UTF-8'}">
                 {if isset($formAtts.title) && !empty($formAtts.title)}
-                    <span class="mb-0 text-base tablet:text-xl font-normal uppercase text-main-dark">
+                    <h4 class="mb-0 text-base tablet:text-xl font-normal uppercase text-main-dark">
                         {$formAtts.title|escape:'html':'UTF-8'}
-                    </span>
+                    </h4>
                 {/if}
                 {if isset($formAtts.sub_title) && $formAtts.sub_title}
                     <div class="sub-title-widget">{$formAtts.sub_title nofilter}</div>
@@ -101,9 +101,9 @@
                 {if isset($formAtts.title) && !empty($formAtts.title)}
                     <div class="title clearfix -mx-[10px] tablet:-mx-0 bg-white tablet:bg-transparent clearfix flex h-14 items-center px-6 tablet:px-0 border-0 border-b-2 border-solid border-gray-1000 tablet:border-b-0"
                         data-target="#footer-link-{$formAtts.form_id|escape:'html':'UTF-8'}" data-toggle="collapse">
-                        <span class="mb-0 text-base tablet:text-xl font-normal uppercase text-main-dark">
+                        <h4 class="mb-0 text-base tablet:text-xl font-normal uppercase text-main-dark">
                             {$formAtts.title|escape:'html':'UTF-8'}
-                        </span>
+                        </h4>
                         <span class="float-xs-right">
                             <span class="navbar-toggler collapse-icons">
                                 <i class="material-icons text-4xl add">&#xE313;</i>
