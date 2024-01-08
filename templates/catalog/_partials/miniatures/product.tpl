@@ -82,7 +82,7 @@
 			{hook h='displayLeoCartQuantity' product=$product}
 			
 			{block name='product_name'}
-		         <h3 itemprop="name" class="mb-[3px] tablet:mb-2"><a class="text-sm tablet:text-base font-light text-main-dark font-body" href="{$product.canonical_url}">{$product.name}</a></h3>
+		        <a itemprop="name" class="inline-block mb-[3px] tablet:mb-2 text-sm tablet:text-base font-light text-main-dark font-body" href="{$product.canonical_url}">{$product.name}</a>
 			{/block}
  
 				{block name='product_price_and_shipping'}
