@@ -10,7 +10,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     environment: production
 
     steps:
@@ -63,4 +63,4 @@ jobs:
           remote_port: ${{ secrets.REMOTE_PORT }}
           remote_user: ${{ secrets.REMOTE_USER }}
           remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
-          path: './'
+          path: "./"
