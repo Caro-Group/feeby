@@ -29,7 +29,7 @@ jobs:
         run: sudo rm -rf node_modules
 
       - name: Deploy to Server
-        uses: burnett01/rsync-deployments@5.2
+        uses: burnett01/rsync-deployments@6.0.0
         with:
           switches: -azrv --dry-run --relative --cvs-exclude --exclude='node_modules' --exclude='cache' --exclude='assets/img/modules' --exclude='*.code-workspace' --exclude='.*' --exclude='*.sh'  --delete
           remote_path: "${{ secrets.REMOTE_PATH }}"
