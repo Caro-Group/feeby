@@ -72,7 +72,7 @@
 							<label class="form-control-label"><sup>*</sup> {l s='Required fields' d='Modules.Leofeature.Shop'}</label>
 						<input id="id_product_review" name="id_product_review" type="hidden" value='{$product_modal_review->id}' />
 						</div>
-						<button class="btn btn-primary form-control-submit leo-fake-button pull-xs-right" type="submit">
+						<button class="btn btn-primary  leo-fake-button pull-xs-right" type="submit">
 						  
 						</button>
 					</form>
