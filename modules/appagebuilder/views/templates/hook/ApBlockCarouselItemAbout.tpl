@@ -49,7 +49,7 @@
 					</div>
 
 						{if isset($slider.title) && !empty($slider.title)}
-							<h2 class="mb-6 font-normal">{$slider.title|escape:'html':'UTF-8' nofilter}</h2>
+							<h3 class="mb-6 text-base tablet:text-2xl text-gray-main font-normal">{$slider.title|escape:'html':'UTF-8' nofilter}</h3>
 						{/if}
 						{if isset($slider.sub_title) && !empty($slider.sub_title)}
 							<p class="uppercase hover:text-main transition font-body font-normal text-[10px] tablet:text-sm">
