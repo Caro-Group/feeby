@@ -905,16 +905,10 @@ div.star:before {
   .leo-remove-from-cart:hover {
     color: #000; }
   .leo-remove-from-cart i.material-icons {
-    font-size: 0;
     width: 20px;
     height: 20px;
     text-align: center;
     line-height: 20px; }
-    .leo-remove-from-cart i.material-icons:before {
-      content: "\f00d";
-      font-family: FontAwesome;
-      font-size: 12px;
-      display: inline-block; }
 
 .leo-dropdown-additional, .view-additional {
   clear: both;
