@@ -838,7 +838,9 @@ function showDropDownCart($element, $type) {
 
   if (!object_element.hasClass("show")) {
     object_element.addClass("show");
-    cart_block.addClass("expanded")
+    if (object_element.length > 0) {
+      cart_block.addClass("expanded")
+    }
     
     $(window).scrollTop(0);
     if ($type == "defaultcart") {
