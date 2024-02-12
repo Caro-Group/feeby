@@ -18,12 +18,12 @@
             </div>
         {/if}
         {if isset($content_slider_tablet)}
-            <div class="hidden tablet:block desktop-presta:hidden container mx-auto">
+            <div class="hidden tablet:block tablet-medium:hidden">
                 {$content_slider_tablet nofilter}{* HTML form , no escape necessary *}
             </div>
         {/if}
         {if isset($content_slider)}
-            <div class="hidden desktop-presta:block container mx-auto px-2.5">
+            <div class="hidden tablet-medium:block container mx-auto px-2.5">
                 {$content_slider nofilter}{* HTML form , no escape necessary *}
             </div>
         {/if}
