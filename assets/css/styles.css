@@ -889,3 +889,9 @@ img:not([src]) {
 .popup-attr-active{
   @apply !pointer-events-auto !opacity-100
 }
+
+.leo-blockcart.expanded::before{
+  content: "\e646";
+  font-family: 'themify';
+  @apply bg-white text-main-dark text-xl cursor-pointer left-px absolute hover:text-main transition
+}
