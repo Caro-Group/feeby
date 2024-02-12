@@ -844,7 +844,7 @@ function showDropDownCart($element, $type) {
     
     $(window).scrollTop(0);
     if ($type == "defaultcart") {
-      if ($(window).width() < 993) {
+      if ($(window).width() < 993 && object_element.length > 0) {
         $("html").addClass("overflow-hidden");
       }
     }
