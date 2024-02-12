@@ -36,7 +36,7 @@
 						<source data-srcset="{$slider.main_image|replace:" ":"%20"|replace:".jpg":".webp"|replace:".png":".webp"|escape:'html':'UTF-8'}" type="image/webp">
 						<source data-srcset="{$slider.main_image|replace:" ":"%20"|escape:'html':'UTF-8'}" type="image/jpeg">
 						<img
-							class="block swiper-lazy min-w-full object-cover aspect-square tablet:aspect-auto object-bottom tablet:object-left h-auto"
+							class="swiper-lazy min-w-full object-cover aspect-[8/9] tablet:aspect-auto object-bottom tablet:object-left h-auto"
 							{if $smarty.foreach.sliders.first}{else}loading="lazy"{/if}
 							width="{$sliderParams['width']|escape:'html':'UTF-8'}"
 							height="{$sliderParams['height']|escape:'html':'UTF-8'}"
