@@ -893,5 +893,5 @@ img:not([src]) {
 .leo-blockcart.expanded::before{
   content: "\e646";
   font-family: 'themify';
-  @apply bg-white text-main-dark text-xl cursor-pointer left-px absolute hover:text-main transition
+  @apply bg-white text-main-dark text-xl cursor-pointer left-0.5 absolute hover:text-main transition
 }
