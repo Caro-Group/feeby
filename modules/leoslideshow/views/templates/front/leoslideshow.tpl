@@ -36,7 +36,7 @@
 						<source data-srcset="{$slider.main_image|replace:" ":"%20"|replace:".jpg":".webp"|replace:".png":".webp"|escape:'html':'UTF-8'}" type="image/webp">
 						<source data-srcset="{$slider.main_image|replace:" ":"%20"|escape:'html':'UTF-8'}" type="image/jpeg">
 						<img
-							class="block swiper-lazy min-w-full object-cover aspect-square tablet:aspect-auto object-bottom tablet:object-left tablet:h-auto"
+							class="block swiper-lazy min-w-full object-cover aspect-square tablet:aspect-auto object-bottom tablet:object-left h-auto"
 							{if $smarty.foreach.sliders.first}{else}loading="lazy"{/if}
 							width="{$sliderParams['width']|escape:'html':'UTF-8'}"
 							height="{$sliderParams['height']|escape:'html':'UTF-8'}"
@@ -89,10 +89,10 @@
 		{/foreach}
 	{/if}
 	</div>
-	<div class="tablet:hidden swiper-pagination"></div>
+	<div class="tablet:hidden !bottom-5 swiper-pagination"></div>
 	<div class="hidden tablet:block absolute bottom-16 w-full z-10">
-		<div class="max-w-screen-desktop-wide mx-auto px-16">
-			<i class="ti-arrow-left swiper_banner-button-prev p-3 ml-6 border-2 border-white text-white hover:bg-white hover:text-main-dark rounded-full border-solid transition cursor-pointer"></i>
+		<div class="mx-auto tablet:px-7 desktop-presta:px-24">
+			<i class="ti-arrow-left swiper_banner-button-prev p-3 border-2 border-white text-white hover:bg-white hover:text-main-dark rounded-full border-solid transition cursor-pointer"></i>
 			<i class="ti-arrow-right swiper_banner-button-next p-3 ml-6 border-2 border-white text-white hover:bg-white hover:text-main-dark rounded-full border-solid transition cursor-pointer"></i>
 		</div>
 	</div>
