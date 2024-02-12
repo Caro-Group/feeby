@@ -65,7 +65,7 @@
   {/strip}
 {/function}
 
-<div class="hidden-sm-down pt-3 pr-10">
+<div class="hidden-sm-down pt-3">
   <span class="inline-block text-2xl font-light text-main-dark mb-3">{l s='Categories' d='Shop.Theme.Catalog'}</span>
   <div class="block_content">
     {if !empty($categories.children)}

@@ -826,6 +826,7 @@ function updatePostionLabel($parent) {
 //DONGND:: show dropdown cart
 function showDropDownCart($element, $type) {
   var object_element = "";
+  var cart_block = $element.parents().find('.leo-blockcart')
   if ($type == "defaultcart") {
     object_element = $element.siblings(".leo-dropdown-cart");
   }
@@ -837,6 +838,8 @@ function showDropDownCart($element, $type) {
 
   if (!object_element.hasClass("show")) {
     object_element.addClass("show");
+    cart_block.addClass("expanded")
+    
     $(window).scrollTop(0);
     if ($type == "defaultcart") {
       if ($(window).width() < 993) {
@@ -845,6 +848,7 @@ function showDropDownCart($element, $type) {
     }
   } else {
     object_element.removeClass("show");
+    cart_block.removeClass("expanded")
     if ($type == "defaultcart") {
       if ($(window).width() < 993) {
         $("html").removeClass("overflow-hidden");
