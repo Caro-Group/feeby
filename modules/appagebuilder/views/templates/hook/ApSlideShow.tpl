@@ -11,21 +11,21 @@
         <div class="alert alert-warning leo-lib-error">{$formAtts.lib_error}</div>
     {/if}
 {else}
-<div id="slideshow-{$formAtts.form_id|escape:'html':'UTF-8'}" class="ApSlideShow">
-	{if isset($content_slider_mobile)}
-        <div class="tablet:hidden">
-		    {$content_slider_mobile nofilter}{* HTML form , no escape necessary *}
-        </div>
-	{/if}
-    {if isset($content_slider_tablet)}
-        <div class="hidden tablet:block desktop-presta:hidden">
-		    {$content_slider_tablet nofilter}{* HTML form , no escape necessary *}
-        </div>
-	{/if}
-    {if isset($content_slider)}
-        <div class="hidden desktop-presta:block">
-		    {$content_slider nofilter}{* HTML form , no escape necessary *}
-        </div>
-	{/if}
-</div>
+    <div id="slideshow-{$formAtts.form_id|escape:'html':'UTF-8'}" class="ApSlideShow">
+        {if isset($content_slider_mobile)}
+            <div class="tablet:hidden">
+                {$content_slider_mobile nofilter}{* HTML form , no escape necessary *}
+            </div>
+        {/if}
+        {if isset($content_slider_tablet)}
+            <div class="hidden tablet:block desktop-presta:hidden container mx-auto">
+                {$content_slider_tablet nofilter}{* HTML form , no escape necessary *}
+            </div>
+        {/if}
+        {if isset($content_slider)}
+            <div class="hidden desktop-presta:block container mx-auto px-2.5">
+                {$content_slider nofilter}{* HTML form , no escape necessary *}
+            </div>
+        {/if}
+    </div>
 {/if}
