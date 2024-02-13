@@ -18,31 +18,12 @@
 								<div class="product-name"><a class="label font-medium" href="{$product.url}" title="{$product.name}">{$product.name}</a></div>
 								
 								{if $product.attributes|count && $show_combination}
-									<div class="combinations text-xs text-gray-dark">
-										{foreach from=$product.attributes key="attribute" item="value"}
+									<div class="combinations text-xs text-gray-3000">
+										{foreach from=$product.attributes|@array_slice:0:2 key="attribute" item="value"}
 											  <div class="product-line-info">
 												<span class="label">{$attribute}:</span>
-												<span class="value text-black">{$value}</span>
+												<span class="value !text-gray-3000">{$value}</span>
 											  </div>
-										{/foreach}
-									</div>
-								{/if}
-								{if $product.customizations|count && $show_customization}
-									<div class="customizations text-xs text-gray-dark mt-2">
-										{foreach from=$product.customizations item='customization'}
-
-											<ul>
-												{foreach from=$customization.fields item='field'}
-													<li>
-														<span class="label">{$field.label}</span>
-														{if $field.type == 'text'}
-															: <span class="value">{$field.text nofilter}</span>
-														{else if $field.type == 'image'}
-															<img src="{$field.image.small.url}">
-														{/if}
-													</li>
-												{/foreach}
-											</ul>
 										{/foreach}
 									</div>
 								{/if}
