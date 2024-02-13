@@ -27,25 +27,6 @@
 										{/foreach}
 									</div>
 								{/if}
-								{if $product.customizations|count && $show_customization}
-									<div class="customizations text-xs text-gray-dark mt-2">
-										{foreach from=$product.customizations item='customization'}
-
-											<ul>
-												{foreach from=$customization.fields item='field'}
-													<li>
-														<span class="label">{$field.label}</span>
-														{if $field.type == 'text'}
-															: <span class="value">{$field.text nofilter}</span>
-														{else if $field.type == 'image'}
-															<img src="{$field.image.small.url}">
-														{/if}
-													</li>
-												{/foreach}
-											</ul>
-										{/foreach}
-									</div>
-								{/if}
 								
 								<div class="product-price mt-1">
 									{if $product.has_discount}
