@@ -55,7 +55,7 @@
                                 </li>
                             {/if}
                         {/foreach}
-                        <li class="ml-6 leading-[16px] hidden tablet-medium:block">
+                        <li class="ml-6 leading-[16px] hidden tablet:block">
                             <a class="text-main-dark hover:text-main transition font-body flex items-center gap-1 whitespace-nowrap {if !$customer.is_logged} leo-quicklogin{/if}"
                                     {if $customer.is_logged}
                                         href="{$link->getPageLink('my-account', true)|escape:'html'}"
