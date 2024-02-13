@@ -90,7 +90,7 @@
 	{/if}
 	</div>
 	<div class="tablet:hidden !bottom-5 swiper-pagination"></div>
-	<div class="hidden tablet:block absolute bottom-16 w-full z-10">
+	<div class="hidden tablet:block absolute bottom-16 z-10">
 		<div class="mx-auto tablet:px-7 desktop-presta:px-24">
 			<i class="ti-arrow-left swiper_banner-button-prev p-3 border-2 border-white text-white hover:bg-white hover:text-main-dark rounded-full border-solid transition cursor-pointer"></i>
 			<i class="ti-arrow-right swiper_banner-button-next p-3 ml-6 border-2 border-white text-white hover:bg-white hover:text-main-dark rounded-full border-solid transition cursor-pointer"></i>
