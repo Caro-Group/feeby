@@ -8,14 +8,51 @@
 	{if $only_total != 1}
 		<div class="leo-dropdown-cart-content clearfix rounded-md font-body font-light text-main-dark text-sm shadow-xl">
 			<div class="leo-dropdown-list-item-warpper">
-				<ul class="leo-dropdown-list-item overflow-auto">{foreach from=$cart.products item=product name="cart_product"}<li class="leo-dropdown-cart-item clearfix{if ($product.attributes|count && $show_combination) || ($product.customizations|count && $show_customization)} has-view-additional{/if}{if $smarty.foreach.cart_product.first} first{/if}{if $smarty.foreach.cart_product.last} last{/if}">
-							<div class="leo-cart-item-img">
+				<ul class="leo-dropdown-list-item flex overflow-auto">{foreach from=$cart.products item=product name="cart_product"}<li class="leo-dropdown-cart-item clearfix{if ($product.attributes|count && $show_combination) || ($product.customizations|count && $show_customization)} has-view-additional{/if}{if $smarty.foreach.cart_product.first} first{/if}{if $smarty.foreach.cart_product.last} last{/if}">
+							<div class="leo-cart-item-img w-1/3 max-w-[150px] shrink-0">
 								{if $product.images}
 									<a class="label" href="{$product.url}" title="{$product.name}"><img class="img-fluid border border-solid bg-gray-1000 rounded-md" src="{$product.images.0.bySize.small_default.url}" alt="{$product.name}" title="{$product.name}"/></a>
 								{/if}
 							</div>
-							<div class="leo-cart-item-info">
-								<div class="product-name"><a class="label font-normal" href="{$product.url}" title="{$product.name}">{$product.name|truncate:24:'...':true}</a></div>
+							<div class="leo-cart-item-info grow">
+								<div class="product-name"><a class="label font-medium" href="{$product.url}" title="{$product.name}">{$product.name}</a></div>
+								
+								{if $product.attributes|count && $show_combination}
+									<div class="view-combination label">
+
+									</div>
+									<div class="combinations">
+										{foreach from=$product.attributes key="attribute" item="value"}
+											  <div class="product-line-info">
+												<span class="label">{$attribute}:</span>
+												<span class="value">{$value}</span>
+											  </div>
+										{/foreach}
+									</div>
+								{/if}
+								{if $product.customizations|count && $show_customization}
+									<div class="view-customization label">
+
+									</div>
+									<div class="customizations">
+										{foreach from=$product.customizations item='customization'}
+
+											<ul>
+												{foreach from=$customization.fields item='field'}
+													<li>
+														<span class="label">{$field.label}</span>
+														{if $field.type == 'text'}
+															: <span class="value">{$field.text nofilter}</span>
+														{else if $field.type == 'image'}
+															<img src="{$field.image.small.url}">
+														{/if}
+													</li>
+												{/foreach}
+											</ul>
+										{/foreach}
+									</div>
+								{/if}
+								
 								<div class="product-price">
 									{if $product.has_discount}
 										<div class="product-discount">
@@ -69,7 +106,7 @@
 									<div class="product-quantity"><span class="lablel">{l s='Quantity' d='Modules.Leofeature.Shop'}</span>: {$product.quantity}</div>
 								{/if}
 							</div>
-							<a class="leo-remove-from-cart"
+							<a class="leo-remove-from-cart w-5 shrink-0"
 								href="javascript:void(0)"
 								title="{l s='Remove from cart' d='Modules.Leofeature.Shop'}"
 								data-link-url="{$product.remove_from_cart_url}"
@@ -79,53 +116,6 @@
 							>
 								<i class="material-icons">&#xE872;</i>
 							</a>
-							{if ($product.attributes|count && $show_combination) || ($product.customizations|count && $show_customization)}
-								<div class="view-additional">
-									<div class="view-leo-dropdown-additional rounded-md bg-gray-1000 transition">
-										<i class="material-icons -right-[3px] absolute select-none text-3xl text-main-dark transition transform duration-300 rotate-0 -translate-y-1"></i>
-									</div>
-								</div>
-							{/if}
-							<div class="leo-dropdown-overlay">
-								<div class="leo-dropdown-cssload-speeding-wheel"></div>
-							</div>
-							<div class="leo-dropdown-additional">
-								{if $product.attributes|count && $show_combination}
-									<div class="view-combination label">
-
-									</div>
-									<div class="combinations">
-										{foreach from=$product.attributes key="attribute" item="value"}
-											  <div class="product-line-info">
-												<span class="label">{$attribute}:</span>
-												<span class="value">{$value}</span>
-											  </div>
-										{/foreach}
-									</div>
-								{/if}
-								{if $product.customizations|count && $show_customization}
-									<div class="view-customization label">
-
-									</div>
-									<div class="customizations">
-										{foreach from=$product.customizations item='customization'}
-
-											<ul>
-												{foreach from=$customization.fields item='field'}
-													<li>
-														<span class="label">{$field.label}</span>
-														{if $field.type == 'text'}
-															: <span class="value">{$field.text nofilter}</span>
-														{else if $field.type == 'image'}
-															<img src="{$field.image.small.url}">
-														{/if}
-													</li>
-												{/foreach}
-											</ul>
-										{/foreach}
-									</div>
-								{/if}
-							</div>
 						</li>{/foreach}</ul>
 			</div>
 			<div class="leo-dropdown-bottom">
