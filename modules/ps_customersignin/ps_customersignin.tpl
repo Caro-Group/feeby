@@ -23,7 +23,7 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 
-<div class="userinfo-selector user-block-header ApRawHtml" id="_desktop_user_info">
+<div class="userinfo-selector user-block-header ApRawHtml tablet-medium:hidden" id="_desktop_user_info">
   {if $logged}
     <a href="{$my_account_url}" data-toggle="dropdown" class="popup-title mr-5 " title="{l s='Account' d='Shop.Theme.Global'}">
       <svg class="fill-current text-main-dark hover:text-main transition" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none">
