@@ -8,10 +8,10 @@
 	{if isset($leo_navigation_style) && $leo_navigation_style}
 		<ul class="lql-action{if $leo_form_layout != 'both'} lql-active{else} lql-inactive{/if}">
 			<li class="lql-action-bt">
-				<p class="lql-bt lql-bt-login font-normal text-xl{if $leo_form_layout == 'login'} lql-active{/if}">{l s='Login' d='Modules.Leoquicklogin.Shop'}</p>
+				<p class="lql-bt lql-bt-login font-normal text-gray-3000 text-xl{if $leo_form_layout == 'login'} lql-active{/if}">{l s='Login' d='Modules.Leoquicklogin.Shop'}</p>
 			</li>
 			<li class="lql-action-bt">
-				<p class="lql-bt lql-bt-register font-normal text-xl{if $leo_form_layout == 'register'} lql-active{/if}">{l s='Register' d='Modules.Leoquicklogin.Shop'}</p>
+				<p class="lql-bt lql-bt-register font-normal text-gray-3000 text-xl{if $leo_form_layout == 'register'} lql-active{/if}">{l s='Register' d='Modules.Leoquicklogin.Shop'}</p>
 			</li>
 		</ul>
 	{/if}
