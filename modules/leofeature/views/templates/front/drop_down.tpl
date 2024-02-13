@@ -18,11 +18,11 @@
 								<div class="product-name"><a class="label font-medium" href="{$product.url}" title="{$product.name}">{$product.name}</a></div>
 								
 								{if $product.attributes|count && $show_combination}
-									<div class="combinations text-xs text-gray-dark">
-										{foreach from=$product.attributes key="attribute" item="value"}
+									<div class="combinations text-xs text-gray-3000">
+										{foreach from=$product.attributes|@array_slice:0:2 key="attribute" item="value"}
 											  <div class="product-line-info">
 												<span class="label">{$attribute}:</span>
-												<span class="value text-black">{$value}</span>
+												<span class="value !text-gray-3000">{$value}</span>
 											  </div>
 										{/foreach}
 									</div>
