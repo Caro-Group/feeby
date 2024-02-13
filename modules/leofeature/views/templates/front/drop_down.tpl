@@ -14,27 +14,21 @@
 									<a class="label block" href="{$product.url}" title="{$product.name}"><img class="img-fluid w-full border border-solid bg-gray-1000 rounded-md" src="{$product.images.0.bySize.cart_default.url}" alt="{$product.name}" title="{$product.name}"/></a>
 								{/if}
 							</div>
-							<div class="leo-cart-item-info grow">
+							<div class="leo-cart-item-info grow pr-2">
 								<div class="product-name"><a class="label font-medium" href="{$product.url}" title="{$product.name}">{$product.name}</a></div>
 								
 								{if $product.attributes|count && $show_combination}
-									<div class="view-combination label">
-
-									</div>
-									<div class="combinations">
+									<div class="combinations text-xs text-gray-dark">
 										{foreach from=$product.attributes key="attribute" item="value"}
 											  <div class="product-line-info">
 												<span class="label">{$attribute}:</span>
-												<span class="value">{$value}</span>
+												<span class="value text-black">{$value}</span>
 											  </div>
 										{/foreach}
 									</div>
 								{/if}
 								{if $product.customizations|count && $show_customization}
-									<div class="view-customization label">
-
-									</div>
-									<div class="customizations">
+									<div class="customizations text-xs text-gray-dark mt-2">
 										{foreach from=$product.customizations item='customization'}
 
 											<ul>
@@ -53,7 +47,7 @@
 									</div>
 								{/if}
 								
-								<div class="product-price">
+								<div class="product-price mt-1">
 									{if $product.has_discount}
 										<div class="product-discount">
 										  <span class="regular-price">{$product.regular_price}</span>
@@ -71,7 +65,7 @@
 										</div>
 									  {/if}
 									  <div class="current-price">
-										<span class="price">{$product.price}</span>
+										<span class="price font-normal">{$product.price}</span>
 									  </div>
 										{if $product.unit_price_full}
 										  <div class="unit-price-cart">{$product.unit_price_full}</div>
