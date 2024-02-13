@@ -8,10 +8,10 @@
 	{if $only_total != 1}
 		<div class="leo-dropdown-cart-content clearfix rounded-md font-body font-light text-main-dark text-sm shadow-xl">
 			<div class="leo-dropdown-list-item-warpper">
-				<ul class="leo-dropdown-list-item flex overflow-auto">{foreach from=$cart.products item=product name="cart_product"}<li class="leo-dropdown-cart-item clearfix{if ($product.attributes|count && $show_combination) || ($product.customizations|count && $show_customization)} has-view-additional{/if}{if $smarty.foreach.cart_product.first} first{/if}{if $smarty.foreach.cart_product.last} last{/if}">
+				<ul class="leo-dropdown-list-item overflow-auto">{foreach from=$cart.products item=product name="cart_product"}<li class="leo-dropdown-cart-item flex clearfix{if ($product.attributes|count && $show_combination) || ($product.customizations|count && $show_customization)} has-view-additional{/if}{if $smarty.foreach.cart_product.first} first{/if}{if $smarty.foreach.cart_product.last} last{/if}">
 							<div class="leo-cart-item-img w-1/3 max-w-[150px] shrink-0">
 								{if $product.images}
-									<a class="label" href="{$product.url}" title="{$product.name}"><img class="img-fluid border border-solid bg-gray-1000 rounded-md" src="{$product.images.0.bySize.small_default.url}" alt="{$product.name}" title="{$product.name}"/></a>
+									<a class="label block" href="{$product.url}" title="{$product.name}"><img class="img-fluid w-full border border-solid bg-gray-1000 rounded-md" src="{$product.images.0.bySize.cart_default.url}" alt="{$product.name}" title="{$product.name}"/></a>
 								{/if}
 							</div>
 							<div class="leo-cart-item-info grow">
@@ -106,16 +106,18 @@
 									<div class="product-quantity"><span class="lablel">{l s='Quantity' d='Modules.Leofeature.Shop'}</span>: {$product.quantity}</div>
 								{/if}
 							</div>
-							<a class="leo-remove-from-cart w-5 shrink-0"
-								href="javascript:void(0)"
-								title="{l s='Remove from cart' d='Modules.Leofeature.Shop'}"
-								data-link-url="{$product.remove_from_cart_url}"
-								data-id-product = "{$product.id_product|escape:'javascript'}"
-								data-id-product-attribute = "{$product.id_product_attribute|escape:'javascript'}"
-								data-id-customization = "{$product.id_customization|escape:'javascript'}"
-							>
-								<i class="material-icons">&#xE872;</i>
-							</a>
+							<div class="w-5 shrink-0">
+								<a class="leo-remove-from-cart"
+									href="javascript:void(0)"
+									title="{l s='Remove from cart' d='Modules.Leofeature.Shop'}"
+									data-link-url="{$product.remove_from_cart_url}"
+									data-id-product = "{$product.id_product|escape:'javascript'}"
+									data-id-product-attribute = "{$product.id_product_attribute|escape:'javascript'}"
+									data-id-customization = "{$product.id_customization|escape:'javascript'}"
+								>
+									<i class="material-icons">&#xE872;</i>
+								</a>
+							</div>
 						</li>{/foreach}</ul>
 			</div>
 			<div class="leo-dropdown-bottom">
