@@ -309,11 +309,13 @@ $(document).ready(function () {
   $(document).on("click", function (e) {
     e.stopPropagation();
     var container = $(".leo-dropdown-cart.dropdown.show");
+    var cart_block = container.parent().find('.leo-blockcart')
 
     //check if the clicked area is dropDown or not
     if (container.length && container.has(e.target).length === 0) {
       if (!container.hasClass("disable-close")) {
         container.removeClass("show");
+        cart_block.removeClass('expanded')
       }
     }
     var container1 = $(".leo-dropdown-cart.dropup.show");
