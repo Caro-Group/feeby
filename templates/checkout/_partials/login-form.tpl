@@ -26,7 +26,7 @@
 
 {block name='form_buttons'}
   <button
-    class="ml-auto bg-main-dark border-0 cursor-pointer duration-150 flex font-body hover:text-white hover:bg-black items-center justify-between max-w-[320px] mb-3 px-8 py-3 rounded-full tablet:max-w-[300px] text-white text-lg uppercase w-full whitespace-nowrap"
+    class="bg-main-dark border-0 cursor-pointer duration-150 flex font-body hover:text-white hover:bg-black items-center justify-between max-w-[320px] mb-3 px-8 py-3 rounded-full tablet:max-w-[300px] text-white text-lg uppercase w-full whitespace-nowrap"
     name="continue"
     data-link-action="sign-in"
     type="submit"
