@@ -103,7 +103,7 @@
             <label class="mb-0">
               <input name="{$field.name}" type="checkbox" class="form-checkbox  cursor-pointer bg-white border-2 border-gray-3000 border-solid checked:bg-main-dark checked:focus:bg-main-dark checked:hover:bg-main-dark focus:ring-0 focus:ring-transparent form-checkbox opacity-100 outline-none rounded transition" value="1" {if $field.value}checked="checked"{/if} {if $field.required}required{/if}>
               <span></span>
-              <span class="cursor-pointer pl-3 [&_p]:inline">{$field.label nofilter}
+              <span class="cursor-pointer pl-1 [&_p]:inline">{$field.label nofilter}
                 {if $field.required}<span class="text-require">*</span>{/if}
               </span>
             </label>
