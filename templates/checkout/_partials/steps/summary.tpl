@@ -83,9 +83,9 @@
       <div class="ml-auto tablet:w-auto w-full">
         <div id="payment-confirmation">
           <div class="ps-shown-by-js">
-            <button type="submit" disabled="disabled" class="w-full tablet:w-auto text-xs tablet:text-sm btn bg-main hover:bg-main-hover duration-150 border-0 rounded-full text-white p-3 px-4 uppercase whitespace-nowrap mb-8 tablet:mb-0 flex items-center justify-between cursor-pointer">
+            <button type="submit" disabled="disabled" class="w-full tablet:w-auto !text-base tablet:!text-lg btn bg-main hover:bg-main-hover duration-150 border-0 rounded-full text-white tablet:p-3 px-4 uppercase whitespace-nowrap mb-8 tablet:mb-0 flex items-center justify-between cursor-pointer">
               {l s='Order with an obligation to pay' d='Shop.Theme.Checkout'}
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" fill="none" class="ml-2 flex-0"><path fill-rule="evenodd" clip-rule="evenodd" d="m9.25 14.359 6.25-6.25v-.884L9.25.975l-.884.884 5.183 5.184H.5v1.25h13.05l-5.185 5.182.884.884h.001Z" fill="#fff"></path></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" fill="none" class="ml-2 flex-0 shrink-0"><path fill-rule="evenodd" clip-rule="evenodd" d="m9.25 14.359 6.25-6.25v-.884L9.25.975l-.884.884 5.183 5.184H.5v1.25h13.05l-5.185 5.182.884.884h.001Z" fill="#fff"></path></svg>
             </button>
           </div>
           <div class="ps-hidden-by-js">
