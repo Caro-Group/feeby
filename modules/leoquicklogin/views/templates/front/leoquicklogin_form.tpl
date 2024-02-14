@@ -48,7 +48,7 @@
 				</div>
 			</div>
 			<div class="form-group text-right">
-				<button type="submit" class=" lql-form-bt lql-login-bt btn bg-main-dark border-0 cursor-pointer duration-150 font-body hover:text-white hover:bg-black max-w-[320px] mb-3 px-5 py-3 rounded-full tablet:max-w-[300px] text-white text-xs  tablet:text-sm uppercase w-full whitespace-nowrap">			
+				<button type="submit" class="form-control-submit lql-form-bt lql-login-bt btn bg-main-dark border-0 cursor-pointer duration-150 font-body hover:text-white hover:bg-black max-w-[320px] mb-3 px-8 py-3 rounded-full text-white text-lg uppercase w-full whitespace-nowrap">			
 					<span class="leoquicklogin-loading leoquicklogin-cssload-speeding-wheel"></span>
 					<i class="leoquicklogin-icon leoquicklogin-success-icon material-icons">&#xE876;</i>
 					<i class="leoquicklogin-icon leoquicklogin-fail-icon material-icons">&#xE033;</i>

@@ -10,7 +10,7 @@
 		<!--
 		<div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false" scope="public_profile,email" onlogin="checkLoginState();"></div>
 		-->
-		<a class="bg-[#2D88FF] border-0 cursor-pointer duration-150 flex font-body hover:text-white hover:bg-[#1D78EF] items-center justify-between max-w-[320px] mb-3 px-8 py-3 rounded-full text-white text-lg uppercase w-full whitespace-nowrap" onclick="doFbLogin();">{if !$show_button_text}<span class="fa fa-facebook"></span>{/if}{if $show_button_text}{l s='Sign in with Facebook' d='Modules.Leoquicklogin.Shop'}<svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" fill="none" class="ml-2 flex-0 shrink-0"><path fill-rule="evenodd" clip-rule="evenodd" d="m9.25 14.359 6.25-6.25v-.884L9.25.975l-.884.884 5.183 5.184H.5v1.25h13.05l-5.185 5.182.884.884h.001Z" fill="#fff"/></svg>{/if}</a>
+		<a class="bg-[#2D88FF] border-0 cursor-pointer duration-150 flex font-body hover:text-white hover:bg-[#1D78EF] items-center justify-between max-w-[320px] mb-3 px-8 py-3 rounded-full tablet:max-w-[300px] text-white text-lg uppercase w-full whitespace-nowrap" onclick="doFbLogin();">{if !$show_button_text}<span class="fa fa-facebook"></span>{/if}{if $show_button_text}{l s='Sign in with Facebook' d='Modules.Leoquicklogin.Shop'}<svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" fill="none" class="ml-2 flex-0"><path fill-rule="evenodd" clip-rule="evenodd" d="m9.25 14.359 6.25-6.25v-.884L9.25.975l-.884.884 5.183 5.184H.5v1.25h13.05l-5.185 5.182.884.884h.001Z" fill="#fff"/></svg>{/if}</a>
 		
 	{/if}
 	<!--

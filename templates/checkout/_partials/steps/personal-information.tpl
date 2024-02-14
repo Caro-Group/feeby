@@ -57,7 +57,7 @@
           </p>
           {if $guest_allowed}
             <a
-              class="uppercase bg-main border-0 cursor-pointer duration-150 flex font-body hover:text-white hover:bg-main-hover items-center justify-between max-w-[320px] mb-3 px-8 py-3 rounded-full tablet:max-w-[300px] text-white text-lg w-full whitespace-nowrap"
+              class="bg-main border-0 cursor-pointer duration-150 flex font-body hover:text-white hover:bg-main-hover items-center justify-between max-w-[320px] mb-3 px-8 py-3 rounded-full tablet:max-w-[300px] text-white text-lg w-full whitespace-nowrap"
               href="#checkout-guest-form"
               aria-controls="checkout-guest-form"
               >
