@@ -18,10 +18,10 @@
 								<div class="product-name"><a class="label font-medium" href="{$product.url}" title="{$product.name}">{$product.name}</a></div>
 								
 								{if $product.attributes|count && $show_combination}
-									<div class="combinations text-xs text-gray-3000">
+									<div class="combinations text-xs">
 										{foreach from=$product.attributes|@array_slice:0:2 key="attribute" item="value"}
 											  <div class="product-line-info">
-												<span class="label">{$attribute}:</span>
+												<span class="label !text-gray-3000">{$attribute}:</span>
 												<span class="value !text-gray-3000">{$value}</span>
 											  </div>
 										{/foreach}
@@ -46,7 +46,7 @@
 										</div>
 									  {/if}
 									  <div class="current-price">
-										<span class="price font-normal">{$product.price}</span>
+										<span class="price font-medium">{$product.price}</span>
 									  </div>
 										{if $product.unit_price_full}
 										  <div class="unit-price-cart">{$product.unit_price_full}</div>
