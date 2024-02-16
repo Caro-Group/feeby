@@ -70,7 +70,7 @@
                                     </span>
                                 </div>
 
-                                <span class="text-base font-normal text-main-dark">{$shop.lang.name}</span>
+                                <span class="text-base font-normal text-main-dark">{$shop.lang.name} | {Currency::getIdByQuery($shop.id_shop)}</span>
                             </label>
                         </li>
                     {/foreach}
