@@ -63,7 +63,7 @@
 						</li>
 					{/if}
 					{if $pages_nb==$stop+1}
-						<li>
+						<li class="font-normal hover:text-main-dark text-base text-gray-3000 transition">
 							<a href="{$link->goPage($requestPage, $pages_nb)|escape:'html':'UTF-8'}" class="text-inherit p-1 mx-2.5">
 								{$pages_nb|intval}
 							</a>
