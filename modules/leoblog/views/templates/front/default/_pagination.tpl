@@ -39,7 +39,7 @@
 						<li class="font-normal hover:text-main-dark text-base text-gray-3000 transition"><a {$no_follow_text|escape:'html':'UTF-8'}  href="{$link->goPage($requestPage, 1)|escape:'html':'UTF-8'}" class="text-inherit p-1 mx-2.5">1</a></li>
 						<li class="truncate mr-2">...</li>
 					{/if}
-					{section name=pagination start=$start+1 loop=$stop step=1}
+					{section name=pagination start=$start loop=$stop step=1}
 						{if $p == $smarty.section.pagination.index}
 							<li class="current relative after:-ml-4 after:relative after:bg-main after:block after:bottom-0 after:mt-1 after:content-[''] after:h-1 after:left-1/2 after:rounded-full after:w-8 js-search-link text-inherit  font-normal hover:text-main-dark text-base text-gray-3000 transition" class="mr-2">
 								<a {$no_follow_text|escape:'html':'UTF-8'} href="{$link->goPage($requestPage, $smarty.section.pagination.index)|escape:'html':'UTF-8'}" class="disabled text-inherit p-1 mx-2.5">
