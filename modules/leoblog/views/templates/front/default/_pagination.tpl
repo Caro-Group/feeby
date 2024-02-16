@@ -39,13 +39,13 @@
 						{if $p == $smarty.section.pagination.index}
 							<li class="current relative after:-ml-4 after:relative after:bg-main after:block after:bottom-0 after:mt-1 after:content-[''] after:h-1 after:left-1/2 after:rounded-full after:w-8 js-search-link text-inherit  font-normal hover:text-main-dark text-base text-gray-3000 transition" class="mr-2">
 								<a {$no_follow_text|escape:'html':'UTF-8'} href="{$link->goPage($requestPage, $smarty.section.pagination.index)|escape:'html':'UTF-8'}" class="disabled text-inherit p-1 mx-2.5">
-									a{$p|escape:'html':'UTF-8'}
+									{$p|escape:'html':'UTF-8'}
 								</a>
 							</li>
 						{else}
 							<li class="font-normal hover:text-main-dark text-base text-gray-3000 transition">
 								<a {$no_follow_text|escape:'html':'UTF-8'} href="{$link->goPage($requestPage, $smarty.section.pagination.index)|escape:'html':'UTF-8'}" class="text-inherit p-1 mx-2.5">
-									b{$smarty.section.pagination.index|escape:'html':'UTF-8'}
+									{$smarty.section.pagination.index|escape:'html':'UTF-8'}
 								</a>
 							</li>
 						{/if}
@@ -54,14 +54,14 @@
 						<li class="truncate font-normal hover:text-main-dark text-base text-gray-3000 transition">...</li>
 						<li class="font-normal hover:text-main-dark text-base text-gray-3000 transition">
 							<a href="{$link->goPage($requestPage, $pages_nb)|escape:'html':'UTF-8'}" class="text-inherit p-1 mx-2.5">
-								c{$pages_nb|intval}
+								{$pages_nb|intval}
 							</a>
 						</li>
 					{/if}
 					{if $pages_nb==$stop+1}
 						<li class="font-normal hover:text-main-dark text-base text-gray-3000 transition">
 							<a href="{$link->goPage($requestPage, $pages_nb)|escape:'html':'UTF-8'}" class="text-inherit p-1 mx-2.5">
-								d{$pages_nb|intval}
+								{$pages_nb|intval}
 							</a>
 						</li>
 					{/if}
