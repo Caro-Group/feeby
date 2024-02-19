@@ -71,7 +71,12 @@
                                 </div>
 
                                 <span class="text-base font-normal text-main-dark">{$shop.lang.name} |
-                                    {Currency::getCurrenciesByIdShop(0)}</span>
+                                    {Db::getInstance()->executeS('
+                                    SELECT *
+                                    FROM `' . _DB_PREFIX_ . 'currency` c
+                                    LEFT JOIN `' . _DB_PREFIX_ . 'currency_shop` cs ON (cs.`id_currency` = c.`id_currency`)
+                                    ' . ($shop.id_shop ? ' WHERE cs.`id_shop` = ' . (int) $shop.id_shop : '') . '
+                                    ORDER BY `iso_code` ASC');}</span>
                             </label>
                         </li>
                     {/foreach}
