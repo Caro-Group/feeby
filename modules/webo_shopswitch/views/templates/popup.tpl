@@ -71,7 +71,7 @@
                                 </div>
 
                                 <span class="text-base font-normal text-main-dark">{$shop.lang.name} |
-                                    {Currency::getCurrenciesByIdShop($shop.id_shop)->iso_code}</span>
+                                    {Currency::getCurrenciesByIdShop(0)}</span>
                             </label>
                         </li>
                     {/foreach}
