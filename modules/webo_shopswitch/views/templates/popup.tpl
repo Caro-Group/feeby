@@ -71,7 +71,7 @@
                                 </div>
 
                                 <span class="text-base font-normal text-main-dark">{$shop.lang.name} |
-                                    {Db::getInstance()->getValue(Currency::getIdByQuery($shop.id_shop)->build())}</span>
+                                    {Db::getInstance()->getRow(Currency::getIdByQuery($shop.id_shop)->build())}</span>
                             </label>
                         </li>
                     {/foreach}
