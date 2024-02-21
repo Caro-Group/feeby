@@ -42,7 +42,7 @@
             </h3>
             <div class="language-selector mb-8 w-full">
                 <ul class="flex flex-wrap justify-center">
-                    {debug}
+                    {* {debug} *}
                     {foreach from=$shops item=shop}
                         <li class="basis-1/3">
                             <input class="hidden" type="radio" id="{$shop.id_shop}" name="language"
