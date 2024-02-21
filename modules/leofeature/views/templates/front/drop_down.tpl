@@ -102,12 +102,12 @@
 						{foreach from=$cart.subtotals item="subtotal"}
 							{if $subtotal && $subtotal.type == 'products'}
 								<div class="{$subtotal.type} clearfix">
-									<div class="flex">
+									<div class="flex items-end">
 										<div class="p-0 flex-1">
-											<span class="text-main-dark">{$subtotal.label}</span>
+											<span class="font-normal text-base text-main-dark">{$subtotal.label}</span>
 										</div>
 										<div class="p-0 text-right">
-											<span class="text-main-dark">{$subtotal.value}</span>
+											<span class="font-normal text-xl text-main-dark">{$subtotal.value}</span>
 										</div>
 									</div>
 								</div>
