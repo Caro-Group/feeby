@@ -7,6 +7,19 @@
 *}
 	{if $only_total != 1}
 		<div class="leo-dropdown-cart-content clearfix rounded-md font-body font-light text-main-dark text-sm shadow-xl">
+			<!-- add Spent X to get free ship in checkout page Leotheme -->
+			{assign var='freeshipping_price' value=Configuration::get('PS_SHIPPING_FREE_PRICE')}
+			{if $freeshipping_price}
+				{math equation='a-b' a=$cart.totals.total.amount b=$cart.subtotals.shipping.amount assign='total_without_shipping'}
+				{math equation='a-b' a=$freeshipping_price b=$total_without_shipping assign='remaining_to_spend'}
+				{if $remaining_to_spend > 0}
+				  <div class="leo_free_price pb-1 border-0 border-b border-solid border-gray-2000">
+				  {assign var=currency value=Context::getContext()->currency}
+				  <p class="font-body text-center">{l s='Spent' d='Modules.Leofeature.Shop'} <span class="font-normal">{Tools::displayPrice($remaining_to_spend,$currency)}</span> {l s='To get free ship!' d='Modules.Leofeature.Shop'}</p>
+				  </div>
+				{/if}
+			{/if}
+			<!-- end -->
 			<div class="leo-dropdown-list-item-warpper">
 				<ul class="leo-dropdown-list-item overflow-auto">{foreach from=$cart.products item=product name="cart_product"}<li class="leo-dropdown-cart-item clearfix{if ($product.attributes|count && $show_combination) || ($product.customizations|count && $show_customization)} has-view-additional{/if}{if $smarty.foreach.cart_product.first} first{/if}{if $smarty.foreach.cart_product.last} last{/if}">
 							<div class="leo-cart-item-img">
@@ -157,19 +170,6 @@
 							</div>
 						</div>
 					</div>
-					<!-- add Spent X to get free ship in checkout page Leotheme -->
-					{assign var='freeshipping_price' value=Configuration::get('PS_SHIPPING_FREE_PRICE')}
-					{if $freeshipping_price}
-						{math equation='a-b' a=$cart.totals.total.amount b=$cart.subtotals.shipping.amount assign='total_without_shipping'}
-						{math equation='a-b' a=$freeshipping_price b=$total_without_shipping assign='remaining_to_spend'}
-						{if $remaining_to_spend > 0}
-						  <div class="leo_free_price">
-						  {assign var=currency value=Context::getContext()->currency}
-						  <p class="font-body">{l s='Spent' d='Modules.Leofeature.Shop'} {Tools::displayPrice($remaining_to_spend,$currency)} {l s='To get free ship!' d='Modules.Leofeature.Shop'}</p>
-						  </div>
-						{/if}
-					{/if}
-					<!-- end -->
 				</div>
 			{if $only_total != 1}
 				<div class="leo-cart-dropdown-action clearfix">
