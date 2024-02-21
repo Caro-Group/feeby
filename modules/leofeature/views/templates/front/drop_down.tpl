@@ -140,7 +140,7 @@
 				</div>
 			{if $only_total != 1}
 				<div class="leo-cart-dropdown-action clearfix">
-					<a class="bg-main-dark mt-5 border-0 cursor-pointer duration-150 flex font-body hover:text-white hover:bg-main-hover items-center justify-between mb-3 px-5 py-4 rounded-full text-white text-sm uppercase w-full whitespace-nowrap items-center"
+					<a class="bg-main-dark border-0 cursor-pointer duration-150 flex font-body hover:text-white hover:bg-main-hover items-center justify-between mb-3 px-5 py-4 rounded-full text-white text-sm uppercase w-full whitespace-nowrap items-center"
 						href="{$order_url}">
 						{l s='Check Out' d='Modules.Leofeature.Shop'}
 						<i class="ti-arrow-right ml-2"></i>
