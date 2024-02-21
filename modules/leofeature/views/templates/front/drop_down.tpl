@@ -100,7 +100,7 @@
 				<div class="leo-dropdown-total" data-cart-total="{$cart.products_count}">
 					<div class="leo-dropdown-cart-subtotals p-5">
 						{foreach from=$cart.subtotals item="subtotal"}
-							{if $subtotal}
+							{if $subtotal && $subtotal.type == 'products'}
 								<div class="{$subtotal.type} clearfix">
 									<div class="flex">
 										<div class="p-0 flex-1">
@@ -113,16 +113,6 @@
 								</div>
 							{/if}
 						{/foreach}
-					</div>
-					<div class="leo-dropdown-cart-total clearfix">
-						<div class="flex items-baseline ">
-							<div class="p-0 flex-1">
-								<span class="font-body font-normal text-base text-main-dark">{$cart.totals.total.label}</span>
-							</div>
-							<div class="p-0 text-right">
-								<span class="font-body font-normal text-main-dark text-xl">{$cart.totals.total.value}</span>
-							</div>
-						</div>
 					</div>
 					<!-- add Spent X to get free ship in checkout page Leotheme -->
 					{assign var='freeshipping_price' value=Configuration::get('PS_SHIPPING_FREE_PRICE')}
