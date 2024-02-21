@@ -165,7 +165,7 @@
 						{if $remaining_to_spend > 0}
 						  <div class="leo_free_price">
 						  {assign var=currency value=Context::getContext()->currency}
-						  <p class="font-body">{l s='Spent' d='Modules.Leofeature.Shop'} {Tools::displayPrice($remaining_to_spend,$currency)} {l s='To get free ship!' d='Modules.Leofeature.Shop'}</p>
+						  <p class="font-body">{l s='Spent' d='Modules.Leofeature.Drop_down'} {Tools::displayPrice($remaining_to_spend,$currency)} {l s='To get free ship!' d='Modules.Leofeature.Drop_down'}</p>
 						  </div>
 						{/if}
 					{/if}
