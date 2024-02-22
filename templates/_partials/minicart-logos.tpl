@@ -23,17 +23,18 @@
  *}
 
 {debug}
+{if $lang_iso == 'pl_PL'}
+        {assign "logos" ["themes/feeby/assets/img/blik.svg", "themes/feeby/assets/img/Alior.svg", "themes/feeby/assets/img/Autopay.svg", "themes/feeby/assets/img/Visa.svg"]}
+    {else}
+        {assign "logos" ["themes/feeby/assets/img/PayPal.svg", "themes/feeby/assets/img/Klarna.svg", "themes/feeby/assets/img/Mastercard.svg", "themes/feeby/assets/img/Visa.svg"]}
+{/if}
+{$languages}
+{$lang_iso}
+{$this->context->language->id} 
 <ul class="flex justify-between gap-4 px-5 pb-2">
-    <li class="grow max-h-[40px]">
-        <img class="w-full h-full" src="themes/feeby/assets/img/PayPal.svg">
-    </li>
-    <li class="grow max-h-[40px]">
-        <img class="w-full h-full" src="themes/feeby/assets/img/Klarna.svg">
-    </li>
-    <li class="grow max-h-[40px]">
-        <img class="w-full h-full" src="themes/feeby/assets/img/Mastercard.svg">
-    </li>
-    <li class="grow max-h-[40px]">
-        <img class="w-full h-full" src="themes/feeby/assets/img/Visa.svg">
-    </li>
+    {foreach $link in $logos}
+        <li class="grow max-h-[40px]">
+            <img class="w-full h-full" src="{$link}">
+        </li>
+    {/foreach}
 </ul>
