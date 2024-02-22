@@ -153,7 +153,7 @@
           <div
             class="flex flex-col-reverse flex-wrap items-baseline justify-between tablet:flex-row tablet:items-center mb-4 tablet:mb-[30px]">
             <button data-checkout-back="#checkout-personal-information-step"
-              class="text-gray-300 hover:text-main-dark transition duration-300 bg-transparent border-0 uppercase whitespace-nowrap mb-0 flex items-center justify-between cursor-pointer"><svg
+              class="text-gray-3000 hover:text-main-dark transition duration-200 bg-transparent border-0 uppercase whitespace-nowrap mb-0 flex items-center justify-between cursor-pointer"><svg
                 xmlns="http://www.w3.org/2000/svg" width="15" height="14" class="mr-2 fill-current">
                 <path fill-rule="evenodd" clip-rule="evenodd"
                   d="M6.25 13.384 0 7.134V6.25L6.25 0l.884.884L1.95 6.067H15v1.25H1.95L7.135 12.5l-.884.884H6.25Z" />
