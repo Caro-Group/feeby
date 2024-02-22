@@ -5,23 +5,23 @@
 * @copyright  2007-2018 Leotheme
 * @description: Leo feature for prestashop 1.7: ajax cart, review, compare, wishlist at product list
 *}
-{if $only_total != 1}
-	<div class="leo-dropdown-cart-content clearfix rounded-md font-body font-light text-main-dark text-sm shadow-xl">
-		<!-- add Spent X to get free ship in checkout page Leotheme -->
-		{assign var='freeshipping_price' value=Configuration::get('PS_SHIPPING_FREE_PRICE')}
-		{if $freeshipping_price}
-			{math equation='a-b' a=$cart.totals.total.amount b=$cart.subtotals.shipping.amount assign='total_without_shipping'}
-			{math equation='a-b' a=$freeshipping_price b=$total_without_shipping assign='remaining_to_spend'}
-			{if $remaining_to_spend > 0}
-				{assign var=currency value=Context::getContext()->currency}
-				<p class="font-body text-center">{l s='Spent' d='Modules.Leofeature.Shop'} <span
-						class="font-normal">{Tools::displayPrice($remaining_to_spend,$currency)}</span>
-					{l s='To get free ship!' d='Modules.Leofeature.Shop'}</p>
-			{else}
-				<p class="font-body text-center">{l s='You qualify for free shipping!' d='Modules.Leofeature.Shop'}</p>
+	{if $only_total != 1}
+		<div class="leo-dropdown-cart-content clearfix rounded-md font-body font-light text-main-dark text-sm shadow-xl">
+			<!-- add Spent X to get free ship in checkout page Leotheme -->
+			{assign var='freeshipping_price' value=Configuration::get('PS_SHIPPING_FREE_PRICE')}
+			{if $freeshipping_price}
+				{math equation='a-b' a=$cart.totals.total.amount b=$cart.subtotals.shipping.amount assign='total_without_shipping'}
+				{math equation='a-b' a=$freeshipping_price b=$total_without_shipping assign='remaining_to_spend'}
+				<div class="leo_free_price py-1 border-0 border-b border-solid border-gray-2000">
+					{if $remaining_to_spend > 0}
+					{assign var=currency value=Context::getContext()->currency}
+						<p class="font-body text-center">{l s='Spent' d='Modules.Leofeature.Shop'} <span class="font-normal">{Tools::displayPrice($remaining_to_spend,$currency)}</span> {l s='To get free ship!' d='Modules.Leofeature.Shop'}</p>
+					{else}
+						<p class="font-body text-center">{l s='You qualify for free shipping!' d='Modules.Leofeature.Shop'}</p>					
+					{/if}
+				</div>
 			{/if}
-		{/if}
-		<!-- end -->
+			<!-- end -->
 		<div class="leo-dropdown-list-item-warpper">
 			<ul class="leo-dropdown-list-item overflow-auto">{foreach from=$cart.products item=product name="cart_product"}
 					<li
