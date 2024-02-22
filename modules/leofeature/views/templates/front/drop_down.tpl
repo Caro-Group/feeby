@@ -177,11 +177,25 @@
 						{l s='View Cart' d='Modules.Leofeature.Shop'}
 						<i class="ti-arrow-right ml-2"></i>
 					</a>
-					<a class="bg-main mt-5 border-0 cursor-pointer duration-150 flex font-body hover:text-white hover:bg-main-hover items-center justify-between mb-3 px-5 py-4 rounded-full text-white text-sm uppercase w-full whitespace-nowrap items-center" href="{$order_url}">
+					<a class="bg-main mt-5 border-0 cursor-pointer duration-150 flex font-body hover:text-white hover:bg-main-hover items-center justify-between px-5 py-4 rounded-full text-white text-sm uppercase w-full whitespace-nowrap items-center" href="{$order_url}">
 						{l s='Check Out' d='Modules.Leofeature.Shop'}
 						<i class="ti-arrow-right ml-2"></i>
 					</a>
 				</div>
+				<ul class="flex justify-between gap-4 px-5 pb-2">
+					<li>
+						<img class="w-full h-full object-cover" src="themes/feeby/assets/img/PayPal.svg">
+					</li>
+					<li>
+						<img class="w-full h-full object-cover" src="themes/feeby/assets/img/Klarna.svg">
+					</li>
+					<li>
+						<img class="w-full h-full object-cover" src="themes/feeby/assets/img/PayPal.svg">
+					</li>
+					<li>
+						<img class="w-full h-full object-cover" src="themes/feeby/assets/img/PayPal.svg">
+					</li>
+				</ul>
 			</div>
 		</div>
 	{/if}
