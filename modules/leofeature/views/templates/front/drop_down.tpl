@@ -183,17 +183,17 @@
 					</a>
 				</div>
 				<ul class="flex justify-between gap-4 px-5 pb-2">
-					<li>
-						<img class="w-full h-full object-cover" src="themes/feeby/assets/img/PayPal.svg">
+					<li class="grow max-h-[40px]">
+						<img class="w-full h-full" src="themes/feeby/assets/img/PayPal.svg">
 					</li>
-					<li>
-						<img class="w-full h-full object-cover" src="themes/feeby/assets/img/Klarna.svg">
+					<li class="grow max-h-[40px]">
+						<img class="w-full h-full" src="themes/feeby/assets/img/Klarna.svg">
 					</li>
-					<li>
-						<img class="w-full h-full object-cover" src="themes/feeby/assets/img/PayPal.svg">
+					<li class="grow max-h-[40px]">
+						<img class="w-full h-full" src="themes/feeby/assets/img/Mastercard.svg">
 					</li>
-					<li>
-						<img class="w-full h-full object-cover" src="themes/feeby/assets/img/PayPal.svg">
+					<li class="grow max-h-[40px]">
+						<img class="w-full h-full" src="themes/feeby/assets/img/Visa.svg">
 					</li>
 				</ul>
 			</div>

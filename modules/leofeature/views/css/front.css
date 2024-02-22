@@ -649,7 +649,7 @@ div.star:before {
 
 
  .leo-dropdown-cart.dropdown{
-  height: calc(100dvh - 100px);
+  height: calc(100dvh - 143px);
   bottom: auto;
   overflow: auto;
  }
@@ -660,7 +660,7 @@ div.star:before {
  }
 @media(min-width: 768px){
  .leo-dropdown-cart.dropdown{
-  height: calc(100dvh - 170px);
+  height: calc(100dvh - 210px);
  }
 }
 @media(min-width: 992px){
