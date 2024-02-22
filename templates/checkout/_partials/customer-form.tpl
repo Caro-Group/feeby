@@ -25,7 +25,7 @@
 {extends "customer/_partials/customer-form.tpl"}
 
 {block "form_buttons"}
-    <a href="#checkout-login-panel" class="text-gray-300 hover:text-main-dark transition duration-300 bg-transparent border-0 uppercase flex items-center justify-between cursor-pointer">
+    <a href="#checkout-login-panel" class="text-gray-3000 hover:text-main-dark transition duration-200 bg-transparent border-0 uppercase flex items-center justify-between cursor-pointer">
       <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" class="fill-current mr-2"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.25 13.384 0 7.134V6.25L6.25 0l.884.884L1.95 6.067H15v1.25H1.95L7.135 12.5l-.884.884H6.25Z"/></svg>
       {l s='Back to Login' d='Shop.Theme.Actions'}
     </a>
