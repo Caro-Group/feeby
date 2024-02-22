@@ -182,7 +182,7 @@
 						<i class="ti-arrow-right ml-2"></i>
 					</a>
 				</div>
-				{include file='catalog/_partials/minicart-logos.tpl'}
+				{include file='_partials/minicart-logos.tpl'}
 			</div>
 		</div>
 	{/if}
