@@ -29,7 +29,7 @@
 {/if}
 
 <ul class="flex justify-between gap-4 px-5 pb-2">
-    {foreach $link in $logos}
+    {foreach from=$logos item=link}
         <li class="grow max-h-[40px]">
             <img class="w-full h-full" src="{$link}">
         </li>
