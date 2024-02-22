@@ -1514,7 +1514,7 @@ function updateQuantityProductDropDown($element) {
                   if (typeof show_popup != "undefined" && !show_popup) {
                     $(".blockcart.cart-preview").removeClass("blockcart");
                   }
-                  createModalAndDropdown(1, 1);
+                  createModalAndDropdown(1, 0);
                 },
                 error: function (XMLHttpRequest, textStatus, errorThrown) {
                   console.log(
