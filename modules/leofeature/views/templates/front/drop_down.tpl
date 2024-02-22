@@ -22,7 +22,7 @@
 				</div>
 			{/if}
 			<!-- end -->
-			<div class="leo-dropdown-list-item-warpper">
+			<div class="leo-dropdown-list-item-warpper overflow-auto">
 				<ul class="leo-dropdown-list-item overflow-auto">{foreach from=$cart.products item=product name="cart_product"}<li class="leo-dropdown-cart-item clearfix{if ($product.attributes|count && $show_combination) || ($product.customizations|count && $show_customization)} has-view-additional{/if}{if $smarty.foreach.cart_product.first} first{/if}{if $smarty.foreach.cart_product.last} last{/if}">
 							<div class="leo-cart-item-img">
 								{if $product.images}
