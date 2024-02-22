@@ -39,7 +39,7 @@
               {if $address.id == $selected}checked{/if}
             >
           </span>
-          <span class="font-body font-medium tablet:text-xl text-base">{$address.alias}</span>
+          <span class="font-body font-medium tablet:text-lg text-base">{$address.alias}</span>
           <div class="font-body font-light pt-3 tablet:p-5 phablet:ml-8 tablet:text-base text-sm">{$address.formatted nofilter}</div>
         </label>
       </header>
