@@ -22,7 +22,7 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 
-{if Context::getContext()->language->iso_code == 'PL' }
+{if Context::getContext()->language->iso_code == 'pl' }
         {assign "logos" ["themes/feeby/assets/img/blik.svg", "themes/feeby/assets/img/Alior.svg", "themes/feeby/assets/img/Autopay.svg", "themes/feeby/assets/img/Visa.svg"]}
     {else}
         {assign "logos" ["themes/feeby/assets/img/PayPal.svg", "themes/feeby/assets/img/Klarna.svg", "themes/feeby/assets/img/Mastercard.svg", "themes/feeby/assets/img/Visa.svg"]}
