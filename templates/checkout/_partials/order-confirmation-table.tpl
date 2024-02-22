@@ -26,7 +26,7 @@
 <div class="bg-white rounded-md border tablet:border-0 border-solid border-gray-2000">
   <div class="p-[30px] tablet:p-0 tablet:mb-7 flex justify-between items-center ">
     {block name='order_items_table_head'}
-      <h3 class="font-body font-normal tablet:text-xl text-base text-main-dark mb-0
+      <h3 class="font-body font-normal tablet:text-lg text-base text-main-dark mb-0
       ">{l s='Order items' d='Shop.Theme.Checkout'}</h3>
       <i class="material-icons tablet:hidden select-none text-3xl text-main-dark transition transform rotate-180"></i>
     {/block}
@@ -98,7 +98,7 @@
             <div class=" qty">
               <div>
 
-                <div class="tablet:mt-2 font-body font-normal tablet:text-xl text-base text-main-dark"><span class="block tablet-wide:hidden text-xs tablet:text-sm font-body font-light">{l s='Total products' d='Shop.Theme.Checkout'}</span>{$product.total}</div>
+                <div class="tablet:mt-2 font-body font-normal tablet:text-lg text-base text-main-dark"><span class="block tablet-wide:hidden text-xs tablet:text-sm font-body font-light">{l s='Total products' d='Shop.Theme.Checkout'}</span>{$product.total}</div>
               </div>
             </div>
           </div>
