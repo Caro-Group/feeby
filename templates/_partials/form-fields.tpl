@@ -42,7 +42,7 @@
   {/if}
 
   <div class="flex flex-auto {if isset($theme)}flex-col{else}flex-col desktop-presta:flex-row{/if} mb-2 tablet:mb-[15px] {if !empty($field.errors)}has-error{/if}" data-field="{$field.type}">
-    <label class="font-body font-normal ml-5 mt-2 mb-1 tablet-medium:ml-0 desktop-presta:w-[220px] text-base tablet:text-xl text-main-dark text-left {if $field.required && $field.type !== 'checkbox'} required{/if}">
+    <label class="font-body font-normal ml-5 mt-2 mb-1 tablet-medium:ml-0 desktop-presta:w-[220px] text-base tablet:text-lg text-main-dark text-left {if $field.required && $field.type !== 'checkbox'} required{/if}">
       {if $field.type !== 'checkbox'}
         {$field.label}
       {/if}
@@ -103,7 +103,7 @@
             <label>
               <input name="{$field.name}" type="checkbox" class="form-checkbox  cursor-pointer bg-white border-2 border-gray-3000 border-solid checked:bg-main-dark checked:focus:bg-main-dark checked:hover:bg-main-dark focus:ring-0 focus:ring-transparent form-checkbox opacity-100 outline-none rounded transition" value="1" {if $field.value}checked="checked"{/if} {if $field.required}required{/if}>
               <span></span>
-              <span class="cursor-pointer pl-3">{$field.label nofilter}
+              <span class="text-xs cursor-pointer pl-3">{$field.label nofilter}
                 {if $field.required}<span class="text-require">*</span>{/if}
               </span>
             </label>

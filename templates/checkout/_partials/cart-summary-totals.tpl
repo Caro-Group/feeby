@@ -31,12 +31,12 @@
         <span class="value">{$cart.totals.total.value}</span>
       </div>
       <div class="cart-summary-line cart-total flex justify-between items-center">
-        <span class="label text-base tablet:text-xl text-main-dark font-medium">{$cart.totals.total_including_tax.label}</span>
+        <span class="label text-lg tablet:text-2xl text-main-dark font-medium">{$cart.totals.total_including_tax.label}</span>
         <span class="value text-2xl text-main-dark font-medium">{$cart.totals.total_including_tax.value}</span>
       </div>
     {else}
       <div class="cart-summary-line cart-total flex justify-between items-center">
-        <span class="label text-base tablet:text-xl text-main-dark font-medium">{$cart.totals.total.label} {if $configuration.taxes_enabled}{$cart.labels.tax_short}{/if}</span>
+        <span class="label text-lg tablet:text-2xl text-main-dark font-medium">{$cart.totals.total.label} {if $configuration.taxes_enabled}{$cart.labels.tax_short}{/if}</span>
         <span class="value text-2xl text-main-dark font-medium">{$cart.totals.total.value}</span>
       </div>
     {/if}
