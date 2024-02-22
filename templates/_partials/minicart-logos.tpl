@@ -22,15 +22,12 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 
-{debug}
-{if $lang_iso == 'pl_PL'}
+{if Context::getContext()->language->iso_code == 'PL' }
         {assign "logos" ["themes/feeby/assets/img/blik.svg", "themes/feeby/assets/img/Alior.svg", "themes/feeby/assets/img/Autopay.svg", "themes/feeby/assets/img/Visa.svg"]}
     {else}
         {assign "logos" ["themes/feeby/assets/img/PayPal.svg", "themes/feeby/assets/img/Klarna.svg", "themes/feeby/assets/img/Mastercard.svg", "themes/feeby/assets/img/Visa.svg"]}
 {/if}
-{$languages}
-{$lang_iso}
-{$this->context->language->id} 
+
 <ul class="flex justify-between gap-4 px-5 pb-2">
     {foreach $link in $logos}
         <li class="grow max-h-[40px]">
