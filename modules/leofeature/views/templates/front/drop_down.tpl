@@ -140,20 +140,7 @@
 					<i class="ti-arrow-right ml-2"></i>
 				</a>
 			</div>
-			<ul class="flex justify-between gap-4 px-5 pb-2">
-				<li class="grow max-h-[40px]">
-					<img class="w-full h-full" src="themes/feeby/assets/img/PayPal.svg">
-				</li>
-				<li class="grow max-h-[40px]">
-					<img class="w-full h-full" src="themes/feeby/assets/img/Klarna.svg">
-				</li>
-				<li class="grow max-h-[40px]">
-					<img class="w-full h-full" src="themes/feeby/assets/img/Mastercard.svg">
-				</li>
-				<li class="grow max-h-[40px]">
-					<img class="w-full h-full" src="themes/feeby/assets/img/Visa.svg">
-				</li>
-			</ul>
+			{include file='catalog/_partials/minicart-logos.tpl'}
 		</div>
 	</div>
 {/if}
