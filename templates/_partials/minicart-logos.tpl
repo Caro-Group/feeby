@@ -29,6 +29,8 @@
 {/if}
 
 <ul class="flex justify-between gap-4 px-5 pb-2">
+{Context::getContext()->language->iso_code}
+{Context::getContext()->language}
     {foreach from=$logos item=link}
         <li class="grow max-h-[40px]">
             <img class="w-full h-full" src="{$link}">
