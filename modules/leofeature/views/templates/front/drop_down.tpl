@@ -13,12 +13,12 @@
 			{math equation='a-b' a=$cart.totals.total.amount b=$cart.subtotals.shipping.amount assign='total_without_shipping'}
 			{math equation='a-b' a=$freeshipping_price b=$total_without_shipping assign='remaining_to_spend'}
 			{if $remaining_to_spend > 0}
-				<div class="leo_free_price pb-1 border-0 border-b border-solid border-gray-2000">
-					{assign var=currency value=Context::getContext()->currency}
-					<p class="font-body text-center">{l s='Spent' d='Modules.Leofeature.Shop'} <span
-							class="font-normal">{Tools::displayPrice($remaining_to_spend,$currency)}</span>
-						{l s='To get free ship!' d='Modules.Leofeature.Shop'}</p>
-				</div>
+				{assign var=currency value=Context::getContext()->currency}
+				<p class="font-body text-center">{l s='Spent' d='Modules.Leofeature.Shop'} <span
+						class="font-normal">{Tools::displayPrice($remaining_to_spend,$currency)}</span>
+					{l s='To get free ship!' d='Modules.Leofeature.Shop'}</p>
+			{else}
+				<p class="font-body text-center">{l s='You qualify for free shipping!' d='Modules.Leofeature.Shop'}</p>
 			{/if}
 		{/if}
 		<!-- end -->
