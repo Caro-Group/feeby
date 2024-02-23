@@ -779,7 +779,7 @@ img:not([src]) {
 }
 
 .popup-hidden {
-  @apply transform -translate-y-2.5;
+  @apply transform -translate-y-2.5 tablet-medium:translate-y-2.5;
 }
 
 .language-selector input:checked + label .check,
