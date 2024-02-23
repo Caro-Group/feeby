@@ -71,7 +71,7 @@
                                 </div>
 
                                 <span class="text-base font-normal text-main-dark">{$shop.lang.name} |
-                                {assign var=currencies_test to Currency::getCurrenciesByIdShop(1)}
+                                {assign var=currencies_test  value=Currency::getCurrenciesByIdShop(1)}
                                 {$currencies_test|@print_r}</span>
                             </label>
                         </li>
