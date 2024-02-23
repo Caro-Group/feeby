@@ -459,10 +459,10 @@ li[data-menu-type='url'] a {
 }
 
 .checkout-step.-current .step-title span.step-number {
-  @apply bg-main border-0  text-white;
+  @apply bg-main-dark border-0  text-white;
 }
 .checkout-step.-complete .step-title span.step-number {
-  @apply bg-main border-0  text-white;
+  @apply bg-main-dark border-0  text-white;
 }
 .checkout-step.-current .step-title span {
   @apply text-main-dark transition;
@@ -472,7 +472,7 @@ li[data-menu-type='url'] a {
   @apply after:content-[''] after:w-[calc(100%-40px)] after:mx-[20px] tablet:after:w-[calc(100%-80px)] tablet:after:mx-[40px] after:absolute after:h-px  after:bg-gray-2000 after:top-[18px] after:left-1/2 after:rounded-full after:transition;
 }
 #checkout .checkout-step.-complete .step-title {
-  @apply after:bg-main;
+  @apply after:bg-main-dark;
 }
 #checkout #checkout-summary-step .step-title {
   @apply after:hidden;
