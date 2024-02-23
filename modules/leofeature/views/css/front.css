@@ -662,7 +662,7 @@ div.star:before {
     overflow: inherit;
   }
   .leo-dropdown-cart-content{
-    max-height: calc(100dvh - 210px)
+    max-height: min(750px,calc(100dvh - 210px))
   }
   .leo-dropdown-bottom{
     position: static;
@@ -677,7 +677,7 @@ div.star:before {
  @media(min-width: 1248px){
 
   .leo-dropdown-cart-content{
-    max-height: calc(100dvh - 170px)
+    max-height: min(750px,calc(100dvh - 170px))
   }
 
 }
