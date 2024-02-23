@@ -65,7 +65,7 @@
             </svg>{l s='Cancel' d='Shop.Theme.Actions'}</a>
         {/if}
         <button type="submit"
-          class="continue bg-main ml-auto w-full tablet:w-auto hover:bg-main-hover duration-150 border-0 rounded-full text-white text-lg py-3 px-8 uppercase whitespace-nowrap mb-8 tablet:mb-2 cursor-pointer"
+          class="continue bg-main-dark ml-auto w-full tablet:w-auto hover:bg-main-hover duration-150 border-0 rounded-full text-white text-lg py-3 px-8 uppercase whitespace-nowrap mb-8 tablet:mb-2 cursor-pointer"
           name="confirm-addresses" value="1">
           {l s='Continue' d='Shop.Theme.Actions'}
         </button>

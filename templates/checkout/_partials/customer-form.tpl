@@ -34,7 +34,7 @@
     {l s='Back to Login' d='Shop.Theme.Actions'}
   </a>
   <button
-    class="w-full text-lg tablet:w-auto bg-main hover:opcaity-80 duration-150 border-0 rounded-full text-white py-3 px-8 uppercase whitespace-nowrap mb-8 tablet:mb-0 flex items-center justify-between ml-auto cursor-pointer"
+    class="w-full text-lg tablet:w-auto bg-main-dark hover:bg-main-hover duration-150 border-0 rounded-full text-white py-3 px-8 uppercase whitespace-nowrap mb-8 tablet:mb-0 flex items-center justify-between ml-auto cursor-pointer"
     name="continue" data-link-action="register-new-customer" type="submit" value="1">
     {l s='Continue' d='Shop.Theme.Actions'}
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" fill="none" class="ml-2 tablet:ml-4 flex-0">

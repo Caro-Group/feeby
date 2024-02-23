@@ -57,7 +57,7 @@
           </p>
           {if $guest_allowed}
             <a
-              class="uppercase bg-main border-0 cursor-pointer duration-150 flex font-body hover:text-white hover:bg-main-hover items-center justify-between max-w-[320px] mb-3 px-8 py-3 rounded-full tablet:max-w-[300px] text-white text-lg w-full whitespace-nowrap"
+              class="uppercase bg-main-dark border-0 cursor-pointer duration-150 flex font-body hover:text-white hover:bg-main-hover items-center justify-between max-w-[320px] mb-3 px-8 py-3 rounded-full tablet:max-w-[300px] text-white text-lg w-full whitespace-nowrap"
               href="#checkout-guest-form"
               aria-controls="checkout-guest-form"
               >
@@ -66,12 +66,12 @@
             </a>
           {/if}
           <a
-            class="bg-main-dark border-0 cursor-pointer duration-150 flex font-body hover:text-white hover:bg-black items-center justify-between max-w-[320px] mb-3 px-8 py-3 rounded-full tablet:max-w-[300px] text-white text-lg uppercase w-full whitespace-nowrap"
+            class="border-2 border-main-dark border-solid cursor-pointer duration-150 flex font-body hover:bg-black hover:text-white items-center justify-between max-w-[320px] mb-3 px-8 py-2.5 rounded-full tablet:max-w-[300px] text-lg text-main-dark uppercase w-full whitespace-nowrap"
             href="#checkout-register-form"
             aria-controls="checkout-guest-form"
             >
              {l s='Create an account' d='Shop.Theme.Customeraccount'}
-             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" fill="none" class="ml-2 flex-0"><path fill-rule="evenodd" clip-rule="evenodd" d="m9.25 14.359 6.25-6.25v-.884L9.25.975l-.884.884 5.183 5.184H.5v1.25h13.05l-5.185 5.182.884.884h.001Z" fill="#fff"/></svg>
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" class="fill-current ml-2 flex-0"><path fill-rule="evenodd" clip-rule="evenodd" d="m9.25 14.359 6.25-6.25v-.884L9.25.975l-.884.884 5.183 5.184H.5v1.25h13.05l-5.185 5.182.884.884h.001Z" /></svg>
           </a>
         </div>
         <div class="flex flex-col items-start my-10 mb-5 px-5 tablet-wide:px-24 tablet:my-20 tablet:w-1/2 w-full">
