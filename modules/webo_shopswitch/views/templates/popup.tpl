@@ -23,7 +23,7 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 <div id="shopswitch-popup"
-    class="popup-hidden w-max shadow-xl absolute z-50 -left-4 tablet-medium:left-auto tablet-medium:-right-4 bottom-10 tablet-medium:bottom-auto tablet-medium:top-10 bg-white rounded-[5px] transition duration-300">
+    class="popup-hidden w-max shadow-xl absolute z-50 left-[-11px] bottom-[30px] tablet-medium:bottom-auto tablet-medium:top-10 bg-white rounded-[5px] transition duration-300">
     <ul class="flex flex-col">
         {foreach from=$shops item=shop}
             {if $shop.id_shop != Context::getContext()->shop->id}
