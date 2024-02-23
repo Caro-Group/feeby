@@ -13,7 +13,14 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   moveSwitcher(window.innerWidth, popupOpen);
+
+  document.addEventListener('click',(e)=>{
+    if (popupModal.classList.contains('is-active')) {
+      togglePopup(popupModal);      
+    }
+  })
 });
+
 
 function togglePopup(popup) {
   popup.classList.toggle("is-active");
