@@ -119,7 +119,7 @@
       <div
         class="border-0 border-b border-gray-2000 border-solid flex items-center justify-between mt-auto px-[30px] py-2.5">
         <button id="search_filters_show_prod"
-          class="text-center bg-main text-white px-5 w-full rounded-full  pb-2 hover:bg-main-hover transition duration-200 border-0 py-2 text-lg uppercase cursor-pointer"
+          class="text-center bg-main-dark text-white px-5 w-full rounded-full  pb-2 hover:bg-main-hover transition duration-200 border-0 py-2 text-lg uppercase cursor-pointer"
           data-filters-modal-close>
           {l s='Show products' d='Shop.Theme.Actions'}
           <span data-filters-active-count></span>
