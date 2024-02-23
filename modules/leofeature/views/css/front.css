@@ -641,33 +641,10 @@ div.star:before {
  }
 
  
- @media(min-width: 992px){
-   .leo-dropdown-cart.dropdown{
-     height: auto;
-     overflow: inherit;
-    }
-
-    .leo-dropdown-cart-content{
-      max-height: calc(100dvh - 210px)
-    }
- 
-  .leo-dropdown-cart {
-    width: auto;
-   }
-
- }
-
- @media(min-width: 1248px){
-
-   .leo-dropdown-cart-content{
-     max-height: calc(100dvh - 170px)
-   }
-
-}
 
 
  .leo-dropdown-cart.dropdown{
-  height: calc(100dvh - 100px);
+  height: calc(100dvh - 143px);
   bottom: auto;
   overflow: auto;
  }
@@ -676,20 +653,34 @@ div.star:before {
  }
 @media(min-width: 768px){
  .leo-dropdown-cart.dropdown{
-  height: calc(100dvh - 170px);
+  height: calc(100dvh - 210px);
  }
 }
 @media(min-width: 992px){
   .leo-dropdown-cart.dropdown{
-   overflow: inherit;
+    height: auto;
+    overflow: inherit;
+  }
+  .leo-dropdown-cart-content{
+    max-height: calc(100dvh - 210px)
   }
   .leo-dropdown-bottom{
     position: static;
       bottom: auto;
       background: transparent;
    }
+   .leo-dropdown-cart {
+    width: auto;
+   }
  }
+ 
+ @media(min-width: 1248px){
 
+  .leo-dropdown-cart-content{
+    max-height: calc(100dvh - 170px)
+  }
+
+}
 
   .leo-dropdown-cart.defaultcart {
     right: 0; }
@@ -738,7 +729,7 @@ div.star:before {
 .leo-dropdown-cart-content {
   background: #fff;
   z-index: 99;
-  min-width: 320px;
+  min-width: 380px;
   right: 0;
   height: 100%;
   display: flex;
@@ -915,16 +906,10 @@ div.star:before {
   .leo-remove-from-cart:hover {
     color: #000; }
   .leo-remove-from-cart i.material-icons {
-    font-size: 0;
     width: 20px;
     height: 20px;
     text-align: center;
     line-height: 20px; }
-    .leo-remove-from-cart i.material-icons:before {
-      content: "\f00d";
-      font-family: FontAwesome;
-      font-size: 12px;
-      display: inline-block; }
 
 .leo-dropdown-additional, .view-additional {
   clear: both;
