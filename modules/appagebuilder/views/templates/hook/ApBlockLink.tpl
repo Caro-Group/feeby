@@ -57,7 +57,7 @@
                         {/foreach}
                         <li class="ml-6 leading-[16px] hidden tablet:block">
                             <a class="text-main-dark hover:text-main transition font-body flex items-center gap-1 whitespace-nowrap {if !$customer.is_logged} leo-quicklogin{/if}"
-                                    {if $customer.is_logged}
+                                    {if $customer.is_logged && !$customer.is_guest}
                                         href="{$link->getPageLink('my-account', true)|escape:'html'}"
                                         title="{l s='My account' d='Shop.Theme.Customeraccount'}"
                                     {else}
@@ -68,7 +68,7 @@
                                         rel="nofollow"
                                         title="{l s='Login / Register' d='Shop.Theme.Customeraccount'}"
                                     {/if}>
-                                {if $customer.is_logged}{l s='My account' d='Shop.Theme.Customeraccount'}{else}{l s='Login / Register' d='Shop.Theme.Customeraccount'}{/if}
+                                {if $customer.is_logged && !$customer.is_guest}{l s='My account' d='Shop.Theme.Customeraccount'}{else}{l s='Login / Register' d='Shop.Theme.Customeraccount'}{/if}
                             </a>
                         </li>
                     </ul>
