@@ -35,7 +35,7 @@
       
       <form method="GET" action="{$urls.pages.order}">
         <button
-          class="bg-main hover:bg-main-hover duration-150 border-0 rounded-full text-white p-2 px-4 uppercase whitespace-nowrap mb-2 flex items-center justify-between cursor-pointer ml-auto"
+          class="bg-main-dark hover:bg-main-hover duration-150 border-0 rounded-full text-white p-2 px-4 uppercase whitespace-nowrap mb-2 flex items-center justify-between cursor-pointer ml-auto"
           name="controller"
           type="submit"
           value="order"

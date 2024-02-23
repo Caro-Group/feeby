@@ -110,7 +110,7 @@
                 </ul>
             </div>
             <button type="button"
-                class="bg-main hover:bg-main-hover duration-150 border-0 rounded-full text-white px-4 py-3 text-sm uppercase whitespace-nowrap font-body cursor-pointer">
+                class="bg-main-dark hover:bg-main-hover duration-150 border-0 rounded-full text-white px-4 py-3 text-sm uppercase whitespace-nowrap font-body cursor-pointer">
                 {l s='Save selection' d='Shop.Theme.Global'}
                 <i class="ti-arrow-right text-white ml-2"></i>
             </button>
