@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
   moveSwitcher(window.innerWidth, popupOpen);
 
   document.addEventListener('click',(e)=>{
-    if (popupModal.classList.contains('is-active')) {
+    if (popupModal.classList.contains('is-active') && e.target.id !== 'shopswitch-toggle') {
       togglePopup(popupModal);      
     }
   })
