@@ -42,7 +42,7 @@
             </h3>
             <div class="language-selector mb-8 w-full">
                 <ul class="flex flex-wrap justify-center">
-                    {debug}
+                    {* {debug} *}
                     {foreach from=$shops item=shop}
                         <li class="basis-1/3">
                             <input class="hidden" type="radio" id="{$shop.id_shop}" name="language"
@@ -69,10 +69,11 @@
                                         </svg>
                                     </span>
                                 </div>
-
+                                {assign var=shop_currencies  value=Currency::getCurrenciesByIdShop($shop.id_shop)}
                                 <span class="text-base font-normal text-main-dark">{$shop.lang.name} |
-                                {assign var=currencies_test  value=Currency::getCurrenciesByIdShop($shop.id_shop)}
-                                {$currencies_test|@print_r}</span>
+                                    {$shop_currencies|@print_r}
+                                    {$shop_currencies[0]->iso_code}
+                                </span>
                             </label>
                         </li>
                     {/foreach}
