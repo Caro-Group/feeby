@@ -640,11 +640,16 @@ div.star:before {
   bottom: auto;
  }
 
+ 
  @media(min-width: 992px){
-  .leo-dropdown-cart.dropdown{
-    height: auto;
-    overflow: inherit;
-   }
+   .leo-dropdown-cart.dropdown{
+     height: auto;
+     overflow: inherit;
+    }
+
+    .leo-dropdown-cart-content{
+      max-height: calc(100dvh - 210px)
+    }
  
   .leo-dropdown-cart {
     width: auto;
