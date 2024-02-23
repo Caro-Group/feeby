@@ -26,7 +26,7 @@
 {* tablet-medium:flex !border-hidden !p-0 tablet-medium:!px-2.5 order-5 tablet-medium:order-3 *}
 
 <div id="Webo-shopswitch">
-    <div id="shopswitch-toggle" class="relative">
+    <div id="shopswitch-toggle" class="relative tablet-medium:ml-[50px] mr-5 desktop-presta:ml-[100px]">
         <div class="flex items-center group cursor-pointer">
             <img class="flex-grow-0 flex-shrink-0 mr-2.5 rounded-full border border-solid border-gray-2000 group-hover:border-main  object-cover transition duration-200"
                 src="/img/l/{$current_language.id_lang}.jpg" height="30" width="30">
