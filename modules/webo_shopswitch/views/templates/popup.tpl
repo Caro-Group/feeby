@@ -71,7 +71,8 @@
                                 </div>
 
                                 <span class="text-base font-normal text-main-dark">{$shop.lang.name} |
-                                    {Currency::getCurrenciesByIdShop(1)}</span>
+                                {assign var=currencies to Currency::getCurrenciesByIdShop(1)}
+                                {$currencies|@print_r}</span>
                             </label>
                         </li>
                     {/foreach}
