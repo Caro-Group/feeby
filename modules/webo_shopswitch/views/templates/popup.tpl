@@ -23,23 +23,23 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 <div id="shopswitch-popup"
-    class="popup-hidden absolute left-0 top-full w-80 bg-white rounded-[5px] transition duration-300">
+    class="popup-hidden absolute z-50 right-5 top-full w-80 bg-white rounded-[5px] transition duration-300">
     <ul class="flex flex-col">
         {foreach from=$shops item=shop}
-            {if $shop.id_shop !== Context::getContext()->shop->id}
+            {if $shop.id_shop != Context::getContext()->shop->id}
                 {assign var=shop_currencies  value=Currency::getCurrenciesByIdShop($shop.id_shop)}
                 <li class="border-0 border-b last:border-b-0 border-solid border-gray-2000">
                     <a href="{$protocol}{$shop.domain_ssl}{$shop.uri}" class="group flex items-center p-2">
                         {if isset($shop.lang.id_lang)}
-                            <img class="mr-2 rounded-full border border-solid border-gray-2000 group-hover:border-main object-cover transition-all duration-200 overflow-hidden"
+                            <img class="shrink-0 mr-2 rounded-full border border-solid border-gray-2000 group-hover:border-main object-cover transition-all duration-200 overflow-hidden"
                                 height="25" width="25" src="/img/l/{$shop.lang.id_lang}.jpg" alt="{$shop.lang.language_code}"
                                 title="{$shop.lang.name}" />
                         {else}
-                            <img class="mr-2 rounded-full border border-solid border-gray-2000 group-hover:border-main object-cover transition-all duration-200 overflow-hidden"
+                            <img class="shrink-0 mr-2 rounded-full border border-solid border-gray-2000 group-hover:border-main object-cover transition-all duration-200 overflow-hidden"
                                 height="25" width="25" src="/img/l/none.jpg" alt="Flag no found">
                         {/if}
                         <span
-                            class="text-base font-normal text-main-dark group-hover:text-main uppercase transition duration-200">
+                            class="text-base whitespace-nowrap font-normal text-main-dark group-hover:text-main uppercase transition duration-200">
                             {$shop.lang.iso_code} | {$shop_currencies[0]['iso_code']}
                         </span>
                     </a>
