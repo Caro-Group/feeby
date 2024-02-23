@@ -51,7 +51,7 @@
                             <label for="{$shop.id_shop}"
                                 class="flex flex-col items-center cursor-pointer w-min mx-auto relative">
                                 {assign var=shop_currencies  value=Currency::getCurrenciesByIdShop($shop.id_shop)}
-                                <span class="text-base font-normal text-main-dark">{$shop.lang.language_code} |
+                                <span class="text-base font-normal text-main-dark">{$shop.lang.iso_code} |
                                     {$shop_currencies[0]['iso_code']}
                                 </span>
                             </label>
