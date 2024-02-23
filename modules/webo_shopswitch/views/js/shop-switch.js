@@ -15,10 +15,6 @@ document.addEventListener("DOMContentLoaded", function () {
   moveSwitcher(window.innerWidth, popupOpen);
 });
 
-window.addEventListener("pageshow", () => {
-  document.querySelector("#shopswitch-popup form").reset();
-});
-
 function togglePopup(popup) {
   popup.classList.toggle("is-active");
 }

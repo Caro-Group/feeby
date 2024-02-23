@@ -23,13 +23,13 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 <div id="shopswitch-popup"
-    class="popup-hidden absolute z-50 right-5 top-full w-80 bg-white rounded-[5px] transition duration-300">
+    class="popup-hidden shadow-xl absolute z-50 right-0 top-full bg-white rounded-[5px] transition duration-300">
     <ul class="flex flex-col">
         {foreach from=$shops item=shop}
             {if $shop.id_shop != Context::getContext()->shop->id}
                 {assign var=shop_currencies  value=Currency::getCurrenciesByIdShop($shop.id_shop)}
                 <li class="border-0 border-b last:border-b-0 border-solid border-gray-2000">
-                    <a href="{$protocol}{$shop.domain_ssl}{$shop.uri}" class="group flex items-center p-2">
+                    <a href="{$protocol}{$shop.domain_ssl}{$shop.uri}" class="group flex items-center py-2 px-4">
                         {if isset($shop.lang.id_lang)}
                             <img class="shrink-0 mr-2 rounded-full border border-solid border-gray-2000 group-hover:border-main object-cover transition-all duration-200 overflow-hidden"
                                 height="25" width="25" src="/img/l/{$shop.lang.id_lang}.jpg" alt="{$shop.lang.language_code}"
