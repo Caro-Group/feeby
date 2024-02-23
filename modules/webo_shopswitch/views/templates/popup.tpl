@@ -71,7 +71,8 @@
                                 </div>
                                 {assign var=shop_currencies  value=Currency::getCurrenciesByIdShop($shop.id_shop)}
                                 <span class="text-base font-normal text-main-dark">{$shop.lang.name} |
-                                    {$shop_currencies[0]|@print_r}
+                                    {$shop_currencies[0][0]|@print_r}
+                                    {$shop_currencies[0][0]->iso_code|@print_r}
                                     {$shop_currencies[0][0]->iso_code}
                                 </span>
                             </label>
