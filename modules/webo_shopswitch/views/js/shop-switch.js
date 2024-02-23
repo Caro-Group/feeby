@@ -3,7 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const popupModal = document.querySelector("#shopswitch-popup");
 
   popupOpen.forEach((element) => {
-    element.addEventListener("click", () => {
+    element.addEventListener("click", (e) => {
+      e.stopPropagation()
       togglePopup(popupModal);
     });
   });
