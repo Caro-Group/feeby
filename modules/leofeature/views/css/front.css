@@ -657,6 +657,14 @@ div.star:before {
 
  }
 
+ @media(min-width: 1248px){
+
+   .leo-dropdown-cart-content{
+     max-height: calc(100dvh - 170px)
+   }
+
+}
+
 
  .leo-dropdown-cart.dropdown{
   height: calc(100dvh - 143px);
