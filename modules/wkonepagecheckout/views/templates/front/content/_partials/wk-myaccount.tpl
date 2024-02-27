@@ -15,7 +15,7 @@
 *  @license   LICENSE.txt
 *}
 <div class="wk-address-block">
-	<ul class="nav nav-tabs" style="display: inline-flex;">
+	<ul class="nav nav-tabs gap-4" style="display: inline-flex;">
 		<li class="nav-item">
 			<a class="font-body text-base text-gray-3000 border-0 border-b-[3px] border-solid rounded-b-[3px] nav-link font-normal transition duration-200 active" href="#wk-existing-delivery" data-toggle="tab">
 				{l s='Delivery Address' mod='wkonepagecheckout'}

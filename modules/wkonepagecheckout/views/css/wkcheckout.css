@@ -553,8 +553,12 @@ label.wk-icon {
     align-items: center;
 }
 
-.nav-link.active {
-    color: #2fb5d2 !important;
+.wk-disabled-invoice{
+    cursor: not-allowed;
+}
+
+.wk-disabled-invoice a{
+    pointer-events: none;
 }
 
 .wk-social-login a#fbLink {
