@@ -20,14 +20,13 @@
     <section class="main" id="wk-one-page-checkout">
         <section class="page-content card card-block">
             <div class="row">
-                <div class="col-lg-4 col-md-12 col-sm-12">
-                    {block name='wk-customer-info'}
-                        {include file="module:wkonepagecheckout/views/templates/front/content/wk_customer_info.tpl"}
-                    {/block}
-                </div>
-                <div class="col-lg-8 col-md-12 col-sm-12">
+                <div class="col-lg-12 col-md-12 col-sm-12">
                     {block name='wk_order_summary'}
                         {include file="module:wkonepagecheckout/views/templates/front/content/wkordersummary.tpl"}
+                    {/block}
+                    
+                    {block name='wk-customer-info'}
+                        {include file="module:wkonepagecheckout/views/templates/front/content/wk_customer_info.tpl"}
                     {/block}
 
                     {block name='wk_order_shipping'}
