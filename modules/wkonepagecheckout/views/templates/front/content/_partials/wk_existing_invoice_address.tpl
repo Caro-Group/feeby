@@ -16,9 +16,9 @@
 *}
 {if isset($customer.addresses) && $customer.addresses|count > 0}
     <div class="form-group clearfix wk-align-center">
-        <label class="col-md-1 col-xs-1 col-sm-1">
-            <span class="custom-radio">
-                <input type="radio" name="wk-invoice-address" id="wk-invoice-address-1" value="1" checked="checked">
+        <label class="mb-0 h-5">
+            <span>
+                <input type="radio" name="wk-invoice-address" id="wk-invoice-address-1" value="1" checked="checked" class="cursor-pointer after:absolute after:content-[''] after:h-[10px] after:m-[3px] after:rounded-sm after:transition after:w-[10px] appearance-none border-2 border-gray-3000 border-solid checked:after:bg-main checked:bg-white checked:border-main checked:focus:bg-white checked:focus:border-main checked:focus:ring-transparent checked:focus:shadow-none checked:hover:bg-white checked:hover:border-main checked:ring-0 checked:ring-transparent focus:ring-0 focus:ring-offset-0 focus:ring-transparent h-5 outline-none ring-transparent rounded transition transition-all w-5">
                 <span></span>
             </span>
         </label>
@@ -37,7 +37,7 @@
 
 {if $customer.addresses|count > 0}
     <div class="form-group clearfix">
-        <label class="col-md-1 col-xs-1 col-sm-1"></label>
+        <label class="float-left w-5"></label>
         <div class="col-md-10 col-sm-10 col-xs-10">
             <address class="wk-diff-address wk-invoice-address-card">
                 {$customer.addresses.{$cart.id_address_invoice}.formatted nofilter}
@@ -57,9 +57,9 @@
 
 {if $customer.addresses|count > 0}
     <div class="form-group clearfix wk-align-center">
-        <label class="col-md-1 col-xs-1 col-sm-1">
-            <span class="custom-radio">
-                <input type="radio" name="wk-invoice-address" id="wk-invoice-address-2" value="2">
+        <label class="mb-0 h-5">
+            <span>
+                <input type="radio" name="wk-invoice-address" id="wk-invoice-address-2" value="2" class="cursor-pointer after:absolute after:content-[''] after:h-[10px] after:m-[3px] after:rounded-sm after:transition after:w-[10px] appearance-none border-2 border-gray-3000 border-solid checked:after:bg-main checked:bg-white checked:border-main checked:focus:bg-white checked:focus:border-main checked:focus:ring-transparent checked:focus:shadow-none checked:hover:bg-white checked:hover:border-main checked:ring-0 checked:ring-transparent focus:ring-0 focus:ring-offset-0 focus:ring-transparent h-5 outline-none ring-transparent rounded transition transition-all w-5">
                 <span></span>
             </span>
         </label>
