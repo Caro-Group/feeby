@@ -25,16 +25,17 @@
                 <div class="row">
                     <div class="wk-shipping-list col-md-12 col-sm-12 col-xs-12">
                         <div class="wk-shipping col-xs-1 col-sm-1 col-md-1 wkpadding">
-                            <span class="custom-radio">
+                            <span>
                                 <input {if $delivery_option == $carrier_id} checked{/if} type="radio"
                                     name="delivery_option[{$id_address}]" id="delivery_option_{$carrier.id}"
-                                    class="form-control wk_selected_shipping" wk-opc-id-carrier="{$carrier.id}"
+                                    class="form-control wk_selected_shipping after:absolute after:content-[''] after:h-[10px] after:m-[3px] after:rounded-sm after:transition after:w-[10px] appearance-none border-2 border-gray-3000 border-solid checked:after:bg-main checked:bg-white checked:border-main checked:focus:bg-white checked:focus:border-main checked:focus:ring-transparent checked:focus:shadow-none checked:hover:bg-white checked:hover:border-main checked:ring-0 checked:ring-transparent cursor-pointer focus:ring-0 focus:ring-offset-0 focus:ring-transparent h-5 outline-none ring-transparent rounded transition transition-all w-5" wk-opc-id-carrier="{$carrier.id}"
                                     value="{$carrier.id},">
                                 <span></span>
                             </span>
                         </div>
-                        <div
-                            class="wk-selected-shipping-{$carrier.id} col-md-11 col-sm-9 col-xs-9 {if $delivery_option == $carrier_id} wkSelectedBorder{/if}">
+                        <label
+                            for="delivery_option_{$carrier.id}"
+                            class="cursor-pointer wk-selected-shipping-{$carrier.id} col-md-11 col-sm-9 col-xs-9 {if $delivery_option == $carrier_id} wkSelectedBorder{/if}">
                             <div class="row">
                                 {if Configuration::get('WK_CHECKOUT_CARRIER_LOGO')}
                                     <div class="col-md-3 col-xs-12 col-sm-3">
@@ -57,7 +58,7 @@
                                     <span class="carrier-price">{$carrier.price}</span>
                                 </div>
                             </div>
-                        </div>
+                        </label>
                     </div>
                 </div>
                 <div class="row carrier-extra-content" {if $delivery_option != $carrier_id} style="display:none;" {/if}>

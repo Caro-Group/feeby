@@ -23,7 +23,7 @@
             </span>
         </label>
         <div class="col-md-10 col-sm-10 col-xs-10">
-            <select class="form-control" id="wk-existing-invoice-address">
+            <select class="form-control bg-white border border-gray-2000 focus:border-gray-3000 focus:ring-0 font-body font-medium form-control-select form-select js-country pl-4 rounded-full w-full" id="wk-existing-invoice-address">
                 {foreach $customer.addresses as $addr}
                     <option {if isset($cart.id_address_delivery)} 
                         {if $cart.id_address_invoice == $addr.id}selected="selected"

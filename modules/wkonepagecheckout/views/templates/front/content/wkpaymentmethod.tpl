@@ -32,7 +32,7 @@
 								<div id="{$option.id}-container" class="col-md-12 col-sm-12 col-xs-12">
 									<div class="wk-payment col-xs-1 col-sm-1 col-md-1 payment-option wkpadding">
 										{* This is the way an option should be selected when Javascript is enabled *}
-										<span class="custom-radio pull-xs-left">
+										<span class="pull-xs-left">
 											<input {if is_null($option.module_name)}
 														{if $counter == 1}
 															{if Configuration::get('WK_CHECKOUT_DEFAULT_PAYMENT') == $key || $is_free}checked="checked"{/if}
@@ -40,7 +40,8 @@
 													{else}
 														{if Configuration::get('WK_CHECKOUT_DEFAULT_PAYMENT') == $option.module_name || $is_free}checked="checked"{/if}
 													{/if}
-														class="ps-shown-by-js {if $option.binary} binary {/if}" id="{$option.id}"
+														class="ps-shown-by-js {if $option.binary} binary {/if} after:absolute after:content-[''] after:h-[10px] after:m-[3px] after:rounded-sm after:transition after:w-[10px] appearance-none border-2 border-gray-3000 border-solid checked:after:bg-main checked:bg-white checked:border-main checked:focus:bg-white checked:focus:border-main checked:focus:ring-transparent checked:focus:shadow-none checked:hover:bg-white checked:hover:border-main checked:ring-0 checked:ring-transparent cursor-pointer focus:ring-0 focus:ring-offset-0 focus:ring-transparent h-5 outline-none ring-transparent rounded transition transition-all w-5" 
+															id="{$option.id}"
 															data-module-name="{$option.module_name}" name="payment-option" type="radio" required>
 														<span></span>
 													</span>
@@ -52,8 +53,9 @@
 														</button>
 													</form>
 												</div>
-												<div
-													class="col-md-11 col-sm-9 col-xs-9 wk-selected-payment-{$option.id} {if Configuration::get('WK_CHECKOUT_DEFAULT_PAYMENT') && (Configuration::get('WK_CHECKOUT_DEFAULT_PAYMENT') == $option.module_name)}wkSelectedBorder{/if}">
+												<label
+													for="{$option.id}"
+													class="cursor-pointer col-md-11 col-sm-9 col-xs-9 wk-selected-payment-{$option.id} {if Configuration::get('WK_CHECKOUT_DEFAULT_PAYMENT') && (Configuration::get('WK_CHECKOUT_DEFAULT_PAYMENT') == $option.module_name)}wkSelectedBorder{/if}">
 													<div class="row">
 														{if Configuration::get('WK_CHECKOUT_PAYMENT_LOGO')}
 															<div class="col-md-3 col-xs-12 col-sm-3">
@@ -73,7 +75,7 @@
 														{/if}
 														</div>
 													</div>
-												</div>
+												</label>
 											</div>
 
 											{if $option.additionalInformation}
