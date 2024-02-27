@@ -18,7 +18,7 @@
     <div class="row">
         <div class="col-md-6 col-sm-12">
             <div class="row">
-                <div class="border-gray-2000 border-solid border flex rounded-full pl-4 bg-white max-w-[350px]">
+                <div class="border-gray-2000 border-solid border flex rounded-full pl-4 bg-white tablet:max-w-[350px]">
                     <input placeholder="{l s='Promo code' mod='wkonepagecheckout'}" type="text" name="wk-voucher"
                         id="wk-voucher" class="promo-input w-full bg-transparent border-0 py-3 outline-none font-body focus:ring-0 text-[12px] tablet:text-sm">
                     <button id="addVoucher" class="bg-main hover:bg-main-hover cursor-pointer overflow-hidden transition border-0 rounded-full text-white px-8 uppercase whitespace-nowrap font-body">

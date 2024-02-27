@@ -23,10 +23,10 @@
 					{foreach $cart.products as $product}
 						<li class="clearfix flex py-3 border-0 border-b first:border-t border-solid border-gray-2000 ">
 
-							<div class="product-line-grid-left shrink-0 basis-[15%]">
-								<div class="pr-5 wk-product-img wk-left product-cover">
+							<div class="product-line-grid-left shrink-0 basis-1/5 tablet:basis-[15%]">
+								<div class="pr-2.5 tablet:pr-5 wk-product-img wk-left product-cover w-full">
 									{if isset($product.cover) && $product.cover}
-										<img class="js-qv-product-cover" {if Configuration::get('WK_CHECKOUT_PRODUCT_IMAGE') == '1'}
+										<img class="js-qv-product-cover w-full" {if Configuration::get('WK_CHECKOUT_PRODUCT_IMAGE') == '1'}
 											width="50" heigth="50" {else if Configuration::get('WK_CHECKOUT_PRODUCT_IMAGE') == '2'}
 											width="80" heigth="80" {else if Configuration::get('WK_CHECKOUT_PRODUCT_IMAGE') == '3'}
 											width="100" heigth="100" {else} width="70" heigth="70"
@@ -41,7 +41,7 @@
 											{else if Configuration::get('WK_CHECKOUT_PRODUCT_IMAGE') == '2'} width="80" heigth="80"
 											{else if Configuration::get('WK_CHECKOUT_PRODUCT_IMAGE') == '3'} width="100"
 											heigth="100" {else} width="70" heigth="70"
-											{/if} class="product-image"
+											{/if} class="product-image w-full"
 											src="{$wk_opc_modules_dir}img/en.jpg" itemprop="image">
 									{/if}
 								</div>
@@ -49,7 +49,7 @@
 
 							<div class="flex flex-wrap w-full">
 
-								<div class="product-line-grid-body shrink-0 basis-[60%] tablet:basis-[30%] tablet-wide:basis-[30%]">
+								<div class="product-line-grid-body shrink-0 basis-[70%] tablet:basis-[30%] tablet-wide:basis-[30%] mb-0">
 									<div class="wk-product-detail wk-left "
 										data-id-product-attribute="{$product.id_product_attribute}"
 										data-id-product="{$product.id_product}">
@@ -75,7 +75,7 @@
 									</div>
 								</div>
 
-								<div class="wk-product-info shrink-0 basis-[60%] order-3 tablet:basis-[15%] tablet:order-2">
+								<div class="wk-product-info shrink-0 basis-[70%] order-3 tablet:basis-[15%] tablet:order-2">
 									<div class="bootstrap-touchspin">
 										<input data-id-product-attribute="{$product.id_product_attribute}"
 											data-id-product="{$product.id_product}"
@@ -97,7 +97,7 @@
 									</div>
 								</div>
 
-								<div class="shrink-0 basis-[40%] order-3 tablet:basis-[15%] tablet:order-4">
+								<div class="shrink-0 basis-[30%] order-3 tablet:basis-[15%] tablet:order-4">
 									<span class="text-base tablet:text-lg text-main-dark float-right">
 										{if isset($product.total)}
 											<span>{$product.total}</span>
@@ -105,7 +105,7 @@
 									</span>
 								</div>
 
-								<div class="wk-delete-qty !p-0 basis-[40%] tablet-wide:basis-[30%]">
+								<div class="wk-delete-qty !p-0 basis-[30%] tablet:order-4 tablet-wide:basis-[30%]">
 									<div class="cart-line-product-actions">
 										<a title="{l s='Delete' mod='wkonepagecheckout'}" id="wk-remove-cart"
 											data-id-product-attribute="{$product.id_product_attribute}"

@@ -35,9 +35,9 @@
 							name="{$field.invoice_field_name}"
 							id="{$field.invoice_field_name}"
 							value="{if isset($delivery_address)}{$delivery_address->{$field.db_fieldname}}{/if}"
-							class="form-control wkvalidatefield">
-						<i class="material-icons wk-check-icon wkhide icon_{$field.invoice_field_name}">&#xE876;</i>
-						<i class="material-icons wk-error-icon wkhide error_{$field.invoice_field_name}">&#xE001;</i>
+							class="form-control wkvalidatefield border-gray-2000 border-solid border rounded-full bg-white">
+						<i class="material-icons wk-check-icon wkhide mt-1.5 icon_{$field.invoice_field_name}">&#xE876;</i>
+						<i class="material-icons wk-error-icon wkhide mt-1.5 error_{$field.invoice_field_name}">&#xE001;</i>
 						<span class="help-block wk-error {$field.invoice_field_name}"></span>
 					</div>
 				{elseif $fieldName == 'country'}
@@ -79,7 +79,7 @@
 				{else}
 					{hook h='displayGDPRConsent' mod='psgdpr' id_module=$id_module}
 				{/if}
-				<button type="submit" class="btn btn-primary wk-save-address">
+				<button type="submit" class="btn py-3 px-4 border-2 text-main-dark uppercase border-main-dark hover:bg-main-dark hover:text-white rounded-full border-solid  transition font-body text-xs font-normal wk-save-address">
 					{l s='Save' mod='wkonepagecheckout'}
 				</button>
 				<div class="wkhide wk_text-light wkbotton" id="wk-msg-new-invoice"></div>
