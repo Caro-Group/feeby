@@ -17,14 +17,14 @@
 <div class="wk-address-block">
 	<ul class="nav nav-tabs" style="display: inline-flex;">
 		<li class="nav-item">
-			<a class="nav-link active" href="#wk-existing-delivery" data-toggle="tab">
+			<a class="font-body text-base text-gray-3000 border-0 border-b-[3px] border-solid rounded-b-[3px] nav-link font-normal transition duration-200 active" href="#wk-existing-delivery" data-toggle="tab">
 				{l s='Delivery Address' mod='wkonepagecheckout'}
 			</a>
 		</li>
 
 		<li
 			class="nav-item wk-disabled-invoice {if !Configuration::get('WK_CHECKOUT_DELIVERY_AS_INVOICE')}disabled{/if}">
-			<a class="nav-link" href="#wk-existing-invoice"
+			<a class="font-body text-base text-gray-3000 border-0 border-b-[3px] border-solid rounded-b-[3px] nav-link font-normal transition duration-200" href="#wk-existing-invoice"
 				{if !Configuration::get('WK_CHECKOUT_DELIVERY_AS_INVOICE')}data-toggle="tab" {/if}>
 				{l s='Invoice Address' mod='wkonepagecheckout'}
 			</a>
