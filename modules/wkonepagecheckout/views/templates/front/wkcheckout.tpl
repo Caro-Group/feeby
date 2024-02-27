@@ -18,17 +18,17 @@
 {extends file='checkout/checkout.tpl'}
 {block name='content'}
     <section class="main" id="wk-one-page-checkout">
-        <section class="page-content card card-block">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12">
-                    {block name='wk_order_summary'}
-                        {include file="module:wkonepagecheckout/views/templates/front/content/wkordersummary.tpl"}
-                    {/block}
-                    
-                    {block name='wk-customer-info'}
-                        {include file="module:wkonepagecheckout/views/templates/front/content/wk_customer_info.tpl"}
-                    {/block}
+        <section class="desktop-presta:px-24  tablet-medium:px-7">
+            <div class="pt-10 dekstop-presta:pt-60px">
+                {block name='wk_order_summary'}
+                    {include file="module:wkonepagecheckout/views/templates/front/content/wkordersummary.tpl"}
+                {/block}
 
+                {block name='wk-customer-info'}
+                    {include file="module:wkonepagecheckout/views/templates/front/content/wk_customer_info.tpl"}
+                {/block}
+
+                <div class="mb-5 p-5 bg-gray-1000 rounded-[5px]">
                     {block name='wk_order_shipping'}
                         <div class="col-md-6 col-sm-12 col-xs-12" id="wk_shipping_section">
                             {if isset($cart_order_split_tpl) && $cart_order_split_tpl}
