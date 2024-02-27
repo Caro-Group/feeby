@@ -553,14 +553,6 @@ label.wk-icon {
     align-items: center;
 }
 
-.wk-disabled-invoice{
-    cursor: not-allowed;
-}
-
-.wk-disabled-invoice a{
-    pointer-events: none;
-}
-
 .wk-social-login a#fbLink {
     background-image: url("../img/icon-fb.png");
     background-position: 7px 10px;
