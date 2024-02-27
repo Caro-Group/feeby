@@ -84,7 +84,6 @@
 
 #wk-voucher {
     float: left;
-    width: 60%;
 }
 
 .wk-voucher-available .block-promo.promo-highlighted {
@@ -216,7 +215,6 @@
 }
 
 .bootstrap-touchspin {
-    box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.15);
     float: left;
 }
 
@@ -230,14 +228,7 @@
     float: left;
     margin-bottom: 0;
     position: relative;
-    width: 2.4rem !important;
-    /*overriding for responsiveness */
     z-index: 2;
-    background-color: #fff;
-    color: #414141;
-    height: 2.5rem;
-    padding: 0.175rem 0.5rem;
-    width: 3rem;
 }
 
 .product-price {
