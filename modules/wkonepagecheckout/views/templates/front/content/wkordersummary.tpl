@@ -14,12 +14,12 @@
 *  @copyright since 2010 Webkul
 *  @license   LICENSE.txt
 *}
-<div id="wk-order-summary-ajax" class="mb-5 p-5 bg-gray-1000 rounded-[5px] clearfix">
-	<article class="wk-box box">
+<div id="wk-order-summary-ajax" class="clearfix">
+	<article class="mb-5 p-5 bg-gray-1000 rounded-[5px] clearfix">
 		<h4 class="font-light text-lg tablet:text-xl text-main-dark mb-5">{l s='Order Summary' mod='wkonepagecheckout'}</h4>
-		<div class="col-md-12 col-sm-12 col-xs-12">
+		<div class="text-sm text-main-dark">
 			<ul class="wk-cart-items clearfix">
-				<li class="wk-order-product col-sm-12 col-xs-12 hidden-xs-down">
+				<li class="wk-order-product hidden-xs-down">
 					<div class="wk-product-info col-md-6 col-sm-6 col-xs-12">
 						<div class="wk-product-img">
 							<span>{l s='Description' mod='wkonepagecheckout'}</span>
@@ -47,7 +47,7 @@
 				</li>
 				{if isset($cart.products)}
 					{foreach $cart.products as $product}
-						<li class="wk-order-product col-sm-12 col-xs-12">
+						<li class="wk-order-product clearfix">
 							<div class="product-line-grid-left col-md-2 col-xs-3">
 								<div class="wk-product-img wk-left product-cover">
 									{if isset($product.cover) && $product.cover}
@@ -76,15 +76,16 @@
 									data-id-product-attribute="{$product.id_product_attribute}"
 									data-id-product="{$product.id_product}">
 									<div class="product-line-info">
-										<a class="quick-view label" data-link-action="quickview"
+										<a class="quick-view label !text-main-dark hover:!text-main transition duration-200" data-link-action="quickview"
 											data-id-product-attribute="{$product.id_product_attribute}"
-											data-id-product="{$product.id_product}" href="javascript:void(0);"
-											title="{l s='Change Combination' mod='wkonepagecheckout'}">
+											data-id-product="{$product.id_product}" href="{$product.url}"
+											target="_blank"
+											title="{l s='More Detail' mod='wkonepagecheckout'}">
 											<span>{$product.name}</span></a>
 									</div>
 									{if isset($product.attributes)}
 										{foreach $product.attributes as $key => $value}
-											<div>
+											<div class="text-xs">
 												<span class="wk-attribute">{$key}:</span>
 												<span class="wk-attribute-value">{$value}</span>
 											</div>
@@ -93,8 +94,6 @@
                                     {hook h='displayWkProductPriceBlock' product=$product}
 									{include file='module:wkonepagecheckout/views/templates/front/content/_partials/wk_cart_product_customization.tpl'}
 									<br />
-									<div class="wk-product-link"><a target="_blank"
-											href="{$product.url}">{l s='More Detail' mod='wkonepagecheckout'}</a></div>
 								</div>
 							</div>
 							<div class="wk-product-info col-md-2 col-sm-3 col-xs-12">
@@ -126,7 +125,7 @@
 								</span>
 							</div>*}
 							<div class="col-md-2 col-sm-3 col-xs-12">
-								<span class="product-price">
+								<span class="text-base tablet:text-lg text-main-dark">
 									{if isset($product.total)}
 										<span>{$product.total}</span>
 									{/if}
@@ -143,16 +142,6 @@
 										<i class="material-icons pull-xs-left">delete</i>
 									</a>
                                     {hook h='displayWkCartExtraProductActions' product=$product}
-									{if Configuration::get('WK_CHECKOUT_CART_SAVE_LATER') && $customer.is_logged && $customer.is_guest !== "1"}
-										<a title="{l s='Save for later' mod='wkonepagecheckout'}"
-											id="wk-cart-save"
-											data-id-product-attribute="{$product.id_product_attribute}"
-											data-id-product="{$product.id_product}" data-quantity="{$product.cart_quantity}"
-											data-id-customization="{if isset($product.id_customization)}{$product.id_customization}{else}0{/if}"
-											href="javascript:void(0);" class="remove-from-cart wk-left">
-											<i class="material-icons">&#xE8B5;</i>
-										</a>
-									{/if}
 									{if Module::isEnabled('wkstripepayment')}
 										{if isset($stripeSubscribedProducts) && count($stripeSubscribedProducts)}
 											{foreach $stripeSubscribedProducts as $stripeSubscribedProduct}
@@ -200,5 +189,4 @@
 		{/block}
 		<div id="wkorder-summary"></div>
 	</article>
-	<p class="wkstyle !border-0"></p>
 </div>

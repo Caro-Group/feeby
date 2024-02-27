@@ -63,7 +63,7 @@
                 {/if}
 
                 <div class="wk-box">
-                    <div class="wk-product-info col-md-8 col-sm-6 col-xs-6">
+                    <div class="wk-product-info col-md-8 col-sm-6 col-xs-6 text-main-dark text-sm">
                         <span>
                             {l s='Total products' mod='wkonepagecheckout'}
                             &nbsp;{if Configuration::get('PS_TAX')}{$cart.labels.tax_short}{/if}
@@ -77,7 +77,7 @@
                 </div>
                 {if isset($isVirtual) && !$isVirtual}
                     <div class="wk-box">
-                        <div class="wk-product-info col-md-8 col-sm-6 col-xs-6">
+                        <div class="wk-product-info col-md-8 col-sm-6 col-xs-6 text-main-dark text-sm">
                             <span>{l s='Total shipping' mod='wkonepagecheckout'}</span>
                         </div>
                         <div class="col-md-4 col-xs-2 col-sm-6 col-xs-6 wk-product-val">
@@ -89,7 +89,7 @@
                 {/if}
                 {if isset($cart.subtotals.discounts)}
                     <div class="wk-box">
-                        <div class="wk-product-info col-md-8 col-sm-6 col-xs-6">
+                        <div class="wk-product-info col-md-8 col-sm-6 col-xs-6 text-main-dark text-sm">
                             <span>{l s='Total Discount' mod='wkonepagecheckout'}</span>
                         </div>
                         <div class="col-md-4 col-xs-2 col-sm-6 col-xs-6 wk-product-val">
@@ -101,7 +101,7 @@
                 {if Configuration::get('PS_GIFT_WRAPPING')}
                     {if isset($cart.subtotals.gift_wrapping)}
                         <div class="wk-box">
-                            <div class="wk-product-info col-md-8 col-sm-6 col-xs-6">
+                            <div class="wk-product-info col-md-8 col-sm-6 col-xs-6 text-main-dark text-sm">
                                 <span>{$cart.subtotals.gift_wrapping.label}</span>
                             </div>
                             <div class="col-md-4 col-xs-2 col-sm-6 col-xs-6 wk-product-val">
@@ -113,7 +113,7 @@
 
                 {if Configuration::get('PS_TAX')}
                     <div class="wk-box">
-                        <div class="wk-product-info col-md-8 col-sm-6 col-xs-6">
+                        <div class="wk-product-info col-md-8 col-sm-6 col-xs-6 text-main-dark text-sm">
                             <span>
                                 {l s='Total (tax excl.)' mod='wkonepagecheckout'}
                             </span>
@@ -126,7 +126,7 @@
                     </div>
 
                     <div class="wk-box total-highlight">
-                        <div class="wk-product-info col-md-8 col-sm-6 col-xs-6">
+                        <div class="wk-product-info col-md-8 col-sm-6 col-xs-6 text-main-dark text-sm">
                             <span>
                                 {l s='Total (tax incl.)' mod='wkonepagecheckout'}
                             </span>
@@ -139,7 +139,7 @@
                     </div>
                 {else}
                     <div class="wk-box total-highlight">
-                        <div class="wk-product-info col-md-8 col-sm-6 col-xs-6">
+                        <div class="wk-product-info col-md-8 col-sm-6 col-xs-6 text-main-dark text-sm">
                             <span>
                                 {l s='Total' mod='wkonepagecheckout'}
                                 &nbsp;{if Configuration::get('PS_TAX')}{$cart.labels.tax_short}{/if}
@@ -155,7 +155,7 @@
 
                 {if Configuration::get('PS_TAX_DISPLAY') && isset($cart.subtotals.tax)}
                     <div class="wk-box">
-                        <div class="wk-product-info col-md-8 col-sm-6 col-xs-6">
+                        <div class="wk-product-info col-md-8 col-sm-6 col-xs-6 text-main-dark text-sm">
                             <span>{l s='Total tax' mod='wkonepagecheckout'}</span>
                         </div>
                         <div class="col-md-4 col-xs-2 col-sm-6 col-xs-6 wk-product-val">
