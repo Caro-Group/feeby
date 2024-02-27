@@ -23,7 +23,7 @@
 					{foreach $cart.products as $product}
 						<li class="clearfix flex py-3 border-0 border-b first:border-t border-solid border-gray-2000 ">
 
-							<div class="product-line-grid-left shrink-0 basis-[15%]>
+							<div class="product-line-grid-left shrink-0 basis-[15%]">
 								<div class="pr-5 wk-product-img wk-left product-cover">
 									{if isset($product.cover) && $product.cover}
 										<img class="js-qv-product-cover" {if Configuration::get('WK_CHECKOUT_PRODUCT_IMAGE') == '1'}
