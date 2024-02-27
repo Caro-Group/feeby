@@ -31,7 +31,7 @@
 											width="80" heigth="80" {else if Configuration::get('WK_CHECKOUT_PRODUCT_IMAGE') == '3'}
 											width="100" heigth="100" {else} width="70" heigth="70"
 											{/if}
-											src="{$product.cover.small.url}">
+											src="{$product.cover.medium.url}">
 										<div class="layer hidden-sm-down" data-toggle="modal"
 											data-target="#wk-product-modal-{$product.id_product}">
 											<i class="material-icons zoom-in">&#xE8FF;</i>
