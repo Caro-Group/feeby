@@ -40,9 +40,9 @@
 						</div>
 					{elseif $fieldName == 'country'}
 						<div class="form-group">
-							<label class="label-control required bg-white border border-gray-2000 focus:border-gray-3000 focus:ring-0 font-body font-medium form-control-select form-select js-country pl-4 rounded-full w-full">{l s='Country' mod='wkonepagecheckout'}</label>
+							<label class="label-control required">{l s='Country' mod='wkonepagecheckout'}</label>
 							<select data-required="1" data-attr="delivery" name="wk_delivery_address_country"
-								class="form-control wk_address_country border-gray-2000 border-solid border rounded-full bg-white">
+								class="form-control wk_address_country label-control required bg-white border border-gray-2000 focus:border-gray-3000 focus:ring-0 font-body font-medium form-control-select form-select js-country pl-4 rounded-full w-full">
 								{if isset($countries)}
 									{foreach $countries as $country}
 										<option {if isset($updateCountry)} 
