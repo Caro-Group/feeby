@@ -15,11 +15,8 @@
 *  @license   LICENSE.txt
 *}
 <div>
-    <div class="wk-heading-img">
-        <div class="wk-shipping-icon wk-sprit wk-left"></div>
-        <h4 class="wk-left">{l s='Shipping Method' mod='wkonepagecheckout'}</h4>
-        <div class="wkerrorcolor wkhide wk-left" id="wkshipping-error" style="margin-left:25px;"></div>
-    </div>
+    <h4 class="font-light text-lg tablet:text-xl text-main-dark mb-5">{l s='Shipping Method' mod='wkonepagecheckout'}</h4>
+    <div class="wkerrorcolor wkhide wk-left" id="wkshipping-error" style="margin-left:25px;"></div>
     <div id="hook-display-before-carrier">
         {hook h='displayBeforeCarrier'}
     </div>
