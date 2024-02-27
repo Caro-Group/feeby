@@ -23,8 +23,8 @@
 					{foreach $cart.products as $product}
 						<li class="clearfix flex py-3 border-0 border-b first:border-t border-solid border-gray-2000 ">
 
-							<div class="product-line-grid-left shrink-0 basis-[15%] tablet:basis-1/5">
-								<div class="wk-product-img wk-left product-cover">
+							<div class="product-line-grid-left shrink-0 basis-[15%]>
+								<div class="pr-5 wk-product-img wk-left product-cover">
 									{if isset($product.cover) && $product.cover}
 										<img class="js-qv-product-cover" {if Configuration::get('WK_CHECKOUT_PRODUCT_IMAGE') == '1'}
 											width="50" heigth="50" {else if Configuration::get('WK_CHECKOUT_PRODUCT_IMAGE') == '2'}
@@ -47,9 +47,9 @@
 								</div>
 							</div>
 
-							<div class="flex flex-wrap">
+							<div class="flex flex-wrap w-full">
 
-								<div class="product-line-grid-body shrink-0 basis-[60%] tablet:basis-[30%]">
+								<div class="product-line-grid-body shrink-0 basis-[60%] tablet:basis-[30%] tablet-wide:basis-[30%]">
 									<div class="wk-product-detail wk-left "
 										data-id-product-attribute="{$product.id_product_attribute}"
 										data-id-product="{$product.id_product}">
@@ -98,14 +98,14 @@
 								</div>
 
 								<div class="shrink-0 basis-[40%] order-3 tablet:basis-[15%] tablet:order-4">
-									<span class="text-base tablet:text-lg text-main-dark">
+									<span class="text-base tablet:text-lg text-main-dark float-right">
 										{if isset($product.total)}
 											<span>{$product.total}</span>
 										{/if}
 									</span>
 								</div>
 
-								<div class="col-md-2 col-sm-3 col-xs-12 wk-delete-qty">
+								<div class="wk-delete-qty !p-0 basis-[40%] tablet-wide:basis-[30%]">
 									<div class="cart-line-product-actions">
 										<a title="{l s='Delete' mod='wkonepagecheckout'}" id="wk-remove-cart"
 											data-id-product-attribute="{$product.id_product_attribute}"
