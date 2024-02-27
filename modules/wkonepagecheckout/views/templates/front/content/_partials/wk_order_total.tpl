@@ -64,19 +64,6 @@
                     {/foreach}
                 {/if}
 
-                <div class="wk-box">
-                    <div class="wk-product-info col-md-8 col-sm-6 col-xs-6 text-main-dark text-sm">
-                        <span>
-                            {l s='Total products' mod='wkonepagecheckout'}
-                            &nbsp;{if Configuration::get('PS_TAX')}{$cart.labels.tax_short}{/if}
-                        </span>
-                    </div>
-                    <div class="col-md-4 col-xs-2 col-sm-2 col-sm-6 col-xs-6 wk-product-val">
-                        {if isset($cart.subtotals.products)}
-                            <span>{$cart.subtotals.products.value}</span>
-                        {/if}
-                    </div>
-                </div>
                 {if isset($isVirtual) && !$isVirtual}
                     <div class="wk-box">
                         <div class="wk-product-info col-md-8 col-sm-6 col-xs-6 text-main-dark text-sm">
@@ -114,20 +101,8 @@
                 {/if}
 
                 {if Configuration::get('PS_TAX')}
-                    <div class="wk-box">
-                        <div class="wk-product-info col-md-8 col-sm-6 col-xs-6 text-main-dark text-sm">
-                            <span>
-                                {l s='Total (tax excl.)' mod='wkonepagecheckout'}
-                            </span>
-                        </div>
-                        <div class="col-md-4 col-xs-2 col-sm-6 col-xs-6 wk-product-val">
-                            {if isset($cart.totals.total_excluding_tax)}
-                                <span>{$cart.totals.total_excluding_tax.value}</span>
-                            {/if}
-                        </div>
-                    </div>
 
-                    <div class="wk-box total-highlight">
+                    <div class="wk-box border-0 border-t border-solid border-gray-3000 pt-3">
                         <div class="wk-product-info col-md-8 col-sm-6 col-xs-6 text-main-dark text-sm">
                             <span>
                                 {l s='Total (tax incl.)' mod='wkonepagecheckout'}
@@ -140,7 +115,7 @@
                         </div>
                     </div>
                 {else}
-                    <div class="wk-box total-highlight">
+                    <div class="wk-box border-0 border-t border-solid border-gray-3000 pt-3">
                         <div class="wk-product-info col-md-8 col-sm-6 col-xs-6 text-main-dark text-sm">
                             <span>
                                 {l s='Total' mod='wkonepagecheckout'}
