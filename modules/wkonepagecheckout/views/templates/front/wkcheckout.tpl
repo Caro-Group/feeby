@@ -28,7 +28,7 @@
                     {include file="module:wkonepagecheckout/views/templates/front/content/wk_customer_info.tpl"}
                 {/block}
 
-                <div class="mb-5 p-5 bg-gray-1000 rounded-[5px]">
+                <div class="mb-5 p-5 bg-gray-1000 rounded-[5px] clearfix">
                     {block name='wk_order_shipping'}
                         <div class="col-md-6 col-sm-12 col-xs-12" id="wk_shipping_section">
                             {if isset($cart_order_split_tpl) && $cart_order_split_tpl}
