@@ -23,14 +23,14 @@
 
 {if isset($customer.addresses) && $customer.addresses|count > 0}
     <div class="form-group clearfix wk-align-center">
-        <label class="">
-            <span class="custom-radio">
-                <input type="radio" name="wk-delivery-address" id="wk-delivery-address-1" value="1" checked="checked">
+        <label class="mb-0 h-5 cursor-pointer">
+            <span>
+                <input type="radio" name="wk-delivery-address" id="wk-delivery-address-1" value="1" checked="checked" class="after:absolute after:content-[''] after:h-[10px] after:m-[3px] after:rounded-sm after:transition after:w-[10px] appearance-none border-2 border-gray-3000 border-solid checked:after:bg-main checked:bg-white checked:border-main checked:focus:bg-white checked:focus:border-main checked:focus:ring-transparent checked:focus:shadow-none checked:hover:bg-white checked:hover:border-main checked:ring-0 checked:ring-transparent focus:ring-0 focus:ring-offset-0 focus:ring-transparent h-5 outline-none ring-transparent rounded transition transition-all w-5">
                 <span></span>
             </span>
         </label>
         <div class="col-md-10 col-sm-10 col-xs-10">
-            <select class="form-control" id="wk-existing-delivery-address">
+            <select class="form-control border-gray-2000 border-solid border rounded-full bg-white" id="wk-existing-delivery-address">
                 {foreach $customer.addresses as $addr}
                     <option {if isset($cart.id_address_delivery)} 
                         {if $cart.id_address_delivery == $addr.id}selected="selected"
@@ -44,9 +44,9 @@
 
 {if $customer.addresses|count > 0}
     <div class="form-group wk-delivery-address-div clearfix">
-        <label class="col-md-1 col-sm-1 col-xs-1"></label>
+        <label class="float-left w-5"></label>
         <div class="col-md-10 col-sm-10 col-xs-10">
-            <address class="wk-diff-address wk-delivery-address-card">
+            <address class="wk-diff-address wk-delivery-address-card rounded-lg border border-solid border-gray-2000">
                 {$customer.addresses.{$cart.id_address_delivery}.formatted nofilter}
                 <hr>
                 <footer style="text-align: right;margin:0 0.3125rem;">
@@ -64,9 +64,9 @@
 
 {if $customer.addresses|count > 0}
     <div class="form-group clearfix wk-align-center">
-        <label class="">
-            <span class="custom-radio">
-                <input type="radio" name="wk-delivery-address" id="wk-delivery-address-2" value="2" data-attr="delivery">
+        <label class="mb-0 h-5 cursor-pointer">
+            <span>
+                <input type="radio" name="wk-delivery-address" id="wk-delivery-address-2" value="2" data-attr="delivery" class="after:absolute after:content-[''] after:h-[10px] after:m-[3px] after:rounded-sm after:transition after:w-[10px] appearance-none border-2 border-gray-3000 border-solid checked:after:bg-main checked:bg-white checked:border-main checked:focus:bg-white checked:focus:border-main checked:focus:ring-transparent checked:focus:shadow-none checked:hover:bg-white checked:hover:border-main checked:ring-0 checked:ring-transparent focus:ring-0 focus:ring-offset-0 focus:ring-transparent h-5 outline-none ring-transparent rounded transition transition-all w-5">
                 <span></span>
             </span>
         </label>
