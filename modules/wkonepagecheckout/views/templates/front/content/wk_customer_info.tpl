@@ -30,11 +30,11 @@
                         <a href="{$logout}" class="py-3 px-4 border-2 text-main-dark uppercase border-main-dark hover:bg-main-dark hover:text-white rounded-full border-solid  transition font-body text-xs font-normal logout">{l s='Logout' mod='wkonepagecheckout'}</a>
                     </div>
                 {else}
-                    <div class="col-md-7 col-sm-6 col-xs-6" style="padding-top:8px;">
+                    <div class="col-md-7 col-sm-6 col-xs-6 !pl-0 font-light text-left text-xl" style="padding-top:8px;">
                         {l s='Already registered?' mod='wkonepagecheckout'}
                     </div>
                     <div class="col-md-5 col-sm-6 col-xs-6 wk-log-btn">
-                        <button class="btn py-3 px-4 border-2 text-main-dark uppercase border-main-dark hover:bg-main-dark hover:text-white rounded-full border-solid transition font-body text-xs font-normal wkbtn-login">{l s='Login' mod='wkonepagecheckout'}</button>
+                        <button class="btn py-3 px-4 border-2 text-main-dark uppercase border-main-dark bg-transparent hover:bg-main-dark hover:text-white rounded-full border-solid transition font-body text-xs font-normal wkbtn-login">{l s='Login' mod='wkonepagecheckout'}</button>
                     </div>
                 {/if}
             </div>
@@ -84,9 +84,9 @@
         <p class="wk-separator">{l s='Or' mod='wkonepagecheckout'}</p>
         <div class="wk-guest-checkout">
             {if Configuration::get('WK_CHECKOUT_GUEST_ALLOW')}
-                <h5>{l s='Guest Checkout' mod='wkonepagecheckout'}</h5>
+                <h5 class="text-xl font-light text-left mb-5">{l s='Guest Checkout' mod='wkonepagecheckout'}</h5>
             {else}
-                <h5>{l s='Create Account' mod='wkonepagecheckout'}</h5>
+                <h5 class="text-xl font-light text-left mb-5">{l s='Create Account' mod='wkonepagecheckout'}</h5>
             {/if}
         </div>
 
@@ -115,10 +115,9 @@
             </div>
             {if Configuration::get('WK_CHECKOUT_GUEST_ALLOW') && !isset($wkguest)}
                 <div class="form-group">
-                    <span class="custom-checkbox">
-						<label>
-							<input type="checkbox" value="1" name="wk-create-account" id="wk-create-account">
-							<span><i class="material-icons rtl-no-flip checkbox-checked"></i></span>
+                    <span>
+						<label class="text-xs text-gray-dark">
+							<input type="checkbox" value="1" name="wk-create-account" id="wk-create-account" class="mr-2 bg-white border-2 border-gray-3000 border-solid checked:bg-main-dark checked:focus:bg-main-dark checked:hover:bg-main-dark focus:ring-0 focus:ring-transparent form-checkbox opacity-100 outline-none rounded transition">
 							{l s='I also want to create account' mod='wkonepagecheckout'}
 						</label>
 					</span>
