@@ -15,7 +15,7 @@
 *  @license   LICENSE.txt
 *}
 {$ajax_inv_address nofilter}
-<hr>
+<hr class="border-0 mb-5 tablet:mb-10">
 <footer style="text-align: right;margin:0 0.3125rem;">
     <a class="edit-address font-body font-normal hover:text-main mr-5 tablet:text-sm text-main-dark text-xs transition uppercase" id="wk-delivery-address-edit" href="javascript:void(0);">
         {l s='Edit' mod='wkonepagecheckout'}
