@@ -16,7 +16,7 @@
 *}
 <div id="wk-order-summary-ajax" class="clearfix">
 	<article class="mb-5 p-5 bg-gray-1000 rounded-[5px] clearfix">
-		<h4 class="font-light text-lg tablet:text-xl text-main-dark mb-5">{l s='Order Summary' mod='wkonepagecheckout'}</h4>
+		<h4 class="border-0 border-b-[3px] border-main border-solid font-normal inline-block mb-5 pb-2 rounded-b-sm tablet:text-2xl text-main-dark text-xl">{l s='Order Summary' mod='wkonepagecheckout'}</h4>
 		<div class="text-sm text-main-dark">
 			<ul class="wk-cart-items clearfix">
 				<li class="wk-order-product hidden-xs-down">
@@ -47,7 +47,7 @@
 				</li>
 				{if isset($cart.products)}
 					{foreach $cart.products as $product}
-						<li class="wk-order-product clearfix">
+						<li class="clearfix">
 							<div class="product-line-grid-left col-md-2 col-xs-3">
 								<div class="wk-product-img wk-left product-cover">
 									{if isset($product.cover) && $product.cover}
