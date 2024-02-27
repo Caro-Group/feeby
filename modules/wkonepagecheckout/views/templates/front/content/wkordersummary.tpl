@@ -49,7 +49,7 @@
 
 							<div class="flex flex-wrap w-full">
 
-								<div class="product-line-grid-body shrink-0 basis-[70%] tablet:basis-[30%] tablet-wide:basis-[30%] mb-0">
+								<div class="product-line-grid-body shrink-0 basis-[70%] tablet:basis-[30%] tablet-wide:basis-[40%] mb-0">
 									<div class="wk-product-detail wk-left "
 										data-id-product-attribute="{$product.id_product_attribute}"
 										data-id-product="{$product.id_product}">
