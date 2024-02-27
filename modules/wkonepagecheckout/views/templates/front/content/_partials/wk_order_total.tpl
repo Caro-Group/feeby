@@ -21,10 +21,12 @@
                 <div class="border-gray-2000 border-solid border flex rounded-full pl-4 bg-white max-w-[350px]">
                     <input placeholder="{l s='Promo code' mod='wkonepagecheckout'}" type="text" name="wk-voucher"
                         id="wk-voucher" class="promo-input w-full bg-transparent border-0 py-3 outline-none font-body focus:ring-0 text-[12px] tablet:text-sm">
-                    <button id="addVoucher" class="bg-main hover:bg-main-hover cursor-pointer overflow-hidden transition border-0 rounded-full text-white px-8 uppercase whitespace-nowrap font-body">{l s='Add' mod='wkonepagecheckout'}</button>
+                    <button id="addVoucher" class="bg-main hover:bg-main-hover cursor-pointer overflow-hidden transition border-0 rounded-full text-white px-8 uppercase whitespace-nowrap font-body">
+                        <span class="font-light text-5xl flex justify-center leading-[30px] mb-2.5">+</span>
+                    </button>
                 </div>
                 <div class=" wkhide col-md-8 col-xs-12 wkpromo-code alert alert-danger" role="alert">
-                    <span class="font-light text-5xl flex justify-center leading-[30px] mb-2.5">+</span>
+                    <i class="material-icons"></i><span>{l s='Enter a voucher code.' mod='wkonepagecheckout'}</span>
                 </div>
                 {if isset($cart.discounts) && $cart.discounts}
                     <div class="wk-voucher-available col-md-12">
