@@ -108,9 +108,9 @@
             <div class="form-group">
                 <label class="label-control">{l s='Email' mod='wkonepagecheckout'}</label>
                 <input value="{if isset($wkguest)}{$wkguest->email}{/if}" maxlength="128" type="text" name="wk-email"
-                    id="wk-email"  class="form-control">
-                <i class="material-icons wk-check-icon wkhide icon_wk_email">&#xE876;</i>
-                <i class="material-icons wk-error-icon wkhide error_wk_email">&#xE001;</i>
+                    id="wk-email"  class="form-control border-gray-2000 border-solid border rounded-full bg-white">
+                <i class="material-icons wk-check-icon wkhide mt-1.5  icon_wk_email">&#xE876;</i>
+                <i class="material-icons wk-error-icon wkhide mt-1.5  error_wk_email">&#xE001;</i>
                 <span id="wk-email-error" class="wkerrorcolor"></span>
             </div>
             {if Configuration::get('WK_CHECKOUT_GUEST_ALLOW') && !isset($wkguest)}
@@ -126,9 +126,9 @@
             {/if}
             <div class="form-group wkpassword_div {if Configuration::get('WK_CHECKOUT_GUEST_ALLOW')}wkhide{/if}">
                 <label class="label-control">{l s='Password' mod='wkonepagecheckout'}</label>
-                <input maxlength="60" type="password" name="wk-password" id="wk-password" class="form-control">
-                <i class="material-icons wk-check-icon wkhide icon_wk_password">&#xE876;</i>
-                <i class="material-icons wk-error-icon wkhide error_wk_password">&#xE001;</i>
+                <input maxlength="60" type="password" name="wk-password" id="wk-password" class="form-control border-gray-2000 border-solid border rounded-full bg-white">
+                <i class="material-icons wk-check-icon mt-1.5  wkhide icon_wk_password">&#xE876;</i>
+                <i class="material-icons wk-error-icon mt-1.5  wkhide error_wk_password">&#xE001;</i>
                 <span id="wk-password-error" class="wkerrorcolor"></span>
             </div>
 
@@ -140,7 +140,7 @@
                     <label class="label-control">{l s='Date of birth' mod='wkonepagecheckout'}</label>
                     <div class="row">
                         <div class="col-md-4 col-xs-12 pad-right-0">
-                            <select name="wk_day" id="wk_day" class="form-control">
+                            <select name="wk_day" id="wk_day" class="form-control bg-white border border-gray-2000 focus:border-gray-3000 focus:ring-0 font-body font-medium form-control-select form-select js-country pl-4 rounded-full w-full">
                                 <option value="0">{l s='Day' mod='wkonepagecheckout'}</option>
                                 {for $day=1 to 31}
                                     <option value="{$day}" {if isset($birthdate[2]) && ($birthdate[2] == $day)}selected{/if}>{$day}
@@ -149,7 +149,7 @@
                             </select>
                         </div>
                         <div class="col-md-4 col-xs-12 pad-right-0">
-                            <select name="wk_month" id="wk_month" class="form-control">
+                            <select name="wk_month" id="wk_month" class="form-control bg-white border border-gray-2000 focus:border-gray-3000 focus:ring-0 font-body font-medium form-control-select form-select js-country pl-4 rounded-full w-full">
                                 <option value="0">{l s='Month' mod='wkonepagecheckout'}</option>
                                 {for $month=1 to 12}
                                     <option value="{$month}" {if isset($birthdate[1]) && ($birthdate[1] == $month)}selected{/if}>
@@ -158,7 +158,7 @@
                             </select>
                         </div>
                         <div class="col-md-4 col-xs-12 pad-right-0">
-                            <select name="wk_year" id="wk_year" class="form-control">
+                            <select name="wk_year" id="wk_year" class="form-control bg-white border border-gray-2000 focus:border-gray-3000 focus:ring-0 font-body font-medium form-control-select form-select js-country pl-4 rounded-full w-full">
                                 <option value="0">{l s='Year' mod='wkonepagecheckout'}</option>
                                 {for $year=date(Y)-100 to date(Y)}
                                     <option value="{$year}" {if isset($birthdate[0]) && ($birthdate[0] == $year)}selected{/if}>

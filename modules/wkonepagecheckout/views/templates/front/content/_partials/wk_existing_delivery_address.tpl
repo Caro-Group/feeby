@@ -23,14 +23,14 @@
 
 {if isset($customer.addresses) && $customer.addresses|count > 0}
     <div class="form-group clearfix wk-align-center">
-        <label class="mb-0 h-5 cursor-pointer">
+        <label class="mb-0 h-5">
             <span>
-                <input type="radio" name="wk-delivery-address" id="wk-delivery-address-1" value="1" checked="checked" class="after:absolute after:content-[''] after:h-[10px] after:m-[3px] after:rounded-sm after:transition after:w-[10px] appearance-none border-2 border-gray-3000 border-solid checked:after:bg-main checked:bg-white checked:border-main checked:focus:bg-white checked:focus:border-main checked:focus:ring-transparent checked:focus:shadow-none checked:hover:bg-white checked:hover:border-main checked:ring-0 checked:ring-transparent focus:ring-0 focus:ring-offset-0 focus:ring-transparent h-5 outline-none ring-transparent rounded transition transition-all w-5">
+                <input type="radio" name="wk-delivery-address" id="wk-delivery-address-1" value="1" checked="checked" class="cursor-pointer after:absolute after:content-[''] after:h-[10px] after:m-[3px] after:rounded-sm after:transition after:w-[10px] appearance-none border-2 border-gray-3000 border-solid checked:after:bg-main checked:bg-white checked:border-main checked:focus:bg-white checked:focus:border-main checked:focus:ring-transparent checked:focus:shadow-none checked:hover:bg-white checked:hover:border-main checked:ring-0 checked:ring-transparent focus:ring-0 focus:ring-offset-0 focus:ring-transparent h-5 outline-none ring-transparent rounded transition transition-all w-5">
                 <span></span>
             </span>
         </label>
         <div class="col-md-10 col-sm-10 col-xs-10">
-            <select class="form-control border-gray-2000 border-solid border rounded-full bg-white" id="wk-existing-delivery-address">
+            <select class="form-control bg-white border border-gray-2000 focus:border-gray-3000 focus:ring-0 font-body font-medium form-control-select form-select js-country pl-4 rounded-full w-full" id="wk-existing-delivery-address">
                 {foreach $customer.addresses as $addr}
                     <option {if isset($cart.id_address_delivery)} 
                         {if $cart.id_address_delivery == $addr.id}selected="selected"
@@ -64,14 +64,14 @@
 
 {if $customer.addresses|count > 0}
     <div class="form-group clearfix wk-align-center">
-        <label class="mb-0 h-5 cursor-pointer">
+        <label class="mb-0 h-5">
             <span>
-                <input type="radio" name="wk-delivery-address" id="wk-delivery-address-2" value="2" data-attr="delivery" class="after:absolute after:content-[''] after:h-[10px] after:m-[3px] after:rounded-sm after:transition after:w-[10px] appearance-none border-2 border-gray-3000 border-solid checked:after:bg-main checked:bg-white checked:border-main checked:focus:bg-white checked:focus:border-main checked:focus:ring-transparent checked:focus:shadow-none checked:hover:bg-white checked:hover:border-main checked:ring-0 checked:ring-transparent focus:ring-0 focus:ring-offset-0 focus:ring-transparent h-5 outline-none ring-transparent rounded transition transition-all w-5">
+                <input type="radio" name="wk-delivery-address" id="wk-delivery-address-2" value="2" data-attr="delivery" class="cursor-pointer after:absolute after:content-[''] after:h-[10px] after:m-[3px] after:rounded-sm after:transition after:w-[10px] appearance-none border-2 border-gray-3000 border-solid checked:after:bg-main checked:bg-white checked:border-main checked:focus:bg-white checked:focus:border-main checked:focus:ring-transparent checked:focus:shadow-none checked:hover:bg-white checked:hover:border-main checked:ring-0 checked:ring-transparent focus:ring-0 focus:ring-offset-0 focus:ring-transparent h-5 outline-none ring-transparent rounded transition transition-all w-5">
                 <span></span>
             </span>
         </label>
         <div class="col-md-10 col-sm-10 col-xs-10">
-            <div class="wk-diff-address wk-diff-address-delivery">{l s='Add new delivery address' mod='wkonepagecheckout'}
+            <div>{l s='Add new delivery address' mod='wkonepagecheckout'}
             </div>
         </div>
     </div>

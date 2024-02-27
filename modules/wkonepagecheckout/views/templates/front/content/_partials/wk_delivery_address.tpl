@@ -34,15 +34,15 @@
 								id="{$field.delivery_field_name}"
 								value="{if isset($delivery_address)}{$delivery_address->{$field.db_fieldname}}{/if}"
 								class="form-control wkvalidatefield border-gray-2000 border-solid border rounded-full bg-white">
-							<i class="material-icons wk-check-icon wkhide icon_{$field.delivery_field_name}">&#xE876;</i>
-							<i class="material-icons wk-error-icon wkhide error_{$field.delivery_field_name}">&#xE001;</i>
+							<i class="material-icons wk-check-icon mt-1.5  wkhide icon_{$field.delivery_field_name}">&#xE876;</i>
+							<i class="material-icons wk-error-icon mt-1.5  wkhide error_{$field.delivery_field_name}">&#xE001;</i>
 							<span class="help-block wk-error {$field.delivery_field_name}"></span>
 						</div>
 					{elseif $fieldName == 'country'}
 						<div class="form-group">
-							<label class="label-control required">{l s='Country' mod='wkonepagecheckout'}</label>
+							<label class="label-control required bg-white border border-gray-2000 focus:border-gray-3000 focus:ring-0 font-body font-medium form-control-select form-select js-country pl-4 rounded-full w-full">{l s='Country' mod='wkonepagecheckout'}</label>
 							<select data-required="1" data-attr="delivery" name="wk_delivery_address_country"
-								class="form-control wk_address_country">
+								class="form-control wk_address_country border-gray-2000 border-solid border rounded-full bg-white">
 								{if isset($countries)}
 									{foreach $countries as $country}
 										<option {if isset($updateCountry)} 

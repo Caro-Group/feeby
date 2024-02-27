@@ -82,7 +82,7 @@
                         </span>
                     </div>
                     <div>
-                        <label class="block ml-6 js-terms text-xs text-gray-dark mb-3" for="conditions_to_approve[{$condition_name}]">{$condition nofilter}</label>
+                        <label class="cursor-pointer block ml-6 js-terms text-xs text-gray-dark mb-3" for="conditions_to_approve[{$condition_name}]">{$condition nofilter}</label>
                     </div>
                 </li>
             {/foreach}
