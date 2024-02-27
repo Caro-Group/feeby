@@ -44,7 +44,7 @@
                 {/if}
             </div>
         </div>
-        <div class="col-md-6 col-sm-12">
+        <div class="col-md-6 col-sm-12 mt-5 tablet:mt-0">
             <div class="row">
                 {if isset($cart.vouchers.added)}
                     {foreach $cart.vouchers.added as $voucher}
@@ -102,9 +102,9 @@
 
                 {if Configuration::get('PS_TAX')}
 
-                    <div class="wk-box border-0 border-t border-solid border-gray-3000 pt-3">
+                    <div class="wk-box border-0 border-t border-solid border-gray-2000 pt-3">
                         <div class="wk-product-info col-md-8 col-sm-6 col-xs-6 text-main-dark text-sm">
-                            <span>
+                            <span class="text-lg">
                                 {l s='Total (tax incl.)' mod='wkonepagecheckout'}
                             </span>
                         </div>
@@ -115,7 +115,7 @@
                         </div>
                     </div>
                 {else}
-                    <div class="wk-box border-0 border-t border-solid border-gray-3000 pt-3">
+                    <div class="wk-box border-0 border-t border-solid border-gray-2000 pt-3">
                         <div class="wk-product-info col-md-8 col-sm-6 col-xs-6 text-main-dark text-sm">
                             <span>
                                 {l s='Total' mod='wkonepagecheckout'}

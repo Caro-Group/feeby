@@ -78,12 +78,11 @@
                                 required
                                 type="checkbox"
                                 value="1"
-                                class="ps-shown-by-js wk-condition-check">
-                            <span><i class="material-icons checkbox-checked">&#xE5CA;</i></span>
+                                class="ps-shown-by-js wk-condition-check form-checkbox  cursor-pointer bg-white border-2 border-gray-3000 border-solid checked:bg-main-dark checked:focus:bg-main-dark checked:hover:bg-main-dark focus:ring-0 focus:ring-transparent form-checkbox opacity-100 outline-none rounded transition">
                         </span>
                     </div>
                     <div class="condition-label">
-                        <label class="js-terms" for="conditions_to_approve[{$condition_name}]">{$condition nofilter}</label>
+                        <label class="block ml-6 js-terms text-xs text-gray-dark mb-3" for="conditions_to_approve[{$condition_name}]">{$condition nofilter}</label>
                     </div>
                 </li>
             {/foreach}
@@ -92,7 +91,7 @@
     {/if}
     <div id="payment-confirmation">
         <div class="ps-shown-by-js">
-            <button type="submit" class="btn btn-primary center-block wkcustomizerbtn" {if $conditions_to_approve|count}disabled="disabled"{/if}>
+            <button type="submit" class="bg-main-dark border-0 cursor-pointer font-medium h-full hover:bg-main-hover overflow-hidden phone-wide:text-base px-4 py-3 relative rounded-full tablet:text-xl text-base text-center text-white transition uppercase w-full duration-200" {if $conditions_to_approve|count}disabled="disabled"{/if}>
                 {l s='Place Order' mod='wkonepagecheckout'}
             </button>
         </div>

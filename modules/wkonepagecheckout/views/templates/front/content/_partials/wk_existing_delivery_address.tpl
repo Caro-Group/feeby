@@ -15,18 +15,15 @@
 *  @license   LICENSE.txt
 *}
 <div class="form-group">
-    <span class="custom-checkbox">
-        <label>
-            <input type="checkbox" name="wk-different-invoice" value="1" class="form-control" {if Configuration::get('WK_CHECKOUT_DELIVERY_AS_INVOICE')}checked="checked"{/if}>
-            <span><i class="material-icons rtl-no-flip checkbox-checked"></i></span>
-            {l s='Use this address as invoice address' mod='wkonepagecheckout'}
-        </label>
-    </span>
+    <label class="cursor-pointer text-xs text-gray-dark align-middle">
+        <input type="checkbox" name="wk-different-invoice" value="1" class="mr-2 bg-white border-2 border-gray-3000 border-solid checked:bg-main-dark checked:focus:bg-main-dark checked:hover:bg-main-dark focus:ring-0 focus:ring-transparent form-checkbox opacity-100 outline-none rounded transition" {if Configuration::get('WK_CHECKOUT_DELIVERY_AS_INVOICE')}checked="checked"{/if}>
+        {l s='Use this address as invoice address' mod='wkonepagecheckout'}
+    </label>
 </div>
 
 {if isset($customer.addresses) && $customer.addresses|count > 0}
-    <div class="form-group row clearfix wk-align-center">
-        <label class="col-md-1 col-sm-1 col-xs-1">
+    <div class="form-group clearfix wk-align-center">
+        <label class="">
             <span class="custom-radio">
                 <input type="radio" name="wk-delivery-address" id="wk-delivery-address-1" value="1" checked="checked">
                 <span></span>
@@ -46,8 +43,8 @@
 {/if}
 
 {if $customer.addresses|count > 0}
-    <div class="form-group row wk-delivery-address-div clearfix">
-        <label class="col-md-1 col-sm-1 col-xs-1"></label>
+    <div class="form-group wk-delivery-address-div clearfix">
+        <label class=""></label>
         <div class="col-md-10 col-sm-10 col-xs-10">
             <address class="wk-diff-address wk-delivery-address-card">
                 {$customer.addresses.{$cart.id_address_delivery}.formatted nofilter}
@@ -66,8 +63,8 @@
 {/if}
 
 {if $customer.addresses|count > 0}
-    <div class="form-group row clearfix wk-align-center">
-        <label class="col-md-1 col-sm-1 col-xs-1">
+    <div class="form-group clearfix wk-align-center">
+        <label class="">
             <span class="custom-radio">
                 <input type="radio" name="wk-delivery-address" id="wk-delivery-address-2" value="2" data-attr="delivery">
                 <span></span>
