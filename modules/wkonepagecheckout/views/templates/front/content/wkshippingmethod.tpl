@@ -14,7 +14,7 @@
 *  @copyright since 2010 Webkul
 *  @license   LICENSE.txt
 *}<div class="wk-shipping-carriers">
-    <h4 class="font-light text-lg tablet:text-xl text-main-dark mb-5">{l s='Shipping Method' mod='wkonepagecheckout'}</h4>
+    <h4 class="border-0 border-b-[3px] border-main border-solid font-normal inline-block mb-5 pb-2 rounded-b-sm tablet:text-2xl text-main-dark text-xl">{l s='Shipping Method' mod='wkonepagecheckout'}</h4>
     <div class="wkerrorcolor wkhide wk-left" id="wkshipping-error" style="margin-left:25px;"></div>
     <div id="hook-display-before-carrier">
         {hook h='displayBeforeCarrier'}
