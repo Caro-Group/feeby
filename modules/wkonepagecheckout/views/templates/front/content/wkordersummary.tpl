@@ -14,7 +14,7 @@
 *  @copyright since 2010 Webkul
 *  @license   LICENSE.txt
 *}
-<div id="wk-order-summary-ajax" class="clearfix">
+<div id="wk-order-summary-ajax" class="mb-5 p-5 bg-gray-1000 rounded-[5px]">
 	<article class="wk-box box">
 		<div class="wk-heading-img">
 			<div class="wk-order-icon wk-sprit wk-left"></div>
@@ -198,7 +198,7 @@
 			</ul>
 			<div class="wkhide wkerrorcolor wkorder_error"></div>
 		</div>
-		<p class="wkstyle"></p>
+		<p class="wkstyle !border-0"></p>
 		{block name='wk-order-total'}
 			{include file='module:wkonepagecheckout/views/templates/front/content/_partials/wk_order_total.tpl'}
 		{/block}
