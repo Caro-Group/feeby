@@ -30,7 +30,7 @@
 						{assign var=counter value=1}
 							{foreach from=$module_options item="option"}
 								<div id="{$option.id}-container" class="flex items-center col-md-12 col-sm-12 col-xs-12">
-									<div class="wk-payment col-xs-1 col-sm-1 col-md-1 payment-option wkpadding">
+									<div class="wk-payment col-xs-1 col-sm-1 col-md-1 payment-option wkpadding mr-2">
 										{* This is the way an option should be selected when Javascript is enabled *}
 										<span class="pull-xs-left">
 											<input {if is_null($option.module_name)}
