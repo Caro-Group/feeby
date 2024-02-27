@@ -14,12 +14,8 @@
 *  @copyright since 2010 Webkul
 *  @license   LICENSE.txt
 *}<div class="wk-payment-method">
-	<div class="wk-heading-img">
-		<div class="wk-payment-icon wk-sprit wk-left"></div>
-		<h4 class="wk-left">{l s='Payment Method' mod='wkonepagecheckout'}</h4>
-		<div class="wkerrorcolor wkhide wk-left" id="wkpayment-error" style="margin-left:25px;"></div>
-	</div>
-	<div class="clearfix"></div>
+	<h4 class="font-light text-lg tablet:text-xl text-main-dark mb-5">{l s='Payment Method' mod='wkonepagecheckout'}</h4>
+	<div class="wkerrorcolor wkhide wk-left" id="wkpayment-error" style="margin-left:25px;"></div>
 	<div class="payment-options">
 		{hook h='displayPaymentTop'}
 		{if $wk_is_logged == 1 && (int)$id_address > 0}

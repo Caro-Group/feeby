@@ -14,13 +14,9 @@
 *  @copyright since 2010 Webkul
 *  @license   LICENSE.txt
 *}
-<div id="wk-order-summary-ajax" class="mb-5 p-5 bg-gray-1000 rounded-[5px]">
+<div id="wk-order-summary-ajax" class="mb-5 p-5 bg-gray-1000 rounded-[5px] clearfix">
 	<article class="wk-box box">
-		<div class="wk-heading-img">
-			<div class="wk-order-icon wk-sprit wk-left"></div>
-			<h4 class="wk-left">{l s='Order Summary' mod='wkonepagecheckout'}</h4>
-		</div>
-		<div class="clearfix"></div>
+		<h4 class="font-light text-lg tablet:text-xl text-main-dark mb-5">{l s='Order Summary' mod='wkonepagecheckout'}</h4>
 		<div class="col-md-12 col-sm-12 col-xs-12">
 			<ul class="wk-cart-items clearfix">
 				<li class="wk-order-product col-sm-12 col-xs-12 hidden-xs-down">
@@ -204,5 +200,5 @@
 		{/block}
 		<div id="wkorder-summary"></div>
 	</article>
-	<p class="wkstyle"></p>
+	<p class="wkstyle !border-0"></p>
 </div>

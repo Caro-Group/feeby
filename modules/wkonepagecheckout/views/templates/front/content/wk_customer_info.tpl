@@ -17,11 +17,8 @@
 <article class="box wkrelativeposition mb-5 p-5 bg-gray-1000 rounded-[5px]">
 <div id="wkcustomer_info"></div>
     <!-- Customer details if login -->
-    <div class="wk-login-container clearfix">
-        <div class="wk-heading-img">
-            <div class="wk-user-icon wk-sprit wk-left"></div>
-            <h4 class="wk-left">{l s='Your details' mod='wkonepagecheckout'}</h4>
-        </div>
+    <div class="wk-login-container">
+        <h4 class="font-light text-lg tablet:text-xl text-main-dark mb-5">{l s='Your details' mod='wkonepagecheckout'}</h4>
         <div class="col-md-12">
             <div class="row">
                 {if $customer.is_logged && !$customer.is_guest}
