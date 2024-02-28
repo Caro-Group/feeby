@@ -24,7 +24,7 @@
 
 				{foreach from=$addressFormFields item=field key=fieldName}
 					{if $fieldName != 'country' && $fieldName != 'state' && $field}
-						<div class="form-group input-{$fieldName}">
+						<div class="form-group w-full input-{$fieldName}">
 							<input maxlength="{$field.maxlength}" {if $field.required}data-required="1" 
 							{else}data-required="0"
 								{/if} data-validate="{$field.validate}" type="text" name="{$field.delivery_field_name}"
@@ -32,13 +32,12 @@
 								value="{if isset($delivery_address)}{$delivery_address->{$field.db_fieldname}}{/if}"
 								placeholder="{$field.label}{if $field.required} *{/if}"
 								class="form-control wkvalidatefield border-gray-2000 border-solid border rounded-full bg-white">
-							<i class="material-icons wk-check-icon mt-1.5  wkhide icon_{$field.delivery_field_name}">&#xE876;</i>
-							<i class="material-icons wk-error-icon mt-1.5  wkhide error_{$field.delivery_field_name}">&#xE001;</i>
+							<i class="material-icons wk-check-icon wkhide icon_{$field.delivery_field_name}">&#xE876;</i>
+							<i class="material-icons wk-error-icon wkhide error_{$field.delivery_field_name}">&#xE001;</i>
 							<span class="help-block wk-error {$field.delivery_field_name}"></span>
 						</div>
 					{elseif $fieldName == 'country'}
-						<div class="form-group">
-							<label class="label-control required">{l s='Country' mod='wkonepagecheckout'}</label>
+						<div class="form-group w-full">
 							<select data-required="1" data-attr="delivery" name="wk_delivery_address_country"
 								class="form-control wk_address_country label-control required bg-white border border-gray-2000 focus:border-gray-3000 focus:ring-0 font-body font-medium form-control-select form-select js-country pl-4 rounded-full w-full">
 								{if isset($countries)}
@@ -68,7 +67,7 @@
 						{/if}
 					{/foreach}
 
-					<div class="form-group" style="text-align: right;">
+					<div class="form-group w-full" style="text-align: right;">
 						{if Module::isEnabled('wkgdpr')}
 							{hook h='displayGDPRConsent' mod='wkgdpr' id_module=$id_module}
 						{else}
