@@ -14,7 +14,7 @@
 *  @copyright since 2010 Webkul
 *  @license   LICENSE.txt
 *}
-<article class="box wkrelativeposition mb-5 p-5 bg-gray-1000 rounded-[5px] text-main-dark">
+<article class="box wkrelativeposition mb-5 p-5 bg-white rounded-[5px] text-main-dark">
 <div id="wkcustomer_info"></div>
     <!-- Customer details if login -->
     <div class="wk-login-container">

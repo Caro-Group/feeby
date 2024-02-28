@@ -15,7 +15,7 @@
 *  @license   LICENSE.txt
 *}
 <div id="wk-order-summary-ajax" class="clearfix">
-	<article class="mb-5 p-5 bg-gray-1000 rounded-[5px] clearfix">
+	<article class="mb-5 p-5 bg-white rounded-[5px] clearfix">
 		<h4 class="w-max mx-auto font-normal mb-5 tablet:text-2xl text-main-dark text-xl">{l s='Order Summary' mod='wkonepagecheckout'}</h4>
 		<div class="text-sm text-main-dark">
 			<ul class="wk-cart-items clearfix">
@@ -23,7 +23,7 @@
 					{foreach $cart.products as $product}
 						<li class="clearfix flex py-3 border-0 border-b first:border-t border-solid border-gray-2000 ">
 
-							<div class="product-line-grid-left shrink-0 basis-1/5 tablet:basis-[15%]">
+							<div class="product-line-grid-left shrink-0 basis-1/5 tablet:basis-[15%] tablet-wide:basis-[12%]">
 								<div class="pr-2.5 tablet:pr-5 wk-product-img wk-left product-cover w-full">
 									{if isset($product.cover) && $product.cover}
 										<img class="js-qv-product-cover w-full" {if Configuration::get('WK_CHECKOUT_PRODUCT_IMAGE') == '1'}
@@ -49,7 +49,7 @@
 
 							<div class="flex flex-wrap w-full">
 
-								<div class="product-line-grid-body shrink-0 basis-[70%] tablet:basis-[30%] tablet-wide:basis-[40%] mb-0">
+								<div class="product-line-grid-body shrink-0 basis-[70%] tablet:basis-[40%] tablet-wide:basis-[50%] mb-0">
 									<div class="wk-product-detail wk-left "
 										data-id-product-attribute="{$product.id_product_attribute}"
 										data-id-product="{$product.id_product}">
@@ -97,7 +97,7 @@
 									</div>
 								</div>
 
-								<div class="shrink-0 basis-[30%] order-3 tablet:basis-[15%] tablet:order-4">
+								<div class="shrink-0 basis-[30%] order-3 tablet:basis-[15%] tablet-wide:basis-[25%] tablet:order-4">
 									<span class="text-base tablet:text-lg text-main-dark float-right">
 										{if isset($product.total)}
 											<span>{$product.total}</span>
@@ -105,7 +105,7 @@
 									</span>
 								</div>
 
-								<div class="wk-delete-qty !p-0 basis-[30%] tablet:order-4 tablet-wide:basis-[30%]">
+								<div class="wk-delete-qty !p-0 basis-[30%] tablet:order-4 tablet:basis-[20%] tablet-wide:basis-[10%]">
 									<div class="cart-line-product-actions">
 										<a title="{l s='Delete' mod='wkonepagecheckout'}" id="wk-remove-cart"
 											data-id-product-attribute="{$product.id_product_attribute}"

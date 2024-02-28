@@ -71,7 +71,7 @@
 														{if !Configuration::get('WK_CHECKOUT_PAYMENT_LOGO') && $option.call_to_action_text == ""}
 															<img src="{$option.logo}" width="50">
 														{else}
-															<p>{$option.call_to_action_text}</p>
+															<p class="font-normal">{$option.call_to_action_text}</p>
 														{/if}
 														</div>
 													</div>
