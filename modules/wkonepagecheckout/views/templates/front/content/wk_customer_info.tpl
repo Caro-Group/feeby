@@ -73,7 +73,6 @@
                 </div>
             {/if}
         {/if}
-        <p class="wk-separator">{l s='Or' mod='wkonepagecheckout'}</p>
         <div class="wk-guest-checkout">
             {if Configuration::get('WK_CHECKOUT_GUEST_ALLOW')}
                 <h5 class="text-xl font-light text-left mb-5">{l s='Guest Checkout' mod='wkonepagecheckout'}</h5>
@@ -194,7 +193,7 @@
 
         {if !$customer.is_logged || $customer.is_guest}
             <div class="w-full wk-log-btn mt-5">
-                <button class="btn w-full py-3 px-4 border-2 text-main-dark uppercase border-main-dark bg-transparent hover:bg-main-dark hover:text-white rounded-full border-solid transition font-body text-sm font-normal leo-quicklogin" data-enable-sociallogin="enable" data-type="popup" data-layout="login">{l s='Already registered? Click to login' mod='wkonepagecheckout'}</button>
+                <button class="btn w-full py-3 px-4 border-2 text-main-dark uppercase border-main-dark bg-transparent hover:bg-main-dark hover:text-white rounded-full border-solid transition font-body text-sm font-normal leo-quicklogin" data-enable-sociallogin="enable" data-type="popup" data-layout="login">{l s='Already registered?' mod='wkonepagecheckout'}</button>
             </div>
         {/if}
 
