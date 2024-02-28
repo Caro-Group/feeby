@@ -20,7 +20,7 @@
     <a class="edit-address font-body font-normal hover:text-main mr-5 tablet:text-sm text-main-dark text-xs transition uppercase" id="wk-delivery-address-edit" href="javascript:void(0);">
         {l s='Edit' mod='wkonepagecheckout'}
     </a>
-    <a class="delete-address border-2 border-main-dark border-solid font-body font-normal hover:bg-main-dark hover:text-white px-6 py-3 rounded-full text-main-dark text-sm transition uppercase whitespace-nowrap" id="wk-delivery-address-delete" href="javascript:void(0);" >
+    <a class="delete-address inline-block border-2 border-main-dark border-solid font-body font-normal hover:bg-main-dark hover:text-white px-6 py-3 rounded-full text-main-dark text-sm transition uppercase whitespace-nowrap" id="wk-delivery-address-delete" href="javascript:void(0);" >
         {l s='Delete' mod='wkonepagecheckout'}
     </a>
 </footer>

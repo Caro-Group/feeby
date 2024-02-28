@@ -890,3 +890,7 @@ img:not([src]) {
 .popup-attr-active{
   @apply !pointer-events-auto !opacity-100
 }
+
+.wk-address-form .form-group:first-of-type {
+  @apply !hidden;
+}

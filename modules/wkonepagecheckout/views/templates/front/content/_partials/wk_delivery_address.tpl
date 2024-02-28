@@ -24,15 +24,13 @@
 
 				{foreach from=$addressFormFields item=field key=fieldName}
 					{if $fieldName != 'country' && $fieldName != 'state' && $field}
-						<div class="form-group">
-							<label class="label-control {if $field.required}required{/if}">
-								{$field.label}
-							</label>
+						<div class="form-group input-{$fieldName}">
 							<input maxlength="{$field.maxlength}" {if $field.required}data-required="1" 
 							{else}data-required="0"
 								{/if} data-validate="{$field.validate}" type="text" name="{$field.delivery_field_name}"
 								id="{$field.delivery_field_name}"
 								value="{if isset($delivery_address)}{$delivery_address->{$field.db_fieldname}}{/if}"
+								placeholder="{$field.label}{if $field.required} *{/if}"
 								class="form-control wkvalidatefield border-gray-2000 border-solid border rounded-full bg-white">
 							<i class="material-icons wk-check-icon mt-1.5  wkhide icon_{$field.delivery_field_name}">&#xE876;</i>
 							<i class="material-icons wk-error-icon mt-1.5  wkhide error_{$field.delivery_field_name}">&#xE001;</i>

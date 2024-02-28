@@ -30,7 +30,7 @@
 
                 <div class="mb-5 p-5 bg-gray-1000 rounded-[5px] clearfix">
                     {block name='wk_order_shipping'}
-                        <div class="col-md-6 col-sm-12 col-xs-12" id="wk_shipping_section">
+                        <div class="col-md-12 col-sm-12 col-xs-12 mb-10" id="wk_shipping_section">
                             {if isset($cart_order_split_tpl) && $cart_order_split_tpl}
                                 {include file="module:wkonepagecheckout/views/templates/hook/cart_order_split.tpl"}
                             {else}
@@ -40,7 +40,7 @@
                     {/block}
 
                     {block name='wk_order_payment'}
-                        <div class="col-md-6 col-sm-12 col-xs-12" id="wk_payment_section">
+                        <div class="col-md-12 col-sm-12 col-xs-12" id="wk_payment_section">
                             {include file="module:wkonepagecheckout/views/templates/front/content/wkpaymentmethod.tpl"}
                         </div>
                     {/block}
