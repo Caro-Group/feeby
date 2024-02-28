@@ -197,7 +197,7 @@
             <div class="w-full wk-log-btn mt-5">
                 <button class="btn py-3 px-4 border-2 text-main-dark uppercase border-main-dark bg-transparent hover:bg-main-dark hover:text-white rounded-full border-solid transition font-body text-xs font-normal leo-quicklogin" data-enable-sociallogin="enable" data-type="popup" data-layout="login">{l s='Already registered? Click to login' mod='wkonepagecheckout'}</button>
             </div>
-        {else}
+        {/if}
 
 
         <!-- Login pop up tpl in case customer is not login -->
