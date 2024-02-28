@@ -29,13 +29,6 @@
                     <div class="col-md-5 col-sm-6 col-xs-6 wk-log-btn">
                         <a href="{$logout}" class="py-3 px-4 border-2 text-main-dark uppercase border-main-dark hover:bg-main-dark hover:text-white rounded-full border-solid  transition font-body text-xs font-normal logout">{l s='Logout' mod='wkonepagecheckout'}</a>
                     </div>
-                {else}
-                    <div class="col-md-7 col-sm-6 col-xs-6 !pl-0 font-light text-left text-xl" style="padding-top:8px;">
-                        {l s='Already registered?' mod='wkonepagecheckout'}
-                    </div>
-                    <div class="col-md-5 col-sm-6 col-xs-6 wk-log-btn">
-                        <button class="btn py-3 px-4 border-2 text-main-dark uppercase border-main-dark bg-transparent hover:bg-main-dark hover:text-white rounded-full border-solid transition font-body text-xs font-normal wkbtn-login">{l s='Login' mod='wkonepagecheckout'}</button>
-                    </div>
                 {/if}
             </div>
         </div>
@@ -109,7 +102,7 @@
                 <label class="label-control">{l s='Email' mod='wkonepagecheckout'}</label>
                 <input value="{if isset($wkguest)}{$wkguest->email}{/if}" maxlength="128" type="text" name="wk-email"
                     id="wk-email"  class="form-control border-gray-2000 border-solid border rounded-full bg-white">
-                <i class="material-icons wk-check-icon wkhide mt-1.5  icon_wk_email">&#xE876;</i>
+                <i class="material-icons wk-check-icon wkhide mt-1.5 icon_wk_email">&#xE876;</i>
                 <i class="material-icons wk-error-icon wkhide mt-1.5  error_wk_email">&#xE001;</i>
                 <span id="wk-email-error" class="wkerrorcolor"></span>
             </div>
@@ -126,8 +119,8 @@
             <div class="form-group wkpassword_div {if Configuration::get('WK_CHECKOUT_GUEST_ALLOW')}wkhide{/if}">
                 <label class="label-control">{l s='Password' mod='wkonepagecheckout'}</label>
                 <input maxlength="60" type="password" name="wk-password" id="wk-password" class="form-control border-gray-2000 border-solid border rounded-full bg-white">
-                <i class="material-icons wk-check-icon   wkhide icon_wk_password">&#xE876;</i>
-                <i class="material-icons wk-error-icon mt-1.5  wkhide error_wk_password">&#xE001;</i>
+                <i class="material-icons wk-check-icon mt-1.5 wkhide icon_wk_password">&#xE876;</i>
+                <i class="material-icons wk-error-icon mt-1.5 wkhide error_wk_password">&#xE001;</i>
                 <span id="wk-password-error" class="wkerrorcolor"></span>
             </div>
 
@@ -200,10 +193,17 @@
             {include file='module:wkonepagecheckout/views/templates/front/content/_partials/wk-myaccount.tpl'}
         {/block}
 
+        {if !$customer.is_logged || $customer.is_guest}
+            <div class="w-full wk-log-btn mt-5">
+                <button class="btn py-3 px-4 border-2 text-main-dark uppercase border-main-dark bg-transparent hover:bg-main-dark hover:text-white rounded-full border-solid transition font-body text-xs font-normal leo-quicklogin" data-enable-sociallogin="enable" data-type="popup" data-layout="login">{l s='Already registered? Click to login' mod='wkonepagecheckout'}</button>
+            </div>
+        {else}
+
+
         <!-- Login pop up tpl in case customer is not login -->
-        {block name='wk-login'}
+        {* {block name='wk-login'}
             {include file='module:wkonepagecheckout/views/templates/front/content/_partials/wk_login.tpl'}
-        {/block}
+        {/block} *}
 
         {*{block name='wk-social-login'}
 			{include file='module:wkonepagecheckout/views/templates/front/content/_partials/wk-social-login.tpl'}

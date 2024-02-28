@@ -39,7 +39,7 @@
 					{elseif $fieldName == 'country'}
 						<div class="form-group w-full">
 							<select data-required="1" data-attr="delivery" name="wk_delivery_address_country"
-								class="form-control wk_address_country label-control required bg-white border border-gray-2000 focus:border-gray-3000 focus:ring-0 font-body font-medium form-control-select form-select js-country pl-4 rounded-full w-full">
+								class="form-control wk_address_country label-control required text-sm font-normal border-solid bg-white border border-gray-2000 focus:border-gray-3000 focus:ring-0 font-body font-medium form-control-select form-select js-country pl-4 rounded-full w-full">
 								{if isset($countries)}
 									{foreach $countries as $country}
 										<option {if isset($updateCountry)} 
@@ -74,7 +74,7 @@
 							{hook h='displayGDPRConsent' mod='psgdpr' id_module=$id_module}
 						{/if}
 
-						<button type="submit" class="btn py-3 px-4 border-2 text-main-dark uppercase border-main-dark hover:bg-main-dark hover:text-white rounded-full border-solid  transition font-body text-xs font-normal wk-save-address">
+						<button type="submit" class="btn bg-transparent py-3 px-4 border-2 text-main-dark uppercase border-main-dark hover:bg-main-dark hover:text-white rounded-full border-solid  transition font-body text-xs font-normal wk-save-address">
 							{l s='Save' mod='wkonepagecheckout'}
 						</button>
 						<div class="wkhide wk_text-light wkbotton" id="wk-msg-new-delivery"></div>

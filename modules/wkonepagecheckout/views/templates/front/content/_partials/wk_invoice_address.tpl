@@ -40,11 +40,10 @@
 					</div>
 				{elseif $fieldName == 'country'}
 					<div class="form-group w-full">
-						<label class="label-control required">{l s='Country' mod='wkonepagecheckout'}</label>
 						<select
 							data-attr="invoice"
 							name="wk_invoice_address_country"
-							class="form-control wk_address_country bg-white border border-gray-2000 focus:border-gray-3000 focus:ring-0 font-body font-medium form-control-select form-select js-country pl-4 rounded-full w-full">
+							class="form-control wk_address_country text-sm font-normal border-solid bg-white border border-gray-2000 focus:border-gray-3000 focus:ring-0 font-body font-medium form-control-select form-select js-country pl-4 rounded-full w-full">
 							{if isset($countries)}
 								{foreach $countries as $country}
 									<option
@@ -77,7 +76,7 @@
 				{else}
 					{hook h='displayGDPRConsent' mod='psgdpr' id_module=$id_module}
 				{/if}
-				<button type="submit" class="btn py-3 px-4 border-2 text-main-dark uppercase border-main-dark hover:bg-main-dark hover:text-white rounded-full border-solid  transition font-body text-xs font-normal wk-save-address">
+				<button type="submit" class="btn bg-transparent py-3 px-4 border-2 text-main-dark uppercase border-main-dark hover:bg-main-dark hover:text-white rounded-full border-solid  transition font-body text-xs font-normal wk-save-address">
 					{l s='Save' mod='wkonepagecheckout'}
 				</button>
 				<div class="wkhide wk_text-light wkbotton" id="wk-msg-new-invoice"></div>
