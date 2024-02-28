@@ -74,7 +74,7 @@
 							{hook h='displayGDPRConsent' mod='psgdpr' id_module=$id_module}
 						{/if}
 
-						<button type="submit" class="btn py-3 px-4 border-2 text-main-dark uppercase border-main-dark hover:bg-main-dark hover:text-white rounded-full border-solid  transition font-body text-xs font-normal wk-save-address">
+						<button type="submit" class="btn bg-transparent py-3 px-4 border-2 text-main-dark uppercase border-main-dark hover:bg-main-dark hover:text-white rounded-full border-solid  transition font-body text-xs font-normal wk-save-address">
 							{l s='Save' mod='wkonepagecheckout'}
 						</button>
 						<div class="wkhide wk_text-light wkbotton" id="wk-msg-new-delivery"></div>
