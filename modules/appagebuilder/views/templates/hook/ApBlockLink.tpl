@@ -10,7 +10,7 @@
 {* mt-10 py-6 w-3/5 items-end flex-col-reverse tablet:hidden tablet:flex-row justify-start tablet:text-left tablet:items-center tablet:justify-start tablet:flex-col tablet:w-full px-6 tablet:px-6 tablet:py-20 case-normal justify-end tablet:text-xs *}
 
 {if $hookName == 'displayNav2'}
-    
+
     {if isset($formAtts.lib_has_error) && $formAtts.lib_has_error}
         {if isset($formAtts.lib_error) && $formAtts.lib_error}
             <div class="alert alert-warning leo-lib-error">{$formAtts.lib_error}</div>
@@ -55,13 +55,29 @@
                                 </li>
                             {/if}
                         {/foreach}
+                        <li class="ml-6 leading-[16px] hidden tablet:block">
+                            <a class="text-main-dark hover:text-main transition font-body flex items-center gap-1 whitespace-nowrap {if !$customer.is_logged || $customer.is_guest} leo-quicklogin{/if}"
+                                    {if $customer.is_logged && !$customer.is_guest}
+                                        href="{$link->getPageLink('my-account', true)|escape:'html'}"
+                                        title="{l s='My account' d='Shop.Theme.Global'}"
+                                    {else}
+                                        href="javascript:void(0)"
+                                        data-enable-sociallogin="enable"
+                                        data-type="popup"
+                                        data-layout="login"
+                                        rel="nofollow"
+                                        title="{l s='Login / Register' d='Shop.Theme.Global'}"
+                                    {/if}>
+                                {if $customer.is_logged && !$customer.is_guest}{l s='My account' d='Shop.Theme.Global'}{else}{l s='Login / Register' d='Shop.Theme.Global'}{/if}
+                            </a>
+                        </li>
                     </ul>
                 {/if}
             </div>
         {/if}
     {/if}
 
-    
+
 
 
 
