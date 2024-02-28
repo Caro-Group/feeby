@@ -24,7 +24,7 @@
             {foreach from=$delivery_options item=carrier key=carrier_id}
                 <div class="row">
                     <div class="wk-shipping-list">
-                        <div class="wk-shipping col-xs-1 col-sm-1 col-md-1 wkpadding">
+                        <div class="wk-shipping wkpadding">
                             <span>
                                 <input {if $delivery_option == $carrier_id} checked{/if} type="radio"
                                     name="delivery_option[{$id_address}]" id="delivery_option_{$carrier.id}"

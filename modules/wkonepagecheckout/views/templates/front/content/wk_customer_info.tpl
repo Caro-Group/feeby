@@ -45,7 +45,6 @@
             {if Configuration::get('WK_CHECKOUT_FACEBOOK_LOGIN') || Configuration::get('WK_CHECKOUT_GOOGLE_LOGIN')}
                 <!-- If customer is not login -->
                 <div class="wk-social-login clearfix">
-                    <p class="wk-separator">{l s='Or' mod='wkonepagecheckout'}</p>
                     {* <h5>{l s='Sign in with' mod='wkonepagecheckout'}</h5> *}
                     <div id="status" class="wkerrorcolor"></div>
                     {if Configuration::get('WK_CHECKOUT_FACEBOOK_LOGIN')}
@@ -195,7 +194,7 @@
 
         {if !$customer.is_logged || $customer.is_guest}
             <div class="w-full wk-log-btn mt-5">
-                <button class="btn py-3 px-4 border-2 text-main-dark uppercase border-main-dark bg-transparent hover:bg-main-dark hover:text-white rounded-full border-solid transition font-body text-xs font-normal leo-quicklogin" data-enable-sociallogin="enable" data-type="popup" data-layout="login">{l s='Already registered? Click to login' mod='wkonepagecheckout'}</button>
+                <button class="btn w-full py-3 px-4 border-2 text-main-dark uppercase border-main-dark bg-transparent hover:bg-main-dark hover:text-white rounded-full border-solid transition font-body text-sm font-normal leo-quicklogin" data-enable-sociallogin="enable" data-type="popup" data-layout="login">{l s='Already registered? Click to login' mod='wkonepagecheckout'}</button>
             </div>
         {/if}
 
