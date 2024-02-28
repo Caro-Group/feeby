@@ -75,8 +75,8 @@
 									</div>
 								</div>
 
-								<div class="wk-product-info shrink-0 basis-[70%] order-3 tablet:basis-[15%] tablet:order-2">
-									<div class="bootstrap-touchspin">
+								<div class="wk-product-info shrink-0 basis-[70%] order-3 tablet:basis-[20%] tablet:order-2">
+									<div class="bootstrap-touchspin !float-right">
 										<input data-id-product-attribute="{$product.id_product_attribute}"
 											data-id-product="{$product.id_product}"
 											value="{if isset($product.cart_quantity)}{$product.cart_quantity}{/if}"
@@ -97,7 +97,7 @@
 									</div>
 								</div>
 
-								<div class="shrink-0 basis-[30%] order-3 tablet:basis-[15%] tablet-wide:basis-[25%] tablet:order-4">
+								<div class="shrink-0 basis-[30%] order-3 tablet:basis-[20%] tablet:order-4">
 									<span class="text-base tablet:text-lg text-main-dark float-right">
 										{if isset($product.total)}
 											<span>{$product.total}</span>
