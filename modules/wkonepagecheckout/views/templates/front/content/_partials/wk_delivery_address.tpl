@@ -23,7 +23,7 @@
 					value="{if isset($delivery_address)}{$delivery_address->id}{/if}" id="id-new-delivery-address">
 
 				{foreach from=$addressFormFields item=field key=fieldName}
-					{if $fieldName != 'country' && $fieldName != 'state' && $field}
+					{if !in_array($fieldName, ['country', 'state', 'alias', 'company', 'vat_number']) && $field}
 						<div class="form-group w-full input-{$fieldName}">
 							<input maxlength="{$field.maxlength}" {if $field.required}data-required="1" 
 							{else}data-required="0"

@@ -18,7 +18,7 @@
 <div id="wkcustomer_info"></div>
     <!-- Customer details if login -->
     <div class="wk-login-container">
-        <h4 class="w-max mx-auto border-0 border-b-[3px] border-main border-solid font-normal mb-5 pb-2 rounded-b-sm tablet:text-2xl text-main-dark text-xl">{l s='Your details' mod='wkonepagecheckout'}</h4>
+        <h4 class="w-max mx-auto font-normal mb-5 tablet:text-2xl text-main-dark text-xl">{l s='Your details' mod='wkonepagecheckout'}</h4>
         <div class="col-md-12">
             <div class="row mb-5">
                 {if $customer.is_logged && !$customer.is_guest}
@@ -97,11 +97,10 @@
                 </div>
             {/if}
             <div class="form-group">
-                <label class="label-control">{l s='Email' mod='wkonepagecheckout'}</label>
                 <input value="{if isset($wkguest)}{$wkguest->email}{/if}" maxlength="128" type="text" name="wk-email"
-                    id="wk-email"  class="form-control border-gray-2000 border-solid border rounded-full bg-white">
-                <i class="material-icons wk-check-icon wkhide mt-1.5 icon_wk_email">&#xE876;</i>
-                <i class="material-icons wk-error-icon wkhide mt-1.5  error_wk_email">&#xE001;</i>
+                    id="wk-email" placeholder="{l s='Email' mod='wkonepagecheckout'}"  class="form-control border-gray-2000 border-solid border rounded-full bg-white">
+                <i class="material-icons wk-check-icon wkhide icon_wk_email">&#xE876;</i>
+                <i class="material-icons wk-error-icon wkhide error_wk_email">&#xE001;</i>
                 <span id="wk-email-error" class="wkerrorcolor"></span>
             </div>
             {if Configuration::get('WK_CHECKOUT_GUEST_ALLOW') && !isset($wkguest)}
@@ -187,15 +186,16 @@
             {/if}
         </div>
 
+        {if !$customer.is_logged || $customer.is_guest}
+            <div class="w-full wk-log-btn mb-5">
+                <button class="btn w-full py-3 px-4 border-2 text-main-dark uppercase border-main-dark bg-transparent hover:bg-main-dark hover:text-white rounded-full border-solid transition font-body text-sm font-normal leo-quicklogin" data-enable-sociallogin="enable" data-type="popup" data-layout="login">{l s='Already registered?' mod='wkonepagecheckout'}</button>
+            </div>
+        {/if}
+
         {block name='wk-customer-address'}
             {include file='module:wkonepagecheckout/views/templates/front/content/_partials/wk-myaccount.tpl'}
         {/block}
 
-        {if !$customer.is_logged || $customer.is_guest}
-            <div class="w-full wk-log-btn mt-5">
-                <button class="btn w-full py-3 px-4 border-2 text-main-dark uppercase border-main-dark bg-transparent hover:bg-main-dark hover:text-white rounded-full border-solid transition font-body text-sm font-normal leo-quicklogin" data-enable-sociallogin="enable" data-type="popup" data-layout="login">{l s='Already registered?' mod='wkonepagecheckout'}</button>
-            </div>
-        {/if}
 
 
         <!-- Login pop up tpl in case customer is not login -->
