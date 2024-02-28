@@ -17,7 +17,7 @@
 <div id="wk-delivery-address-form">
 	{if isset($addressFormFields)}
 		<div class="wk-delivery-address-form">
-			<form class="wk-address-form" method="POST" action="#" id="wk-delivery-form" data-type="delivery">
+			<form class="wk-address-form flex flex-wrap" method="POST" action="#" id="wk-delivery-form" data-type="delivery">
 				<input type="hidden" name="data-type" value="delivery" id="delivery">
 				<input type="hidden" name="id-new-delivery-address"
 					value="{if isset($delivery_address)}{$delivery_address->id}{/if}" id="id-new-delivery-address">

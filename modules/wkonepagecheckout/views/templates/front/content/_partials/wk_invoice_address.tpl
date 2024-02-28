@@ -17,7 +17,7 @@
 <div id="wk-invoice-address-form">
 	{if isset($addressFormFields)}
 	<div class="wk-invoice-address-form wk_div_container">
-		<form class="wk-address-form" method="POST" action="#" id="wk-invoice-form" data-type="invoice">
+		<form class="wk-address-form flex flex-wrap" method="POST" action="#" id="wk-invoice-form" data-type="invoice">
 			<input type="hidden" name="data-type" value="invoice" id="invoice">
 			<input type="hidden" name="id-new-invoice-address" value="{if isset($delivery_address)}{$delivery_address->id}{/if}" id="id-new-invoice-address">
 
