@@ -76,7 +76,7 @@
 								</div>
 
 								<div class="wk-product-info shrink-0 basis-[70%] order-3 tablet:basis-[20%] tablet:order-2">
-									<div class="bootstrap-touchspin !float-right">
+									<div class="bootstrap-touchspin tablet:!float-right">
 										<input data-id-product-attribute="{$product.id_product_attribute}"
 											data-id-product="{$product.id_product}"
 											value="{if isset($product.cart_quantity)}{$product.cart_quantity}{/if}"
