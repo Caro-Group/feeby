@@ -16,7 +16,7 @@
 *}
 <div id="wk-order-summary-ajax" class="clearfix">
 	<article class="mb-5 p-5 bg-gray-1000 rounded-[5px] clearfix">
-		<h4 class="border-0 border-b-[3px] border-main border-solid font-normal inline-block mb-5 pb-2 rounded-b-sm tablet:text-2xl text-main-dark text-xl">{l s='Order Summary' mod='wkonepagecheckout'}</h4>
+		<h4 class="w-max mx-auto border-0 border-b-[3px] border-main border-solid font-normal mb-5 pb-2 rounded-b-sm tablet:text-2xl text-main-dark text-xl">{l s='Order Summary' mod='wkonepagecheckout'}</h4>
 		<div class="text-sm text-main-dark">
 			<ul class="wk-cart-items clearfix">
 				{if isset($cart.products)}
