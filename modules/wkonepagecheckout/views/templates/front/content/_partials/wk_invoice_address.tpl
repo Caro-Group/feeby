@@ -22,7 +22,7 @@
 			<input type="hidden" name="id-new-invoice-address" value="{if isset($delivery_address)}{$delivery_address->id}{/if}" id="id-new-invoice-address">
 
 			{foreach from=$addressFormFields item=field key=fieldName}
-				{if $fieldName != 'country' && $fieldName != 'state' && $fieldName !='alias' && $field}
+				{if !in_array($fieldName, ['country', 'state', 'alias']) && $field}
 					<div class="form-group w-full input-{$fieldName}">
 						<input
 							maxlength="{$field.maxlength}"
