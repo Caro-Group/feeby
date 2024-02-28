@@ -47,14 +47,14 @@
                                         {/if}
                                     </div>
                                 {/if}
-                                <div class="col-md-6 col-xs-12 col-sm-6">
+                                <div class="col-md-6 col-xs-12 col-sm-6 font-body text-main-dark">
                                     <span class="carrier-name">{$carrier.name}</span>
                                     <br>
                                     {if Configuration::get('WK_CHECKOUT_CARRIER_DESC')}
                                         {if isset($carrier.delay)}<span class="carrier-delay">{$carrier.delay}</span>{/if}
                                     {/if}
                                 </div>
-                                <div class="col-md-3 col-xs-12 col-sm-3">
+                                <div class="col-md-3 col-xs-12 col-sm-3 font-body text-main-dark">
                                     <span class="carrier-price">{$carrier.price}</span>
                                 </div>
                             </div>

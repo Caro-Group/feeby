@@ -900,3 +900,7 @@ img:not([src]) {
 #checkout .form-group.input-postcode{
   @apply w-1/2 pl-1
 }
+
+#checkout .wrapper{
+  @apply bg-gray-1000
+}
