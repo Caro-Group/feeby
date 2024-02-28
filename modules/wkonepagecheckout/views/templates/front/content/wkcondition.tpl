@@ -16,7 +16,7 @@
 *}
 
 <div class="wk-condition wk-box">
-    <article class="col-md-12 wkpadding">
+    <article class="col-md-12">
     {if $conditions_to_approve|count}
         <p class="ps-hidden-by-js">
             {l s='By confirming the order, you certify that you have read and agree with all of the conditions below:' mod='wkonepagecheckout'}

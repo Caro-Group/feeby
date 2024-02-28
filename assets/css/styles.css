@@ -891,6 +891,10 @@ img:not([src]) {
   @apply !pointer-events-auto !opacity-100
 }
 
+.wk-address-form .form-group:first-of-type {
+  @apply !hidden;
+}
+
 .leo-blockcart.expanded::before{
   content: "\e646";
   font-family: 'themify';

@@ -23,7 +23,7 @@
         {if isset($delivery_options) && $delivery_options}
             {foreach from=$delivery_options item=carrier key=carrier_id}
                 <div class="row">
-                    <div class="wk-shipping-list col-md-12 col-sm-12 col-xs-12">
+                    <div class="wk-shipping-list">
                         <div class="wk-shipping col-xs-1 col-sm-1 col-md-1 wkpadding">
                             <span>
                                 <input {if $delivery_option == $carrier_id} checked{/if} type="radio"

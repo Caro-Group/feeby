@@ -29,7 +29,7 @@
                 <span></span>
             </span>
         </label>
-        <div class="col-md-10 col-sm-10 col-xs-10">
+        <div class="col-md-11 col-sm-11 col-xs-11">
             <select class="form-control bg-white border border-solid border-gray-2000 focus:border-gray-3000 focus:ring-0 font-body font-medium form-control-select form-select js-country pl-4 rounded-full w-full" id="wk-existing-delivery-address">
                 {foreach $customer.addresses as $addr}
                     <option {if isset($cart.id_address_delivery)} 
@@ -45,7 +45,7 @@
 {if $customer.addresses|count > 0}
     <div class="form-group wk-delivery-address-div clearfix">
         <label class="float-left w-5"></label>
-        <div class="col-md-10 col-sm-10 col-xs-10">
+        <div class="col-md-11 col-sm-11 col-xs-11">
             <address class="wk-diff-address wk-delivery-address-card rounded-lg border border-solid border-gray-2000">
                 {$customer.addresses.{$cart.id_address_delivery}.formatted nofilter}
                 <hr class="border-0 mb-5 tablet:mb-10">
@@ -53,7 +53,7 @@
                     <a class="edit-address font-body font-normal hover:text-main mr-5 tablet:text-sm text-main-dark text-xs transition uppercase" id="wk-delivery-address-edit" href="javascript:void(0);">
                         {l s='Edit' mod='wkonepagecheckout'}
                     </a>
-                    <a class="delete-address border-2 border-main-dark border-solid font-body font-normal hover:bg-main-dark hover:text-white px-6 py-3 rounded-full text-main-dark text-sm transition uppercase whitespace-nowrap" id="wk-delivery-address-delete" href="javascript:void(0);" >
+                    <a class="delete-address inline-block border-2 border-main-dark border-solid font-body font-normal hover:bg-main-dark hover:text-white px-6 py-3 rounded-full text-main-dark text-sm transition uppercase whitespace-nowrap" id="wk-delivery-address-delete" href="javascript:void(0);" >
                         {l s='Delete' mod='wkonepagecheckout'}
                     </a>
                 </footer>
