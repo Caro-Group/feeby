@@ -126,7 +126,7 @@
             <div class="form-group wkpassword_div {if Configuration::get('WK_CHECKOUT_GUEST_ALLOW')}wkhide{/if}">
                 <label class="label-control">{l s='Password' mod='wkonepagecheckout'}</label>
                 <input maxlength="60" type="password" name="wk-password" id="wk-password" class="form-control border-gray-2000 border-solid border rounded-full bg-white">
-                <i class="material-icons wk-check-icon mt-1.5  wkhide icon_wk_password">&#xE876;</i>
+                <i class="material-icons wk-check-icon   wkhide icon_wk_password">&#xE876;</i>
                 <i class="material-icons wk-error-icon mt-1.5  wkhide error_wk_password">&#xE001;</i>
                 <span id="wk-password-error" class="wkerrorcolor"></span>
             </div>

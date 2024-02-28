@@ -22,11 +22,8 @@
 			<input type="hidden" name="id-new-invoice-address" value="{if isset($delivery_address)}{$delivery_address->id}{/if}" id="id-new-invoice-address">
 
 			{foreach from=$addressFormFields item=field key=fieldName}
-				{if $fieldName != 'country' && $fieldName != 'state' && $field}
-					<div class="form-group">
-						<label class="label-control {if $field.required}required{/if}">
-							{$field.label}
-						</label>
+				{if $fieldName != 'country' && $fieldName != 'state' && $fieldName !='alias' && $field}
+					<div class="form-group w-full input-{$fieldName}">
 						<input
 							maxlength="{$field.maxlength}"
 							{if $field.required}data-required="1"{else}data-required="0"{/if}
@@ -35,13 +32,14 @@
 							name="{$field.invoice_field_name}"
 							id="{$field.invoice_field_name}"
 							value="{if isset($delivery_address)}{$delivery_address->{$field.db_fieldname}}{/if}"
+							placeholder="{$field.label}{if $field.required} *{/if}"
 							class="form-control wkvalidatefield border-gray-2000 border-solid border rounded-full bg-white">
-						<i class="material-icons wk-check-icon wkhide mt-1.5 icon_{$field.invoice_field_name}">&#xE876;</i>
-						<i class="material-icons wk-error-icon wkhide mt-1.5 error_{$field.invoice_field_name}">&#xE001;</i>
+						<i class="material-icons wk-check-icon wkhide icon_{$field.invoice_field_name}">&#xE876;</i>
+						<i class="material-icons wk-error-icon wkhide error_{$field.invoice_field_name}">&#xE001;</i>
 						<span class="help-block wk-error {$field.invoice_field_name}"></span>
 					</div>
 				{elseif $fieldName == 'country'}
-					<div class="form-group">
+					<div class="form-group w-full">
 						<label class="label-control required">{l s='Country' mod='wkonepagecheckout'}</label>
 						<select
 							data-attr="invoice"
@@ -73,7 +71,7 @@
 				{/if}
 			{/foreach}
 
-			<div class="form-group" style="text-align: right;">
+			<div class="form-group w-full" style="text-align: right;">
 				{if Module::isEnabled('wkgdpr')}
 					{hook h='displayGDPRConsent' mod='wkgdpr' id_module=$id_module}
 				{else}

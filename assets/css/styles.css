@@ -891,6 +891,12 @@ img:not([src]) {
   @apply !pointer-events-auto !opacity-100
 }
 
-.wk-address-form .form-group:first-of-type {
-  @apply !hidden;
+#checkout .form-group.input-firstname,
+#checkout .form-group.input-address1{
+  @apply w-1/2 pr-1
+}
+
+#checkout .form-group.input-lastname,
+#checkout .form-group.input-postcode{
+  @apply w-1/2 pl-1
 }
