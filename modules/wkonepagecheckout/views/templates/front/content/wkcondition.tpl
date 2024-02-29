@@ -100,7 +100,7 @@
     {* Danger : - Dont't alter this div, we have used this div to append prestashop button to make payment *}
     <div class="wk_ps_payment_button wkhide"></div>
     {*  *}
-    <p class="text-xs text-gray-dark mb-3 mt-2 [&_a]:text-main-dark">
+    <p class="text-xs text-gray-dark mb-3 mt-2 [&_a]:text-main-dark [&_a:hover]:text-main [&_a]:transition">
         {l s='By clicking the "Place order" button, you agree to the Terms and Conditions of Sale and agree to the Privacy Policy.' d='Shop.Theme.Checkout'}
     </p>
     {hook h='displayPaymentByBinaries'}
