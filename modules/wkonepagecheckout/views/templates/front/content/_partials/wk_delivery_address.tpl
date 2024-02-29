@@ -23,7 +23,18 @@
 					value="{if isset($delivery_address)}{$delivery_address->id}{/if}" id="id-new-delivery-address">
 
 				{foreach from=$addressFormFields item=field key=fieldName}
-					{if !in_array($fieldName, ['country', 'state', 'alias', 'company', 'vat_number']) && $field}
+					{if !in_array($fieldName, ['country', 'state', 'alias']) && $field}
+						{if $fieldName == 'company'}
+
+							<div id="company" class="pt-5 pb-2 tablet:pt-2">
+							  <a class="block border-b text-main-dark w-full desktop-presta:ml-[220px] mx-5 hover:text-main transition text-sm collapsed font-body" data-toggle="collapse" href="#collapseCompany" role="button" aria-expanded="false" aria-controls="collapseCompany">
+							  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none"><path fill="#181828" d="M0 5h12v1H0z"></path><path fill="#181828" d="M5 0v12H6V0z" class=""></path></svg>
+								{l s='Add tax identification number and company name' d='Shop.Theme.Checkout'}
+							  </a>
+							  <div class="collapse" id="collapseCompany">
+							   
+						{/if}
+
 						<div class="form-group w-full input-{$fieldName}">
 							<input maxlength="{$field.maxlength}" {if $field.required}data-required="1" 
 							{else}data-required="0"
@@ -36,6 +47,13 @@
 							<i class="material-icons wk-error-icon wkhide error_{$field.delivery_field_name}">&#xE001;</i>
 							<span class="help-block wk-error {$field.delivery_field_name}"></span>
 						</div>
+
+						{if $fieldName == 'vat_number' }
+							</div>
+						  </div>
+						  
+						{/if}
+
 					{elseif $fieldName == 'country'}
 						<div class="form-group w-full">
 							<select data-required="1" data-attr="delivery" name="wk_delivery_address_country"
