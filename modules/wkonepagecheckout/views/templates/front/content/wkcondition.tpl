@@ -17,18 +17,6 @@
 
 <div class="wk-condition wk-box">
     <article>
-    <div id="payment-confirmation">
-        <div class="ps-shown-by-js">
-            <button type="submit" class="bg-main-dark border-0 cursor-pointer font-medium h-full hover:bg-main-hover overflow-hidden phone-wide:text-base px-4 py-3 relative rounded-full tablet:text-xl text-base text-center text-white transition uppercase w-full duration-200" {if $conditions_to_approve|count}disabled="disabled"{/if}>
-                {l s='Place Order' mod='wkonepagecheckout'}
-            </button>
-        </div>
-    </div>
-
-    {* Danger : - Dont't alter this div, we have used this div to append prestashop button to make payment *}
-    <div class="wk_ps_payment_button wkhide"></div>
-    {*  *}
-
     {if $conditions_to_approve|count}
         <p class="ps-hidden-by-js">
             {l s='By confirming the order, you certify that you have read and agree with all of the conditions below:' mod='wkonepagecheckout'}
@@ -90,19 +78,31 @@
                                 required
                                 type="checkbox"
                                 value="1"
-                                checked="checked"
-                                class="ps-shown-by-js wk-condition-check form-checkbox hidden">
+                                class="ps-shown-by-js wk-condition-check form-checkbox  cursor-pointer bg-white border-2 border-gray-3000 border-solid checked:bg-main-dark checked:focus:bg-main-dark checked:hover:bg-main-dark focus:ring-0 focus:ring-transparent form-checkbox opacity-100 outline-none rounded transition">
                         </span>
                     </div>
                     <div>
-                        <label class="cursor-pointer block js-terms text-xs text-gray-dark mb-3" for="conditions_to_approve[{$condition_name}]">{$condition nofilter}</label>
+                        <label class="cursor-pointer block ml-6 js-terms text-xs text-gray-dark mb-3" for="conditions_to_approve[{$condition_name}]">{$condition nofilter}</label>
                     </div>
                 </li>
             {/foreach}
             </ul>
         </form>
     {/if}
+    <div id="payment-confirmation">
+        <div class="ps-shown-by-js">
+            <button type="submit" class="bg-main-dark border-0 cursor-pointer font-medium h-full hover:bg-main-hover overflow-hidden phone-wide:text-base px-4 py-3 relative rounded-full tablet:text-xl text-base text-center text-white transition uppercase w-full duration-200" {if $conditions_to_approve|count}disabled="disabled"{/if}>
+                {l s='Place Order' mod='wkonepagecheckout'}
+            </button>
+        </div>
+    </div>
 
+    {* Danger : - Dont't alter this div, we have used this div to append prestashop button to make payment *}
+    <div class="wk_ps_payment_button wkhide"></div>
+    {*  *}
+    <p class="text-xs text-gray-dark mb-3 mt-2 [&_a]:text-main-dark">
+        {l s='By clicking the "Place order" button, you agree to the Terms and Conditions of Sale and agree to the Privacy Policy.' d='Shop.Theme.Checkout' nofilter}
+    </p>
     {hook h='displayPaymentByBinaries'}
     <div id="wkcondition_info"></div>
     </article>
