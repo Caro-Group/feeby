@@ -91,11 +91,11 @@
                                 type="checkbox"
                                 value="1"
                                 checked="checked"
-                                class="ps-shown-by-js wk-condition-check form-checkbox hidden">
+                                class="ps-shown-by-js wk-condition-check form-checkbox !hidden">
                         </span>
                     </div>
                     <div>
-                        <label class="cursor-pointer block js-terms text-xs text-gray-dark mb-3" for="conditions_to_approve[{$condition_name}]">{$condition nofilter}</label>
+                        <label class="cursor-pointer block js-terms text-xs text-gray-dark mt-2 mb-3" for="conditions_to_approve[{$condition_name}]">{$condition nofilter}</label>
                     </div>
                 </li>
             {/foreach}
