@@ -432,7 +432,6 @@ body#checkout #wk-one-page-checkout #btree-payment-form .btree-form-content>div:
 
 @media (max-width: 767px) {
     #wk-one-page-checkout {
-        background: white;
         padding: 15px;
         margin-bottom: 15px;
     }
