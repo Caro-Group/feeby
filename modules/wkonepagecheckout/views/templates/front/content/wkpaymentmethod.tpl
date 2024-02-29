@@ -30,7 +30,7 @@
 						{assign var=counter value=1}
 							{foreach from=$module_options item="option"}
 								<div id="{$option.id}-container" class="flex items-center bg-gray-1000 mb-5 p-2 rounded-md">
-									<div class="wk-payment payment-option wkpadding mr-7">
+									<div class="wk-payment payment-option wkpadding">
 										{* This is the way an option should be selected when Javascript is enabled *}
 										<span class="pull-xs-left">
 											<input {if is_null($option.module_name)}
@@ -56,7 +56,7 @@
 												<label
 													for="{$option.id}"
 													class="cursor-pointer col-md-11 col-sm-9 col-xs-9 wk-selected-payment-{$option.id} {if Configuration::get('WK_CHECKOUT_DEFAULT_PAYMENT') && (Configuration::get('WK_CHECKOUT_DEFAULT_PAYMENT') == $option.module_name)}wkSelectedBorder{/if}">
-													<div class="row">
+													<div class="row flex items-center min-h-[55px]">
 														{if Configuration::get('WK_CHECKOUT_PAYMENT_LOGO')}
 															<div class="col-md-3 col-xs-12 col-sm-3">
 																{if $option.logo}

@@ -29,10 +29,6 @@
     outline: unset !important;
 }
 
-.payment-option {
-    width: 0 !important;
-}
-
 .btn.disabled {
     opacity: .65 !important;
 }
