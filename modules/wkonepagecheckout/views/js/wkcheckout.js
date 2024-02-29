@@ -321,8 +321,8 @@ $(document).ready(function () {
     }
 
     //	Validate delivery and invoice address field
-    $(document).on('blur', '.wkvalidatefield', function () {
-        if (typeof inline !== 'undefined') {
+    $(document).on('blur', '.wkvalidatefield', function (e) {
+        if (typeof inline !== 'undefined' && !e.relatedTarget?.classList.contains('wk-save-address')) {
             var fieldValue = $.trim($(this).val());
             var fieldId = $(this).attr('id');
             var maxlength = $(this).attr('maxlength');
