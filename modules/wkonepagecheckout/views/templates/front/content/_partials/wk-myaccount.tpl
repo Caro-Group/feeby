@@ -15,33 +15,46 @@
 *  @license   LICENSE.txt
 *}
 <div class="wk-address-block">
+	<ul class="nav nav-tabs gap-4" style="display: inline-flex;">
+		<li class="nav-item">
+			<a class="font-body text-base text-gray-3000 border-0 border-b-[3px] border-solid rounded-b-[3px] nav-link font-normal transition duration-200 active" href="#wk-existing-delivery" data-toggle="tab">
+				{l s='Delivery Address' mod='wkonepagecheckout'}
+			</a>
+		</li>
 
-	<div class="" id="wk-existing-delivery">
-		<h5 class="text-xl font-light text-left mb-5">{l s='Delivery Address' mod='wkonepagecheckout'}</h5>
-		{block name='wk_existing_delivery_address'}
-			{include file="module:wkonepagecheckout/views/templates/front/content/_partials/wk_existing_delivery_address.tpl"}
-		{/block}
-
-		<!-- Add new delivery address -->
-		<div class="box {if $customer.addresses|count > 0}wkhide{/if}" id="wk-new-delivery">
-			{block name='wk_delivery_address'}
-				{include file="module:wkonepagecheckout/views/templates/front/content/_partials/wk_delivery_address.tpl"}
+		<li
+			class="nav-item wk-disabled-invoice {if !Configuration::get('WK_CHECKOUT_DELIVERY_AS_INVOICE')}disabled{/if}">
+			<a class="font-body text-base text-gray-3000 border-0 border-b-[3px] border-solid rounded-b-[3px] nav-link font-normal transition duration-200" href="#wk-existing-invoice"
+				{if !Configuration::get('WK_CHECKOUT_DELIVERY_AS_INVOICE')}data-toggle="tab" {/if}>
+				{l s='Invoice Address' mod='wkonepagecheckout'}
+			</a>
+		</li>
+	</ul>
+	<div class="tab-content" id="tab-content">
+		<div class="tab-pane fade in active" id="wk-existing-delivery">
+			{block name='wk_existing_delivery_address'}
+				{include file="module:wkonepagecheckout/views/templates/front/content/_partials/wk_existing_delivery_address.tpl"}
 			{/block}
+
+			<!-- Add new delivery address -->
+			<div class="box {if $customer.addresses|count > 0}wkhide{/if}" id="wk-new-delivery">
+				{block name='wk_delivery_address'}
+					{include file="module:wkonepagecheckout/views/templates/front/content/_partials/wk_delivery_address.tpl"}
+				{/block}
+			</div>
+		</div>
+
+		<div class="tab-pane fade" id="wk-existing-invoice">
+			{block name='wk_existing_invoice_address'}
+				{include file="module:wkonepagecheckout/views/templates/front/content/_partials/wk_existing_invoice_address.tpl"}
+			{/block}
+
+			<!-- Add new invoice address -->
+			<div class="box {if $customer.addresses|count > 0}wkhide{/if}" id="wk-new-invoice">
+				{block name='wk_invoice_address'}
+					{include file="module:wkonepagecheckout/views/templates/front/content/_partials/wk_invoice_address.tpl"}
+				{/block}
+			</div>
 		</div>
 	</div>
-
-	<div class="hidden" id="wk-existing-invoice">
-		<h5 class="text-xl font-light text-left mb-5">{l s='Invoice Address' mod='wkonepagecheckout'}</h5>
-		{block name='wk_existing_invoice_address'}
-			{include file="module:wkonepagecheckout/views/templates/front/content/_partials/wk_existing_invoice_address.tpl"}
-		{/block}
-
-		<!-- Add new invoice address -->
-		<div class="box {if $customer.addresses|count > 0}wkhide{/if}" id="wk-new-invoice">
-			{block name='wk_invoice_address'}
-				{include file="module:wkonepagecheckout/views/templates/front/content/_partials/wk_invoice_address.tpl"}
-			{/block}
-		</div>
-	</div>
-
 </div>
