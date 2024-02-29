@@ -186,9 +186,7 @@
         </div>
 
         {if !$customer.is_logged || $customer.is_guest}
-            <div class="w-full wk-log-btn mb-5">
-                <button class="btn w-full py-3 px-4 border-2 text-main-dark uppercase border-main-dark bg-transparent hover:bg-main-dark hover:text-white rounded-full border-solid transition font-body text-sm font-normal leo-quicklogin" data-enable-sociallogin="enable" data-type="popup" data-layout="login">{l s='Already registered?' mod='wkonepagecheckout'}</button>
-            </div>
+            <a href="javascript:void(0)" class="block duration-200 hover:text-main-dark mx-auto text-sm transition w-max leo-quicklogin" data-enable-sociallogin="enable" data-type="popup" data-layout="login">{l s='Already registered?' mod='wkonepagecheckout'}</a>
         {/if}
 
         {block name='wk-customer-address'}

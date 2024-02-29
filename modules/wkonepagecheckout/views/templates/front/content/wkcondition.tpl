@@ -91,7 +91,7 @@
     {/if}
     <div id="payment-confirmation">
         <div class="ps-shown-by-js">
-            <button type="submit" class="bg-main-dark border-0 cursor-pointer font-medium h-full hover:bg-main-hover overflow-hidden phone-wide:text-base px-4 py-3 relative rounded-full tablet:text-xl text-base text-center text-white transition uppercase w-full duration-200" {if $conditions_to_approve|count}disabled="disabled"{/if}>
+            <button type="submit" class="max-w-[290px] bg-main-dark border-0 cursor-pointer font-medium h-full hover:bg-main-hover overflow-hidden phone-wide:text-base px-4 py-3 relative rounded-full tablet:text-xl text-base text-center text-white transition uppercase duration-200" {if $conditions_to_approve|count}disabled="disabled"{/if}>
                 {l s='Place Order' mod='wkonepagecheckout'}
             </button>
         </div>
@@ -100,7 +100,7 @@
     {* Danger : - Dont't alter this div, we have used this div to append prestashop button to make payment *}
     <div class="wk_ps_payment_button wkhide"></div>
     {*  *}
-    <p class="text-xs text-gray-dark mb-3 mt-2 [&_a]:text-main-dark">
+    <p class="max-w-[320px] mx-auto text-center text-xs text-gray-dark mb-3 mt-2 [&_a]:text-main-dark [&_a:hover]:text-main [&_a]:transition">
         {l s='By clicking the "Place order" button, you agree to the Terms and Conditions of Sale and agree to the Privacy Policy.' d='Shop.Theme.Checkout'}
     </p>
     {hook h='displayPaymentByBinaries'}
