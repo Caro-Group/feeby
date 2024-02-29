@@ -81,7 +81,7 @@
             {/if}
         </div>
 
-        <div class="wk-form-group">
+        <div class="wk-form-group !mb-0">
             {if Configuration::get('WK_CHECKOUT_SOCIAL_TITLE')}
                 <div class="form-group">
                     <label class="label-control">{l s='Social title' mod='wkonepagecheckout'}</label>
@@ -96,7 +96,7 @@
                     {/if}
                 </div>
             {/if}
-            <div class="form-group">
+            <div class="form-group !mb-2">
                 <input value="{if isset($wkguest)}{$wkguest->email}{/if}" maxlength="128" type="text" name="wk-email"
                     id="wk-email" placeholder="{l s='Email' mod='wkonepagecheckout'}"  class="form-control border-gray-2000 border-solid border rounded-full bg-white">
                 <i class="material-icons wk-check-icon wkhide icon_wk_email">&#xE876;</i>
@@ -186,7 +186,7 @@
         </div>
 
         {if !$customer.is_logged || $customer.is_guest}
-            <a href="javascript:void(0)" class="block duration-200 hover:text-main-dark mx-auto text-sm transition w-max leo-quicklogin" data-enable-sociallogin="enable" data-type="popup" data-layout="login">{l s='Already registered?' mod='wkonepagecheckout'}</a>
+            <a href="javascript:void(0)" class="block duration-200 hover:text-main-dark mx-auto mb-8 text-sm transition w-max leo-quicklogin" data-enable-sociallogin="enable" data-type="popup" data-layout="login">{l s='Already registered?' mod='wkonepagecheckout'}</a>
         {/if}
 
         {block name='wk-customer-address'}
