@@ -19,7 +19,6 @@
     <div id="hook-display-before-carrier">
         {hook h='displayBeforeCarrier'}
     </div>
-    {if $wk_is_logged == 1 && (int)$id_address > 0}
         {if isset($delivery_options) && $delivery_options}
             {foreach from=$delivery_options item=carrier key=carrier_id}
                 <div class="row">
@@ -82,13 +81,6 @@
                 </div>
             </div>
         {/if}
-    {else}
-        <div class="col-md-12 col-sm-12 col-xs-12">
-            <div class="alert alert-danger">
-                {l s='First you need to fill the shipping address.' mod='wkonepagecheckout'}
-            </div>
-        </div>
-    {/if}
     <div id="hook-display-after-carrier">
         {hook h='displayAfterCarrier'}
     </div>
