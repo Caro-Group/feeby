@@ -189,7 +189,7 @@ $(document).ready(function () {
 
     $(document).on('change', '#wk-existing-delivery-address', function () {
         var idAddress = $(this).val();
-        if ($('input[name="wk-different-invoice"]').is(":checked")) {
+        if (!$('input[name="wk-different-invoice"]').is(":checked")) {
             var idAddressInvoice = idAddress;
         } else {
             var idAddressInvoice = $('#wk-existing-invoice-address option:selected').val();
@@ -199,7 +199,7 @@ $(document).ready(function () {
 
     $(document).on('change', '#wk-existing-invoice-address', function () {
         var idAddressInvoice = $(this).val();
-        if ($('input[name="wk-different-invoice"]').is(":checked")) {
+        if (!$('input[name="wk-different-invoice"]').is(":checked")) {
             var idAddress = idAddressInvoice;
         } else {
             var idAddress = $('#wk-existing-delivery-address option:selected').val();
@@ -865,7 +865,7 @@ function validateCustomerAddress() {
     }
 
     // checking invoice address
-    if ($('input[name="wk-different-invoice"]').is(":checked")) {
+    if (!$('input[name="wk-different-invoice"]').is(":checked")) {
         return true;
     } else {
         if (typeof selectedInvoiceAddress === 'undefined') {
@@ -1115,7 +1115,7 @@ function createCustomerAddress(wknewtoken) {
     }
 
     // checking invoice address
-    if ($('input[name="wk-different-invoice"]').is(":checked")) {
+    if (!$('input[name="wk-different-invoice"]').is(":checked")) {
         if (typeof selectedDeliveryAddress === 'undefined') {
             var idInvoiceAddress = $('#id-new-delivery-address').val();
             if (typeof idInvoiceAddress === 'undefined') {
@@ -1277,7 +1277,7 @@ function createNewAddress(formData, dataType, updateShipping, updatePayment, wkn
                     if (typeof idDeliveryAddress === 'undefined') {
                         Window.error = true;
                     } else {
-                        if ($('input[name="wk-different-invoice"]').is(":checked")) {
+                        if (!$('input[name="wk-different-invoice"]').is(":checked")) {
                             var idInvoiceAddress = idDeliveryAddress;
                         } else {
                             var idInvoiceAddress = $('#wk-existing-invoice-address').val();
@@ -1838,7 +1838,7 @@ function showNewDeliveryAddress(condition) {
         $('.wk-delivery-address-div').slideDown();
 
         var idAddress = $('#wk-existing-delivery-address option:selected').val();
-        if ($('input[name="wk-different-invoice"]').is(":checked")) {
+        if (!$('input[name="wk-different-invoice"]').is(":checked")) {
             var idAddressInvoice = idAddress;
         } else {
             var idAddressInvoice = $('#wk-existing-invoice-address option:selected').val();
@@ -2313,13 +2313,15 @@ $(document).on('change', '.wk-condition-check', function () {
 
 function updateCartAddress() {
     var idAddress = $('#wk-existing-delivery-address option:selected').val();
-    if ($('[name="wk-different-invoice"]').is(":checked")) {
+    if (!$('input[name="wk-different-invoice"]').is(":checked")) {
         $('.wk-disabled-invoice').addClass('disabled');
         $('.wk-disabled-invoice a').removeAttr('data-toggle');
+        $('#wk-existing-invoice').addClass('hidden');
         var idAddressInvoice = idAddress;
     } else {
         $('.wk-disabled-invoice').removeClass('disabled');
         $('.wk-disabled-invoice a').attr('data-toggle', 'tab');
+        $('#wk-existing-invoice').removeClass('hidden');
         var idAddressInvoice = $('#wk-existing-invoice-address option:selected').val();
     }
     updateCustomerAddress(idAddress, idAddressInvoice, 'delivery', true, true);
