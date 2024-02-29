@@ -101,7 +101,7 @@
     <div class="wk_ps_payment_button wkhide"></div>
     {*  *}
     <p class="text-xs text-gray-dark mb-3 mt-2 [&_a]:text-main-dark">
-        {l s='By clicking the "Place order" button, you agree to the Terms and Conditions of Sale and agree to the Privacy Policy.' d='Shop.Theme.Checkout' nofilter}
+        {l s='By clicking the "Place order" button, you agree to the Terms and Conditions of Sale and agree to the Privacy Policy.' d='Shop.Theme.Checkout'}
     </p>
     {hook h='displayPaymentByBinaries'}
     <div id="wkcondition_info"></div>
