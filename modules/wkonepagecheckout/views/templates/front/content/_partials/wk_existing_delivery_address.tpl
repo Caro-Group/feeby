@@ -14,12 +14,6 @@
 *  @copyright since 2010 Webkul
 *  @license   LICENSE.txt
 *}
-<div class="form-group">
-    <label class="cursor-pointer text-xs text-gray-dark align-middle">
-        <input type="checkbox" name="wk-different-invoice" value="1" class="mr-2 bg-white border-2 border-gray-3000 border-solid checked:bg-main-dark checked:focus:bg-main-dark checked:hover:bg-main-dark focus:ring-0 focus:ring-transparent form-checkbox opacity-100 outline-none rounded transition" {if Configuration::get('WK_CHECKOUT_DELIVERY_AS_INVOICE')}checked="checked"{/if}>
-        {l s='Use this address as invoice address' mod='wkonepagecheckout'}
-    </label>
-</div>
 
 {if isset($customer.addresses) && $customer.addresses|count > 0}
     <div class="form-group clearfix wk-align-center">

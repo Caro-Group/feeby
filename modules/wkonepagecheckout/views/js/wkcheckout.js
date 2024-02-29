@@ -2316,10 +2316,12 @@ function updateCartAddress() {
     if ($('[name="wk-different-invoice"]').is(":checked")) {
         $('.wk-disabled-invoice').addClass('disabled');
         $('.wk-disabled-invoice a').removeAttr('data-toggle');
+        $('#wk-existing-invoice').addClass('hidden');
         var idAddressInvoice = idAddress;
     } else {
         $('.wk-disabled-invoice').removeClass('disabled');
         $('.wk-disabled-invoice a').attr('data-toggle', 'tab');
+        $('#wk-existing-invoice').removeClass('hidden');
         var idAddressInvoice = $('#wk-existing-invoice-address option:selected').val();
     }
     updateCustomerAddress(idAddress, idAddressInvoice, 'delivery', true, true);
