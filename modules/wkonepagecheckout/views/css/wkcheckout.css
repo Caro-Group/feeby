@@ -381,7 +381,8 @@ ul.block-promo li {
     }
 
     .wk-custom-shipping-icon {
-        width: 30px;
+        width: auto;
+        max-height: 35px;
     }
 
     /* .wk-shipping-carriers {
