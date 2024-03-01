@@ -538,7 +538,7 @@ $(document).ready(function () {
         if (!stepPayment) {
             $('#wkpayment-error').show().text(wk_payment_err);
             $('html, body').animate({
-                scrollTop: ($('.wk-payment-icon').offset().top - 10)
+                scrollTop: ($('.wk-payment-method').offset().top - 10)
             }, 2000);
             enableOrderButton();
             return false;
@@ -567,7 +567,7 @@ $(document).ready(function () {
             if (!stepCarrier) {
                 $('#wkshipping-error').show().text(no_shipping_select); //	Shipping is not updated
                 $('html, body').animate({
-                    scrollTop: ($('.wk-shipping-icon').offset().top - 10)
+                    scrollTop: ($('.wk-shipping-carriers').offset().top - 10)
                 }, 2000);
                 enableOrderButton();
                 return false;
