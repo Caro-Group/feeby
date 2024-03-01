@@ -14,9 +14,9 @@
 *  @copyright since 2010 Webkul
 *  @license   LICENSE.txt
 *}
-<a title="{l s='My Saved Cart' mod='wkonepagecheckout'}" class="col-lg-4 col-md-6 col-sm-6 col-xs-12" href="{$wkcheckout_cart_save}">
+{* <a title="{l s='My Saved Cart' mod='wkonepagecheckout'}" class="col-lg-4 col-md-6 col-sm-6 col-xs-12" href="{$wkcheckout_cart_save}">
 	<span class="link-item">
 		<i class="material-icons">&#xE854;</i>
 		{l s='My Saved Cart' mod='wkonepagecheckout'}
 	</span>
-</a>
+</a> *}
