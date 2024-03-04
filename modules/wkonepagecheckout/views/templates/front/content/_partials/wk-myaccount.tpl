@@ -28,7 +28,7 @@
 				{include file="module:wkonepagecheckout/views/templates/front/content/_partials/wk_delivery_address.tpl"}
 			{/block}
 		</div>
-		<div class="form-group">
+		<div class="form-group {if $customer.addresses|count == 0}hidden{/if}">
 			<label class="cursor-pointer text-xs text-gray-dark align-middle">
 				<input type="checkbox" name="wk-different-invoice" value="1" class="mr-2 bg-white border-2 border-gray-3000 border-solid checked:bg-main-dark checked:focus:bg-main-dark checked:hover:bg-main-dark focus:ring-0 focus:ring-transparent form-checkbox opacity-100 outline-none rounded transition" {if Configuration::get('WK_CHECKOUT_DELIVERY_AS_INVOICE')}checked="checked"{/if}>
 				{l s='Use this address as invoice address' mod='wkonepagecheckout'}
@@ -36,7 +36,7 @@
 		</div>
 	</div>
 
-	<div id="wk-existing-invoice">
+	<div id="wk-existing-invoice" class="hidden">
 		<h5 class="text-xl font-light text-left mb-5">{l s='Invoice Address' mod='wkonepagecheckout'}</h5>
 		{block name='wk_existing_invoice_address'}
 			{include file="module:wkonepagecheckout/views/templates/front/content/_partials/wk_existing_invoice_address.tpl"}
