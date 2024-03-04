@@ -23,6 +23,17 @@
 
 			{foreach from=$addressFormFields item=field key=fieldName}
 				{if !in_array($fieldName, ['country', 'state', 'alias']) && $field}
+					{if $fieldName == 'company'}
+
+						<div id="company" class="w-full">
+						  <a class="block border-b text-main-dark w-full mx-5 mb-2 tablet:mb-5 hover:text-main transition text-sm collapsed font-body [&:not(.collapsed)_.shrinkable]:scale-y-0" data-toggle="collapse" href="#collapseCompany" role="button" aria-expanded="false" aria-controls="collapseCompany">
+						  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none"><path fill="#181828" d="M0 5h12v1H0z"></path><path class="shrinkable transition duration-300" fill="#181828" d="M5 0v12H6V0z" class=""></path></svg>
+							{l s='Add tax identification number and company name' d='Shop.Theme.Checkout'}
+						  </a>
+						  <div class="collapse" id="collapseCompany">
+						   
+					{/if}
+
 					<div class="form-group w-full input-{$fieldName}">
 						<input
 							maxlength="{$field.maxlength}"
@@ -38,6 +49,13 @@
 						<i class="material-icons wk-error-icon wkhide error_{$field.invoice_field_name}">&#xE001;</i>
 						<span class="help-block wk-error {$field.invoice_field_name}"></span>
 					</div>
+
+					{if $fieldName == 'vat_number' }
+						</div>
+					  </div>
+					  
+					{/if}
+					
 				{elseif $fieldName == 'country'}
 					<div class="form-group w-full">
 						<select
