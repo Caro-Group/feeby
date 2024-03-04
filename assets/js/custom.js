@@ -1851,3 +1851,10 @@ $(document).ready(function () {
   })
 
 });
+
+
+$(document).ready(function () {
+	if(prestashop.urls.current_url.includes('?tag=bestseller')){
+		$('#search_sort_toggler').addClass('!hidden');
+    }
+});
