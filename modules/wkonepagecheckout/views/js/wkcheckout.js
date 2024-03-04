@@ -1860,9 +1860,11 @@ function showNewDeliveryAddress(condition) {
 
 function showInvoiceAddress(condition) {
     if (condition == 1) {
+        $('.wk-invoice-address-card').slideDown()
         $('#wk-new-invoice').removeClass('wkshow').addClass('wkhide');
         $('#wk-existing-invoice-address').removeAttr('disabled');
     } else if (condition == 2) {
+        $('.wk-invoice-address-card').slideUp()
         $('#wk-new-invoice').removeClass('wkhide').addClass('wkshow');
         $('#wk-existing-invoice-address').attr('disabled', 'disabled');
     }
@@ -2324,6 +2326,7 @@ function updateCartAddress() {
         $('#wk-existing-invoice').removeClass('hidden');
         var idAddressInvoice = $('#wk-existing-invoice-address option:selected').val();
     }
+    $('input[name="wk-invoice-address"]').click()
     updateCustomerAddress(idAddress, idAddressInvoice, 'delivery', true, true);
 }
 function enableOrderButton() {
