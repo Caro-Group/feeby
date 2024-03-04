@@ -25,6 +25,7 @@
         </label>
         <div class="col-md-11 col-sm-11 col-xs-11">
             <select class="form-control bg-white border border-solid border-gray-2000 focus:border-gray-3000 focus:ring-0 font-body font-medium form-control-select form-select js-country pl-4 rounded-full w-full" id="wk-existing-delivery-address">
+                {debug}
                 {foreach $customer.addresses as $addr}
                     <option {if isset($cart.id_address_delivery)} 
                         {if $cart.id_address_delivery == $addr.id}selected="selected"
