@@ -848,7 +848,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 }
 
                 prestashop.emit('updateProductList', response);
-
+                
+                AppFPP.page = param.page
                 AppFPP.generateSearcherUrl(param.id_searcher)
                 AppFPP.initEventsAfterSearching();
                 
