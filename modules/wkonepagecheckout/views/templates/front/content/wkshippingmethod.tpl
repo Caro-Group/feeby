@@ -34,7 +34,7 @@
                         </div>
                         <label
                             for="delivery_option_{$carrier.id}"
-                            class="cursor-pointer wk-selected-shipping-{$carrier.id} col-md-11 {if $delivery_option == $carrier_id} wkSelectedBorder{/if}">
+                            class="cursor-pointer col-md-11 w-full wk-selected-shipping-{$carrier.id} {if $delivery_option == $carrier_id} wkSelectedBorder{/if}">
                             <div class="row flex items-center min-h-[55px] text-base">
                                 {if Configuration::get('WK_CHECKOUT_CARRIER_LOGO')}
                                     <div class="col-md-3 col-xs-12 col-sm-3">
