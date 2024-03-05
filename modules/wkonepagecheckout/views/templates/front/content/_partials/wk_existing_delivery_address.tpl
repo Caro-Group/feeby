@@ -40,7 +40,7 @@
 
 {if $customer.addresses|count > 0}
     <div class="form-group wk-delivery-address-div clearfix !mb-0">
-        <label class="float-left w-5"></label>
+        <label class="float-left w-5 !mb-0"></label>
         <div class="col-md-11 col-sm-11 col-xs-11">
             <address class="wk-diff-address wk-delivery-address-card text-sm rounded-lg border border-solid border-gray-2000">
                 {$customer.addresses.{$cart.id_address_delivery}.formatted nofilter}
