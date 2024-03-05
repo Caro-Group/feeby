@@ -66,13 +66,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
         if (FilterProductsPro.CONFIGS.FPP_INFINITE_SCROLL) {
             AppFPP.id_product = AppFPP.getIdProduct();
             AppFPP.page = AppFPP.getPage();
+        }else{
+            AppFPP.page = getPageFromUrl()
         }
 
-        const urlHash = window.location.hash
-        const pageFromUrlIndex = urlHash.indexOf('/p/')
-        if (pageFromUrlIndex > 0) {
-            AppFPP.page = parseInt(urlHash.slice(pageFromUrlIndex + 3))
-        }
     },
     initEvents: function(){
         $('.searcher-content[data-id_searcher]').each(function(key, searcher){
@@ -597,7 +594,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 }
 
                 if (param.execute_searcher) {
-                    AppFPP.executeSearch({'id_searcher': param.id_searcher, 'loading': false, 'page': 1});
+                    AppFPP.executeSearch({'id_searcher': param.id_searcher, 'loading': false, 'page': getPageFromUrl()});
                 }
 
                 $(document).trigger('fpp-loaded', {})
@@ -1138,7 +1135,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
         if (searcher_url !== '') {
             searcher_url = searcher_url.slice(0, -1);
-            url += AppFPP.limiter_url + '/s/' + searcher_name + '/' + searcher_url + '/p/' + this.getPage();
+            url += AppFPP.limiter_url + '/s/' + searcher_name + '/' + searcher_url + '/p/' + this.page();
         }
 
         history.pushState('', 'page', url);
@@ -1313,3 +1310,13 @@ $(function(){
         AppFPP.initEvents();
     }
 });
+
+function getPageFromUrl(){
+    let page = 1
+    const urlHash = window.location.hash
+    const pageFromUrlIndex = urlHash.indexOf('/p/')
+    if (pageFromUrlIndex > 0) {
+        page = parseInt(urlHash.slice(pageFromUrlIndex + 3))
+    }
+    return page
+}
