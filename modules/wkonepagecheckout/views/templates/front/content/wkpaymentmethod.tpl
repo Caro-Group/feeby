@@ -55,7 +55,7 @@
 												</div>
 												<label
 													for="{$option.id}"
-													class="cursor-pointer col-md-11 wk-selected-payment-{$option.id} {if Configuration::get('WK_CHECKOUT_DEFAULT_PAYMENT') && (Configuration::get('WK_CHECKOUT_DEFAULT_PAYMENT') == $option.module_name)}wkSelectedBorder{/if}">
+													class="cursor-pointer col-md-11 w-full wk-selected-payment-{$option.id} {if Configuration::get('WK_CHECKOUT_DEFAULT_PAYMENT') && (Configuration::get('WK_CHECKOUT_DEFAULT_PAYMENT') == $option.module_name)}wkSelectedBorder{/if}">
 													<div class="row flex items-center min-h-[55px] text-base">
 														{if Configuration::get('WK_CHECKOUT_PAYMENT_LOGO')}
 															<div class="col-md-3 col-xs-12 col-sm-3 [&_img]:w-auto [&_img]:max-h-[55px]">
