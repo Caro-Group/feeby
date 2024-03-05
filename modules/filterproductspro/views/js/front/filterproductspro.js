@@ -203,6 +203,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     setPage: function(page) {
         var name_cookie = 'fpp_result_current_page_' + FilterProductsPro.current_controller + '_' + FilterProductsPro.id_current_controller;
         $.totalStorageFPP(name_cookie, page);
+
         AppFPP.page = page;
     },
     getIdProduct: function() {
@@ -694,6 +695,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
         });
     },
     executeSearch: function(params){
+        const urlHash = window.location.hash
+        const pageFromUrlIndex = urlHash.indexOf('/p/')
+        if (pageFromUrlIndex > 0) {
+            AppFPP.page = parseInt(urlHash.slice(pageFromUrlIndex + 3))
+        }
+
         var param = $.extend({}, {
             'token': FilterProductsPro.fpp_static_token,
             'dataType': 'json',
@@ -843,7 +850,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 }
 
                 prestashop.emit('updateProductList', response);
-                
+
+                AppFPP.generateSearcherUrl()
                 AppFPP.initEventsAfterSearching();
                 
                 $(document).trigger('fpp-executeSearch-success', {});
