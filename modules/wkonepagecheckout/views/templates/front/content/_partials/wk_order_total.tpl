@@ -120,7 +120,7 @@
                         </div>
                         <div class="col-md-4 col-xs-2 col-sm-6 col-xs-6 wk-product-val">
                             {if isset($cart.totals.total_including_tax)}
-                                <span class="text-xl text-main-dark">{$cart.totals.total_including_tax.value}</span>
+                                <span class="text-lg text-main-dark">{$cart.totals.total_including_tax.value}</span>
                             {/if}
                         </div>
                     </div>

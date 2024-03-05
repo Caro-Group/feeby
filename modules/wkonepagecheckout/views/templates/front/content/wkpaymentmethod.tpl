@@ -55,8 +55,8 @@
 												</div>
 												<label
 													for="{$option.id}"
-													class="cursor-pointer col-md-11 col-sm-9 col-xs-9 wk-selected-payment-{$option.id} {if Configuration::get('WK_CHECKOUT_DEFAULT_PAYMENT') && (Configuration::get('WK_CHECKOUT_DEFAULT_PAYMENT') == $option.module_name)}wkSelectedBorder{/if}">
-													<div class="row flex items-center min-h-[55px]">
+													class="cursor-pointer col-md-11 wk-selected-payment-{$option.id} {if Configuration::get('WK_CHECKOUT_DEFAULT_PAYMENT') && (Configuration::get('WK_CHECKOUT_DEFAULT_PAYMENT') == $option.module_name)}wkSelectedBorder{/if}">
+													<div class="row flex items-center min-h-[55px] text-base">
 														{if Configuration::get('WK_CHECKOUT_PAYMENT_LOGO')}
 															<div class="col-md-3 col-xs-12 col-sm-3 [&_img]:w-auto [&_img]:max-h-[55px]">
 																{if $option.logo}
@@ -80,7 +80,7 @@
 
 											{if $option.additionalInformation}
 												<div id="{$option.id}-additional-information"
-													class="js-additional-information definition-list col-sm-11 offset-sm-1"
+													class="js-additional-information definition-list col-sm-11 offset-sm-1 text-xs"
 													style="
 													{if is_null($option.module_name)}
 														{if $counter == 1}

@@ -98,7 +98,7 @@
             {/if}
             <div class="form-group !mb-2">
                 <input value="{if isset($wkguest)}{$wkguest->email}{/if}" maxlength="128" type="text" name="wk-email"
-                    id="wk-email" placeholder="{l s='Email' mod='wkonepagecheckout'}"  class="form-control border-gray-2000 border-solid border rounded-full bg-white">
+                    id="wk-email" placeholder="{l s='Email' mod='wkonepagecheckout'}"  class="form-control text-sm border-gray-2000 border-solid border rounded-full bg-white">
                 <i class="material-icons wk-check-icon wkhide icon_wk_email">&#xE876;</i>
                 <i class="material-icons wk-error-icon wkhide error_wk_email">&#xE001;</i>
                 <span id="wk-email-error" class="wkerrorcolor"></span>
