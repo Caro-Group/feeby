@@ -67,6 +67,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
             AppFPP.id_product = AppFPP.getIdProduct();
             AppFPP.page = AppFPP.getPage();
         }
+
+        const urlHash = window.location.hash
+        const pageFromUrlIndex = urlHash.indexOf('/p/')
+        if (pageFromUrlIndex > 0) {
+            AppFPP.page = parseInt(urlHash.slice(pageFromUrlIndex + 3))
+        }
     },
     initEvents: function(){
         $('.searcher-content[data-id_searcher]').each(function(key, searcher){
@@ -695,11 +701,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
         });
     },
     executeSearch: function(params){
-        const urlHash = window.location.hash
-        const pageFromUrlIndex = urlHash.indexOf('/p/')
-        if (pageFromUrlIndex > 0) {
-            AppFPP.page = parseInt(urlHash.slice(pageFromUrlIndex + 3))
-        }
 
         var param = $.extend({}, {
             'token': FilterProductsPro.fpp_static_token,
@@ -851,7 +852,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
                 prestashop.emit('updateProductList', response);
 
-                AppFPP.generateSearcherUrl()
+                AppFPP.generateSearcherUrl(param.id_searcher)
                 AppFPP.initEventsAfterSearching();
                 
                 $(document).trigger('fpp-executeSearch-success', {});
