@@ -1599,8 +1599,10 @@ function createModalAndDropdown($only_dropdown, $only_total) {
           $(document)
             .off("click.showMiniCart")
             .on("click.showMiniCart", ".cart-preview", function (e) {
-              e.preventDefault();
               showDropDownCart($(this), "defaultcart");
+              if ($('.leo-dropdown-cart.show').length > 0) { 
+                e.preventDefault();
+              }
               return false;
             });
         }
