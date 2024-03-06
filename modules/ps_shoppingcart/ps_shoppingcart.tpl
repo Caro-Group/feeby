@@ -25,6 +25,7 @@
 <div id="_desktop_cart" class=" mr-3 desktop:relative">
   <div class="blockcart leo-blockcart cart-preview relative {if $cart.products_count > 0}active{else}inactive{/if}" data-refresh-url="{$refresh_url}">
     <div class="header">
+    {debug}
         <a rel="nofollow" href="{$order_url}" class="group">
         {if $cart.products_count > 0}
           <svg class="fill-current text-main-dark group-hover:text-main transition" width="25" height="25" viewBox="0 0 18 22" fill="none" xmlns="http://www.w3.org/2000/svg">
