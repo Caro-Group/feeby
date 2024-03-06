@@ -37,9 +37,9 @@
             {/if}
           <li class="border-0 border-white border-solid border-t flex justify-between items-center flex-wrap" data-depth="{$depth}" {if isset($node.id)}data-cat-id="{$node.id}"{/if}>
             {if $depth===0}
-              <a href="{$node.link}" {if isset($category.id) && $node.id == $category.id}class="selected"{/if}>{$node.name}</a>
+              <a href="{$node.link}" class="{if $node.children} basis-[calc(100%_-_32px)] {/else} basis-full {/if} {if isset($category.id) && $node.id == $category.id}selected{/if}">{$node.name}</a>
               {if $node.children}
-                <div class="navbar-toggler collapse-icons float-right p-2 {if isset($category.id) && $node.id != $category.id && $activeNested == false } collapsed {/if}" data-toggle="collapse" data-target="#exCollapsingNavbar{$node.id}">
+                <div class="navbar-toggler collapse-icons float-right cursor-pointer p-2 {if isset($category.id) && $node.id != $category.id && $activeNested == false } collapsed {/if}" data-toggle="collapse" data-target="#exCollapsingNavbar{$node.id}">
                   <i class="material-icons select-none text-main-dark transition transform rotate-180"></i>
                 </div>
                 <div class="bg-gray-1000 {if isset($category.id) && $node.id == $category.id || $activeNested == true} collapse in {else} collapse {/if}" id="exCollapsingNavbar{$node.id}">
@@ -47,9 +47,9 @@
                 </div>
               {/if}
             {else}
-              <a class="category-sub-link {if isset($category.id) && $node.id == $category.id}selected{/if}" href="{$node.link}">{$node.name}</a>
+              <a class="category-sub-link {if $node.children} basis-[calc(100%_-_32px)] {/else} basis-full {/if} {if isset($category.id) && $node.id == $category.id}selected{/if}" href="{$node.link}">{$node.name}</a>
               {if $node.children}
-                <div class="navbar-toggler collapse-icons float-right p-2 {if isset($category.id) && $node.id != $category.id && $activeNested == false } collapsed {/if}" data-toggle="collapse" data-target="#exCollapsingNavbar{$node.id}">
+                <div class="navbar-toggler collapse-icons float-right cursor-pointer p-2 {if isset($category.id) && $node.id != $category.id && $activeNested == false } collapsed {/if}" data-toggle="collapse" data-target="#exCollapsingNavbar{$node.id}">
                   <i class="material-icons select-none text-main-dark transition transform rotate-180"></i>
                 </div>
                 <div class="bg-white bg-opacity-50 {if isset($category.id) && $node.id == $category.id || $activeNested == true } collapse in {else} collapse {/if} " id="exCollapsingNavbar{$node.id}">
