@@ -25,9 +25,7 @@
 <div id="_desktop_cart" class=" mr-3 desktop:relative">
   <div class="blockcart leo-blockcart cart-preview relative {if $cart.products_count > 0}active{else}inactive{/if}" data-refresh-url="{$refresh_url}">
     <div class="header">
-      {if $cart.products_count > 0}
-        <a rel="nofollow" href="{$cart_url}" class="group">
-      {/if}
+        <a rel="nofollow" href="{$order_url}" class="group">
         {if $cart.products_count > 0}
           <svg class="fill-current text-main-dark group-hover:text-main transition" width="25" height="25" viewBox="0 0 18 22" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M1.70044 9.73643C1.69979 9.74029 1.69914 9.74415 1.69863 9.74801L0.00554085 19.2945C0.00181528 19.3148 0 19.3355 0 19.356C0.00181622 20.781 1.15795 21.9359 2.58475 21.9375H15.4152C16.842 21.9359 17.9984 20.781 18 19.356C18 19.3354 17.9982 19.3149 17.9947 19.2945L15.9117 7.55048C15.8008 6.8368 15.1841 6.31155 14.4609 6.31443H13.0408V4.97331C13.0408 2.74434 11.2318 0.9375 9 0.9375C6.76824 0.9375 4.95915 2.74434 4.95915 4.97331V6.31443H3.53911C2.81588 6.31155 2.19925 6.8368 2.08832 7.55048C2.07912 7.60245 2.28473 6.40999 1.70044 9.73643ZM5.66608 4.97331C5.66608 3.13443 7.15878 1.64359 9 1.64359C10.8414 1.64359 12.3339 3.13443 12.3339 4.97331V6.31443H5.66608V4.97331Z"></path>
@@ -38,9 +36,7 @@
           </svg>
         {/if}
       <span data-cart-count class="-right-2 w-full absolute aspect-square bg-main bottom-0 cart-products-count h-[15px] leading-none max-w-[15px] overflow-hidden pt-0.5 rounded-full text-[12px] text-center text-ellipsis text-white text-xs empty:invisible">{if $cart.products_count > 0}{$cart.products_count}{/if}</span>
-      {if $cart.products_count > 0}
         </a>
-      {/if}
     </div>
   </div>
 </div>
