@@ -1602,8 +1602,8 @@ function createModalAndDropdown($only_dropdown, $only_total) {
               showDropDownCart($(this), "defaultcart");
               if ($('.leo-dropdown-cart.show').length > 0) { 
                 e.preventDefault();
+                return false;
               }
-              return false;
             });
         }
         if (
