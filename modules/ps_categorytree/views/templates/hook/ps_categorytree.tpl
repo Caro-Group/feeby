@@ -37,7 +37,7 @@
             {/if}
           <li class="border-0 border-white border-solid border-t flex justify-between items-center flex-wrap" data-depth="{$depth}" {if isset($node.id)}data-cat-id="{$node.id}"{/if}>
             {if $depth===0}
-              <a href="{$node.link}" class="basis-[calc(100%_-_32px)] {if isset($category.id) && $node.id == $category.id}selected{/if}">{$node.name}</a>
+              <a href="{$node.link}" class="{if $node.children} basis-[calc(100%_-_32px)] {/else} basis-full {/if} {if isset($category.id) && $node.id == $category.id}selected{/if}">{$node.name}</a>
               {if $node.children}
                 <div class="navbar-toggler collapse-icons float-right cursor-pointer p-3 pr-5 {if isset($category.id) && $node.id != $category.id && $activeNested == false } collapsed {/if}" data-toggle="collapse" data-target="#exCollapsingNavbar{$node.id}">
                   <i class="material-icons select-none text-3xl text-main-dark transition transform rotate-180"></i>
