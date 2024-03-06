@@ -891,6 +891,10 @@ img:not([src]) {
   @apply !pointer-events-auto !opacity-100
 }
 
+#category-description h2{
+  @apply !font-normal
+}
+
 #checkout .form-group.input-firstname,
 #checkout .form-group.input-address1{
   @apply w-1/2 pr-1
