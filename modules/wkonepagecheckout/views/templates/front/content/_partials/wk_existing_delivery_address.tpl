@@ -23,7 +23,7 @@
                 <span></span>
             </span>
         </label>
-        <div class="col-md-11 col-sm-11 col-xs-11">
+        <div class="w-full pl-2.5 desktop-presta:pl-[15px]">
             <select class="form-control text-sm bg-white border border-solid border-gray-2000 focus:border-gray-3000 focus:ring-0 font-body font-medium form-control-select form-select js-country pl-4 rounded-full w-full" id="wk-existing-delivery-address">
                 {foreach $customer.addresses as $addr}
                     <option {if isset($cart.id_address_delivery)} 
@@ -41,7 +41,7 @@
 {if $customer.addresses|count > 0}
     <div class="form-group wk-delivery-address-div clearfix !mb-0">
         <label class="float-left w-5 !mb-0"></label>
-        <div class="col-md-11 col-sm-11 col-xs-11">
+        <div class="w-full pl-[26px] desktop-presta:pl-[31px]">
             <address class="wk-diff-address wk-delivery-address-card text-sm rounded-lg border border-solid border-gray-2000">
                 {$customer.addresses.{$cart.id_address_delivery}.formatted nofilter}
                 <hr class="border-0 mb-5 tablet:mb-10">
