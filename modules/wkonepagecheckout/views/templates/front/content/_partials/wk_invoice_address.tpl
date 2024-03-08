@@ -44,7 +44,7 @@
 							id="{$field.invoice_field_name}"
 							value="{if isset($delivery_address)}{$delivery_address->{$field.db_fieldname}}{/if}"
 							placeholder="{$field.label}{if $field.required} *{/if}"
-							class="form-control wkvalidatefield border-gray-2000 border-solid border rounded-full bg-white">
+							class="form-control wkvalidatefield border-gray-2000 border-solid border rounded-full bg-white h-[50px] tablet:h-10">
 						<i class="material-icons wk-check-icon wkhide icon_{$field.invoice_field_name}">&#xE876;</i>
 						<i class="material-icons wk-error-icon wkhide error_{$field.invoice_field_name}">&#xE001;</i>
 						<span class="help-block wk-error {$field.invoice_field_name}"></span>
