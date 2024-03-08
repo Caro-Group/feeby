@@ -17,7 +17,7 @@
 <div class="wk-address-block">
 
 	<div class="" id="wk-existing-delivery">
-		<h5 class="text-xl font-light text-left mb-5">{l s='Delivery Address' mod='wkonepagecheckout'}</h5>
+		<h5 class="text-xl font-normal text-left mb-5">{l s='Delivery Address' mod='wkonepagecheckout'}</h5>
 		{block name='wk_existing_delivery_address'}
 			{include file="module:wkonepagecheckout/views/templates/front/content/_partials/wk_existing_delivery_address.tpl"}
 		{/block}
@@ -37,7 +37,7 @@
 	</div>
 
 	<div id="wk-existing-invoice" class="hidden">
-		<h5 class="text-xl font-light text-left mb-5">{l s='Invoice Address' mod='wkonepagecheckout'}</h5>
+		<h5 class="text-xl font-normal text-left mb-5">{l s='Invoice Address' mod='wkonepagecheckout'}</h5>
 		{block name='wk_existing_invoice_address'}
 			{include file="module:wkonepagecheckout/views/templates/front/content/_partials/wk_existing_invoice_address.tpl"}
 		{/block}

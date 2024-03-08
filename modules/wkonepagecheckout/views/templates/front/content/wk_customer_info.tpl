@@ -18,7 +18,7 @@
 <div id="wkcustomer_info"></div>
     <!-- Customer details if login -->
     <div class="wk-login-container">
-        <h4 class="w-max mx-auto font-normal mb-5 tablet:text-2xl text-main-dark text-xl">{l s='Your details' mod='wkonepagecheckout'}</h4>
+        <h4 class="w-max mx-auto font-normal mb-5 tablet:text-2xl text-main-dark text-xl font-main">{l s='Your details' mod='wkonepagecheckout'}</h4>
         <div class="col-md-12">
             <div class="row mb-5">
                 {if $customer.is_logged && !$customer.is_guest}
@@ -75,9 +75,9 @@
         {/if}
         <div class="wk-guest-checkout">
             {if Configuration::get('WK_CHECKOUT_GUEST_ALLOW')}
-                <h5 class="text-xl font-light text-left mb-5">{l s='Guest Checkout' mod='wkonepagecheckout'}</h5>
+                <h5 class="text-xl font-normal text-left mb-5">{l s='Guest Checkout' mod='wkonepagecheckout'}</h5>
             {else}
-                <h5 class="text-xl font-light text-left mb-5">{l s='Create Account' mod='wkonepagecheckout'}</h5>
+                <h5 class="text-xl font-normal text-left mb-5">{l s='Create Account' mod='wkonepagecheckout'}</h5>
             {/if}
         </div>
 
