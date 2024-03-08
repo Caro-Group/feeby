@@ -14,7 +14,7 @@
 *  @copyright since 2010 Webkul
 *  @license   LICENSE.txt
 *}<div class="wk-payment-method">
-	<h4 class="w-max mx-auto font-normal mb-5 tablet:text-2xl text-main-dark text-xl">{l s='Payment Method' mod='wkonepagecheckout'}</h4>
+	<h4 class="w-max mx-auto font-normal mb-5 tablet:text-2xl text-main-dark text-xl font-main">{l s='Payment Method' mod='wkonepagecheckout'}</h4>
 	<div class="wkerrorcolor wkhide wk-left w-full" id="wkpayment-error" style="margin-left:25px;"></div>
 	<div class="payment-options">
 		{hook h='displayPaymentTop'}

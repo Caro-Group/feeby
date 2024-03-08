@@ -18,7 +18,7 @@
 {extends file='checkout/checkout.tpl'}
 {block name='content'}
     <section class="main" id="wk-one-page-checkout">
-        <section class="desktop-presta:px-24  tablet-medium:px-7">
+        <section class="desktop-presta:px-24 tablet-medium:px-7 font-body">
             <div class="pt-10 dekstop-presta:pt-60px max-w-[850px] mx-auto">
                 {block name='wk_order_summary'}
                     {include file="module:wkonepagecheckout/views/templates/front/content/wkordersummary.tpl"}
