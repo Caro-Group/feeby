@@ -937,6 +937,18 @@ img:not([src]) {
   @apply underline text-main-dark hover:text-main hover:no-underline transition duration-200 ml-5 desktop-presta:ml-10
 }
 
+.bm-small-info{
+  @apply text-main-dark
+}
+
+.js-additional-information section .bm-small-info:last-of-type{
+  @apply !mb-0
+}
+
+.js-additional-information section p:last-of-type{
+  @apply !mb-0
+}
+
 .leo-blockcart.expanded::before{
   content: "\e646";
   font-family: 'themify';
