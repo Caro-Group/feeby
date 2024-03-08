@@ -921,6 +921,22 @@ img:not([src]) {
   @apply text-sm text-main-dark
 }
 
+.bm-selected-payment{
+  @apply !mb-0 
+}
+
+.bm-selected-payment img{
+  @apply px-2.5 desktop-presta:px-[15px] object-contain max-h-[55px] w-1/2 phablet:w-1/4
+}
+
+.bm-selected-payment .bm-payment-wrap{
+  @apply px-2.5 desktop-presta:px-[15px] text-main-dark
+}
+
+.bm-selected-payment .bm-payment-wrap .bm-reset{
+  @apply underline hover:text-main hover:no-underline transition duration-200 ml-5 desktop-presta:ml-10
+}
+
 .leo-blockcart.expanded::before{
   content: "\e646";
   font-family: 'themify';
