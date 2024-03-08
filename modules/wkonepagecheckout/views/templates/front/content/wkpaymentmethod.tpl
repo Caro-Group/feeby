@@ -30,7 +30,7 @@
 						{assign var=counter value=1}
 							{foreach from=$module_options item="option"}
 								<div class="mb-5">
-									<div id="{$option.id}-container" class="flex items-center border-2 border-solid border-gray-2000 p-2 rounded-md mb-5">
+									<div id="{$option.id}-container" class="flex items-center border-2 border-solid border-gray-2000 p-2 rounded-md">
 										<div class="wk-payment payment-option wkpadding">
 											{* This is the way an option should be selected when Javascript is enabled *}
 											<span class="pull-xs-left">
@@ -81,7 +81,7 @@
 
 												{if $option.additionalInformation}
 													<div id="{$option.id}-additional-information"
-														class="js-additional-information [&_p]:text-gray-dark [&_p]:mb-2 text-xs font-body"
+														class="js-additional-information [&_p]:text-gray-dark [&_p]:mb-2 mt-3 text-xs font-body"
 														style="
 														{if is_null($option.module_name)}
 															{if $counter == 1}
@@ -97,9 +97,8 @@
 													</div>
 												{/if}
 
-											</div
-											
-											<div id="pay-with-{$option.id}-form" class="js-payment-option-form wk-left col-md-12">
+												
+												<div id="pay-with-{$option.id}-form" class="js-payment-option-form wk-left col-md-12">
 												{if $option.form}
 													{$option.form nofilter}
 												{else}
@@ -108,8 +107,9 @@
 															<input type="{$input.type}" name="{$input.name}" value="{$input.value}">
 														{/foreach}
 														<button style="display:none" id="pay-with-{$option.id}" type="submit"></button>
-													</form>
-												{/if}
+														</form>
+													{/if}
+												</div>
 											</div>
 											{assign var=counter value=$counter+1}
 										{/foreach}
