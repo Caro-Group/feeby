@@ -65,7 +65,7 @@
             {elseif $page.type === 'next'}
               <div class="w-full flex justify-center order-2">
                 <a rel="next" href="{$page.url}"
-                  class="flex items-center bg-main-dark hover:bg-main-hover border-none font-medium font-normal p-[15px] tablet:p-2 px-[30px] rounded-[23px] text-white hover:text-white uppercase cursor-pointer transition duration-150 next {['disabled' => !$page.clickable, 'js-search-link' => true]|classnames}">
+                  class="flex items-center bg-main-dark hover:bg-main-hover border-none font-medium font-normal px-6 py-3 rounded-full text-white hover:text-white uppercase cursor-pointer transition duration-150 next {['disabled' => !$page.clickable, 'js-search-link' => true]|classnames}">
                   {l s='Load More Products' d='Shop.Theme.Actions'}
                 </a>
               </div>
