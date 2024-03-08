@@ -926,7 +926,7 @@ img:not([src]) {
 }
 
 .bm-selected-payment .bm-payment-wrap{
-  @apply px-2.5 desktop-presta:px-[15px] text-main-dark
+  @apply px-2.5 desktop-presta:px-[15px] text-main-dark font-body
 }
 
 .bm-selected-payment .bm-payment-wrap .bm-reset{
