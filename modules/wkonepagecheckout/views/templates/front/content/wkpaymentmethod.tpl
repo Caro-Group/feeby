@@ -81,7 +81,7 @@
 
 												{if $option.additionalInformation}
 													<div id="{$option.id}-additional-information"
-														class="js-additional-information [&_p]:!text-gray-dark [&_p]:mb-2 mt-3 text-xs font-body"
+														class="js-additional-information [&_p]:!text-[#878787] [&_p]:mb-2 mt-3 text-xs font-body"
 														style="
 														{if is_null($option.module_name)}
 															{if $counter == 1}

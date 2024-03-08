@@ -934,8 +934,8 @@ img:not([src]) {
 }
 
 .bm-small-info{
-  @apply !text-gray-dark
-}
+  @apply !text-[#878787]
+} 
 
 .js-additional-information section .bm-small-info:last-of-type{
   @apply !mb-0
