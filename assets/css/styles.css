@@ -922,11 +922,11 @@ img:not([src]) {
 }
 
 .bm-selected-payment{
-  @apply !mb-0 
+  @apply !mb-0 w-full
 }
 
 .bm-selected-payment img{
-  @apply px-2.5 desktop-presta:px-[15px] object-contain max-h-[55px] w-1/2 phablet:w-1/4
+  @apply px-2.5 desktop-presta:px-[15px] object-contain object-left max-h-[55px] w-1/2 phablet:w-1/4
 }
 
 .bm-selected-payment .bm-payment-wrap{
@@ -934,7 +934,7 @@ img:not([src]) {
 }
 
 .bm-selected-payment .bm-payment-wrap .bm-reset{
-  @apply underline hover:text-main hover:no-underline transition duration-200 ml-5 desktop-presta:ml-10
+  @apply underline text-main-dark hover:text-main hover:no-underline transition duration-200 ml-5 desktop-presta:ml-10
 }
 
 .leo-blockcart.expanded::before{
