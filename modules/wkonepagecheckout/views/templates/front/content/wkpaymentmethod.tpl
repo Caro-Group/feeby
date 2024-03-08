@@ -26,10 +26,10 @@
 			{if isset($payment_options) && $payment_options}
 				<div {if $is_free}class="hidden-xs-up" {/if}>
 					{foreach from=$payment_options key='key' item="module_options"}
-						<div class="row wk-payment-select">
+						<div class="row wk-payment-select mb-5">
 						{assign var=counter value=1}
 							{foreach from=$module_options item="option"}
-								<div id="{$option.id}-container" class="flex items-center bg-gray-1000 mb-5 p-2 rounded-md">
+								<div id="{$option.id}-container" class="flex items-center border-2 border-solid border-gray-2000 p-2 rounded-md">
 									<div class="wk-payment payment-option wkpadding">
 										{* This is the way an option should be selected when Javascript is enabled *}
 										<span class="pull-xs-left">
@@ -80,14 +80,14 @@
 
 											{if $option.additionalInformation}
 												<div id="{$option.id}-additional-information"
-													class="js-additional-information definition-list col-sm-11 offset-sm-1 text-xs"
+													class="js-additional-information [&_p]:text-gray-dark [&_p]:mb-1 mt-1 text-xs font-body"
 													style="
 													{if is_null($option.module_name)}
 														{if $counter == 1}
-															{if Configuration::get('WK_CHECKOUT_DEFAULT_PAYMENT') == $key || $is_free}display:block{/if}
+															{if Configuration::get('WK_CHECKOUT_DEFAULT_PAYMENT') == $key || $is_free}display:block{else}display:none{/if}
 														{/if} 
 													{else}
-														{if Configuration::get('WK_CHECKOUT_DEFAULT_PAYMENT') == $option.module_name || $is_free}display:block{/if}
+														{if Configuration::get('WK_CHECKOUT_DEFAULT_PAYMENT') == $option.module_name || $is_free}display:block{else}display:none{/if}
 													{/if}
 													">
 													{$option.additionalInformation nofilter}
