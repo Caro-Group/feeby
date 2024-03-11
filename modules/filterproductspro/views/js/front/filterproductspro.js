@@ -1135,6 +1135,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
         if (searcher_url !== '') {
             searcher_url = searcher_url.slice(0, -1);
             url += AppFPP.limiter_url + '/s/' + searcher_name + '/' + searcher_url + '/p/' + this.page;
+        }else{
+            url += AppFPP.limiter_url + '/s/' + searcher_name + '/p/' + this.page;
         }
 
         history.pushState('', 'page', url);
