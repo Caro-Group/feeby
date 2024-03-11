@@ -31,7 +31,7 @@
 							{foreach from=$module_options item="option"}
 								<div class="!mb-5">
 									<div id="{$option.id}-container" class="flex items-center border-2 border-solid border-gray-2000 p-2 rounded-md">
-										<div class="wk-payment payment-option wkpadding">
+										<div class="wk-payment payment-option wkpadding" data-payment-name>{debug}
 											{* This is the way an option should be selected when Javascript is enabled *}
 											<span class="pull-xs-left">
 												<input {if is_null($option.module_name)}
