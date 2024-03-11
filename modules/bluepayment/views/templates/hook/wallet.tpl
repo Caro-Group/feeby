@@ -14,7 +14,7 @@
  * @license        https://www.gnu.org/licenses/lgpl-3.0.en.html GNU Lesser General Public License
 *}
 <span class="bm-payment__elm bm-wallet" data-bm-modal="true" data-open-payment="wallet" data-payment-name="wallet"
-      {if $gpayRedirect}data-payment-redirect="true"{/if}></span>
+      {if $gpayRedirect}data-payment-redirect="true"{/if}><label class="hidden"></label></span>
 <section>
 
 	<div class="bm-wallet-slideshow bm-slideshow bm-hide" data-slideshow="wallet">
