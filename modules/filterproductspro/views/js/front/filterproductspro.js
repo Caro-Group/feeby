@@ -384,6 +384,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                         }
                     }
                 });
+                if (params['page'] === undefined) params['page'] = 1
             }
         }
         
