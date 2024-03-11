@@ -14,7 +14,7 @@
  * @license        https://www.gnu.org/licenses/lgpl-3.0.en.html GNU Lesser General Public License
 *}
 {if $selectPayWay}
-	<span class="bm-payment__elm bm-transfer" data-bm-modal="true" data-open-payment="transfer" data-payment-name="transfer"></span>
+	<span class="bm-payment__elm bm-transfer" data-bm-modal="true" data-open-payment="transfer" data-payment-name="transfer"><label class="hidden"></label></span>
 	<section>
 		<span class="bm-small-info">
 		    {l s='You will be redirected to the website of the bank of your choice.' mod='bluepayment'}
