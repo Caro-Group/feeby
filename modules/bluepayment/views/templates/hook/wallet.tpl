@@ -13,7 +13,7 @@
  * @copyright      Copyright (c) 2015-2023
  * @license        https://www.gnu.org/licenses/lgpl-3.0.en.html GNU Lesser General Public License
 *}
-<span class="bm-payment__elm bm-wallet" data-bm-modal="true" data-open-payment="wallet"
+<span class="bm-payment__elm bm-wallet" data-bm-modal="true" data-open-payment="wallet" data-payment-name="wallet"
       {if $gpayRedirect}data-payment-redirect="true"{/if}></span>
 <section>
 
