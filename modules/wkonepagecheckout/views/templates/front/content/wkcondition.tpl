@@ -91,7 +91,7 @@
     {/if}
     <div id="payment-confirmation">
         <div class="ps-shown-by-js">
-            <button type="submit" class="max-w-[290px] bg-main-dark border-0 cursor-pointer font-body font-normal h-full hover:bg-main-hover overflow-hidden phone-wide:text-base px-4 py-3 relative rounded-full tablet:text-xl text-base text-center text-white transition uppercase duration-200" {if $conditions_to_approve|count}disabled="disabled"{/if}>
+            <button type="submit" class="max-w-[290px] bg-main-dark border-0 cursor-pointer font-body font-normal h-full hover:bg-main-hover overflow-hidden phone-wide:text-base px-4 py-3 relative rounded-full tablet:text-xl text-base text-center text-white transition uppercase duration-200">
                 {l s='Place Order' mod='wkonepagecheckout'}
             </button>
         </div>
