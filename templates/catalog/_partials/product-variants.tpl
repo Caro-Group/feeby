@@ -23,7 +23,6 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
  {assign var="ids_with_container" value=[20, 3, 23]}
-{debug}
  <div class="product-variants">
   {foreach from=$groups key=id_attribute_group item=group}
     {if !empty($group.attributes)}
@@ -35,7 +34,7 @@
               {$group.name}
             </span>
           {/if}
-          {if $id_attribute_group eq 5 }
+          {if $id_attribute_group eq 25 }
             {include file="./product-attr-popup.tpl" content_id=27}
           {elseif $id_attribute_group eq 24 }
             {include file="./product-attr-popup.tpl" content_id=28}
