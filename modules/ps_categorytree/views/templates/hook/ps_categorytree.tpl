@@ -65,10 +65,11 @@
   {/strip}
 {/function}
 
+{if !empty($categories.children)}
 <div class="hidden-sm-down pt-3">
   <span class="inline-block text-2xl font-light text-main-dark mb-3">{l s='Categories' d='Shop.Theme.Catalog'}</span>
   <div class="block_content">
-    {if !empty($categories.children)}
+
       {foreach from=$categories.children item=categoryLvl2}
         {if $c_tree_path && in_array($categoryLvl2.id, $c_tree_path) || ($category.level_depth == 2 && $category.id == $categoryLvl2.id)}
           {if $categoryLvl2|count && !empty($categoryLvl2.children)}
@@ -78,7 +79,8 @@
           {/if}
         {/if}
       {/foreach}
-    {/if}
+
   </div>
 </div>
+{/if}
 

@@ -20,6 +20,9 @@ $(document).ready(function () {
           $('body')
             .find('.add-to-cart-anim.add button.adding')
             .removeClass('added')
+          $('body')
+            .find('.add-to-cart-anim.add button.added')
+            .removeClass('added')
         }, 1500)
       }
     }
