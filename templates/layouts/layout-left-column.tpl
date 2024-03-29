@@ -26,13 +26,32 @@
 
 {block name='right_column'}{/block}
 
-{if isset($category.id) && $category.id == 450}
+{if isset($category.id) && ($category.id == 450 || $category.id == 11250)}
 {assign var="CATEGORY_LAYOUT_CLEAN" value="true"}
 {block name='left_column'}{/block}
 {/if}
 
+
 {block name='content_wrapper'}
-  <div id="content-wrapper" class="left-column col-xs-12 col-sm-12 {if isset($CATEGORY_LAYOUT_CLEAN)}col-md-12 col-lg-12{else} tablet:w-2/3 {/if}">
+{literal}
+<style type="text/css">
+@media (min-width: 360px){
+.layout-width-full #js-product-list .ajax_block_product {
+    width: 50%;
+}
+}
+@media (min-width: 1200px){
+.layout-width-full #js-product-list .ajax_block_product {
+    width: 25%;
+}
+}
+
+[data-current-category-id="11250"]{
+display:none;
+}
+</style>
+{/literal}
+  <div id="content-wrapper" class="left-column col-xs-12 col-sm-12 {if isset($CATEGORY_LAYOUT_CLEAN)}col-md-12 col-lg-12 layout-width-full {else} tablet:w-2/3 {/if}">
     {hook h="displayContentWrapperTop"}
     {block name='content'}
       <p>Hello world! This is HTML5 Boilerplate.</p>
