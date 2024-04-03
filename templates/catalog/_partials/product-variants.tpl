@@ -34,9 +34,9 @@
               {$group.name}
             </span>
           {/if}
-          {if $id_attribute_group eq 25 }
+          {if (($language.iso_code == 'pl' && $id_attribute_group == 25) || ($language.iso_code == 'en' && $id_attribute_group == 53)) }
             {include file="./product-attr-popup.tpl" content_id=27}
-          {elseif $id_attribute_group eq 24 }
+          {elseif (($language.iso_code == 'pl' && $id_attribute_group == 24) || ($language.iso_code == 'en' && $id_attribute_group == 51)) }
             {include file="./product-attr-popup.tpl" content_id=28}
           {/if}
         </div>
