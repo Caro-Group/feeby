@@ -39,9 +39,9 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload"
+<link rel="stylesheet"
   href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,400&subset=latin-ext&display=swap"
-  as="style" media="none" onload="this.media='all';this.rel='stylesheet';this.onload=null;">
+  as="style" media="none" rel="stylesheet" onload="if(media!='all')media='all';this.onload=null;">
 
 <noscript>
   <link
