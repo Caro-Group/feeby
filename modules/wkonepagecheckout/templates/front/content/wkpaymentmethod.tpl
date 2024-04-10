@@ -61,10 +61,15 @@
 															{if Configuration::get('WK_CHECKOUT_PAYMENT_LOGO')}
 																<div class="col-md-3 col-xs-12 col-sm-3 [&_img]:w-auto [&_img]:max-h-[55px]">
 																	{if $option.logo}
+
 																		<img src="{$option.logo}" width="50">
 																	{else}
+																       {if $option.call_to_action_text == "Pay by Stripe"}
+																        <img src="/themes/feeby/assets/img/Stripe.png" width="50">
+																       {else}
 																		<img class="wk-custom-payment-icon" width="50"
 																			src="{$wk_opc_modules_dir}img/wk-icon-money.png">
+																      {/if}
 																	{/if}
 																</div>
 															{/if}
