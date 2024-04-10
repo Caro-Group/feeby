@@ -16,6 +16,10 @@ p {
   @apply font-body;
 }
 
+h1 {
+  @apply font-normal;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -939,7 +943,7 @@ img:not([src]) {
 
 .bm-small-info{
   @apply !text-[#878787] font-light
-} 
+}
 
 .js-additional-information section .bm-small-info:last-of-type{
   @apply !mb-0
