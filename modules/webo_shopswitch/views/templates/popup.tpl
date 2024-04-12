@@ -28,6 +28,8 @@
         {foreach from=$shops item=shop}
             {if $shop.id_shop != Context::getContext()->shop->id}
                 {assign var=shop_currencies  value=Currency::getCurrenciesByIdShop($shop.id_shop)}
+                {$shop_currencies|@print_r}
+                {debug}
                 <li class="border-0 border-b last:border-b-0 border-solid border-gray-2000">
                     <a href="{$protocol}{$shop.domain_ssl}{$shop.uri}" class="group !flex items-center py-2 px-4">
                         {if isset($shop.lang.id_lang)}
