@@ -13,7 +13,7 @@
 *  @author    Webkul IN
 *  @copyright since 2010 Webkul
 *  @license   LICENSE.txt
-*}<div class="{if $cart->id_shop_group == 1}wk-payment-method{/if}">
+*}<div class="{if isset($shop) && $shop.id == 1}wk-payment-method{/if}">
 	<h4 class="w-max mx-auto font-normal mb-5 tablet:text-2xl text-main-dark text-xl font-main">{l s='Payment Method' mod='wkonepagecheckout'}</h4>
 	<div class="wkerrorcolor wkhide wk-left w-full" id="wkpayment-error" style="margin-left:25px;"></div>
 	<div class="payment-options">
@@ -37,11 +37,11 @@
 												<input {if is_null($option.module_name)}
 															{if $counter == 1}
 																{if Configuration::get('WK_CHECKOUT_DEFAULT_PAYMENT') == $key || $is_free}checked="checked"{/if}
-															{/if} 
+															{/if}
 														{else}
 															{if Configuration::get('WK_CHECKOUT_DEFAULT_PAYMENT') == $option.module_name || $is_free}checked="checked"{/if}
 														{/if}
-															class="ps-shown-by-js {if $option.binary} binary {/if} relative after:absolute after:left-[2px] after:top-[2.5px] after:content-[''] after:h-[8px]  after:transition after:w-[8px] appearance-none after:rounded-full rounded-full border-2 border-gray-3000 border-solid hover:after:bg-main-dark/20 checked:after:!bg-main-dark checked:bg-white checked:border-main-dark checked:focus:bg-white checked:focus:border-main-dark checked:focus:ring-transparent checked:focus:shadow-none checked:hover:bg-white checked:hover:border-main-dark checked:ring-0 checked:ring-transparent cursor-pointer focus:ring-0 focus:ring-offset-0 focus:ring-transparent h-4 outline-none ring-transparent transition transition-all w-4" 
+															class="ps-shown-by-js {if $option.binary} binary {/if} relative after:absolute after:left-[2px] after:top-[2.5px] after:content-[''] after:h-[8px]  after:transition after:w-[8px] appearance-none after:rounded-full rounded-full border-2 border-gray-3000 border-solid hover:after:bg-main-dark/20 checked:after:!bg-main-dark checked:bg-white checked:border-main-dark checked:focus:bg-white checked:focus:border-main-dark checked:focus:ring-transparent checked:focus:shadow-none checked:hover:bg-white checked:hover:border-main-dark checked:ring-0 checked:ring-transparent cursor-pointer focus:ring-0 focus:ring-offset-0 focus:ring-transparent h-4 outline-none ring-transparent transition transition-all w-4"
 																id="{$option.id}"
 																data-module-name="{$option.module_name}" name="payment-option" type="radio" required>
 															<span></span>
@@ -93,7 +93,7 @@
 																{if Configuration::get('WK_CHECKOUT_DEFAULT_PAYMENT') == $key || $is_free}display:block{else}display:none{/if}
 															{else}
 																display:none
-															{/if} 
+															{/if}
 														{else}
 															{if Configuration::get('WK_CHECKOUT_DEFAULT_PAYMENT') == $option.module_name || $is_free}display:block{else}display:none{/if}
 														{/if}
@@ -102,7 +102,7 @@
 													</div>
 												{/if}
 
-												
+
 												<div id="pay-with-{$option.id}-form" class="js-payment-option-form wk-left col-md-12">
 												{if $option.form}
 													{$option.form nofilter}
