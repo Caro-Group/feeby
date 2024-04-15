@@ -1,4 +1,4 @@
-{* 
+{*
 * @Module Name: Leo Blog
 * @Website: leotheme.com.com - prestashop template provider
 * @author Leotheme <leotheme@gmail.com>
@@ -17,9 +17,9 @@
         {elseif $menu.image}
             <span class="hasicon menu-icon" style="background:url('{$model->image_base_url}{$menu.image}') no-repeat">
         {/if}
-            
+
         {if $menu.show_title}
-            <span class="menu-title font-body text-main-dark text-base font-light">{$menu.title}</span>
+            <span class="menu-title font-body text-main-dark text-base font-normal">{$menu.title}</span>
         {/if}
         {if $menu.text}
             <span class="sub-title">{$menu.text}</span>
@@ -30,7 +30,7 @@
         {if $menu.image || $menu.icon_class}
             </span>
         {/if}
-	
+
 	{if $model->is_live_edit && $menu.is_group == 0}<b class="caret"></b>{/if}
     </a>
     {if !$model->is_live_edit && $menu.is_group == 0}<b class="caret"></b>{/if}
