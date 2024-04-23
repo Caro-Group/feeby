@@ -22,7 +22,11 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
- {literal}
-    <style>html,body{margin:0;padding:0;}</style>
-   {/literal}
-  <iframe src="/dziekujemy-za-subskrypcje-naszego-newslettera"  frameBorder="0" width="100%" height="100%">
+ {extends file='page.tpl'}
+
+{block name='breadcrumb'}{/block}
+
+{block name="page_content_container"}
+      {assign var=new_smarty_var value=CMS::getCMSContent(26)}
+      {$new_smarty_var.content nofilter}
+{/block}
