@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
   moveSwitcher(window.innerWidth, popupOpen);
 
   document.addEventListener('click',(e)=>{
-    if (popupModal.length && popupModal.classList.contains('is-active') && e.target.id !== 'shopswitch-toggle') {
+    if (popupModal && popupModal.length && popupModal.classList.contains('is-active') && e.target.id !== 'shopswitch-toggle') {
       togglePopup(popupModal);
     }
   })
