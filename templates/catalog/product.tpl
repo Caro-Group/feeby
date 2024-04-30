@@ -260,6 +260,10 @@
             {/if}
        </div>
 
+       {block name='product_footer'}
+        {hook h='displayFooterProduct' product=$product category=$category}
+       {/block}
+
        {block name='product_info'}
          {if isset($USE_PTABS) && $USE_PTABS == 'tab'}
            {include file="sub/product_info/tab.tpl"}
@@ -269,9 +273,6 @@
            {include file="sub/product_info/default.tpl"}
          {/if}
        {/block}
-
-
-
 
        <aside class="products-aside -mx-[30px] overflow-hidden">
          {* hook h='displayApSC' sc_key=sc2585205791 *}
@@ -301,10 +302,6 @@
              </div>
            </section>
          {/if}
-       {/block}
-
-       {block name='product_footer'}
-         {hook h='displayFooterProduct' product=$product category=$category}
        {/block}
 
        {block name='product_images_modal'}
