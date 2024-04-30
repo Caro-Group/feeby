@@ -1620,47 +1620,54 @@ $(document).ready(function () {
     },
   };
 
-  if ($("[data-swiper-carousel]").length != 0) {
-    new Swiper("[data-swiper-carousel]", swiperOptions);
-  }
+  $("[data-swiper-carousel]").each(function( index ) {
+    $carousel = this;
+    if ($($carousel).length != 0) {
+      new Swiper($carousel, swiperOptions);
+    }
 
-  if (typeof prestashop !== "undefined") {
-    prestashop.on("updateProductList", function (event) {
-      if ($("[data-swiper-carousel]").length != 0) {
-        new Swiper("[data-swiper-carousel]", swiperOptions);
-      }
-    });
-  }
+    if (typeof prestashop !== "undefined") {
+      prestashop.on("updateProductList", function (event) {
+        if ($($carousel).length != 0) {
+          new Swiper($carousel, swiperOptions);
+        }
+      });
+    }
 
-  if ($("[data-swiper-carousel]").length != 0) {
-    new Swiper("[data-swiper-carousel]", {
-      preloadImages: false,
-      speed: 400,
-      spaceBetween: 20,
-      slidesPerView: "auto",
-      rewind: true,
-      slideClass: "slide",
-      allowTouchMove: true,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-        dynamicBullets: true,
-        dynamicMainBullets: 1,
-      },
-      breakpoints: {
-        1200: {
-          slidesPerView: 4,
+    if ($($carousel).length != 0) {
+      new Swiper($carousel, {
+        preloadImages: false,
+        speed: 400,
+        spaceBetween: 20,
+        slidesPerView: "auto",
+        rewind: true,
+        slideClass: "slide",
+        allowTouchMove: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+          dynamicBullets: true,
+          dynamicMainBullets: 1,
         },
-      },
-      on: {
-        beforeSlideChangeStart: function () {
-          if (typeof lazyLoad == "function") {
-            lazyLoad("[data-lazy]");
-          }
+        navigation: {
+          nextEl: $($carousel).find('[data-swiper-product-next]').get( 0 ),
+          prevEl: $($carousel).find('[data-swiper-product-prev]').get( 0 ),
         },
-      },
-    });
-  }
+        breakpoints: {
+          1200: {
+            slidesPerView: 4,
+          },
+        },
+        on: {
+          beforeSlideChangeStart: function () {
+            if (typeof lazyLoad == "function") {
+              lazyLoad("[data-lazy]");
+            }
+          },
+        },
+      });
+    }
+  });
 });
 
 $(document).ready(function () {
