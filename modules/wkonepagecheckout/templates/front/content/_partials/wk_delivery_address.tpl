@@ -32,17 +32,17 @@
 								{l s='Add tax identification number and company name' d='Shop.Theme.Checkout'}
 							  </a>
 							  <div class="collapse" id="collapseCompany">
-							   
+
 						{/if}
 
 						<div class="form-group w-full input-{$fieldName}">
-							<input maxlength="{$field.maxlength}" {if $field.required}data-required="1" 
+							<input maxlength="{$field.maxlength}" {if $field.required}data-required="1"
 							{else}data-required="0"
 								{/if} data-validate="{$field.validate}" type="text" name="{$field.delivery_field_name}"
 								id="{$field.delivery_field_name}"
 								value="{if isset($delivery_address)}{$delivery_address->{$field.db_fieldname}}{/if}"
 								placeholder="{$field.label}{if $field.required} *{/if}"
-								class="form-control wkvalidatefield border-gray-2000 border-solid border rounded-full bg-white h-[50px] tablet:h-10">
+								class="form-control wkvalidatefield border-gray-2000 border-solid border rounded-full bg-white h-[50px] tablet:h-10 !w-1/2">
 							<i class="material-icons wk-check-icon wkhide icon_{$field.delivery_field_name}">&#xE876;</i>
 							<i class="material-icons wk-error-icon wkhide error_{$field.delivery_field_name}">&#xE001;</i>
 							<span class="help-block wk-error {$field.delivery_field_name}"></span>
@@ -51,7 +51,6 @@
 						{if $fieldName == 'vat_number' }
 							</div>
 						  </div>
-						  
 						{/if}
 
 					{elseif $fieldName == 'country'}
@@ -60,14 +59,14 @@
 								class="form-control wk_address_country label-control required text-sm font-normal border-solid bg-white border border-gray-2000 focus:border-gray-3000 focus:ring-0 font-body font-medium form-control-select form-select js-country pl-4 rounded-full w-full h-[50px] tablet:h-10">
 								{if isset($countries)}
 									{foreach $countries as $country}
-										<option {if isset($updateCountry)} 
+										<option {if isset($updateCountry)}
 											{if $updateCountry == $country.id_country}selected="selected"
-												{/if} 
+												{/if}
 												{else if isset($delivery_address)}
 													{if $delivery_address->id_country == $country.id_country}selected="selected" {/if}
 												{else if isset($cartAddress)}
 													{if $cartAddress->id_country == $country.id_country}selected="selected" {/if}
-												{else if $defaultCountry == $country.id_country}selected="selected" 
+												{else if $defaultCountry == $country.id_country}selected="selected"
 												{/if}
 												value="{$country.id_country}">{$country.name}</option>
 										{/foreach}
