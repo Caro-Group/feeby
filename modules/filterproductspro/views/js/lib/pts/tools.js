@@ -640,7 +640,7 @@ jQuery.extend({
                         if (typeof params.error === 'function')
                             params.error(data);
                         else {
-                            alert(data);
+                         alert(data);
                         }
                     };
                     $.makeRequest(params);

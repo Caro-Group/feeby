@@ -1,29 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
   let popupOpen = document.querySelectorAll("#shopswitch-toggle");
-  const popupClose = document.querySelector("#shopswitch-popup-close");
   const popupModal = document.querySelector("#shopswitch-popup");
-  const popupForm = document.querySelector("#shopswitch-popup form");
-  const shopChangeButton = document.querySelector("#shopswitch-popup button");
-
-  popupClose.addEventListener("click", () => {
-    togglePopup(popupModal);
-  });
 
   popupOpen.forEach((element) => {
-    element.addEventListener("click", () => {
+    element.addEventListener("click", (e) => {
+      e.stopPropagation()
       togglePopup(popupModal);
     });
-  });
-
-  shopChangeButton.addEventListener("click", () => {
-    let formData = new FormData(popupForm);
-    let langPart = formData.get("language");
-    let currPart = formData.get("currency");
-    togglePopup(popupModal);
-    if (langPart && currPart && prestashop) {
-      window.location.href =
-        langPart + "?SubmitCurrency=1&id_currency=" + currPart;
-    }
   });
 
   window.addEventListener("resize", () => {
@@ -34,14 +17,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.addEventListener('click',(e)=>{
     if (popupModal && popupModal.length && popupModal.classList.contains('is-active') && e.target.id !== 'shopswitch-toggle') {
-      togglePopup(popupModal);
+      togglePopup(popupModal);      
     }
   })
 });
 
-window.addEventListener("pageshow", () => {
-  document.querySelector("#shopswitch-popup form").reset();
-});
 
 function togglePopup(popup) {
   popup.classList.toggle("is-active");

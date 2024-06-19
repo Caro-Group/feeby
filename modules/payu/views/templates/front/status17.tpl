@@ -83,7 +83,7 @@
             {$HOOK_PAYMENT_RETURN nofilter}
 
             <div class="cart_navigation">
-                <a class="bg-main hover:bg-main-hover duration-150 border-0 rounded-full text-white px-4 uppercase whitespace-nowrap font-body py-2 hover:text-white" href="{$redirectUrl}">
+                <a class="bg-main-dark hover:bg-main-hover duration-150 border-0 rounded-full text-white px-4 uppercase whitespace-nowrap font-body py-2 hover:text-white" href="{$redirectUrl}">
                     {l s='Order details' d='Modules.Payu.Shop'}
                 </a>
                 <a href="{$urls.pages.register}" class="account-link">

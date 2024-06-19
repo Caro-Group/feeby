@@ -22,34 +22,34 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
- <div id="shopswitch-popup"
- class="popup-hidden w-max shadow-xl absolute z-50 left-[-11px] bottom-[30px] tablet-medium:bottom-auto tablet-medium:top-10 bg-white rounded-[5px] transition duration-300">
- <ul class="flex flex-col">
-     {foreach from=$shops item=shop}
-         {if $shop.id_shop != Context::getContext()->shop->id}
-             {assign var=shop_currencies  value=Currency::getCurrenciesByIdShop($shop.id_shop)}
+<div id="shopswitch-popup"
+    class="popup-hidden w-max shadow-xl absolute z-50 left-[-11px] bottom-[30px] tablet-medium:bottom-auto tablet-medium:top-10 bg-white rounded-[5px] transition duration-300">
+    <ul class="flex flex-col">
+        {foreach from=$shops item=shop}
+            {if $shop.id_shop != Context::getContext()->shop->id}
+                {assign var=shop_currencies  value=Currency::getCurrenciesByIdShop($shop.id_shop)}
 
-             {if $shop.lang.iso_code !== 'de'}
-             <li class="border-0 border-b last:border-b-0 border-solid border-gray-2000">
-                 <a href="{$protocol}{$shop.domain_ssl}{$shop.uri}" class="group !flex items-center py-2 px-4">
-                     {if isset($shop.lang.id_lang)}
-                         <img class="shrink-0 mr-2 rounded-full border border-solid border-gray-2000 group-hover:border-main object-cover transition-all duration-200 overflow-hidden"
-                             height="25" width="25" src="/img/l/{$shop.lang.id_lang}.jpg" alt="{$shop.lang.language_code}"
-                             title="{$shop.lang.name}" />
-                     {else}
-                         <img class="shrink-0 mr-2 rounded-full border border-solid border-gray-2000 group-hover:border-main object-cover transition-all duration-200 overflow-hidden"
-                             height="25" width="25" src="/img/l/none.jpg" alt="Flag no found">
-                     {/if}
-                     <span
-                         class="text-base whitespace-nowrap font-normal text-main-dark group-hover:text-main uppercase transition duration-200">
-                          {$shop.lang.iso_code} | {if $shop.lang.iso_code == 'pl'}PLN{else}{$shop_currencies[0]['iso_code']}{/if}
-                     </span>
-                 </a>
-             </li>
+				{if $shop.lang.iso_code !== 'de'}
+                <li class="border-0 border-b last:border-b-0 border-solid border-gray-2000">
+                    <a href="{$protocol}{$shop.domain_ssl}{$shop.uri}" class="group !flex items-center py-2 px-4">
+                        {if isset($shop.lang.id_lang)}
+                            <img class="shrink-0 mr-2 rounded-full border border-solid border-gray-2000 group-hover:border-main object-cover transition-all duration-200 overflow-hidden"
+                                height="25" width="25" src="/img/l/{$shop.lang.id_lang}.jpg" alt="{$shop.lang.language_code}"
+                                title="{$shop.lang.name}" />
+                        {else}
+                            <img class="shrink-0 mr-2 rounded-full border border-solid border-gray-2000 group-hover:border-main object-cover transition-all duration-200 overflow-hidden"
+                                height="25" width="25" src="/img/l/none.jpg" alt="Flag no found">
+                        {/if}
+                        <span
+                            class="text-base whitespace-nowrap font-normal text-main-dark group-hover:text-main uppercase transition duration-200">
+                             {$shop.lang.iso_code} | {if $shop.lang.iso_code == 'pl'}PLN{else}{$shop_currencies[0]['iso_code']}{/if}
+                        </span>
+                    </a>
+                </li>
 
 
-             {/if}
-         {/if}
-     {/foreach}
- </ul>
+				{/if}
+            {/if}
+        {/foreach}
+    </ul>
 </div>

@@ -66,7 +66,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
         if (FilterProductsPro.CONFIGS.FPP_INFINITE_SCROLL) {
             AppFPP.id_product = AppFPP.getIdProduct();
             AppFPP.page = AppFPP.getPage();
+        }else{
+            AppFPP.page = getPageFromUrl()
         }
+
     },
     initEvents: function(){
         $('.searcher-content[data-id_searcher]').each(function(key, searcher){
@@ -182,11 +185,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 $("html, body").animate({scrollTop: $('#js-product-list .js-product-miniature[data-id-product='+AppFPP.id_product+']').offset().top}, 1000);
                 AppFPP.id_product = false;
             }
-        } else {
-            var $product_list = $(FilterProductsPro.CONFIGS.FPP_COLUMN_NAME+' #products');
-            if ($product_list.length > 0) {
-                $("html, body").animate({scrollTop: $product_list.offset().top}, 1000);
-            }
         }
     },
     getPage: function() {
@@ -203,6 +201,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     setPage: function(page) {
         var name_cookie = 'fpp_result_current_page_' + FilterProductsPro.current_controller + '_' + FilterProductsPro.id_current_controller;
         $.totalStorageFPP(name_cookie, page);
+
         AppFPP.page = page;
     },
     getIdProduct: function() {
@@ -351,8 +350,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
         event.stopPropagation();
         event.preventDefault();
 
-        AppFPP.page = 1;
-
         var params = {
             'id_searcher': AppFPP.last_id_searcher,
         }
@@ -387,7 +384,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
                         }
                     }
                 });
+                if (params['page'] === undefined) params['page'] = 1
             }
+        }
+        
+        var $product_list = $(FilterProductsPro.CONFIGS.FPP_COLUMN_NAME+' #products');
+        if ($product_list.length > 0) {
+            $("html, body").animate({scrollTop: $product_list.offset().top}, 1000);
         }
 
         AppFPP.executeSearch(params);
@@ -590,7 +593,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 }
 
                 if (param.execute_searcher) {
-                    AppFPP.executeSearch({'id_searcher': param.id_searcher, 'loading': false, 'page': 1});
+                    AppFPP.executeSearch({'id_searcher': param.id_searcher, 'loading': false, 'page': getPageFromUrl()});
                 }
 
                 $(document).trigger('fpp-loaded', {})
@@ -694,6 +697,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         });
     },
     executeSearch: function(params){
+
         var param = $.extend({}, {
             'token': FilterProductsPro.fpp_static_token,
             'dataType': 'json',
@@ -844,6 +848,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
                 prestashop.emit('updateProductList', response);
                 
+                AppFPP.page = param.page
+                AppFPP.generateSearcherUrl(param.id_searcher)
                 AppFPP.initEventsAfterSearching();
                 
                 $(document).trigger('fpp-executeSearch-success', {});
@@ -1129,7 +1135,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
         if (searcher_url !== '') {
             searcher_url = searcher_url.slice(0, -1);
-            url += AppFPP.limiter_url + '/s/' + searcher_name + '/' + searcher_url;
+            url += AppFPP.limiter_url + '/s/' + searcher_name + '/' + searcher_url + '/p/' + this.page;
+        }else{
+            url += AppFPP.limiter_url + '/s/' + searcher_name + '/p/' + this.page;
         }
 
         history.pushState('', 'page', url);
@@ -1304,3 +1312,13 @@ $(function(){
         AppFPP.initEvents();
     }
 });
+
+function getPageFromUrl(){
+    let page = 1
+    const urlHash = window.location.hash
+    const pageFromUrlIndex = urlHash.indexOf('/p/')
+    if (pageFromUrlIndex > 0) {
+        page = parseInt(urlHash.slice(pageFromUrlIndex + 3))
+    }
+    return page
+}

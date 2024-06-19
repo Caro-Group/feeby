@@ -8,10 +8,10 @@
 	{if isset($leo_navigation_style) && $leo_navigation_style}
 		<ul class="lql-action{if $leo_form_layout != 'both'} lql-active{else} lql-inactive{/if}">
 			<li class="lql-action-bt">
-				<p class="lql-bt lql-bt-login font-normal text-xl{if $leo_form_layout == 'login'} lql-active{/if}">{l s='Login' d='Modules.Leoquicklogin.Shop'}</p>
+				<p class="lql-bt lql-bt-login font-normal !text-gray-3000 [&.lql-active]:!text-black text-xl{if $leo_form_layout == 'login'} lql-active{/if}">{l s='Login' d='Modules.Leoquicklogin.Shop'}</p>
 			</li>
 			<li class="lql-action-bt">
-				<p class="lql-bt lql-bt-register font-normal text-xl{if $leo_form_layout == 'register'} lql-active{/if}">{l s='Register' d='Modules.Leoquicklogin.Shop'}</p>
+				<p class="lql-bt lql-bt-register font-normal !text-gray-3000 [&.lql-active]:!text-black text-xl{if $leo_form_layout == 'register'} lql-active{/if}">{l s='Register' d='Modules.Leoquicklogin.Shop'}</p>
 			</li>
 		</ul>
 	{/if}
@@ -48,7 +48,7 @@
 				</div>
 			</div>
 			<div class="form-group text-right">
-				<button type="submit" class="form-control-submit lql-form-bt lql-login-bt btn bg-main-dark border-0 cursor-pointer duration-150 font-body hover:text-white hover:bg-black max-w-[320px] mb-3 px-5 py-3 rounded-full tablet:max-w-[300px] text-white text-xs  tablet:text-sm uppercase w-full whitespace-nowrap">			
+				<button type="submit" class="form-control-submit lql-form-bt lql-login-bt btn bg-main-dark border-0 cursor-pointer duration-150 font-body hover:text-white hover:bg-main-hover max-w-[320px] mb-3 px-8 py-3 rounded-full text-white text-lg uppercase w-full whitespace-nowrap">			
 					<span class="leoquicklogin-loading leoquicklogin-cssload-speeding-wheel"></span>
 					<i class="leoquicklogin-icon leoquicklogin-success-icon material-icons">&#xE876;</i>
 					<i class="leoquicklogin-icon leoquicklogin-fail-icon material-icons">&#xE033;</i>
@@ -73,7 +73,7 @@
 					<input type="email" class="form-control lql-email-reset font-body text-sm border-gray-2000 border-solid border flex rounded-full pl-4 bg-white w-full focus:border-gray-3000 focus:ring-0" name="lql-email-reset" required="" placeholder="{l s='Email Address' d='Modules.Leoquicklogin.Shop'}">
 				</div>
 				<div class="form-group">					
-					<button type="submit" class="form-control-submit lql-form-bt leoquicklogin-reset-pass-bt bg-main-dark border-0 cursor-pointer duration-150 font-body hover:text-white hover:bg-black max-w-[320px] mb-3 px-5 py-3 rounded-full tablet:max-w-[300px] text-white text-xs  tablet:text-sm uppercase w-full whitespace-nowrap">			
+					<button type="submit" class=" lql-form-bt leoquicklogin-reset-pass-bt bg-main-dark border-0 cursor-pointer duration-150 font-body hover:text-white hover:bg-main-hover max-w-[320px] mb-3 px-5 py-3 rounded-full tablet:max-w-[300px] text-white text-xs  tablet:text-sm uppercase w-full whitespace-nowrap">			
 						<span class="leoquicklogin-loading leoquicklogin-cssload-speeding-wheel"></span>
 						<i class="leoquicklogin-icon leoquicklogin-success-icon material-icons">&#xE876;</i>
 						<i class="leoquicklogin-icon leoquicklogin-fail-icon material-icons">&#xE033;</i>
@@ -118,7 +118,7 @@
 			</div>
 			{/if}
 			<div class="form-group text-right">				
-				<button type="submit" name="submit" class="form-control-submit lql-form-bt lql-register-bt bg-main-dark border-0 cursor-pointer duration-150 font-body hover:text-white hover:bg-black max-w-[320px] mb-3 px-5 py-3 rounded-full tablet:max-w-[300px] text-white text-xs  tablet:text-sm uppercase w-full whitespace-nowrap">			
+				<button type="submit" name="submit" class="form-control-submit lql-form-bt lql-register-bt bg-main-dark border-0 cursor-pointer duration-150 font-body hover:text-white hover:bg-main-hover max-w-[320px] mb-3 px-5 py-3 rounded-full text-white text-lg uppercase w-full whitespace-nowrap">			
 					<span class="leoquicklogin-loading leoquicklogin-cssload-speeding-wheel"></span>
 					<i class="leoquicklogin-icon leoquicklogin-success-icon material-icons">&#xE876;</i>
 					<i class="leoquicklogin-icon leoquicklogin-fail-icon material-icons">&#xE033;</i>

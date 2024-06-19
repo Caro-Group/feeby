@@ -1823,8 +1823,6 @@ textarea.form-control {
 
 .leo-remove-from-cart {
   transition: all .4s; }
-  .leo-remove-from-cart:hover {
-    transform: rotate(90deg); }
 
 .box-instagram .ApInstagram {
   margin-bottom: 40px; }
@@ -2052,10 +2050,6 @@ textarea.form-control {
       float: right; }
       .rtl .box-coppyh8 .ApImage {
         float: left; } }
-
-.leo-remove-from-cart i.material-icons:before {
-  content: "\e646";
-  font-family: 'themify'; }
 
 .modal-header .close {
   margin-top: 0px; }

@@ -33,7 +33,7 @@
   <div class="flex flex-row flex-wrap">
     {if $cart.id_address_delivery}
       <div class="w-full tablet-wide:w-1/2 mb-8  border-0 border-b border-solid border-gray-1000 px-5 tablet-wide:pl-0 pb-9 tablet-wide:pr-8">
-        <h4 class="addresshead font-body font-normal tablet:text-xl text-base text-main-dark">{l s='Your Delivery Address' d='Shop.Theme.Checkout'}</h4>
+        <h4 class="addresshead font-body font-normal tablet:text-lg text-base text-main-dark">{l s='Your Delivery Address' d='Shop.Theme.Checkout'}</h4>
         <div class="mb-5 font-body font-light mb-4 tablet:text-base text-main-dark text-sm">
           {$customer.addresses[$cart.id_address_delivery]['formatted'] nofilter}
         </div>
@@ -46,7 +46,7 @@
     {/if}
     {if $cart.id_address_invoice}
       <div class="w-full tablet-wide:w-1/2 mb-8  border-0 border-b border-solid border-gray-1000 px-5 tablet-wide:pl-0 pb-9 tablet-wide:pr-8">
-        <h4 class="addresshead font-body font-normal tablet:text-xl text-base text-main-dark">{l s='Your Invoice Address' d='Shop.Theme.Checkout'}</h4>
+        <h4 class="addresshead font-body font-normal tablet:text-lg text-base text-main-dark">{l s='Your Invoice Address' d='Shop.Theme.Checkout'}</h4>
         <div class="mb-5 font-body font-light mb-4 tablet:text-base text-main-dark text-sm">
           {$customer.addresses[$cart.id_address_invoice]['formatted'] nofilter}
         </div>
@@ -63,7 +63,7 @@
   <div class="flex flex-row flex-wrap">
     
     <div class="w-full tablet-wide:w-1/2 mb-8  border-0 border-b border-solid border-gray-1000 px-5 tablet-wide:pl-0 pb-9 tablet-wide:pr-8">
-      <h4 class="font-body font-normal tablet:text-xl text-base text-main-dark">
+      <h4 class="font-body font-normal tablet:text-lg text-base text-main-dark">
         {l s='Shipping Method' d='Shop.Theme.Checkout'} 
       </h4>
 
@@ -88,7 +88,7 @@
     </div>
 
     <div class="w-full tablet-wide:w-1/2 tablet:mb-8  border-0 tablet:border-b border-solid border-gray-1000 px-5 tablet-wide:pl-0 pb-9 tablet-wide:pr-8 flex flex-col">
-      <h4 class="font-body font-normal tablet:text-xl text-base text-main-dark">
+      <h4 class="font-body font-normal tablet:text-lg text-base text-main-dark">
         {l s='Payment Method' d='Shop.Theme.Checkout'}
       </h4>
 

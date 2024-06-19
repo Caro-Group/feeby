@@ -309,11 +309,13 @@ $(document).ready(function () {
   $(document).on("click", function (e) {
     e.stopPropagation();
     var container = $(".leo-dropdown-cart.dropdown.show");
+    var cart_block = container.parent().find('.leo-blockcart')
 
     //check if the clicked area is dropDown or not
     if (container.length && container.has(e.target).length === 0) {
       if (!container.hasClass("disable-close")) {
         container.removeClass("show");
+        cart_block.removeClass('expanded')
       }
     }
     var container1 = $(".leo-dropdown-cart.dropup.show");
@@ -826,6 +828,7 @@ function updatePostionLabel($parent) {
 //DONGND:: show dropdown cart
 function showDropDownCart($element, $type) {
   var object_element = "";
+  var cart_block = $element.parents().find('.leo-blockcart')
   if ($type == "defaultcart") {
     object_element = $element.siblings(".leo-dropdown-cart");
   }
@@ -837,14 +840,19 @@ function showDropDownCart($element, $type) {
 
   if (!object_element.hasClass("show")) {
     object_element.addClass("show");
+    if (object_element.length > 0) {
+      cart_block.addClass("expanded")
+    }
+    
     $(window).scrollTop(0);
     if ($type == "defaultcart") {
-      if ($(window).width() < 993) {
+      if ($(window).width() < 993 && object_element.length > 0) {
         $("html").addClass("overflow-hidden");
       }
     }
   } else {
     object_element.removeClass("show");
+    cart_block.removeClass("expanded")
     if ($type == "defaultcart") {
       if ($(window).width() < 993) {
         $("html").removeClass("overflow-hidden");
@@ -1023,13 +1031,13 @@ function activeDropdownEvent() {
         wrapper_parent_obj.find(".fake-element").fadeOut("200", function () {
           $(this).remove();
         });
-        wrapper_parent_obj.mCustomScrollbar("update");
+        // wrapper_parent_obj.mCustomScrollbar("update");
 
-        setTimeout(function () {
-          wrapper_parent_obj
-            .parents(".leo-dropdown-list-item-warpper")
-            .mCustomScrollbar("update");
-        }, 500);
+        // setTimeout(function () {
+        //   wrapper_parent_obj
+        //     .parents(".leo-dropdown-list-item-warpper")
+        //     .mCustomScrollbar("update");
+        // }, 500);
       }
       $(this).addClass("show");
 
@@ -1058,10 +1066,10 @@ function activeDropdownEvent() {
               height_clone_obj +
               'px"></p>'
           );
-        wrapper_parent_obj.mCustomScrollbar("update");
-        wrapper_parent_obj.mCustomScrollbar("scrollTo", "bottom", {
-          callbacks: parent_obj.addClass("show-additional"),
-        });
+        // wrapper_parent_obj.mCustomScrollbar("update");
+        // wrapper_parent_obj.mCustomScrollbar("scrollTo", "bottom", {
+        //   callbacks: parent_obj.addClass("show-additional"),
+        // });
         // }
       } else if (
         wrapper_parent_obj
@@ -1070,23 +1078,23 @@ function activeDropdownEvent() {
         parent_obj.hasClass("last") &&
         parent_obj.hasClass("first")
       ) {
-        wrapper_parent_obj.append(
-          '<li class="leo-dropdown-cart-item clearfix has-view-additional fake-element" style="width:' +
-            width_cart_item +
-            "px; height:" +
-            height_cart_item +
-            'px"></p>'
-        );
-        wrapper_parent_obj
-          .parents(".leo-dropdown-list-item-warpper")
-          .mCustomScrollbar("update");
-        wrapper_parent_obj
-          .parents(".leo-dropdown-list-item-warpper")
-          .mCustomScrollbar("scrollTo", "last", {
-            callbacks: parent_obj.addClass("show-additional"),
-          });
+        // wrapper_parent_obj.append(
+        //   '<li class="leo-dropdown-cart-item clearfix has-view-additional fake-element" style="width:' +
+        //     width_cart_item +
+        //     "px; height:" +
+        //     height_cart_item +
+        //     'px"></p>'
+        // );
+        // wrapper_parent_obj
+        //   .parents(".leo-dropdown-list-item-warpper")
+        //   .mCustomScrollbar("update");
+        // wrapper_parent_obj
+        //   .parents(".leo-dropdown-list-item-warpper")
+        //   .mCustomScrollbar("scrollTo", "last", {
+        //     callbacks: parent_obj.addClass("show-additional"),
+        //   });
       } else {
-        parent_obj.addClass("show-additional");
+        // parent_obj.addClass("show-additional");
       }
       //DONGND:: disable scrollbar with fly cart slide bar top
       // if ($(this).parents('.leo-fly-cart-slidebar.push_slidebar_top.active-scroll').length || $(this).parents('.leo-fly-cart-slidebar.slidebar_top.active-scroll').length)
@@ -1514,7 +1522,7 @@ function updateQuantityProductDropDown($element) {
                   if (typeof show_popup != "undefined" && !show_popup) {
                     $(".blockcart.cart-preview").removeClass("blockcart");
                   }
-                  createModalAndDropdown(1, 1);
+                  createModalAndDropdown(1, 0);
                 },
                 error: function (XMLHttpRequest, textStatus, errorThrown) {
                   console.log(
@@ -1591,9 +1599,11 @@ function createModalAndDropdown($only_dropdown, $only_total) {
           $(document)
             .off("click.showMiniCart")
             .on("click.showMiniCart", ".cart-preview", function (e) {
-              e.preventDefault();
               showDropDownCart($(this), "defaultcart");
-              return false;
+              if ($('.leo-dropdown-cart.show').length > 0) { 
+                e.preventDefault();
+                return false;
+              }
             });
         }
         if (
@@ -2123,41 +2133,41 @@ function checkFlyCartScrollBar($element) {
     // console.log(element_width);
     // console.log(window_width);
     if (element_width + width_bottom > window_width) {
-      object_parent.addClass("active-scroll");
-      object_parent
-        .find(".leo-dropdown-list-item-warpper")
-        .addClass("active-scrollbar");
-      object_parent
-        .find(".leo-dropdown-list-item-warpper")
-        .css({ width: window_width - width_bottom });
-      object_parent.find(".leo-dropdown-list-item-warpper").mCustomScrollbar({
-        theme: "dark",
-        axis: "x",
-        scrollInertia: 200,
-        callbacks: {
-          onInit: function () {},
-        },
-        advanced: {
-          autoExpandHorizontalScroll: true,
-        },
-        keyboard: {
-          enable: true,
-          // scrollType:"stepless",
-          // scrollAmount:"auto"
-        },
-      });
-      object_parent
-        .find(".leo-dropdown-list-item-warpper")
-        .mCustomScrollbar("update");
+      // object_parent.addClass("active-scroll");
+      // object_parent
+      //   .find(".leo-dropdown-list-item-warpper")
+      //   .addClass("active-scrollbar");
+      // object_parent
+      //   .find(".leo-dropdown-list-item-warpper")
+      //   .css({ width: window_width - width_bottom });
+      // object_parent.find(".leo-dropdown-list-item-warpper").mCustomScrollbar({
+      //   theme: "dark",
+      //   axis: "x",
+      //   scrollInertia: 200,
+      //   callbacks: {
+      //     onInit: function () {},
+      //   },
+      //   advanced: {
+      //     autoExpandHorizontalScroll: true,
+      //   },
+      //   keyboard: {
+      //     enable: true,
+      //     // scrollType:"stepless",
+      //     // scrollAmount:"auto"
+      //   },
+      // });
+      // object_parent
+      //   .find(".leo-dropdown-list-item-warpper")
+      //   .mCustomScrollbar("update");
     } else {
-      object_parent.removeClass("active-scroll");
-      object_parent
-        .find(".leo-dropdown-list-item-warpper")
-        .removeClass("active-scrollbar")
-        .css({ width: "auto" });
-      object_parent
-        .find(".leo-dropdown-list-item-warpper")
-        .mCustomScrollbar("destroy");
+      // object_parent.removeClass("active-scroll");
+      // object_parent
+      //   .find(".leo-dropdown-list-item-warpper")
+      //   .removeClass("active-scrollbar")
+      //   .css({ width: "auto" });
+      // object_parent
+      //   .find(".leo-dropdown-list-item-warpper")
+      //   .mCustomScrollbar("destroy");
     }
   }
 
@@ -2179,26 +2189,26 @@ function checkFlyCartScrollBar($element) {
         $element.find(".leo-dropdown-cart-item").outerHeight();
     }
     if (element_height + height_bottom > window_height) {
-      object_parent.addClass("active-scroll");
-      $element.addClass("active-scrollbar");
-      $element.css({ "max-height": window_height - height_bottom });
-      $element.mCustomScrollbar({
-        theme: "dark",
-        scrollInertia: 200,
-        callbacks: {
-          onInit: function () {},
-        },
-        keyboard: {
-          enable: true,
-          // scrollType:"stepless",
-          // scrollAmount:"auto"
-        },
-      });
-      $element.mCustomScrollbar("update");
+      // object_parent.addClass("active-scroll");
+      // $element.addClass("active-scrollbar");
+      // $element.css({ "max-height": window_height - height_bottom });
+      // $element.mCustomScrollbar({
+      //   theme: "dark",
+      //   scrollInertia: 200,
+      //   callbacks: {
+      //     onInit: function () {},
+      //   },
+      //   keyboard: {
+      //     enable: true,
+      //     // scrollType:"stepless",
+      //     // scrollAmount:"auto"
+      //   },
+      // });
+      // $element.mCustomScrollbar("update");
     } else {
-      object_parent.removeClass("active-scroll");
-      $element.removeClass("active-scrollbar").css({ "max-height": "none" });
-      $element.mCustomScrollbar("destroy");
+      // object_parent.removeClass("active-scroll");
+      // $element.removeClass("active-scrollbar").css({ "max-height": "none" });
+      // $element.mCustomScrollbar("destroy");
     }
   }
 }
@@ -2230,20 +2240,20 @@ function checkFlyCartScrollBarDropDown($element) {
     height_default + height_bottom > object_parent.position().top
   ) {
     // console.log('test0');
-    $element.addClass("active-scrollbar").css({
-      "max-height": object_parent.position().top - height_icon - height_bottom,
-    });
-    $element.mCustomScrollbar({
-      theme: "dark",
-      scrollInertia: 200,
-      callbacks: {
-        onInit: function () {},
-      },
-      keyboard: {
-        enable: true,
-      },
-    });
-    $element.mCustomScrollbar("update");
+    // $element.addClass("active-scrollbar").css({
+    //   "max-height": object_parent.position().top - height_icon - height_bottom,
+    // });
+    // $element.mCustomScrollbar({
+    //   theme: "dark",
+    //   scrollInertia: 200,
+    //   callbacks: {
+    //     onInit: function () {},
+    //   },
+    //   keyboard: {
+    //     enable: true,
+    //   },
+    // });
+    // $element.mCustomScrollbar("update");
   } else if (
     object_parent.length > 0 &&
     type == "dropdown" &&
@@ -2253,53 +2263,53 @@ function checkFlyCartScrollBarDropDown($element) {
       $(window).height() - object_parent.position().top
   ) {
     // console.log('test1');
-    $element.addClass("active-scrollbar").css({
-      "max-height":
-        $(window).height() -
-        object_parent.position().top -
-        height_icon -
-        height_bottom,
-    });
-    $element.mCustomScrollbar({
-      theme: "dark",
-      scrollInertia: 200,
-      callbacks: {
-        onInit: function () {},
-      },
-      keyboard: {
-        enable: true,
-      },
-    });
-    $element.mCustomScrollbar("update");
+    // $element.addClass("active-scrollbar").css({
+    //   "max-height":
+    //     $(window).height() -
+    //     object_parent.position().top -
+    //     height_icon -
+    //     height_bottom,
+    // });
+    // $element.mCustomScrollbar({
+    //   theme: "dark",
+    //   scrollInertia: 200,
+    //   callbacks: {
+    //     onInit: function () {},
+    //   },
+    //   keyboard: {
+    //     enable: true,
+    //   },
+    // });
+    // $element.mCustomScrollbar("update");
   } else if (
     $element.find(".leo-dropdown-cart-item").length > check_number_cartitem
   ) {
     // console.log('test2');
     // console.log($(this).find('.leo-dropdown-cart-item').innerHeight());
-    if (typeof height_cart_item != "undefined") {
-      $element
-        .addClass("active-scrollbar")
-        .css({ "max-height": height_cart_item * number_cartitem_display });
-    } else {
-      $element.addClass("active-scrollbar").css({
-        "max-height":
-          $element.find(".leo-dropdown-cart-item").outerHeight() *
-          check_number_cartitem,
-      });
-    }
+    // if (typeof height_cart_item != "undefined") {
+    //   $element
+    //     .addClass("active-scrollbar")
+    //     .css({ "max-height": height_cart_item * number_cartitem_display });
+    // } else {
+    //   $element.addClass("active-scrollbar").css({
+    //     "max-height":
+    //       $element.find(".leo-dropdown-cart-item").outerHeight() *
+    //       check_number_cartitem,
+    //   });
+    // }
 
-    $element.mCustomScrollbar({
-      theme: "dark",
-      scrollInertia: 200,
-      callbacks: {
-        onInit: function () {},
-      },
-      keyboard: {
-        enable: true,
-        // scrollType:"stepless",
-        // scrollAmount:"auto"
-      },
-    });
+    // $element.mCustomScrollbar({
+    //   theme: "dark",
+    //   scrollInertia: 200,
+    //   callbacks: {
+    //     onInit: function () {},
+    //   },
+    //   keyboard: {
+    //     enable: true,
+    //     // scrollType:"stepless",
+    //     // scrollAmount:"auto"
+    //   },
+    // });
     // $(this).mCustomScrollbar('update');
 
     // if ($scrollToElement != false)
@@ -2311,8 +2321,8 @@ function checkFlyCartScrollBarDropDown($element) {
   } else {
     // console.log('test3');
     // object_parent.removeClass('active-scroll');
-    $element.removeClass("active-scrollbar").css({ "max-height": "none" });
-    $element.mCustomScrollbar("destroy");
+    // $element.removeClass("active-scrollbar").css({ "max-height": "none" });
+    // $element.mCustomScrollbar("destroy");
   }
 }
 

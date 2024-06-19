@@ -46,7 +46,7 @@
 				<div class="p-5 bg-white flex flex-col justify-between max-h-[90px] tablet:max-h-[108px] h-full">
 				
 					{if isset($slider.title) && !empty($slider.title)}
-						<h2 class="font-normal font-body tablet:text-base desktop-presta:text-2xl line-clamp-2 phablet:line-clamp-1 desktop-wide:line-clamp-2 mt-0">{$slider.title|escape:'html':'UTF-8' nofilter}</h2>
+						<h3 class="text-gray-main font-normal font-body text-base desktop-presta:text-2xl line-clamp-2 phablet:line-clamp-1 desktop-wide:line-clamp-2 mt-0">{$slider.title|escape:'html':'UTF-8' nofilter}</h3>
 					{/if}
 					{if isset($slider.sub_title) && !empty($slider.sub_title)}
 						<p class="uppercase hover:text-main transition font-body font-normal text-[10px] tablet:text-sm">{$slider.sub_title|escape:'html':'UTF-8' nofilter}<i class="ti-arrow-right ml-2"></i></p>

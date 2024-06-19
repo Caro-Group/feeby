@@ -49,7 +49,7 @@
 			
 			<input id="id_product_review" name="id_product_review" type="hidden" value='{$product_modal_review->id}' />
 			<div class="flex flex-row-revert justify-between items-start pt-[10px] ml-auto w-full tablet:w-auto">
-				<button class="leo-fake-button leo-modal-review-bt bg-main hover:bg-main-hover font-me text-white py-2 px-4 text-[12px] tablet:text-[14px] uppercase text-center border-0 rounded-full font-medium cursor-pointer mx-auto" type="submit">
+				<button class="leo-fake-button leo-modal-review-bt bg-main-dark hover:bg-main-hover font-me text-white py-2 px-4 text-[12px] tablet:text-[14px] uppercase text-center border-0 rounded-full font-medium cursor-pointer mx-auto" type="submit">
 					<span class="leo-modal-review-loading cssload-speeding-wheel"></span>
 					<span class="leo-modal-review-bt-text">
 						{l s='Add review' d='Modules.Leofeature.Shop'}

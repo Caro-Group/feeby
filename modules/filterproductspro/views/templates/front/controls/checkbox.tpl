@@ -50,10 +50,10 @@
 
                         {if $filter.id_filter == 49 || $filter.id_filter == 90}
                         <div class="shrink-0 bg-gray-2000 clearfix float-left w-[25px] h-[25px] mr-2.5 rounded-full border border-solid" style="
-                          {if $option.id_option == 1118 || $option.id_option == 1953} {* Bege *}
+                          {if $option.id_option == 1118 || $option.id_option == 1953} {* BEIGE *}
                             background-color: #FEF3DE;
                             border-color: #FEF3DE;
-                          {elseif $option.id_option == 1120 || $option.id_option == 1957} {* Brown *}
+                          {elseif $option.id_option == 1120 || $option.id_option == 1957}  {* Brown *}
                             background-color: #AA6D12;
                             border-color: #AA6D12;
                           {elseif $option.id_option == 1121 || $option.id_option == 1955} {* Black & White *}
@@ -62,7 +62,7 @@
                           {elseif $option.id_option == 1123 || $option.id_option == 1964} {* Red *}
                             background-color: #ED0000;
                             border-color: #ED0000;
-                          {elseif $option.id_option == 1124 || $option.id_option == 1967} {* Violet *}
+                          {elseif $option.id_option == 1124 || $option.id_option == 1967}
                             background-color: #C23D85;
                             border-color: #C23D85;
                           {elseif $option.id_option == 1125 || $option.id_option == 1961} {* Multicolor *}
@@ -77,7 +77,7 @@
                           {elseif $option.id_option == 1128 || $option.id_option == 1963} {* Pink *}
                             background-color: #FFB6C1;
                             border-color: #FFB6C1;
-                          {elseif $option.id_option == 1129 || $option.id_option == 1965} {* Silver *}
+                          {elseif $option.id_option == 1129 || $option.id_option == 1965}  {* Silver *}
                             background-color: #EAEAEA;
                             border-color: #EAEAEA;
                           {elseif $option.id_option == 1130 || $option.id_option == 1959} {* Grey *}
@@ -89,7 +89,7 @@
                           {elseif $option.id_option == 1134 || $option.id_option == 1958} {* Gold *}
                             background-color: #DFCA80;
                             border-color: #DFCA80;
-                          {elseif $option.id_option == 1133 || $option.id_option == 1969} {* Yellow *}
+                          {elseif $option.id_option == 1133 || $option.id_option == 1969}
                             background-color: #FFE233;
                             border-color: #FFE233;
                           {elseif $option.id_option == 1119 || $option.id_option == 1968} {* White *}

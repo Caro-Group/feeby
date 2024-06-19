@@ -45,7 +45,7 @@
   </div>
 
 
-  <p class="font-body font-medium mt-7 px-[30px] py-5 tablet:text-base text-center text-main-dark text-sm">
+  <p class="font-body font-medium mt-7 px-[30px] py-5 text-center text-main-dark text-sm tablet:text-base">
     {l s='Your order will be available in 2 work day' d='Shop.Theme.Checkout'}
   </p>
 </section>

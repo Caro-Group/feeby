@@ -35,7 +35,7 @@
     
     </div>
 
-    <a class="bg-main hover:bg-main-hover duration-150 border-0 rounded-full text-white px-4 uppercase whitespace-nowrap font-body py-2 hover:text-white" href="{$urls.base_url}">{l s='Back to Home' d='Shop.Theme.Global'}</a>
+    <a class="bg-main-dark hover:bg-main-hover duration-150 border-0 rounded-full text-white px-4 uppercase whitespace-nowrap font-body py-2 hover:text-white" href="{$urls.base_url}">{l s='Back to Home' d='Shop.Theme.Global'}</a>
 {*
     {block name='search'}
       {hook h='displaySearch'}

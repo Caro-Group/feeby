@@ -122,7 +122,7 @@
                                                 class="py-2 desktop-presta:py-0 desktop-presta:pb-6 product-add-to-cart">
                                                 <div class="add-to-cart-anim add flex-1">
                                                     <button
-                                                        class="bg-main border-0 cursor-pointer font-medium h-full hover:bg-main-hover overflow-hidden phone-wide:text-base px-4 relative rounded-full tablet:text-xl text-base text-center text-white transition uppercase duration-200 w-full"
+                                                        class="bg-main-dark border-0 cursor-pointer font-medium h-full hover:bg-main-hover overflow-hidden phone-wide:text-base px-4 relative rounded-full tablet:text-xl text-base text-center text-white transition uppercase duration-200 w-full"
                                                         data-button-action="add-to-cart" disabled type="submit">
                                                         <span>{l s='Dodaj do koszyka' d='Shop.Theme.Catalog'}</span>
                                                         <svg class="success" width="27" height="20" viewBox="0 0 27 20"

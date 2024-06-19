@@ -186,7 +186,7 @@
 
 
             {if isset($productConfigurable)}
-              <button type="button" class="bg-main block border-0 cursor-pointer font-medium h-full hover:bg-main-hover overflow-hidden phone-wide:text-base px-4 py-3 relative rounded-full tablet:text-xl text-base text-center text-white transition uppercase w-full tablet:mb-6" data-toggle="modal" data-target="#productConfigurable">
+              <button type="button" class="bg-main-dark block border-0 cursor-pointer font-medium h-full hover:bg-main-hover overflow-hidden phone-wide:text-base px-4 py-3 relative rounded-full tablet:text-xl text-base text-center text-white transition uppercase w-full tablet:mb-6" data-toggle="modal" data-target="#productConfigurable">
                 {l s='Zamów fototapetę' d='Shop.Theme.Actions'}
               </button>
 
@@ -260,8 +260,9 @@
             {/if}
        </div>
 
+
        {block name='product_footer'}
-        {hook h='displayFooterProduct' product=$product category=$category}
+         {hook h='displayFooterProduct' product=$product category=$category}
        {/block}
 
        {block name='product_info'}
@@ -273,6 +274,7 @@
            {include file="sub/product_info/default.tpl"}
          {/if}
        {/block}
+
 
        <aside class="products-aside -mx-[30px] overflow-hidden">
          {* hook h='displayApSC' sc_key=sc2585205791 *}

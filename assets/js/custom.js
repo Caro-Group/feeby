@@ -1861,7 +1861,7 @@ $(document).ready(function () {
 
 
 $(document).ready(function () {
-	if(prestashop.urls.current_url.includes('?tag=bestseller')){
+	if(prestashop.urls.current_url.includes('?tag=')){
 		$('#search_sort_toggler').addClass('!hidden');
     }
 });

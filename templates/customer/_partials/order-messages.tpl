@@ -75,7 +75,7 @@
 
       <footer class="form-footer text-sm-center flex">
         <input type="hidden" name="id_order" value="{$order.details.id}">
-        <button type="submit" name="submitMessage" class="form-control-submit bg-main ml-auto w-full tablet:w-auto hover:bg-main-hover duration-150 border-0 rounded-full text-white p-2 px-4 uppercase whitespace-nowrap mb-8 tablet:mb-2 cursor-pointer">
+        <button type="submit" name="submitMessage" class=" bg-main ml-auto w-full tablet:w-auto hover:bg-main-hover duration-150 border-0 rounded-full text-white p-2 px-4 uppercase whitespace-nowrap mb-8 tablet:mb-2 cursor-pointer">
           {l s='Send' d='Shop.Theme.Actions'}
         </button>
       </footer>

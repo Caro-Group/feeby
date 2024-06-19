@@ -37,22 +37,22 @@
             {/if}
           <li class="border-0 border-white border-solid border-t flex justify-between items-center flex-wrap" data-depth="{$depth}" {if isset($node.id)}data-cat-id="{$node.id}"{/if}>
             {if $depth===0}
-              <a href="{$node.link}" {if isset($category.id) && $node.id == $category.id}class="selected"{/if}>{$node.name}</a>
+              <a href="{$node.link}" class="{if $node.children} max-w-[calc(100%_-_32px)] {/if} {if isset($category.id) && $node.id == $category.id}selected{/if}">{$node.name}</a>
               {if $node.children}
-                <div class="navbar-toggler collapse-icons float-right p-3 pr-5 {if isset($category.id) && $node.id != $category.id && $activeNested == false } collapsed {/if}" data-toggle="collapse" data-target="#exCollapsingNavbar{$node.id}">
-                  <i class="material-icons select-none text-3xl text-main-dark transition transform rotate-180"></i>
+                <div class="grow navbar-toggler collapse-icons float-right cursor-pointer p-2 {if isset($category.id) && $node.id != $category.id && $activeNested == false } collapsed {/if}" data-toggle="collapse" data-target="#exCollapsingNavbar{$node.id}">
+                  <i class="!block !ml-auto material-icons select-none text-main-dark transition transform rotate-180"></i>
                 </div>
-                <div class="bg-gray-1000 {if isset($category.id) && $node.id == $category.id || $activeNested == true} collapse in {else} collapse {/if}" id="exCollapsingNavbar{$node.id}">
+                <div class="w-full bg-gray-1000 {if isset($category.id) && $node.id == $category.id || $activeNested == true} collapse in {else} collapse {/if}" id="exCollapsingNavbar{$node.id}">
                   {categories nodes=$node.children depth=$depth+1}
                 </div>
               {/if}
             {else}
-              <a class="category-sub-link {if isset($category.id) && $node.id == $category.id}selected{/if}" href="{$node.link}">{$node.name}</a>
+              <a class="category-sub-link {if $node.children} max-w-[calc(100%_-_32px)] {/if} {if isset($category.id) && $node.id == $category.id}selected{/if}" href="{$node.link}">{$node.name}</a>
               {if $node.children}
-                <div class="navbar-toggler collapse-icons float-right p-3 pr-5 {if isset($category.id) && $node.id != $category.id && $activeNested == false } collapsed {/if}" data-toggle="collapse" data-target="#exCollapsingNavbar{$node.id}">
-                  <i class="material-icons select-none text-3xl text-main-dark transition transform rotate-180"></i>
+                <div class="grow navbar-toggler collapse-icons float-right cursor-pointer p-2 {if isset($category.id) && $node.id != $category.id && $activeNested == false } collapsed {/if}" data-toggle="collapse" data-target="#exCollapsingNavbar{$node.id}">
+                  <i class="!block !ml-auto material-icons select-none text-main-dark transition transform rotate-180"></i>
                 </div>
-                <div class="bg-white bg-opacity-50 {if isset($category.id) && $node.id == $category.id || $activeNested == true } collapse in {else} collapse {/if} " id="exCollapsingNavbar{$node.id}">
+                <div class="w-full bg-white bg-opacity-50 {if isset($category.id) && $node.id == $category.id || $activeNested == true } collapse in {else} collapse {/if} " id="exCollapsingNavbar{$node.id}">
                   {categories nodes=$node.children depth=$depth+1}
                 </div>
               {/if}
@@ -65,11 +65,10 @@
   {/strip}
 {/function}
 
-{if !empty($categories.children)}
 <div class="hidden-sm-down pt-3">
   <span class="inline-block text-2xl font-light text-main-dark mb-3">{l s='Categories' d='Shop.Theme.Catalog'}</span>
   <div class="block_content">
-
+    {if !empty($categories.children)}
       {foreach from=$categories.children item=categoryLvl2}
         {if $c_tree_path && in_array($categoryLvl2.id, $c_tree_path) || ($category.level_depth == 2 && $category.id == $categoryLvl2.id)}
           {if $categoryLvl2|count && !empty($categoryLvl2.children)}
@@ -79,8 +78,7 @@
           {/if}
         {/if}
       {/foreach}
-
+    {/if}
   </div>
 </div>
-{/if}
 
